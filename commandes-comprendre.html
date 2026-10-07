@@ -150,7 +150,7 @@
 <!-- 1 -->
 <section id="definition">
   <div class="sec-head"><span class="sec-num">01</span><h2>Qu'est-ce qu'une commande&nbsp;?</h2></div>
-  <p class="lede">Une commande, c'est <strong>une cliente</strong>, <strong>une conseillère</strong> à qui la vente est attribuée, une liste de <strong>produits</strong> et, souvent, une <strong>réunion</strong>. Elle a un <strong>type</strong>, qui dit d'où elle vient, et <strong>trois statuts</strong>, qui disent où elle en est.</p>
+  <p class="lede">Une commande, c'est <strong>une cliente</strong>, <strong>une conseillère</strong> à qui la vente est attribuée, une liste de <strong>produits</strong> et, le cas échéant, une <strong>réunion</strong>. Elle a un <strong>type</strong>, qui dit d'où elle vient, et <strong>trois statuts</strong>, qui disent où elle en est.</p>
   <div class="example"><span class="ex-label">Exemple</span><p>Pendant la réunion de Jade, la conseillère Léa saisit la commande de Camille, invitée&nbsp;: un collier à 47&nbsp;€. Camille paie par carte sur place. La commande est de type <strong>Vente en réunion</strong>, elle est <strong>payée</strong>, et attend d'être <strong>expédiée</strong> par la marque.</p></div>
   <div class="tip"><span class="ex-label">Bon à savoir</span><p>Chaque conseillère est aussi cliente&nbsp;: elle dispose d'un compte client à son nom, qui lui permet de commander pour elle-même. Ces commandes apparaissent comme les autres, avec la conseillère comme cliente.</p></div>
 </section>
@@ -161,14 +161,6 @@
   <p class="lede">Le type dit <strong>comment la commande est née</strong>. Il conditionne les frais de livraison, les moyens de paiement proposés, les réductions applicables et la façon dont la commande est comptée dans les statistiques.</p>
 
   <h3 id="s2-1"><span class="sub-num">2.1</span> Les quatre types principaux</h3>
-  <p>Sur l'ensemble des marques utilisant SellingAtHome, ces quatre types représentent plus de 95&nbsp;% des commandes payées sur un an.</p>
-  <div class="share" aria-label="Répartition des commandes payées par type">
-    <div class="share-row"><span><b>Vente en réunion</b></span><div class="share-bar"><i style="width:62.5%"></i></div><span class="pct">62,5&nbsp;%</span></div>
-    <div class="share-row"><span><b>Vente directe</b></span><div class="share-bar"><i style="width:18%"></i></div><span class="pct">18&nbsp;%</span></div>
-    <div class="share-row"><span><b>Commande web</b></span><div class="share-bar"><i style="width:11.5%"></i></div><span class="pct">11,5&nbsp;%</span></div>
-    <div class="share-row"><span><b>Cadeau</b></span><div class="share-bar"><i style="width:3.3%"></i></div><span class="pct">3,3&nbsp;%</span></div>
-    <div class="share-row"><span>Tous les autres types</span><div class="share-bar"><i style="width:4.7%"></i></div><span class="pct">4,7&nbsp;%</span></div>
-  </div>
   <div class="table-wrap"><table class="types">
     <thead><tr><th>Type (libellé de l'espace marque)</th><th>D'où vient-elle&nbsp;?</th><th>Qui la crée</th></tr></thead>
     <tbody>
@@ -187,7 +179,7 @@
       <tr><td><b>Boutique de la marque</b></td><td>Une cliente commande sur la boutique en ligne de la marque.</td><td>La cliente</td></tr>
       <tr><td><b>Kit de démarrage</b></td><td>Le kit commandé par une nouvelle conseillère à son entrée dans le réseau.</td><td>La nouvelle conseillère, à la fin du recrutement</td></tr>
       <tr><td><b>Commande de regroupement</b></td><td>Une commande qui rassemble plusieurs commandes d'une conseillère pour les payer ou les livrer ensemble.</td><td>La conseillère</td></tr>
-      <tr><td><b>Échange, Box, VCE, Réservation de collection, Boutique, Frais de livraison, SAV</b></td><td>Des types propres à certaines marques, activés à la demande.</td><td>Selon le type</td></tr>
+      <tr><td><b>Échange, Box, VCE, Réservation de collection, Boutique, Frais de livraison, SAV</b></td><td>Des types spécifiques, activés à la demande.</td><td>Selon le type</td></tr>
     </tbody>
   </table></div>
   <p class="muted">Les types proposés à la création d'une commande, et dans les filtres, dépendent des options activées pour votre marque.</p>
@@ -233,11 +225,11 @@
 <!-- 4 -->
 <section id="cycle">
   <div class="sec-head"><span class="sec-num">04</span><h2>Le cycle de vie d'une commande</h2></div>
-  <p class="lede">Voici le parcours d'une commande de réunion, le cas le plus fréquent. Une vente directe suit le même chemin, sans réunion.</p>
+  <p class="lede">Voici le parcours d'une commande de réunion. Une vente directe suit le même chemin, sans réunion.</p>
   <div class="timeline">
     <div class="tl"><b>1. La conseillère saisit la commande</b><div class="st"><span class="chip">Créée</span><span class="chip">En cours</span></div><p>Elle ajoute les produits, la cliente, le mode de livraison. Les réductions et conditions d'achat s'appliquent au fil de la saisie.</p></div>
     <div class="tl"><b>2. La cliente signe (selon votre paramétrage)</b><div class="st"><span class="chip g">Signée</span></div><p>Par un code reçu par SMS ou une signature à l'écran.</p></div>
-    <div class="tl"><b>3. La cliente paie</b><div class="st"><span class="chip g">Payée</span><span class="chip y">Non expédiée</span></div><p>Souvent pendant la réunion&nbsp;: la moitié des commandes de réunion sont payées dans les 4 minutes qui suivent leur création. La commande entre alors dans le chiffre d'affaires, les points de fidélité et les challenges, et dans la pastille «&nbsp;à expédier&nbsp;» du menu Commandes.</p></div>
+    <div class="tl"><b>3. La cliente paie</b><div class="st"><span class="chip g">Payée</span><span class="chip y">Non expédiée</span></div><p>Pendant la réunion ou plus tard. La commande entre alors dans le chiffre d'affaires, les points de fidélité et les challenges, et dans la pastille «&nbsp;à expédier&nbsp;» du menu Commandes.</p></div>
     <div class="tl"><b>4. La marque prépare</b><div class="st"><span class="chip g">En préparation</span></div><p>Étape facultative&nbsp;: passage manuel (action groupée) ou automatique par votre logisticien.</p></div>
     <div class="tl"><b>5. La marque expédie</b><div class="st"><span class="chip y">Expédiée</span><span class="chip y">Expédiée partiellement</span></div><p>Un bon d'expédition est créé pour les quantités envoyées. La commande sort de la pastille «&nbsp;à expédier&nbsp;» quand tout est parti.</p></div>
     <div class="tl stop"><b>6. La commande est livrée</b><div class="st"><span class="chip y">Livrée</span><span class="chip g">Terminée</span></div><p>Le passage en «&nbsp;Livrée&nbsp;» termine automatiquement la commande.</p></div>
@@ -251,10 +243,10 @@
     <li>c'est un <strong>retrait sur place</strong>&nbsp;: elle est considérée comme livrée dès qu'elle est remise&nbsp;;</li>
     <li>elle ne contient que des <strong>produits virtuels</strong> (formation, service…)&nbsp;: elle est terminée dès son paiement.</li>
   </ul>
-  <div class="warn"><span class="ex-label">Attention</span><p>Une commande <strong>expédiée mais jamais marquée livrée</strong> ne devient jamais «&nbsp;Terminée&nbsp;». C'est le cas le plus courant&nbsp;: beaucoup de marques s'arrêtent au statut «&nbsp;Expédiée&nbsp;». Ce n'est pas un problème, sauf si vous utilisez le statut «&nbsp;Terminée&nbsp;» dans vos suivis.</p></div>
+  <div class="warn"><span class="ex-label">Attention</span><p>Une commande <strong>expédiée mais jamais marquée livrée</strong> ne devient jamais «&nbsp;Terminée&nbsp;». Si votre marque s'arrête au statut «&nbsp;Expédiée&nbsp;», ce n'est pas un problème, sauf si vous utilisez le statut «&nbsp;Terminée&nbsp;» dans vos suivis.</p></div>
 
   <h3 id="s4-2"><span class="sub-num">4.2</span> La validation de l'encaissement</h3>
-  <p>Par défaut, un paiement enregistré est considéré comme acquis. Certaines marques préfèrent <strong>valider elles-mêmes</strong> les encaissements (chèques, virements reçus)&nbsp;: c'est une option activée par SellingAtHome. Dans ce cas&nbsp;:</p>
+  <p>Par défaut, un paiement enregistré est considéré comme acquis. Votre marque peut préférer <strong>valider elle-même</strong> les encaissements (chèques, virements reçus)&nbsp;: c'est une option activée par SellingAtHome. Dans ce cas&nbsp;:</p>
   <ul class="prose">
     <li>le filtre <strong>Paiement non validé</strong> liste les paiements à vérifier&nbsp;;</li>
     <li>l'action groupée <strong>Valider l'encaissement</strong> les confirme, et la commande passe à «&nbsp;Encaissée&nbsp;»&nbsp;;</li>
@@ -289,7 +281,7 @@
     <div class="card"><span class="tag">Paniers abandonnés</span><p>Après un délai réglable (48&nbsp;heures minimum), les commandes non payées sont supprimées. Les kits de démarrage et les commandes partiellement payées ne sont jamais concernés.</p><p class="muted">Paramètres › Configuration générale › Paramètres des commandes. Un délai à 0 désactive la suppression.</p></div>
     <div class="card"><span class="tag pink">Clôture de réunion</span><p>À la clôture d'une réunion, ses commandes non payées peuvent être supprimées.</p><p class="muted">Paramètres › Configuration générale › Paramètres des Réunions, option «&nbsp;Supprimer les commandes non payées&nbsp;». Voir <a href="reunions.html">Réunions</a>.</p></div>
   </div>
-  <div class="tip"><span class="ex-label">Bon à savoir</span><p>Une part importante des commandes créées n'est jamais payée (paniers préparés puis abandonnés). C'est normal&nbsp;: ces suppressions automatiques gardent vos listes propres.</p></div>
+  <div class="tip"><span class="ex-label">Bon à savoir</span><p>Des commandes créées peuvent ne jamais être payées (paniers préparés puis abandonnés). C'est normal&nbsp;: ces suppressions automatiques gardent vos listes propres.</p></div>
 
   <h3 id="s5-3"><span class="sub-num">5.3</span> Annuler une commande payée</h3>
   <p>L'annulation, totale ou partielle, crée un <strong>avoir</strong>. Elle&nbsp;:</p>
@@ -344,14 +336,14 @@
 <!-- 7 -->
 <section id="paiements">
   <div class="sec-head"><span class="sec-num">07</span><h2>Les moyens de paiement</h2></div>
-  <p class="lede">Les moyens de paiement proposés dépendent de votre paramétrage et du type de commande. Sur l'ensemble des marques, voici les plus utilisés sur un an.</p>
-  <div class="share">
-    <div class="share-row"><span><b>Carte bancaire</b></span><div class="share-bar"><i style="width:39.5%"></i></div><span class="pct">39&nbsp;%</span></div>
-    <div class="share-row"><span><b>Chèque</b> (à la marque ou à la conseillère)</span><div class="share-bar"><i style="width:28.8%"></i></div><span class="pct">29&nbsp;%</span></div>
-    <div class="share-row"><span><b>Espèces</b></span><div class="share-bar"><i style="width:11.2%"></i></div><span class="pct">11&nbsp;%</span></div>
-    <div class="share-row"><span><b>Virement</b></span><div class="share-bar"><i style="width:10.2%"></i></div><span class="pct">10&nbsp;%</span></div>
-    <div class="share-row"><span>Cadeau, avantage, prélèvement, financement, autres</span><div class="share-bar"><i style="width:10.3%"></i></div><span class="pct">11&nbsp;%</span></div>
-  </div>
+  <p class="lede">Les moyens de paiement proposés dépendent de votre paramétrage et du type de commande. Parmi eux&nbsp;:</p>
+  <ul class="prose">
+    <li><strong>Carte bancaire</strong>&nbsp;;</li>
+    <li><strong>Chèque</strong> (à la marque ou à la conseillère)&nbsp;;</li>
+    <li><strong>Espèces</strong>&nbsp;;</li>
+    <li><strong>Virement</strong>&nbsp;;</li>
+    <li>cadeau, avantage, prélèvement, financement, et d'autres selon les options de votre marque.</li>
+  </ul>
   <p class="muted">«&nbsp;Cadeau&nbsp;» correspond aux commandes cadeaux (rien à payer) et «&nbsp;Avantage&nbsp;» aux commandes réglées par un avantage (bon d'achat, points…).</p>
 </section>
 
@@ -401,7 +393,7 @@
 </div>
 <div class="pager-wrap"><nav class="pager" aria-label="Pages de l'univers"><span></span><a class="next" href="commandes-gerer.html"><small>Suivant →</small><span>Créer, modifier et finaliser une commande</span></a></nav>
 </div>
-<footer><div class="ft"><a href="ventes.html">← Ventes</a><span>SellingAtHome · Comprendre les commandes</span><span>Version 1.0.0 · octobre 2026</span></div></footer>
+<footer><div class="ft"><a href="ventes.html">← Ventes</a><span>SellingAtHome · Comprendre les commandes</span><span>Version 1.0.1 · octobre 2026</span></div></footer>
 
 <button class="to-top" id="toTop" type="button" aria-label="Remonter en haut de la page" title="Haut de page"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
 

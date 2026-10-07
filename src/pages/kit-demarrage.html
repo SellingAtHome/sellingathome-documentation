@@ -8,7 +8,6 @@
 .tl p { color:var(--muted); font-size:.93rem; margin-top:4px; }
 .opts td:first-child { width:34%; }
 .opts td:nth-child(3) { width:12%; white-space:nowrap; font-size:.88rem; color:var(--muted); }
-.opts td:nth-child(4) { width:12%; white-space:nowrap; font-size:.88rem; color:var(--muted); }
 </style>
 <header class="hero">
   <div class="hero-in">
@@ -41,9 +40,8 @@
         <li data-sec="tunnel"><a href="#tunnel"><span class="toc-n">4</span>Le tunnel d'achat</a></li>
         <li data-sec="commande"><a href="#commande"><span class="toc-n">5</span>La commande «&nbsp;Kit de démarrage&nbsp;»</a></li>
         <li data-sec="relance"><a href="#relance"><span class="toc-n">6</span>Suivre et relancer</a></li>
-        <li data-sec="chiffres"><a href="#chiffres"><span class="toc-n">7</span>Les kits en chiffres</a></li>
-        <li data-sec="attention"><a href="#attention"><span class="toc-n">8</span>Points d'attention</a></li>
-        <li data-sec="faq"><a href="#faq"><span class="toc-n">9</span>Questions fréquentes</a></li>
+        <li data-sec="attention"><a href="#attention"><span class="toc-n">7</span>Points d'attention</a></li>
+        <li data-sec="faq"><a href="#faq"><span class="toc-n">8</span>Questions fréquentes</a></li>
       </ol>
     </details>
   </nav>
@@ -71,8 +69,8 @@
   <p>Dans la fiche d'une catégorie de votre catalogue, la case <strong>Kit de démarrage</strong> en fait une catégorie de kit. Les produits rangés dans ces catégories sont ceux proposés dans le tunnel. Avec plusieurs catégories de kit, vous pouvez proposer plusieurs formules (par exemple «&nbsp;Essentiel&nbsp;» et «&nbsp;Premium&nbsp;»)&nbsp;: voir l'option «&nbsp;Activer l'entrée par catégorie&nbsp;» ci-dessous.</p>
 
   <h3 id="s2-2"><span class="sub-num">2.2</span> Les frais de livraison</h3>
-  <p>Le tunnel propose les modes de livraison de votre marque, chacun avec son tarif. Si le type de commande <strong>Kit de démarrage</strong> est activé pour votre marque (8 marques sur 35), chaque mode de livraison peut être déclaré <strong>Indisponible pour&nbsp;:</strong> Kit de démarrage. Vous pouvez ainsi réserver au kit un mode dédié, avec son propre tarif, et masquer les autres.</p>
-  <div class="example"><span class="ex-label">Exemple</span><p>Vous créez un mode «&nbsp;Livraison kit offerte&nbsp;» à 0&nbsp;€, et déclarez vos autres modes indisponibles pour le kit. Manon ne voit que la livraison offerte. Dans les faits, 97&nbsp;% des kits payés sur un an l'ont été sans frais de livraison.</p></div>
+  <p>Le tunnel propose les modes de livraison de votre marque, chacun avec son tarif. Si le type de commande <strong>Kit de démarrage</strong> est activé pour votre marque, chaque mode de livraison peut être déclaré <strong>Indisponible pour&nbsp;:</strong> Kit de démarrage. Vous pouvez ainsi réserver au kit un mode dédié, avec son propre tarif, et masquer les autres.</p>
+  <div class="example"><span class="ex-label">Exemple</span><p>Vous créez un mode «&nbsp;Livraison kit offerte&nbsp;» à 0&nbsp;€, et déclarez vos autres modes indisponibles pour le kit. Manon ne voit que la livraison offerte.</p></div>
   <p class="muted">Le détail des modes et des frais est dans l'univers <a href="catalogue.html">Catalogue et logistique</a>.</p>
 </section>
 
@@ -81,13 +79,13 @@
   <div class="path" aria-label="Chemin d'accès"><span>Espace marque</span><span>Formulaires</span><span>Recrutements</span><span>Configuration</span><span>Onglet <b>Kit de démarrage</b></span></div>
   <figure><img src="Captures/Recrutement/parametres-kit.png" alt="Onglet Kit de démarrage : cases Activer le tunnel d'achat du kit de demarrage, Activer l'entrée par catégorie, Afficher un délai de livraison estimée, nombre de jours pour la relance, Afficher le bouton de connexion au compte après le paiement du kit ; à droite, par langue : visuel, titre du formulaire, texte d'introduction, visuel bannière confirmation commande, mentions en pied de page, titre et texte de la page de confirmation, texte du bouton de connexion" loading="lazy"><figcaption>L'onglet Kit de démarrage.</figcaption></figure>
   <div class="table-wrap"><table class="opts">
-    <thead><tr><th>Option</th><th>Effet</th><th>Défaut</th><th>Marques</th></tr></thead>
+    <thead><tr><th>Option</th><th>Effet</th><th>Défaut</th></tr></thead>
     <tbody>
-      <tr><td><b>Activer le tunnel d'achat du kit de demarrage</b></td><td>À la création du compte, une commande de kit est préparée et la nouvelle conseillère reçoit le lien d'achat. Sans cette case, pas de kit en ligne.</td><td>Non</td><td>11 sur 32</td></tr>
-      <tr><td><b>Activer l'entrée par catégorie</b></td><td>Le tunnel commence par le choix d'une formule (une carte par catégorie de kit, avec sa photo), puis affiche les produits de la formule choisie. Sinon, tous les produits de kit s'affichent d'un coup. Ajoute les champs Titre «&nbsp;choix de la catégorie&nbsp;» et Texte explication catégorie.</td><td>Non</td><td>2 sur 11</td></tr>
-      <tr><td><b>Afficher un délai de livraison estimée&nbsp;: entre J+&nbsp;x et J+x</b></td><td>Prévu pour afficher un délai de livraison. <strong>Sans effet à ce jour</strong>&nbsp;: le délai n'est pas affiché dans le tunnel.</td><td>Non</td><td>—</td></tr>
-      <tr><td><b>Nombre de jours pour la relance d'achat du kit de démarrage</b></td><td>Prévu pour relancer automatiquement les conseillères qui n'ont pas acheté leur kit. <strong>Pas de relance automatique à ce jour</strong>&nbsp;: relancez depuis la fiche (voir <a href="#relance">plus bas</a>).</td><td>—</td><td>—</td></tr>
-      <tr><td><b>Afficher le bouton de connexion au compte après le paiement du kit</b></td><td>La page de confirmation affiche un bouton (texte au choix) vers l'espace conseillère, ou vers l'activation du compte si elle n'a pas encore de mot de passe.</td><td>Non</td><td>10 sur 11</td></tr>
+      <tr><td><b>Activer le tunnel d'achat du kit de demarrage</b></td><td>À la création du compte, une commande de kit est préparée et la nouvelle conseillère reçoit le lien d'achat. Sans cette case, pas de kit en ligne.</td><td>Non</td></tr>
+      <tr><td><b>Activer l'entrée par catégorie</b></td><td>Le tunnel commence par le choix d'une formule (une carte par catégorie de kit, avec sa photo), puis affiche les produits de la formule choisie. Sinon, tous les produits de kit s'affichent d'un coup. Ajoute les champs Titre «&nbsp;choix de la catégorie&nbsp;» et Texte explication catégorie.</td><td>Non</td></tr>
+      <tr><td><b>Afficher un délai de livraison estimée&nbsp;: entre J+&nbsp;x et J+x</b></td><td>Prévu pour afficher un délai de livraison. <strong>Sans effet à ce jour</strong>&nbsp;: le délai n'est pas affiché dans le tunnel.</td><td>Non</td></tr>
+      <tr><td><b>Nombre de jours pour la relance d'achat du kit de démarrage</b></td><td>Prévu pour relancer automatiquement les conseillères qui n'ont pas acheté leur kit. <strong>Pas de relance automatique à ce jour</strong>&nbsp;: relancez depuis la fiche (voir <a href="#relance">plus bas</a>).</td><td>—</td></tr>
+      <tr><td><b>Afficher le bouton de connexion au compte après le paiement du kit</b></td><td>La page de confirmation affiche un bouton (texte au choix) vers l'espace conseillère, ou vers l'activation du compte si elle n'a pas encore de mot de passe.</td><td>Non</td></tr>
     </tbody>
   </table></div>
   <p>À droite, par langue&nbsp;: <strong>Visuel</strong>, <strong>Titre du formulaire</strong>, <strong>Texte d'introduction</strong>, <strong>Visuel bannière confirmation commande</strong>, <strong>Mentions en pied de page</strong> (conditions, informations légales), <strong>Titre de la page de confirmation</strong>, <strong>Texte de la page confirmation</strong> et <strong>Texte du bouton de connexion</strong>. Le titre de confirmation peut contenir <code>*|firstname|*</code> (prénom) et le texte <code>*|order_ref_code|*</code> (référence de commande). <strong>Prévisualiser</strong> ouvre le tunnel en démonstration.</p>
@@ -102,7 +100,7 @@
     <li>Elle paie en ligne, avec les moyens de paiement prévus pour le kit.</li>
     <li>Elle arrive sur la page de confirmation, avec le bouton de connexion si vous l'avez activé, et reçoit l'email de confirmation de commande.</li>
   </ol>
-  <p>Au paiement, sa recruteuse reçoit l'email de fin de recrutement et, si votre marque a activé le déverrouillage automatique (5 marques sur 32), l'accès de la conseillère à son espace est ouvert. Sinon, déverrouillez-le depuis sa fiche vendeur, onglet <strong>Sécurité</strong>.</p>
+  <p>Au paiement, sa recruteuse reçoit l'email de fin de recrutement et, si votre marque a activé le déverrouillage automatique, l'accès de la conseillère à son espace est ouvert. Sinon, déverrouillez-le depuis sa fiche vendeur, onglet <strong>Sécurité</strong>.</p>
 </section>
 
 <section id="commande">
@@ -127,19 +125,8 @@
   <p>Une fois le kit payé, le bouton <strong>Kit de démarrage</strong> ouvre directement la commande.</p>
 </section>
 
-<section id="chiffres">
-  <div class="sec-head"><span class="sec-num">07</span><h2>Les kits en chiffres</h2></div>
-  <div class="stats">
-    <div class="stat"><b>10</b><span>marques ont vendu des kits sur un an</span></div>
-    <div class="stat"><b>≈ 2 900</b><span>kits payés sur un an</span></div>
-    <div class="stat"><b>75 €</b><span>montant médian d'un kit payé (TTC)</span></div>
-    <div class="stat"><b>86 %</b><span>des commandes de kit créées sont payées</span></div>
-    <div class="stat"><b>97 %</b><span>des kits payés sans frais de livraison</span></div>
-  </div>
-</section>
-
 <section id="attention">
-  <div class="sec-head"><span class="sec-num">08</span><h2>Points d'attention</h2></div>
+  <div class="sec-head"><span class="sec-num">07</span><h2>Points d'attention</h2></div>
   <ul class="prose">
     <li><strong>Pas de catégorie de kit, pas de produit</strong>&nbsp;: le tunnel est vide.</li>
     <li><strong>Le lien ne marche qu'après la création du compte</strong>&nbsp;: avant, il affiche une page introuvable.</li>
@@ -149,7 +136,7 @@
 </section>
 
 <section id="faq">
-  <div class="sec-head"><span class="sec-num">09</span><h2>Questions fréquentes</h2></div>
+  <div class="sec-head"><span class="sec-num">08</span><h2>Questions fréquentes</h2></div>
   <div class="faq">
     <details><summary>La conseillère dit que son lien de kit affiche une erreur.</summary><div><p>Vérifiez que son compte a bien été créé (candidature «&nbsp;Terminée&nbsp;») et que le tunnel est activé. Renvoyez-lui le lien depuis sa fiche.</p></div></details>
     <details><summary>Peut-on proposer plusieurs kits&nbsp;?</summary><div><p>Oui&nbsp;: créez une catégorie de kit par formule et activez l'entrée par catégorie.</p></div></details>

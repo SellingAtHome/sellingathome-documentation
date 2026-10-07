@@ -67,11 +67,6 @@
 <section id="s1">
   <div class="sec-head"><span class="sec-num">01</span><h2>L'essentiel</h2></div>
   <p class="lede">Le stock est <strong>facultatif</strong>, produit par produit. Un produit dont le stock est suivi ne peut plus être ajouté au panier quand il n'en reste plus, sauf si vous autorisez la rupture. Le stock baisse <strong>dès l'ajout au panier</strong> par la conseillère, pas au paiement.</p>
-  <div class="stats">
-    <div class="stat"><b>23 / 35</b><span>marques actives suivent le stock d'au moins un produit</span></div>
-    <div class="stat"><b>7 / 35</b><span>le suivent par déclinaison (taille, couleur…)</span></div>
-    <div class="stat"><b>14 / 35</b><span>autorisent la rupture sur certains produits</span></div>
-  </div>
   <div class="tip"><span class="ex-label">Vocabulaire</span><p>L'espace marque parle de «&nbsp;Vendeur&nbsp;» pour la <strong>conseillère</strong>&nbsp;: «&nbsp;Stock vendeurs&nbsp;», «&nbsp;Comment les vendeurs voient les stocks&nbsp;?&nbsp;».</p></div>
 </section>
 
@@ -163,7 +158,7 @@
     </tbody>
   </table></div>
   <p>Chloé vend un coffret&nbsp;: collier 10 → 9, boucles 7 → 5. Il reste 2 coffrets possibles.</p>
-  <p>Si vous cochez <strong>Stock au produit groupé</strong> (sous le type de produit), le lot devient un article à part entière&nbsp;: sa méthode passe à «&nbsp;Suivre les stocks&nbsp;», vous saisissez sa quantité, et c'est elle qui baisse à la vente. Utile pour un coffret préparé à l'avance en entrepôt. 2 marques actives l'utilisent.</p>
+  <p>Si vous cochez <strong>Stock au produit groupé</strong> (sous le type de produit), le lot devient un article à part entière&nbsp;: sa méthode passe à «&nbsp;Suivre les stocks&nbsp;», vous saisissez sa quantité, et c'est elle qui baisse à la vente. Utile pour un coffret préparé à l'avance en entrepôt.</p>
 
   <h3 id="s5-2"><span class="sub-num">5.2</span> Le kit variable</h3>
   <p>Le kit n'a jamais de stock à lui. À la vente, ce sont <strong>les produits choisis</strong> par la conseillère dans chaque composant qui sont déstockés, et l'ajout est refusé si l'un d'eux est épuisé (sans rupture autorisée). L'annulation du kit remet ces produits en stock.</p>
@@ -225,11 +220,11 @@
     <div class="prose" style="display:flex;flex-direction:column;gap:12px">
       <p>Le réglage <strong>Comment les vendeurs voient les stocks&nbsp;?</strong> décide de ce que le catalogue de l'espace conseillère montre&nbsp;:</p>
       <div class="table-wrap"><table class="opts">
-        <thead><tr><th>Valeur</th><th>Affichage</th><th>Marques actives</th></tr></thead>
+        <thead><tr><th>Valeur</th><th>Affichage</th></tr></thead>
         <tbody>
-          <tr><td><b>Aucun</b> (par défaut)</td><td>Aucune information de stock.</td><td>9</td></tr>
-          <tr><td><b>Avec un symbole coloré</b></td><td>Un badge de couleur&nbsp;: en stock, stock faible, en rupture, sans quantité.</td><td>7</td></tr>
-          <tr><td><b>Avec le chiffre exact</b></td><td>Le même badge, avec la quantité.</td><td>17</td></tr>
+          <tr><td><b>Aucun</b> (par défaut)</td><td>Aucune information de stock.</td></tr>
+          <tr><td><b>Avec un symbole coloré</b></td><td>Un badge de couleur&nbsp;: en stock, stock faible, en rupture, sans quantité.</td></tr>
+          <tr><td><b>Avec le chiffre exact</b></td><td>Le même badge, avec la quantité.</td></tr>
         </tbody>
       </table></div>
     </div>
@@ -252,7 +247,7 @@
   <div class="figrow">
     <figure><img src="Captures/Catalogue/reglages-seuil.png" alt="Bloc Rapports : champ Stock minimal de produit pour apparaître dans le rapport de stock faible, valeur 15" loading="lazy"><figcaption>Le seuil, dans Paramètres › Configuration générale.</figcaption></figure>
     <div class="prose" style="display:flex;flex-direction:column;gap:12px">
-      <p>Le seuil se règle dans <strong>Paramètres › Configuration générale › Paramètres généraux</strong>, bloc <strong>Rapports</strong>&nbsp;: «&nbsp;Stock minimal de produit pour apparaître dans le rapport de stock faible&nbsp;». Il vaut 5 par défaut (21 marques actives sur 35 l'ont gardé).</p>
+      <p>Le seuil se règle dans <strong>Paramètres › Configuration générale › Paramètres généraux</strong>, bloc <strong>Rapports</strong>&nbsp;: «&nbsp;Stock minimal de produit pour apparaître dans le rapport de stock faible&nbsp;». Il vaut 5 par défaut.</p>
       <p>Le même seuil colore en orange le badge «&nbsp;En stock&nbsp;» de la liste des produits.</p>
       <p class="muted">Le rapport ne déclenche pas d'alerte&nbsp;: consultez-le régulièrement.</p>
     </div>
@@ -266,8 +261,8 @@
   <div class="figrow">
     <figure><img src="Captures/Catalogue/reglages-restock.png" alt="Bloc Paramètres des commandes : cases dont Permettre le réapprovisionnement des produits en cas d'annulation d'une commande et Permettre le réapprovisionnement des produits en cas de suppression d'une commande, cochées" loading="lazy"><figcaption>Les deux options de remise en stock.</figcaption></figure>
     <div class="prose" style="display:flex;flex-direction:column;gap:12px">
-      <p><strong>Permettre le réapprovisionnement des produits en cas de suppression d'une commande</strong>&nbsp;: quand une commande non payée est supprimée (à la main ou automatiquement), ses produits reviennent en stock. Activée par défaut&nbsp;; 24 marques actives sur 35 la gardent.</p>
-      <p><strong>Permettre le réapprovisionnement des produits en cas d'annulation d'une commande</strong>&nbsp;: à chaque annulation d'une commande payée, l'espace marque vous demande «&nbsp;Re-stocker les produits&nbsp;?&nbsp;» (ou «&nbsp;Voulez-vous restocker tous les produits annulés&nbsp;?&nbsp;» en action groupée). Activée par défaut&nbsp;; 30 marques actives sur 35.</p>
+      <p><strong>Permettre le réapprovisionnement des produits en cas de suppression d'une commande</strong>&nbsp;: quand une commande non payée est supprimée (à la main ou automatiquement), ses produits reviennent en stock. Activée par défaut.</p>
+      <p><strong>Permettre le réapprovisionnement des produits en cas d'annulation d'une commande</strong>&nbsp;: à chaque annulation d'une commande payée, l'espace marque vous demande «&nbsp;Re-stocker les produits&nbsp;?&nbsp;» (ou «&nbsp;Voulez-vous restocker tous les produits annulés&nbsp;?&nbsp;» en action groupée). Activée par défaut.</p>
     </div>
   </div>
   <div class="warn"><span class="ex-label">Attention</span><p>Lors d'une annulation, un message affirme que «&nbsp;si votre commande n'est pas expédiée le restockage se fera automatiquement peu importe l'option choisie&nbsp;». Ce n'est pas le cas&nbsp;: la remise en stock n'a lieu que si vous la demandez (et si l'option de la marque est active), que la commande soit expédiée ou non.</p></div>

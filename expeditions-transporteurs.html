@@ -16,7 +16,6 @@
 .tl b { color:var(--heading); display:block; }
 .tl p { color:var(--muted); font-size:.93rem; margin-top:4px; }
 .opts td:first-child { width:28%; }
-.carriers td:nth-child(3) { white-space:nowrap; }
 .paths { display:grid; grid-template-columns:repeat(auto-fit, minmax(210px,1fr)); gap:14px; }
 .paths .card { border-top:5px solid var(--accent); }
 .paths .card:nth-child(2) { border-top-color:var(--pink); }
@@ -127,9 +126,8 @@
         </li>
         <li data-sec="logisticien"><a href="#logisticien"><span class="toc-n">6</span>Avec un logisticien</a></li>
         <li data-sec="livraisons"><a href="#livraisons"><span class="toc-n">7</span>L'écran Livraisons des commandes</a></li>
-        <li data-sec="adoption"><a href="#adoption"><span class="toc-n">8</span>Qui utilise quoi</a></li>
-        <li data-sec="attention"><a href="#attention"><span class="toc-n">9</span>Points d'attention</a></li>
-        <li data-sec="faq"><a href="#faq"><span class="toc-n">10</span>Questions fréquentes</a></li>
+        <li data-sec="attention"><a href="#attention"><span class="toc-n">8</span>Points d'attention</a></li>
+        <li data-sec="faq"><a href="#faq"><span class="toc-n">9</span>Questions fréquentes</a></li>
       </ol>
     </details>
   </nav>
@@ -152,7 +150,7 @@
 <!-- 2 -->
 <section id="bons">
   <div class="sec-head"><span class="sec-num">02</span><h2>Les bons d'expédition</h2></div>
-  <p class="lede">Chaque envoi, total ou partiel, est enregistré dans un <strong>bon d'expédition</strong>&nbsp;: une référence commençant par <code>BL</code>, la date, les quantités envoyées et, s'il y en a un, le lien de suivi. Sur un an, 22 marques sur 35 en ont créé.</p>
+  <p class="lede">Chaque envoi, total ou partiel, est enregistré dans un <strong>bon d'expédition</strong>&nbsp;: une référence commençant par <code>BL</code>, la date, les quantités envoyées et, s'il y en a un, le lien de suivi.</p>
 
   <h3 id="s2-1"><span class="sub-num">2.1</span> Comment ils sont créés</h3>
   <div class="timeline">
@@ -177,12 +175,12 @@
   <div class="table-wrap"><table class="opts">
     <thead><tr><th>Qui le renseigne</th><th>Comment</th></tr></thead>
     <tbody>
-      <tr><td><b>Votre logisticien</b></td><td>Automatiquement, avec l'envoi. C'est le cas le plus fréquent.</td></tr>
+      <tr><td><b>Votre logisticien</b></td><td>Automatiquement, avec l'envoi.</td></tr>
       <tr><td><b>L'étiquette GLS</b></td><td>Le lien de suivi GLS est ajouté au bon d'expédition. L'étiquette DPD, elle, n'en ajoute pas.</td></tr>
       <tr><td><b>Vous, dans la fiche commande</b></td><td>Boutons <strong>Ajouter le lien de suivi</strong> / <strong>Editer le lien de suivi</strong>. Le lien doit être une adresse complète (<code>https://…</code>), sinon le message «&nbsp;url invalide&nbsp;» s'affiche.</td></tr>
     </tbody>
   </table></div>
-  <div class="warn"><span class="ex-label">Modification verrouillée par défaut</span><p>Pour la plupart des marques (32 sur 35), la saisie du lien dans la fiche commande est <strong>verrouillée</strong>&nbsp;: on voit le bouton «&nbsp;Suivre le colis&nbsp;» mais pas les boutons d'ajout. Si vous souhaitez saisir vos liens vous-même, demandez à SellingAtHome de lever ce verrou.</p></div>
+  <div class="warn"><span class="ex-label">Modification verrouillée par défaut</span><p>Par défaut, la saisie du lien dans la fiche commande est <strong>verrouillée</strong>&nbsp;: on voit le bouton «&nbsp;Suivre le colis&nbsp;» mais pas les boutons d'ajout. Si vous souhaitez saisir vos liens vous-même, demandez à SellingAtHome de lever ce verrou.</p></div>
   <p>Quand vous ajoutez ou modifiez un lien depuis la fiche commande, la cliente reçoit un <strong>email de suivi</strong> avec le lien, son adresse et le mode de livraison (le modèle de cet email se gère avec les autres&nbsp;: voir <a href="pilotage.html">Communication et pilotage</a>). La conseillère voit le bouton de suivi dans la commande, depuis son espace et l'application.</p>
   <div class="example"><span class="ex-label">Exemple</span><p>Vous expédiez le colis de Camille par La Poste. Dans sa commande, vous cliquez sur «&nbsp;Ajouter le lien de suivi&nbsp;» et collez l'adresse de suivi fournie par La Poste. Camille reçoit aussitôt l'email de suivi&nbsp;; Léa, sa conseillère, voit «&nbsp;Suivre le colis&nbsp;» dans la commande.</p></div>
 </section>
@@ -190,7 +188,7 @@
 <!-- 4 -->
 <section id="etiquettes">
   <div class="sec-head"><span class="sec-num">04</span><h2>Les étiquettes GLS et DPD</h2></div>
-  <p class="lede">Avec un compte GLS ou DPD paramétré par SellingAtHome, l'espace marque crée l'étiquette d'expédition sans passer par le site du transporteur. Une marque utilise GLS et une autre DPD&nbsp;; ensemble, elles ont généré environ 6&nbsp;300 étiquettes sur un an.</p>
+  <p class="lede">Avec un compte GLS ou DPD paramétré par SellingAtHome, l'espace marque crée l'étiquette d'expédition sans passer par le site du transporteur.</p>
   <ol class="prose">
     <li><strong>Une commande</strong>&nbsp;: dans la fiche d'une commande payée et non expédiée, bouton <strong>Générer l'étiquette GLS</strong> (ou <strong>Générer l'étiquette DPD</strong>).</li>
     <li><strong>Plusieurs commandes</strong>&nbsp;: dans la liste, cochez les commandes, puis <strong>Action pour la sélection</strong> › <strong>Générer l'étiquette GLS</strong> ou <strong>Générer l'étiquette DPD</strong>.</li>
@@ -214,36 +212,36 @@
   <h3 id="s5-1"><span class="sub-num">5.1</span> Les modes transporteur</h3>
   <p>Les modes transporteur s'ajoutent aux modes de livraison classiques (chez la conseillère, chez la cliente…). SellingAtHome les met en place avec vos identifiants transporteur&nbsp;; vous les activez ensuite et fixez leurs frais dans les paramètres de livraison (voir <a href="catalogue.html">Catalogue et logistique</a>).</p>
   <div class="table-wrap"><table class="carriers">
-    <thead><tr><th>Mode</th><th>Fonctionnement</th><th>Marques actives</th></tr></thead>
+    <thead><tr><th>Mode</th><th>Fonctionnement</th></tr></thead>
     <tbody>
-      <tr><td><b>Mondial Relay</b></td><td>La cliente ou la conseillère choisit un point relais sur une carte, au moment de la commande.</td><td>9 sur 35</td></tr>
-      <tr><td><b>Point Relais DPD</b></td><td>Choix d'un point relais DPD.</td><td>5</td></tr>
-      <tr><td><b>Livraison en point relais GLS</b></td><td>Choix d'un point relais GLS.</td><td>2</td></tr>
-      <tr><td><b>DPD Predict</b></td><td>Livraison à domicile avec créneau annoncé par DPD.</td><td>2</td></tr>
-      <tr><td><b>Point relais Colissimo</b></td><td>Choix d'un point de retrait Colissimo.</td><td>1</td></tr>
+      <tr><td><b>Mondial Relay</b></td><td>La cliente ou la conseillère choisit un point relais sur une carte, au moment de la commande.</td></tr>
+      <tr><td><b>Point Relais DPD</b></td><td>Choix d'un point relais DPD.</td></tr>
+      <tr><td><b>Livraison en point relais GLS</b></td><td>Choix d'un point relais GLS.</td></tr>
+      <tr><td><b>DPD Predict</b></td><td>Livraison à domicile avec créneau annoncé par DPD.</td></tr>
+      <tr><td><b>Point relais Colissimo</b></td><td>Choix d'un point de retrait Colissimo.</td></tr>
     </tbody>
   </table></div>
-  <p>Le point relais choisi devient l'adresse de livraison de la commande. Sur un an, Mondial Relay est de loin le plus utilisé (environ 12&nbsp;000 commandes payées).</p>
+  <p>Le point relais choisi devient l'adresse de livraison de la commande.</p>
   <div class="tip"><span class="ex-label">Bon à savoir</span><p>Choisir un point relais ne crée pas l'étiquette&nbsp;: l'étiquette Mondial Relay, par exemple, est produite par votre logisticien ou votre outil d'expédition.</p></div>
 
   <h3 id="s5-2"><span class="sub-num">5.2</span> Retours produits&nbsp;: Colissimo et DPD</h3>
-  <p>Avec la version la plus récente du module de retours, une étiquette de <strong>retour</strong> Colissimo ou DPD peut être générée pour que la conseillère renvoie les produits à votre entrepôt&nbsp;; elle est jointe à l'email de retour. Aucune marque active ne l'utilise aujourd'hui. Voir <a href="ventes.html">Commandes et boutiques</a> pour les retours produits.</p>
+  <p>Avec la version la plus récente du module de retours, une étiquette de <strong>retour</strong> Colissimo ou DPD peut être générée pour que la conseillère renvoie les produits à votre entrepôt&nbsp;; elle est jointe à l'email de retour. Voir <a href="ventes.html">Commandes et boutiques</a> pour les retours produits.</p>
 
   <h3 id="s5-3"><span class="sub-num">5.3</span> Boxtal et autres services d'envoi</h3>
-  <p>Des connexions existent avec des services d'envoi multi-transporteurs, dont <strong>Boxtal</strong>&nbsp;: les commandes payées y sont transmises automatiquement, et le coût de la livraison peut être calculé par Boxtal. Aucune marque active ne les utilise aujourd'hui&nbsp;: renseignez-vous auprès de SellingAtHome avant d'envisager cette solution.</p>
+  <p>Des connexions existent avec des services d'envoi multi-transporteurs, dont <strong>Boxtal</strong>&nbsp;: les commandes payées y sont transmises automatiquement, et le coût de la livraison peut être calculé par Boxtal. Renseignez-vous auprès de SellingAtHome avant d'envisager cette solution.</p>
 </section>
 
 <!-- 6 -->
 <section id="logisticien">
   <div class="sec-head"><span class="sec-num">06</span><h2>Avec un logisticien</h2></div>
-  <p class="lede">Si un logisticien prépare vos colis, SellingAtHome peut lui transmettre les commandes et recevoir en retour l'avancement. Plus d'une dizaine de marques sur 35 ont une telle connexion.</p>
+  <p class="lede">Si un logisticien prépare vos colis, SellingAtHome peut lui transmettre les commandes et recevoir en retour l'avancement.</p>
   <div class="timeline">
     <div class="tl"><b>1. Transmission</b><p>Les commandes payées (ou les commandes de regroupement clôturées) sont envoyées au logisticien, automatiquement ou à intervalles réguliers.</p></div>
     <div class="tl"><b>2. Préparation</b><p>Le logisticien signale la prise en charge&nbsp;: la commande passe «&nbsp;En préparation&nbsp;».</p></div>
     <div class="tl"><b>3. Expédition</b><p>Il signale l'envoi&nbsp;: «&nbsp;Commande expédiée&nbsp;» (ou partiellement), avec les produits envoyés et le lien de suivi. Un bon d'expédition est créé.</p></div>
     <div class="tl stop"><b>4. Livraison</b><p>S'il transmet la livraison, la commande passe «&nbsp;Commande livrée&nbsp;» et donc «&nbsp;Terminée&nbsp;».</p></div>
   </div>
-  <p>Ces mises à jour passent par l'API de SellingAtHome ou par des connecteurs prêts à l'emploi pour certains logisticiens (le plus répandu est utilisé par 10 marques). Vous n'avez rien à faire dans l'espace marque&nbsp;: vérifiez simplement que la pastille «&nbsp;à expédier&nbsp;» du menu Commandes diminue au fil des envois. La liste des intégrations disponibles est dans <a href="pilotage.html">Communication et pilotage</a>.</p>
+  <p>Ces mises à jour passent par l'API de SellingAtHome ou par des connecteurs prêts à l'emploi pour certains logisticiens. Vous n'avez rien à faire dans l'espace marque&nbsp;: vérifiez simplement que la pastille «&nbsp;à expédier&nbsp;» du menu Commandes diminue au fil des envois. La liste des intégrations disponibles est dans <a href="pilotage.html">Communication et pilotage</a>.</p>
   <div class="warn"><span class="ex-label">Attention</span><p>Avec un logisticien, ne modifiez pas à la main les statuts d'expédition des commandes qu'il traite&nbsp;: vous risqueriez des doublons de bons d'expédition ou des statuts contradictoires.</p></div>
 </section>
 
@@ -251,7 +249,7 @@
 <section id="livraisons">
   <div class="sec-head"><span class="sec-num">07</span><h2>L'écran Livraisons des commandes</h2></div>
   <div class="path" aria-label="Chemin d'accès"><span>Espace marque</span><span>Commandes</span><span><b>Livraisons des commandes</b></span></div>
-  <p class="lede">Pour les marques dont le logisticien regroupe plusieurs commandes dans un même colis, cet écran liste les <strong>livraisons</strong> (colis) et les commandes qu'elles contiennent. Il est ouvert sur demande&nbsp;; 3 marques sur 35 l'ont.</p>
+  <p class="lede">Pour les marques dont le logisticien regroupe plusieurs commandes dans un même colis, cet écran liste les <strong>livraisons</strong> (colis) et les commandes qu'elles contiennent. Il est ouvert sur demande.</p>
   <div class="table-wrap"><table class="opts">
     <thead><tr><th>Colonne</th><th>Contenu</th></tr></thead>
     <tbody>
@@ -268,24 +266,8 @@
 </section>
 
 <!-- 8 -->
-<section id="adoption">
-  <div class="sec-head"><span class="sec-num">08</span><h2>Qui utilise quoi</h2></div>
-  <p>Nombre de marques, sur les 35 marques actives, qui ont la fonction activée (ou, pour les bons et liens de suivi, qui l'ont utilisée sur les douze derniers mois)&nbsp;:</p>
-  <div class="share" aria-label="Nombre de marques par fonction">
-    <div class="share-row"><span><b>Bons d'expédition</b></span><div class="share-bar"><i style="width:62.9%"></i></div><span class="pct">22</span></div>
-    <div class="share-row"><span><b>Lien de suivi</b> (sur les commandes)</span><div class="share-bar"><i style="width:37.1%"></i></div><span class="pct">13</span></div>
-    <div class="share-row"><span><b>Connexion logisticien</b></span><div class="share-bar"><i style="width:37.1%"></i></div><span class="pct">13</span></div>
-    <div class="share-row"><span><b>Mondial Relay</b></span><div class="share-bar"><i style="width:25.7%"></i></div><span class="pct">9</span></div>
-    <div class="share-row"><span><b>Point Relais DPD</b></span><div class="share-bar"><i style="width:14.3%"></i></div><span class="pct">5</span></div>
-    <div class="share-row"><span><b>Livraisons des commandes</b></span><div class="share-bar"><i style="width:8.6%"></i></div><span class="pct">3</span></div>
-    <div class="share-row"><span><b>Étiquettes GLS / DPD</b></span><div class="share-bar"><i style="width:5.7%"></i></div><span class="pct">2</span></div>
-    <div class="share-row"><span>Boxtal, étiquettes de retour Colissimo</span><div class="share-bar"><i style="width:0%"></i></div><span class="pct">0</span></div>
-  </div>
-</section>
-
-<!-- 9 -->
 <section id="attention">
-  <div class="sec-head"><span class="sec-num">09</span><h2>Points d'attention</h2></div>
+  <div class="sec-head"><span class="sec-num">08</span><h2>Points d'attention</h2></div>
   <ul class="prose">
     <li><strong>«&nbsp;Commande expédiée&nbsp;» ne termine pas la commande</strong>&nbsp;: seul «&nbsp;Commande livrée&nbsp;» la passe en «&nbsp;Terminée&nbsp;» (voir <a href="commandes-comprendre.html#s4-1">Comprendre les commandes</a>).</li>
     <li><strong>L'email de suivi</strong> part quand le lien est ajouté depuis la fiche commande, pas quand une étiquette GLS ou DPD est générée.</li>
@@ -295,9 +277,9 @@
   </ul>
 </section>
 
-<!-- 10 -->
+<!-- 9 -->
 <section id="faq">
-  <div class="sec-head"><span class="sec-num">10</span><h2>Questions fréquentes</h2></div>
+  <div class="sec-head"><span class="sec-num">09</span><h2>Questions fréquentes</h2></div>
   <div class="faq">
     <details><summary>Je ne vois pas les boutons pour ajouter un lien de suivi.</summary><div><p>La saisie du lien est verrouillée pour votre marque (réglage par défaut). Demandez à SellingAtHome de la déverrouiller.</p></div></details>
     <details><summary>Je ne vois pas «&nbsp;Générer l'étiquette GLS&nbsp;».</summary><div><p>Les étiquettes GLS et DPD supposent un contrat avec le transporteur et un paramétrage par SellingAtHome. Voir <a href="modules-options.html">Modules et options</a>.</p></div></details>
@@ -311,7 +293,7 @@
 </div>
 <div class="pager-wrap"><nav class="pager" aria-label="Pages de l'univers"><a class="prev" href="approvisionnement.html"><small>← Précédent</small><span>L'approvisionnement</span></a><span></span></nav>
 </div>
-<footer><div class="ft"><a href="catalogue.html">← Catalogue</a><span>SellingAtHome · Expéditions et transporteurs</span><span>Version 1.0.0 · octobre 2026</span></div></footer>
+<footer><div class="ft"><a href="catalogue.html">← Catalogue</a><span>SellingAtHome · Expéditions et transporteurs</span><span>Version 1.0.1 · octobre 2026</span></div></footer>
 
 <button class="to-top" id="toTop" type="button" aria-label="Remonter en haut de la page" title="Haut de page"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
 

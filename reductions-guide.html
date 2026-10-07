@@ -182,7 +182,7 @@
         <li data-sec="suivi"><a href="#suivi"><span class="toc-n">15</span>Suivi et duplication</a>
           <ol class="toc-sub"><li><a href="#s15-1"><span class="toc-n">15.1</span>Le suivi d'utilisation</a></li><li><a href="#s15-2"><span class="toc-n">15.2</span>Dupliquer une réduction</a></li><li><a href="#s15-3"><span class="toc-n">15.3</span>Importer des produits</a></li></ol>
         </li>
-        <li data-sec="usages"><a href="#usages"><span class="toc-n">16</span>Paramétrages fréquents</a></li>
+        <li data-sec="usages"><a href="#usages"><span class="toc-n">16</span>Paramétrages courants</a></li>
         <li data-sec="attention"><a href="#attention"><span class="toc-n">17</span>Points d'attention</a></li>
         <li data-sec="faq"><a href="#faq"><span class="toc-n">18</span>Questions fréquentes</a></li>
         <li data-sec="glossaire"><a href="#glossaire"><span class="toc-n">19</span>Glossaire</a></li>
@@ -424,7 +424,7 @@
   <div class="table-wrap"><table class="cond">
     <thead><tr><th>Condition</th><th>Saisie</th><th>Ce qu'elle vérifie</th></tr></thead>
     <tbody>
-      <tr><td><b>Rôle client</b></td><td>Liste de rôles</td><td>Les rôles du client. «&nbsp;égal&nbsp;»&nbsp;: exactement ces rôles. «&nbsp;est dans&nbsp;»&nbsp;: au moins un de ses rôles. «&nbsp;n'est pas dans&nbsp;»&nbsp;: aucun (un client sans rôle est accepté). C'est la condition la plus utilisée.</td></tr>
+      <tr><td><b>Rôle client</b></td><td>Liste de rôles</td><td>Les rôles du client. «&nbsp;égal&nbsp;»&nbsp;: exactement ces rôles. «&nbsp;est dans&nbsp;»&nbsp;: au moins un de ses rôles. «&nbsp;n'est pas dans&nbsp;»&nbsp;: aucun (un client sans rôle est accepté).</td></tr>
       <tr><td><b>Montant TTC dépensé par le client</b></td><td>Montant</td><td>Le <strong>cumul</strong> de toutes les commandes payées du client depuis la création de son compte (net des remises, points et e-wallet, hors port).<span class="know">la commande en cours n'est pas comptée. Les commandes payées puis annulées le sont.</span></td></tr>
       <tr><td><b>Montant TTC dépensé par le client dans son panier actuel</b></td><td>Montant</td><td>Le montant de la commande en cours, <strong>sans la réduction elle-même</strong> mais avec les autres. Sert aux seuils «&nbsp;dès 50&nbsp;€ d'achat&nbsp;».<span class="know">toujours en TTC, frais de port non compris.</span></td></tr>
       <tr><td><b>Date d'anniversaire</b></td><td>Date</td><td>Le jour et le mois de naissance du client (l'année est ignorée). «&nbsp;= 15/06&nbsp;» cible les clients nés un 15 juin.<span class="know">la comparaison ne tient pas compte de la date du jour&nbsp;: pour une offre «&nbsp;mois d'anniversaire&nbsp;», il faut une réduction par mois, avec les dates de validité adaptées. Sans date de naissance, la condition est fausse.</span></td></tr>
@@ -632,17 +632,17 @@
 
 <!-- 16 -->
 <section id="usages">
-  <div class="sec-head"><span class="sec-num">16</span><h2>Les paramétrages les plus fréquents</h2></div>
-  <p class="lede">Les configurations que l'on retrouve le plus souvent chez les marques.</p>
+  <div class="sec-head"><span class="sec-num">16</span><h2>Les paramétrages courants</h2></div>
+  <p class="lede">Des configurations types, à adapter à votre marque.</p>
   <div class="table-wrap"><table>
     <thead><tr><th>Usage</th><th>Paramétrage typique</th></tr></thead>
     <tbody>
-      <tr><td><b>Prix promotionnels sur une sélection</b></td><td>Réduction aux produits (souvent une réduction par produit) ou Liste de produits, automatique, cumulable</td></tr>
+      <tr><td><b>Prix promotionnels sur une sélection</b></td><td>Réduction aux produits (par exemple une réduction par produit) ou Liste de produits, automatique, cumulable</td></tr>
       <tr><td><b>Remise réservée aux conseillères ou à un rôle</b></td><td>Réduction sur le total ou aux produits, condition «&nbsp;Rôle client est dans …&nbsp;»</td></tr>
       <tr><td><b>Remise dès un montant d'achat</b></td><td>Réduction sur le total, condition «&nbsp;Montant TTC dépensé par le client dans son panier actuel ≥ …&nbsp;»</td></tr>
       <tr><td><b>Produit acheté = remise</b></td><td>Condition «&nbsp;Produits dans le panier contient …&nbsp;»</td></tr>
       <tr><td><b>Remise selon le canal</b></td><td>Condition «&nbsp;Type de commande est dans …&nbsp;» (réunion, web, mini-site…)</td></tr>
-      <tr><td><b>Geste commercial au choix de la conseillère</b></td><td>Réduction sur le total, application manuelle, souvent réservée à des clients</td></tr>
+      <tr><td><b>Geste commercial au choix de la conseillère</b></td><td>Réduction sur le total, application manuelle, éventuellement réservée à des clients</td></tr>
       <tr><td><b>Offre «&nbsp;X achetés, le moins cher offert&nbsp;»</b></td><td>Offre promotionnelle, condition «&nbsp;Quantité ≥ 3&nbsp;», récompense 100&nbsp;% sur le produit le moins cher</td></tr>
       <tr><td><b>Code promo d'opération</b></td><td>Restreinte à des codes promotionnels, code saisi manuellement, limite «&nbsp;N fois par client&nbsp;»</td></tr>
       <tr><td><b>Offre anniversaire</b></td><td>Condition «&nbsp;Date d'anniversaire&nbsp;» sur une période donnée, réservée ou par code</td></tr>
@@ -722,7 +722,7 @@
 </div>
 <div class="pager-wrap"><nav class="pager" aria-label="Pages de l'univers"><a class="prev" href="bons-achat-guide.html"><small>← Précédent</small><span>Les bons d'achat</span></a><a class="next" href="conditions-achat-guide.html"><small>Suivant →</small><span>Les conditions d'achat</span></a></nav>
 </div>
-<footer><div class="ft"><a href="animation.html">← Animation</a><span>SellingAtHome · Les réductions</span><span>Version 1.0.0 · octobre 2026</span></div></footer>
+<footer><div class="ft"><a href="animation.html">← Animation</a><span>SellingAtHome · Les réductions</span><span>Version 1.0.1 · octobre 2026</span></div></footer>
 
 <button class="to-top" id="toTop" type="button" aria-label="Remonter en haut de la page" title="Haut de page"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
 

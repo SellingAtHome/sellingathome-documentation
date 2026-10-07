@@ -125,9 +125,8 @@
         <li data-sec="conseillere"><a href="#conseillere"><span class="toc-n">5</span>Changer de conseillère</a></li>
         <li data-sec="reunion"><a href="#reunion"><span class="toc-n">6</span>Rattacher ou détacher une réunion</a></li>
         <li data-sec="historique"><a href="#historique"><span class="toc-n">7</span>L'historique des statuts</a></li>
-        <li data-sec="chiffres"><a href="#chiffres"><span class="toc-n">8</span>En chiffres</a></li>
-        <li data-sec="attention"><a href="#attention"><span class="toc-n">9</span>Points d'attention</a></li>
-        <li data-sec="faq"><a href="#faq"><span class="toc-n">10</span>Questions fréquentes</a></li>
+        <li data-sec="attention"><a href="#attention"><span class="toc-n">8</span>Points d'attention</a></li>
+        <li data-sec="faq"><a href="#faq"><span class="toc-n">9</span>Questions fréquentes</a></li>
       </ol>
     </details>
   </nav>
@@ -137,7 +136,7 @@
 <!-- 1 -->
 <section id="principe">
   <div class="sec-head"><span class="sec-num">01</span><h2>Le principe</h2></div>
-  <p class="lede">La plupart des commandes sont saisies par les conseillères. L'espace marque sert surtout à <strong>consulter et corriger</strong>&nbsp;: compléter un panier, le faire payer, changer la conseillère, rattacher la commande à la bonne réunion. Il permet aussi de <strong>créer</strong> une commande pour une cliente.</p>
+  <p class="lede">Les conseillères saisissent leurs commandes depuis leur propre espace. L'espace marque sert surtout à <strong>consulter et corriger</strong>&nbsp;: compléter un panier, le faire payer, changer la conseillère, rattacher la commande à la bonne réunion. Il permet aussi de <strong>créer</strong> une commande pour une cliente.</p>
   <div class="decide">
     <div class="row"><span class="q">La commande n'est pas payée</span><span class="arrow">→</span><span class="pill">Tout se modifie&nbsp;: articles, avantages, livraison</span></div>
     <div class="row"><span class="q">La commande est payée</span><span class="arrow">→</span><span class="pill yellow">Expédition, paiement, conseillère (selon réglage)</span></div>
@@ -155,7 +154,7 @@
     <figure><img src="Captures/Commandes/creation-commande.png" alt="Écran Créer une nouvelle commande : listes Type de commande, Vendeur (recherche, au moins 2 caractères), Client (actif après le choix du vendeur), Commande de regroupement (Aucune, commande indépendante)" loading="lazy"><figcaption>L'écran de création.</figcaption></figure>
     <div class="prose" style="display:flex;flex-direction:column;gap:12px">
       <ol>
-        <li><strong>Type de commande</strong>&nbsp;: le plus souvent «&nbsp;Vente directe&nbsp;». La liste ne propose que les types ouverts pour votre marque (vente en réunion si vous avez le module Réunions, précommande, SAV, kit de démarrage…).</li>
+        <li><strong>Type de commande</strong>&nbsp;: par exemple «&nbsp;Vente directe&nbsp;». La liste ne propose que les types ouverts pour votre marque (vente en réunion si vous avez le module Réunions, précommande, SAV, kit de démarrage…).</li>
         <li><strong>Vendeur</strong>&nbsp;: tapez au moins 2 caractères du nom de la conseillère à qui la vente sera attribuée.</li>
         <li><strong>Client</strong>&nbsp;: activé une fois la conseillère choisie. La recherche porte sur toutes les clientes de votre marque, pas seulement celles de la conseillère.</li>
         <li><strong>Commande de regroupement</strong> (si vous l'utilisez) et <strong>Catalogue</strong> (si vous avez plusieurs catalogues).</li>
@@ -178,8 +177,8 @@
     <thead><tr><th>Bouton</th><th>Rôle</th><th>Quand il apparaît</th></tr></thead>
     <tbody>
       <tr><td><b>Finaliser la commande</b></td><td>Ouvre le parcours de validation et de paiement (<a href="#s4-1">4.1</a>).</td><td>Commande non payée, hors mini-boutique et boutique de marque.</td></tr>
-      <tr><td><b>Envoyer par mail au client</b></td><td>Envoie à la cliente un lien pour finaliser et payer elle-même (<a href="#s4-2">4.2</a>).</td><td>Idem, si l'option est ouverte (34 marques sur 35).</td></tr>
-      <tr><td><b>Afficher le QR Code</b></td><td>Affiche un QR code que la cliente scanne pour payer (<a href="#s4-3">4.3</a>).</td><td>Idem, si l'option est ouverte (33 marques sur 35).</td></tr>
+      <tr><td><b>Envoyer par mail au client</b></td><td>Envoie à la cliente un lien pour finaliser et payer elle-même (<a href="#s4-2">4.2</a>).</td><td>Idem, si l'option est ouverte.</td></tr>
+      <tr><td><b>Afficher le QR Code</b></td><td>Affiche un QR code que la cliente scanne pour payer (<a href="#s4-3">4.3</a>).</td><td>Idem, si l'option est ouverte.</td></tr>
       <tr><td><b>Continuer vers le financement</b></td><td>Reprend une demande de financement en cours.</td><td>Commande en attente de financement.</td></tr>
       <tr><td><b>Annuler la commande</b>, <b>Refuser l'encaissement et annuler la commande</b></td><td>Voir <a href="commandes-annulation-documents.html">Annulations, avoirs et documents</a>.</td><td>Commande payée.</td></tr>
       <tr><td><b>Générer l'étiquette GLS</b> / <b>DPD</b></td><td>Crée l'étiquette du transporteur.</td><td>Commande payée non expédiée, transporteur activé.</td></tr>
@@ -270,7 +269,7 @@
   <ul class="prose">
     <li>tant que la commande <strong>n'est pas payée</strong>&nbsp;;</li>
     <li>pour une <strong>commande web</strong>, même payée&nbsp;;</li>
-    <li>pour toute commande payée, si SellingAtHome a ouvert l'option «&nbsp;changement forcé&nbsp;» pour votre marque (1 marque sur 35).</li>
+    <li>pour toute commande payée, si SellingAtHome a ouvert l'option «&nbsp;changement forcé&nbsp;» pour votre marque.</li>
   </ul>
   <p>Ce qui se passe&nbsp;:</p>
   <ul class="prose">
@@ -286,7 +285,7 @@
 <!-- 6 -->
 <section id="reunion">
   <div class="sec-head"><span class="sec-num">06</span><h2>Rattacher ou détacher une réunion</h2></div>
-  <p><span class="tag yellow" style="display:inline-block">Module optionnel</span> Cette option, «&nbsp;Rattacher une commande à une réunion&nbsp;», est activée par SellingAtHome sur demande (1 marque sur 35). La ligne <strong>Réunion</strong> de la fiche affiche alors deux boutons, pour les ventes directes et les ventes en réunion&nbsp;:</p>
+  <p><span class="tag yellow" style="display:inline-block">Module optionnel</span> Cette option, «&nbsp;Rattacher une commande à une réunion&nbsp;», est activée par SellingAtHome sur demande. La ligne <strong>Réunion</strong> de la fiche affiche alors deux boutons, pour les ventes directes et les ventes en réunion&nbsp;:</p>
   <div class="grid-2">
     <div class="card"><span class="tag">Rattacher à une réunion</span><p>Choisissez une réunion <strong>en préparation</strong> de la conseillère de la commande. La commande devient une «&nbsp;Vente en réunion&nbsp;», et la cliente est ajoutée aux participantes si elle n'y était pas. Son montant compte alors dans le chiffre d'affaires de la réunion, s'il est payé.</p></div>
     <div class="card"><span class="tag pink">Détacher de la réunion</span><p>La commande redevient une «&nbsp;Vente directe&nbsp;» (ou une commande de boutique si elle vient d'une boutique en ligne) et sort du chiffre d'affaires de la réunion.</p></div>
@@ -308,20 +307,8 @@
 </section>
 
 <!-- 8 -->
-<section id="chiffres">
-  <div class="sec-head"><span class="sec-num">08</span><h2>En chiffres</h2></div>
-  <p class="lede">Repères observés sur un an, sur l'ensemble des marques&nbsp;: l'espace marque corrige beaucoup, mais crée peu.</p>
-  <div class="stats">
-    <div class="stat"><b>15 sur 35</b><span>marques ont créé au moins une commande depuis l'espace marque</span></div>
-    <div class="stat"><b>0,1 %</b><span>des commandes payées ont été créées depuis l'espace marque</span></div>
-    <div class="stat"><b>~2 300</b><span>changements de conseillère faits depuis l'espace marque</span></div>
-    <div class="stat"><b>34 sur 35</b><span>marques peuvent envoyer une commande à finaliser par email</span></div>
-  </div>
-</section>
-
-<!-- 9 -->
 <section id="attention">
-  <div class="sec-head"><span class="sec-num">09</span><h2>Points d'attention</h2></div>
+  <div class="sec-head"><span class="sec-num">08</span><h2>Points d'attention</h2></div>
   <ul class="prose">
     <li><strong>Changer la conseillère d'une commande change aussi celle de la cliente</strong>&nbsp;: ses prochaines commandes iront à la nouvelle conseillère.</li>
     <li><strong>Le mois compte</strong>&nbsp;: un changement de conseillère après la clôture du mois de paiement ne donne pas de commission.</li>
@@ -330,9 +317,9 @@
   </ul>
 </section>
 
-<!-- 10 -->
+<!-- 9 -->
 <section id="faq">
-  <div class="sec-head"><span class="sec-num">10</span><h2>Questions fréquentes</h2></div>
+  <div class="sec-head"><span class="sec-num">09</span><h2>Questions fréquentes</h2></div>
   <div class="faq">
     <details><summary>Je ne vois pas le bouton «&nbsp;Finaliser la commande&nbsp;».</summary><div><p>La commande est déjà payée, ou c'est une commande de mini-boutique ou de boutique de marque (la cliente la finalise en ligne), ou un financement est en cours.</p></div></details>
     <details><summary>Je ne peux pas changer la conseillère d'une commande payée.</summary><div><p>C'est normal&nbsp;: seule une commande web payée, ou une marque disposant de l'option de changement forcé, le permet. Pour les autres, le changement se fait avant le paiement.</p></div></details>
@@ -346,7 +333,7 @@
 </div>
 <div class="pager-wrap"><nav class="pager" aria-label="Pages de l'univers"><a class="prev" href="commandes-comprendre.html"><small>← Précédent</small><span>Comprendre les commandes</span></a><a class="next" href="commandes-annulation-documents.html"><small>Suivant →</small><span>Annulations, avoirs et documents</span></a></nav>
 </div>
-<footer><div class="ft"><a href="ventes.html">← Ventes</a><span>SellingAtHome · Créer, modifier et finaliser une commande</span><span>Version 1.0.0 · octobre 2026</span></div></footer>
+<footer><div class="ft"><a href="ventes.html">← Ventes</a><span>SellingAtHome · Créer, modifier et finaliser une commande</span><span>Version 1.0.1 · octobre 2026</span></div></footer>
 
 <button class="to-top" id="toTop" type="button" aria-label="Remonter en haut de la page" title="Haut de page"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
 

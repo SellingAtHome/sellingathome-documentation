@@ -21,8 +21,7 @@
 .step dd ul { margin:0; padding-left:18px; }
 .step dd li { margin:3px 0; }
 @media (max-width:640px) { .step dl { grid-template-columns:1fr; } .step dt { margin-top:6px; } }
-.defs td:first-child { width:36%; }
-.defs td:nth-child(3) { width:16%; white-space:nowrap; }
+.defs td:nth-child(2) { width:22%; white-space:nowrap; }
 </style>
 <header class="hero">
   <div class="hero-in">
@@ -131,7 +130,7 @@
       </ul></dd>
       <dt>Pièges</dt><dd><ul>
         <li>Sans IBAN ni BIC, le fichier de virement SEPA des commissions ne peut pas indiquer votre compte.</li>
-        <li><strong>Délais maximum de livraison</strong>&nbsp;: à 0 (valeur par défaut), aucune date limite de livraison n'est imprimée. Au-delà, vos bons de commande, factures et bons de livraison indiquent une date limite égale à la date de paiement plus ce nombre de jours. 13 marques sur 35 l'utilisent.</li>
+        <li><strong>Délais maximum de livraison</strong>&nbsp;: à 0 (valeur par défaut), aucune date limite de livraison n'est imprimée. Au-delà, vos bons de commande, factures et bons de livraison indiquent une date limite égale à la date de paiement plus ce nombre de jours.</li>
         <li>Le bloc <strong>Vendeurs</strong> de la même page se règle plus tard, à l'<a href="#s6-3">étape 10</a>&nbsp;: il a besoin des statuts et des rôles.</li>
       </ul></dd>
       <dt>Plus loin</dt><dd><a href="espace-marque.html">Découvrir l'espace marque</a></dd>
@@ -145,7 +144,7 @@
       <dt>Où</dt><dd><div class="path" aria-label="Chemin d'accès"><span>Paramètres</span><span><b>Taxes</b></span></div></dd>
       <dt>À décider</dt><dd><ul>
         <li><strong>Ajouter une taxe</strong>&nbsp;: un nom, un taux, un pays et un ordre d'affichage. Par exemple «&nbsp;TVA 20&nbsp;%&nbsp;» et «&nbsp;TVA 5,5&nbsp;%&nbsp;» pour la France.</li>
-        <li><strong>Ajouter une zone</strong> (facultatif)&nbsp;: une zone de taxes regroupe plusieurs taxes («&nbsp;Taxes associées&nbsp;»). Utile seulement si vous vendez dans plusieurs pays&nbsp;; une seule marque sur 35 en utilise.</li>
+        <li><strong>Ajouter une zone</strong> (facultatif)&nbsp;: une zone de taxes regroupe plusieurs taxes («&nbsp;Taxes associées&nbsp;»). Utile seulement si vous vendez dans plusieurs pays.</li>
       </ul></dd>
       <dt>Pièges</dt><dd>Le taux de TVA des frais de port se déduit des taux présents dans la commande (réglage de l'<a href="#s4-2">étape 4</a>)&nbsp;: des taxes bien définies évitent les surprises sur les frais de port.</dd>
       <dt>Plus loin</dt><dd><a href="catalogue.html">Catalogue et logistique</a></dd>
@@ -191,7 +190,6 @@
   </div>
   <figure><img src="Captures/Demarrer/livraisons-haut.png" alt="Onglet Paramètres des livraisons : bloc Configuration générale avec les choix Appliquer les frais de port sur et Taux de TVA des frais de port, puis les cartes Livraison chez le vendeur, chez le client et chez l'hôte avec Livraison offerte, Tarif de base, Indisponible pour et des conditions particulières" loading="lazy"><figcaption>L'onglet Paramètres des livraisons (marque de démonstration).</figcaption></figure>
   <div class="example"><span class="ex-label">Exemple</span><p>Votre marque livre chez la cliente pour un tarif de base de 6,90&nbsp;€, avec une condition particulière «&nbsp;Montant de la commande &gt;= 80&nbsp;€&nbsp;» → livraison gratuite. Camille commande 65&nbsp;€&nbsp;: elle paie 6,90&nbsp;€ de port. Inès commande 92&nbsp;€&nbsp;: la livraison est offerte. Si vous appliquez les frais de port sur le <em>montant remisé</em> et qu'Inès bénéficie d'une réduction de 15&nbsp;€, sa commande descend à 77&nbsp;€ et elle paie le port.</p></div>
-  <p class="muted">Repère&nbsp;: 17 marques sur 35 appliquent les frais de port sur le montant non remisé, 18 sur un montant remisé. 24 marques sur 35 gardent le taux de TVA le plus bas de la commande.</p>
 
   <h3 id="s4-3"><span class="sub-num">4.3</span> Étape 5 — Les paramètres des commandes</h3>
   <div class="step">
@@ -225,7 +223,7 @@
       <dt>Pourquoi</dt><dd>La réunion est le cœur de la vente à domicile. Ses réglages décident quand elle se clôture et ce que la conseillère peut encore modifier ensuite.</dd>
       <dt>Où</dt><dd><div class="path" aria-label="Chemin d'accès"><span>Paramètres</span><span>Configuration générale</span><span>Onglet <b>Paramètres des Réunions</b></span></div></dd>
       <dt>À décider</dt><dd><ul>
-        <li>Le <strong>délai de clôture</strong> en heures (48 par défaut, minimum 48). 13 marques sur 35 gardent 48&nbsp;h, 10 choisissent 96&nbsp;h.</li>
+        <li>Le <strong>délai de clôture</strong> en heures (48 par défaut, minimum 48).</li>
         <li>Annuler les réunions sans commande, et supprimer les commandes non payées, à la clôture.</li>
         <li>Les <strong>actions bloquées lorsque la réunion est terminée</strong>.</li>
         <li>Le mode de création des mini-sites, si votre marque a cette option.</li>
@@ -276,7 +274,6 @@
       <dt>Plus loin</dt><dd><a href="reseau.html">Réseau et rémunération</a></dd>
     </dl>
   </div>
-  <p class="muted">Repère&nbsp;: 32 marques sur 35 ont une grille de statuts, 27 ont créé des rôles de conseillères.</p>
 
   <h3 id="s6-2"><span class="sub-num">6.2</span> Étape 9 — Le plan de rémunération <span class="tag yellow" style="display:inline-block">Module optionnel</span></h3>
   <div class="step mod">
@@ -288,7 +285,6 @@
       <dt>Plus loin</dt><dd><a href="reseau.html">Réseau et rémunération</a></dd>
     </dl>
   </div>
-  <p class="muted">Repère&nbsp;: le menu Commissionnement est activé pour 31 marques sur 35.</p>
 
   <h3 id="s6-3"><span class="sub-num">6.3</span> Étape 10 — Les réglages des conseillères</h3>
   <div class="figrow">
@@ -359,27 +355,26 @@
 <!-- 8 -->
 <section id="defauts">
   <div class="sec-head"><span class="sec-num">08</span><h2>Les valeurs par défaut à connaître</h2></div>
-  <p class="lede">Ce que vous trouvez en arrivant, et ce que font réellement les marques. Un réglage par défaut n'est pas forcément le bon choix pour vous.</p>
+  <p class="lede">Ce que vous trouvez en arrivant. Un réglage par défaut n'est pas forcément le bon choix pour vous.</p>
   <div class="table-wrap"><table class="defs">
-    <thead><tr><th>Réglage (onglet)</th><th>Ce que font les marques</th><th>Par défaut</th></tr></thead>
+    <thead><tr><th>Réglage (onglet)</th><th>Par défaut</th></tr></thead>
     <tbody>
-      <tr><td><b>Stock minimal… rapport de stock faible</b> (Paramètres généraux)</td><td>21 marques sur 35 gardent 5.</td><td>5</td></tr>
-      <tr><td><b>Délais maximum de livraison</b> (Paramètres généraux)</td><td>13 marques sur 35 indiquent un délai, de 1 à 30 jours.</td><td>0 (aucun)</td></tr>
-      <tr><td><b>Le recruteur est aussi l'animateur du vendeur</b> (Paramètres généraux)</td><td>19 marques sur 35 le décochent pour distinguer les deux.</td><td>Coché</td></tr>
-      <tr><td><b>Lier les informations d'un vendeur entre son compte vendeur et son compte client</b> (Paramètres généraux)</td><td>26 marques sur 35 le cochent.</td><td>Non coché</td></tr>
-      <tr><td><b>A la création statut par défaut</b> (Paramètres généraux)</td><td>13 marques sur 35 en choisissent un.</td><td>Aucun</td></tr>
-      <tr><td><b>Comment les vendeurs voient les stocks&nbsp;?</b> (Paramètres généraux)</td><td>17 marques sur 35 montrent le chiffre exact, les autres un symbole coloré ou rien.</td><td>Aucun</td></tr>
-      <tr><td><b>Rendre le téléphone obligatoire pour passer une commande</b> (Paramètres des commandes)</td><td>17 marques sur 35.</td><td>Non</td></tr>
-      <tr><td><b>Rendre l'adresse obligatoire pour passer une commande</b> (Paramètres des commandes)</td><td>35 marques sur 35.</td><td>Oui</td></tr>
-      <tr><td><b>Autoriser la suppression automatique</b> (Paramètres des commandes)</td><td>19 marques sur 35, le plus souvent avec 48&nbsp;heures.</td><td>Non</td></tr>
-      <tr><td><b>Réapprovisionnement des produits en cas d'annulation</b> (Paramètres des commandes)</td><td>30 marques sur 35.</td><td>Oui</td></tr>
-      <tr><td><b>Recrédit des points de fidélité sur les commandes annulées</b> (Paramètres des commandes)</td><td>6 marques sur 35.</td><td>Non</td></tr>
-      <tr><td><b>Activer les commentaires client&nbsp;?</b> (Paramètres des commandes)</td><td>34 marques sur 35.</td><td>Oui</td></tr>
-      <tr><td><b>Appliquer les frais de port sur</b> (Paramètres des livraisons)</td><td>17 marques sur 35 gardent le montant non remisé.</td><td>Montant non remisé</td></tr>
-      <tr><td><b>Délai de clôture des réunions</b> (Paramètres des Réunions)</td><td>13 marques sur 35 gardent 48&nbsp;h, 10 choisissent 96&nbsp;h.</td><td>48 h</td></tr>
+      <tr><td><b>Stock minimal… rapport de stock faible</b> (Paramètres généraux)</td><td>5</td></tr>
+      <tr><td><b>Délais maximum de livraison</b> (Paramètres généraux)</td><td>0 (aucun)</td></tr>
+      <tr><td><b>Le recruteur est aussi l'animateur du vendeur</b> (Paramètres généraux)</td><td>Coché</td></tr>
+      <tr><td><b>Lier les informations d'un vendeur entre son compte vendeur et son compte client</b> (Paramètres généraux)</td><td>Non coché</td></tr>
+      <tr><td><b>A la création statut par défaut</b> (Paramètres généraux)</td><td>Aucun</td></tr>
+      <tr><td><b>Comment les vendeurs voient les stocks&nbsp;?</b> (Paramètres généraux)</td><td>Aucun</td></tr>
+      <tr><td><b>Rendre le téléphone obligatoire pour passer une commande</b> (Paramètres des commandes)</td><td>Non</td></tr>
+      <tr><td><b>Rendre l'adresse obligatoire pour passer une commande</b> (Paramètres des commandes)</td><td>Oui</td></tr>
+      <tr><td><b>Autoriser la suppression automatique</b> (Paramètres des commandes)</td><td>Non</td></tr>
+      <tr><td><b>Réapprovisionnement des produits en cas d'annulation</b> (Paramètres des commandes)</td><td>Oui</td></tr>
+      <tr><td><b>Recrédit des points de fidélité sur les commandes annulées</b> (Paramètres des commandes)</td><td>Non</td></tr>
+      <tr><td><b>Activer les commentaires client&nbsp;?</b> (Paramètres des commandes)</td><td>Oui</td></tr>
+      <tr><td><b>Appliquer les frais de port sur</b> (Paramètres des livraisons)</td><td>Montant non remisé</td></tr>
+      <tr><td><b>Délai de clôture des réunions</b> (Paramètres des Réunions)</td><td>48 h</td></tr>
     </tbody>
   </table></div>
-  <p class="muted">Valeurs observées sur les 35 marques actives (au moins une commande payée sur les 12 derniers mois).</p>
 </section>
 
 <!-- 9 -->

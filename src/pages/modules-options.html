@@ -2,10 +2,6 @@
 <style>
 .mods td:first-child { width:24%; }
 .mods td:nth-child(3) { width:26%; font-size:.9rem; }
-.mods td:nth-child(4) { width:150px; }
-.adopt { display:flex; flex-direction:column; gap:4px; font-size:.85rem; white-space:nowrap; }
-.adopt .b { height:6px; background:var(--surface); border:1px solid var(--rule); border-radius:100px; overflow:hidden; }
-.adopt .b i { display:block; height:100%; background:var(--accent); }
 .mods tr.grp td { background:var(--surface); font-weight:700; color:var(--heading); font-size:.85rem; text-transform:uppercase; letter-spacing:.04em; }
 .two { display:grid; grid-template-columns:repeat(auto-fit, minmax(240px,1fr)); gap:14px; }
 .two .card { border-top:5px solid var(--accent); }
@@ -16,14 +12,14 @@
     <div>
       <span class="eyebrow">Démarrer</span>
       <h1>Modules <span class="script">et options</span></h1>
-      <p class="lede">Une partie des fonctions de SellingAtHome s'active sur demande, marque par marque. Voici lesquelles, ce qu'elles apportent, le menu qu'elles font apparaître, combien de marques les utilisent, et pourquoi un menu peut manquer dans votre espace.</p>
+      <p class="lede">Une partie des fonctions de SellingAtHome s'active sur demande, marque par marque. Voici lesquelles, ce qu'elles apportent, le menu qu'elles font apparaître, et pourquoi un menu peut manquer dans votre espace.</p>
     </div>
     <div class="voucher-art" aria-hidden="true">
-      <div class="v-top"><span>Modules</span><span>35 marques</span></div>
-      <div class="v-amount">31<span> / 35</span></div>
-      <div class="v-name">Plan de rémunération</div>
+      <div class="v-top"><span>Module optionnel</span><span>Exemple</span></div>
+      <div class="v-amount">Challenges</div>
+      <div class="v-name">Activé par SellingAtHome</div>
       <div class="v-sep"></div>
-      <div class="v-meta"><span>Recrutement <b>31</b></span><span>Challenges <b>32</b></span></div>
+      <div class="v-meta"><span>Paramétrage <b>par la marque</b></span><span>Menu <b>Suivi d'activité</b></span></div>
     </div>
   </div>
 </header>
@@ -64,7 +60,7 @@
 <!-- 2 -->
 <section id="absent">
   <div class="sec-head"><span class="sec-num">02</span><h2>Pourquoi un menu n'apparaît pas</h2></div>
-  <p>Vous lisez une page de cette documentation et le menu décrit n'existe pas chez vous&nbsp;? Voici les causes possibles, de la plus fréquente à la plus rare.</p>
+  <p>Vous lisez une page de cette documentation et le menu décrit n'existe pas chez vous&nbsp;? Voici les causes possibles.</p>
   <div class="decide">
     <div class="row"><span class="q">La fonction n'est pas activée pour votre marque.</span><span class="arrow">→</span><span class="pill yellow">Demandez à SellingAtHome</span></div>
     <div class="row"><span class="q">Le menu dépend d'une autre fonction&nbsp;: par exemple l'onglet «&nbsp;Cotisations Sociales&nbsp;» n'existe qu'avec le plan de rémunération.</span><span class="arrow">→</span><span class="pill yellow">Les deux doivent être actives</span></div>
@@ -78,51 +74,50 @@
 <!-- 3 -->
 <section id="marque">
   <div class="sec-head"><span class="sec-num">03</span><h2>Les modules de l'espace marque</h2></div>
-  <p class="lede">Pour chaque fonction&nbsp;: ce qu'elle fait, où elle apparaît, et combien des 35 marques actives l'ont activée.</p>
+  <p class="lede">Pour chaque fonction&nbsp;: ce qu'elle fait et où elle apparaît.</p>
 
   <h3 id="s3-1"><span class="sub-num">3.1</span> Le socle</h3>
-  <p>Ces menus sont activés pour toutes les marques, ou presque (34 ou 35 sur 35)&nbsp;: <strong>Tableau de bord</strong>, <strong>Réunions</strong>, <strong>Vendeurs</strong> (avec <strong>Suivi d'équipe</strong>, <strong>Gérer les rôles</strong> et <strong>Gérer les statuts</strong>), <strong>Clients</strong>, <strong>Commandes</strong>, <strong>Catalogue › Produits</strong> et <strong>Catégories</strong>, <strong>Bons d'achat</strong>, <strong>Rapports</strong>, <strong>Formulaires › Carte des VDIs</strong>, <strong>Mon assistant</strong>, et dans <strong>Paramètres</strong>&nbsp;: <strong>Configuration générale</strong>, <strong>Templates email</strong>, <strong>Réductions</strong>, <strong>Notifications</strong> et <strong>Taxes</strong>.</p>
+  <p>Ces menus forment le socle de l'espace marque&nbsp;: <strong>Tableau de bord</strong>, <strong>Réunions</strong>, <strong>Vendeurs</strong> (avec <strong>Suivi d'équipe</strong>, <strong>Gérer les rôles</strong> et <strong>Gérer les statuts</strong>), <strong>Clients</strong>, <strong>Commandes</strong>, <strong>Catalogue › Produits</strong> et <strong>Catégories</strong>, <strong>Bons d'achat</strong>, <strong>Rapports</strong>, <strong>Formulaires › Carte des VDIs</strong>, <strong>Mon assistant</strong>, et dans <strong>Paramètres</strong>&nbsp;: <strong>Configuration générale</strong>, <strong>Templates email</strong>, <strong>Réductions</strong>, <strong>Notifications</strong> et <strong>Taxes</strong>.</p>
   <p>Ils sont décrits dans <a href="espace-marque.html">Découvrir l'espace marque</a> et dans chaque univers.</p>
 
   <h3 id="s3-2"><span class="sub-num">3.2</span> Les modules optionnels</h3>
   <div class="table-wrap"><table class="mods">
-    <thead><tr><th>Fonction</th><th>Ce qu'elle fait</th><th>Ce qui apparaît</th><th>Marques</th></tr></thead>
+    <thead><tr><th>Fonction</th><th>Ce qu'elle fait</th><th>Ce qui apparaît</th></tr></thead>
     <tbody>
-      <tr class="grp"><td colspan="4">Réseau et rémunération</td></tr>
-      <tr><td><b>Plan de rémunération</b></td><td>Définir les règles de commissionnement et calculer les commissions des conseillères.</td><td>Paramètres › Commissionnement&nbsp;; onglet Commissions des conseillères&nbsp;; Rapports › Récapitulatif mensuel des performances</td><td><div class="adopt">31 sur 35<span class="b"><i style="width:89%"></i></span></div></td></tr>
-      <tr><td><b>Cotisations sociales</b></td><td>Consulter les cotisations et le précompte de chaque conseillère. Nécessite le plan de rémunération.</td><td>Onglet Cotisations Sociales, dans Vendeurs</td><td><div class="adopt">30 sur 35<span class="b"><i style="width:86%"></i></span></div></td></tr>
-      <tr><td><b>Automatisation des statuts</b></td><td>Faire évoluer automatiquement le statut des conseillères selon des règles.</td><td>Bouton Automatisation des statuts, dans Vendeurs › Gérer les statuts</td><td><div class="adopt">29 sur 35<span class="b"><i style="width:83%"></i></span></div></td></tr>
-      <tr><td><b>Stock chez les conseillères</b></td><td>Suivre le stock détenu par chaque conseillère.</td><td>Vendeurs › Entreposage</td><td><div class="adopt">3 sur 35<span class="b"><i style="width:9%"></i></span></div></td></tr>
+      <tr class="grp"><td colspan="3">Réseau et rémunération</td></tr>
+      <tr><td><b>Plan de rémunération</b></td><td>Définir les règles de commissionnement et calculer les commissions des conseillères.</td><td>Paramètres › Commissionnement&nbsp;; onglet Commissions des conseillères&nbsp;; Rapports › Récapitulatif mensuel des performances</td></tr>
+      <tr><td><b>Cotisations sociales</b></td><td>Consulter les cotisations et le précompte de chaque conseillère. Nécessite le plan de rémunération.</td><td>Onglet Cotisations Sociales, dans Vendeurs</td></tr>
+      <tr><td><b>Automatisation des statuts</b></td><td>Faire évoluer automatiquement le statut des conseillères selon des règles.</td><td>Bouton Automatisation des statuts, dans Vendeurs › Gérer les statuts</td></tr>
+      <tr><td><b>Stock chez les conseillères</b></td><td>Suivre le stock détenu par chaque conseillère.</td><td>Vendeurs › Entreposage</td></tr>
 
-      <tr class="grp"><td colspan="4">Recrutement</td></tr>
-      <tr><td><b>Recrutement dématérialisé</b></td><td>Recevoir et traiter les candidatures, du formulaire au compte conseillère.</td><td>Formulaires › Recrutements</td><td><div class="adopt">31 sur 35<span class="b"><i style="width:89%"></i></span></div></td></tr>
+      <tr class="grp"><td colspan="3">Recrutement</td></tr>
+      <tr><td><b>Recrutement dématérialisé</b></td><td>Recevoir et traiter les candidatures, du formulaire au compte conseillère.</td><td>Formulaires › Recrutements</td></tr>
 
-      <tr class="grp"><td colspan="4">Animation</td></tr>
-      <tr><td><b>Challenges</b></td><td>Lancer des challenges avec récompenses pour les conseillères.</td><td>Onglet Challenges de la Configuration générale&nbsp;; menu Suivi d'activité › Challenges des conseillères</td><td><div class="adopt">32 sur 35<span class="b"><i style="width:91%"></i></span></div></td></tr>
-      <tr><td><b>Segmentations</b></td><td>Construire des segmentations de clientes.</td><td>Paramètres › Segmentations</td><td><div class="adopt">19 sur 35<span class="b"><i style="width:54%"></i></span></div></td></tr>
-      <tr><td><b>Catalogue en points de fidélité</b></td><td>Permettre de payer des produits avec des points de fidélité.</td><td>Case «&nbsp;Activer le catalogue en points de fidélité&nbsp;» dans Paramètres fidélité, et réglages sur les produits</td><td><div class="adopt">7 sur 35<span class="b"><i style="width:20%"></i></span></div></td></tr>
-      <tr><td><b>Champs personnalisés</b></td><td>Ajouter vos propres champs aux fiches clientes, conseillères et produits.</td><td>Paramètres › Champs personnalisés</td><td><div class="adopt">7 sur 35<span class="b"><i style="width:20%"></i></span></div></td></tr>
-      <tr><td><b>Don de points</b></td><td>Permettre de donner des points de fidélité à d'autres clientes, selon des règles.</td><td>Bloc «&nbsp;Paramétrage du don de points&nbsp;» dans Paramètres fidélité</td><td><div class="adopt">0 sur 35<span class="b"><i style="width:0"></i></span></div></td></tr>
+      <tr class="grp"><td colspan="3">Animation</td></tr>
+      <tr><td><b>Challenges</b></td><td>Lancer des challenges avec récompenses pour les conseillères.</td><td>Onglet Challenges de la Configuration générale&nbsp;; menu Suivi d'activité › Challenges des conseillères</td></tr>
+      <tr><td><b>Segmentations</b></td><td>Construire des segmentations de clientes.</td><td>Paramètres › Segmentations</td></tr>
+      <tr><td><b>Catalogue en points de fidélité</b></td><td>Permettre de payer des produits avec des points de fidélité.</td><td>Case «&nbsp;Activer le catalogue en points de fidélité&nbsp;» dans Paramètres fidélité, et réglages sur les produits</td></tr>
+      <tr><td><b>Champs personnalisés</b></td><td>Ajouter vos propres champs aux fiches clientes, conseillères et produits.</td><td>Paramètres › Champs personnalisés</td></tr>
+      <tr><td><b>Don de points</b></td><td>Permettre de donner des points de fidélité à d'autres clientes, selon des règles.</td><td>Bloc «&nbsp;Paramétrage du don de points&nbsp;» dans Paramètres fidélité</td></tr>
 
-      <tr class="grp"><td colspan="4">Catalogue, commandes et logistique</td></tr>
-      <tr><td><b>Attributs</b></td><td>Décrire les caractéristiques des produits.</td><td>Catalogue › Attributs</td><td><div class="adopt">32 sur 35<span class="b"><i style="width:91%"></i></span></div></td></tr>
-      <tr><td><b>Listes de souhaits</b></td><td>Consulter les produits que les clientes mettent de côté.</td><td>Catalogue › Liste de souhaits</td><td><div class="adopt">33 sur 35<span class="b"><i style="width:94%"></i></span></div></td></tr>
-      <tr><td><b>Retours d'articles</b></td><td>Traiter les demandes de retour des conseillères et définir vos motifs de retour.</td><td>Formulaires › Retours d'articles (ou menu Retours d'articles, selon la version)&nbsp;; Paramètres › Gérer les motifs de retour</td><td><div class="adopt">12 sur 35<span class="b"><i style="width:34%"></i></span></div></td></tr>
-      <tr><td><b>Suivi des expéditions</b></td><td>Suivre les livraisons des commandes.</td><td>Commandes › Livraisons des commandes</td><td><div class="adopt">3 sur 35<span class="b"><i style="width:9%"></i></span></div></td></tr>
-      <tr><td><b>Collections et réservations</b></td><td>Proposer des produits sur réservation, par périodes.</td><td>Onglet Paramètres des collections&nbsp;; Formulaires › Réservation de collections</td><td><div class="adopt">3 sur 35<span class="b"><i style="width:9%"></i></span></div></td></tr>
-      <tr><td><b>Approvisionnement</b></td><td>Gérer vos fournisseurs et vos commandes fournisseurs.</td><td>Approvisionnement › Fournisseurs et Commandes</td><td><div class="adopt">2 sur 35<span class="b"><i style="width:6%"></i></span></div></td></tr>
+      <tr class="grp"><td colspan="3">Catalogue, commandes et logistique</td></tr>
+      <tr><td><b>Attributs</b></td><td>Décrire les caractéristiques des produits.</td><td>Catalogue › Attributs</td></tr>
+      <tr><td><b>Listes de souhaits</b></td><td>Consulter les produits que les clientes mettent de côté.</td><td>Catalogue › Liste de souhaits</td></tr>
+      <tr><td><b>Retours d'articles</b></td><td>Traiter les demandes de retour des conseillères et définir vos motifs de retour.</td><td>Formulaires › Retours d'articles (ou menu Retours d'articles, selon la version)&nbsp;; Paramètres › Gérer les motifs de retour</td></tr>
+      <tr><td><b>Suivi des expéditions</b></td><td>Suivre les livraisons des commandes.</td><td>Commandes › Livraisons des commandes</td></tr>
+      <tr><td><b>Collections et réservations</b></td><td>Proposer des produits sur réservation, par périodes.</td><td>Onglet Paramètres des collections&nbsp;; Formulaires › Réservation de collections</td></tr>
+      <tr><td><b>Approvisionnement</b></td><td>Gérer vos fournisseurs et vos commandes fournisseurs.</td><td>Approvisionnement › Fournisseurs et Commandes</td></tr>
 
-      <tr class="grp"><td colspan="4">Boutiques en ligne</td></tr>
-      <tr><td><b>Mini-boutiques des conseillères</b></td><td>Donner à chaque conseillère sa boutique en ligne.</td><td>Paramètres › Modèles des minisites</td><td><div class="adopt">12 sur 35<span class="b"><i style="width:34%"></i></span></div></td></tr>
-      <tr><td><b>Boutique de marque</b></td><td>Votre boutique en ligne, avec attribution des ventes aux conseillères.</td><td>Paramètres › Modèles des minisites</td><td><div class="adopt">4 sur 35<span class="b"><i style="width:11%"></i></span></div></td></tr>
+      <tr class="grp"><td colspan="3">Boutiques en ligne</td></tr>
+      <tr><td><b>Mini-boutiques des conseillères</b></td><td>Donner à chaque conseillère sa boutique en ligne.</td><td>Paramètres › Modèles des minisites</td></tr>
+      <tr><td><b>Boutique de marque</b></td><td>Votre boutique en ligne, avec attribution des ventes aux conseillères.</td><td>Paramètres › Modèles des minisites</td></tr>
 
-      <tr class="grp"><td colspan="4">Communication</td></tr>
-      <tr><td><b>Documents</b></td><td>Mettre des documents à disposition des conseillères.</td><td>Base de connaissances › Documents</td><td><div class="adopt">31 sur 35<span class="b"><i style="width:89%"></i></span></div></td></tr>
-      <tr><td><b>FAQ</b></td><td>Publier les questions fréquentes pour les conseillères.</td><td>Base de connaissances › FAQ</td><td><div class="adopt">30 sur 35<span class="b"><i style="width:86%"></i></span></div></td></tr>
-      <tr><td><b>Formations</b></td><td>Proposer des formations aux conseillères.</td><td>Base de connaissances › Formations</td><td><div class="adopt">29 sur 35<span class="b"><i style="width:83%"></i></span></div></td></tr>
+      <tr class="grp"><td colspan="3">Communication</td></tr>
+      <tr><td><b>Documents</b></td><td>Mettre des documents à disposition des conseillères.</td><td>Base de connaissances › Documents</td></tr>
+      <tr><td><b>FAQ</b></td><td>Publier les questions fréquentes pour les conseillères.</td><td>Base de connaissances › FAQ</td></tr>
+      <tr><td><b>Formations</b></td><td>Proposer des formations aux conseillères.</td><td>Base de connaissances › Formations</td></tr>
     </tbody>
   </table></div>
-  <p class="muted">«&nbsp;Marques&nbsp;» = nombre de marques, parmi les 35 marques actives (au moins une commande payée sur les 12 derniers mois), pour lesquelles la fonction est activée. Activée ne veut pas toujours dire utilisée&nbsp;: par exemple, 31 marques ont la fonction Documents et 27 ont effectivement publié des documents.</p>
 </section>
 
 <!-- 4 -->
@@ -130,15 +125,15 @@
   <div class="sec-head"><span class="sec-num">04</span><h2>Les options de fonctionnement</h2></div>
   <p>Ces options sont réglées par SellingAtHome. Elles modifient le fonctionnement de la plateforme et font parfois apparaître un sous-menu ou une case à cocher.</p>
   <div class="table-wrap"><table class="mods">
-    <thead><tr><th>Option</th><th>Ce qu'elle fait</th><th>Ce qui apparaît</th><th>Marques</th></tr></thead>
+    <thead><tr><th>Option</th><th>Ce qu'elle fait</th><th>Ce qui apparaît</th></tr></thead>
     <tbody>
-      <tr><td><b>Mini-site de réunion</b></td><td>Un site en ligne pour chaque réunion, où l'hôtesse invite ses amies et où elles commandent.</td><td>Paramètres › Modèles des minisites&nbsp;; mode de création dans Paramètres des Réunions</td><td><div class="adopt">22 sur 35<span class="b"><i style="width:63%"></i></span></div></td></tr>
-      <tr><td><b>Réunion virtuelle</b></td><td>Organiser des réunions en visio.</td><td>Réglages visio dans les réunions et les modèles de mini-sites</td><td><div class="adopt">20 sur 35<span class="b"><i style="width:57%"></i></span></div></td></tr>
-      <tr><td><b>Calcul des cotisations sociales</b></td><td>Calculer les cotisations sociales des conseillères.</td><td>Informations sociales à renseigner sur la fiche des conseillères</td><td><div class="adopt">22 sur 35<span class="b"><i style="width:63%"></i></span></div></td></tr>
-      <tr><td><b>Commandes de regroupement</b></td><td>Regrouper plusieurs commandes d'une conseillère pour les payer et les livrer ensemble.</td><td>Commandes › Commandes de regroupement</td><td><div class="adopt">13 sur 35<span class="b"><i style="width:37%"></i></span></div></td></tr>
-      <tr><td><b>Bons de préparation</b></td><td>Éditer des bons de préparation (par réunion, par conseillère, par commande…).</td><td>Case «&nbsp;Utiliser un bon de préparation&nbsp;» et bloc «&nbsp;Paramétrage des bons de préparation&nbsp;» dans Paramètres des commandes</td><td><div class="adopt">9 sur 35<span class="b"><i style="width:26%"></i></span></div></td></tr>
-      <tr><td><b>Livraison partielle</b></td><td>Expédier une commande en plusieurs fois.</td><td>Case «&nbsp;Autoriser la Livraison partielle de commande&nbsp;» dans Paramètres des commandes</td><td><div class="adopt">6 sur 35<span class="b"><i style="width:17%"></i></span></div></td></tr>
-      <tr><td><b>Bon de livraison personnalisé</b></td><td>Utiliser votre propre modèle de bon de livraison.</td><td>Case «&nbsp;Utiliser un modèle de bon de livraison personnalisé&nbsp;» dans Paramètres des commandes</td><td><div class="adopt">4 sur 35<span class="b"><i style="width:11%"></i></span></div></td></tr>
+      <tr><td><b>Mini-site de réunion</b></td><td>Un site en ligne pour chaque réunion, où l'hôtesse invite ses amies et où elles commandent.</td><td>Paramètres › Modèles des minisites&nbsp;; mode de création dans Paramètres des Réunions</td></tr>
+      <tr><td><b>Réunion virtuelle</b></td><td>Organiser des réunions en visio.</td><td>Réglages visio dans les réunions et les modèles de mini-sites</td></tr>
+      <tr><td><b>Calcul des cotisations sociales</b></td><td>Calculer les cotisations sociales des conseillères.</td><td>Informations sociales à renseigner sur la fiche des conseillères</td></tr>
+      <tr><td><b>Commandes de regroupement</b></td><td>Regrouper plusieurs commandes d'une conseillère pour les payer et les livrer ensemble.</td><td>Commandes › Commandes de regroupement</td></tr>
+      <tr><td><b>Bons de préparation</b></td><td>Éditer des bons de préparation (par réunion, par conseillère, par commande…).</td><td>Case «&nbsp;Utiliser un bon de préparation&nbsp;» et bloc «&nbsp;Paramétrage des bons de préparation&nbsp;» dans Paramètres des commandes</td></tr>
+      <tr><td><b>Livraison partielle</b></td><td>Expédier une commande en plusieurs fois.</td><td>Case «&nbsp;Autoriser la Livraison partielle de commande&nbsp;» dans Paramètres des commandes</td></tr>
+      <tr><td><b>Bon de livraison personnalisé</b></td><td>Utiliser votre propre modèle de bon de livraison.</td><td>Case «&nbsp;Utiliser un modèle de bon de livraison personnalisé&nbsp;» dans Paramètres des commandes</td></tr>
     </tbody>
   </table></div>
   <p class="muted">Pour le mini-site de réunion, la marque doit en plus avoir choisi un mode d'activation autre que «&nbsp;désactivé&nbsp;».</p>
@@ -149,21 +144,21 @@
   <div class="sec-head"><span class="sec-num">05</span><h2>Côté espace conseillère</h2></div>
   <p>Certaines fonctions ne se voient que dans l'espace de vos conseillères. Bon à savoir quand une conseillère vous dit «&nbsp;je n'ai pas ce menu&nbsp;».</p>
   <div class="table-wrap"><table class="mods">
-    <thead><tr><th>Fonction</th><th>Ce qu'elle fait</th><th>Ce que voit la conseillère</th><th>Marques</th></tr></thead>
+    <thead><tr><th>Fonction</th><th>Ce qu'elle fait</th><th>Ce que voit la conseillère</th></tr></thead>
     <tbody>
-      <tr><td><b>Réseau</b></td><td>Consulter son équipe.</td><td>Menu Réseau</td><td><div class="adopt">35 sur 35<span class="b"><i style="width:100%"></i></span></div></td></tr>
-      <tr><td><b>Suivi d'équipe</b></td><td>Suivre l'activité de son équipe.</td><td>Menu Suivi d'équipe</td><td><div class="adopt">35 sur 35<span class="b"><i style="width:100%"></i></span></div></td></tr>
-      <tr><td><b>Finalisation à distance</b></td><td>Envoyer la commande à la cliente pour qu'elle la finalise et la paie elle-même.</td><td>Boutons «&nbsp;Envoyer par mail au client&nbsp;» (34 marques) et «&nbsp;Afficher le QR Code&nbsp;» (33 marques) sur la commande</td><td><div class="adopt">33 à 34 sur 35<span class="b"><i style="width:96%"></i></span></div></td></tr>
-      <tr><td><b>Application mobile</b></td><td>Accéder au lien de téléchargement de l'application.</td><td>Menu Appli mobile / tablette</td><td><div class="adopt">33 sur 35<span class="b"><i style="width:94%"></i></span></div></td></tr>
-      <tr><td><b>Suivi d'activité</b></td><td>Regrouper commissions, challenges et points de la conseillère.</td><td>Menu Suivi d'activité (Commissions, Challenges, Mes Points selon les fonctions actives)</td><td><div class="adopt">35 sur 35<span class="b"><i style="width:100%"></i></span></div></td></tr>
-      <tr><td><b>Commandes de l'équipe</b></td><td>Voir les commandes passées dans son équipe.</td><td>Suivi d'équipe › Commandes</td><td><div class="adopt">18 sur 35<span class="b"><i style="width:51%"></i></span></div></td></tr>
-      <tr><td><b>Mini-boutique</b></td><td>Gérer sa boutique en ligne.</td><td>Accès à la gestion de sa mini-boutique</td><td><div class="adopt">12 sur 35<span class="b"><i style="width:34%"></i></span></div></td></tr>
-      <tr><td><b>Mon assistant</b></td><td>Un assistant conversationnel pour les conseillères.</td><td>Menu Mon assistant, si la conseillère l'a activé pour elle-même</td><td><div class="adopt">6 sur 35<span class="b"><i style="width:17%"></i></span></div></td></tr>
-      <tr><td><b>Factures de la conseillère</b></td><td>Mettre à disposition de la conseillère ses factures et avoirs.</td><td>Menu Mes documents</td><td><div class="adopt">3 sur 35<span class="b"><i style="width:9%"></i></span></div></td></tr>
-      <tr><td><b>Points des conseillères</b></td><td>Faire gagner des points aux conseillères.</td><td>Suivi d'activité › Mes Points</td><td><div class="adopt">2 sur 35<span class="b"><i style="width:6%"></i></span></div></td></tr>
+      <tr><td><b>Réseau</b></td><td>Consulter son équipe.</td><td>Menu Réseau</td></tr>
+      <tr><td><b>Suivi d'équipe</b></td><td>Suivre l'activité de son équipe.</td><td>Menu Suivi d'équipe</td></tr>
+      <tr><td><b>Finalisation à distance</b></td><td>Envoyer la commande à la cliente pour qu'elle la finalise et la paie elle-même.</td><td>Boutons «&nbsp;Envoyer par mail au client&nbsp;» et «&nbsp;Afficher le QR Code&nbsp;» sur la commande</td></tr>
+      <tr><td><b>Application mobile</b></td><td>Accéder au lien de téléchargement de l'application.</td><td>Menu Appli mobile / tablette</td></tr>
+      <tr><td><b>Suivi d'activité</b></td><td>Regrouper commissions, challenges et points de la conseillère.</td><td>Menu Suivi d'activité (Commissions, Challenges, Mes Points selon les fonctions actives)</td></tr>
+      <tr><td><b>Commandes de l'équipe</b></td><td>Voir les commandes passées dans son équipe.</td><td>Suivi d'équipe › Commandes</td></tr>
+      <tr><td><b>Mini-boutique</b></td><td>Gérer sa boutique en ligne.</td><td>Accès à la gestion de sa mini-boutique</td></tr>
+      <tr><td><b>Mon assistant</b></td><td>Un assistant conversationnel pour les conseillères.</td><td>Menu Mon assistant, si la conseillère l'a activé pour elle-même</td></tr>
+      <tr><td><b>Factures de la conseillère</b></td><td>Mettre à disposition de la conseillère ses factures et avoirs.</td><td>Menu Mes documents</td></tr>
+      <tr><td><b>Points des conseillères</b></td><td>Faire gagner des points aux conseillères.</td><td>Suivi d'activité › Mes Points</td></tr>
     </tbody>
   </table></div>
-  <div class="warn"><span class="ex-label">Attention</span><p>Le menu «&nbsp;Suivi d'activité&nbsp;» peut s'afficher chez la conseillère sans aucun sous-menu si aucune de ses fonctions (plan de rémunération, challenges, points) n'est active pour votre marque. C'est le cas de 3 marques sur 35.</p></div>
+  <div class="warn"><span class="ex-label">Attention</span><p>Le menu «&nbsp;Suivi d'activité&nbsp;» peut s'afficher chez la conseillère sans aucun sous-menu si aucune de ses fonctions (plan de rémunération, challenges, points) n'est active pour votre marque.</p></div>
 </section>
 
 <!-- 6 -->

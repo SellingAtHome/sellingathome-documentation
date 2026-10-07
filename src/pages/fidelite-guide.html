@@ -102,8 +102,8 @@
           <ol class="toc-sub"><li><a href="#s13-1"><span class="toc-n">13.1</span>Réglages gérés par l'équipe SellingAtHome</a></li></ol>
         </li>
         <li data-sec="vie"><a href="#vie"><span class="toc-n">14</span>Recalculs et annulations</a></li>
-        <li data-sec="usages"><a href="#usages"><span class="toc-n">15</span>Paramétrages fréquents</a>
-          <ol class="toc-sub"><li><a href="#s15-1"><span class="toc-n">15.1</span>Les conditions les plus utilisées</a></li><li><a href="#s15-2"><span class="toc-n">15.2</span>Les configurations les plus courantes</a></li><li><a href="#s15-3"><span class="toc-n">15.3</span>Les réglages les plus courants</a></li></ol>
+        <li data-sec="usages"><a href="#usages"><span class="toc-n">15</span>Paramétrages courants</a>
+          <ol class="toc-sub"><li><a href="#s15-1"><span class="toc-n">15.1</span>Les conditions clés</a></li><li><a href="#s15-2"><span class="toc-n">15.2</span>Des configurations types</a></li><li><a href="#s15-3"><span class="toc-n">15.3</span>Les réglages à décider</a></li></ol>
         </li>
         <li data-sec="attention"><a href="#attention"><span class="toc-n">16</span>Points d'attention</a></li>
         <li data-sec="faq"><a href="#faq"><span class="toc-n">17</span>Questions fréquentes</a></li>
@@ -325,7 +325,7 @@
   <div class="table-wrap"><table class="cond">
     <thead><tr><th>Condition</th><th>Saisie</th><th>Ce qu'elle vérifie</th></tr></thead>
     <tbody>
-      <tr><td><b>Chiffre d'affaire de la réunion</b></td><td>Montant</td><td>Le CA de la réunion, calculé comme ci-dessus. C'est de loin la condition la plus utilisée.</td></tr>
+      <tr><td><b>Chiffre d'affaire de la réunion</b></td><td>Montant</td><td>Le CA de la réunion, calculé comme ci-dessus.</td></tr>
       <tr><td><b>Chiffre d'affaire de la réunion sans certains produits</b></td><td>Produits + montant</td><td>Le CA de la réunion sans les produits sélectionnés (produit entier ou déclinaison précise). Utile pour ne pas compter un produit d'appel ou un produit hôtesse.<span class="know">le seuil est celui saisi sur la première ligne produit. Ce calcul ne tient pas compte des options d'exclusion de l'hôte, des conseillères et du stock en recherche. Si la récompense est un pourcentage du CA, il porte sur ce CA «&nbsp;sans produits&nbsp;».</span></td></tr>
       <tr><td><b>Nombre de commandes dans la réunion</b></td><td>Nombre</td><td>Le nombre de commandes payées de la réunion, hôte et conseillère compris, hors commandes d'expédition hôtesse.<span class="know">une commande payée puis annulée est quand même comptée.</span></td></tr>
       <tr><td><b>Nombre de commandes dans la réunion (hors commandes de l'hôte)</b></td><td>Nombre</td><td>Le même décompte, sans les commandes de l'hôte. Récompense l'animation plutôt que les achats de l'hôtesse.<span class="know">les commandes payées puis annulées sont comptées.</span></td></tr>
@@ -336,7 +336,7 @@
       <tr><td><b>Date de la réunion</b></td><td>Date</td><td>Le jour où la réunion a lieu. «&nbsp;entre&nbsp;» permet de cibler une période.</td></tr>
       <tr><td><b>Date de création de la réunion</b></td><td>Date</td><td>Le jour où la réunion a été créée dans l'outil. Permet de récompenser une réunion prise tôt.</td></tr>
       <tr><td><b>La réunion est virtuelle</b></td><td>Oui / Non</td><td>Si la réunion se tient en visioconférence.</td></tr>
-      <tr><td><b>Vendeur est hôte</b></td><td>Oui / Non</td><td>Si la conseillère est elle-même l'hôte de sa réunion. Sert surtout à exclure ce cas.</td></tr>
+      <tr><td><b>Vendeur est hôte</b></td><td>Oui / Non</td><td>Si la conseillère est elle-même l'hôte de sa réunion. Sert par exemple à exclure ce cas.</td></tr>
       <tr><td><b>Nombre de réunions redatées dans la réunion</b></td><td>Nombre</td><td>Le nombre de réunions prises <strong>depuis</strong> cette réunion par ses invités.<span class="know">une réunion prise compte dès sa réservation, même si elle n'a pas encore eu lieu ou a été annulée.</span></td></tr>
     </tbody>
   </table></div>
@@ -445,7 +445,7 @@
   <div class="warn"><span class="ex-label">Attention</span><p>Ne sélectionnez <strong>qu'un seul</strong> code promo par règle. Avec plusieurs codes, la règle ne fonctionne pas.</p></div>
 
   <h3 id="s8-6"><span class="sub-num">8.6</span> Bon d'achat</h3>
-  <p>La règle attribue au bénéficiaire un exemplaire d'un <strong>bon d'achat</strong> existant (en général un bon simple). La validité, les produits concernés et les options de cumul sont ceux du bon. C'est l'usage principal des bons simples&nbsp;: le <strong>bon cadeau hôtesse</strong>.</p>
+  <p>La règle attribue au bénéficiaire un exemplaire d'un <strong>bon d'achat</strong> existant (en général un bon simple). La validité, les produits concernés et les options de cumul sont ceux du bon. Exemple type&nbsp;: le <strong>bon cadeau hôtesse</strong>.</p>
   <p class="muted">Une option permet de ne pas compter les achats de l'hôte dans le CA de la réunion pour ces règles (<a href="#reglages">section 13</a>).</p>
 
   <h3 id="s8-7"><span class="sub-num">8.7</span> Pourcentage du CA de la commande</h3>
@@ -646,37 +646,37 @@
 
 <!-- 15 -->
 <section id="usages">
-  <div class="sec-head"><span class="sec-num">15</span><h2>Les paramétrages les plus fréquents</h2></div>
-  <p class="lede">Les configurations que l'on retrouve le plus souvent chez les marques.</p>
-  <h3 id="s15-1"><span class="sub-num">15.1</span> Les conditions les plus utilisées</h3>
+  <div class="sec-head"><span class="sec-num">15</span><h2>Les paramétrages courants</h2></div>
+  <p class="lede">Des configurations types, à adapter à votre marque.</p>
+  <h3 id="s15-1"><span class="sub-num">15.1</span> Les conditions clés</h3>
   <ol class="prose">
-    <li><b>Chiffre d'affaire de la réunion</b>, de très loin la plus courante, souvent seule ou pour créer des paliers.</li>
+    <li><b>Chiffre d'affaire de la réunion</b>, seule ou pour créer des paliers.</li>
     <li><b>Date de la réunion</b> et <b>Date</b>, pour limiter une règle à une période promotionnelle.</li>
-    <li><b>Nombre de présent à la réunion</b> et <b>Vendeur est hôte</b> (le plus souvent pour exclure les réunions dont la conseillère est l'hôte).</li>
-    <li>Puis&nbsp;: nombre de commandes (hors hôte), nombre de participants, rôle client, chiffre d'affaire de la commande, nombre de réunions redatées.</li>
+    <li><b>Nombre de présent à la réunion</b> et <b>Vendeur est hôte</b> (par exemple pour exclure les réunions dont la conseillère est l'hôte).</li>
+    <li>Également utiles&nbsp;: nombre de commandes (hors hôte), nombre de participants, rôle client, chiffre d'affaire de la commande, nombre de réunions redatées.</li>
   </ol>
-  <p class="muted">Beaucoup de règles n'ont aucune condition&nbsp;: elles récompensent l'action à chaque fois (par exemple un cadeau pour toute hôtesse).</p>
-  <h3 id="s15-2"><span class="sub-num">15.2</span> Les configurations les plus courantes</h3>
+  <p class="muted">Une règle peut aussi n'avoir aucune condition&nbsp;: elle récompense alors l'action à chaque fois (par exemple un cadeau pour toute hôtesse).</p>
+  <h3 id="s15-2"><span class="sub-num">15.2</span> Des configurations types</h3>
   <div class="table-wrap"><table>
     <thead><tr><th>Usage</th><th>Paramétrage typique</th></tr></thead>
     <tbody>
-      <tr><td><b>Points hôtesse au pourcentage</b></td><td>Onglet Hôte, «&nbsp;Durant la réunion&nbsp;», <em>Pourcentage du CA de la réunion</em> à 5, 7, 8 ou 10&nbsp;%, avec un CA minimum</td></tr>
+      <tr><td><b>Points hôtesse au pourcentage</b></td><td>Onglet Hôte, «&nbsp;Durant la réunion&nbsp;», <em>Pourcentage du CA de la réunion</em> (par exemple 5 à 10&nbsp;%), avec un CA minimum</td></tr>
       <tr><td><b>Bon cadeau hôtesse par palier</b></td><td>Onglet Hôte, «&nbsp;Durant la réunion&nbsp;», <em>Bon d'achat</em> 15&nbsp;€, 30&nbsp;€, 45&nbsp;€… avec des conditions de CA</td></tr>
       <tr><td><b>Cadeau hôtesse</b></td><td>Onglet Hôte, «&nbsp;Être hôte de la réunion&nbsp;» ou «&nbsp;Durant la réunion&nbsp;», <em>Produit</em> ou <em>Produit au choix dans une liste</em></td></tr>
       <tr><td><b>Code promo hôtesse par palier</b></td><td>Onglet Hôte, «&nbsp;Durant la réunion&nbsp;», <em>Code promo</em>, CA ≥ 300 / 600 / 900&nbsp;€</td></tr>
-      <tr><td><b>Points client sur chaque achat</b></td><td>Onglet Client, «&nbsp;Gains lors d'une vente directe&nbsp;» ou «&nbsp;en réunion&nbsp;», <em>Pourcentage du CA de la commande</em> à 10&nbsp;%</td></tr>
+      <tr><td><b>Points client sur chaque achat</b></td><td>Onglet Client, «&nbsp;Gains lors d'une vente directe&nbsp;» ou «&nbsp;en réunion&nbsp;», <em>Pourcentage du CA de la commande</em> (par exemple 10&nbsp;%)</td></tr>
       <tr><td><b>Récompense de la prise de réunion</b></td><td>Onglets Hôte ou Client, «&nbsp;Prise de réunion des invités dans la réunion&nbsp;», montant en points ou cadeau</td></tr>
-      <tr><td><b>Points conseillère</b></td><td>Onglet Vendeur, «&nbsp;Durant la réunion&nbsp;», pourcentage du CA (5 à 10&nbsp;%)</td></tr>
+      <tr><td><b>Points conseillère</b></td><td>Onglet Vendeur, «&nbsp;Durant la réunion&nbsp;», pourcentage du CA (par exemple 5 à 10&nbsp;%)</td></tr>
     </tbody>
   </table></div>
-  <h3 id="s15-3"><span class="sub-num">15.3</span> Les réglages les plus courants</h3>
+  <h3 id="s15-3"><span class="sub-num">15.3</span> Les réglages à décider</h3>
   <div class="table-wrap"><table>
-    <thead><tr><th>Réglage</th><th>Valeurs les plus courantes</th></tr></thead>
+    <thead><tr><th>Réglage</th><th>Choix possibles</th></tr></thead>
     <tbody>
-      <tr><td>Taux de change</td><td>1 point = 1&nbsp;€. Un taux de 0&nbsp;€ est aussi fréquent, surtout pour le profil Client (points réservés au catalogue en points, ou non convertibles).</td></tr>
-      <tr><td>Validité des points</td><td>Souvent désactivée. Quand elle est activée&nbsp;: 365 ou 180 jours.</td></tr>
-      <tr><td>Catalogue en points</td><td>Activé par une minorité de marques.</td></tr>
-      <tr><td>Montant futur de l'hôte, gains hôtes pour les vendeurs</td><td>Les deux choix sont répandus&nbsp;: à décider selon la politique de la marque.</td></tr>
+      <tr><td>Taux de change</td><td>1 point = 1&nbsp;€, par exemple. Un taux de 0&nbsp;€ réserve les points au catalogue en points (ou les rend non convertibles), par exemple pour le profil Client.</td></tr>
+      <tr><td>Validité des points</td><td>Facultative. Si vous l'activez&nbsp;: par exemple 365 ou 180 jours.</td></tr>
+      <tr><td>Catalogue en points</td><td>Module optionnel, à activer par SellingAtHome sur demande.</td></tr>
+      <tr><td>Montant futur de l'hôte, gains hôtes pour les vendeurs</td><td>À décider selon la politique de la marque.</td></tr>
     </tbody>
   </table></div>
 </section>

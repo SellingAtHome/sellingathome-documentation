@@ -6,12 +6,17 @@ Format : [majeure.mineure.correctif](https://semver.org/lang/fr/).
 - **Mineure** : nouvelles pages ou nouvelles sections importantes.
 - **Correctif** : corrections, précisions, captures mises à jour.
 
+## 1.0.1 — octobre 2026
+
+- Retrait de toutes les statistiques d'usage des marques (décomptes, moyennes, répartitions, sections « en chiffres »).
+- Exemples et cartes d'illustration remplacés par des exemples fictifs.
+
 ## 1.0.0 — octobre 2026
 
 Première version de la documentation de l'espace marque.
 
 - 8 univers : Démarrer, Réseau et rémunération, Recrutement, Réunions, Commandes et boutiques, Catalogue et logistique, Animation et fidélisation, Communication et pilotage.
-- 61 pages rédigées à partir du code source et de l'usage réel des marques, dont les guides des challenges, de la fidélité, des bons d'achat, des réductions et des conditions d'achat.
+- 61 pages rédigées à partir du code source, dont les guides des challenges, de la fidélité, des bons d'achat, des réductions et des conditions d'achat.
 - Pages des cas d'usage, de dépannage (38 diagnostics) et glossaire (194 termes).
 - Environ 200 captures d'écran anonymisées de la marque de démonstration.
 - Recherche plein texte, thème sombre, mega-menu par univers, tiroir de navigation sur mobile, bouton « haut de page ».
