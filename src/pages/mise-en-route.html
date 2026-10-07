@@ -1,0 +1,435 @@
+<!--page {"title":"Check-list de mise en route"} -->
+<style>
+.phase-tag { display:inline-block; font-size:.78rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; color:var(--muted); margin-bottom:4px; }
+.checklist { list-style:none; margin:0; padding:0; display:grid; gap:8px; counter-reset:step; }
+.checklist li { display:flex; align-items:flex-start; gap:12px; background:var(--card); border:1px solid var(--rule); border-radius:14px; padding:11px 14px; }
+.checklist input[type=checkbox] { flex:none; width:20px; height:20px; margin-top:2px; accent-color:var(--accent); cursor:pointer; }
+.checklist .n { flex:none; width:28px; height:28px; border-radius:50%; background:var(--accent-wash); color:var(--accent-ink); font-weight:700; display:flex; align-items:center; justify-content:center; font-size:.85rem; }
+.checklist .t { flex:1; min-width:0; }
+.checklist .t a { font-weight:700; }
+.checklist .t span { display:block; color:var(--muted); font-size:.88rem; margin-top:2px; }
+.checklist li.done { opacity:.6; }
+.checklist li.done .t a { text-decoration:line-through; }
+.progress { display:flex; align-items:center; gap:12px; margin:14px 0 4px; font-size:.9rem; color:var(--muted); }
+.progress .bar { flex:1; height:8px; background:var(--surface); border:1px solid var(--rule); border-radius:100px; overflow:hidden; }
+.progress .bar i { display:block; height:100%; width:0; background:var(--accent); transition:width .2s; }
+.step { border:1px solid var(--rule); border-left:5px solid var(--accent); border-radius:14px; padding:16px 18px; background:var(--card); display:flex; flex-direction:column; gap:12px; margin:8px 0 22px; }
+.step.mod { border-left-color:var(--yellow); }
+.step dl { display:grid; grid-template-columns:130px 1fr; gap:8px 14px; margin:0; }
+.step dt { font-weight:700; color:var(--heading); font-size:.9rem; }
+.step dd { margin:0; min-width:0; }
+.step dd ul { margin:0; padding-left:18px; }
+.step dd li { margin:3px 0; }
+@media (max-width:640px) { .step dl { grid-template-columns:1fr; } .step dt { margin-top:6px; } }
+.defs td:first-child { width:36%; }
+.defs td:nth-child(3) { width:16%; white-space:nowrap; }
+</style>
+<header class="hero">
+  <div class="hero-in">
+    <div>
+      <span class="eyebrow">Démarrer</span>
+      <h1>Check-list <span class="script">de mise en route</span></h1>
+      <p class="lede">Dans quel ordre paramétrer votre marque dans l'espace marque, étape par étape&nbsp;: pourquoi chaque étape compte, où la faire, ce qu'il faut décider et les pièges à éviter. Cochez au fur et à mesure.</p>
+    </div>
+    <div class="voucher-art" aria-hidden="true">
+      <div class="v-top"><span>Mise en route</span><span>12 étapes</span></div>
+      <div class="v-amount">1<span> → 12</span></div>
+      <div class="v-name">Votre marque</div>
+      <div class="v-sep"></div>
+      <div class="v-meta"><span>Fondations <b>1-2</b></span><span>Réseau <b>8-10</b></span></div>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="toc" aria-label="Sommaire">
+    <details id="tocDetails" open>
+      <summary>Sommaire</summary>
+      <div class="toc-title">Sommaire</div>
+      <ol>
+        <li data-sec="avant"><a href="#avant"><span class="toc-n">1</span>Avant de commencer</a></li>
+        <li data-sec="checklist"><a href="#checklist"><span class="toc-n">2</span>La check-list</a></li>
+        <li data-sec="fondations"><a href="#fondations"><span class="toc-n">3</span>Les fondations</a>
+          <ol class="toc-sub"><li><a href="#s3-1"><span class="toc-n">3.1</span>Identité et coordonnées</a></li><li><a href="#s3-2"><span class="toc-n">3.2</span>Taxes</a></li></ol>
+        </li>
+        <li data-sec="vendre"><a href="#vendre"><span class="toc-n">4</span>Vendre</a>
+          <ol class="toc-sub"><li><a href="#s4-1"><span class="toc-n">4.1</span>Catalogue</a></li><li><a href="#s4-2"><span class="toc-n">4.2</span>Livraison</a></li><li><a href="#s4-3"><span class="toc-n">4.3</span>Commandes</a></li></ol>
+        </li>
+        <li data-sec="animer"><a href="#animer"><span class="toc-n">5</span>Animer</a>
+          <ol class="toc-sub"><li><a href="#s5-1"><span class="toc-n">5.1</span>Réunions</a></li><li><a href="#s5-2"><span class="toc-n">5.2</span>Fidélité et offres</a></li></ol>
+        </li>
+        <li data-sec="reseau"><a href="#reseau"><span class="toc-n">6</span>Le réseau</a>
+          <ol class="toc-sub"><li><a href="#s6-1"><span class="toc-n">6.1</span>Statuts et rôles</a></li><li><a href="#s6-2"><span class="toc-n">6.2</span>Plan de rémunération</a></li><li><a href="#s6-3"><span class="toc-n">6.3</span>Réglages des conseillères</a></li><li><a href="#s6-4"><span class="toc-n">6.4</span>Recrutement</a></li></ol>
+        </li>
+        <li data-sec="communiquer"><a href="#communiquer"><span class="toc-n">7</span>Communiquer</a>
+          <ol class="toc-sub"><li><a href="#s7-1"><span class="toc-n">7.1</span>Emails et contenus</a></li><li><a href="#s7-2"><span class="toc-n">7.2</span>Le test final</a></li></ol>
+        </li>
+        <li data-sec="defauts"><a href="#defauts"><span class="toc-n">8</span>Les valeurs par défaut</a></li>
+        <li data-sec="attention"><a href="#attention"><span class="toc-n">9</span>Points d'attention</a></li>
+        <li data-sec="faq"><a href="#faq"><span class="toc-n">10</span>Questions fréquentes</a></li>
+      </ol>
+    </details>
+  </nav>
+
+  <main>
+
+<!-- 1 -->
+<section id="avant">
+  <div class="sec-head"><span class="sec-num">01</span><h2>Avant de commencer</h2></div>
+  <p class="lede">Une nouvelle marque se paramètre presque entièrement depuis le menu <strong>Paramètres</strong> de l'espace marque. L'ordre compte&nbsp;: certains réglages s'appuient sur d'autres (un produit a besoin d'une taxe, un statut par défaut a besoin de statuts existants…).</p>
+  <div class="figrow">
+    <figure><img src="Captures/Demarrer/menu-parametres.png" alt="Menu de gauche avec la rubrique Paramètres ouverte : Configuration générale, Templates email, Réductions, Notifications, Commissionnement, Taxes, Gérer les motifs de retour, Modèles des minisites" loading="lazy"><figcaption>Le menu Paramètres (marque de démonstration).</figcaption></figure>
+    <div class="prose" style="display:flex;flex-direction:column;gap:12px">
+      <p>L'essentiel se trouve dans <strong>Paramètres › Configuration générale</strong>, organisée en onglets&nbsp;: <strong>Paramètres généraux</strong>, <strong>Paramètres des activités</strong>, <strong>Paramètres des commandes</strong>, <strong>Paramètres fidélité</strong>, <strong>Paramètres des Réunions</strong>, <strong>Paramètres des livraisons</strong>, et selon vos options <strong>Challenges</strong> et <strong>Paramètres des collections</strong>.</p>
+      <p>Les autres réglages sont dans les menus métier&nbsp;: <strong>Catalogue</strong>, <strong>Vendeurs</strong>, <strong>Formulaires</strong>, <strong>Base de connaissances</strong>.</p>
+      <div class="tip"><span class="ex-label">Un menu manque&nbsp;?</span><p>Certaines fonctions ne sont visibles que si SellingAtHome les a activées pour votre marque. Les étapes concernées portent le badge <span class="tag yellow" style="display:inline-block">Module optionnel</span>. Voir <a href="modules-options.html">Modules et options</a>.</p></div>
+    </div>
+  </div>
+  <figure><img src="Captures/Demarrer/onglets-configuration.png" alt="En-tête de la page Paramètres avec les onglets Paramètres généraux, Paramètres des activités, Paramètres des commandes, Paramètres fidélité, Paramètres des Réunions, Paramètres des livraisons et Challenges" loading="lazy"><figcaption>Les onglets de Paramètres › Configuration générale.</figcaption></figure>
+  <div class="tip"><span class="ex-label">Vocabulaire</span><p>Dans l'espace marque, les conseillères sont appelées <strong>vendeurs</strong> (ou VDI), l'hôtesse <strong>hôte</strong> et le recruteur <strong>parrain</strong>. Cette page parle de conseillères, d'hôtesses et de recruteuses, mais cite les libellés exactement comme à l'écran.</p></div>
+  <div class="warn"><span class="ex-label">Enregistrez bloc par bloc</span><p>Chaque onglet a ses propres boutons <strong>Enregistrer</strong> ou <strong>Enregistrer les paramètres</strong>, souvent un par bloc. Un réglage modifié dans un bloc n'est pas enregistré par le bouton d'un autre bloc.</p></div>
+</section>
+
+<!-- 2 -->
+<section id="checklist">
+  <div class="sec-head"><span class="sec-num">02</span><h2>La check-list</h2></div>
+  <p>Cochez chaque étape une fois terminée. Vos coches sont mémorisées par votre navigateur, sur cet ordinateur.</p>
+  <div class="progress" aria-live="polite"><div class="bar"><i id="mer-bar"></i></div><span id="mer-count">0 / 12</span></div>
+  <ol class="checklist" id="mer-list">
+    <li><input type="checkbox" data-step="1" aria-label="Étape 1 terminée"><span class="n">1</span><div class="t"><a href="#s3-1">Identité et coordonnées de la marque</a><span>Nom, adresse, contacts, banque, couleur, logo.</span></div></li>
+    <li><input type="checkbox" data-step="2" aria-label="Étape 2 terminée"><span class="n">2</span><div class="t"><a href="#s3-2">Taxes</a><span>Les taux de TVA, avant de créer les produits.</span></div></li>
+    <li><input type="checkbox" data-step="3" aria-label="Étape 3 terminée"><span class="n">3</span><div class="t"><a href="#s4-1">Catalogue</a><span>Catégories, attributs, puis produits et prix.</span></div></li>
+    <li><input type="checkbox" data-step="4" aria-label="Étape 4 terminée"><span class="n">4</span><div class="t"><a href="#s4-2">Livraison</a><span>Modes de livraison, tarifs et conditions de gratuité.</span></div></li>
+    <li><input type="checkbox" data-step="5" aria-label="Étape 5 terminée"><span class="n">5</span><div class="t"><a href="#s4-3">Paramètres des commandes</a><span>Champs obligatoires, annulation, suppression automatique, questions.</span></div></li>
+    <li><input type="checkbox" data-step="6" aria-label="Étape 6 terminée"><span class="n">6</span><div class="t"><a href="#s5-1">Réunions</a><span>Délai de clôture, verrous, mini-sites.</span></div></li>
+    <li><input type="checkbox" data-step="7" aria-label="Étape 7 terminée"><span class="n">7</span><div class="t"><a href="#s5-2">Fidélité et offres</a><span>Gains des hôtesses et clientes, bons d'achat, réductions.</span></div></li>
+    <li><input type="checkbox" data-step="8" aria-label="Étape 8 terminée"><span class="n">8</span><div class="t"><a href="#s6-1">Statuts et rôles des conseillères</a><span>La grille des statuts et les profils de droits.</span></div></li>
+    <li><input type="checkbox" data-step="9" aria-label="Étape 9 terminée"><span class="n">9</span><div class="t"><a href="#s6-2">Plan de rémunération</a><span>Les règles de commissionnement.</span></div></li>
+    <li><input type="checkbox" data-step="10" aria-label="Étape 10 terminée"><span class="n">10</span><div class="t"><a href="#s6-3">Réglages des conseillères</a><span>Statut et rôle par défaut, stocks visibles, statistiques.</span></div></li>
+    <li><input type="checkbox" data-step="11" aria-label="Étape 11 terminée"><span class="n">11</span><div class="t"><a href="#s6-4">Recrutement</a><span>Formulaire de candidature, contenus, kit de démarrage.</span></div></li>
+    <li><input type="checkbox" data-step="12" aria-label="Étape 12 terminée"><span class="n">12</span><div class="t"><a href="#s7-1">Emails, contenus et activités</a><span>Templates email, base de connaissances, types d'activités.</span></div></li>
+  </ol>
+</section>
+
+<!-- 3 -->
+<section id="fondations">
+  <div class="sec-head"><span class="sec-num">03</span><h2>Les fondations</h2></div>
+
+  <h3 id="s3-1"><span class="sub-num">3.1</span> Étape 1 — Identité et coordonnées</h3>
+  <div class="step">
+    <dl>
+      <dt>Pourquoi</dt><dd>Ces informations apparaissent sur vos documents et vos emails&nbsp;: l'adresse sert aux bons de commande, l'adresse email est celle d'envoi des emails automatiques, l'IBAN et le BIC sont le compte émetteur du fichier de virement SEPA des commissions.</dd>
+      <dt>Où</dt><dd><div class="path" aria-label="Chemin d'accès"><span>Paramètres</span><span>Configuration générale</span><span>Onglet <b>Paramètres généraux</b></span></div></dd>
+      <dt>À décider</dt><dd><ul>
+        <li><strong>Informations générales</strong>&nbsp;: Nom, Description, Numéro de Siret, Numéro de TVA.</li>
+        <li><strong>Adresse (pour les bons de commandes)</strong>.</li>
+        <li><strong>Contacts</strong>&nbsp;: Adresse email d'envoi des emails automatiques, Téléphone de contact pour les utilisateurs, URL ou Email de contact pour les vendeurs.</li>
+        <li><strong>Informations bancaires</strong>&nbsp;: nom de la banque, RIB (facultatif), IBAN, SWIFT / BIC.</li>
+        <li><strong>Information complémentaire</strong>&nbsp;: Code couleur et Logo de la marque.</li>
+        <li><strong>Rapports</strong>&nbsp;: le stock minimal en dessous duquel un produit apparaît dans le rapport de stock faible (5 par défaut).</li>
+        <li><strong>Livraison</strong>&nbsp;: Délais maximum de livraison, en jours.</li>
+      </ul></dd>
+      <dt>Pièges</dt><dd><ul>
+        <li>Sans IBAN ni BIC, le fichier de virement SEPA des commissions ne peut pas indiquer votre compte.</li>
+        <li><strong>Délais maximum de livraison</strong>&nbsp;: à 0 (valeur par défaut), aucune date limite de livraison n'est imprimée. Au-delà, vos bons de commande, factures et bons de livraison indiquent une date limite égale à la date de paiement plus ce nombre de jours. 13 marques sur 35 l'utilisent.</li>
+        <li>Le bloc <strong>Vendeurs</strong> de la même page se règle plus tard, à l'<a href="#s6-3">étape 10</a>&nbsp;: il a besoin des statuts et des rôles.</li>
+      </ul></dd>
+      <dt>Plus loin</dt><dd><a href="espace-marque.html">Découvrir l'espace marque</a></dd>
+    </dl>
+  </div>
+
+  <h3 id="s3-2"><span class="sub-num">3.2</span> Étape 2 — Les taxes</h3>
+  <div class="step">
+    <dl>
+      <dt>Pourquoi</dt><dd>Chaque prix de produit est rattaché à une taxe. Créez donc vos taux de TVA <strong>avant</strong> votre catalogue.</dd>
+      <dt>Où</dt><dd><div class="path" aria-label="Chemin d'accès"><span>Paramètres</span><span><b>Taxes</b></span></div></dd>
+      <dt>À décider</dt><dd><ul>
+        <li><strong>Ajouter une taxe</strong>&nbsp;: un nom, un taux, un pays et un ordre d'affichage. Par exemple «&nbsp;TVA 20&nbsp;%&nbsp;» et «&nbsp;TVA 5,5&nbsp;%&nbsp;» pour la France.</li>
+        <li><strong>Ajouter une zone</strong> (facultatif)&nbsp;: une zone de taxes regroupe plusieurs taxes («&nbsp;Taxes associées&nbsp;»). Utile seulement si vous vendez dans plusieurs pays&nbsp;; une seule marque sur 35 en utilise.</li>
+      </ul></dd>
+      <dt>Pièges</dt><dd>Le taux de TVA des frais de port se déduit des taux présents dans la commande (réglage de l'<a href="#s4-2">étape 4</a>)&nbsp;: des taxes bien définies évitent les surprises sur les frais de port.</dd>
+      <dt>Plus loin</dt><dd><a href="catalogue.html">Catalogue et logistique</a></dd>
+    </dl>
+  </div>
+</section>
+
+<!-- 4 -->
+<section id="vendre">
+  <div class="sec-head"><span class="sec-num">04</span><h2>Vendre</h2></div>
+
+  <h3 id="s4-1"><span class="sub-num">4.1</span> Étape 3 — Le catalogue</h3>
+  <div class="step">
+    <dl>
+      <dt>Pourquoi</dt><dd>Sans produits, ni commande ni réunion possible. C'est aussi l'étape la plus longue&nbsp;: commencez-la tôt.</dd>
+      <dt>Où</dt><dd><div class="path" aria-label="Chemin d'accès"><span>Catalogue</span><span><b>Catégories</b>, <b>Attributs</b>, <b>Produits</b></span></div></dd>
+      <dt>À décider</dt><dd><ul>
+        <li>L'arborescence des <strong>catégories</strong>, telle que les conseillères la verront.</li>
+        <li>Les <strong>attributs</strong> (caractéristiques comme une taille ou une couleur), avant les produits qui en ont besoin.</li>
+        <li>Les <strong>produits</strong>, avec leurs prix et leur taxe.</li>
+      </ul></dd>
+      <dt>Pièges</dt><dd>Créez les catégories et les attributs d'abord&nbsp;: un produit se range dans des catégories qui doivent exister.</dd>
+      <dt>Plus loin</dt><dd><a href="catalogue.html">Catalogue et logistique</a></dd>
+    </dl>
+  </div>
+
+  <h3 id="s4-2"><span class="sub-num">4.2</span> Étape 4 — La livraison</h3>
+  <div class="step">
+    <dl>
+      <dt>Pourquoi</dt><dd>Les frais de port s'ajoutent à chaque commande. Un mode de livraison oublié, ou mal tarifé, se voit immédiatement chez vos clientes.</dd>
+      <dt>Où</dt><dd><div class="path" aria-label="Chemin d'accès"><span>Paramètres</span><span>Configuration générale</span><span>Onglet <b>Paramètres des livraisons</b></span></div></dd>
+      <dt>À décider</dt><dd><ul>
+        <li><strong>Appliquer les frais de port sur</strong>&nbsp;: le montant non remisé (par défaut), le montant remisé, ou le montant remisé (bons d'achat exclus). Compte pour les conditions de gratuité.</li>
+        <li><strong>Taux de TVA des frais de port</strong>&nbsp;: par rapport au taux le plus bas d'une commande (par défaut), au taux le plus haut, ou un taux personnalisé.</li>
+        <li>Pour chaque mode de livraison (chez la conseillère, chez la cliente, chez l'hôtesse, adresse personnalisée, points relais selon votre contrat…)&nbsp;: l'activer ou non, <strong>Livraison offerte&nbsp;?</strong>, <strong>Tarif de base</strong>, <strong>Indisponible pour</strong> (types de commande) et les <strong>Conditions particulières</strong>.</li>
+      </ul></dd>
+      <dt>Pièges</dt><dd><ul>
+        <li>Chaque carte de mode de livraison a son propre bouton <strong>Enregistrer</strong>.</li>
+        <li>Un taux personnalisé ne peut pas être de 0&nbsp;%.</li>
+      </ul></dd>
+      <dt>Plus loin</dt><dd><a href="catalogue.html">Catalogue et logistique</a></dd>
+    </dl>
+  </div>
+  <figure><img src="Captures/Demarrer/livraisons-haut.png" alt="Onglet Paramètres des livraisons : bloc Configuration générale avec les choix Appliquer les frais de port sur et Taux de TVA des frais de port, puis les cartes Livraison chez le vendeur, chez le client et chez l'hôte avec Livraison offerte, Tarif de base, Indisponible pour et des conditions particulières" loading="lazy"><figcaption>L'onglet Paramètres des livraisons (marque de démonstration).</figcaption></figure>
+  <div class="example"><span class="ex-label">Exemple</span><p>Votre marque livre chez la cliente pour un tarif de base de 6,90&nbsp;€, avec une condition particulière «&nbsp;Montant de la commande &gt;= 80&nbsp;€&nbsp;» → livraison gratuite. Camille commande 65&nbsp;€&nbsp;: elle paie 6,90&nbsp;€ de port. Inès commande 92&nbsp;€&nbsp;: la livraison est offerte. Si vous appliquez les frais de port sur le <em>montant remisé</em> et qu'Inès bénéficie d'une réduction de 15&nbsp;€, sa commande descend à 77&nbsp;€ et elle paie le port.</p></div>
+  <p class="muted">Repère&nbsp;: 17 marques sur 35 appliquent les frais de port sur le montant non remisé, 18 sur un montant remisé. 24 marques sur 35 gardent le taux de TVA le plus bas de la commande.</p>
+
+  <h3 id="s4-3"><span class="sub-num">4.3</span> Étape 5 — Les paramètres des commandes</h3>
+  <div class="step">
+    <dl>
+      <dt>Pourquoi</dt><dd>Ces réglages décident de ce qui est obligatoire pour commander, de ce qui se passe à l'annulation, et du sort des paniers jamais payés.</dd>
+      <dt>Où</dt><dd><div class="path" aria-label="Chemin d'accès"><span>Paramètres</span><span>Configuration générale</span><span>Onglet <b>Paramètres des commandes</b></span></div></dd>
+      <dt>À décider</dt><dd><ul>
+        <li><strong>Rendre l'adresse obligatoire</strong> et <strong>Rendre le téléphone obligatoire pour passer une commande</strong>.</li>
+        <li><strong>Autoriser la suppression automatique</strong> des commandes non payées, avec un <strong>Délai de suppression</strong> en heures (48&nbsp;heures minimum).</li>
+        <li>Le réapprovisionnement du stock en cas d'annulation ou de suppression d'une commande, et le recrédit des points de fidélité sur les commandes annulées.</li>
+        <li>L'envoi d'une copie de la facture client par email (à vous, ou à la conseillère).</li>
+        <li><strong>Paramètres des questions</strong>&nbsp;: des questions posées lors de la finalisation de la commande (par exemple «&nbsp;Êtes-vous intéressée par le métier de conseillère&nbsp;?&nbsp;»), dont vous suivez les réponses dans <strong>Rapports › Réponses aux questions</strong>, obligatoires ou non.</li>
+        <li><strong>Ajout automatique d'éléments dans la commande</strong> (un cadeau offert selon des conditions) et <strong>Produits suggérés</strong>.</li>
+      </ul></dd>
+      <dt>Pièges</dt><dd><ul>
+        <li>La suppression automatique efface les commandes <strong>non payées</strong> créées depuis plus longtemps que le délai (hors kits de démarrage et commandes payées en partie). Une cliente qui comptait payer plus tard perd son panier.</li>
+        <li>Certaines cases n'apparaissent que si l'option correspondante est activée pour votre marque (livraison partielle, bons de préparation, modèle de bon de livraison personnalisé).</li>
+      </ul></dd>
+      <dt>Plus loin</dt><dd><a href="commandes-comprendre.html">Comprendre les commandes</a> · <a href="ventes.html">Commandes et boutiques</a></dd>
+    </dl>
+  </div>
+</section>
+
+<!-- 5 -->
+<section id="animer">
+  <div class="sec-head"><span class="sec-num">05</span><h2>Animer</h2></div>
+
+  <h3 id="s5-1"><span class="sub-num">5.1</span> Étape 6 — Les réunions</h3>
+  <div class="step">
+    <dl>
+      <dt>Pourquoi</dt><dd>La réunion est le cœur de la vente à domicile. Ses réglages décident quand elle se clôture et ce que la conseillère peut encore modifier ensuite.</dd>
+      <dt>Où</dt><dd><div class="path" aria-label="Chemin d'accès"><span>Paramètres</span><span>Configuration générale</span><span>Onglet <b>Paramètres des Réunions</b></span></div></dd>
+      <dt>À décider</dt><dd><ul>
+        <li>Le <strong>délai de clôture</strong> en heures (48 par défaut, minimum 48). 13 marques sur 35 gardent 48&nbsp;h, 10 choisissent 96&nbsp;h.</li>
+        <li>Annuler les réunions sans commande, et supprimer les commandes non payées, à la clôture.</li>
+        <li>Les <strong>actions bloquées lorsque la réunion est terminée</strong>.</li>
+        <li>Le mode de création des mini-sites, si votre marque a cette option.</li>
+      </ul></dd>
+      <dt>Pièges</dt><dd>Accordez ce délai avec la suppression automatique des commandes de l'étape 5&nbsp;: les deux mécanismes peuvent supprimer des paniers non payés.</dd>
+      <dt>Plus loin</dt><dd><a href="reunion-cycle-de-vie.html#parametres">Le cycle de vie d'une réunion › Les réglages</a></dd>
+    </dl>
+  </div>
+
+  <h3 id="s5-2"><span class="sub-num">5.2</span> Étape 7 — Fidélité et offres</h3>
+  <div class="step">
+    <dl>
+      <dt>Pourquoi</dt><dd>Les gains des hôtesses sont l'argument qui fait organiser des réunions. Les bons d'achat et les réductions animent vos ventes.</dd>
+      <dt>Où</dt><dd>
+        <div class="path" aria-label="Chemin d'accès"><span>Paramètres</span><span>Configuration générale</span><span>Onglet <b>Paramètres fidélité</b></span></div>
+        <div class="path" aria-label="Chemin d'accès"><span>Bons d'achat</span></div>
+        <div class="path" aria-label="Chemin d'accès"><span>Paramètres</span><span><b>Réductions</b></span></div>
+      </dd>
+      <dt>À décider</dt><dd><ul>
+        <li>Ce que gagnent l'hôtesse, la cliente et la conseillère (onglets <strong>Hôte</strong>, <strong>Client</strong>, <strong>Vendeur</strong> du bloc «&nbsp;Paramétrage par type&nbsp;»).</li>
+        <li>Ce qui compte dans le chiffre d'affaires de la réunion (achats de l'hôtesse, montant payé en points…).</li>
+        <li>Vos premiers modèles de bons d'achat et vos premières réductions.</li>
+      </ul></dd>
+      <dt>Pièges</dt><dd>Testez vos règles sur un exemple chiffré avant l'ouverture&nbsp;: une règle trop généreuse se corrige mal une fois les gains distribués.</dd>
+      <dt>Plus loin</dt><dd><a href="fidelite-guide.html">Guide de la fidélité</a> · <a href="bons-achat-guide.html">Guide des bons d'achat</a> · <a href="reductions-guide.html">Guide des réductions</a></dd>
+    </dl>
+  </div>
+</section>
+
+<!-- 6 -->
+<section id="reseau">
+  <div class="sec-head"><span class="sec-num">06</span><h2>Le réseau</h2></div>
+
+  <h3 id="s6-1"><span class="sub-num">6.1</span> Étape 8 — Statuts et rôles des conseillères</h3>
+  <div class="step">
+    <dl>
+      <dt>Pourquoi</dt><dd>Les statuts (par exemple Conseillère, Animatrice, Manager) structurent votre réseau et servent de base au plan de rémunération. Les rôles définissent ce que chaque conseillère peut faire.</dd>
+      <dt>Où</dt><dd>
+        <div class="path" aria-label="Chemin d'accès"><span>Vendeurs</span><span><b>Gérer les statuts</b></span></div>
+        <div class="path" aria-label="Chemin d'accès"><span>Vendeurs</span><span><b>Gérer les rôles</b></span></div>
+      </dd>
+      <dt>À décider</dt><dd><ul>
+        <li>La grille des statuts (bouton <strong>Nouveau statut</strong>).</li>
+        <li>Si vous disposez de l'option, les règles de passage automatique (bouton <strong>Automatisation des statuts</strong>).</li>
+        <li>Les profils de droits (bouton <strong>Ajouter un rôle</strong>).</li>
+      </ul></dd>
+      <dt>Pièges</dt><dd>Les statuts doivent exister avant d'être choisis comme statut par défaut (étape 10) et utilisés dans le plan de rémunération (étape 9).</dd>
+      <dt>Plus loin</dt><dd><a href="reseau.html">Réseau et rémunération</a></dd>
+    </dl>
+  </div>
+  <p class="muted">Repère&nbsp;: 32 marques sur 35 ont une grille de statuts, 27 ont créé des rôles de conseillères.</p>
+
+  <h3 id="s6-2"><span class="sub-num">6.2</span> Étape 9 — Le plan de rémunération <span class="tag yellow" style="display:inline-block">Module optionnel</span></h3>
+  <div class="step mod">
+    <dl>
+      <dt>Pourquoi</dt><dd>Il calcule les commissions de vos conseillères chaque mois. C'est le réglage le plus engageant&nbsp;: il doit être juste dès la première clôture.</dd>
+      <dt>Où</dt><dd><div class="path" aria-label="Chemin d'accès"><span>Paramètres</span><span><b>Commissionnement</b></span></div></dd>
+      <dt>À décider</dt><dd>Les règles, leurs valeurs par statut et leurs conditions.</dd>
+      <dt>Pièges</dt><dd>Validez le plan sur quelques cas réels (une conseillère débutante, une animatrice avec une équipe) avant la première clôture mensuelle.</dd>
+      <dt>Plus loin</dt><dd><a href="reseau.html">Réseau et rémunération</a></dd>
+    </dl>
+  </div>
+  <p class="muted">Repère&nbsp;: le menu Commissionnement est activé pour 31 marques sur 35.</p>
+
+  <h3 id="s6-3"><span class="sub-num">6.3</span> Étape 10 — Les réglages des conseillères</h3>
+  <div class="figrow">
+    <figure><img src="Captures/Demarrer/parametres-generaux-colonne.png" alt="Colonne de droite de l'onglet Paramètres généraux : blocs Information complémentaire (code couleur, logo), Rapports (stock minimal pour le rapport de stock faible), Livraison (délais maximum de livraison en jours) et Vendeurs (parent sur le graph, recruteur animateur, lien compte vendeur et compte client, statut et rôle par défaut à la création, affichage des stocks, statistiques à afficher, modification des RGPD)" loading="lazy"><figcaption>Les blocs de droite de l'onglet Paramètres généraux.</figcaption></figure>
+    <div class="step" style="margin:0">
+      <dl>
+        <dt>Pourquoi</dt><dd>Le statut et le rôle par défaut sont donnés à chaque conseillère créée depuis l'espace marque ou par le recrutement&nbsp;; les autres choix règlent ce que les conseillères voient dans leur espace.</dd>
+        <dt>Où</dt><dd><div class="path" aria-label="Chemin d'accès"><span>Paramètres</span><span>Configuration générale</span><span>Paramètres généraux</span><span>Bloc <b>Vendeurs</b></span></div></dd>
+        <dt>À décider</dt><dd><ul>
+          <li><strong>A la création statut par défaut</strong> et <strong>rôle par défaut</strong>.</li>
+          <li><strong>Le recruteur est aussi l'animateur du vendeur</strong>.</li>
+          <li><strong>Lier les informations d'un vendeur entre son compte vendeur et son compte client</strong>.</li>
+          <li><strong>Comment les vendeurs voient les stocks&nbsp;?</strong>&nbsp;: Aucun, Avec un symbole coloré, Avec le chiffre exact.</li>
+          <li><strong>Statistiques à afficher</strong> dans le tableau de bord des conseillères.</li>
+        </ul></dd>
+        <dt>Pièges</dt><dd>Sans statut par défaut («&nbsp;Aucun&nbsp;»), une nouvelle conseillère n'a pas de statut tant que vous ne le lui donnez pas.</dd>
+      </dl>
+    </div>
+  </div>
+  <p>Le bloc <strong>Gestion des cotisations sociales</strong> de la même page (Pas de déduction automatique, Déduction automatique à la fin du trimestre, Lissage au mois) ne concerne que les marques qui gèrent le précompte des cotisations&nbsp;: voir <a href="reseau.html">Réseau et rémunération</a>.</p>
+
+  <h3 id="s6-4"><span class="sub-num">6.4</span> Étape 11 — Le recrutement <span class="tag yellow" style="display:inline-block">Module optionnel</span></h3>
+  <div class="step mod">
+    <dl>
+      <dt>Pourquoi</dt><dd>Le recrutement dématérialisé transforme une candidate en conseillère&nbsp;: formulaire, documents, contrat, compte créé, kit de démarrage.</dd>
+      <dt>Où</dt><dd><div class="path" aria-label="Chemin d'accès"><span>Formulaires</span><span>Recrutements</span><span>Onglet <b>Configuration</b></span></div></dd>
+      <dt>À décider</dt><dd>Les cinq onglets de la configuration&nbsp;: <strong>Configuration générale</strong> (validation automatique des demandes, création automatique du vendeur, gestion automatisée du parrain et de l'animateur…), <strong>Formulaires</strong>, <strong>Contenus</strong>, <strong>Demandes</strong> et <strong>Kit de démarrage</strong>.</dd>
+      <dt>Pièges</dt><dd>La création automatique d'une conseillère lui attribue le statut et le rôle par défaut de l'étape 10&nbsp;: faites l'étape 10 avant d'ouvrir le recrutement.</dd>
+      <dt>Plus loin</dt><dd><a href="recrutement.html">Le recrutement</a></dd>
+    </dl>
+  </div>
+</section>
+
+<!-- 7 -->
+<section id="communiquer">
+  <div class="sec-head"><span class="sec-num">07</span><h2>Communiquer</h2></div>
+
+  <h3 id="s7-1"><span class="sub-num">7.1</span> Étape 12 — Emails, contenus et activités</h3>
+  <div class="step">
+    <dl>
+      <dt>Pourquoi</dt><dd>Les emails automatiques partent dès la première commande, à vos couleurs et avec vos mots. Les contenus accompagnent vos conseillères.</dd>
+      <dt>Où</dt><dd>
+        <div class="path" aria-label="Chemin d'accès"><span>Paramètres</span><span><b>Templates email</b></span></div>
+        <div class="path" aria-label="Chemin d'accès"><span>Base de connaissances</span><span><b>Documents</b>, <b>FAQ</b>, <b>Formations</b></span></div>
+        <div class="path" aria-label="Chemin d'accès"><span>Paramètres</span><span>Configuration générale</span><span>Onglet <b>Paramètres des activités</b></span></div>
+      </dd>
+      <dt>À décider</dt><dd><ul>
+        <li>Le texte de vos emails, l'en-tête et le bas de page (boutons <strong>Configurer l’entête</strong> et <strong>Configurer le bas de page</strong>).</li>
+        <li>Les premiers documents, questions fréquentes et formations pour les conseillères.</li>
+        <li>Les types d'activités proposés dans l'agenda des conseillères (bouton <strong>Nouveau type</strong>), par exemple «&nbsp;Formation à la vente&nbsp;».</li>
+        <li>Selon vos options&nbsp;: vos challenges (onglet <strong>Challenges</strong>) et vos modèles de mini-sites (<strong>Paramètres › Modèles des minisites</strong>).</li>
+      </ul></dd>
+      <dt>Plus loin</dt><dd><a href="pilotage.html">Communication et pilotage</a> · <a href="challenges-guide.html">Guide des challenges</a> · <a href="reunions.html">Les réunions</a></dd>
+    </dl>
+  </div>
+
+  <h3 id="s7-2"><span class="sub-num">7.2</span> Le test final</h3>
+  <p>Avant d'ouvrir à tout le réseau, déroulez un parcours complet avec une conseillère pilote, par exemple Léa&nbsp;:</p>
+  <div class="timeline">
+    <div class="tl"><b>1. Léa crée une réunion chez Jade</b><p>Vérifiez le mini-site s'il est activé, et les thèmes si vous les imposez.</p></div>
+    <div class="tl"><b>2. Elle saisit les commandes de Camille et d'Inès</b><p>Contrôlez les prix TTC, les frais de port selon le montant, les questions de fin de commande, les champs obligatoires.</p></div>
+    <div class="tl"><b>3. Les commandes sont payées</b><p>Contrôlez l'email reçu par la cliente, la facture, et les gains de Jade.</p></div>
+    <div class="tl"><b>4. La réunion est clôturée</b><p>Vérifiez les verrous et le chiffre d'affaires de la réunion.</p></div>
+    <div class="tl"><b>5. Fin du mois</b><p>Si vous avez le plan de rémunération, contrôlez la commission calculée pour Léa et pour sa recruteuse.</p></div>
+  </div>
+</section>
+
+<!-- 8 -->
+<section id="defauts">
+  <div class="sec-head"><span class="sec-num">08</span><h2>Les valeurs par défaut à connaître</h2></div>
+  <p class="lede">Ce que vous trouvez en arrivant, et ce que font réellement les marques. Un réglage par défaut n'est pas forcément le bon choix pour vous.</p>
+  <div class="table-wrap"><table class="defs">
+    <thead><tr><th>Réglage (onglet)</th><th>Ce que font les marques</th><th>Par défaut</th></tr></thead>
+    <tbody>
+      <tr><td><b>Stock minimal… rapport de stock faible</b> (Paramètres généraux)</td><td>21 marques sur 35 gardent 5.</td><td>5</td></tr>
+      <tr><td><b>Délais maximum de livraison</b> (Paramètres généraux)</td><td>13 marques sur 35 indiquent un délai, de 1 à 30 jours.</td><td>0 (aucun)</td></tr>
+      <tr><td><b>Le recruteur est aussi l'animateur du vendeur</b> (Paramètres généraux)</td><td>19 marques sur 35 le décochent pour distinguer les deux.</td><td>Coché</td></tr>
+      <tr><td><b>Lier les informations d'un vendeur entre son compte vendeur et son compte client</b> (Paramètres généraux)</td><td>26 marques sur 35 le cochent.</td><td>Non coché</td></tr>
+      <tr><td><b>A la création statut par défaut</b> (Paramètres généraux)</td><td>13 marques sur 35 en choisissent un.</td><td>Aucun</td></tr>
+      <tr><td><b>Comment les vendeurs voient les stocks&nbsp;?</b> (Paramètres généraux)</td><td>17 marques sur 35 montrent le chiffre exact, les autres un symbole coloré ou rien.</td><td>Aucun</td></tr>
+      <tr><td><b>Rendre le téléphone obligatoire pour passer une commande</b> (Paramètres des commandes)</td><td>17 marques sur 35.</td><td>Non</td></tr>
+      <tr><td><b>Rendre l'adresse obligatoire pour passer une commande</b> (Paramètres des commandes)</td><td>35 marques sur 35.</td><td>Oui</td></tr>
+      <tr><td><b>Autoriser la suppression automatique</b> (Paramètres des commandes)</td><td>19 marques sur 35, le plus souvent avec 48&nbsp;heures.</td><td>Non</td></tr>
+      <tr><td><b>Réapprovisionnement des produits en cas d'annulation</b> (Paramètres des commandes)</td><td>30 marques sur 35.</td><td>Oui</td></tr>
+      <tr><td><b>Recrédit des points de fidélité sur les commandes annulées</b> (Paramètres des commandes)</td><td>6 marques sur 35.</td><td>Non</td></tr>
+      <tr><td><b>Activer les commentaires client&nbsp;?</b> (Paramètres des commandes)</td><td>34 marques sur 35.</td><td>Oui</td></tr>
+      <tr><td><b>Appliquer les frais de port sur</b> (Paramètres des livraisons)</td><td>17 marques sur 35 gardent le montant non remisé.</td><td>Montant non remisé</td></tr>
+      <tr><td><b>Délai de clôture des réunions</b> (Paramètres des Réunions)</td><td>13 marques sur 35 gardent 48&nbsp;h, 10 choisissent 96&nbsp;h.</td><td>48 h</td></tr>
+    </tbody>
+  </table></div>
+  <p class="muted">Valeurs observées sur les 35 marques actives (au moins une commande payée sur les 12 derniers mois).</p>
+</section>
+
+<!-- 9 -->
+<section id="attention">
+  <div class="sec-head"><span class="sec-num">09</span><h2>Points d'attention</h2></div>
+  <ul class="prose">
+    <li><strong>L'ordre compte</strong>&nbsp;: taxes avant produits, statuts avant statut par défaut et plan de rémunération, réglages des conseillères avant l'ouverture du recrutement.</li>
+    <li><strong>Un bouton Enregistrer par bloc</strong>&nbsp;: enregistrez chaque bloc avant de passer au suivant.</li>
+    <li><strong>Deux mécanismes suppriment des paniers non payés</strong>&nbsp;: la suppression automatique des commandes (étape 5) et la suppression à la clôture des réunions (étape 6). Choisissez des délais compatibles avec les habitudes de paiement de vos clientes.</li>
+    <li><strong>Les coordonnées bancaires</strong> sont indispensables au fichier de virement SEPA des commissions.</li>
+    <li><strong>Un menu absent</strong> n'est pas un oubli de votre part&nbsp;: la fonction n'est peut-être pas activée pour votre marque (<a href="modules-options.html">Modules et options</a>).</li>
+  </ul>
+</section>
+
+<!-- 10 -->
+<section id="faq">
+  <div class="sec-head"><span class="sec-num">10</span><h2>Questions fréquentes</h2></div>
+  <div class="faq">
+    <details><summary>Je ne trouve pas le menu Commissionnement (ou Recrutements, ou l'onglet Challenges).</summary><div><p>Ces fonctions s'activent sur demande. Si le menu n'apparaît pas, adressez-vous à votre interlocuteur SellingAtHome. La liste complète est dans <a href="modules-options.html">Modules et options</a>.</p></div></details>
+    <details><summary>Je ne vois pas la case «&nbsp;Utiliser un bon de préparation&nbsp;» (ou «&nbsp;Autoriser la Livraison partielle de commande&nbsp;»).</summary><div><p>Ces cases ne s'affichent que si l'option correspondante est activée pour votre marque par SellingAtHome.</p></div></details>
+    <details><summary>Puis-je changer ces réglages après l'ouverture&nbsp;?</summary><div><p>Oui, ils restent modifiables. Mais certains ont des effets immédiats sur le réseau (frais de port, délais de clôture, suppression automatique)&nbsp;: prévenez vos conseillères avant de les changer.</p></div></details>
+    <details><summary>Mes coches de la check-list ont disparu.</summary><div><p>Elles sont mémorisées par votre navigateur, sur l'ordinateur utilisé. Sur un autre ordinateur, ou après avoir effacé les données de navigation, la check-list repart de zéro. Vos paramètres, eux, ne sont pas concernés.</p></div></details>
+  </div>
+</section>
+
+  </main>
+</div>
+
+<script>
+(function () {
+  var KEY = 'sah-doc-mise-en-route';
+  var list = document.getElementById('mer-list');
+  if (!list) return;
+  var boxes = list.querySelectorAll('input[type=checkbox]');
+  var state = {};
+  try { state = JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch (e) { state = {}; }
+  function refresh() {
+    var n = 0;
+    boxes.forEach(function (b) { b.closest('li').classList.toggle('done', b.checked); if (b.checked) n++; });
+    document.getElementById('mer-count').textContent = n + ' / ' + boxes.length;
+    document.getElementById('mer-bar').style.width = (100 * n / boxes.length) + '%';
+  }
+  boxes.forEach(function (b) {
+    b.checked = !!state[b.dataset.step];
+    b.addEventListener('change', function () {
+      state[b.dataset.step] = b.checked;
+      try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) { /* stockage indisponible */ }
+      refresh();
+    });
+  });
+  refresh();
+})();
+</script>

@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Les clientes – Documentation SellingAtHome</title>
+<meta name="description" content="La fiche cliente, ses rôles, ses points et bons, l’anonymisation RGPD.">
+<link rel="stylesheet" href="assets/sah.css">
+<link rel="stylesheet" href="assets/site.css">
+<script>try{var t=localStorage.getItem('ba-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<style>
+.opts td:first-child { width:30%; }
+.opts td:nth-child(3) { width:18%; font-size:.88rem; color:var(--muted); }
+.chip { display:inline-block; border-radius:100px; padding:3px 11px; font-size:.78rem; font-weight:700; background:var(--surface); color:var(--heading); border:1px solid var(--rule); }
+.chip.g { background:var(--accent-wash); color:var(--accent-ink); border-color:transparent; }
+.chip.p { background:var(--pink-wash); color:var(--pink-ink); border-color:transparent; }
+.chip.y { background:var(--yellow-wash); color:var(--yellow-ink); border-color:transparent; }
+.erase td:first-child { width:38%; }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="sah-logo" viewBox="0 0 225 46"> <g transform="matrix(1,0,0,1,-3078,-558)"> <g transform="matrix(0.982533,0,0,0.351145,3869.92,548.87)"> <rect x="-806" y="26" width="229" height="131" style="fill:none;"></rect> <clipPath id="sahclip"> <rect x="-806" y="26" width="229" height="131"></rect> </clipPath> <g clip-path="url(#sahclip)"> <g transform="matrix(1,0,0,0.956522,0,3.97826)"> <g transform="matrix(1.01778,0,0,2.97727,-3938.72,-1638.3)"> <path d="M3224.65,572.289C3225.06,572.296 3225.39,572.628 3225.4,573.033L3225.4,588.748C3225.39,589.153 3225.06,589.484 3224.65,589.491L3223.51,589.491C3223.11,589.484 3222.77,589.153 3222.77,588.748L3222.77,586.233C3222.76,585.828 3222.43,585.497 3222.02,585.49L3217.68,585.49C3217.23,585.522 3216.81,585.753 3216.54,586.12L3214.77,588.864C3214.5,589.231 3214.08,589.462 3213.62,589.494L3212.02,589.494C3211.62,589.494 3211.45,589.208 3211.68,588.864L3221.74,572.92C3222.01,572.552 3222.43,572.322 3222.88,572.289L3224.65,572.289ZM3236.88,572.289C3237.29,572.296 3237.62,572.628 3237.62,573.033L3237.62,574.175C3237.62,574.58 3237.29,574.911 3236.88,574.918L3234.71,574.918C3234.3,574.925 3233.97,575.256 3233.97,575.661L3233.97,588.748C3233.96,589.153 3233.63,589.484 3233.22,589.491L3232.08,589.491C3231.68,589.484 3231.34,589.153 3231.34,588.748L3231.34,575.661C3231.33,575.256 3231,574.925 3230.59,574.918L3228.42,574.918C3228.02,574.911 3227.69,574.58 3227.68,574.175L3227.68,573.033C3227.69,572.628 3228.02,572.296 3228.42,572.289L3236.88,572.289ZM3218.94,582.233C3218.71,582.576 3218.88,582.864 3219.28,582.864L3222.02,582.864C3222.43,582.856 3222.76,582.525 3222.77,582.12L3222.77,576.975C3222.77,576.576 3222.6,576.518 3222.37,576.861L3218.94,582.233Z" style="fill:var(--logo-at);fill-rule:nonzero;"></path> </g> <g transform="matrix(1.01778,0,0,2.97727,-3938.72,-1638.3)"> <path d="M3100,559C3100,559 3100,559 3100,559C3087.93,559 3078,568.932 3078,581.001C3078,593.071 3087.93,603.003 3100,603.003C3112.07,603.003 3122,593.071 3122,581.001C3122,568.934 3112.07,559.006 3100,559ZM3256.54,587.09C3254.93,585.463 3254.02,583.261 3254.02,580.969C3254.02,576.201 3257.94,572.277 3262.71,572.277C3267.48,572.277 3271.41,576.201 3271.41,580.969C3271.41,585.738 3267.48,589.662 3262.71,589.662C3262.71,589.662 3262.71,589.662 3262.71,589.662C3260.39,589.693 3258.15,588.762 3256.54,587.09ZM3200.25,587.09C3198.62,585.452 3197.7,583.231 3197.7,580.918C3197.7,576.13 3201.63,572.186 3206.42,572.175C3207.6,572.171 3208.77,572.404 3209.85,572.861L3209.11,574.576C3208.95,574.949 3208.53,575.146 3208.14,575.033C3207.58,574.858 3207.01,574.762 3206.42,574.747C3203.06,574.785 3200.32,577.56 3200.32,580.919C3200.32,584.279 3203.06,587.053 3206.42,587.091C3206.97,587.103 3207.51,587.026 3208.02,586.862L3208.02,582.92C3208.02,582.516 3207.68,582.185 3207.28,582.178L3205.97,582.178C3205.56,582.171 3205.23,581.839 3205.22,581.434L3205.22,580.287C3205.23,579.882 3205.56,579.551 3205.97,579.544L3209.91,579.544C3210.31,579.551 3210.64,579.882 3210.65,580.287L3210.65,587.888C3210.68,588.24 3210.53,588.582 3210.25,588.802C3209.9,588.964 3209.54,589.097 3209.16,589.202C3208.27,589.462 3207.35,589.616 3206.42,589.659C3204.1,589.691 3201.87,588.761 3200.25,587.09ZM3142.31,582.236C3141.12,580.902 3139.54,579.981 3137.79,579.607C3135.45,578.921 3134.3,578.064 3134.36,576.978C3134.37,576.111 3134.92,575.337 3135.73,575.035C3137.05,574.52 3138.54,574.669 3139.73,575.435C3140.08,575.675 3140.55,575.652 3140.88,575.378L3142.25,574.116C3141.1,572.919 3139.51,572.239 3137.85,572.23C3136.5,572.106 3135.14,572.405 3133.97,573.087C3132.58,573.884 3131.72,575.372 3131.74,576.973C3131.68,579.429 3133.45,581.202 3137.11,582.23C3139.45,582.861 3140.59,583.773 3140.54,584.859C3140.51,585.479 3140.19,586.052 3139.68,586.402C3138.96,586.951 3138.07,587.216 3137.17,587.145C3136.53,587.143 3135.9,586.986 3135.34,586.688C3135,586.525 3134.71,586.291 3134.48,586.002C3134.23,585.668 3133.79,585.529 3133.39,585.659L3131.62,586.29C3132.03,587.385 3132.82,588.297 3133.85,588.858C3134.95,589.384 3136.16,589.658 3137.39,589.658L3137.45,589.658C3138.86,589.697 3140.24,589.23 3141.33,588.343C3142.42,587.504 3143.09,586.23 3143.16,584.857C3143.22,583.907 3142.91,582.969 3142.31,582.236ZM3302.26,572.404C3302.66,572.411 3302.99,572.742 3303,573.146L3303,574.171C3302.99,574.576 3302.66,574.907 3302.26,574.915L3297.57,574.915C3297.17,574.922 3296.84,575.253 3296.83,575.657L3296.83,578.858C3296.84,579.263 3297.17,579.593 3297.57,579.601L3300.83,579.601C3301.23,579.608 3301.57,579.939 3301.57,580.344L3301.57,581.486C3301.57,581.891 3301.23,582.223 3300.83,582.23L3297.57,582.23C3297.17,582.237 3296.84,582.568 3296.83,582.972L3296.83,586.23C3296.84,586.635 3297.17,586.966 3297.57,586.973L3302.26,586.973C3302.66,586.98 3302.99,587.311 3303,587.716L3303,588.859C3302.99,589.264 3302.66,589.595 3302.26,589.602L3294.94,589.602C3294.54,589.595 3294.21,589.264 3294.2,588.859L3294.2,573.146C3294.21,572.741 3294.54,572.41 3294.94,572.404L3302.26,572.404ZM3153.16,572.404C3153.57,572.41 3153.9,572.741 3153.91,573.146L3153.91,574.171C3153.9,574.576 3153.57,574.907 3153.16,574.915L3148.48,574.915C3148.07,574.921 3147.74,575.252 3147.73,575.657L3147.73,578.858C3147.74,579.263 3148.07,579.594 3148.48,579.601L3151.73,579.601C3152.14,579.608 3152.47,579.939 3152.48,580.344L3152.48,581.486C3152.47,581.891 3152.14,582.223 3151.73,582.23L3148.48,582.23C3148.07,582.236 3147.74,582.567 3147.73,582.972L3147.73,586.23C3147.74,586.635 3148.07,586.966 3148.48,586.973L3153.16,586.973C3153.57,586.98 3153.9,587.311 3153.91,587.716L3153.91,588.859C3153.9,589.264 3153.57,589.595 3153.16,589.602L3145.91,589.602C3145.5,589.595 3145.17,589.264 3145.16,588.859L3145.16,573.146C3145.17,572.741 3145.5,572.41 3145.91,572.404L3153.16,572.404ZM3251.51,580.064C3251.88,580.311 3252.11,580.711 3252.14,581.15L3252.14,588.751C3252.14,589.156 3251.81,589.487 3251.4,589.494L3250.26,589.494C3249.85,589.487 3249.52,589.156 3249.51,588.751L3249.51,582.919C3249.48,582.464 3249.25,582.046 3248.88,581.776L3246.77,580.519C3246.38,580.291 3245.9,580.291 3245.51,580.519L3243.17,581.833C3242.79,582.07 3242.56,582.476 3242.54,582.919L3242.54,588.748C3242.53,589.153 3242.2,589.484 3241.8,589.491L3240.65,589.491C3240.25,589.484 3239.92,589.153 3239.91,588.748L3239.91,581.318C3239.93,580.875 3240.16,580.469 3240.54,580.233L3245.45,577.316C3245.84,577.088 3246.33,577.088 3246.71,577.316L3251.51,580.064ZM3168.76,572.289C3169.17,572.296 3169.5,572.628 3169.51,573.033L3169.51,586.119C3169.51,586.524 3169.85,586.856 3170.25,586.863L3174.93,586.863C3175.34,586.87 3175.67,587.201 3175.68,587.606L3175.68,588.749C3175.67,589.154 3175.34,589.485 3174.93,589.492L3167.62,589.492C3167.22,589.485 3166.89,589.154 3166.88,588.749L3166.88,573.033C3166.89,572.628 3167.22,572.296 3167.62,572.289L3168.76,572.289ZM3157.91,572.289C3158.31,572.296 3158.64,572.628 3158.65,573.033L3158.65,586.119C3158.66,586.524 3158.99,586.856 3159.39,586.863L3164.08,586.863C3164.48,586.87 3164.81,587.201 3164.82,587.606L3164.82,588.749C3164.81,589.153 3164.48,589.485 3164.08,589.492L3156.76,589.492C3156.36,589.485 3156.03,589.154 3156.02,588.749L3156.02,573.033C3156.03,572.628 3156.36,572.296 3156.76,572.289L3157.91,572.289ZM3180.37,588.748C3180.36,589.153 3180.03,589.484 3179.62,589.491L3178.48,589.491C3178.07,589.484 3177.74,589.153 3177.73,588.748L3177.73,573.033C3177.74,572.628 3178.07,572.296 3178.48,572.289L3179.62,572.289C3180.02,572.296 3180.36,572.628 3180.36,573.033L3180.37,588.748ZM3290.6,572.289C3291.01,572.296 3291.34,572.628 3291.34,573.033L3291.34,588.748C3291.34,589.153 3291.01,589.484 3290.6,589.491L3289.46,589.491C3289.05,589.484 3288.72,589.153 3288.72,588.748L3288.72,579.318C3288.72,578.919 3288.6,578.861 3288.43,579.262L3284.26,588.805C3284.05,589.189 3283.67,589.447 3283.23,589.49L3281.75,589.49C3281.3,589.47 3280.91,589.205 3280.72,588.805L3276.61,579.318C3276.43,578.919 3276.32,578.975 3276.32,579.375L3276.32,588.748C3276.31,589.153 3275.98,589.484 3275.58,589.491L3274.43,589.491C3274.03,589.484 3273.7,589.153 3273.69,588.748L3273.69,573.033C3273.7,572.628 3274.03,572.296 3274.43,572.289L3275.69,572.289C3276.13,572.31 3276.53,572.575 3276.72,572.975L3282.2,585.661C3282.37,586.061 3282.6,586.061 3282.77,585.661L3288.32,572.975C3288.5,572.575 3288.9,572.31 3289.34,572.289L3290.6,572.289ZM3194.99,572.289C3195.4,572.296 3195.73,572.628 3195.74,573.033L3195.74,588.748C3195.73,589.153 3195.4,589.484 3194.99,589.491L3193.74,589.491C3193.28,589.459 3192.86,589.228 3192.59,588.861L3186.02,577.831C3185.79,577.489 3185.62,577.545 3185.62,577.946L3185.62,588.746C3185.62,589.151 3185.28,589.483 3184.88,589.49L3183.74,589.49C3183.33,589.483 3183,589.151 3182.99,588.746L3182.99,573.033C3183,572.628 3183.33,572.296 3183.74,572.289L3184.99,572.289C3185.45,572.322 3185.87,572.552 3186.14,572.92L3192.71,583.949C3192.94,584.292 3193.11,584.234 3193.11,583.835L3193.11,573.034C3193.11,572.629 3193.45,572.298 3193.85,572.291L3194.99,572.289ZM3096.52,587.287C3095.58,588.032 3094.4,588.417 3093.2,588.373L3092.92,588.373C3091.97,588.336 3091.05,588.061 3090.23,587.572C3089.36,587.1 3088.69,586.328 3088.35,585.401L3089.72,584.887C3090.12,584.758 3090.56,584.896 3090.81,585.23C3090.98,585.424 3091.2,585.579 3091.44,585.687C3091.92,585.914 3092.44,586.049 3092.98,586.087C3093.74,586.161 3094.5,585.934 3095.09,585.456C3095.51,585.136 3095.78,584.662 3095.84,584.142C3095.89,583.228 3094.92,582.485 3092.92,581.914C3089.83,581.057 3088.29,579.571 3088.41,577.456C3088.38,576.107 3089.11,574.852 3090.29,574.199C3091.27,573.621 3092.41,573.361 3093.55,573.456C3094.95,573.467 3096.29,574.044 3097.26,575.056L3096.18,576.081C3095.85,576.355 3095.38,576.379 3095.03,576.138C3094.56,575.829 3094,575.652 3093.43,575.623C3092.85,575.603 3092.27,575.68 3091.72,575.852C3091.03,576.103 3090.57,576.77 3090.58,577.507C3090.52,578.422 3091.49,579.165 3093.49,579.736C3094.95,580.061 3096.28,580.841 3097.26,581.965C3097.75,582.604 3098.02,583.389 3098.01,584.193C3098.04,585.404 3097.48,586.557 3096.52,587.287ZM3111.54,587.516C3111.54,587.921 3111.21,588.252 3110.8,588.259L3110.12,588.259C3109.71,588.252 3109.38,587.921 3109.37,587.516L3109.37,582.83C3109.34,582.375 3109.11,581.956 3108.74,581.687L3107.14,580.715C3106.75,580.486 3106.27,580.486 3105.88,580.715L3104.11,581.74C3103.74,581.976 3103.5,582.383 3103.48,582.826L3103.48,587.512C3103.47,587.917 3103.14,588.248 3102.74,588.255L3101.99,588.255C3101.59,588.248 3101.26,587.916 3101.25,587.512L3101.25,581.401C3101.27,580.958 3101.51,580.552 3101.88,580.316L3105.83,577.973C3106.21,577.744 3106.7,577.744 3107.08,577.973L3110.91,580.201C3111.28,580.448 3111.51,580.848 3111.54,581.287L3111.54,587.515L3111.54,587.516ZM3258.43,576.518C3257.32,577.652 3256.7,579.175 3256.7,580.76C3256.7,584.09 3259.44,586.831 3262.77,586.831C3266.1,586.831 3268.84,584.09 3268.84,580.76C3268.84,577.43 3266.1,574.69 3262.77,574.69C3261.14,574.698 3259.57,575.356 3258.43,576.518L3258.43,576.518ZM3101.37,574.486C3101.38,574.082 3101.71,573.75 3102.12,573.743L3102.8,573.743C3103.21,573.75 3103.54,574.081 3103.55,574.486L3103.55,576.941C3103.53,577.384 3103.29,577.791 3102.91,578.027L3102,578.598C3101.66,578.827 3101.37,578.655 3101.37,578.255L3101.37,574.486L3101.37,574.486ZM3111.66,578.087C3111.66,578.103 3111.66,578.119 3111.66,578.135C3111.66,578.358 3111.48,578.542 3111.25,578.542C3111.15,578.542 3111.05,578.502 3110.97,578.43L3110.06,577.858C3109.69,577.612 3109.46,577.212 3109.43,576.773L3109.43,574.372C3109.43,573.967 3109.76,573.636 3110.17,573.63L3110.91,573.63C3111.32,573.636 3111.65,573.967 3111.66,574.372L3111.66,578.087L3111.66,578.087ZM3242.48,573.033C3242.47,572.628 3242.14,572.296 3241.74,572.289L3240.65,572.289C3240.25,572.297 3239.91,572.628 3239.91,573.033L3239.91,577.719C3239.91,578.118 3240.19,578.29 3240.54,578.062L3241.85,577.261C3242.22,577.015 3242.45,576.615 3242.48,576.176L3242.48,573.033L3242.48,573.033ZM3250.31,572.289C3249.91,572.296 3249.58,572.628 3249.57,573.033L3249.57,576.116C3249.59,576.559 3249.82,576.965 3250.2,577.202L3251.51,578.002C3251.86,578.23 3252.14,578.059 3252.14,577.659L3252.14,573.033C3252.14,572.628 3251.81,572.296 3251.4,572.289L3250.31,572.289Z" style="fill:var(--logo-ink);fill-rule:nonzero;"></path> </g> </g> </g> </g> </g> </symbol></svg>
+<div class="sitebar">
+  <a class="brand-link" href="index.html" aria-label="Accueil de la documentation"><svg viewBox="0 0 225 46" role="img" aria-label="SellingAtHome"><use href="#sah-logo"></use></svg></a>
+  <nav class="topnav" id="topnav" aria-label="Univers"><div class="mm-item c-accent">
+    <a class="mm-link" href="demarrer.html">Démarrer</a>
+    <button class="mm-toggle" type="button" aria-expanded="false" aria-controls="mm-demarrer" aria-label="Pages de l'univers Démarrer"></button>
+    <div class="mm-panel" id="mm-demarrer">
+      <div class="mm-head"><a href="demarrer.html">Démarrer <span class="script">avec SellingAtHome</span></a><p>Les notions clés du métier, la découverte de l'espace marque et l'ordre conseillé pour paramétrer votre marque.</p></div>
+      <ul class="mm-list"><li><a href="comprendre-sellingathome.html"><b>Comprendre SellingAtHome en 10 minutes</b><span>Marque, conseillère, hôtesse, cliente, réunion, réseau : les notions qui structurent toute la plateforme.</span></a></li><li><a href="espace-marque.html"><b>Découvrir l'espace marque</b><span>Connexion, menus, tableau de bord et ses indicateurs, actualités et profil.</span></a></li><li><a href="mise-en-route.html"><b>Check-list de mise en route</b><span>L'ordre conseillé pour paramétrer une marque, étape par étape.</span></a></li><li><a href="modules-options.html"><b>Modules et options</b><span>Ce qui s'active sur demande, et pourquoi un menu peut ne pas apparaître.</span></a></li><li><a href="glossaire.html"><b>Glossaire</b><span>Toutes les définitions, de « animatrice » à « zone de taxe ».</span></a></li></ul>
+    </div>
+  </div><div class="mm-item c-pink">
+    <a class="mm-link" href="reseau.html">Réseau</a>
+    <button class="mm-toggle" type="button" aria-expanded="false" aria-controls="mm-reseau" aria-label="Pages de l'univers Réseau"></button>
+    <div class="mm-panel" id="mm-reseau">
+      <div class="mm-head"><a href="reseau.html">Réseau et <span class="script">rémunération</span></a><p>Gérer vos conseillères, leur organigramme et leurs statuts, puis calculer et verser leurs commissions.</p></div>
+      <ul class="mm-list"><li><a href="conseilleres.html"><b>Gérer les conseillères</b><span>La liste, la fiche et ses onglets, verrouiller un accès, se connecter en tant que conseillère.</span></a></li><li><a href="organigramme.html"><b>L'organigramme</b><span>Recruteur, animatrice, changements de rattachement et leurs effets sur les commissions.</span></a></li><li><a href="statuts.html"><b>Statuts et automatisation</b><span>Grille des statuts, statut estimé et statut officiel, règles de passage automatique.</span></a></li><li><a href="roles-conseilleres.html"><b>Rôles des conseillères</b><span>Des profils de droits pour adapter ce que chaque conseillère peut faire.</span></a></li><li><a href="suivi-equipe.html"><b>Suivi d'équipe</b><span>Comparer l'activité de vos équipes d'une période à l'autre.</span></a></li><li><a href="plan-remuneration.html"><b>Le plan de rémunération</b><span>Règles, valeurs, lignées et conditions : construire un plan de bout en bout.</span></a></li><li><a href="cloture-commissions.html"><b>Clôture et versement des commissions</b><span>Clôture mensuelle, bulletins, fichier SEPA, exports et emails de clôture.</span></a></li><li><a href="cotisations-sociales.html"><b>Cotisations sociales et précompte</b><span>Calcul, régularisation et consultation des cotisations des conseillères.</span></a></li><li><a href="stock-conseilleres.html"><b>Stocks chez les conseillères</b> <span class="mm-opt">Module optionnel</span><span>Suivre le stock détenu par chaque conseillère.</span></a></li></ul>
+    </div>
+  </div><div class="mm-item c-yellow">
+    <a class="mm-link" href="recrutement.html">Recrutement</a>
+    <button class="mm-toggle" type="button" aria-expanded="false" aria-controls="mm-recrutement" aria-label="Pages de l'univers Recrutement"></button>
+    <div class="mm-panel" id="mm-recrutement">
+      <div class="mm-head"><a href="recrutement.html">Le <span class="script">recrutement</span></a><p>Du formulaire de candidature à la signature électronique du contrat, puis au kit de démarrage.</p></div>
+      <ul class="mm-list"><li><a href="recrutement-principe.html"><b>Le recrutement dématérialisé</b><span>Le parcours complet du candidat, du formulaire à la création de son compte.</span></a></li><li><a href="recrutement-parametrage.html"><b>Paramétrer le recrutement</b><span>Les 5 onglets de configuration : formulaire, contenus, demandes, kit de démarrage.</span></a></li><li><a href="candidatures.html"><b>Traiter une candidature</b><span>Documents, refus, signature, création du compte conseillère.</span></a></li><li><a href="kit-demarrage.html"><b>Le kit de démarrage</b><span>Le tunnel d'achat du kit, ses frais de livraison et ses relances.</span></a></li><li><a href="carte-conseilleres.html"><b>Carte des conseillères et formulaire de contact</b><span>Le widget à intégrer sur votre site et le traitement des demandes reçues.</span></a></li></ul>
+    </div>
+  </div><div class="mm-item c-accent">
+    <a class="mm-link" href="reunions.html">Réunions</a>
+    <button class="mm-toggle" type="button" aria-expanded="false" aria-controls="mm-reunions" aria-label="Pages de l'univers Réunions"></button>
+    <div class="mm-panel" id="mm-reunions">
+      <div class="mm-head"><a href="reunions.html">Les <span class="script">réunions</span></a><p>Le cœur de la vente à domicile : le cycle de vie d'une réunion, ses réglages, son mini-site et la visio.</p></div>
+      <ul class="mm-list"><li><a href="reunion-cycle-de-vie.html"><b>Le cycle de vie d'une réunion</b><span>Création, invitations, commandes, clôture et gains de l’hôtesse.</span></a></li><li><a href="mini-site-reunion.html"><b>Le mini-site de réunion</b><span>Modes d'activation, onboarding de l'hôtesse, gestion des invités.</span></a></li><li><a href="reunion-virtuelle.html"><b>Réunion virtuelle et live</b><span>Visio, mode broadcast et mise en avant des offres pendant le live.</span></a></li><li><a href="activites.html"><b>Activités et agenda</b><span>Les types d'activités proposés aux conseillères dans leur agenda.</span></a></li></ul>
+    </div>
+  </div><div class="mm-item c-pink">
+    <a class="mm-link" href="ventes.html">Ventes</a>
+    <button class="mm-toggle" type="button" aria-expanded="false" aria-controls="mm-ventes" aria-label="Pages de l'univers Ventes"></button>
+    <div class="mm-panel" id="mm-ventes">
+      <div class="mm-head"><a href="ventes.html">Commandes et <span class="script">boutiques</span></a><p>Comprendre, créer et suivre les commandes, gérer les regroupements et les retours, animer les boutiques en ligne.</p></div>
+      <ul class="mm-list"><li><a href="commandes-comprendre.html"><b>Comprendre les commandes</b><span>Types de commande, statut de gestion et statut logistique, cycle de vie.</span></a></li><li><a href="commandes-gerer.html"><b>Créer, modifier et finaliser une commande</b><span>Création par la marque, paiement, changement de conseillère, liaison à une réunion.</span></a></li><li><a href="commandes-annulation-documents.html"><b>Annulations, avoirs et documents</b><span>Annuler tout ou partie, rembourser, éditer factures et bons de commande.</span></a></li><li><a href="commandes-regroupement.html"><b>Les commandes de regroupement</b><span>Regrouper les commandes d’une conseillère : paiement, livraison, clôture.</span></a></li><li><a href="commandes-parametres.html"><b>Paramètres des commandes</b><span>Cadeaux automatiques, produits suggérés, questions, plafonds, blocs de contenu.</span></a></li><li><a href="retours-produits.html"><b>Les retours produits</b><span>Motifs de retour et traitement des demandes des conseillères.</span></a></li><li><a href="boutiques-panorama.html"><b>Les boutiques en ligne</b><span>Mini-site de réunion, mini-boutique, boutique de marque : lequel pour quoi ?</span></a></li><li><a href="mini-boutiques.html"><b>Les mini-boutiques des conseillères</b><span>Activation, personnalisation, produits disponibles, réglages de la conseillère.</span></a></li><li><a href="boutique-marque.html"><b>La boutique de marque</b> <span class="mm-opt">Module optionnel</span><span>Votre boutique en ligne et l’attribution des ventes aux conseillères.</span></a></li><li><a href="collections.html"><b>Collections et réservations</b> <span class="mm-opt">Module optionnel</span><span>Proposer des produits sur réservation, par périodes.</span></a></li></ul>
+    </div>
+  </div><div class="mm-item c-yellow">
+    <a class="mm-link" href="catalogue.html">Catalogue</a>
+    <button class="mm-toggle" type="button" aria-expanded="false" aria-controls="mm-catalogue" aria-label="Pages de l'univers Catalogue"></button>
+    <div class="mm-panel" id="mm-catalogue">
+      <div class="mm-head"><a href="catalogue.html">Catalogue et <span class="script">logistique</span></a><p>Créer et tarifer vos produits, gérer les stocks, la livraison, la préparation et l’approvisionnement.</p></div>
+      <ul class="mm-list"><li><a href="produits.html"><b>Créer et éditer un produit</b><span>Produit simple, lot, kit variable, produit virtuel, et tous les onglets de la fiche.</span></a></li><li><a href="attributs-declinaisons.html"><b>Catégories, attributs et déclinaisons</b><span>Organiser le catalogue et décliner un produit en tailles, couleurs…</span></a></li><li><a href="prix-taxes.html"><b>Prix, prix par rôle et taxes</b><span>Tarifs, prix réservés à certains rôles, taxes et zones de pays.</span></a></li><li><a href="livraison.html"><b>Livraison : modes et frais</b><span>Modes de livraison, frais, gratuité et conditions, avec exemples chiffrés.</span></a></li><li><a href="stocks.html"><b>Les stocks</b><span>Méthodes de suivi, rupture, stock faible, historique et import.</span></a></li><li><a href="preparation-livraison.html"><b>Bons de préparation et de livraison</b><span>Préparer les commandes par réunion, conseillère ou produit, éditer les BL.</span></a></li><li><a href="approvisionnement.html"><b>L'approvisionnement</b> <span class="mm-opt">Module optionnel</span><span>Fournisseurs, commandes fournisseurs et réception du stock.</span></a></li><li><a href="expeditions-transporteurs.html"><b>Expéditions et transporteurs</b> <span class="mm-opt">Module optionnel</span><span>Suivi des envois, étiquettes GLS, DPD, Colissimo, Mondial Relay.</span></a></li></ul>
+    </div>
+  </div><div class="mm-item c-pink">
+    <a class="mm-link" href="animation.html" aria-current="page">Animation</a>
+    <button class="mm-toggle" type="button" aria-expanded="false" aria-controls="mm-animation" aria-label="Pages de l'univers Animation"></button>
+    <div class="mm-panel" id="mm-animation">
+      <div class="mm-head"><a href="animation.html">Animation et <span class="script">fidélisation</span></a><p>Motiver vos conseillères, récompenser vos hôtesses et fidéliser vos clientes.</p></div>
+      <ul class="mm-list"><li><a href="challenges-guide.html"><b>Les challenges</b><span>Fixer des objectifs aux conseillères et récompenser automatiquement celles qui les atteignent.</span></a></li><li><a href="fidelite-guide.html"><b>La fidélité</b><span>Récompenser hôtesses, clientes et conseillères selon les réunions et les ventes.</span></a></li><li><a href="bons-achat-guide.html"><b>Les bons d'achat</b><span>Offrir un montant nominatif, déduit d’une prochaine commande.</span></a></li><li><a href="reductions-guide.html"><b>Les réductions</b><span>Baisser le prix d’une commande, automatiquement ou par code promo.</span></a></li><li><a href="conditions-achat-guide.html"><b>Les conditions d'achat</b><span>Limiter qui peut acheter un produit, et en quelle quantité.</span></a></li><li><a href="parrainage-client.html"><b>Le parrainage client</b><span>Récompenser les clientes qui recommandent la marque.</span></a></li><li><a href="clients.html" aria-current="page"><b>Les clientes</b><span>La fiche cliente, ses rôles, ses points et bons, l’anonymisation RGPD.</span></a></li><li><a href="segments.html"><b>Les segments de clientes</b><span>Regrouper des clientes selon leur profil et leurs achats.</span></a></li></ul>
+    </div>
+  </div><div class="mm-item c-accent">
+    <a class="mm-link" href="pilotage.html">Pilotage</a>
+    <button class="mm-toggle" type="button" aria-expanded="false" aria-controls="mm-pilotage" aria-label="Pages de l'univers Pilotage"></button>
+    <div class="mm-panel" id="mm-pilotage">
+      <div class="mm-head"><a href="pilotage.html">Communication et <span class="script">pilotage</span></a><p>Former et informer vos conseillères, piloter l’activité avec les rapports, paramétrer la marque.</p></div>
+      <ul class="mm-list"><li><a href="base-documentaire.html"><b>Documents, FAQ et formations</b><span>Mettre à disposition des conseillères documents, réponses et parcours de formation.</span></a></li><li><a href="notifications.html"><b>Les notifications</b><span>Envoyer des notifications aux conseillères, une à une ou en masse.</span></a></li><li><a href="emails.html"><b>Les emails</b><span>Modèles d’emails, suivi des envois et délivrabilité.</span></a></li><li><a href="assistant-ia.html"><b>L'assistant IA</b><span>Activation, quotas, crédits, documents indexés, conversations et retours.</span></a></li><li><a href="rapports-exports.html"><b>Rapports et exports</b><span>Meilleures ventes, stock faible, réponses aux questions, exports de données.</span></a></li><li><a href="configuration-generale.html"><b>La configuration de la marque</b><span>Tous les réglages généraux de la marque, un par un.</span></a></li><li><a href="champs-fichiers.html"><b>Champs personnalisés et fichiers</b><span>Ajouter vos propres champs et gérer les médias de la marque.</span></a></li><li><a href="comptabilite.html"><b>La comptabilité</b> <span class="mm-opt">Module optionnel</span><span>Comptes comptables et exports vers votre logiciel.</span></a></li><li><a href="integrations.html"><b>Les intégrations</b> <span class="mm-opt">Module optionnel</span><span>Boutiques externes, logisticiens, outils marketing : ce qui existe et comment l’activer.</span></a></li></ul>
+    </div>
+  </div><div class="mm-item mm-plain"><a class="mm-link" href="cas-usage.html">Cas d'usage</a></div><div class="mm-item mm-plain"><a class="mm-link" href="depannage.html">Dépannage</a></div></nav>
+  <div class="sitebar-right">
+    <div class="search-box"><input type="search" data-search placeholder="Rechercher…" aria-label="Rechercher dans la documentation" autocomplete="off"><div class="search-results" role="listbox"></div></div>
+    <button class="theme-btn" id="themeBtn" type="button" aria-label="Passer au thème sombre" title="Passer au thème sombre"></button>
+    <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="topnav" aria-label="Ouvrir le menu" title="Menu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="hero-in">
+    <div>
+      <span class="eyebrow">Animation et fidélisation</span>
+      <h1>Les <span class="script">clientes</span></h1>
+      <p class="lede">La liste et la fiche cliente, son rattachement aux conseillères, les rôles clients, le consentement et l'anonymisation RGPD&nbsp;: tout ce que la marque voit et peut faire sur ses clientes.</p>
+    </div>
+    <div class="voucher-art" aria-hidden="true">
+      <div class="v-top"><span>Fiche cliente</span><span>#144</span></div>
+      <div class="v-amount">205<span> pts</span></div>
+      <div class="v-name">Camille Martin</div>
+      <div class="v-sep"></div>
+      <div class="v-meta"><span>Rôles <b>Hôte · Sponsor</b></span><span>Conseillère <b>Léa</b></span></div>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="toc" aria-label="Sommaire">
+    <details id="tocDetails" open>
+      <summary>Menu et sommaire</summary>
+      <div class="unav"><a class="unav-title" href="animation.html">Animation et fidélisation</a><ul><li><a href="challenges-guide.html">Les challenges</a></li><li><a href="fidelite-guide.html">La fidélité</a></li><li><a href="bons-achat-guide.html">Les bons d'achat</a></li><li><a href="reductions-guide.html">Les réductions</a></li><li><a href="conditions-achat-guide.html">Les conditions d'achat</a></li><li><a href="parrainage-client.html">Le parrainage client</a></li><li class="here"><span>Les clientes</span></li><li><a href="segments.html">Les segments de clientes</a></li></ul></div>
+      <div class="toc-title">Sommaire</div>
+      <ol>
+        <li data-sec="definition"><a href="#definition"><span class="toc-n">1</span>Qu'est-ce qu'une cliente&nbsp;?</a></li>
+        <li data-sec="ou"><a href="#ou"><span class="toc-n">2</span>Où trouver les clientes</a></li>
+        <li data-sec="liste"><a href="#liste"><span class="toc-n">3</span>La liste des clientes</a>
+          <ol class="toc-sub"><li><a href="#s3-1"><span class="toc-n">3.1</span>Les colonnes et la recherche</a></li><li><a href="#s3-2"><span class="toc-n">3.2</span>Les filtres</a></li><li><a href="#s3-3"><span class="toc-n">3.3</span>La carte</a></li></ol>
+        </li>
+        <li data-sec="fiche"><a href="#fiche"><span class="toc-n">4</span>La fiche cliente</a></li>
+        <li data-sec="modifier"><a href="#modifier"><span class="toc-n">5</span>Modifier une cliente</a>
+          <ol class="toc-sub"><li><a href="#s5-1"><span class="toc-n">5.1</span>Informations générales</a></li><li><a href="#s5-2"><span class="toc-n">5.2</span>Champs personnalisés</a></li><li><a href="#s5-3"><span class="toc-n">5.3</span>Créditer des points</a></li><li><a href="#s5-4"><span class="toc-n">5.4</span>Fidélité et réductions</a></li></ol>
+        </li>
+        <li data-sec="conseilleres"><a href="#conseilleres"><span class="toc-n">6</span>Cliente et conseillères</a></li>
+        <li data-sec="roles"><a href="#roles"><span class="toc-n">7</span>Les rôles clients</a>
+          <ol class="toc-sub"><li><a href="#s7-1"><span class="toc-n">7.1</span>Les rôles système</a></li><li><a href="#s7-2"><span class="toc-n">7.2</span>Créer un rôle</a></li><li><a href="#s7-3"><span class="toc-n">7.3</span>À quoi sert un rôle&nbsp;?</a></li></ol>
+        </li>
+        <li data-sec="rgpd"><a href="#rgpd"><span class="toc-n">8</span>Consentement et RGPD</a></li>
+        <li data-sec="anonymisation"><a href="#anonymisation"><span class="toc-n">9</span>Anonymiser une cliente</a></li>
+        <li data-sec="attention"><a href="#attention"><span class="toc-n">10</span>Points d'attention</a></li>
+        <li data-sec="faq"><a href="#faq"><span class="toc-n">11</span>Questions fréquentes</a></li>
+      </ol>
+    </details>
+  </nav>
+
+  <main>
+
+<!-- 1 -->
+<section id="definition">
+  <div class="sec-head"><span class="sec-num">01</span><h2>Qu'est-ce qu'une cliente&nbsp;?</h2></div>
+  <p class="lede">Une cliente est une personne qui achète vos produits, participe à des réunions ou les accueille. Elle a une fiche unique dans votre marque, qui rassemble ses coordonnées, ses achats, ses points de fidélité, ses bons d'achat et ses rôles.</p>
+  <div class="example"><span class="ex-label">Exemple</span><p>Camille participe à une réunion chez Jade. Léa, la conseillère, saisit sa commande&nbsp;: Camille devient cliente de votre marque, rattachée à Léa. Trois mois plus tard, Camille accueille à son tour une réunion&nbsp;: elle reçoit le rôle <strong>Hôte</strong>, et ses points de fidélité apparaissent sur sa fiche.</p></div>
+  <ul class="prose">
+    <li><strong>Qui crée les clientes&nbsp;?</strong> Les conseillères (dans leur carnet d'adresses, en réunion, depuis l'application), les invitées des mini-sites de réunion, les achats en ligne, et les synchronisations avec vos outils. L'espace marque ne propose pas de bouton de création de cliente&nbsp;: la marque consulte et modifie.</li>
+    <li><strong>Une adresse email = une cliente.</strong> Deux clientes de votre marque ne peuvent pas avoir le même email.</li>
+    <li><strong>Chaque conseillère est aussi cliente</strong>&nbsp;: son compte client lui permet de commander pour elle-même. Il porte le rôle système «&nbsp;Seller&nbsp;».</li>
+  </ul>
+  <div class="stats">
+    <div class="stat"><b>3&nbsp;560</b><span>clientes par marque (médiane des marques actives)</span></div>
+    <div class="stat"><b>7&nbsp;%</b><span>des clientes sont dans le carnet de plusieurs conseillères</span></div>
+    <div class="stat"><b>35 / 35</b><span>marques actives ont le menu Clients</span></div>
+  </div>
+  <div class="tip"><span class="ex-label">Vocabulaire</span><p>Dans l'espace marque, la conseillère est appelée <strong>vendeur</strong>, la cliente <strong>client</strong>, l'hôtesse <strong>hôte</strong>, et la marraine <strong>parrain</strong>. Cette page cite les écrans tels qu'ils sont, entre guillemets.</p></div>
+</section>
+
+<!-- 2 -->
+<section id="ou">
+  <div class="sec-head"><span class="sec-num">02</span><h2>Où trouver les clientes</h2></div>
+  <div class="figrow">
+    <figure><img src="Captures/Clientes/menu-clients.png" alt="Menu de gauche de l'espace marque, rubrique Clients ouverte : Clients, Gérer les rôles, Gérer les segments" loading="lazy"><figcaption>Le menu Clients.</figcaption></figure>
+    <div class="prose" style="display:flex;flex-direction:column;gap:12px">
+      <div class="path" aria-label="Chemin d'accès"><span>Espace marque</span><span>Clients</span><span><b>Clients</b></span></div>
+      <p>La liste des clientes, avec un onglet <strong>Carte</strong>.</p>
+      <div class="path" aria-label="Chemin d'accès"><span>Espace marque</span><span>Clients</span><span><b>Gérer les rôles</b></span></div>
+      <p>Les rôles clients que vous créez (<a href="#roles">section 7</a>).</p>
+      <div class="path" aria-label="Chemin d'accès"><span>Espace marque</span><span>Clients</span><span><b>Gérer les segments</b></span></div>
+      <p>Les groupes de clientes définis par des filtres&nbsp;: voir <a href="segments.html"><em>Les segments de clientes</em></a>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 3 -->
+<section id="liste">
+  <div class="sec-head"><span class="sec-num">03</span><h2>La liste des clientes</h2></div>
+  <figure><img src="Captures/Clientes/liste-clientes.png" alt="Liste des clients : onglets Liste et Carte, bouton Filtrer, champ Rechercher un contact, colonnes #, Nom, Prénom, Email, Téléphone, points, Crée le, boutons Voir la fiche et Editer le client ; deux emails en rouge avec un triangle d'alerte" loading="lazy"><figcaption>La liste des clientes (noms fictifs).</figcaption></figure>
+
+  <h3 id="s3-1"><span class="sub-num">3.1</span> Les colonnes et la recherche</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Colonne</th><th>Contenu</th></tr></thead>
+    <tbody>
+      <tr><td><b>#</b></td><td>Le numéro de la cliente dans votre marque (ou son identifiant technique, selon un réglage de votre marque).</td></tr>
+      <tr><td><b>Nom, Prénom, Email, Téléphone</b></td><td>Ses coordonnées. Un email en <span style="color:#D2455A">rouge avec un triangle</span> signifie «&nbsp;Cette adresse email ne semble pas fiable&nbsp;»&nbsp;: un email qui lui était envoyé a été rejeté définitivement. Le signal disparaît dès qu'on corrige l'adresse.</td></tr>
+      <tr><td><b>points</b></td><td>Son solde de points de fidélité encore valides.</td></tr>
+      <tr><td><b>Crée le</b></td><td>Sa date de création sur SellingAtHome. Une étiquette <span class="chip g">Nouveau&nbsp;!</span> marque les clientes créées dans les 7 derniers jours.</td></tr>
+      <tr><td>Boutons</td><td><strong>Voir la fiche</strong> (consultation) et <strong>Editer le client</strong> (modification).</td></tr>
+    </tbody>
+  </table></div>
+  <p>La recherche «&nbsp;Rechercher un contact…&nbsp;» porte sur le numéro, le nom, le prénom et l'email.</p>
+  <div class="tip"><span class="ex-label">Bon à savoir</span><p>La liste n'a pas de bouton d'export. Pour exporter des clientes, créez un <a href="segments.html">segment</a>&nbsp;: chaque segment s'exporte en CSV ou en Excel. L'export des filleules d'une marraine se fait depuis sa fiche (<a href="#fiche">section 4</a>).</p></div>
+
+  <h3 id="s3-2"><span class="sub-num">3.2</span> Les filtres</h3>
+  <div class="figrow">
+    <figure><img src="Captures/Clientes/filtres-clientes.png" alt="Fenêtre Filtrer : Intervalle (deux dates), Segments, Vendeur rattaché, case Afficher uniquement les emails invalides, boutons Effacer tous les filtres et Appliquer" loading="lazy"><figcaption>La fenêtre des filtres.</figcaption></figure>
+    <div class="prose">
+      <ul>
+        <li><strong>Intervalle</strong>&nbsp;: date de création de la cliente.</li>
+        <li><strong>Segments</strong>&nbsp;: ne garde que les clientes d'un segment. Seuls les segments <strong>actifs</strong> sont proposés.</li>
+        <li><strong>Vendeur rattaché</strong>&nbsp;: une ou plusieurs conseillères. Une cliente apparaît si elle est dans le carnet d'adresses de l'une d'elles, qu'elle soit sa cliente principale ou secondaire.</li>
+        <li><strong>Afficher uniquement les emails invalides</strong>&nbsp;: les adresses signalées comme non fiables, pour les faire corriger.</li>
+      </ul>
+      <p class="muted">Les filtres sont mémorisés par votre navigateur.</p>
+    </div>
+  </div>
+
+  <h3 id="s3-3"><span class="sub-num">3.3</span> La carte</h3>
+  <p>L'onglet <strong>Carte</strong> place sur une carte les clientes dont l'adresse a pu être géolocalisée. Pratique pour repérer les zones sans conseillère.</p>
+</section>
+
+<!-- 4 -->
+<section id="fiche">
+  <div class="sec-head"><span class="sec-num">04</span><h2>La fiche cliente</h2></div>
+  <p class="lede">Le bouton <strong>Voir la fiche</strong> ouvre une page de consultation, sans modification possible. Le bouton <strong>Editer le client</strong>, en haut à droite, mène à la modification.</p>
+  <figure><img src="Captures/Clientes/fiche-cliente.png" alt="Fiche d'une cliente : identité, rôles Hôte et Sponsor, vendeur principal et vendeurs secondaires ; compteurs Réunions, Commandes, Produits achetés, Points de fidélité, Codes promo disponibles, Bons d'achat disponibles, cagnottes de bons d'achat, Nombre de clients parrainés avec icônes d'export ; Montant Total des achats ; blocs articles déjà achetés, liste de souhaits, historique de points" loading="lazy"><figcaption>La fiche d'une marraine (données fictives).</figcaption></figure>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Bloc</th><th>Ce qu'il montre</th></tr></thead>
+    <tbody>
+      <tr><td><b>Identité</b></td><td>Nom, email, adresse, téléphones, ses <strong>rôles</strong> (étiquettes grises), sa <strong>conseillère principale</strong> («&nbsp;Vendeur principal&nbsp;») et ses <strong>conseillères secondaires</strong> («&nbsp;Vendeurs secondaires&nbsp;»).</td></tr>
+      <tr><td><b>Compteurs</b></td><td>Réunions, Commandes, Produits achetés, Points de fidélité, Codes promo disponibles, Bons d'achat disponibles. Les deux derniers ouvrent directement l'onglet <a href="#s5-4">Fidélité et réductions</a>.</td></tr>
+      <tr><td><b>Cagnotte pour le prochain gain de bon d'achat</b></td><td>Une ligne par bon d'achat automatique&nbsp;: montant déjà cumulé / seuil à atteindre. Voir le <a href="bons-achat-guide.html">guide des bons d'achat</a>.</td></tr>
+      <tr><td><b>Nombre de clients parrainés</b></td><td>Visible si la cliente a des filleules. Deux icônes exportent la liste des filleules en CSV ou en Excel (prénom, nom, email, adresse, téléphone). Voir <a href="parrainage-client.html"><em>Le parrainage client</em></a>.</td></tr>
+      <tr><td><b>Montant Total des achats (remises déduites)</b></td><td>En HT et en TTC, sur toute la vie de la cliente.</td></tr>
+      <tr><td><b>Articles déjà achetés, liste de souhaits</b></td><td>Les produits achetés (avec prix et date) et ceux qu'elle a mis en favoris.</td></tr>
+      <tr><td><b>Historique de points de fidélité</b></td><td>Chaque gain ou utilisation, avec la commande ou la réunion d'origine et la date de fin de validité.</td></tr>
+      <tr><td><b>Cadeaux hôtesses reçus</b></td><td>Si votre marque utilise les compteurs de cadeaux.</td></tr>
+      <tr><td><b>Adresse, Informations complémentaires</b></td><td>La carte de l'adresse et vos champs personnalisés.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- 5 -->
+<section id="modifier">
+  <div class="sec-head"><span class="sec-num">05</span><h2>Modifier une cliente</h2></div>
+  <p class="lede">L'écran de modification est organisé en onglets. Chaque onglet a son propre bouton d'enregistrement.</p>
+  <div class="table-wrap"><table class="opts">
+    <thead><tr><th>Onglet</th><th>Contenu</th><th>Visible</th></tr></thead>
+    <tbody>
+      <tr><td><b>Informations générales</b></td><td>Identité, rôles, langue, consentement, adresse, parrainage, société, notifications email.</td><td>Toujours</td></tr>
+      <tr><td><b>Champs personnalisés</b></td><td>Vos champs propres à la cliente.</td><td>Option (7 marques sur 35)</td></tr>
+      <tr><td><b>Créditer le client avec des points</b></td><td>Ajouter des points à la main.</td><td>Si la cliente a un email</td></tr>
+      <tr><td><b>Fidélité et réductions</b></td><td>Bons d'achat et codes promo, disponibles et utilisés.</td><td>Toujours</td></tr>
+      <tr><td><b>Anonymiser le client</b></td><td>Effacement RGPD (<a href="#anonymisation">section 9</a>).</td><td>Toujours</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 id="s5-1"><span class="sub-num">5.1</span> Informations générales</h3>
+  <figure><img src="Captures/Clientes/edit-infos.png" alt="Onglet Informations générales : civilité, prénom, nom, email, téléphones, date de naissance, rôles Sponsored et Hôte, langue, case Exonéré de taxes, consentement ; bloc Adresse du client avec carte floutée ; bloc Parrainage avec le champ Parrain/Marraine ; bloc Société ; bloc Notifications Email avec huit cases ; bloc Consentement marketing" loading="lazy"><figcaption>L'onglet Informations générales (données fictives, carte floutée).</figcaption></figure>
+  <div class="table-wrap"><table class="opts">
+    <thead><tr><th>Champ ou bloc</th><th>Rôle</th><th>Condition</th></tr></thead>
+    <tbody>
+      <tr><td><b>Prénom, Nom</b></td><td>Obligatoires.</td><td></td></tr>
+      <tr><td><b>Email</b></td><td>Unique dans votre marque. Le modifier efface le signal «&nbsp;email non fiable&nbsp;». Les adresses jetables peuvent être refusées selon votre réglage.</td><td></td></tr>
+      <tr><td><b>Téléphone portable</b></td><td>Peut être rendu obligatoire.</td><td>Réglage de marque (1 marque)</td></tr>
+      <tr><td><b>Rôles</b></td><td>Tous les rôles de votre marque, rôles système compris. Ajoutez ou retirez un rôle à la main (<a href="#roles">section 7</a>). Un rôle «&nbsp;avec justificatif&nbsp;» ouvre une fenêtre pour déposer le document.</td><td></td></tr>
+      <tr><td><b>Langue</b></td><td>La langue des emails envoyés à la cliente.</td><td></td></tr>
+      <tr><td><b>Exonéré de taxes</b></td><td>Exonère la cliente de taxes sur ses commandes. Ne peut être changé que si elle n'a <strong>aucune commande non payée</strong> («&nbsp;Les commandes du client doivent être clôturées.&nbsp;»).</td><td>Réglage de marque (12 marques)</td></tr>
+      <tr><td><b>Consentement</b></td><td>Case de consentement accompagnée de votre texte (<a href="#rgpd">section 8</a>).</td><td>Option (1 marque)</td></tr>
+      <tr><td><b>Consentement marketing</b></td><td>Deux cases&nbsp;: communications par email, par SMS.</td><td>Réglage de marque</td></tr>
+      <tr><td><b>Adresse du client</b></td><td>Son adresse principale, avec recherche d'adresse et carte.</td><td></td></tr>
+      <tr><td><b>Parrainage</b></td><td>Le champ <strong>Parrain/Marraine</strong>&nbsp;: la marraine de la cliente. Voir <a href="parrainage-client.html"><em>Le parrainage client</em></a>.</td><td>Option parrainage (7 marques)</td></tr>
+      <tr><td><b>Société</b></td><td>Nom de la société, Siret, numéro de TVA.</td><td></td></tr>
+      <tr><td><b>Notifications Email</b></td><td>Une case par email automatique (gain de bon d'achat, présence à une réunion, suivi de livraison, bon de commande et facture…). Décocher une case coupe cet email pour cette cliente.</td><td></td></tr>
+    </tbody>
+  </table></div>
+  <div class="warn"><span class="ex-label">Attention</span><p>Si l'email saisi appartient déjà à une autre cliente de votre marque, la modification n'est <strong>pas enregistrée</strong>, sans message explicite. Vérifiez l'email dans la liste avant de le changer.</p></div>
+
+  <h3 id="s5-2"><span class="sub-num">5.2</span> Champs personnalisés</h3>
+  <p>Si l'option est activée, cet onglet affiche les champs que vous avez créés pour les clientes (taille, préférences, nombre d'enfants…). Ils se paramètrent dans les réglages de la marque&nbsp;: voir l'univers <a href="pilotage.html">Communication et pilotage</a>.</p>
+
+  <h3 id="s5-3"><span class="sub-num">5.3</span> Créditer des points</h3>
+  <div class="figrow">
+    <figure><img src="Captures/Clientes/edit-points.png" alt="Onglet Créditer le client avec des points : Nombre de points acquis 205 points, champs Nombre de points et Message, bouton Enregistrer" loading="lazy"><figcaption>Créditer des points à la main.</figcaption></figure>
+    <div class="prose">
+      <p>Le haut de l'onglet rappelle le solde de points valides. Saisissez un <strong>Nombre de points</strong> et un <strong>Message</strong> (il apparaît dans l'historique de la cliente), puis <strong>Enregistrer</strong>.</p>
+      <div class="example"><span class="ex-label">Exemple</span><p>Un colis d'Emma est arrivé abîmé. Pour s'excuser, vous lui créditez 20 points avec le message «&nbsp;Geste commercial colis abîmé&nbsp;». Elle les voit dans son historique et peut les utiliser sur sa prochaine commande, au taux de change de votre marque.</p></div>
+    </div>
+  </div>
+  <p class="muted">Les règles de calcul, le taux de change et la validité des points sont expliqués dans le <a href="fidelite-guide.html">guide de la fidélité</a>.</p>
+
+  <h3 id="s5-4"><span class="sub-num">5.4</span> Fidélité et réductions</h3>
+  <figure><img src="Captures/Clientes/edit-fidelite.png" alt="Onglet Fidélité et réductions : tableaux Bons d'achat disponibles (nom, cumulable, valable sur, cumulable avec d'autres bons, à utiliser avant le / entre, commande du gain), Bons d'achats utilisés, Codes promo disponibles et Codes promo utilisés" loading="lazy"><figcaption>Bons d'achat et codes promo de la cliente.</figcaption></figure>
+  <p>L'onglet est en lecture&nbsp;: il liste les <strong>bons d'achat</strong> disponibles et utilisés (avec la «&nbsp;Commande du gain&nbsp;», celle qui les a fait gagner) et les <strong>codes promo</strong> réservés à la cliente, disponibles et utilisés. Pour en attribuer, voir les guides des <a href="bons-achat-guide.html">bons d'achat</a> et des <a href="reductions-guide.html">réductions</a>.</p>
+</section>
+
+<!-- 6 -->
+<section id="conseilleres">
+  <div class="sec-head"><span class="sec-num">06</span><h2>Une cliente et ses conseillères</h2></div>
+  <p class="lede">Une cliente peut être dans le carnet d'adresses de <strong>plusieurs conseillères</strong>. L'une d'elles est sa <strong>conseillère principale</strong>.</p>
+  <div class="grid-2">
+    <div class="card"><span class="tag">Vendeur principal</span><p>C'est la conseillère de sa <strong>dernière commande payée</strong>&nbsp;: à chaque paiement, si la commande est attribuée à une autre conseillère, celle-ci devient la conseillère principale. Le changement est historisé.</p></div>
+    <div class="card"><span class="tag pink">Vendeurs secondaires</span><p>Les autres conseillères qui ont la cliente dans leur carnet&nbsp;: elles l'ont ajoutée, l'ont invitée à une réunion ou lui ont vendu quelque chose.</p></div>
+  </div>
+  <div class="example"><span class="ex-label">Exemple</span><p>Zoé est cliente de Léa depuis 2024. En mars, elle participe à une réunion de Chloé et paie une commande de 62&nbsp;€. Chloé devient sa conseillère principale&nbsp;; Léa reste dans la liste des conseillères secondaires et garde Zoé dans son carnet.</p></div>
+  <ul class="prose">
+    <li><strong>Depuis l'espace marque</strong>, la fiche cliente ne permet pas de choisir la conseillère principale&nbsp;: elle suit les commandes. Pour réattribuer une vente, changez la conseillère de la <em>commande</em> (voir l'univers <a href="ventes.html">Commandes et boutiques</a>).</li>
+    <li><strong>Côté cliente</strong>, une cliente connectée à la boutique en ligne peut changer elle-même de conseillère («&nbsp;Changer mon vendeur&nbsp;»)&nbsp;: la conseillère choisie devient sa conseillère principale et l'ajoute à son carnet.</li>
+  </ul>
+  <div class="tip"><span class="ex-label">Ce que voit la conseillère</span><p>Une conseillère ne voit que les clientes de <strong>son</strong> carnet d'adresses, jamais celles des autres. Elle peut les filtrer par segment actif et les exporter. Selon vos réglages, elle peut aussi renseigner la marraine d'une cliente.</p></div>
+</section>
+
+<!-- 7 -->
+<section id="roles">
+  <div class="sec-head"><span class="sec-num">07</span><h2>Les rôles clients</h2></div>
+  <p class="lede">Un rôle est une <strong>étiquette</strong> posée sur une cliente&nbsp;: «&nbsp;Hôte&nbsp;», «&nbsp;VIP&nbsp;», «&nbsp;Association&nbsp;»… Il sert ensuite de condition ailleurs dans la plateforme&nbsp;: prix, réductions, fidélité, conditions d'achat, segments.</p>
+  <div class="path" aria-label="Chemin d'accès"><span>Espace marque</span><span>Clients</span><span><b>Gérer les rôles</b></span></div>
+  <figure><img src="Captures/Clientes/roles-clients.png" alt="Écran Rôles clients : bouton Ajouter un rôle, colonnes Nom, Actif, Est-ce un rôle système, Présence à une réunion, Acheté avec le produit ; trois rôles libres dont Client VIP et VIP, le nom du troisième étant flouté" loading="lazy"><figcaption>Les rôles libres de la marque (un nom flouté).</figcaption></figure>
+  <div class="warn"><span class="ex-label">Attention</span><p>Cet écran ne montre que les rôles <strong>que vous avez créés</strong>. Les rôles système n'y figurent pas&nbsp;: ils apparaissent seulement sur les fiches clientes.</p></div>
+
+  <h3 id="s7-1"><span class="sub-num">7.1</span> Les rôles système</h3>
+  <p>SellingAtHome les crée et les attribue automatiquement. Ils ne se modifient pas et ne se suppriment pas. Leur nom s'affiche tel qu'il est enregistré, parfois en anglais.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Rôle (nom affiché)</th><th>Qui le porte</th><th>Quand il est attribué</th><th>Marques</th></tr></thead>
+    <tbody>
+      <tr><td><span class="chip">Hôte</span> (ou Host)</td><td>Une cliente qui a accueilli une réunion</td><td>Quand une commande de sa réunion est payée, ou à la clôture de la réunion</td><td>35 / 35</td></tr>
+      <tr><td><span class="chip">Seller</span></td><td>Le compte client d'une conseillère</td><td>À l'activation de la conseillère&nbsp;; retiré à sa désactivation</td><td>35 / 35</td></tr>
+      <tr><td><span class="chip p">Sponsor</span></td><td>Une marraine</td><td>Quand une filleule lui est rattachée&nbsp;; retiré quand elle n'en a plus</td><td>7 / 35</td></tr>
+      <tr><td><span class="chip p">Sponsored</span></td><td>Une filleule</td><td>Quand une marraine lui est rattachée&nbsp;; retiré avec le lien</td><td>7 / 35</td></tr>
+      <tr><td><span class="chip">Association</span></td><td>Une association cliente</td><td>Rôle propre à certaines marques</td><td>3 / 35</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 id="s7-2"><span class="sub-num">7.2</span> Créer un rôle</h3>
+  <div class="figrow">
+    <figure><img src="Captures/Clientes/role-creation.png" alt="Formulaire Création d'un rôle : Nom, case Actif cochée, case Demander un justificatif, Acheté avec le produit avec bouton Choisissez un produit, case Attribué à la présence à une réunion, bouton Ajouter le rôle" loading="lazy"><figcaption>Le formulaire de création.</figcaption></figure>
+    <div class="prose">
+      <p>Cliquez sur <strong>Ajouter un rôle</strong>, puis renseignez&nbsp;:</p>
+      <ul>
+        <li><strong>Nom</strong>&nbsp;: ce que verront la marque et les conseillères.</li>
+        <li><strong>Actif</strong>&nbsp;: un rôle inactif n'est plus donné à la présence en réunion.</li>
+        <li><strong>Demander un justificatif&nbsp;?</strong>&nbsp;: à l'attribution, la fiche demande un document (carte d'étudiante, statuts d'association…).</li>
+        <li><strong>Acheté avec le produit</strong>&nbsp;: le rôle est donné à la cliente quand la conseillère enregistre le paiement d'une commande contenant ce produit (une carte de fidélité, une adhésion…).</li>
+        <li><strong>Attribué à la présence à une réunion</strong>&nbsp;: le rôle est donné à chaque participante marquée présente. Option visible seulement si le pointage des présences est activé pour votre marque.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="example"><span class="ex-label">Exemple</span><p>Vous vendez une «&nbsp;Carte Privilège&nbsp;» à 15&nbsp;€. Vous créez le rôle <strong>Privilège</strong>, acheté avec ce produit, puis une réduction de 10&nbsp;% réservée au rôle Privilège. Inès achète la carte en réunion&nbsp;: elle reçoit le rôle, et la réduction s'applique à ses commandes suivantes.</p></div>
+  <p>Un rôle libre se modifie avec le crayon et se supprime avec la croix rouge. Sur les marques actives, 10 ont créé des rôles libres (55 au total).</p>
+  <div class="warn"><span class="ex-label">Supprimer un rôle</span><p>La suppression retire le rôle de toutes les clientes qui le portent, et efface aussi les <strong>prix réservés à ce rôle</strong> et ses réservations de produits. Vérifiez avant de supprimer qu'aucun prix ne lui est réservé.</p></div>
+  <div class="tip"><span class="ex-label">Bon à savoir</span><p>Les options «&nbsp;Livraison gratuite&nbsp;» et «&nbsp;Exonérés de taxes&nbsp;» d'un rôle ne sont plus proposées et n'ont pas d'effet. Pour la livraison offerte, utilisez une <a href="reductions-guide.html">réduction</a> conditionnée au rôle&nbsp;; pour l'exonération, la case <a href="#s5-1">Exonéré de taxes</a> de la fiche.</p></div>
+
+  <h3 id="s7-3"><span class="sub-num">7.3</span> À quoi sert un rôle&nbsp;?</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Où</th><th>Utilisation</th><th>Voir</th></tr></thead>
+    <tbody>
+      <tr><td><b>Prix</b></td><td>Un prix réservé à un rôle (21 marques sur 35 en ont)&nbsp;: le prix conseillère, par exemple.</td><td><a href="catalogue.html">Catalogue</a></td></tr>
+      <tr><td><b>Réductions</b></td><td>Condition «&nbsp;rôle du client&nbsp;».</td><td><a href="reductions-guide.html">Réductions</a></td></tr>
+      <tr><td><b>Fidélité</b></td><td>Condition sur le rôle de la personne.</td><td><a href="fidelite-guide.html">Fidélité</a></td></tr>
+      <tr><td><b>Conditions d'achat</b></td><td>Réserver un produit à un rôle.</td><td><a href="conditions-achat-guide.html">Conditions d'achat</a></td></tr>
+      <tr><td><b>Segments</b></td><td>Filtre «&nbsp;Rôles&nbsp;».</td><td><a href="segments.html">Segments</a></td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- 8 -->
+<section id="rgpd">
+  <div class="sec-head"><span class="sec-num">08</span><h2>Consentement et RGPD</h2></div>
+  <div class="grid-2">
+    <div class="card"><span class="tag yellow">Consentement client</span><p>Option activée par SellingAtHome (1 marque sur 35). La fiche affiche une case de consentement avec <strong>votre texte</strong>, et la conseillère ne peut pas créer une cliente sans la cocher. La date du consentement est enregistrée.</p><p class="muted">Le texte et son libellé se rédigent par langue dans Paramètres › Configuration générale, onglet Paramètres généraux, bloc «&nbsp;Clients&nbsp;» (champs «&nbsp;Libellé consentement&nbsp;» et «&nbsp;Texte consentement&nbsp;»), visible seulement si l'option est active.</p></div>
+    <div class="card"><span class="tag pink">Consentement marketing</span><p>Deux cases&nbsp;: «&nbsp;J'accepte de recevoir des communications par email&nbsp;» et «&nbsp;… par SMS&nbsp;». Elles sont transmises à vos outils marketing quand une synchronisation est en place.</p></div>
+  </div>
+  <div class="warn"><span class="ex-label">Ne pas confondre</span><p>Le bouton «&nbsp;Modification des RGPD&nbsp;» de la Configuration générale (bloc Vendeurs) concerne le texte RGPD que vos <strong>conseillères</strong> acceptent chaque année à la connexion, pas les clientes.</p></div>
+  <div class="tip"><span class="ex-label">Bon à savoir</span><p>Si l'option de consentement est désactivée, enregistrer une fiche depuis l'espace marque remet le consentement de la cliente à «&nbsp;non&nbsp;». Évitez d'activer puis de désactiver l'option.</p></div>
+</section>
+
+<!-- 9 -->
+<section id="anonymisation">
+  <div class="sec-head"><span class="sec-num">09</span><h2>Anonymiser une cliente</h2></div>
+  <p class="lede">Quand une cliente demande l'effacement de ses données, la marque l'<strong>anonymise</strong>&nbsp;: ses données personnelles sont remplacées par des valeurs neutres, et sa fiche disparaît des listes. Ses commandes restent, pour la comptabilité et les commissions.</p>
+  <div class="figrow">
+    <figure><img src="Captures/Clientes/edit-anonymiser.png" alt="Onglet Anonymiser le client : titre ATTENTION anonymisation irréversible, texte Vous êtes sur le point d'anonymiser votre client, bouton orange Anonymiser le client" loading="lazy"><figcaption>L'onglet Anonymiser le client.</figcaption></figure>
+    <ol class="prose">
+      <li>Ouvrez la fiche en modification, onglet <strong>Anonymiser le client</strong>.</li>
+      <li>Cliquez sur <strong>Anonymiser le client</strong>.</li>
+      <li>Confirmez avec <strong>Oui anonymiser</strong>.</li>
+      <li>Le message «&nbsp;L'anonymisation a été réalisée avec succès.&nbsp;» s'affiche et vous revenez à la liste.</li>
+    </ol>
+  </div>
+  <div class="warn"><span class="ex-label">Irréversible</span><p>Il n'y a pas de retour arrière. Une fois anonymisée, la cliente ne peut plus se connecter, ne reçoit plus d'emails, et ne peut pas être retrouvée.</p></div>
+
+  <h3>Quand est-ce impossible&nbsp;?</h3>
+  <p>L'onglet affiche «&nbsp;Anonymisation impossible&nbsp;!&nbsp;» si la cliente a&nbsp;:</p>
+  <ul class="prose">
+    <li>une commande <strong>non payée modifiée dans les 90 derniers jours</strong>, ou une commande <strong>payée modifiée dans les 30 derniers jours</strong> («&nbsp;Une ou plusieurs commandes sont en cours pour ce client.&nbsp;»)&nbsp;;</li>
+    <li>une <strong>réunion</strong> à laquelle elle participe, qui a commencé il y a moins de 7 jours ou est à venir («&nbsp;Une ou plusieurs réunions sont prévues pour ce client.&nbsp;»).</li>
+  </ul>
+  <div class="example"><span class="ex-label">Exemple</span><p>Zoé demande l'effacement de ses données le 2 octobre. Sa dernière commande, payée, a été expédiée le 20 septembre&nbsp;: l'anonymisation est bloquée jusqu'au 20 octobre environ (30 jours après la dernière mise à jour de la commande). Notez sa demande et revenez après cette date.</p></div>
+
+  <h3>Ce qui est effacé, ce qui reste</h3>
+  <div class="table-wrap"><table class="erase">
+    <thead><tr><th>Donnée</th><th>Après anonymisation</th></tr></thead>
+    <tbody>
+      <tr><td>Prénom, nom, société, Siret, TVA, coordonnées bancaires, identifiants externes</td><td>Remplacés par «&nbsp;XXX_ANONIMIZED_ON_&lt;date&gt;_XXX&nbsp;»</td></tr>
+      <tr><td>Email</td><td>Remplacé par une adresse fictive, signalée comme non fiable</td></tr>
+      <tr><td>Téléphones</td><td>Remplacés par des valeurs neutres</td></tr>
+      <tr><td>Adresses de la cliente</td><td>Remplacées par une adresse neutre</td></tr>
+      <tr><td>Date de naissance, dates de création et de consentement</td><td>Remises au 1<sup>er</sup> janvier 1970</td></tr>
+      <tr><td>Mot de passe, jetons de connexion</td><td>Invalidés&nbsp;: plus de connexion possible</td></tr>
+      <tr><td>Lien de parrainage</td><td>Supprimé (elle n'a plus de marraine)</td></tr>
+      <tr><td>Fiche</td><td>Supprimée des listes et des recherches</td></tr>
+      <tr><td><b>Commandes, factures, avoirs</b></td><td><b>Conservés</b>, rattachés à la fiche anonyme</td></tr>
+      <tr><td>Numéro de cliente (#)</td><td>Conservé, pour pouvoir échanger avec le support</td></tr>
+    </tbody>
+  </table></div>
+  <p class="muted">Seule l'équipe SellingAtHome peut autoriser les conseillères à anonymiser elles-mêmes leurs clientes&nbsp;; aucune marque active ne l'a demandé.</p>
+</section>
+
+<!-- 10 -->
+<section id="attention">
+  <div class="sec-head"><span class="sec-num">10</span><h2>Points d'attention</h2></div>
+  <ul class="prose">
+    <li><strong>La conseillère principale bouge toute seule</strong>&nbsp;: elle suit la dernière commande payée. Ne la considérez pas comme une affectation figée.</li>
+    <li><strong>Les rôles système sont invisibles dans «&nbsp;Gérer les rôles&nbsp;»</strong>&nbsp;: retrouvez-les sur les fiches ou avec un segment filtré par rôle.</li>
+    <li><strong>Retirer un rôle à la main</strong> (rôle Sponsor ou Sponsored compris) ne supprime pas le lien de parrainage&nbsp;: c'est le champ Parrain/Marraine qui fait foi.</li>
+    <li><strong>Email non fiable</strong>&nbsp;: tant qu'il n'est pas corrigé, la cliente risque de ne recevoir ni facture ni bon d'achat.</li>
+    <li><strong>Anonymisation</strong>&nbsp;: irréversible, et seulement après le délai lié aux commandes et réunions récentes.</li>
+    <li><strong>Champs personnalisés et documents justificatifs</strong>&nbsp;: ils ne sont pas cités dans la liste des données effacées à l'anonymisation&nbsp;; ne stockez pas de données sensibles dans ces champs sans en avoir l'usage.</li>
+  </ul>
+</section>
+
+<!-- 11 -->
+<section id="faq">
+  <div class="sec-head"><span class="sec-num">11</span><h2>Questions fréquentes</h2></div>
+  <div class="faq">
+    <details><summary>Comment créer une cliente depuis l'espace marque&nbsp;?</summary><div><p>Ce n'est pas possible depuis la liste des clientes&nbsp;: les clientes sont créées par les conseillères, les mini-sites, les achats en ligne ou les synchronisations. La marque peut en revanche les consulter et les modifier.</p></div></details>
+    <details><summary>Comment exporter mes clientes&nbsp;?</summary><div><p>Créez un segment (par exemple «&nbsp;toutes les clientes ayant le rôle Hôte&nbsp;»), puis utilisez les boutons CSV ou XLS de la liste des segments. Voir <a href="segments.html"><em>Les segments de clientes</em></a>.</p></div></details>
+    <details><summary>Je ne trouve pas le rôle «&nbsp;Hôte&nbsp;» dans Gérer les rôles.</summary><div><p>C'est normal&nbsp;: les rôles système ne sont pas listés sur cet écran. Ils apparaissent sur les fiches et dans les listes de choix des réductions, de la fidélité et des segments.</p></div></details>
+    <details><summary>Pourquoi ma modification d'email n'a-t-elle pas été enregistrée&nbsp;?</summary><div><p>L'adresse est probablement déjà utilisée par une autre cliente de votre marque. Recherchez-la dans la liste.</p></div></details>
+    <details><summary>Une cliente a été anonymisée par erreur&nbsp;: peut-on la restaurer&nbsp;?</summary><div><p>Non, l'anonymisation est irréversible. La cliente devra être recréée par sa conseillère&nbsp;; ses anciennes commandes resteront sur la fiche anonyme.</p></div></details>
+  </div>
+</section>
+
+  </main>
+</div>
+<div class="pager-wrap"><nav class="pager" aria-label="Pages de l'univers"><a class="prev" href="parrainage-client.html"><small>← Précédent</small><span>Le parrainage client</span></a><a class="next" href="segments.html"><small>Suivant →</small><span>Les segments de clientes</span></a></nav>
+</div>
+<footer><div class="ft"><a href="animation.html">← Animation</a><span>SellingAtHome · Les clientes</span><span>Version 1.0.0 · octobre 2026</span></div></footer>
+
+<button class="to-top" id="toTop" type="button" aria-label="Remonter en haut de la page" title="Haut de page"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Capture agrandie"><img alt=""></div>
+
+<script src="assets/sah.js"></script>
+<script src="assets/search-index.js"></script>
+<script src="assets/search.js"></script>
+
+</body>
+</html>

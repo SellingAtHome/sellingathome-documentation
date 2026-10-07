@@ -1,0 +1,227 @@
+<!--page {"title":"Prix, prix par rôle et taxes"} -->
+<style>
+.opts td:first-child { width:32%; }
+.calc td, .calc th { text-align:right; }
+.calc td:first-child, .calc th:first-child { text-align:left; }
+.flow { display:grid; grid-template-columns:repeat(auto-fit, minmax(190px,1fr)); gap:12px; }
+.flow .card { border-left:5px solid var(--accent); }
+.flow .card:nth-child(2) { border-left-color:var(--pink); }
+.flow .card:nth-child(3) { border-left-color:var(--yellow); }
+.flow .card p { font-size:.9rem; }
+</style>
+<header class="hero">
+  <div class="hero-in">
+    <div>
+      <span class="eyebrow">Catalogue et logistique</span>
+      <h1>Prix, prix par rôle <span class="script">et taxes</span></h1>
+      <p class="lede">Un tarif par pays, saisi TTC et converti en HT selon la taxe&nbsp;; des prix réservés à certains rôles ou limités dans le temps&nbsp;; les taxes et les zones de taxe de votre marque, avec un exemple sur trois pays.</p>
+    </div>
+    <div class="voucher-art" aria-hidden="true">
+      <div class="v-top"><span>Tarif France</span><span>TVA 20&nbsp;%</span></div>
+      <div class="v-amount">59,99<span> € TTC</span></div>
+      <div class="v-name">49,99 € HT</div>
+      <div class="v-sep"></div>
+      <div class="v-meta"><span>Prix rôle <b>30,00 €</b></span><span>Par défaut <b>Oui</b></span></div>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="toc" aria-label="Sommaire">
+    <details id="tocDetails" open>
+      <summary>Sommaire</summary>
+      <div class="toc-title">Sommaire</div>
+      <ol>
+        <li data-sec="s1"><a href="#s1"><span class="toc-n">1</span>Les principes</a></li>
+        <li data-sec="s2"><a href="#s2"><span class="toc-n">2</span>L'onglet Tarifs</a>
+          <ol class="toc-sub"><li><a href="#s2-1"><span class="toc-n">2.1</span>Les colonnes</a></li><li><a href="#s2-2"><span class="toc-n">2.2</span>Ajouter un tarif</a></li></ol>
+        </li>
+        <li data-sec="s3"><a href="#s3"><span class="toc-n">3</span>Les prix par rôle</a>
+          <ol class="toc-sub"><li><a href="#s3-1"><span class="toc-n">3.1</span>Saisir un prix rôle</a></li><li><a href="#s3-2"><span class="toc-n">3.2</span>Quel prix s'applique&nbsp;?</a></li><li><a href="#s3-3"><span class="toc-n">3.3</span>Prix promotionnel et prix barré</a></li></ol>
+        </li>
+        <li data-sec="s4"><a href="#s4"><span class="toc-n">4</span>Les taxes</a>
+          <ol class="toc-sub"><li><a href="#s4-1"><span class="toc-n">4.1</span>Créer une taxe</a></li><li><a href="#s4-2"><span class="toc-n">4.2</span>Les zones de taxe</a></li><li><a href="#s4-3"><span class="toc-n">4.3</span>Tarifer une zone</a></li></ol>
+        </li>
+        <li data-sec="s5"><a href="#s5"><span class="toc-n">5</span>Quel tarif pour quelle commande&nbsp;?</a></li>
+        <li data-sec="s6"><a href="#s6"><span class="toc-n">6</span>Exemple sur trois pays</a></li>
+        <li data-sec="s7"><a href="#s7"><span class="toc-n">7</span>Points d'attention</a></li>
+        <li data-sec="s8"><a href="#s8"><span class="toc-n">8</span>Questions fréquentes</a></li>
+      </ol>
+    </details>
+  </nav>
+
+  <main>
+
+<!-- 1 -->
+<section id="s1">
+  <div class="sec-head"><span class="sec-num">01</span><h2>Les principes</h2></div>
+  <div class="flow">
+    <div class="card"><h4>Un tarif par pays</h4><p>Chaque tarif d'un produit est lié à un <strong>pays</strong> et à une <strong>taxe</strong>. Un pays ne peut avoir qu'un tarif («&nbsp;Ce pays à déjà un prix&nbsp;»).</p></div>
+    <div class="card"><h4>Saisi TTC, stocké HT</h4><p>Vous saisissez le prix <strong>TTC</strong>&nbsp;; SellingAtHome calcule le HT avec le taux de la taxe. 59,99&nbsp;€ TTC à 20&nbsp;% = 49,99&nbsp;€ HT.</p></div>
+    <div class="card"><h4>Des prix particuliers</h4><p>Sur chaque tarif, des <strong>prix par rôle</strong> peuvent remplacer le prix normal pour certaines clientes, ou pour toutes pendant une période.</p></div>
+  </div>
+  <div class="stats">
+    <div class="stat"><b>12 / 35</b><span>marques actives vendent dans plusieurs pays</span></div>
+    <div class="stat"><b>8 / 35</b><span>utilisent des prix réservés à un rôle</span></div>
+    <div class="stat"><b>7 / 35</b><span>utilisent des prix datés</span></div>
+  </div>
+  <div class="tip"><span class="ex-label">Vocabulaire</span><p>L'espace marque parle de «&nbsp;Vendeur&nbsp;» pour la <strong>conseillère</strong>, de «&nbsp;Client&nbsp;» pour la <strong>cliente</strong> et de «&nbsp;Hôte&nbsp;» pour l'<strong>hôtesse</strong>. Ces mots apparaissent tels quels dans les noms de rôle.</p></div>
+</section>
+
+<!-- 2 -->
+<section id="s2">
+  <div class="sec-head"><span class="sec-num">02</span><h2>L'onglet Tarifs</h2></div>
+  <div class="path" aria-label="Chemin d'accès"><span>Catalogue</span><span>Produits</span><span>fiche produit</span><span><b>Tarifs</b></span></div>
+  <figure><img src="Captures/Catalogue/fiche-tarifs.png" alt="Onglet Tarifs : bouton Ajouter un tarif ; tableau Pays, Prix HT, Catégorie de la taxe, Prix TTC, Valeur en points, Prix d'achat HT, Éco-participation (TTC), Par défaut ; groupe Hors zone avec la ligne France 49,99 € HT, TVA (20%), 59,99 € TTC ; boutons prix rôles, modifier, supprimer" loading="lazy"><figcaption>Un tarif France, hors zone.</figcaption></figure>
+
+  <h3 id="s2-1"><span class="sub-num">2.1</span> Les colonnes</h3>
+  <div class="table-wrap"><table class="opts">
+    <thead><tr><th>Colonne</th><th>Signification</th></tr></thead>
+    <tbody>
+      <tr><td><b>Pays</b></td><td>Le pays du tarif. Les tarifs sont regroupés par zone de taxe, ou sous «&nbsp;Hors zone&nbsp;».</td></tr>
+      <tr><td><b>Prix HT</b>, <b>Catégorie de la taxe</b>, <b>Prix TTC</b></td><td>Le prix et la taxe appliquée.</td></tr>
+      <tr><td><b>Valeur en points</b></td><td>Si votre marque a un catalogue en points de fidélité&nbsp;: ce que coûte le produit en points (ou «&nbsp;Valeur dans le catalogue cadeau&nbsp;», en devise, selon votre réglage). Voir <a href="fidelite-guide.html">La fidélité</a>.</td></tr>
+      <tr><td><b>Prix d'achat HT</b></td><td>Votre coût d'achat. Le formulaire affiche la marge correspondante. Si le produit a des fournisseurs, ce prix se modifie depuis l'onglet Paramètres d'approvisionnement.</td></tr>
+      <tr><td><b>Éco-participation (TTC)</b></td><td>Si l'option est active pour votre marque.</td></tr>
+      <tr><td><b>Famille de commissionnement</b></td><td>Si votre marque commissionne par familles de produits&nbsp;: elle est alors obligatoire.</td></tr>
+      <tr><td><b>Par défaut</b></td><td>Le tarif principal du produit (un seul à la fois). Le tarif créé avec le produit l'est automatiquement.</td></tr>
+    </tbody>
+  </table></div>
+  <p>Chaque ligne a trois boutons&nbsp;: <strong>Editer les prix rôles</strong> (icône personne, <a href="#s3">section 3</a>), <strong>Editer le prix original</strong> (crayon), <strong>Supprimer</strong> (croix).</p>
+
+  <h3 id="s2-2"><span class="sub-num">2.2</span> Ajouter un tarif</h3>
+  <div class="figrow">
+    <figure><img src="Captures/Catalogue/fiche-tarif-ajout.png" alt="Panneau Ajouter un prix : choix Pays ou Zones de taxes, Pays, Catégorie de la taxe, Prix (TTC) avec le HT calculé, Valeur en points, Prix d'achat HT avec la marge, Éco-participation (TTC), case Par défaut, bouton Enregistrer" loading="lazy"><figcaption>Le panneau Ajouter un prix.</figcaption></figure>
+    <div class="prose" style="display:flex;flex-direction:column;gap:12px">
+      <ol class="prose">
+        <li><strong>Ajouter un tarif</strong>.</li>
+        <li>Choisissez <strong>Pays</strong> (un pays) ou <strong>Zones de taxes</strong> (tous les pays d'une zone, <a href="#s4-3">4.3</a>).</li>
+        <li>Pour un pays&nbsp;: le <strong>Pays</strong> et la <strong>Catégorie de la taxe</strong> (les taxes de ce pays).</li>
+        <li>Le <strong>Prix (TTC)</strong>&nbsp;: le HT s'affiche au-dessus du champ.</li>
+        <li>Les champs facultatifs, puis <strong>Enregistrer</strong>.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- 3 -->
+<section id="s3">
+  <div class="sec-head"><span class="sec-num">03</span><h2>Les prix par rôle</h2></div>
+  <p class="lede">Un <strong>prix rôle</strong> remplace le prix normal d'un tarif pour les clientes qui ont un certain <strong>rôle</strong> (Hôte, Vendeur, Parrain…), ou pour toutes les clientes, éventuellement entre deux dates.</p>
+  <figure><img src="Captures/Catalogue/fiche-prix-roles.png" alt="Fenêtre Prix rôles : colonnes Rôle du client, Combinaison, Prix role TTC, Prix role HT, Date de début, Date de fin ; lignes Hôte (combinaison Rouge, XS, 40 €, du 01/05/2024 au 31/05/2024), Pour tous les clients (48,66 €, juillet 2019), Seller 30 €, Sponsor 20 €, Sponsored 25 € ; bouton Ajouter un prix rôle" loading="lazy"><figcaption>Les prix rôles d'un tarif France à 59,99&nbsp;€.</figcaption></figure>
+
+  <h3 id="s3-1"><span class="sub-num">3.1</span> Saisir un prix rôle</h3>
+  <ol class="prose">
+    <li>Sur la ligne du tarif, cliquez sur <strong>Editer les prix rôles</strong>.</li>
+    <li><strong>Ajouter un prix rôle</strong>, puis choisissez le <strong>Rôle du client</strong>, ou «&nbsp;Pour tous les clients&nbsp;».</li>
+    <li>Si le produit est décliné, choisissez éventuellement une <strong>Combinaison</strong>&nbsp;: le prix ne vaudra que pour elle.</li>
+    <li>Saisissez le prix <strong>TTC</strong> (le HT est calculé avec la taxe du tarif) et, si besoin, une <strong>Date de début</strong> et une <strong>Date de fin</strong>.</li>
+    <li>Validez la ligne.</li>
+  </ol>
+  <p class="muted">Les rôles proposés sont les rôles clients de votre marque. Les conseillères ont un compte client, qui porte en général le rôle «&nbsp;Vendeur&nbsp;» (ou son équivalent chez vous)&nbsp;: c'est ainsi qu'un prix «&nbsp;Vendeur&nbsp;» s'applique à leurs achats personnels.</p>
+
+  <h3 id="s3-2"><span class="sub-num">3.2</span> Quel prix s'applique&nbsp;?</h3>
+  <p>À l'ajout au panier, SellingAtHome retient, parmi les prix rôles du tarif du pays&nbsp;:</p>
+  <ul class="prose">
+    <li>ceux «&nbsp;Pour tous les clients&nbsp;» et ceux d'un rôle que possède la cliente&nbsp;;</li>
+    <li>qui sont <strong>en cours</strong>&nbsp;: sans date, ou dont la date de début est passée et la date de fin pas encore atteinte&nbsp;;</li>
+    <li>et prend <strong>le plus bas</strong>. S'il n'y en a aucun, c'est le prix du tarif.</li>
+  </ul>
+  <p>Un prix rôle rattaché à une combinaison s'applique en priorité à cette combinaison. Les ajustements de prix des valeurs d'attribut s'ajoutent ensuite (voir <a href="attributs-declinaisons.html#s5-4">Prix par combinaison</a>).</p>
+  <div class="example"><span class="ex-label">Exemple</span><p>Tarif France&nbsp;: 59,99&nbsp;€. Prix rôles&nbsp;: «&nbsp;Hôte&nbsp;» à 40&nbsp;€, «&nbsp;Pour tous les clients&nbsp;» à 48,66&nbsp;€ du 1<sup>er</sup> au 31&nbsp;juillet.<br>
+  En juin, Emma (aucun rôle) paie <strong>59,99&nbsp;€</strong>, Jade (hôtesse) <strong>40&nbsp;€</strong>.<br>
+  En juillet, Emma paie <strong>48,66&nbsp;€</strong>, Jade toujours <strong>40&nbsp;€</strong>, le plus bas des deux prix qui la concernent.</p></div>
+
+  <h3 id="s3-3"><span class="sub-num">3.3</span> Prix promotionnel et prix barré</h3>
+  <p>Un prix «&nbsp;Pour tous les clients&nbsp;» daté est la façon de faire une <strong>promotion produit</strong>. Dans la commande, quand un prix rôle s'applique, le prix d'origine apparaît <strong>barré</strong> à côté du prix payé. Pour signaler aussi la promotion dans le catalogue, cochez <strong>Afficher le badge réduction</strong> dans l'onglet Infos produit et donnez-lui les mêmes dates (voir <a href="produits.html#s6-2">Créer et éditer un produit</a>).</p>
+  <div class="tip"><span class="ex-label">Bon à savoir</span><p>Pour baisser le prix d'une commande entière (code promo, remise sur montant), utilisez plutôt <a href="reductions-guide.html">les réductions</a>.</p></div>
+</section>
+
+<!-- 4 -->
+<section id="s4">
+  <div class="sec-head"><span class="sec-num">04</span><h2>Les taxes</h2></div>
+  <div class="path" aria-label="Chemin d'accès"><span>Espace marque</span><span>Paramètres</span><span><b>Taxes</b></span></div>
+  <figure><img src="Captures/Catalogue/taxes.png" alt="Écran Taxes, onglets Taxes et Zones de taxes ; bouton Ajouter une taxe ; colonnes Pays, Nom, Taux, Ordre d'affichage, Action ; France Réduite 5, France TVA 20, Guadeloupe Frais d'octroi de mer 8, Guyana Test 10" loading="lazy"><figcaption>Les taxes de la marque de démonstration.</figcaption></figure>
+
+  <h3 id="s4-1"><span class="sub-num">4.1</span> Créer une taxe</h3>
+  <div class="figrow">
+    <figure><img src="Captures/Catalogue/taxe-edition.png" alt="Formulaire Éditer une taxe : Pays (France), Nom (TVA), Taux (20), Ordre d'affichage (3), bouton Éditer la taxe" loading="lazy"><figcaption>Une taxe&nbsp;: un pays, un nom, un taux.</figcaption></figure>
+    <div class="prose" style="display:flex;flex-direction:column;gap:12px">
+      <p><strong>Ajouter une taxe</strong>, puis renseignez le <strong>Pays</strong>, le <strong>Nom</strong> (ce qu'on lira dans les listes&nbsp;: «&nbsp;TVA&nbsp;», «&nbsp;Réduite&nbsp;»), le <strong>Taux</strong> en pourcentage et l'<strong>Ordre d'affichage</strong>. Si votre comptabilité est paramétrée, deux comptes comptables (collecté, déductible) s'ajoutent.</p>
+      <p>Un même pays peut avoir plusieurs taxes (taux normal, taux réduit)&nbsp;: c'est le tarif du produit qui dit laquelle s'applique.</p>
+    </div>
+  </div>
+  <div class="warn"><span class="ex-label">Attention</span><p>SellingAtHome conserve le prix <strong>HT</strong> des tarifs. Modifier le <strong>taux</strong> d'une taxe change donc le prix <strong>TTC</strong> de tous les tarifs qui l'utilisent&nbsp;: à 49,99&nbsp;€ HT, passer de 20&nbsp;% à 21&nbsp;% fait passer le produit de 59,99&nbsp;€ à 60,49&nbsp;€. Pour garder vos prix TTC ronds, ressaisissez les tarifs concernés. Avant de <strong>supprimer</strong> une taxe, vérifiez qu'aucun tarif ne l'utilise encore.</p></div>
+
+  <h3 id="s4-2"><span class="sub-num">4.2</span> Les zones de taxe</h3>
+  <div class="figrow">
+    <figure><img src="Captures/Catalogue/zone-creation.png" alt="Formulaire Créer une zone de taxe : champ Nom, liste Taxes associées à cocher (France Réduite 5 %, France TVA 20 %, Guadeloupe Frais d'octroi de mer 8 %, Guyana Test 10 %), boutons Annuler et Ajouter une zone" loading="lazy"><figcaption>Créer une zone&nbsp;: un nom et des taxes.</figcaption></figure>
+    <div class="prose" style="display:flex;flex-direction:column;gap:12px">
+      <p>Une <strong>zone de taxe</strong> regroupe plusieurs pays pour les tarifer en une fois. Onglet <strong>Zones de taxes</strong>, <strong>Ajouter une zone</strong>&nbsp;: donnez un <strong>Nom</strong> («&nbsp;Benelux et France&nbsp;») et cochez les <strong>Taxes associées</strong>, une par pays.</p>
+      <p>Une zone ne peut contenir <strong>qu'une seule taxe par pays</strong>&nbsp;: cocher la TVA à 20&nbsp;% et le taux réduit France ensemble est refusé.</p>
+      <p>Une seule marque active sur 35 utilise aujourd'hui les zones&nbsp;: c'est une fonction récente.</p>
+    </div>
+  </div>
+
+  <h3 id="s4-3"><span class="sub-num">4.3</span> Tarifer une zone</h3>
+  <p>Dans l'onglet Tarifs du produit, <strong>Ajouter un tarif</strong> &gt; <strong>Zones de taxes</strong>&nbsp;: choisissez la zone (ses taxes s'affichent) et saisissez <strong>un seul prix TTC</strong>. SellingAtHome crée un tarif par pays de la zone, au <strong>même prix TTC</strong>, chacun avec son HT calculé selon sa taxe.</p>
+  <ul class="prose">
+    <li>Si des pays de la zone ont déjà un tarif, un message liste ces pays et demande «&nbsp;Voulez-vous les remplacer&nbsp;?&nbsp;». Accepter supprime les anciens tarifs de ces pays (et, si un de ces pays appartenait à une autre zone, tous les tarifs de cette autre zone).</li>
+    <li>Les tarifs d'une zone se gèrent ensemble, depuis la ligne de la zone&nbsp;: modifier le prix, gérer les prix rôles ou supprimer s'appliquent à tous ses pays. Une ligne de pays d'une zone n'a pas de bouton de suppression individuel.</li>
+  </ul>
+  <figure><img src="Captures/Catalogue/zones.png" alt="Onglet Zones de taxes : bouton Ajouter une zone, message Aucune zone de taxe créée" loading="lazy"><figcaption>L'onglet Zones de taxes (aucune zone sur la marque de démonstration).</figcaption></figure>
+</section>
+
+<!-- 5 -->
+<section id="s5">
+  <div class="sec-head"><span class="sec-num">05</span><h2>Quel tarif pour quelle commande&nbsp;?</h2></div>
+  <p>Quand la conseillère ajoute un produit, SellingAtHome prend le tarif du <strong>pays de la commande</strong>&nbsp;; si la commande n'a pas de pays, celui de la conseillère, puis celui de votre marque.</p>
+  <div class="decide">
+    <div class="row"><span class="q">Le produit a un tarif pour ce pays</span><span class="arrow">→</span><span class="pill">Prix du tarif, ou prix rôle le plus bas</span></div>
+    <div class="row"><span class="q">Le produit n'a pas de tarif pour ce pays</span><span class="arrow">→</span><span class="pill pink">«&nbsp;Produit non disponible&nbsp;»</span></div>
+    <div class="row"><span class="q">La cliente est exonérée de taxe (option)</span><span class="arrow">→</span><span class="pill yellow">Prix HT, sans taxe</span></div>
+  </div>
+  <p class="muted">L'exonération de taxe d'une cliente est une option de votre marque&nbsp;; le prix appliqué est alors le prix HT.</p>
+</section>
+
+<!-- 6 -->
+<section id="s6">
+  <div class="sec-head"><span class="sec-num">06</span><h2>Exemple sur trois pays</h2></div>
+  <p>Votre marque vend son coffret à <strong>39&nbsp;€ TTC</strong> en France, en Belgique et au Luxembourg, au même prix affiché partout. Vous créez trois taxes (France 20&nbsp;%, Belgique 21&nbsp;%, Luxembourg 17&nbsp;%), une zone «&nbsp;FR-BE-LU&nbsp;» qui les regroupe, puis un tarif de zone à 39&nbsp;€&nbsp;:</p>
+  <div class="table-wrap"><table class="calc">
+    <thead><tr><th>Pays</th><th>Taxe</th><th>Prix TTC</th><th>Prix HT calculé</th><th>Taxe collectée</th></tr></thead>
+    <tbody>
+      <tr><td>France</td><td>20&nbsp;%</td><td>39,00&nbsp;€</td><td>32,50&nbsp;€</td><td>6,50&nbsp;€</td></tr>
+      <tr><td>Belgique</td><td>21&nbsp;%</td><td>39,00&nbsp;€</td><td>32,23&nbsp;€</td><td>6,77&nbsp;€</td></tr>
+      <tr><td>Luxembourg</td><td>17&nbsp;%</td><td>39,00&nbsp;€</td><td>33,33&nbsp;€</td><td>5,67&nbsp;€</td></tr>
+    </tbody>
+  </table></div>
+  <p>Vous ajoutez ensuite, depuis la ligne de la zone, un prix rôle «&nbsp;Hôte&nbsp;» à 29&nbsp;€ TTC&nbsp;: il est créé pour les trois pays. Jade, hôtesse belge, paie 29&nbsp;€&nbsp;; Zoé, cliente luxembourgeoise sans rôle, 39&nbsp;€.</p>
+  <div class="tip"><span class="ex-label">Bon à savoir</span><p>Si vous préférez un même prix <strong>HT</strong> partout (et donc des TTC différents), créez plutôt un tarif par pays, en calculant chaque TTC vous-même&nbsp;: 32,50&nbsp;€ HT donne 39,00&nbsp;€ en France, 39,33&nbsp;€ en Belgique, 38,03&nbsp;€ au Luxembourg.</p></div>
+</section>
+
+<!-- 7 -->
+<section id="s7">
+  <div class="sec-head"><span class="sec-num">07</span><h2>Points d'attention</h2></div>
+  <ul class="prose">
+    <li><strong>Pas de tarif, pas de vente</strong>&nbsp;: un produit sans tarif pour le pays de la commande est «&nbsp;non disponible&nbsp;».</li>
+    <li><strong>Le HT est conservé</strong>&nbsp;: changer le taux d'une taxe change le TTC de tous les tarifs qui l'utilisent.</li>
+    <li><strong>Le prix rôle le plus bas gagne</strong>, y compris un prix «&nbsp;Pour tous les clients&nbsp;» oublié sans date de fin. Pensez à dater vos promotions.</li>
+    <li><strong>Remplacer des tarifs par une zone</strong> supprime les tarifs existants des pays concernés, et leurs prix rôles.</li>
+    <li><strong>Prix par combinaison et ajustement de valeur s'additionnent.</strong></li>
+  </ul>
+</section>
+
+<!-- 8 -->
+<section id="s8">
+  <div class="sec-head"><span class="sec-num">08</span><h2>Questions fréquentes</h2></div>
+  <div class="faq">
+    <details><summary>Je ne trouve pas ma taxe dans la liste du tarif.</summary><div><p>La liste ne propose que les taxes du pays choisi. Créez d'abord la taxe pour ce pays dans Paramètres › Taxes.</p></div></details>
+    <details><summary>Comment faire une promotion d'un mois sur un produit&nbsp;?</summary><div><p>Ajoutez un prix rôle «&nbsp;Pour tous les clients&nbsp;» avec une date de début et une date de fin, et, si vous voulez la signaler, le badge réduction aux mêmes dates.</p></div></details>
+    <details><summary>Une hôtesse ne bénéficie pas de son prix.</summary><div><p>Vérifiez que sa fiche cliente porte bien le rôle, que le prix rôle est en cours (dates) et qu'il est saisi sur le tarif du bon pays.</p></div></details>
+    <details><summary>Puis-je avoir deux prix pour un même pays&nbsp;?</summary><div><p>Non&nbsp;: un tarif par pays. Les variations passent par les prix rôles.</p></div></details>
+  </div>
+</section>
+
+  </main>
+</div>

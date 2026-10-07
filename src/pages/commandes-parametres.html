@@ -1,0 +1,345 @@
+<!--page {"title":"Paramètres des commandes"} -->
+<style>
+.opts td:first-child { width:34%; }
+.opts td:nth-child(3), .opts td:nth-child(4) { white-space:nowrap; font-size:.88rem; color:var(--muted); }
+.map { display:grid; grid-template-columns:repeat(auto-fit, minmax(210px,1fr)); gap:10px; }
+.map a { display:block; background:var(--card); border:1px solid var(--rule); border-radius:14px; padding:10px 14px; text-decoration:none; color:var(--heading); font-weight:700; font-size:.93rem; }
+.map a small { display:block; font-weight:400; color:var(--muted); }
+.cal { display:grid; grid-template-columns:repeat(7, 1fr); gap:4px; max-width:520px; font-size:.82rem; text-align:center; }
+.cal div { border-radius:8px; padding:8px 2px; background:var(--surface); border:1px solid var(--rule); }
+.cal .on { background:var(--accent-wash); color:var(--accent-ink); border-color:transparent; font-weight:700; }
+.cal .off { background:var(--pink-wash); color:var(--pink-ink); border-color:transparent; text-decoration:line-through; }
+</style>
+<header class="hero">
+  <div class="hero-in">
+    <div>
+      <span class="eyebrow">Commandes et boutiques</span>
+      <h1>Paramètres <span class="script">des commandes</span></h1>
+      <p class="lede">Tous les réglages de l'écran Paramètres des commandes&nbsp;: options générales, documents, plafond d'achat des conseillères, cadeaux automatiques, produits suggérés, questions, frais fixes et zones d'informations. Avec les valeurs par défaut et ce qu'en font les marques.</p>
+    </div>
+    <div class="voucher-art" aria-hidden="true">
+      <div class="v-top"><span>Cadeau automatique</span><span>Règle</span></div>
+      <div class="v-amount">80<span> € TTC</span></div>
+      <div class="v-name">→ 1 trousse offerte</div>
+      <div class="v-sep"></div>
+      <div class="v-meta"><span>Période <b>décembre</b></span><span>Prix <b>0,00 €</b></span></div>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="toc" aria-label="Sommaire">
+    <details id="tocDetails" open>
+      <summary>Sommaire</summary>
+      <div class="toc-title">Sommaire</div>
+      <ol>
+        <li data-sec="definition"><a href="#definition"><span class="toc-n">1</span>Vue d'ensemble</a></li>
+        <li data-sec="general"><a href="#general"><span class="toc-n">2</span>Le bloc Paramètres des commandes</a>
+          <ol class="toc-sub"><li><a href="#s2-1"><span class="toc-n">2.1</span>La suppression automatique</a></li><li><a href="#s2-2"><span class="toc-n">2.2</span>Les options</a></li><li><a href="#s2-3"><span class="toc-n">2.3</span>Documents et copie de facture</a></li></ol>
+        </li>
+        <li data-sec="preparation"><a href="#preparation"><span class="toc-n">3</span>Les bons de préparation</a></li>
+        <li data-sec="vendeurs"><a href="#vendeurs"><span class="toc-n">4</span>Les commandes des conseillères</a>
+          <ol class="toc-sub"><li><a href="#s4-1"><span class="toc-n">4.1</span>Le plafond d'achat</a></li><li><a href="#s4-2"><span class="toc-n">4.2</span>La copie de facture à la conseillère</a></li></ol>
+        </li>
+        <li data-sec="cadeaux"><a href="#cadeaux"><span class="toc-n">5</span>Les cadeaux automatiques</a>
+          <ol class="toc-sub"><li><a href="#s5-1"><span class="toc-n">5.1</span>Créer une règle</a></li><li><a href="#s5-2"><span class="toc-n">5.2</span>Les conditions</a></li><li><a href="#s5-3"><span class="toc-n">5.3</span>Quand le cadeau s'ajoute</a></li></ol>
+        </li>
+        <li data-sec="suggeres"><a href="#suggeres"><span class="toc-n">6</span>Les produits suggérés</a></li>
+        <li data-sec="frais"><a href="#frais"><span class="toc-n">7</span>Les frais fixes</a>
+          <ol class="toc-sub"><li><a href="#s7-1"><span class="toc-n">7.1</span>Sur les commandes</a></li><li><a href="#s7-2"><span class="toc-n">7.2</span>Sur les regroupements</a></li></ol>
+        </li>
+        <li data-sec="questions"><a href="#questions"><span class="toc-n">8</span>Les questions</a></li>
+        <li data-sec="zones"><a href="#zones"><span class="toc-n">9</span>Les zones d'informations</a></li>
+        <li data-sec="appro"><a href="#appro"><span class="toc-n">10</span>Commandes d'approvisionnement</a></li>
+        <li data-sec="attention"><a href="#attention"><span class="toc-n">11</span>Points d'attention</a></li>
+        <li data-sec="faq"><a href="#faq"><span class="toc-n">12</span>Questions fréquentes</a></li>
+      </ol>
+    </details>
+  </nav>
+
+  <main>
+
+<!-- 1 -->
+<section id="definition">
+  <div class="sec-head"><span class="sec-num">01</span><h2>Vue d'ensemble</h2></div>
+  <div class="path" aria-label="Chemin d'accès"><span>Paramètres</span><span>Configuration générale</span><span><b>Paramètres des commandes</b></span></div>
+  <p class="lede">Cet écran regroupe les réglages qui s'appliquent à <strong>toutes les commandes</strong> de votre marque&nbsp;: ce qui est obligatoire pour commander, ce qui est envoyé à la cliente, ce qui s'ajoute automatiquement au panier, ce qui est demandé à la finalisation.</p>
+  <figure><img src="Captures/Commandes/parametres-commandes-1.png" alt="Haut de l'écran Paramètres des commandes : onglets de la configuration générale ; à gauche le bloc Paramètres des commandes avec ses cases à cocher, le champ Email en copie et la liste Finalisation de la commande ; à droite les blocs Paramètres commandes vendeurs et Paramètres des questions" loading="lazy"><figcaption>Le haut de l'écran&nbsp;: options générales à gauche, commandes des conseillères et questions à droite.</figcaption></figure>
+  <div class="tip"><span class="ex-label">Vocabulaire</span><p>L'écran dit «&nbsp;vendeur&nbsp;» pour la conseillère et «&nbsp;client&nbsp;» pour la cliente.</p></div>
+  <p>L'écran est découpé en blocs, qui s'enregistrent <strong>séparément</strong>&nbsp;: chaque bloc a son propre bouton d'enregistrement ou sa propre fenêtre.</p>
+  <div class="map">
+    <a href="#general">Paramètres des commandes<small>options, suppression auto, documents</small></a>
+    <a href="#cadeaux">Ajout automatique d'éléments dans la commande<small>cadeaux automatiques</small></a>
+    <a href="commandes-regroupement.html#s8-2">Ajout automatique dans une commande de regroupement<small>si le module est actif</small></a>
+    <a href="#preparation">Paramétrage des bons de préparation<small>si l'option est ouverte</small></a>
+    <a href="#frais">Paramètres des frais fixes<small>et frais fixes master order</small></a>
+    <a href="#vendeurs">Paramètres commandes vendeurs<small>plafond d'achat, copie</small></a>
+    <a href="#questions">Paramètres des questions<small>à la finalisation ou à l'inscription</small></a>
+    <a href="#suggeres">Produits suggérés<small>proposés pendant la commande</small></a>
+    <a href="#zones">Zones d'informations page commande<small>messages affichés aux conseillères</small></a>
+  </div>
+</section>
+
+<!-- 2 -->
+<section id="general">
+  <div class="sec-head"><span class="sec-num">02</span><h2>Le bloc Paramètres des commandes</h2></div>
+  <p class="lede">Une liste de cases à cocher, un délai et une liste déroulante, enregistrés ensemble par <strong>Enregistrer les paramètres</strong>.</p>
+
+  <h3 id="s2-1"><span class="sub-num">2.1</span> La suppression automatique des paniers</h3>
+  <p>Cochez <strong>Autoriser la suppression automatique</strong>, puis indiquez le <strong>Délai de suppression</strong> en heures (48&nbsp;heures minimum). Les commandes <strong>jamais payées</strong> créées depuis plus longtemps que ce délai sont supprimées automatiquement, avec les effets d'une suppression manuelle (voir <a href="commandes-comprendre.html#s5-2">les suppressions automatiques</a>).</p>
+  <ul class="prose">
+    <li>Ne sont jamais concernées&nbsp;: les commandes payées ou partiellement payées, les commandes annulées, les kits de démarrage.</li>
+    <li>Décocher la case remet le délai à 0&nbsp;: la suppression est désactivée.</li>
+    <li>Le délai part de la <strong>création</strong> de la commande, pas de sa dernière modification.</li>
+  </ul>
+  <div class="example"><span class="ex-label">Exemple</span><p>Délai de 168&nbsp;heures (7 jours). Léa prépare le panier d'Inès le lundi 5 à 10&nbsp;h et ne le finalise jamais. À partir du lundi 12 à 10&nbsp;h, la commande peut être supprimée lors du prochain passage du traitement automatique.</p></div>
+  <p class="muted">Adoption&nbsp;: 19 marques sur 35 suppriment automatiquement leurs paniers, le plus souvent au bout de 48&nbsp;heures (13 marques)&nbsp;; les autres ont choisi de 3 à 30 jours.</p>
+
+  <h3 id="s2-2"><span class="sub-num">2.2</span> Les options</h3>
+  <p>Les cases sont listées dans l'ordre de leur nom technique, ce qui explique un ordre parfois surprenant. Certaines n'apparaissent que si l'équipe SellingAtHome les a ouvertes pour votre marque.</p>
+  <div class="table-wrap"><table class="opts">
+    <thead><tr><th>Option (libellé exact)</th><th>Effet</th><th>Par défaut</th><th>Marques</th></tr></thead>
+    <tbody>
+      <tr><td><b>Autoriser la Livraison partielle de commande</b></td><td>Permet d'expédier une commande en plusieurs fois (statut «&nbsp;Expédiée partiellement&nbsp;»). Visible si SellingAtHome l'a ouverte.</td><td>Non</td><td>6 / 35</td></tr>
+      <tr><td><b>Permettre le recrédit des points de fidélité sur les commandes annulées</b></td><td>À l'annulation, les points de fidélité dépensés dans la commande sont rendus à la cliente.</td><td>Non</td><td>6 / 35</td></tr>
+      <tr><td><b>Permettre le réapprovisionnement des produits en cas d'annulation d'une commande</b></td><td>Propose la remise en stock au moment d'annuler une commande payée.</td><td>Oui</td><td>30 / 35</td></tr>
+      <tr><td><b>Permettre le réapprovisionnement des produits en cas de suppression d'une commande</b></td><td>Remet en stock les produits d'une commande non payée supprimée (à la main ou automatiquement).</td><td>Oui</td><td>24 / 35</td></tr>
+      <tr><td><b>Autoriser l'enlèvement sur minisite et visio</b></td><td>Propose le retrait sur place dans les commandes passées en ligne (mini-boutique, réunion virtuelle).</td><td>Non</td><td>1 / 35</td></tr>
+      <tr><td><b>Rendre commissionables les commandes kit de démarrage</b></td><td>Les kits de démarrage comptent dans le chiffre d'affaires commissionnable.</td><td>Non</td><td>1 / 35</td></tr>
+      <tr><td><b>Rendre l'adresse obligatoire pour passer une commande</b></td><td>La cliente doit avoir une adresse pour commander.</td><td>Oui</td><td>35 / 35</td></tr>
+      <tr><td><b>Recevoir une copie de la facture client par mail</b></td><td>Voir <a href="#s2-3">ci-dessous</a>. Fait apparaître le champ <b>Email en copie</b>.</td><td>Non</td><td>4 / 35</td></tr>
+      <tr><td><b>Rendre le téléphone obligatoire pour passer une commande</b></td><td>La cliente doit avoir un numéro de téléphone pour commander.</td><td>Non</td><td>17 / 35</td></tr>
+      <tr><td><b>Afficher la photo du produit dans le panier</b></td><td>Une miniature du produit accompagne chaque ligne du panier.</td><td>Non</td><td>6 / 35</td></tr>
+      <tr><td><b>Finalisation de la commande</b> (liste)</td><td>Le ou les documents envoyés à la cliente. Voir <a href="#s2-3">ci-dessous</a>.</td><td>Bon de commande</td><td>—</td></tr>
+      <tr><td><b>Afficher le total HT commissionnable</b></td><td>Affiche en plus le total hors taxes servant au calcul des commissions.</td><td>Non</td><td>1 / 35</td></tr>
+      <tr><td><b>Afficher le total HT (hors frais)</b></td><td>Affiche en plus le total hors taxes, frais exclus.</td><td>Non</td><td>1 / 35</td></tr>
+      <tr><td><b>Activer les commentaires client&nbsp;?</b></td><td>Permet d'ajouter un commentaire de la cliente à la commande.</td><td>Oui</td><td>34 / 35</td></tr>
+      <tr><td><b>Utiliser un modèle de bon commande personnalisé</b></td><td>Le bon de commande utilise le modèle propre à votre marque (réalisé par SellingAtHome) au lieu du modèle standard.</td><td>Non</td><td>31 / 35</td></tr>
+      <tr><td><b>Utiliser un modèle de facture personnalisé</b></td><td>Même principe pour la facture.</td><td>Non</td><td>8 / 35</td></tr>
+      <tr><td><b>Utiliser un modèle de bon de livraison personnalisé</b></td><td>Même principe pour le bon de livraison. Visible si SellingAtHome l'a ouverte.</td><td>Non</td><td>1 / 35</td></tr>
+      <tr><td><b>Utiliser un bon de préparation</b></td><td>Active les bons de préparation et leur bloc de paramétrage (<a href="#preparation">section&nbsp;3</a>). Visible si SellingAtHome l'a ouverte.</td><td>Non</td><td>6 / 35</td></tr>
+    </tbody>
+  </table></div>
+  <p class="muted">D'autres cases peuvent apparaître selon les modules de votre marque, par exemple <a href="commandes-regroupement.html#options">les commandes cadeaux des challenges dans un regroupement</a>.</p>
+
+  <h3 id="s2-3"><span class="sub-num">2.3</span> Les documents envoyés et la copie de facture</h3>
+  <p>La liste <strong>Finalisation de la commande</strong> choisit l'e-mail envoyé à la cliente quand sa commande est finalisée&nbsp;:</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Choix</th><th>Ce que reçoit la cliente</th><th>Marques</th></tr></thead>
+    <tbody>
+      <tr><td><b>Envoyer le bon de commande par email au client</b> (par défaut)</td><td>Le bon de commande en PDF.</td><td>26 / 35</td></tr>
+      <tr><td><b>Envoyer la facture par email au client</b></td><td>La facture en PDF.</td><td>1 / 35</td></tr>
+      <tr><td><b>Envoyer la bon de commande et la facture par email au client</b></td><td>Les deux documents.</td><td>8 / 35</td></tr>
+    </tbody>
+  </table></div>
+  <p>Chaque choix correspond à un modèle d'e-mail (Paramètres › Templates email). Si la cliente s'est désabonnée de ce modèle, elle ne le reçoit pas.</p>
+  <p><strong>Recevoir une copie de la facture client par mail</strong>&nbsp;: l'adresse saisie dans <strong>Email en copie</strong> est mise <strong>en copie</strong> de cet e-mail. Malgré son libellé, la copie porte sur le document choisi ci-dessus&nbsp;: bon de commande, facture, ou les deux. Utile pour archiver tous les documents dans une boîte de la comptabilité.</p>
+</section>
+
+<!-- 3 -->
+<section id="preparation">
+  <div class="sec-head"><span class="sec-num">03</span><h2>Les bons de préparation</h2></div>
+  <p>Le bloc <strong>Paramétrage des bons de préparation</strong> n'apparaît que si SellingAtHome a ouvert la fonction pour votre marque et que la case <strong>Utiliser un bon de préparation</strong> est cochée (rechargez la page après l'avoir cochée). Les bons de préparation se génèrent ensuite depuis la liste des commandes, bouton «&nbsp;Bons de préparation&nbsp;».</p>
+  <figure><img src="Captures/Commandes/parametres-commandes-2.png" alt="Milieu de l'écran : blocs Ajout automatique d'éléments dans la commande (1 paramètres actifs, Voir le détail), Ajout automatique dans une commande de regroupement, Paramétrage des bons de préparation avec Types d'entrées possibles, Regroupements possibles et Statut des commandes ; à droite Paramètres des commandes d'approvisionnement, Produits suggérés et Zones d'informations page commande" loading="lazy"><figcaption>Le milieu de l'écran&nbsp;: cadeaux automatiques, bons de préparation, produits suggérés et zones d'informations.</figcaption></figure>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Rubrique</th><th>Options</th></tr></thead>
+    <tbody>
+      <tr><td><b>Types d'entrées possibles</b></td><td>Les façons de sélectionner ce qu'on prépare&nbsp;: <b>Par réunion</b>, <b>Par vendeur</b> (chacune avec «&nbsp;Imprimer un bon de livraison par client&nbsp;»), <b>Par commande</b>, <b>Par commande de regroupement</b> (si le module de <a href="commandes-regroupement.html">regroupement</a> est actif).</td></tr>
+      <tr><td><b>Regroupements possibles</b></td><td><b>Par emplacement</b> (ordre des emplacements de stockage), <b>Par produit</b> (quantités cumulées).</td></tr>
+      <tr><td><b>Statut des commandes</b></td><td><b>Passer les commandes en préparation lors de la génération du bon de préparation</b>&nbsp;; <b>Passer les commandes en expédition lors de l'impression du bon de livraison</b> (cochée par défaut).</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- 4 -->
+<section id="vendeurs">
+  <div class="sec-head"><span class="sec-num">04</span><h2>Les commandes des conseillères</h2></div>
+  <p>Le bloc <strong>Paramètres commandes vendeurs</strong> concerne les commandes qu'une conseillère passe <strong>pour elle-même</strong>, avec son compte client.</p>
+
+  <h3 id="s4-1"><span class="sub-num">4.1</span> Le plafond d'achat</h3>
+  <p>Cochez <strong>Limiter l'achat des vendeurs</strong>, puis renseignez&nbsp;:</p>
+  <ul class="prose">
+    <li><strong>Montant maximum</strong>&nbsp;: le total TTC autorisé (après remises, points et porte-monnaie)&nbsp;;</li>
+    <li><strong>Durée</strong> et <strong>Echelle</strong> (Semaines, Mois, Années)&nbsp;: la période <strong>glissante</strong> observée, qui se termine aujourd'hui.</li>
+  </ul>
+  <p>SellingAtHome additionne les commandes <strong>payées</strong>, non annulées, dont la conseillère est la cliente, sur cette période. Le plafond est <strong>bloquant</strong>&nbsp;:</p>
+  <ul class="prose">
+    <li>si le total dépasse déjà le maximum, la conseillère ne peut pas <strong>créer</strong> de nouvelle commande pour elle-même (message «&nbsp;limite atteinte&nbsp;»)&nbsp;;</li>
+    <li>si elle <strong>augmente une quantité</strong> et que le total (commandes payées + commande en cours) dépasserait le maximum, la quantité revient à sa valeur précédente.</li>
+  </ul>
+  <p>Atteindre exactement le maximum est autorisé&nbsp;; c'est le dépassement qui bloque.</p>
+  <div class="example"><span class="ex-label">Exemple</span><p>Maximum 500&nbsp;€, durée 3, échelle Mois. Le 15 octobre, Chloé a payé 420&nbsp;€ de commandes pour elle depuis le 15 juillet. Elle crée une nouvelle commande (autorisé&nbsp;: 420&nbsp;€ ne dépasse pas 500&nbsp;€) et y met un produit à 60&nbsp;€ (480&nbsp;€). En passant la quantité à 2, le total atteindrait 540&nbsp;€&nbsp;: la quantité reste à 1.</p></div>
+  <p class="muted">Aucune marque n'utilise le plafond aujourd'hui.</p>
+
+  <h3 id="s4-2"><span class="sub-num">4.2</span> La copie de facture à la conseillère</h3>
+  <p><strong>Envoyer au vendeur une copie de la facture client par mail</strong> met la conseillère en copie de l'e-mail de documents envoyé à sa cliente (voir <a href="#s2-3">Finalisation de la commande</a>). 7 marques l'ont activé.</p>
+  <p>Ce bloc a son propre bouton <strong>Enregistrer les paramètres</strong>.</p>
+</section>
+
+<!-- 5 -->
+<section id="cadeaux">
+  <div class="sec-head"><span class="sec-num">05</span><h2>Les cadeaux automatiques</h2></div>
+  <p class="lede">Le bloc <strong>Ajout automatique d'éléments dans la commande</strong> offre un produit dès qu'une commande remplit des conditions&nbsp;: un montant, une période, un produit dans le panier… Le produit est ajouté <strong>à 0&nbsp;€</strong>, sans action de la conseillère.</p>
+  <div class="stats">
+    <div class="stat"><b>14</b><span>marques sur 35 ont au moins une règle active</span></div>
+    <div class="stat"><b>188</b><span>règles actives au total</span></div>
+  </div>
+
+  <h3 id="s5-1"><span class="sub-num">5.1</span> Créer une règle</h3>
+  <ol class="prose">
+    <li>Dans le bloc, cliquez sur <strong>Voir le détail</strong>&nbsp;: la liste des règles s'affiche.</li>
+    <li>Ajoutez un paramètre. Dans <strong>Informations générales</strong>, le <strong>Type de récompense</strong> est «&nbsp;Produit&nbsp;»&nbsp;; choisissez la <strong>Récompense</strong> (et sa déclinaison, s'il y en a).</li>
+    <li>Dans <strong>Conditions</strong>, ajoutez une ou plusieurs conditions. Elles sont reliées par «&nbsp;ET&nbsp;»&nbsp;: toutes doivent être remplies.</li>
+    <li>Cliquez sur <strong>Enregistrer</strong>.</li>
+  </ol>
+  <figure><img src="Captures/Commandes/cadeau-automatique-regle.png" alt="Écran Modification d'un paramètre : bloc Informations générales avec Type de récompense Produit et Récompense ; bloc Conditions avec une condition Quantité de la sélection de produits, supérieur ou égal, deux produits sélectionnés et un seuil de 3" loading="lazy"><figcaption>Une règle&nbsp;: un produit offert dès que le panier contient au moins 3 articles d'une sélection.</figcaption></figure>
+
+  <h3 id="s5-2"><span class="sub-num">5.2</span> Les conditions</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Condition</th><th>Ce qu'elle vérifie</th><th>Marques</th></tr></thead>
+    <tbody>
+      <tr><td><b>Montant TTC de la commande</b></td><td>Le montant après remises, points et porte-monnaie.</td><td>13</td></tr>
+      <tr><td><b>Date</b></td><td>Une date ou une période (bornes incluses), au jour près.</td><td>12</td></tr>
+      <tr><td><b>Le panier</b></td><td>La présence de produits, avec une quantité minimale.</td><td>8</td></tr>
+      <tr><td><b>Commande d'un vendeur</b></td><td>La commande est (ou n'est pas) celle d'une conseillère pour elle-même.</td><td>6</td></tr>
+      <tr><td><b>Type de commande</b></td><td>Vente en réunion, vente directe… Une commande rangée dans un regroupement a le type «&nbsp;… dans comm. de regroupement&nbsp;».</td><td>4</td></tr>
+      <tr><td><b>Rôle client</b></td><td>Le rôle de la cliente.</td><td>2</td></tr>
+      <tr><td><b>Produits dans le panier jamais commandés</b></td><td>Un produit que la cliente n'a jamais commandé.</td><td>2</td></tr>
+      <tr><td><b>Nouveau client</b> / <b>Nouveau client pour le catalogue</b></td><td>Première commande de la cliente (au total, ou dans le catalogue).</td><td>1</td></tr>
+      <tr><td><b>Quantité</b> / <b>Montant TTC de la sélection de produits</b></td><td>Le nombre d'articles, ou leur montant, parmi une liste de produits (seuil).</td><td>—</td></tr>
+      <tr><td><b>Quantité</b> / <b>Montant TTC de la sélection de catégories</b></td><td>Même principe sur des catégories.</td><td>—</td></tr>
+      <tr><td><b>Catalogue</b>, <b>Pays</b></td><td>Le catalogue de la commande, le pays.</td><td>—</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 id="s5-3"><span class="sub-num">5.3</span> Quand le cadeau s'ajoute (et disparaît)</h3>
+  <ul class="prose">
+    <li>Les règles sont recalculées <strong>à chaque modification</strong> d'une commande non payée. Le cadeau apparaît dès que les conditions sont remplies et <strong>disparaît</strong> si elles ne le sont plus (un produit retiré fait repasser sous le seuil).</li>
+    <li>Une règle donne <strong>une seule unité</strong> du produit, quelle que soit l'ampleur du dépassement. Plusieurs règles valides donnent plusieurs cadeaux.</li>
+    <li>Le produit doit être en stock (ou commandable hors stock), sinon il n'est pas ajouté.</li>
+    <li>Une fois la commande payée, plus rien ne bouge.</li>
+  </ul>
+  <div class="example"><span class="ex-label">Exemple</span><p>Règle&nbsp;: «&nbsp;Montant TTC de la commande&nbsp;» supérieur ou égal à 80&nbsp;€ ET «&nbsp;Date&nbsp;» du 1er au 31 décembre → une trousse offerte. Le 10 décembre, Zoé commande pour 72&nbsp;€ auprès de Manon&nbsp;: pas de cadeau. Elle ajoute un bracelet à 15&nbsp;€ (87&nbsp;€)&nbsp;: la trousse s'ajoute à 0&nbsp;€. Elle retire le bracelet&nbsp;: la trousse disparaît.</p></div>
+  <p>Les cadeaux propres aux <strong>commandes de regroupement</strong> (bloc «&nbsp;Ajout automatique dans une commande de regroupement&nbsp;») fonctionnent autrement&nbsp;: voir <a href="commandes-regroupement.html#s8-2">les commandes de regroupement</a>.</p>
+</section>
+
+<!-- 6 -->
+<section id="suggeres">
+  <div class="sec-head"><span class="sec-num">06</span><h2>Les produits suggérés</h2></div>
+  <p>Le bloc <strong>Produits suggérés</strong> fonctionne comme les cadeaux automatiques, mais <strong>ne met rien dans le panier</strong>&nbsp;: il <strong>propose</strong> un produit. Chaque règle associe un produit à des conditions (Montant TTC de la commande, Date, Le panier, Type de commande, Commande d'un vendeur, Nouveau client, Catalogue, Pays). Bouton <strong>Ajouter une règle</strong>&nbsp;; crayon pour modifier, croix pour supprimer.</p>
+  <p>Quand les conditions sont remplies, le produit apparaît dans l'encart <strong>Produits suggérés</strong> de la commande en cours, côté conseillère (et côté marque), avec un bouton pour l'ajouter. Une commande payée n'affiche plus de suggestion.</p>
+  <div class="example"><span class="ex-label">Exemple</span><p>Règle&nbsp;: produit «&nbsp;Clous martelés&nbsp;», condition «&nbsp;Le panier doit contenir Collier torsadé&nbsp;». Quand Léa ajoute le collier à la commande de Camille, les clous lui sont proposés&nbsp;: un clic pour les ajouter.</p></div>
+  <p class="muted">6 marques utilisent les produits suggérés (25 règles). La suggestion ne vérifie ni le stock ni la publication du produit.</p>
+</section>
+
+<!-- 7 -->
+<section id="frais">
+  <div class="sec-head"><span class="sec-num">07</span><h2>Les frais fixes</h2></div>
+
+  <h3 id="s7-1"><span class="sub-num">7.1</span> Sur les commandes</h3>
+  <p>Le bloc <strong>Paramètres des frais fixes</strong> ajoute automatiquement un montant aux commandes&nbsp;: frais de dossier, de gestion, contribution… Bouton <strong>Ajouter un frais fixe</strong>.</p>
+  <div class="figrow">
+    <figure><img src="Captures/Commandes/frais-fixe.png" alt="Fenêtre Paramètres des frais fixes : Nom, Montant en euros, Type de commandes concernés (Toutes les commandes), cases Exclure les commandes des vendeurs, Montant en pourcentage ?, Le % est calculé sur le montant HT de la commande ?, Types de commandes à exclure (Vente directe, Vente en réunion, Service Après-Vente)" loading="lazy"><figcaption>La fenêtre d'un frais fixe.</figcaption></figure>
+    <div class="prose" style="display:flex;flex-direction:column;gap:10px">
+      <p><strong>Nom</strong> et <strong>Montant</strong>&nbsp;: le libellé affiché sur la commande et la valeur.</p>
+      <p><strong>Type de commandes concernés</strong>&nbsp;: Toutes les commandes, Commandes en vente directe, Commandes en vente en réunion, Commandes Web.</p>
+      <p><strong>Exclure les commandes des vendeurs</strong>&nbsp;: pas de frais quand la conseillère commande pour elle-même.</p>
+      <p><strong>Montant en pourcentage&nbsp;?</strong>&nbsp;: le montant devient un pourcentage de la commande (après remises), calculé sur le TTC, ou sur le HT si la case suivante est cochée.</p>
+      <p><strong>Types de commandes à exclure</strong>&nbsp;: affine la sélection.</p>
+    </div>
+  </div>
+  <ul class="prose">
+    <li>Le frais est ajouté aux commandes <strong>non payées</strong>, à chaque modification&nbsp;; une commande payée garde ses frais.</li>
+    <li>Le montant est TTC, sauf si la case «&nbsp;Le % est calculé sur le montant HT…&nbsp;» est cochée&nbsp;: il est alors considéré HT.</li>
+    <li>Supprimer un frais le retire des commandes non payées à leur prochaine modification.</li>
+  </ul>
+  <div class="warn"><span class="ex-label">Attention</span><p>«&nbsp;Toutes les commandes&nbsp;» <strong>exclut les commandes web</strong>. Pour elles, créez un frais «&nbsp;Commandes Web&nbsp;».</p></div>
+  <div class="example"><span class="ex-label">Exemple</span><p>Frais «&nbsp;Frais de dossier&nbsp;», 2&nbsp;€, «&nbsp;Commandes en vente en réunion&nbsp;», commandes des vendeurs exclues. La commande d'Emma chez Jade (65&nbsp;€) passe à 67&nbsp;€&nbsp;; la commande de Léa pour elle-même n'a pas de frais.</p></div>
+  <figure><img src="Captures/Commandes/parametres-commandes-3.png" alt="Bas de l'écran : bloc Paramètres des frais fixes avec un frais de 2 euros, bloc Frais fixes master order vide avec le bouton Ajouter un frais fixe master order" loading="lazy" style="max-width:560px"><figcaption>Les deux blocs de frais fixes.</figcaption></figure>
+  <p class="muted">3 marques utilisent des frais fixes.</p>
+
+  <h3 id="s7-2"><span class="sub-num">7.2</span> Sur les commandes de regroupement</h3>
+  <p>Si le module de regroupement est actif, le bloc <strong>Frais fixes master order</strong> ajoute un montant à chaque regroupement, avec ses propres conditions. Voir <a href="commandes-regroupement.html#s8-1">les commandes de regroupement</a>.</p>
+</section>
+
+<!-- 8 -->
+<section id="questions">
+  <div class="sec-head"><span class="sec-num">08</span><h2>Les questions</h2></div>
+  <p class="lede">Le bloc <strong>Paramètres des questions</strong> ajoute des cases à cocher que la cliente coche (ou non) au moment de finaliser sa commande, ou dans son formulaire d'inscription.</p>
+  <div class="figrow">
+    <figure><img src="Captures/Commandes/question-commande.png" alt="Fenêtre Ajouter une question : La question est associée à un document ? Oui/Non ; Question obligatoire ? Oui/Non ; Où afficher cette question ? Tunnel d'achat ; onglets de langue ; Libellé de la question, Adresse URL du document, Phrase associée au lien" loading="lazy"><figcaption>La fenêtre «&nbsp;Ajouter une question&nbsp;».</figcaption></figure>
+    <div class="prose" style="display:flex;flex-direction:column;gap:10px">
+      <p><strong>La question est associée à un document&nbsp;?</strong>&nbsp;: un lien vers un document (CGV, document précontractuel…) suit le libellé&nbsp;; renseignez son <strong>Adresse URL du document</strong> et la <strong>Phrase associée au lien</strong>.</p>
+      <p><strong>Question obligatoire&nbsp;?</strong>&nbsp;: la case doit être cochée pour continuer.</p>
+      <p><strong>Où afficher cette question&nbsp;?</strong>&nbsp;: <b>Tunnel d'achat</b> (finalisation de la commande) ou <b>Formulaire d'inscription</b> (jamais obligatoire).</p>
+      <p>Le <strong>Libellé de la question</strong> se saisit dans chaque langue. Un triangle rouge signale une question non traduite partout.</p>
+    </div>
+  </div>
+  <ul class="prose">
+    <li>La réponse est toujours <strong>oui ou non</strong> (case cochée ou non).</li>
+    <li>Les questions légales fournies par SellingAtHome (document d'information précontractuelle, dématérialisation) sont obligatoires et ne peuvent pas être supprimées&nbsp;; seule l'adresse du document est modifiable.</li>
+    <li>Supprimer une question la retire des parcours&nbsp;; les réponses déjà données restent en base.</li>
+  </ul>
+  <div class="example"><span class="ex-label">Exemple</span><p>Question «&nbsp;Souhaitez-vous être contactée pour devenir conseillère&nbsp;?&nbsp;», non obligatoire, tunnel d'achat. Camille coche la case en finalisant sa commande.</p></div>
+  <p><strong>Suivre les réponses</strong>&nbsp;:</p>
+  <div class="path" aria-label="Chemin d'accès"><span>Rapports</span><span><b>Réponses aux questions</b></span></div>
+  <p>Le rapport affiche, pour chaque question, le nombre de réponses «&nbsp;oui&nbsp;» et «&nbsp;non&nbsp;», depuis le début (sans filtre de date). 14 marques ont créé leurs propres questions.</p>
+</section>
+
+<!-- 9 -->
+<section id="zones">
+  <div class="sec-head"><span class="sec-num">09</span><h2>Les zones d'informations de la page commande</h2></div>
+  <p class="lede">Le bloc <strong>Zones d'informations page commande</strong> affiche un message (texte, liens, images) aux conseillères <strong>sur la page de saisie des commandes</strong>&nbsp;: une offre du mois, un rappel logistique, une date limite.</p>
+  <figure><img src="Captures/Commandes/zone-informations.png" alt="Formulaire Créer une zone d'informations : message Veuillez d'abord enregistrer vos modifications avant de pouvoir éditer le contenu du bloc ; champs Nom, Type (Bannière en-tête), Page cible (Commande), cases Actif et Permanent, Date de début, Date de fin, bouton Enregistrer" loading="lazy"><figcaption>La création d'une zone d'informations. Le contenu se saisit après le premier enregistrement.</figcaption></figure>
+  <ol class="prose">
+    <li>Cliquez sur <strong>Créer une zone d'informations</strong>.</li>
+    <li>Donnez un <strong>Nom</strong> (interne, jamais montré aux conseillères).</li>
+    <li>Choisissez le <strong>Type</strong>, c'est-à-dire l'emplacement&nbsp;: <b>Bannière en-tête</b> (haut de page), <b>Bloc central</b> (dans les informations de la commande, 4 lignes maximum), <b>Bannière pied de page</b> (bas de page).</li>
+    <li>Si votre marque utilise les regroupements, choisissez la <strong>Page cible</strong>&nbsp;: la page d'une commande, celle d'une commande de regroupement, ou les deux.</li>
+    <li>Réglez <strong>Actif</strong>, et soit <strong>Permanent</strong>, soit une <strong>Date de début</strong> et une <strong>Date de fin</strong>.</li>
+    <li><strong>Enregistrez</strong>, puis rouvrez la zone pour saisir son contenu dans chaque langue. La conseillère voit le contenu de sa langue.</li>
+  </ol>
+  <div class="warn"><span class="ex-label">Le piège des dates</span>
+    <p>Les dates n'ont pas d'heure&nbsp;: chacune vaut <strong>minuit</strong> au début du jour choisi. La zone apparaît donc le jour de début à 0&nbsp;h, et <strong>disparaît le jour de fin à 0&nbsp;h</strong>&nbsp;: le jour de fin n'est pas inclus.</p>
+    <p>Pour afficher une zone tout le mois de décembre, saisissez <strong>du 1er décembre au 1er janvier</strong>.</p>
+  </div>
+  <div class="cal" aria-label="Exemple : du 1er au 31 décembre saisi, le 31 n'est pas affiché">
+    <div class="on">27 déc.</div><div class="on">28 déc.</div><div class="on">29 déc.</div><div class="on">30 déc.</div><div class="off">31 déc.</div><div>1er janv.</div><div>2 janv.</div>
+  </div>
+  <p class="muted">Avec une date de fin au 31 décembre, la zone n'est plus visible le 31. Autres règles&nbsp;: une zone «&nbsp;Permanent&nbsp;» ignore les dates&nbsp;; une zone non permanente sans dates s'affiche aussi en permanence&nbsp;; une zone non «&nbsp;Actif&nbsp;» n'est jamais affichée. Rien n'empêche de saisir une fin avant le début&nbsp;: vérifiez vos dates.</p>
+  <p>Dans la liste, la liste déroulante filtre par page cible et le bouton d'action permet de modifier, activer/désactiver ou supprimer une zone. 4 marques ont créé des zones d'informations.</p>
+</section>
+
+<!-- 10 -->
+<section id="appro">
+  <div class="sec-head"><span class="sec-num">10</span><h2>Les commandes d'approvisionnement</h2></div>
+  <p>Si votre marque a le module Approvisionnement, le bloc <strong>Paramètres des commandes d'approvisionnement</strong> contient une case&nbsp;: <strong>Ajuster automatiquement les stocks quand un produit est reçu</strong> (cochée par défaut). Elle a son propre bouton <strong>Enregistrer</strong>. Voir <a href="catalogue.html">Catalogue</a>.</p>
+</section>
+
+<!-- 11 -->
+<section id="attention">
+  <div class="sec-head"><span class="sec-num">11</span><h2>Points d'attention</h2></div>
+  <ul class="prose">
+    <li><strong>Un bouton par bloc</strong>&nbsp;: enregistrer un bloc n'enregistre pas les autres.</li>
+    <li><strong>Copie de facture</strong>&nbsp;: la copie suit le choix de «&nbsp;Finalisation de la commande&nbsp;» (bon de commande, facture ou les deux).</li>
+    <li><strong>Cadeaux automatiques</strong>&nbsp;: une règle sans date reste active indéfiniment. Pensez à borner les opérations commerciales.</li>
+    <li><strong>Frais fixes «&nbsp;Toutes les commandes&nbsp;»</strong>&nbsp;: les commandes web ne sont pas concernées.</li>
+    <li><strong>Zones d'informations</strong>&nbsp;: la date de fin est exclue.</li>
+    <li><strong>Suppression automatique</strong>&nbsp;: elle ne touche que les commandes jamais payées, mais elle est définitive. Prévenez vos conseillères du délai.</li>
+  </ul>
+</section>
+
+<!-- 12 -->
+<section id="faq">
+  <div class="sec-head"><span class="sec-num">12</span><h2>Questions fréquentes</h2></div>
+  <div class="faq">
+    <details><summary>Le cadeau automatique ne s'ajoute pas.</summary><div><p>Vérifiez que toutes les conditions sont remplies (elles sont reliées par «&nbsp;ET&nbsp;»), que le produit offert est en stock, et que la commande n'est pas déjà payée. Le cadeau se recalcule à la prochaine modification du panier.</p></div></details>
+    <details><summary>Ma zone d'informations n'apparaît plus le dernier jour.</summary><div><p>C'est normal&nbsp;: la date de fin est exclue. Mettez le lendemain du dernier jour voulu.</p></div></details>
+    <details><summary>Je ne vois pas le bloc des bons de préparation.</summary><div><p>Cochez «&nbsp;Utiliser un bon de préparation&nbsp;», enregistrez et rechargez la page. Si la case n'existe pas, la fonction n'est pas ouverte pour votre marque&nbsp;: contactez l'équipe SellingAtHome.</p></div></details>
+    <details><summary>Où voir les réponses aux questions&nbsp;?</summary><div><p>Rapports › Réponses aux questions.</p></div></details>
+    <details><summary>Une conseillère dit qu'elle ne peut plus commander pour elle-même.</summary><div><p>Le plafond d'achat est peut-être atteint&nbsp;: comparez ses commandes payées sur la période glissante au montant maximum.</p></div></details>
+  </div>
+</section>
+
+  </main>
+</div>

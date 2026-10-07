@@ -1,0 +1,26 @@
+{
+  "name": "sellingathome-documentation",
+  "version": "1.0.0",
+  "description": "Documentation utilisateurs de SellingAtHome (espace marque)",
+  "main": "index.js",
+  "scripts": {
+    "build": "node build.js",
+    "check": "node tools/check-site.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SellingAtHome/sellingathome-documentation.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/SellingAtHome/sellingathome-documentation/issues"
+  },
+  "homepage": "https://github.com/SellingAtHome/sellingathome-documentation#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "@types/node": "^26.6.4"
+  }
+}

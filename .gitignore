@@ -1,0 +1,14 @@
+
+# Playwright
+node_modules/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/playwright/.auth/
+
+# Captures de travail (non versionnées)
+tools/captures/out/
+
+# Synthèse interne des anomalies du code (failles de sécurité : ne jamais versionner)
+ANOMALIES-CODE.md

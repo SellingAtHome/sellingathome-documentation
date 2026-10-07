@@ -1,0 +1,1391 @@
+<!--page {"title":"Glossaire"} -->
+<style>
+.toc ol.az { display:grid; grid-template-columns:repeat(6, minmax(0,1fr)); gap:2px; border-left:0; margin-top:6px; }
+.toc ol.az a { justify-content:center; padding:5px 0; margin:0; border-left:0; border-radius:8px; font-weight:700; }
+.toc ol.az a:hover { background:var(--surface); }
+.toc ol.az li.current > a { background:var(--accent-wash); color:var(--accent-ink); }
+.toc ol.az li.empty > a { opacity:.3; pointer-events:none; }
+.gl-filter { display:flex; flex-wrap:wrap; align-items:center; gap:10px 16px; background:var(--card); border:1px solid var(--rule); border-radius:16px; padding:14px 18px; }
+.gl-filter label { font-weight:700; color:var(--heading); }
+.gl-filter input { flex:1 1 240px; min-width:0; font:inherit; color:var(--text); background:var(--surface); border:1px solid var(--rule); border-radius:100px; padding:9px 16px; outline:none; }
+.gl-filter input:focus { border-color:var(--accent); box-shadow:0 0 0 3px var(--accent-wash); }
+.gl-count { font-size:.88rem; color:var(--muted); }
+.gl-empty { display:none; }
+.terms { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:12px; }
+.term { background:var(--card); border:1px solid var(--rule); border-radius:16px; padding:16px 18px; display:flex; flex-direction:column; gap:7px; scroll-margin-top:20px; }
+.term:target { border-color:var(--accent); box-shadow:0 0 0 3px var(--accent-wash); }
+.term .t-name { font-size:1.04rem; }
+.term p { font-size:.93rem; }
+.term .t-ui { font-size:.86rem; color:var(--muted); }
+.term .t-ui span { font-weight:700; color:var(--heading); }
+.term .t-link { margin-top:auto; font-size:.84rem; font-weight:700; text-decoration:none; }
+.term .t-link:hover { text-decoration:underline; }
+.term.hidden { display:none; }
+.letter.hidden { height:0; overflow:hidden; margin:0 !important; padding:0 !important; border:0; visibility:hidden; }
+.letter .sec-num { min-width:2.2em; text-align:center; }
+</style>
+<header class="hero">
+  <div class="hero-in">
+    <div>
+      <span class="eyebrow">Démarrer</span>
+      <h1>Le <span class="script">glossaire</span></h1>
+      <p class="lede">Toutes les notions de SellingAtHome, de A à Z&nbsp;: une définition courte, le libellé de l'espace marque quand il diffère, et un lien vers le guide qui l'explique le mieux.</p>
+    </div>
+    <div class="voucher-art" aria-hidden="true">
+      <div class="v-top"><span>Glossaire</span><span>A → Z</span></div>
+      <div class="v-amount">194<span> termes</span></div>
+      <div class="v-name">De « Accès verrouillé » à « Zone de taxe »</div>
+      <div class="v-sep"></div>
+      <div class="v-meta"><span>Définition</span><span>Libellé écran · Lien</span></div>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="toc" aria-label="Sommaire">
+    <details id="tocDetails" open>
+      <summary>Sommaire</summary>
+      <div class="toc-title">Sommaire</div>
+      <ol>
+        <li data-sec="intro"><a href="#intro"><span class="toc-n">1</span>Mode d'emploi</a></li>
+      </ol>
+      <ol class="az" aria-label="Lettres"><li data-sec="l-a"><a href="#l-a">A</a></li><li data-sec="l-b"><a href="#l-b">B</a></li><li data-sec="l-c"><a href="#l-c">C</a></li><li data-sec="l-d"><a href="#l-d">D</a></li><li data-sec="l-e"><a href="#l-e">E</a></li><li data-sec="l-f"><a href="#l-f">F</a></li><li data-sec="l-g"><a href="#l-g">G</a></li><li data-sec="l-h"><a href="#l-h">H</a></li><li data-sec="l-i"><a href="#l-i">I</a></li><li data-sec="l-k"><a href="#l-k">K</a></li><li data-sec="l-l"><a href="#l-l">L</a></li><li data-sec="l-m"><a href="#l-m">M</a></li><li data-sec="l-n"><a href="#l-n">N</a></li><li data-sec="l-o"><a href="#l-o">O</a></li><li data-sec="l-p"><a href="#l-p">P</a></li><li data-sec="l-q"><a href="#l-q">Q</a></li><li data-sec="l-r"><a href="#l-r">R</a></li><li data-sec="l-s"><a href="#l-s">S</a></li><li data-sec="l-t"><a href="#l-t">T</a></li><li data-sec="l-v"><a href="#l-v">V</a></li><li data-sec="l-z"><a href="#l-z">Z</a></li></ol>
+    </details>
+  </nav>
+
+  <main>
+
+<section id="intro">
+  <div class="sec-head"><span class="sec-num">01</span><h2>Mode d'emploi</h2></div>
+  <p class="lede">Tapez un mot pour filtrer la liste, ou choisissez une lettre dans le sommaire. Chaque définition renvoie vers la section du guide qui la détaille.</p>
+  <div class="gl-filter">
+    <label for="glq">Filtrer</label>
+    <input type="search" id="glq" placeholder="Ex. : cagnotte, clôture, hôte, SEPA…" autocomplete="off">
+    <span class="gl-count" id="glCount" aria-live="polite">194 termes</span>
+  </div>
+  <div class="warn gl-empty" id="glEmpty"><span class="ex-label">Aucun résultat</span><p>Aucun terme ne correspond. Essayez un mot plus court, ou la recherche de la documentation en haut de la page.</p></div>
+  <div class="tip"><span class="ex-label">Vocabulaire</span><p>La documentation dit conseillère, recruteuse, animatrice, hôtesse et cliente&nbsp;; l'espace marque dit <strong>vendeur</strong> (ou VDI), <strong>recruteur du vendeur</strong>, <strong>animateur du vendeur</strong>, <strong>hôte</strong> et <strong>client</strong>. Le tableau complet est dans <a href="comprendre-sellingathome.html#vocabulaire">Comprendre SellingAtHome</a>.</p></div>
+</section>
+
+<section id="l-a" class="letter">
+  <div class="sec-head"><span class="sec-num">A</span><h2>Accès verrouillé <span class="muted">→</span> Avoir</h2></div>
+  <div class="terms">
+    <div class="term" id="t-acces-verrouille" data-q="acces verrouille interrupteur de la fiche conseillere qui autorise ou non sa connexion. une fiche creee a la main ou par le recrutement nait verrouillee ; le premier deverrouillage envoie l'email d'activation. « acces verrouille » / « acces deverrouille » (onglet securite)">
+      <h3 class="t-name">Accès verrouillé</h3>
+      <p>Interrupteur de la fiche conseillère qui autorise ou non sa connexion. Une fiche créée à la main ou par le recrutement naît verrouillée&nbsp;; le premier déverrouillage envoie l'email d'activation.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Accès verrouillé&nbsp;» / «&nbsp;Accès déverrouillé&nbsp;» (onglet Sécurité)</p>
+      <a class="t-link" href="conseilleres.html#s6-3">Gérer les conseillères › Sécurité&nbsp;→</a>
+    </div>
+    <div class="term" id="t-action-fidelite" data-q="action (fidelite) evenement qui declenche l'evaluation d'une regle de fidelite : etre hote de la reunion, durant la reunion, prise de reunion des invites, reunion redatee, vente directe, vente en reunion. ">
+      <h3 class="t-name">Action (fidélité)</h3>
+      <p>Événement qui déclenche l'évaluation d'une règle de fidélité&nbsp;: être hôte de la réunion, durant la réunion, prise de réunion des invités, réunion redatée, vente directe, vente en réunion.</p>
+      
+      <a class="t-link" href="fidelite-guide.html#actions">La fidélité › Les six actions (quand la règle se déclenche)&nbsp;→</a>
+    </div>
+    <div class="term" id="t-activite" data-q="activite rendez-vous ou tache que la conseillere inscrit dans son agenda a cote de ses reunions (rappeler une cliente, livrer une commande…). chaque activite appartient a un type d'activite. ">
+      <h3 class="t-name">Activité</h3>
+      <p>Rendez-vous ou tâche que la conseillère inscrit dans son agenda à côté de ses réunions (rappeler une cliente, livrer une commande…). Chaque activité appartient à un type d'activité.</p>
+      
+      <a class="t-link" href="activites.html#definition">Activités et agenda › Qu'est-ce qu'une activité&nbsp;?&nbsp;→</a>
+    </div>
+    <div class="term" id="t-adresse-bloquee" data-q="adresse bloquee apres un rejet definitif (adresse inexistante, boite fermee), les emails suivants vers cette adresse ne partent plus. l'adresse ne se debloque pas d'elle-meme : il faut la corriger. ">
+      <h3 class="t-name">Adresse bloquée</h3>
+      <p>Après un rejet définitif (adresse inexistante, boîte fermée), les emails suivants vers cette adresse ne partent plus. L'adresse ne se débloque pas d'elle-même&nbsp;: il faut la corriger.</p>
+      
+      <a class="t-link" href="emails.html#s4-2">Les emails › Rejets et adresses bloquées&nbsp;→</a>
+    </div>
+    <div class="term" id="t-ajustement-au-reel" data-q="ajustement au reel ligne du dernier mois du trimestre qui retient le complement de cotisations sociales, ou rembourse le trop-percu, d'apres les commissions reelles. « ajustement au reel charges sociales vdi t… »">
+      <h3 class="t-name">Ajustement au réel</h3>
+      <p>Ligne du dernier mois du trimestre qui retient le complément de cotisations sociales, ou rembourse le trop-perçu, d'après les commissions réelles.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Ajustement au réel charges sociales VDI T…&nbsp;»</p>
+      <a class="t-link" href="cotisations-sociales.html#s3-3">Cotisations sociales et précompte › La régularisation trimestrielle&nbsp;→</a>
+    </div>
+    <div class="term" id="t-ajustement-de-prix" data-q="ajustement de prix montant ttc ajoute au prix du produit quand une valeur d'attribut est choisie (« or » : + 10 €). il s'additionne a un eventuel prix par combinaison. ajustement de prix">
+      <h3 class="t-name">Ajustement de prix</h3>
+      <p>Montant TTC ajouté au prix du produit quand une valeur d'attribut est choisie («&nbsp;Or&nbsp;»&nbsp;: + 10 €). Il s'additionne à un éventuel prix par combinaison.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Ajustement de prix&nbsp;»</p>
+      <a class="t-link" href="attributs-declinaisons.html#s4-2">Catégories, attributs et déclinaisons › Les valeurs&nbsp;→</a>
+    </div>
+    <div class="term" id="t-animatrice" data-q="animatrice conseillere qui encadre aujourd'hui une autre conseillere dans son equipe. ce lien peut changer, chaque changement est date et conserve ; c'est lui qui construit l'equipe pour les commissions. animateur du vendeur (« manager » dans le suivi d'equipe)">
+      <h3 class="t-name">Animatrice</h3>
+      <p>Conseillère qui encadre aujourd'hui une autre conseillère dans son équipe. Ce lien peut changer, chaque changement est daté et conservé&nbsp;; c'est lui qui construit l'équipe pour les commissions.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> Animateur du vendeur («&nbsp;Manager&nbsp;» dans le suivi d'équipe)</p>
+      <a class="t-link" href="comprendre-sellingathome.html#s3-1">Comprendre SellingAtHome en 10 minutes › Recruteur et animatrice&nbsp;: deux liens différents&nbsp;→</a>
+    </div>
+    <div class="term" id="t-annulation-commande" data-q="annulation (commande) une commande payee ne se supprime pas : elle s'annule, en totalite ou en partie. chaque annulation cree un avoir ; elle est definitive. annuler la commande">
+      <h3 class="t-name">Annulation (commande)</h3>
+      <p>Une commande payée ne se supprime pas&nbsp;: elle s'annule, en totalité ou en partie. Chaque annulation crée un avoir&nbsp;; elle est définitive.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Annuler la commande&nbsp;»</p>
+      <a class="t-link" href="commandes-annulation-documents.html#principe">Annulations, avoirs et documents › Le principe&nbsp;→</a>
+    </div>
+    <div class="term" id="t-annulation-reunion" data-q="annulation (reunion) statut « annulee » : la reunion n'a pas eu lieu, ou n'avait aucune commande a la cloture si votre marque a active l'annulation automatique des reunions sans commande. annulee">
+      <h3 class="t-name">Annulation (réunion)</h3>
+      <p>Statut «&nbsp;Annulée&nbsp;»&nbsp;: la réunion n'a pas eu lieu, ou n'avait aucune commande à la clôture si votre marque a activé l'annulation automatique des réunions sans commande.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Annulée&nbsp;»</p>
+      <a class="t-link" href="reunion-cycle-de-vie.html#annulation">Le cycle de vie d'une réunion › Annulation et réouverture&nbsp;→</a>
+    </div>
+    <div class="term" id="t-anonymisation" data-q="anonymisation effacement rgpd irreversible d'une cliente : ses donnees personnelles sont remplacees par des valeurs neutres, ses commandes restent. possible seulement apres un delai lie a ses commandes et reunions recentes. anonymiser le client">
+      <h3 class="t-name">Anonymisation</h3>
+      <p>Effacement RGPD irréversible d'une cliente&nbsp;: ses données personnelles sont remplacées par des valeurs neutres, ses commandes restent. Possible seulement après un délai lié à ses commandes et réunions récentes.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Anonymiser le client&nbsp;»</p>
+      <a class="t-link" href="clients.html#anonymisation">Les clientes › Anonymiser une cliente&nbsp;→</a>
+    </div>
+    <div class="term" id="t-application-mobile" data-q="application mobile version mobile de l'espace conseillere, avec l'essentiel de ses fonctions. pres d'une commande sur cinq y est saisie. ">
+      <h3 class="t-name">Application mobile</h3>
+      <p>Version mobile de l'espace conseillère, avec l'essentiel de ses fonctions. Près d'une commande sur cinq y est saisie.</p>
+      
+      <a class="t-link" href="comprendre-sellingathome.html#espaces">Comprendre SellingAtHome en 10 minutes › Les espaces&nbsp;→</a>
+    </div>
+    <div class="term" id="t-approvisionnement" data-q="approvisionnement module qui couvre le chemin du stock en amont : fournisseurs, commandes d'approvisionnement et receptions. approvisionnement">
+      <h3 class="t-name">Approvisionnement</h3>
+      <p>Module qui couvre le chemin du stock en amont&nbsp;: fournisseurs, commandes d'approvisionnement et réceptions.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Approvisionnement&nbsp;»</p>
+      <a class="t-link" href="approvisionnement.html#definition">L'approvisionnement › À quoi ça sert&nbsp;?&nbsp;→</a>
+    </div>
+    <div class="term" id="t-assistant-ia" data-q="assistant ia assistant conversationnel de l'espace conseillere : il repond a partir des donnees sellingathome de la conseillere et des contenus de votre marque, en citant ses sources. il lit, il ne modifie rien. mon assistant">
+      <h3 class="t-name">Assistant IA</h3>
+      <p>Assistant conversationnel de l'espace conseillère&nbsp;: il répond à partir des données SellingAtHome de la conseillère et des contenus de votre marque, en citant ses sources. Il lit, il ne modifie rien.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Mon assistant&nbsp;»</p>
+      <a class="t-link" href="assistant-ia.html#definition">L'assistant IA › Qu'est-ce que c'est&nbsp;?&nbsp;→</a>
+    </div>
+    <div class="term" id="t-attribut" data-q="attribut axe de choix d'un produit (« couleur », « taille »), defini une fois pour la marque puis ajoute aux produits concernes. ">
+      <h3 class="t-name">Attribut</h3>
+      <p>Axe de choix d'un produit («&nbsp;Couleur&nbsp;», «&nbsp;Taille&nbsp;»), défini une fois pour la marque puis ajouté aux produits concernés.</p>
+      
+      <a class="t-link" href="attributs-declinaisons.html#s1">Catégories, attributs et déclinaisons › Les quatre notions&nbsp;→</a>
+    </div>
+    <div class="term" id="t-automatisation-des-statuts" data-q="automatisation des statuts regles qui calculent le statut des conseilleres : chaque nuit pour le statut estime, a la cloture mensuelle pour le statut officiel. les regles sont lues dans l'ordre de leur rang. automatisation des statuts">
+      <h3 class="t-name">Automatisation des statuts</h3>
+      <p>Règles qui calculent le statut des conseillères&nbsp;: chaque nuit pour le statut estimé, à la clôture mensuelle pour le statut officiel. Les règles sont lues dans l'ordre de leur rang.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Automatisation des statuts&nbsp;»</p>
+      <a class="t-link" href="statuts.html#s5-1">Statuts et automatisation › Les règles&nbsp;→</a>
+    </div>
+    <div class="term" id="t-avoir" data-q="avoir document comptable cree a chaque annulation, qui vient en deduction de la facture. il est deduit du chiffre d'affaires (et du ca commissionnable) du mois ou il est emis, pas du mois de la commande. ">
+      <h3 class="t-name">Avoir</h3>
+      <p>Document comptable créé à chaque annulation, qui vient en déduction de la facture. Il est déduit du chiffre d'affaires (et du CA commissionnable) du mois où il est émis, pas du mois de la commande.</p>
+      
+      <a class="t-link" href="commandes-annulation-documents.html#effets">Annulations, avoirs et documents › Ce que fait l'annulation&nbsp;→</a>
+    </div>
+  </div>
+</section>
+
+<section id="l-b" class="letter">
+  <div class="sec-head"><span class="sec-num">B</span><h2>Badge de la liste des commandes <span class="muted">→</span> Bulletin de précompte</h2></div>
+  <div class="terms">
+    <div class="term" id="t-badge-de-la-liste-des-commandes" data-q="badge de la liste des commandes badge de couleur qui affiche le dernier evenement survenu sur la commande, tous statuts confondus. juste apres le paiement, il indique « pas encore expediee » et non « payee ». ">
+      <h3 class="t-name">Badge de la liste des commandes</h3>
+      <p>Badge de couleur qui affiche le dernier événement survenu sur la commande, tous statuts confondus. Juste après le paiement, il indique «&nbsp;Pas encore expédiée&nbsp;» et non «&nbsp;Payée&nbsp;».</p>
+      
+      <a class="t-link" href="commandes-comprendre.html#s3-4">Comprendre les commandes › Le badge de la liste&nbsp;→</a>
+    </div>
+    <div class="term" id="t-base-de-calcul-bon-d-achat" data-q="base de calcul (bon d'achat) ce qui alimente la cagnotte d'un bon par tranche : la depense de la cliente (type client) ou le ca de la conseillere (type vendeur). croiser type et base empeche toute attribution. base de calcul">
+      <h3 class="t-name">Base de calcul (bon d'achat)</h3>
+      <p>Ce qui alimente la cagnotte d'un bon par tranche&nbsp;: la dépense de la cliente (type Client) ou le CA de la conseillère (type Vendeur). Croiser type et base empêche toute attribution.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Base de calcul&nbsp;»</p>
+      <a class="t-link" href="bons-achat-guide.html#s4-4">Les bons d'achat › La base de calcul&nbsp;: qu'est-ce qui alimente la cagnotte&nbsp;?&nbsp;→</a>
+    </div>
+    <div class="term" id="t-base-de-connaissances" data-q="base de connaissances bibliotheque de votre reseau, en trois rubriques : documents, faq et formations. chaque conseillere la retrouve dans son espace. base de connaissances">
+      <h3 class="t-name">Base de connaissances</h3>
+      <p>Bibliothèque de votre réseau, en trois rubriques&nbsp;: documents, FAQ et formations. Chaque conseillère la retrouve dans son espace.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Base de connaissances&nbsp;»</p>
+      <a class="t-link" href="base-documentaire.html#definition">Documents, FAQ et formations › À quoi ça sert&nbsp;?&nbsp;→</a>
+    </div>
+    <div class="term" id="t-bon-produit" data-q="bon « produit » bon d'achat limite a certains produits : utilisable seulement si la commande contient l'un d'eux, il ne reduit que leur prix. produits concernes par le bon d'achat">
+      <h3 class="t-name">Bon « produit »</h3>
+      <p>Bon d'achat limité à certains produits&nbsp;: utilisable seulement si la commande contient l'un d'eux, il ne réduit que leur prix.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Produits concernés par le bon d'achat&nbsp;»</p>
+      <a class="t-link" href="bons-achat-guide.html#s7-3">Les bons d'achat › Produits concernés par le bon d'achat&nbsp;→</a>
+    </div>
+    <div class="term" id="t-bon-attribue" data-q="bon attribue exemplaire d'un bon d'achat, qui appartient a une personne et a sa propre date de validite. ">
+      <h3 class="t-name">Bon attribué</h3>
+      <p>Exemplaire d'un bon d'achat, qui appartient à une personne et a sa propre date de validité.</p>
+      
+      <a class="t-link" href="bons-achat-guide.html#s2-1">Les bons d'achat › Les états d'un bon attribué&nbsp;→</a>
+    </div>
+    <div class="term" id="t-bon-d-achat" data-q="bon d'achat montant fixe en euros, nominatif, offert a une personne qui le deduit d'une de ses commandes. ce n'est ni un code promo, ni un pourcentage, ni un moyen de paiement : il est comptabilise comme une remise. bons d'achat (ba)">
+      <h3 class="t-name">Bon d'achat</h3>
+      <p>Montant fixe en euros, nominatif, offert à une personne qui le déduit d'une de ses commandes. Ce n'est ni un code promo, ni un pourcentage, ni un moyen de paiement&nbsp;: il est comptabilisé comme une remise.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> Bons d'achat (BA)</p>
+      <a class="t-link" href="bons-achat-guide.html#definition">Les bons d'achat › Qu'est-ce qu'un bon d'achat&nbsp;?&nbsp;→</a>
+    </div>
+    <div class="term" id="t-bon-d-achat-simple" data-q="bon d'achat simple bon sans regle d'obtention, distribue a la main ou par un autre module (fidelite, challenges…). ">
+      <h3 class="t-name">Bon d'achat simple</h3>
+      <p>Bon sans règle d'obtention, distribué à la main ou par un autre module (fidélité, challenges…).</p>
+      
+      <a class="t-link" href="bons-achat-guide.html#simple">Les bons d'achat › Type 3&nbsp;: le bon d'achat simple&nbsp;→</a>
+    </div>
+    <div class="term" id="t-bon-de-commande" data-q="bon de commande recapitulatif de la commande accepte par la cliente, envoye par email a la finalisation (choix par defaut). bdc">
+      <h3 class="t-name">Bon de commande</h3>
+      <p>Récapitulatif de la commande accepté par la cliente, envoyé par email à la finalisation (choix par défaut).</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;BDC&nbsp;»</p>
+      <a class="t-link" href="commandes-annulation-documents.html#s5-2">Annulations, avoirs et documents › Chaque document&nbsp;→</a>
+    </div>
+    <div class="term" id="t-bon-de-livraison" data-q="bon de livraison document pdf par expedition d'une commande : les articles envoyes et, en cas de livraison partielle, ceux qui restent a envoyer. bordereau de livraison">
+      <h3 class="t-name">Bon de livraison</h3>
+      <p>Document PDF par expédition d'une commande&nbsp;: les articles envoyés et, en cas de livraison partielle, ceux qui restent à envoyer.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Bordereau de livraison&nbsp;»</p>
+      <a class="t-link" href="preparation-livraison.html#definition">Bons de préparation et de livraison › Deux documents, deux usages&nbsp;→</a>
+    </div>
+    <div class="term" id="t-bon-de-preparation" data-q="bon de preparation document pdf pour l'entrepot qui additionne les articles de plusieurs commandes (une reunion, une conseillere, une periode…), tries par reference ou par emplacement. bons de preparation de commande">
+      <h3 class="t-name">Bon de préparation</h3>
+      <p>Document PDF pour l'entrepôt qui additionne les articles de plusieurs commandes (une réunion, une conseillère, une période…), triés par référence ou par emplacement.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Bons de préparation de commande&nbsp;»</p>
+      <a class="t-link" href="preparation-livraison.html#definition">Bons de préparation et de livraison › Deux documents, deux usages&nbsp;→</a>
+    </div>
+    <div class="term" id="t-bon-de-reception" data-q="bon de reception pdf cree a chaque arrivage d'une commande d'approvisionnement, qui peut ajouter automatiquement les quantites recues au stock. ">
+      <h3 class="t-name">Bon de réception</h3>
+      <p>PDF créé à chaque arrivage d'une commande d'approvisionnement, qui peut ajouter automatiquement les quantités reçues au stock.</p>
+      
+      <a class="t-link" href="approvisionnement.html#s3-5">L'approvisionnement › Réceptionner&nbsp;→</a>
+    </div>
+    <div class="term" id="t-bon-par-conditions" data-q="bon par conditions bon d'achat gagne quand une commande payee remplit les conditions definies. le montant de la commande n'intervient pas ; chaque commande est jugee seule. ">
+      <h3 class="t-name">Bon par conditions</h3>
+      <p>Bon d'achat gagné quand une commande payée remplit les conditions définies. Le montant de la commande n'intervient pas&nbsp;; chaque commande est jugée seule.</p>
+      
+      <a class="t-link" href="bons-achat-guide.html#conditions">Les bons d'achat › Type 2&nbsp;: le bon par conditions&nbsp;→</a>
+    </div>
+    <div class="term" id="t-bon-par-tranche" data-q="bon par tranche bon d'achat gagne au paiement : la beneficiaire remplit une cagnotte avec ses achats et gagne un bon a chaque palier franchi. ">
+      <h3 class="t-name">Bon par tranche</h3>
+      <p>Bon d'achat gagné au paiement&nbsp;: la bénéficiaire remplit une cagnotte avec ses achats et gagne un bon à chaque palier franchi.</p>
+      
+      <a class="t-link" href="bons-achat-guide.html#s4-1">Les bons d'achat › Le principe&nbsp;: une cagnotte et des paliers&nbsp;→</a>
+    </div>
+    <div class="term" id="t-boutique-de-marque" data-q="boutique de marque site de vente en ligne unique de votre marque, heberge par sellingathome, ou la cliente peut choisir une conseillere a qui la vente est attribuee. boutique de la marque">
+      <h3 class="t-name">Boutique de marque</h3>
+      <p>Site de vente en ligne unique de votre marque, hébergé par SellingAtHome, où la cliente peut choisir une conseillère à qui la vente est attribuée.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Boutique de la marque&nbsp;»</p>
+      <a class="t-link" href="boutique-marque.html#definition">La boutique de marque › Qu'est-ce que la boutique de marque&nbsp;?&nbsp;→</a>
+    </div>
+    <div class="term" id="t-broadcast" data-q="broadcast mode de visio « large audience » : la conseillere diffuse, les cameras des participantes sont coupees et l'audience peut depasser 12 personnes. live (large audience)">
+      <h3 class="t-name">Broadcast</h3>
+      <p>Mode de visio «&nbsp;large audience&nbsp;»&nbsp;: la conseillère diffuse, les caméras des participantes sont coupées et l'audience peut dépasser 12 personnes.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> Live (large audience)</p>
+      <a class="t-link" href="reunion-virtuelle.html#modes">Réunion virtuelle et live › Réunion virtuelle ou live&nbsp;→</a>
+    </div>
+    <div class="term" id="t-bulletin-de-commission" data-q="bulletin de commission pdf par conseillere qui reprend les lignes (libelle, base, taux, montant) et le total d'un mois cloture. generer les bulletins pour ce mois">
+      <h3 class="t-name">Bulletin de commission</h3>
+      <p>PDF par conseillère qui reprend les lignes (libellé, base, taux, montant) et le total d'un mois clôturé.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Générer les bulletins pour ce mois&nbsp;»</p>
+      <a class="t-link" href="cloture-commissions.html#s4-1">Clôture et versement des commissions › Les bulletins&nbsp;→</a>
+    </div>
+    <div class="term" id="t-bulletin-de-precompte" data-q="bulletin de precompte bulletin trimestriel qui detaille revenus, abattement, assiette, tranche et cotisations, part vdi et part entreprise. ">
+      <h3 class="t-name">Bulletin de précompte</h3>
+      <p>Bulletin trimestriel qui détaille revenus, abattement, assiette, tranche et cotisations, part VDI et part entreprise.</p>
+      
+      <a class="t-link" href="cotisations-sociales.html#s4-2">Cotisations sociales et précompte › Le bulletin de précompte&nbsp;→</a>
+    </div>
+  </div>
+</section>
+
+<section id="l-c" class="letter">
+  <div class="sec-head"><span class="sec-num">C</span><h2>C.A global <span class="muted">→</span> Cumul sur lui-même</h2></div>
+  <div class="terms">
+    <div class="term" id="t-c-a-global" data-q="c.a global tuile du tableau de bord, visible si vous validez les encaissements : elle ajoute les commandes en attente de validation, ne deduit pas les avoirs et compte les cadeaux. c.a global">
+      <h3 class="t-name">C.A global</h3>
+      <p>Tuile du tableau de bord, visible si vous validez les encaissements&nbsp;: elle ajoute les commandes en attente de validation, ne déduit pas les avoirs et compte les cadeaux.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;C.A global&nbsp;»</p>
+      <a class="t-link" href="espace-marque.html#s4-2">Découvrir l'espace marque › Le chiffre d'affaires&nbsp;→</a>
+    </div>
+    <div class="term" id="t-ca-commissionnable" data-q="ca commissionnable chiffre d'affaires des commandes attribuees a la conseillere et payees dans le mois, net des frais de livraison, reductions, bons d'achat, avoirs du mois, produits non commissionnes, produits payes en points et kit de demarrage. c.a . commissionnable">
+      <h3 class="t-name">CA commissionnable</h3>
+      <p>Chiffre d'affaires des commandes attribuées à la conseillère et payées dans le mois, net des frais de livraison, réductions, bons d'achat, avoirs du mois, produits non commissionnés, produits payés en points et kit de démarrage.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;C.A . Commissionnable&nbsp;»</p>
+      <a class="t-link" href="plan-remuneration.html#s4-1">Le plan de rémunération › Ce qui compte, ce qui ne compte pas&nbsp;→</a>
+    </div>
+    <div class="term" id="t-ca-de-la-reunion" data-q="ca de la reunion total des commandes payees et non annulees de la reunion. une commande non payee ne compte jamais. pour la fidelite, il est net des remises et de certains moyens de paiement, selon vos options. chiffre d'affaire de la reunion">
+      <h3 class="t-name">CA de la réunion</h3>
+      <p>Total des commandes payées et non annulées de la réunion. Une commande non payée ne compte jamais. Pour la fidélité, il est net des remises et de certains moyens de paiement, selon vos options.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Chiffre d'affaire de la réunion&nbsp;»</p>
+      <a class="t-link" href="fidelite-guide.html#s6-2">La fidélité › Comment est calculé le «&nbsp;CA de la réunion&nbsp;»&nbsp;?&nbsp;→</a>
+    </div>
+    <div class="term" id="t-cadeau-automatique" data-q="cadeau automatique produit ajoute a 0 € dans une commande non payee des qu'elle remplit toutes les conditions d'une regle, et retire si elle ne les remplit plus. ajout automatique d'elements dans la commande">
+      <h3 class="t-name">Cadeau automatique</h3>
+      <p>Produit ajouté à 0 € dans une commande non payée dès qu'elle remplit toutes les conditions d'une règle, et retiré si elle ne les remplit plus.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Ajout automatique d'éléments dans la commande&nbsp;»</p>
+      <a class="t-link" href="commandes-parametres.html#s5-3">Paramètres des commandes › Quand le cadeau s'ajoute (et disparaît)&nbsp;→</a>
+    </div>
+    <div class="term" id="t-cagnotte" data-q="cagnotte montant accumule par une beneficiaire pour un bon par tranche. elle n'est jamais remise a zero. cagnotte pour le prochain gain de bon d'achat">
+      <h3 class="t-name">Cagnotte</h3>
+      <p>Montant accumulé par une bénéficiaire pour un bon par tranche. Elle n'est jamais remise à zéro.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Cagnotte pour le prochain gain de bon d'achat&nbsp;»</p>
+      <a class="t-link" href="bons-achat-guide.html#s4-1">Les bons d'achat › Le principe&nbsp;: une cagnotte et des paliers&nbsp;→</a>
+    </div>
+    <div class="term" id="t-candidate" data-q="candidate personne qui postule pour devenir conseillere. elle ne se connecte a rien : tout passe par des liens recus par email. candidat">
+      <h3 class="t-name">Candidate</h3>
+      <p>Personne qui postule pour devenir conseillère. Elle ne se connecte à rien&nbsp;: tout passe par des liens reçus par email.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Candidat&nbsp;»</p>
+      <a class="t-link" href="recrutement-principe.html#acteurs">Le recrutement dématérialisé › Les acteurs&nbsp;→</a>
+    </div>
+    <div class="term" id="t-carte-des-conseilleres" data-q="carte des conseilleres page publique integree a votre site : une visiteuse y saisit sa ville, voit les conseilleres proches et en contacte une par un formulaire. carte des vdis">
+      <h3 class="t-name">Carte des conseillères</h3>
+      <p>Page publique intégrée à votre site&nbsp;: une visiteuse y saisit sa ville, voit les conseillères proches et en contacte une par un formulaire.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Carte des VDIs&nbsp;»</p>
+      <a class="t-link" href="carte-conseilleres.html#definition">Carte des conseillères et formulaire de contact › À quoi sert la carte&nbsp;?&nbsp;→</a>
+    </div>
+    <div class="term" id="t-catalogue-en-points" data-q="catalogue en points produits achetables uniquement avec des points de fidelite, avec un prix en points independant du taux de change. ">
+      <h3 class="t-name">Catalogue en points</h3>
+      <p>Produits achetables uniquement avec des points de fidélité, avec un prix en points indépendant du taux de change.</p>
+      
+      <a class="t-link" href="fidelite-guide.html#s11-3">La fidélité › Le catalogue en points&nbsp;→</a>
+    </div>
+    <div class="term" id="t-categorie" data-q="categorie rayon du catalogue (« bagues », « boucles d'oreilles &gt;&gt; creoles »). un produit peut etre dans plusieurs categories. ">
+      <h3 class="t-name">Catégorie</h3>
+      <p>Rayon du catalogue («&nbsp;Bagues&nbsp;», «&nbsp;Boucles d'oreilles &gt;&gt; Créoles&nbsp;»). Un produit peut être dans plusieurs catégories.</p>
+      
+      <a class="t-link" href="attributs-declinaisons.html#s2">Catégories, attributs et déclinaisons › Les catégories&nbsp;→</a>
+    </div>
+    <div class="term" id="t-categorie-racine" data-q="categorie racine categorie qui porte le nom de votre marque et n'apparait pas dans la liste. un produit qui n'a plus aucune categorie y est range et depublie. ">
+      <h3 class="t-name">Catégorie racine</h3>
+      <p>Catégorie qui porte le nom de votre marque et n'apparaît pas dans la liste. Un produit qui n'a plus aucune catégorie y est rangé et dépublié.</p>
+      
+      <a class="t-link" href="attributs-declinaisons.html#s2-1">Catégories, attributs et déclinaisons › L'arborescence&nbsp;→</a>
+    </div>
+    <div class="term" id="t-challenge" data-q="challenge objectif propose aux conseilleres sur une periode, avec une recompense (prime, points, produit, bon d'achat…). la plateforme detecte automatiquement les gagnantes, chaque nuit. challenges vendeurs">
+      <h3 class="t-name">Challenge</h3>
+      <p>Objectif proposé aux conseillères sur une période, avec une récompense (prime, points, produit, bon d'achat…). La plateforme détecte automatiquement les gagnantes, chaque nuit.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Challenges vendeurs&nbsp;»</p>
+      <a class="t-link" href="challenges-guide.html#definition">Les challenges › Qu'est-ce qu'un challenge&nbsp;?&nbsp;→</a>
+    </div>
+    <div class="term" id="t-challenge-classement" data-q="challenge classement challenge ou les conseilleres sont classees entre elles ; les recompenses dependent de la position. ">
+      <h3 class="t-name">Challenge classement</h3>
+      <p>Challenge où les conseillères sont classées entre elles&nbsp;; les récompenses dépendent de la position.</p>
+      
+      <a class="t-link" href="challenges-guide.html#classement">Les challenges › Les challenges classement&nbsp;→</a>
+    </div>
+    <div class="term" id="t-chiffre-d-affaires-tableau-de-bord" data-q="chiffre d'affaires (tableau de bord) commandes payees pendant la periode (c'est la date du paiement qui compte), ht, apres reductions et parts payees en points, sans les cadeaux, moins les avoirs de la periode. il peut etre negatif. chiffre d'affaires (ht)">
+      <h3 class="t-name">Chiffre d'affaires (tableau de bord)</h3>
+      <p>Commandes payées pendant la période (c'est la date du paiement qui compte), HT, après réductions et parts payées en points, sans les cadeaux, moins les avoirs de la période. Il peut être négatif.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> Chiffre d'affaires (HT)</p>
+      <a class="t-link" href="espace-marque.html#s4-2">Découvrir l'espace marque › Le chiffre d'affaires&nbsp;→</a>
+    </div>
+    <div class="term" id="t-cliente" data-q="cliente personne qui achete, participe a des reunions ou les accueille. elle a une fiche unique dans votre marque : une adresse email = une cliente. client">
+      <h3 class="t-name">Cliente</h3>
+      <p>Personne qui achète, participe à des réunions ou les accueille. Elle a une fiche unique dans votre marque&nbsp;: une adresse email = une cliente.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Client&nbsp;»</p>
+      <a class="t-link" href="clients.html#definition">Les clientes › Qu'est-ce qu'une cliente&nbsp;?&nbsp;→</a>
+    </div>
+    <div class="term" id="t-cloture-reunion" data-q="cloture (reunion) fin de la reunion : plus de nouvelles commandes, gains de l'hotesse figes. faite par la conseillere (toutes les commandes payees) ou automatiquement apres le delai de cloture. cloturer la reunion">
+      <h3 class="t-name">Clôture (réunion)</h3>
+      <p>Fin de la réunion&nbsp;: plus de nouvelles commandes, gains de l'hôtesse figés. Faite par la conseillère (toutes les commandes payées) ou automatiquement après le délai de clôture.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Clôturer la réunion&nbsp;»</p>
+      <a class="t-link" href="reunion-cycle-de-vie.html#cloture">Le cycle de vie d'une réunion › La clôture&nbsp;→</a>
+    </div>
+    <div class="term" id="t-cloture-des-commissions" data-q="cloture des commissions calcul definitif du mois ecoule, fait une seule fois la nuit du 1er du mois suivant, avec le statut officiel. elle ne peut pas etre rouverte depuis l'espace marque. ">
+      <h3 class="t-name">Clôture des commissions</h3>
+      <p>Calcul définitif du mois écoulé, fait une seule fois la nuit du 1er du mois suivant, avec le statut officiel. Elle ne peut pas être rouverte depuis l'espace marque.</p>
+      
+      <a class="t-link" href="cloture-commissions.html#principe">Clôture et versement des commissions › Estimation et clôture&nbsp;→</a>
+    </div>
+    <div class="term" id="t-code-promo" data-q="code promo reduction qui ne se declenche qu'avec un code saisi sur la commande. les codes sont sensibles a la casse. restreindre a des codes promotionnels">
+      <h3 class="t-name">Code promo</h3>
+      <p>Réduction qui ne se déclenche qu'avec un code saisi sur la commande. Les codes sont sensibles à la casse.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Restreindre à des codes promotionnels&nbsp;»</p>
+      <a class="t-link" href="reductions-guide.html#codes">Les réductions › Les codes promotionnels&nbsp;→</a>
+    </div>
+    <div class="term" id="t-code-reunion" data-q="code reunion code unique d'une reunion (par exemple 5f33d6c5e7), qui permet de la retrouver avec ses commandes. ">
+      <h3 class="t-name">Code réunion</h3>
+      <p>Code unique d'une réunion (par exemple 5F33D6C5E7), qui permet de la retrouver avec ses commandes.</p>
+      
+      <a class="t-link" href="reunion-cycle-de-vie.html#definition">Le cycle de vie d'une réunion › Qu'est-ce qu'une réunion&nbsp;?&nbsp;→</a>
+    </div>
+    <div class="term" id="t-combinaison" data-q="combinaison variante vendable d'un produit decline (« or + 54 »). elle porte son sku, son code-barres et son stock. combinaisons d'attributs">
+      <h3 class="t-name">Combinaison</h3>
+      <p>Variante vendable d'un produit décliné («&nbsp;Or + 54&nbsp;»). Elle porte son SKU, son code-barres et son stock.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Combinaisons d'attributs&nbsp;»</p>
+      <a class="t-link" href="attributs-declinaisons.html#s5">Catégories, attributs et déclinaisons › Les combinaisons&nbsp;→</a>
+    </div>
+    <div class="term" id="t-commande" data-q="commande une cliente, une conseillere a qui la vente est attribuee, une liste de produits et souvent une reunion. elle a un type et trois statuts. ">
+      <h3 class="t-name">Commande</h3>
+      <p>Une cliente, une conseillère à qui la vente est attribuée, une liste de produits et souvent une réunion. Elle a un type et trois statuts.</p>
+      
+      <a class="t-link" href="commandes-comprendre.html#definition">Comprendre les commandes › Qu'est-ce qu'une commande&nbsp;?&nbsp;→</a>
+    </div>
+    <div class="term" id="t-commande-cadeau" data-q="commande cadeau commande gratuite qui materialise un gain : cadeau de l'hotesse, recompense de challenge, cadeau automatique. cadeau">
+      <h3 class="t-name">Commande cadeau</h3>
+      <p>Commande gratuite qui matérialise un gain&nbsp;: cadeau de l'hôtesse, récompense de challenge, cadeau automatique.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Cadeau&nbsp;»</p>
+      <a class="t-link" href="commandes-comprendre.html#s2-1">Comprendre les commandes › Les quatre types principaux&nbsp;→</a>
+    </div>
+    <div class="term" id="t-commande-d-approvisionnement" data-q="commande d'approvisionnement ordre d'achat envoye a un fournisseur, qui passe par les etapes creee, envoyee, validee, partiellement recue, recue. ">
+      <h3 class="t-name">Commande d'approvisionnement</h3>
+      <p>Ordre d'achat envoyé à un fournisseur, qui passe par les étapes créée, envoyée, validée, partiellement reçue, reçue.</p>
+      
+      <a class="t-link" href="approvisionnement.html#s3-1">L'approvisionnement › Le cycle de vie&nbsp;→</a>
+    </div>
+    <div class="term" id="t-commande-de-regroupement" data-q="commande de regroupement panier de commandes d'une conseillere, qu'elle cloture pour les livrer et les regler ensemble a la marque. sa cliente est la conseillere elle-meme. « master order », « comm. de regroupement »">
+      <h3 class="t-name">Commande de regroupement</h3>
+      <p>Panier de commandes d'une conseillère, qu'elle clôture pour les livrer et les régler ensemble à la marque. Sa cliente est la conseillère elle-même.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;master order&nbsp;», «&nbsp;comm. de regroupement&nbsp;»</p>
+      <a class="t-link" href="commandes-regroupement.html#definition">Les commandes de regroupement › Qu'est-ce qu'une commande de regroupement&nbsp;?&nbsp;→</a>
+    </div>
+    <div class="term" id="t-commande-ouverte" data-q="commande ouverte commande non supprimee, non annulee, pas encore payee. elle compte dans les plafonds des conditions d'achat. ">
+      <h3 class="t-name">Commande ouverte</h3>
+      <p>Commande non supprimée, non annulée, pas encore payée. Elle compte dans les plafonds des conditions d'achat.</p>
+      
+      <a class="t-link" href="conditions-achat-guide.html#s5-3">Les conditions d'achat › Les plafonds de quantité&nbsp;→</a>
+    </div>
+    <div class="term" id="t-commande-verrouillee" data-q="commande verrouillee commande dont une page de paiement est ouverte. la deverrouiller permet de la modifier, mais fait expirer cette page de paiement. deverrouiller">
+      <h3 class="t-name">Commande verrouillée</h3>
+      <p>Commande dont une page de paiement est ouverte. La déverrouiller permet de la modifier, mais fait expirer cette page de paiement.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Déverrouiller&nbsp;»</p>
+      <a class="t-link" href="commandes-gerer.html#s4-4">Créer, modifier et finaliser une commande › Financement et commande verrouillée&nbsp;→</a>
+    </div>
+    <div class="term" id="t-commande-web" data-q="commande web commande passee sur votre propre site e-commerce et importee dans sellingathome par une integration, puis attribuee a une conseillere. commande web">
+      <h3 class="t-name">Commande web</h3>
+      <p>Commande passée sur votre propre site e-commerce et importée dans SellingAtHome par une intégration, puis attribuée à une conseillère.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Commande WEB&nbsp;»</p>
+      <a class="t-link" href="commandes-comprendre.html#s2-1">Comprendre les commandes › Les quatre types principaux&nbsp;→</a>
+    </div>
+    <div class="term" id="t-compte-client-de-la-conseillere" data-q="compte client de la conseillere fiche cliente de chaque conseillere, qui lui permet de commander pour elle-meme et de recevoir points, bons et recompenses. elle porte le role systeme « seller ». creer un compte client associe">
+      <h3 class="t-name">Compte client de la conseillère</h3>
+      <p>Fiche cliente de chaque conseillère, qui lui permet de commander pour elle-même et de recevoir points, bons et récompenses. Elle porte le rôle système «&nbsp;Seller&nbsp;».</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Créer un compte client associé&nbsp;»</p>
+      <a class="t-link" href="conseilleres.html#client">Gérer les conseillères › Son compte client&nbsp;→</a>
+    </div>
+    <div class="term" id="t-condition-d-achat" data-q="condition d'achat regle posee sur un produit qui dit qui peut le commander, quand et en quelle quantite. elle refuse l'ajout au panier ; elle ne donne aucune remise. conditions d'achat">
+      <h3 class="t-name">Condition d'achat</h3>
+      <p>Règle posée sur un produit qui dit qui peut le commander, quand et en quelle quantité. Elle refuse l'ajout au panier&nbsp;; elle ne donne aucune remise.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Conditions d'achat&nbsp;»</p>
+      <a class="t-link" href="conditions-achat-guide.html#definition">Les conditions d'achat › Qu'est-ce qu'une condition d'achat&nbsp;?&nbsp;→</a>
+    </div>
+    <div class="term" id="t-condition-filtre" data-q="condition filtre dans un challenge, condition qui dit qui participe (statut, role, pays…) ; non remplie, elle masque la recompense. les conditions « objectif » (ca, reunions…) affichent une progression. ">
+      <h3 class="t-name">Condition filtre</h3>
+      <p>Dans un challenge, condition qui dit qui participe (statut, rôle, pays…)&nbsp;; non remplie, elle masque la récompense. Les conditions «&nbsp;objectif&nbsp;» (CA, réunions…) affichent une progression.</p>
+      
+      <a class="t-link" href="challenges-guide.html#s6-2">Les challenges › Conditions «&nbsp;objectif&nbsp;» et conditions «&nbsp;filtre&nbsp;»&nbsp;→</a>
+    </div>
+    <div class="term" id="t-conseillere" data-q="conseillere vendeuse a domicile independante qui vend vos produits, organise des reunions, gere ses clientes, recrute et anime son equipe. vendeur, vdi">
+      <h3 class="t-name">Conseillère</h3>
+      <p>Vendeuse à domicile indépendante qui vend vos produits, organise des réunions, gère ses clientes, recrute et anime son équipe.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Vendeur, VDI&nbsp;»</p>
+      <a class="t-link" href="comprendre-sellingathome.html#vocabulaire">Comprendre SellingAtHome en 10 minutes › Le vocabulaire&nbsp;→</a>
+    </div>
+    <div class="term" id="t-conseillere-principale" data-q="conseillere principale conseillere de la derniere commande payee de la cliente. elle change automatiquement a chaque paiement attribue a une autre conseillere. vendeur principal">
+      <h3 class="t-name">Conseillère principale</h3>
+      <p>Conseillère de la dernière commande payée de la cliente. Elle change automatiquement à chaque paiement attribué à une autre conseillère.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Vendeur principal&nbsp;»</p>
+      <a class="t-link" href="clients.html#conseilleres">Les clientes › Une cliente et ses conseillères&nbsp;→</a>
+    </div>
+    <div class="term" id="t-contrat-1-2-contrat-2-2" data-q="contrat 1/2, contrat 2/2 statuts d'une candidature : « contrat 1/2 », le contrat est parti en signature et la candidate n'a pas signe ; « contrat 2/2 », elle a signe et votre marque doit signer. ">
+      <h3 class="t-name">Contrat 1/2, Contrat 2/2</h3>
+      <p>Statuts d'une candidature&nbsp;: «&nbsp;Contrat 1/2&nbsp;», le contrat est parti en signature et la candidate n'a pas signé&nbsp;; «&nbsp;Contrat 2/2&nbsp;», elle a signé et votre marque doit signer.</p>
+      
+      <a class="t-link" href="recrutement-principe.html#statuts">Le recrutement dématérialisé › Les statuts d'une candidature&nbsp;→</a>
+    </div>
+    <div class="term" id="t-cotisations-sociales" data-q="cotisations sociales cotisations dues sur les commissions des conseilleres vdi, calculees chaque trimestre par sellingathome. la declaration et le paiement a l'urssaf restent a faire par la marque. cotisations sociales">
+      <h3 class="t-name">Cotisations sociales</h3>
+      <p>Cotisations dues sur les commissions des conseillères VDI, calculées chaque trimestre par SellingAtHome. La déclaration et le paiement à l'URSSAF restent à faire par la marque.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Cotisations Sociales&nbsp;»</p>
+      <a class="t-link" href="cotisations-sociales.html#precompte">Cotisations sociales et précompte › Le précompte, en clair&nbsp;→</a>
+    </div>
+    <div class="term" id="t-credits-assistant-ia" data-q="credits (assistant ia) solde en euros sur lequel chaque reponse de l'assistant est debitee. les 30 premieres questions de chaque conseillere sont offertes ; les credits n'expirent pas. mon assistant › credits">
+      <h3 class="t-name">Crédits (assistant IA)</h3>
+      <p>Solde en euros sur lequel chaque réponse de l'assistant est débitée. Les 30 premières questions de chaque conseillère sont offertes&nbsp;; les crédits n'expirent pas.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> Mon assistant › Crédits</p>
+      <a class="t-link" href="assistant-ia.html#s5-2">L'assistant IA › Les crédits&nbsp;→</a>
+    </div>
+    <div class="term" id="t-credits-notifications" data-q="credits (notifications) chaque message ecrit par la marque consomme un credit par conseillere destinataire ; les notifications automatiques sont gratuites. ">
+      <h3 class="t-name">Crédits (notifications)</h3>
+      <p>Chaque message écrit par la marque consomme un crédit par conseillère destinataire&nbsp;; les notifications automatiques sont gratuites.</p>
+      
+      <a class="t-link" href="notifications.html#credits">Les notifications › Les crédits&nbsp;→</a>
+    </div>
+    <div class="term" id="t-cumul-reductions" data-q="cumul (reductions) une reduction cumulable peut coexister avec d'autres ; une reduction non cumulable remplace les autres, la derniere ajoutee l'emporte. cumulable avec d'autres reductions">
+      <h3 class="t-name">Cumul (réductions)</h3>
+      <p>Une réduction cumulable peut coexister avec d'autres&nbsp;; une réduction non cumulable remplace les autres, la dernière ajoutée l'emporte.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Cumulable avec d'autres réductions&nbsp;»</p>
+      <a class="t-link" href="reductions-guide.html#cumul">Les réductions › Le cumul&nbsp;→</a>
+    </div>
+    <div class="term" id="t-cumul-sur-lui-meme" data-q="cumul sur lui-meme nombre de bons d'un meme modele utilisables dans une commande. nombre de cumul sur lui-meme">
+      <h3 class="t-name">Cumul sur lui-même</h3>
+      <p>Nombre de bons d'un même modèle utilisables dans une commande.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Nombre de cumul sur lui-même&nbsp;»</p>
+      <a class="t-link" href="bons-achat-guide.html#s7-5">Les bons d'achat › Les deux notions de cumul&nbsp;→</a>
+    </div>
+  </div>
+</section>
+
+<section id="l-d" class="letter">
+  <div class="sec-head"><span class="sec-num">D</span><h2>Date de début d'activité <span class="muted">→</span> Don de points</h2></div>
+  <div class="terms">
+    <div class="term" id="t-date-de-debut-d-activite" data-q="date de debut d'activite date de la premiere commande payee de la conseillere, renseignee automatiquement. elle affiche « jamais » tant qu'elle n'a rien vendu. ">
+      <h3 class="t-name">Date de début d'activité</h3>
+      <p>Date de la première commande payée de la conseillère, renseignée automatiquement. Elle affiche «&nbsp;Jamais&nbsp;» tant qu'elle n'a rien vendu.</p>
+      
+      <a class="t-link" href="conseilleres.html#faq">Gérer les conseillères › Questions fréquentes&nbsp;→</a>
+    </div>
+    <div class="term" id="t-date-predefinie" data-q="date predefinie date de periode d'un challenge propre a chaque conseillere, calculee depuis sa fiche (creation, debut d'activite…) plus un delai. ">
+      <h3 class="t-name">Date prédéfinie</h3>
+      <p>Date de période d'un challenge propre à chaque conseillère, calculée depuis sa fiche (création, début d'activité…) plus un délai.</p>
+      
+      <a class="t-link" href="challenges-guide.html#s4-1">Les challenges › Date personnalisée ou date prédéfinie&nbsp;→</a>
+    </div>
+    <div class="term" id="t-delai-de-cloture" data-q="delai de cloture duree en heures pendant laquelle une reunion reste ouverte apres sa date, avant d'etre cloturee automatiquement. minimum 48 heures. delai de cloture (en heures)">
+      <h3 class="t-name">Délai de clôture</h3>
+      <p>Durée en heures pendant laquelle une réunion reste ouverte après sa date, avant d'être clôturée automatiquement. Minimum 48 heures.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> Délai de clôture (en heures)</p>
+      <a class="t-link" href="reunion-cycle-de-vie.html#s5-2">Le cycle de vie d'une réunion › Clôture automatique&nbsp;→</a>
+    </div>
+    <div class="term" id="t-domaine-valide" data-q="domaine valide condition pour que vos emails partent avec votre email de contact comme expediteur. sinon, ils partent d'une adresse sellingathome. ">
+      <h3 class="t-name">Domaine validé</h3>
+      <p>Condition pour que vos emails partent avec votre email de contact comme expéditeur. Sinon, ils partent d'une adresse SellingAtHome.</p>
+      
+      <a class="t-link" href="emails.html#s4-1">Les emails › L'adresse d'expédition&nbsp;→</a>
+    </div>
+    <div class="term" id="t-don-de-points" data-q="don de points possibilite pour une personne de donner une partie de ses points de fidelite a une autre. ">
+      <h3 class="t-name">Don de points</h3>
+      <p>Possibilité pour une personne de donner une partie de ses points de fidélité à une autre.</p>
+      
+      <a class="t-link" href="fidelite-guide.html#don">La fidélité › Le don de points&nbsp;→</a>
+    </div>
+  </div>
+</section>
+
+<section id="l-e" class="letter">
+  <div class="sec-head"><span class="sec-num">E</span><h2>Encaissement <span class="muted">→</span> Export de données</h2></div>
+  <div class="terms">
+    <div class="term" id="t-encaissement" data-q="encaissement confirmation par la marque qu'un paiement a bien ete recu (option). la commande passe alors a « encaissee » ; tant que le paiement n'est pas valide, elle ne peut pas etre annulee. valider l'encaissement">
+      <h3 class="t-name">Encaissement</h3>
+      <p>Confirmation par la marque qu'un paiement a bien été reçu (option). La commande passe alors à «&nbsp;Encaissée&nbsp;»&nbsp;; tant que le paiement n'est pas validé, elle ne peut pas être annulée.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Valider l'encaissement&nbsp;»</p>
+      <a class="t-link" href="commandes-comprendre.html#s4-2">Comprendre les commandes › La validation de l'encaissement&nbsp;→</a>
+    </div>
+    <div class="term" id="t-entreposage" data-q="entreposage module qui tient le stock de marchandise confiee a chaque conseillere et deplace les quantites entre le stock de la marque et le sien. entreposage ; onglet stock">
+      <h3 class="t-name">Entreposage</h3>
+      <p>Module qui tient le stock de marchandise confiée à chaque conseillère et déplace les quantités entre le stock de la marque et le sien.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Entreposage&nbsp;; onglet Stock&nbsp;»</p>
+      <a class="t-link" href="stock-conseilleres.html#definition">Stocks chez les conseillères › À quoi sert ce module&nbsp;→</a>
+    </div>
+    <div class="term" id="t-equipe" data-q="equipe toute la descendance d'une conseillere dans l'organigramme, par le lien d'animation. ">
+      <h3 class="t-name">Équipe</h3>
+      <p>Toute la descendance d'une conseillère dans l'organigramme, par le lien d'animation.</p>
+      
+      <a class="t-link" href="plan-remuneration.html#s3-3">Le plan de rémunération › Lignées et équipe&nbsp;→</a>
+    </div>
+    <div class="term" id="t-espace-conseillere" data-q="espace conseillere espace des conseilleres, sur ordinateur et sur l'application : reunions, commandes, clientes, equipe, commissions, formation. ">
+      <h3 class="t-name">Espace conseillère</h3>
+      <p>Espace des conseillères, sur ordinateur et sur l'application&nbsp;: réunions, commandes, clientes, équipe, commissions, formation.</p>
+      
+      <a class="t-link" href="comprendre-sellingathome.html#espaces">Comprendre SellingAtHome en 10 minutes › Les espaces&nbsp;→</a>
+    </div>
+    <div class="term" id="t-espace-marque" data-q="espace marque votre outil d'administration (brand.sellingathome.com). les comptes d'acces sont crees par sellingathome. ">
+      <h3 class="t-name">Espace marque</h3>
+      <p>Votre outil d'administration (brand.sellingathome.com). Les comptes d'accès sont créés par SellingAtHome.</p>
+      
+      <a class="t-link" href="espace-marque.html#connexion">Découvrir l'espace marque › Se connecter&nbsp;→</a>
+    </div>
+    <div class="term" id="t-estimation-des-commissions" data-q="estimation des commissions calcul provisoire des commissions du mois en cours, refait chaque nuit avec le statut estime. il change jusqu'a la fin du mois. ">
+      <h3 class="t-name">Estimation des commissions</h3>
+      <p>Calcul provisoire des commissions du mois en cours, refait chaque nuit avec le statut estimé. Il change jusqu'à la fin du mois.</p>
+      
+      <a class="t-link" href="cloture-commissions.html#principe">Clôture et versement des commissions › Estimation et clôture&nbsp;→</a>
+    </div>
+    <div class="term" id="t-export-de-donnees" data-q="export de donnees fichier (excel, csv, json ou xml) envoye par email a l'adresse du compte qui le lance. export de donnees">
+      <h3 class="t-name">Export de données</h3>
+      <p>Fichier (Excel, CSV, JSON ou XML) envoyé par email à l'adresse du compte qui le lance.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Export de données&nbsp;»</p>
+      <a class="t-link" href="rapports-exports.html#s5-1">Rapports et exports › Lancer un export&nbsp;→</a>
+    </div>
+  </div>
+</section>
+
+<section id="l-f" class="letter">
+  <div class="sec-head"><span class="sec-num">F</span><h2>Facture <span class="muted">→</span> Frais fixes</h2></div>
+  <div class="terms">
+    <div class="term" id="t-facture" data-q="facture facture de la vente, creee au paiement si votre marque genere ses factures dans sellingathome. ">
+      <h3 class="t-name">Facture</h3>
+      <p>Facture de la vente, créée au paiement si votre marque génère ses factures dans SellingAtHome.</p>
+      
+      <a class="t-link" href="commandes-annulation-documents.html#s5-2">Annulations, avoirs et documents › Chaque document&nbsp;→</a>
+    </div>
+    <div class="term" id="t-faq-de-la-marque" data-q="faq de la marque les questions frequentes de vos conseilleres, avec la reponse validee par la marque, dans chaque langue. l'assistant ia s'en sert comme parole officielle. ">
+      <h3 class="t-name">FAQ de la marque</h3>
+      <p>Les questions fréquentes de vos conseillères, avec la réponse validée par la marque, dans chaque langue. L'assistant IA s'en sert comme parole officielle.</p>
+      
+      <a class="t-link" href="base-documentaire.html#faq-marque">Documents, FAQ et formations › La FAQ&nbsp;→</a>
+    </div>
+    <div class="term" id="t-fichier-sepa" data-q="fichier sepa fichier de virements groupes a importer dans votre banque pour verser les commissions d'un mois cloture. il ne contient que les conseilleres avec un iban et un total positif. generer un fichier sepa pour ce mois">
+      <h3 class="t-name">Fichier SEPA</h3>
+      <p>Fichier de virements groupés à importer dans votre banque pour verser les commissions d'un mois clôturé. Il ne contient que les conseillères avec un IBAN et un total positif.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Générer un fichier SEPA pour ce mois&nbsp;»</p>
+      <a class="t-link" href="cloture-commissions.html#s4-2">Clôture et versement des commissions › Le fichier SEPA&nbsp;→</a>
+    </div>
+    <div class="term" id="t-fidelite" data-q="fidelite module qui recompense automatiquement hotesses, clientes et conseilleres selon vos regles : points, produit offert, code promo ou bon d'achat. parametres fidelite">
+      <h3 class="t-name">Fidélité</h3>
+      <p>Module qui récompense automatiquement hôtesses, clientes et conseillères selon vos règles&nbsp;: points, produit offert, code promo ou bon d'achat.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Paramètres fidélité&nbsp;»</p>
+      <a class="t-link" href="fidelite-guide.html#definition">La fidélité › Qu'est-ce que la fidélité dans SellingAtHome&nbsp;?&nbsp;→</a>
+    </div>
+    <div class="term" id="t-filleule-cliente" data-q="filleule (cliente) cliente recommandee par une marraine. elle n'a qu'une marraine et porte le role systeme « sponsored ». filleul, client parraine">
+      <h3 class="t-name">Filleule (cliente)</h3>
+      <p>Cliente recommandée par une marraine. Elle n'a qu'une marraine et porte le rôle système «&nbsp;Sponsored&nbsp;».</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Filleul, client parrainé&nbsp;»</p>
+      <a class="t-link" href="parrainage-client.html#s3-3">Le parrainage client › Les rôles attribués&nbsp;→</a>
+    </div>
+    <div class="term" id="t-filleule-conseillere" data-q="filleule (conseillere) conseillere recrutee par une autre. filleul">
+      <h3 class="t-name">Filleule (conseillère)</h3>
+      <p>Conseillère recrutée par une autre.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Filleul&nbsp;»</p>
+      <a class="t-link" href="comprendre-sellingathome.html#vocabulaire">Comprendre SellingAtHome en 10 minutes › Le vocabulaire&nbsp;→</a>
+    </div>
+    <div class="term" id="t-finaliser-la-commande" data-q="finaliser la commande parcours de validation et de paiement d'une commande non payee. finaliser la commande">
+      <h3 class="t-name">Finaliser la commande</h3>
+      <p>Parcours de validation et de paiement d'une commande non payée.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Finaliser la commande&nbsp;»</p>
+      <a class="t-link" href="commandes-gerer.html#s4-1">Créer, modifier et finaliser une commande › Finaliser la commande&nbsp;→</a>
+    </div>
+    <div class="term" id="t-formation" data-q="formation parcours d'etapes (document, video, questionnaire) a suivre dans l'ordre, avec des points et des prerequis. une formation publiee ou commencee ne se modifie plus : on la duplique. ">
+      <h3 class="t-name">Formation</h3>
+      <p>Parcours d'étapes (document, vidéo, questionnaire) à suivre dans l'ordre, avec des points et des prérequis. Une formation publiée ou commencée ne se modifie plus&nbsp;: on la duplique.</p>
+      
+      <a class="t-link" href="base-documentaire.html#formations">Documents, FAQ et formations › Les formations&nbsp;→</a>
+    </div>
+    <div class="term" id="t-frais-fixes" data-q="frais fixes montant ajoute automatiquement aux commandes non payees (frais de dossier…) selon le type de commande. parametres des frais fixes">
+      <h3 class="t-name">Frais fixes</h3>
+      <p>Montant ajouté automatiquement aux commandes non payées (frais de dossier…) selon le type de commande.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Paramètres des frais fixes&nbsp;»</p>
+      <a class="t-link" href="commandes-parametres.html#s7-1">Paramètres des commandes › Sur les commandes&nbsp;→</a>
+    </div>
+  </div>
+</section>
+
+<section id="l-g" class="letter">
+  <div class="sec-head"><span class="sec-num">G</span><h2>Gain (challenge) <span class="muted">→</span> Graph</h2></div>
+  <div class="terms">
+    <div class="term" id="t-gain-challenge" data-q="gain (challenge) recompense obtenue par une conseillere. une prime n'est versee avec les commissions qu'une fois le gain marque « recupere ». ">
+      <h3 class="t-name">Gain (challenge)</h3>
+      <p>Récompense obtenue par une conseillère. Une prime n'est versée avec les commissions qu'une fois le gain marqué «&nbsp;Récupéré&nbsp;».</p>
+      
+      <a class="t-link" href="challenges-guide.html#validation">Les challenges › Valider et récupérer les gains&nbsp;→</a>
+    </div>
+    <div class="term" id="t-gains-de-l-hotesse" data-q="gains de l'hotesse recompenses calculees au fil des paiements des commandes de la reunion, selon vos regles de fidelite, et figees a la cloture. ">
+      <h3 class="t-name">Gains de l'hôtesse</h3>
+      <p>Récompenses calculées au fil des paiements des commandes de la réunion, selon vos règles de fidélité, et figées à la clôture.</p>
+      
+      <a class="t-link" href="reunion-cycle-de-vie.html#gains">Le cycle de vie d'une réunion › Le chiffre d'affaires et les gains de l'hôtesse&nbsp;→</a>
+    </div>
+    <div class="term" id="t-graph" data-q="graph ecran de l'organigramme, avec trois affichages : par animation, par recrutement, par statut. graph">
+      <h3 class="t-name">Graph</h3>
+      <p>Écran de l'organigramme, avec trois affichages&nbsp;: par animation, par recrutement, par statut.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Graph&nbsp;»</p>
+      <a class="t-link" href="organigramme.html#s3-1">L'organigramme › Les trois affichages&nbsp;→</a>
+    </div>
+  </div>
+</section>
+
+<section id="l-h" class="letter">
+  <div class="sec-head"><span class="sec-num">H</span><h2>Hôtesse</h2></div>
+  <div class="terms">
+    <div class="term" id="t-hotesse" data-q="hotesse cliente qui recoit une reunion chez elle ou en visio. elle n'est pas remuneree : elle est recompensee en avantages selon vos regles de fidelite. elle recoit le role client hote a la cloture. hote">
+      <h3 class="t-name">Hôtesse</h3>
+      <p>Cliente qui reçoit une réunion chez elle ou en visio. Elle n'est pas rémunérée&nbsp;: elle est récompensée en avantages selon vos règles de fidélité. Elle reçoit le rôle client Hôte à la clôture.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Hôte&nbsp;»</p>
+      <a class="t-link" href="reunion-cycle-de-vie.html#s2-1">Le cycle de vie d'une réunion › L'hôtesse&nbsp;→</a>
+    </div>
+  </div>
+</section>
+
+<section id="l-i" class="letter">
+  <div class="sec-head"><span class="sec-num">I</span><h2>Indice de vente <span class="muted">→</span> Invitée</h2></div>
+  <div class="terms">
+    <div class="term" id="t-indice-de-vente" data-q="indice de vente nombre moyen d'articles par commande, arrondi a l'entier, sans les commandes cadeaux. indice de vente">
+      <h3 class="t-name">Indice de vente</h3>
+      <p>Nombre moyen d'articles par commande, arrondi à l'entier, sans les commandes cadeaux.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Indice de vente&nbsp;»</p>
+      <a class="t-link" href="espace-marque.html#s4-3">Découvrir l'espace marque › Les moyennes&nbsp;→</a>
+    </div>
+    <div class="term" id="t-integration" data-q="integration echange automatique de donnees avec un autre logiciel (boutique, logisticien, logiciel de gestion, emailing). toutes sont parametrees par sellingathome. ">
+      <h3 class="t-name">Intégration</h3>
+      <p>Échange automatique de données avec un autre logiciel (boutique, logisticien, logiciel de gestion, emailing). Toutes sont paramétrées par SellingAtHome.</p>
+      
+      <a class="t-link" href="integrations.html#definition">Les intégrations › Qu'est-ce qu'une intégration&nbsp;?&nbsp;→</a>
+    </div>
+    <div class="term" id="t-invitee" data-q="invitee cliente invitee a une reunion, souvent par l'hotesse via le mini-site. invite">
+      <h3 class="t-name">Invitée</h3>
+      <p>Cliente invitée à une réunion, souvent par l'hôtesse via le mini-site.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Invité&nbsp;»</p>
+      <a class="t-link" href="mini-site-reunion.html#invitees">Le mini-site de réunion › Les invitées et leurs statuts&nbsp;→</a>
+    </div>
+  </div>
+</section>
+
+<section id="l-k" class="letter">
+  <div class="sec-head"><span class="sec-num">K</span><h2>Kit de démarrage <span class="muted">→</span> Kit variable</h2></div>
+  <div class="terms">
+    <div class="term" id="t-kit-de-demarrage" data-q="kit de demarrage ensemble de produits et d'outils qu'une nouvelle conseillere achete en ligne juste apres son recrutement, via un lien recu par email. kit de demarrage">
+      <h3 class="t-name">Kit de démarrage</h3>
+      <p>Ensemble de produits et d'outils qu'une nouvelle conseillère achète en ligne juste après son recrutement, via un lien reçu par email.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Kit de démarrage&nbsp;»</p>
+      <a class="t-link" href="kit-demarrage.html#definition">Le kit de démarrage › Qu'est-ce que le kit de démarrage&nbsp;?&nbsp;→</a>
+    </div>
+    <div class="term" id="t-kit-variable" data-q="kit variable produit dont la conseillere choisit le contenu, composant par composant, au moment de la vente. il n'a pas de stock propre. kit variables">
+      <h3 class="t-name">Kit variable</h3>
+      <p>Produit dont la conseillère choisit le contenu, composant par composant, au moment de la vente. Il n'a pas de stock propre.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Kit variables&nbsp;»</p>
+      <a class="t-link" href="produits.html#s3-2">Créer et éditer un produit › Le kit variable&nbsp;→</a>
+    </div>
+  </div>
+</section>
+
+<section id="l-l" class="letter">
+  <div class="sec-head"><span class="sec-num">L</span><h2>Ligne manuelle (commission) <span class="muted">→</span> Livraison partielle</h2></div>
+  <div class="terms">
+    <div class="term" id="t-ligne-manuelle-commission" data-q="ligne manuelle (commission) ligne de commission ajoutee a la main sur le mois en cours (geste, regularisation). impossible sur un mois deja cloture. ajouter une nouvelle ligne de commission">
+      <h3 class="t-name">Ligne manuelle (commission)</h3>
+      <p>Ligne de commission ajoutée à la main sur le mois en cours (geste, régularisation). Impossible sur un mois déjà clôturé.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Ajouter une nouvelle ligne de commission&nbsp;»</p>
+      <a class="t-link" href="cloture-commissions.html#s3-3">Clôture et versement des commissions › Les lignes manuelles&nbsp;→</a>
+    </div>
+    <div class="term" id="t-lignee" data-q="lignee niveau dans l'equipe : lignee 1 (n-1), les conseilleres animees directement ; lignee 2 (n-2), celles animees par les n-1, etc. le plan va jusqu'a 6 niveaux. lignee 1, 2, 3… ; n-1 … n-6">
+      <h3 class="t-name">Lignée</h3>
+      <p>Niveau dans l'équipe&nbsp;: lignée 1 (N-1), les conseillères animées directement&nbsp;; lignée 2 (N-2), celles animées par les N-1, etc. Le plan va jusqu'à 6 niveaux.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Lignée 1, 2, 3…&nbsp;; N-1 … N-6&nbsp;»</p>
+      <a class="t-link" href="plan-remuneration.html#s3-3">Le plan de rémunération › Lignées et équipe&nbsp;→</a>
+    </div>
+    <div class="term" id="t-livraison-partielle" data-q="livraison partielle expedition d'une commande en plusieurs fois (option) ; la commande passe en « expediee partiellement ». autoriser la livraison partielle de commande">
+      <h3 class="t-name">Livraison partielle</h3>
+      <p>Expédition d'une commande en plusieurs fois (option)&nbsp;; la commande passe en «&nbsp;Expédiée partiellement&nbsp;».</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Autoriser la Livraison partielle de commande&nbsp;»</p>
+      <a class="t-link" href="preparation-livraison.html#s5-2">Bons de préparation et de livraison › La livraison partielle&nbsp;→</a>
+    </div>
+  </div>
+</section>
+
+<section id="l-m" class="letter">
+  <div class="sec-head"><span class="sec-num">M</span><h2>Marraine (cliente) <span class="muted">→</span> Montant maximum (réduction)</h2></div>
+  <div class="terms">
+    <div class="term" id="t-marraine-cliente" data-q="marraine (cliente) cliente qui recommande votre marque a une autre personne, sa filleule. elle porte le role systeme « sponsor » et peut etre recompensee a la premiere commande de sa filleule. parrain, « parrain/marraine »">
+      <h3 class="t-name">Marraine (cliente)</h3>
+      <p>Cliente qui recommande votre marque à une autre personne, sa filleule. Elle porte le rôle système «&nbsp;Sponsor&nbsp;» et peut être récompensée à la première commande de sa filleule.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> Parrain, «&nbsp;Parrain/Marraine&nbsp;»</p>
+      <a class="t-link" href="parrainage-client.html#definition">Le parrainage client › Qu'est-ce que le parrainage client&nbsp;?&nbsp;→</a>
+    </div>
+    <div class="term" id="t-methode-d-inventaire" data-q="methode d'inventaire dit si le stock d'un produit est suivi, et comment : stock non suivi, suivi du stock, suivi par attributs (un stock par combinaison). ">
+      <h3 class="t-name">Méthode d'inventaire</h3>
+      <p>Dit si le stock d'un produit est suivi, et comment&nbsp;: stock non suivi, suivi du stock, suivi par attributs (un stock par combinaison).</p>
+      
+      <a class="t-link" href="stocks.html#s2">Les stocks › La méthode d'inventaire&nbsp;→</a>
+    </div>
+    <div class="term" id="t-mini-boutique" data-q="mini-boutique site de vente en ligne d'une conseillere, a son nom et a son adresse. les clientes y commandent et paient seules ; la vente revient a la conseillere. mini-boutique vendeur">
+      <h3 class="t-name">Mini-boutique</h3>
+      <p>Site de vente en ligne d'une conseillère, à son nom et à son adresse. Les clientes y commandent et paient seules&nbsp;; la vente revient à la conseillère.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Mini-boutique vendeur&nbsp;»</p>
+      <a class="t-link" href="mini-boutiques.html#definition">Les mini-boutiques des conseillères › Qu'est-ce qu'une mini-boutique&nbsp;?&nbsp;→</a>
+    </div>
+    <div class="term" id="t-mini-site-de-reunion" data-q="mini-site de reunion page web propre a une reunion : l'hotesse la complete puis s'en sert pour inviter ses amies et suivre leurs reponses. on n'y paie pas. ">
+      <h3 class="t-name">Mini-site de réunion</h3>
+      <p>Page web propre à une réunion&nbsp;: l'hôtesse la complète puis s'en sert pour inviter ses amies et suivre leurs réponses. On n'y paie pas.</p>
+      
+      <a class="t-link" href="mini-site-reunion.html#definition">Le mini-site de réunion › Qu'est-ce que le mini-site&nbsp;?&nbsp;→</a>
+    </div>
+    <div class="term" id="t-mode-de-livraison" data-q="mode de livraison lieu de livraison choisi a la saisie de la commande (chez la conseillere, la cliente, l'hotesse, retrait sur place, point relais…), avec son tarif. livraison chez le vendeur, chez le client, chez l'hote…">
+      <h3 class="t-name">Mode de livraison</h3>
+      <p>Lieu de livraison choisi à la saisie de la commande (chez la conseillère, la cliente, l'hôtesse, retrait sur place, point relais…), avec son tarif.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Livraison chez le vendeur, chez le client, chez l'hôte…&nbsp;»</p>
+      <a class="t-link" href="livraison.html#s4-1">Livraison&nbsp;: modes et frais › Les modes disponibles&nbsp;→</a>
+    </div>
+    <div class="term" id="t-modele-d-email" data-q="modele d'email email automatique lie a un evenement. la liste est fixee par sellingathome ; vous en modifiez le contenu par langue et l'activation. templates email">
+      <h3 class="t-name">Modèle d'email</h3>
+      <p>Email automatique lié à un événement. La liste est fixée par SellingAtHome&nbsp;; vous en modifiez le contenu par langue et l'activation.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Templates email&nbsp;»</p>
+      <a class="t-link" href="emails.html#modeles">Les emails › Les modèles d'email&nbsp;→</a>
+    </div>
+    <div class="term" id="t-modele-de-bon" data-q="modele de bon le bon d'achat tel que parametre par la marque. il sert a generer les bons attribues. ">
+      <h3 class="t-name">Modèle de bon</h3>
+      <p>Le bon d'achat tel que paramétré par la marque. Il sert à générer les bons attribués.</p>
+      
+      <a class="t-link" href="bons-achat-guide.html#cycle">Les bons d'achat › Les deux étapes de la vie d'un bon&nbsp;: gagner puis utiliser&nbsp;→</a>
+    </div>
+    <div class="term" id="t-module-optionnel" data-q="module optionnel fonction activee par sellingathome selon votre contrat. elle fait apparaitre un menu, un sous-menu ou un onglet ; vous ne pouvez pas l'activer vous-meme. ">
+      <h3 class="t-name">Module optionnel</h3>
+      <p>Fonction activée par SellingAtHome selon votre contrat. Elle fait apparaître un menu, un sous-menu ou un onglet&nbsp;; vous ne pouvez pas l'activer vous-même.</p>
+      
+      <a class="t-link" href="modules-options.html#principe">Modules et options › Le principe&nbsp;→</a>
+    </div>
+    <div class="term" id="t-montant-de-reference-livraison" data-q="montant de reference (livraison) montant de la commande compare aux seuils des conditions de livraison : non remise (par defaut), remise, ou remise sans les bons d'achat. appliquer les frais de port sur">
+      <h3 class="t-name">Montant de référence (livraison)</h3>
+      <p>Montant de la commande comparé aux seuils des conditions de livraison&nbsp;: non remisé (par défaut), remisé, ou remisé sans les bons d'achat.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Appliquer les frais de port sur&nbsp;»</p>
+      <a class="t-link" href="livraison.html#s3-1">Livraison&nbsp;: modes et frais › Le montant de référence («&nbsp;Appliquer les frais de port sur&nbsp;»)&nbsp;→</a>
+    </div>
+    <div class="term" id="t-montant-futur-de-l-hote" data-q="montant futur de l'hote points qu'une hotesse va gagner grace a sa reunion et qu'elle peut depenser par anticipation dans sa propre commande. ">
+      <h3 class="t-name">Montant futur de l'hôte</h3>
+      <p>Points qu'une hôtesse va gagner grâce à sa réunion et qu'elle peut dépenser par anticipation dans sa propre commande.</p>
+      
+      <a class="t-link" href="fidelite-guide.html#s11-2">La fidélité › Le montant futur de l'hôte&nbsp;→</a>
+    </div>
+    <div class="term" id="t-montant-maximum-reduction" data-q="montant maximum (reduction) champ dont l'effet depend du type de reduction : sur le total en pourcentage, il retire la reduction au lieu de la plafonner. montant maximum de la reduction">
+      <h3 class="t-name">Montant maximum (réduction)</h3>
+      <p>Champ dont l'effet dépend du type de réduction&nbsp;: sur le total en pourcentage, il retire la réduction au lieu de la plafonner.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Montant maximum de la réduction&nbsp;»</p>
+      <a class="t-link" href="reductions-guide.html#s4-2">Les réductions › Le montant maximum&nbsp;: attention, son effet dépend du type&nbsp;→</a>
+    </div>
+  </div>
+</section>
+
+<section id="l-n" class="letter">
+  <div class="sec-head"><span class="sec-num">N</span><h2>Niveau de statut <span class="muted">→</span> Notification</h2></div>
+  <div class="terms">
+    <div class="term" id="t-niveau-de-statut" data-q="niveau de statut rang d'un statut : plus le chiffre est petit, plus le statut est eleve. il sert notamment au statut minimum des documents. niveau">
+      <h3 class="t-name">Niveau de statut</h3>
+      <p>Rang d'un statut&nbsp;: plus le chiffre est petit, plus le statut est élevé. Il sert notamment au statut minimum des documents.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Niveau&nbsp;»</p>
+      <a class="t-link" href="statuts.html#s2-1">Statuts et automatisation › Niveaux et ordre&nbsp;→</a>
+    </div>
+    <div class="term" id="t-notification" data-q="notification court message adresse a une conseillere, dans son espace et en push si elle l'a autorise. les automatiques sont gratuites ; les messages ecrits par la marque consomment des credits. ">
+      <h3 class="t-name">Notification</h3>
+      <p>Court message adressé à une conseillère, dans son espace et en push si elle l'a autorisé. Les automatiques sont gratuites&nbsp;; les messages écrits par la marque consomment des crédits.</p>
+      
+      <a class="t-link" href="notifications.html#definition">Les notifications › Deux familles de notifications&nbsp;→</a>
+    </div>
+  </div>
+</section>
+
+<section id="l-o" class="letter">
+  <div class="sec-head"><span class="sec-num">O</span><h2>Offre promotionnelle <span class="muted">→</span> Ouvrir l'espace vendeur</h2></div>
+  <div class="terms">
+    <div class="term" id="t-offre-promotionnelle" data-q="offre promotionnelle type de reduction declenche par le contenu du panier (« 3 achetes, le moins cher offert »), qui peut se repeter. offre promotionnelle">
+      <h3 class="t-name">Offre promotionnelle</h3>
+      <p>Type de réduction déclenché par le contenu du panier («&nbsp;3 achetés, le moins cher offert&nbsp;»), qui peut se répéter.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Offre promotionnelle&nbsp;»</p>
+      <a class="t-link" href="reductions-guide.html#offre">Les réductions › L'offre promotionnelle en détail&nbsp;→</a>
+    </div>
+    <div class="term" id="t-onboarding-du-mini-site" data-q="onboarding du mini-site parcours guide de l'hotesse sur son mini-site : identite, date, nombre de places, invitations, mot d'accueil. ">
+      <h3 class="t-name">Onboarding du mini-site</h3>
+      <p>Parcours guidé de l'hôtesse sur son mini-site&nbsp;: identité, date, nombre de places, invitations, mot d'accueil.</p>
+      
+      <a class="t-link" href="mini-site-reunion.html#onboarding">Le mini-site de réunion › Le parcours de l'hôtesse&nbsp;→</a>
+    </div>
+    <div class="term" id="t-organigramme" data-q="organigramme le reseau des conseilleres, avec pour chacune sa recruteuse et son animatrice. graph">
+      <h3 class="t-name">Organigramme</h3>
+      <p>Le réseau des conseillères, avec pour chacune sa recruteuse et son animatrice.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Graph&nbsp;»</p>
+      <a class="t-link" href="organigramme.html#liens">L'organigramme › Deux liens&nbsp;: recruteur et animatrice&nbsp;→</a>
+    </div>
+    <div class="term" id="t-ouvrir-l-espace-vendeur" data-q="ouvrir l'espace vendeur bouton de la fiche conseillere qui ouvre son espace, connecte a son nom : tout ce que vous y faites est fait en son nom. ouvrir l'espace vendeur">
+      <h3 class="t-name">Ouvrir l'espace vendeur</h3>
+      <p>Bouton de la fiche conseillère qui ouvre son espace, connecté à son nom&nbsp;: tout ce que vous y faites est fait en son nom.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Ouvrir l'espace vendeur&nbsp;»</p>
+      <a class="t-link" href="conseilleres.html#espace">Gérer les conseillères › Ouvrir l'espace de la conseillère&nbsp;→</a>
+    </div>
+  </div>
+</section>
+
+<section id="l-p" class="letter">
+  <div class="sec-head"><span class="sec-num">P</span><h2>Palier (commission) <span class="muted">→</span> Produits suggérés</h2></div>
+  <div class="terms">
+    <div class="term" id="t-palier-commission" data-q="palier (commission) valeur d'une regle de commission. son taux s'applique a tout le chiffre d'affaires, pas seulement a la partie au-dela du seuil. valeur">
+      <h3 class="t-name">Palier (commission)</h3>
+      <p>Valeur d'une règle de commission. Son taux s'applique à tout le chiffre d'affaires, pas seulement à la partie au-delà du seuil.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Valeur&nbsp;»</p>
+      <a class="t-link" href="plan-remuneration.html#s3-2">Le plan de rémunération › Comment le moteur lit le plan&nbsp;→</a>
+    </div>
+    <div class="term" id="t-paliers-fidelite" data-q="paliers (fidelite) plusieurs regles a seuils : avec « superieur ou egal », toutes les regles remplies se cumulent ; avec « entre », un seul palier est gagne. ">
+      <h3 class="t-name">Paliers (fidélité)</h3>
+      <p>Plusieurs règles à seuils&nbsp;: avec «&nbsp;supérieur ou égal&nbsp;», toutes les règles remplies se cumulent&nbsp;; avec «&nbsp;entre&nbsp;», un seul palier est gagné.</p>
+      
+      <a class="t-link" href="fidelite-guide.html#paliers">La fidélité › Cumul des règles et paliers&nbsp;→</a>
+    </div>
+    <div class="term" id="t-panier-abandonne" data-q="panier abandonne commande jamais payee, supprimee automatiquement apres un delai reglable (48 heures minimum). les kits de demarrage et les commandes partiellement payees ne sont jamais concernes. autoriser la suppression automatique">
+      <h3 class="t-name">Panier abandonné</h3>
+      <p>Commande jamais payée, supprimée automatiquement après un délai réglable (48 heures minimum). Les kits de démarrage et les commandes partiellement payées ne sont jamais concernés.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Autoriser la suppression automatique&nbsp;»</p>
+      <a class="t-link" href="commandes-parametres.html#s2-1">Paramètres des commandes › La suppression automatique des paniers&nbsp;→</a>
+    </div>
+    <div class="term" id="t-parrainage-client" data-q="parrainage client lien entre une cliente marraine et sa filleule, pose sur la fiche de la filleule, qui permet de recompenser la marraine. parrainage">
+      <h3 class="t-name">Parrainage client</h3>
+      <p>Lien entre une cliente marraine et sa filleule, posé sur la fiche de la filleule, qui permet de récompenser la marraine.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Parrainage&nbsp;»</p>
+      <a class="t-link" href="parrainage-client.html#definition">Le parrainage client › Qu'est-ce que le parrainage client&nbsp;?&nbsp;→</a>
+    </div>
+    <div class="term" id="t-participante" data-q="participante cliente rattachee a une reunion, qui y passe commande. la conseillere peut indiquer qui etait presente. participant">
+      <h3 class="t-name">Participante</h3>
+      <p>Cliente rattachée à une réunion, qui y passe commande. La conseillère peut indiquer qui était présente.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Participant&nbsp;»</p>
+      <a class="t-link" href="reunion-cycle-de-vie.html#s2-2">Le cycle de vie d'une réunion › Participantes et invitées&nbsp;→</a>
+    </div>
+    <div class="term" id="t-pastille-de-compteur" data-q="pastille de compteur nombre affiche sur une rubrique du menu : ce qui reste a traiter maintenant, pas un total sur une periode. ">
+      <h3 class="t-name">Pastille de compteur</h3>
+      <p>Nombre affiché sur une rubrique du menu&nbsp;: ce qui reste à traiter maintenant, pas un total sur une période.</p>
+      
+      <a class="t-link" href="espace-marque.html#s3-2">Découvrir l'espace marque › Les pastilles de compteur&nbsp;→</a>
+    </div>
+    <div class="term" id="t-periode-dynamique" data-q="periode dynamique semaine, mois, trimestre ou annee en cours, recalcules automatiquement, dans les conditions d'achat. ">
+      <h3 class="t-name">Période dynamique</h3>
+      <p>Semaine, mois, trimestre ou année en cours, recalculés automatiquement, dans les conditions d'achat.</p>
+      
+      <a class="t-link" href="conditions-achat-guide.html#s5-3">Les conditions d'achat › Les plafonds de quantité&nbsp;→</a>
+    </div>
+    <div class="term" id="t-plafond-condition-d-achat" data-q="plafond (condition d'achat) quantite maximum autorisee, saisie avec l'operateur « egal », qui se lit « au maximum ». il compte les autres commandes, payees ou non. ">
+      <h3 class="t-name">Plafond (condition d'achat)</h3>
+      <p>Quantité maximum autorisée, saisie avec l'opérateur «&nbsp;égal&nbsp;», qui se lit «&nbsp;au maximum&nbsp;». Il compte les autres commandes, payées ou non.</p>
+      
+      <a class="t-link" href="conditions-achat-guide.html#plafonds">Les conditions d'achat › Bien comprendre les plafonds de quantité&nbsp;→</a>
+    </div>
+    <div class="term" id="t-plafond-d-achat-des-conseilleres" data-q="plafond d'achat des conseilleres montant maximum qu'une conseillere peut commander pour elle-meme sur une periode glissante. limiter l'achat des vendeurs">
+      <h3 class="t-name">Plafond d'achat des conseillères</h3>
+      <p>Montant maximum qu'une conseillère peut commander pour elle-même sur une période glissante.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Limiter l'achat des vendeurs&nbsp;»</p>
+      <a class="t-link" href="commandes-parametres.html#s4-1">Paramètres des commandes › Le plafond d'achat&nbsp;→</a>
+    </div>
+    <div class="term" id="t-plan-de-remuneration" data-q="plan de remuneration traduction de votre plan marketing en regles de calcul des commissions. une marque n'a qu'un seul plan. plan de commissionnement">
+      <h3 class="t-name">Plan de rémunération</h3>
+      <p>Traduction de votre plan marketing en règles de calcul des commissions. Une marque n'a qu'un seul plan.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Plan de commissionnement&nbsp;»</p>
+      <a class="t-link" href="plan-remuneration.html#definition">Le plan de rémunération › À quoi sert le plan de rémunération&nbsp;?&nbsp;→</a>
+    </div>
+    <div class="term" id="t-points-de-fidelite" data-q="points de fidelite solde qui s'accumule, converti en euros selon le taux de change et deduit d'une commande, ou echange contre un produit du catalogue en points. les points ne paient pas les frais de port. ">
+      <h3 class="t-name">Points de fidélité</h3>
+      <p>Solde qui s'accumule, converti en euros selon le taux de change et déduit d'une commande, ou échangé contre un produit du catalogue en points. Les points ne paient pas les frais de port.</p>
+      
+      <a class="t-link" href="fidelite-guide.html#points">La fidélité › Les points&nbsp;: valeur, validité et solde&nbsp;→</a>
+    </div>
+    <div class="term" id="t-precompte" data-q="precompte mecanisme par lequel la marque calcule les cotisations sociales de ses conseilleres vdi, retient leur part sur les commissions, ajoute la sienne et verse le tout a l'urssaf. ">
+      <h3 class="t-name">Précompte</h3>
+      <p>Mécanisme par lequel la marque calcule les cotisations sociales de ses conseillères VDI, retient leur part sur les commissions, ajoute la sienne et verse le tout à l'URSSAF.</p>
+      
+      <a class="t-link" href="cotisations-sociales.html#precompte">Cotisations sociales et précompte › Le précompte, en clair&nbsp;→</a>
+    </div>
+    <div class="term" id="t-prime" data-q="prime montant fixe : dans un plan de remuneration, verse quand les conditions sont vraies (negatif, il devient une retenue) ; dans un challenge, ajoute aux commissions une fois le gain « recupere ». prime">
+      <h3 class="t-name">Prime</h3>
+      <p>Montant fixe&nbsp;: dans un plan de rémunération, versé quand les conditions sont vraies (négatif, il devient une retenue)&nbsp;; dans un challenge, ajouté aux commissions une fois le gain «&nbsp;Récupéré&nbsp;».</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Prime&nbsp;»</p>
+      <a class="t-link" href="plan-remuneration.html#calculs">Le plan de rémunération › Les types de calcul&nbsp;→</a>
+    </div>
+    <div class="term" id="t-prix-role" data-q="prix role prix qui remplace le prix normal d'un tarif pour les clientes d'un role (hote, vendeur…) ou pour toutes, eventuellement entre deux dates. le plus bas des prix en cours s'applique. editer les prix roles">
+      <h3 class="t-name">Prix rôle</h3>
+      <p>Prix qui remplace le prix normal d'un tarif pour les clientes d'un rôle (Hôte, Vendeur…) ou pour toutes, éventuellement entre deux dates. Le plus bas des prix en cours s'applique.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Editer les prix rôles&nbsp;»</p>
+      <a class="t-link" href="prix-taxes.html#s3">Prix, prix par rôle et taxes › Les prix par rôle&nbsp;→</a>
+    </div>
+    <div class="term" id="t-produit-groupe" data-q="produit groupe lot fixe : plusieurs produits vendus ensemble en quantites fixes. sans stock propre par defaut, sa disponibilite depend de ses composants. produit groupe">
+      <h3 class="t-name">Produit groupé</h3>
+      <p>Lot fixe&nbsp;: plusieurs produits vendus ensemble en quantités fixes. Sans stock propre par défaut, sa disponibilité dépend de ses composants.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Produit groupé&nbsp;»</p>
+      <a class="t-link" href="produits.html#s3-1">Créer et éditer un produit › Le produit groupé (lot)&nbsp;→</a>
+    </div>
+    <div class="term" id="t-produit-non-commissionne" data-q="produit non commissionne case de la fiche produit qui exclut le produit du ca commissionnable. produit non commissionne">
+      <h3 class="t-name">Produit non commissionné</h3>
+      <p>Case de la fiche produit qui exclut le produit du CA commissionnable.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Produit non commissionné&nbsp;»</p>
+      <a class="t-link" href="plan-remuneration.html#s4-1">Le plan de rémunération › Ce qui compte, ce qui ne compte pas&nbsp;→</a>
+    </div>
+    <div class="term" id="t-produit-simple" data-q="produit simple un article (une bague, un pot de creme), eventuellement decline en tailles ou couleurs. produit simple">
+      <h3 class="t-name">Produit simple</h3>
+      <p>Un article (une bague, un pot de crème), éventuellement décliné en tailles ou couleurs.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Produit simple&nbsp;»</p>
+      <a class="t-link" href="produits.html#types">Créer et éditer un produit › Les types de produit&nbsp;→</a>
+    </div>
+    <div class="term" id="t-produit-virtuel" data-q="produit virtuel case d'un produit simple pour une prestation sans colis. une commande qui n'en contient que ca est terminee des son paiement. produit virtuel">
+      <h3 class="t-name">Produit virtuel</h3>
+      <p>Case d'un produit simple pour une prestation sans colis. Une commande qui n'en contient que ça est terminée dès son paiement.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Produit virtuel&nbsp;»</p>
+      <a class="t-link" href="produits.html#s3-3">Créer et éditer un produit › Le produit virtuel&nbsp;→</a>
+    </div>
+    <div class="term" id="t-produits-suggeres" data-q="produits suggeres produits proposes (sans etre ajoutes) pendant la saisie d'une commande, quand des conditions sont remplies. produits suggeres">
+      <h3 class="t-name">Produits suggérés</h3>
+      <p>Produits proposés (sans être ajoutés) pendant la saisie d'une commande, quand des conditions sont remplies.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Produits suggérés&nbsp;»</p>
+      <a class="t-link" href="commandes-parametres.html#suggeres">Paramètres des commandes › Les produits suggérés&nbsp;→</a>
+    </div>
+  </div>
+</section>
+
+<section id="l-q" class="letter">
+  <div class="sec-head"><span class="sec-num">Q</span><h2>Quota quotidien (assistant IA)</h2></div>
+  <div class="terms">
+    <div class="term" id="t-quota-quotidien-assistant-ia" data-q="quota quotidien (assistant ia) nombre maximum de questions par conseillere sur les 24 dernieres heures glissantes (50 par defaut). questions par conseillere et par jour">
+      <h3 class="t-name">Quota quotidien (assistant IA)</h3>
+      <p>Nombre maximum de questions par conseillère sur les 24 dernières heures glissantes (50 par défaut).</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Questions par conseillère et par jour&nbsp;»</p>
+      <a class="t-link" href="assistant-ia.html#s5-3">L'assistant IA › Le quota quotidien&nbsp;→</a>
+    </div>
+  </div>
+</section>
+
+<section id="l-r" class="letter">
+  <div class="sec-head"><span class="sec-num">R</span><h2>Rapport stock faible <span class="muted">→</span> Rupture de stock autorisée</h2></div>
+  <div class="terms">
+    <div class="term" id="t-rapport-stock-faible" data-q="rapport stock faible liste des produits dont le stock est passe sous votre seuil d'alerte, stocks negatifs compris. rapport stock faible">
+      <h3 class="t-name">Rapport stock faible</h3>
+      <p>Liste des produits dont le stock est passé sous votre seuil d'alerte, stocks négatifs compris.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Rapport stock faible&nbsp;»</p>
+      <a class="t-link" href="rapports-exports.html#stock">Rapports et exports › Rapport stock faible&nbsp;→</a>
+    </div>
+    <div class="term" id="t-recapitulatif-mensuel-des-performances" data-q="recapitulatif mensuel des performances email envoye a chaque conseillere active le jour de la cloture, avec ses indicateurs du mois ecoule, si son modele est actif. recapitulatif mensuel des performances">
+      <h3 class="t-name">Récapitulatif mensuel des performances</h3>
+      <p>Email envoyé à chaque conseillère active le jour de la clôture, avec ses indicateurs du mois écoulé, si son modèle est actif.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Récapitulatif mensuel des performances&nbsp;»</p>
+      <a class="t-link" href="cloture-commissions.html#s5-2">Clôture et versement des commissions › Le récapitulatif mensuel des performances&nbsp;→</a>
+    </div>
+    <div class="term" id="t-recompense" data-q="recompense ce qui est gagne : dans la fidelite, des points, un produit, un code promo ou un bon d'achat ; dans un challenge, une prime, des points, un produit… avec son beneficiaire et ses conditions. ">
+      <h3 class="t-name">Récompense</h3>
+      <p>Ce qui est gagné&nbsp;: dans la fidélité, des points, un produit, un code promo ou un bon d'achat&nbsp;; dans un challenge, une prime, des points, un produit… avec son bénéficiaire et ses conditions.</p>
+      
+      <a class="t-link" href="fidelite-guide.html#recompenses">La fidélité › Les 7 types de récompense&nbsp;→</a>
+    </div>
+    <div class="term" id="t-recrutement-dematerialise" data-q="recrutement dematerialise parcours en ligne qui transforme une candidate en conseillere : formulaire, justificatifs, contrat signe electroniquement, creation du compte, kit de demarrage. formulaires › recrutements">
+      <h3 class="t-name">Recrutement dématérialisé</h3>
+      <p>Parcours en ligne qui transforme une candidate en conseillère&nbsp;: formulaire, justificatifs, contrat signé électroniquement, création du compte, kit de démarrage.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> Formulaires › Recrutements</p>
+      <a class="t-link" href="recrutement-principe.html#definition">Le recrutement dématérialisé › De quoi parle-t-on&nbsp;?&nbsp;→</a>
+    </div>
+    <div class="term" id="t-recruteuse" data-q="recruteuse conseillere qui a fait entrer une autre conseillere dans le reseau. ce lien n'a pas d'historique ; il sert par exemple aux primes de recrutement. recruteur du vendeur, parrain">
+      <h3 class="t-name">Recruteuse</h3>
+      <p>Conseillère qui a fait entrer une autre conseillère dans le réseau. Ce lien n'a pas d'historique&nbsp;; il sert par exemple aux primes de recrutement.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Recruteur du vendeur, parrain&nbsp;»</p>
+      <a class="t-link" href="comprendre-sellingathome.html#s3-1">Comprendre SellingAtHome en 10 minutes › Recruteur et animatrice&nbsp;: deux liens différents&nbsp;→</a>
+    </div>
+    <div class="term" id="t-reduction" data-q="reduction remise sur le prix d'une commande : pourcentage ou montant, sur toute la commande, certains produits ou les frais de port. elle peut etre automatique, manuelle, par code promo ou reservee a des clientes. reductions">
+      <h3 class="t-name">Réduction</h3>
+      <p>Remise sur le prix d'une commande&nbsp;: pourcentage ou montant, sur toute la commande, certains produits ou les frais de port. Elle peut être automatique, manuelle, par code promo ou réservée à des clientes.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Réductions&nbsp;»</p>
+      <a class="t-link" href="reductions-guide.html#definition">Les réductions › Qu'est-ce qu'une réduction&nbsp;?&nbsp;→</a>
+    </div>
+    <div class="term" id="t-reduction-automatique" data-q="reduction automatique reduction qui s'applique toute seule aux commandes qui remplissent ses conditions, et se retire quand ce n'est plus le cas. ">
+      <h3 class="t-name">Réduction automatique</h3>
+      <p>Réduction qui s'applique toute seule aux commandes qui remplissent ses conditions, et se retire quand ce n'est plus le cas.</p>
+      
+      <a class="t-link" href="reductions-guide.html#acces">Les réductions › Automatique, manuelle, code promo ou réservée&nbsp;→</a>
+    </div>
+    <div class="term" id="t-reduction-manuelle" data-q="reduction manuelle reduction proposee dans les reductions disponibles de la commande ; la conseillere choisit de l'appliquer. application manuelle">
+      <h3 class="t-name">Réduction manuelle</h3>
+      <p>Réduction proposée dans les réductions disponibles de la commande&nbsp;; la conseillère choisit de l'appliquer.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Application manuelle&nbsp;»</p>
+      <a class="t-link" href="reductions-guide.html#acces">Les réductions › Automatique, manuelle, code promo ou réservée&nbsp;→</a>
+    </div>
+    <div class="term" id="t-regle-commission" data-q="regle (commission) element du plan de remuneration qui produit une ligne du bulletin ; son nom devient le libelle de la ligne. dans une regle, la premiere valeur entierement vraie s'applique. regle">
+      <h3 class="t-name">Règle (commission)</h3>
+      <p>Élément du plan de rémunération qui produit une ligne du bulletin&nbsp;; son nom devient le libellé de la ligne. Dans une règle, la première valeur entièrement vraie s'applique.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Règle&nbsp;»</p>
+      <a class="t-link" href="plan-remuneration.html#s3-1">Le plan de rémunération › Les quatre niveaux&nbsp;→</a>
+    </div>
+    <div class="term" id="t-regle-fidelite" data-q="regle (fidelite) association d'une action, de conditions et d'une recompense, pour un beneficiaire (onglet hote, client ou vendeur). les conditions se combinent en et ; les regles se cumulent. ">
+      <h3 class="t-name">Règle (fidélité)</h3>
+      <p>Association d'une action, de conditions et d'une récompense, pour un bénéficiaire (onglet Hôte, Client ou Vendeur). Les conditions se combinent en ET&nbsp;; les règles se cumulent.</p>
+      
+      <a class="t-link" href="fidelite-guide.html#principe">La fidélité › Le principe&nbsp;: des règles en quatre parties&nbsp;→</a>
+    </div>
+    <div class="term" id="t-reliquat" data-q="reliquat partie de la cagnotte d'un bon par tranche qui reste apres l'attribution des bons : elle est conservee. a distinguer de la part d'un bon qui depasse la commande, qui est perdue. ">
+      <h3 class="t-name">Reliquat</h3>
+      <p>Partie de la cagnotte d'un bon par tranche qui reste après l'attribution des bons&nbsp;: elle est conservée. À distinguer de la part d'un bon qui dépasse la commande, qui est perdue.</p>
+      
+      <a class="t-link" href="bons-achat-guide.html#s4-1">Les bons d'achat › Le principe&nbsp;: une cagnotte et des paliers&nbsp;→</a>
+    </div>
+    <div class="term" id="t-retour-produit" data-q="retour produit demande de retour faite par une conseillere, avec un motif, a laquelle vous repondez depuis l'espace marque. accepter un retour ne cree ni avoir ni mouvement de stock. retours d'articles">
+      <h3 class="t-name">Retour produit</h3>
+      <p>Demande de retour faite par une conseillère, avec un motif, à laquelle vous répondez depuis l'espace marque. Accepter un retour ne crée ni avoir ni mouvement de stock.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Retours d'articles&nbsp;»</p>
+      <a class="t-link" href="retours-produits.html#definition">Les retours produits › À quoi sert le module retours&nbsp;?&nbsp;→</a>
+    </div>
+    <div class="term" id="t-retroactif" data-q="retroactif option d'un challenge qui prend en compte l'activite realisee avant sa creation, si elle est dans la periode. est retroactif">
+      <h3 class="t-name">Rétroactif</h3>
+      <p>Option d'un challenge qui prend en compte l'activité réalisée avant sa création, si elle est dans la période.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Est rétroactif&nbsp;»</p>
+      <a class="t-link" href="challenges-guide.html#s4-2">Les challenges › Les autres réglages de la période&nbsp;→</a>
+    </div>
+    <div class="term" id="t-reunion" data-q="reunion une conseillere presente vos produits chez une hotesse, devant des invitees. toutes les commandes passees a cette occasion y sont rattachees. reunion, atelier">
+      <h3 class="t-name">Réunion</h3>
+      <p>Une conseillère présente vos produits chez une hôtesse, devant des invitées. Toutes les commandes passées à cette occasion y sont rattachées.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Réunion, atelier&nbsp;»</p>
+      <a class="t-link" href="reunion-cycle-de-vie.html#definition">Le cycle de vie d'une réunion › Qu'est-ce qu'une réunion&nbsp;?&nbsp;→</a>
+    </div>
+    <div class="term" id="t-reunion-prise-dans-une-reunion" data-q="reunion prise dans une reunion reunion creee a partir d'une autre, quand une invitee prend date : un indicateur du « rebond » de vos reunions. reunion redatee">
+      <h3 class="t-name">Réunion prise dans une réunion</h3>
+      <p>Réunion créée à partir d'une autre, quand une invitée prend date&nbsp;: un indicateur du «&nbsp;rebond&nbsp;» de vos réunions.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Réunion redatée&nbsp;»</p>
+      <a class="t-link" href="reunion-cycle-de-vie.html#s2-3">Le cycle de vie d'une réunion › La réunion prise dans une réunion&nbsp;→</a>
+    </div>
+    <div class="term" id="t-reunion-virtuelle" data-q="reunion virtuelle reunion ordinaire qui se tient en visio, aux couleurs de votre marque, limitee a 12 participants. ses commandes sont des ventes en reunion. ">
+      <h3 class="t-name">Réunion virtuelle</h3>
+      <p>Réunion ordinaire qui se tient en visio, aux couleurs de votre marque, limitée à 12 participants. Ses commandes sont des ventes en réunion.</p>
+      
+      <a class="t-link" href="reunion-virtuelle.html#definition">Réunion virtuelle et live › Qu'est-ce qu'une réunion virtuelle&nbsp;?&nbsp;→</a>
+    </div>
+    <div class="term" id="t-role-client" data-q="role client etiquette posee sur une cliente (« hote », « vip »…), utilisee dans les prix, les reductions, la fidelite, les conditions d'achat et les segments. ">
+      <h3 class="t-name">Rôle client</h3>
+      <p>Étiquette posée sur une cliente («&nbsp;Hôte&nbsp;», «&nbsp;VIP&nbsp;»…), utilisée dans les prix, les réductions, la fidélité, les conditions d'achat et les segments.</p>
+      
+      <a class="t-link" href="clients.html#roles">Les clientes › Les rôles clients&nbsp;→</a>
+    </div>
+    <div class="term" id="t-role-de-conseillere" data-q="role de conseillere etiquette libre (« formatrice », « ambassadrice »…), cumulable, qui ne change jamais automatiquement. elle sert notamment a reserver des produits ou des categories. gerer les roles (menu vendeurs)">
+      <h3 class="t-name">Rôle de conseillère</h3>
+      <p>Étiquette libre («&nbsp;Formatrice&nbsp;», «&nbsp;Ambassadrice&nbsp;»…), cumulable, qui ne change jamais automatiquement. Elle sert notamment à réserver des produits ou des catégories.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> Gérer les rôles (menu Vendeurs)</p>
+      <a class="t-link" href="roles-conseilleres.html#definition">Rôles des conseillères › Qu'est-ce qu'un rôle&nbsp;?&nbsp;→</a>
+    </div>
+    <div class="term" id="t-roles-systeme" data-q="roles systeme roles clients attribues automatiquement par sellingathome (hote, seller, sponsor, sponsored…). ils n'apparaissent pas dans « gerer les roles ». ">
+      <h3 class="t-name">Rôles système</h3>
+      <p>Rôles clients attribués automatiquement par SellingAtHome (Hôte, Seller, Sponsor, Sponsored…). Ils n'apparaissent pas dans «&nbsp;Gérer les rôles&nbsp;».</p>
+      
+      <a class="t-link" href="clients.html#s7-1">Les clientes › Les rôles système&nbsp;→</a>
+    </div>
+    <div class="term" id="t-roles-vendeur" data-q="roles vendeur champ d'un produit ou d'une categorie qui les reserve aux conseilleres ayant au moins un des roles choisis. vide, tout le monde les voit. roles vendeur">
+      <h3 class="t-name">Rôles vendeur</h3>
+      <p>Champ d'un produit ou d'une catégorie qui les réserve aux conseillères ayant au moins un des rôles choisis. Vide, tout le monde les voit.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Rôles vendeur&nbsp;»</p>
+      <a class="t-link" href="roles-conseilleres.html#s4-1">Rôles des conseillères › Réserver une partie du catalogue&nbsp;→</a>
+    </div>
+    <div class="term" id="t-rupture-de-stock-autorisee" data-q="rupture de stock autorisee option d'un produit suivi qui permet de continuer a le vendre epuise : le stock passe en negatif. autoriser la rupture de stock">
+      <h3 class="t-name">Rupture de stock autorisée</h3>
+      <p>Option d'un produit suivi qui permet de continuer à le vendre épuisé&nbsp;: le stock passe en négatif.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Autoriser la rupture de stock&nbsp;»</p>
+      <a class="t-link" href="stocks.html#s4">Les stocks › Rupture et stock à venir&nbsp;→</a>
+    </div>
+  </div>
+</section>
+
+<section id="l-s" class="letter">
+  <div class="sec-head"><span class="sec-num">S</span><h2>Segment <span class="muted">→</span> Suppression (commande)</h2></div>
+  <div class="terms">
+    <div class="term" id="t-segment" data-q="segment groupe de clientes defini par des filtres combines en et, recalcule a chaque utilisation. un segment ne declenche rien : il sert a trouver, relancer et exporter. gerer les segments">
+      <h3 class="t-name">Segment</h3>
+      <p>Groupe de clientes défini par des filtres combinés en ET, recalculé à chaque utilisation. Un segment ne déclenche rien&nbsp;: il sert à trouver, relancer et exporter.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Gérer les segments&nbsp;»</p>
+      <a class="t-link" href="segments.html#definition">Les segments de clientes › Qu'est-ce qu'un segment&nbsp;?&nbsp;→</a>
+    </div>
+    <div class="term" id="t-seuil-de-stock-faible" data-q="seuil de stock faible stock a partir duquel un produit apparait dans le rapport de stock faible et prend un badge orange chez les conseilleres. ">
+      <h3 class="t-name">Seuil de stock faible</h3>
+      <p>Stock à partir duquel un produit apparaît dans le rapport de stock faible et prend un badge orange chez les conseillères.</p>
+      
+      <a class="t-link" href="configuration-generale.html#s7-1">La configuration de la marque › Seuil de stock faible&nbsp;→</a>
+    </div>
+    <div class="term" id="t-signataire-de-la-marque" data-q="signataire de la marque personne de votre equipe qui recoit les nouvelles candidatures et signe les contrats au nom de la marque. elle est declaree par sellingathome. ">
+      <h3 class="t-name">Signataire de la marque</h3>
+      <p>Personne de votre équipe qui reçoit les nouvelles candidatures et signe les contrats au nom de la marque. Elle est déclarée par SellingAtHome.</p>
+      
+      <a class="t-link" href="recrutement-principe.html#acteurs">Le recrutement dématérialisé › Les acteurs&nbsp;→</a>
+    </div>
+    <div class="term" id="t-sku" data-q="sku identifiant d'une combinaison, utilise notamment par l'import des stocks et les logisticiens. ">
+      <h3 class="t-name">SKU</h3>
+      <p>Identifiant d'une combinaison, utilisé notamment par l'import des stocks et les logisticiens.</p>
+      
+      <a class="t-link" href="attributs-declinaisons.html#s5-3">Catégories, attributs et déclinaisons › SKU et code-barres&nbsp;→</a>
+    </div>
+    <div class="term" id="t-statut-conseillere" data-q="statut (conseillere) niveau de la conseillere dans votre plan de carriere (conseillere, animatrice, manager…). c'est le statut officiel qu'utilisent les commissions. statut">
+      <h3 class="t-name">Statut (conseillère)</h3>
+      <p>Niveau de la conseillère dans votre plan de carrière (conseillère, animatrice, manager…). C'est le statut officiel qu'utilisent les commissions.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Statut&nbsp;»</p>
+      <a class="t-link" href="statuts.html#definition">Statuts et automatisation › À quoi sert un statut&nbsp;?&nbsp;→</a>
+    </div>
+    <div class="term" id="t-statut-a-vie" data-q="statut a vie option : le plus haut niveau jamais atteint par la conseillere. il ne descend jamais seul. statut a vie">
+      <h3 class="t-name">Statut à vie</h3>
+      <p>Option&nbsp;: le plus haut niveau jamais atteint par la conseillère. Il ne descend jamais seul.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Statut à vie&nbsp;»</p>
+      <a class="t-link" href="statuts.html#trois">Statuts et automatisation › Trois statuts par conseillère&nbsp;→</a>
+    </div>
+    <div class="term" id="t-statut-d-expedition" data-q="statut d'expedition logistique d'une commande : des le paiement « commande non expediee », puis expediee, livree… seul le passage en « commande livree » termine la commande. ">
+      <h3 class="t-name">Statut d'expédition</h3>
+      <p>Logistique d'une commande&nbsp;: dès le paiement «&nbsp;Commande non expédiée&nbsp;», puis expédiée, livrée… Seul le passage en «&nbsp;Commande livrée&nbsp;» termine la commande.</p>
+      
+      <a class="t-link" href="commandes-comprendre.html#s3-3">Comprendre les commandes › Le statut d'expédition&nbsp;→</a>
+    </div>
+    <div class="term" id="t-statut-de-gestion" data-q="statut de gestion avancement du traitement d'une commande : creee, en cours, signee, en preparation, terminee, partiellement annulee, annulee, supprimee. ">
+      <h3 class="t-name">Statut de gestion</h3>
+      <p>Avancement du traitement d'une commande&nbsp;: Créée, En cours, Signée, En préparation, Terminée, Partiellement annulée, Annulée, Supprimée.</p>
+      
+      <a class="t-link" href="commandes-comprendre.html#s3-1">Comprendre les commandes › Le statut de gestion&nbsp;→</a>
+    </div>
+    <div class="term" id="t-statut-de-la-societe" data-q="statut de la societe statut juridique de la conseillere (vdi, auto-entrepreneur…), a ne pas confondre avec son statut de carriere. societe">
+      <h3 class="t-name">Statut de la société</h3>
+      <p>Statut juridique de la conseillère (VDI, auto-entrepreneur…), à ne pas confondre avec son statut de carrière.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Société&nbsp;»</p>
+      <a class="t-link" href="statuts.html#definition">Statuts et automatisation › À quoi sert un statut&nbsp;?&nbsp;→</a>
+    </div>
+    <div class="term" id="t-statut-de-paiement" data-q="statut de paiement reglement d'une commande : en attente de paiement, payee, puis encaissee si vous validez les encaissements. ">
+      <h3 class="t-name">Statut de paiement</h3>
+      <p>Règlement d'une commande&nbsp;: En attente de paiement, Payée, puis Encaissée si vous validez les encaissements.</p>
+      
+      <a class="t-link" href="commandes-comprendre.html#s3-2">Comprendre les commandes › Le statut de paiement&nbsp;→</a>
+    </div>
+    <div class="term" id="t-statut-estime" data-q="statut estime statut que la conseillere obtiendrait si le mois se terminait aujourd'hui, recalcule chaque nuit. il ne change rien d'officiel. statut estime">
+      <h3 class="t-name">Statut estimé</h3>
+      <p>Statut que la conseillère obtiendrait si le mois se terminait aujourd'hui, recalculé chaque nuit. Il ne change rien d'officiel.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Statut estimé&nbsp;»</p>
+      <a class="t-link" href="statuts.html#trois">Statuts et automatisation › Trois statuts par conseillère&nbsp;→</a>
+    </div>
+    <div class="term" id="t-statut-minimum" data-q="statut minimum reserve un document de la base de connaissances aux conseilleres d'un certain niveau de statut. statut minimum du vendeur">
+      <h3 class="t-name">Statut minimum</h3>
+      <p>Réserve un document de la base de connaissances aux conseillères d'un certain niveau de statut.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Statut minimum du vendeur&nbsp;»</p>
+      <a class="t-link" href="base-documentaire.html#s3-3">Documents, FAQ et formations › Le statut minimum&nbsp;→</a>
+    </div>
+    <div class="term" id="t-statut-par-defaut" data-q="statut par defaut statut donne automatiquement a toute nouvelle conseillere. sans ce reglage, elle n'a pas de statut. a la creation statut par defaut =">
+      <h3 class="t-name">Statut par défaut</h3>
+      <p>Statut donné automatiquement à toute nouvelle conseillère. Sans ce réglage, elle n'a pas de statut.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;A la création statut par défaut =&nbsp;»</p>
+      <a class="t-link" href="statuts.html#defaut">Statuts et automatisation › Le statut par défaut&nbsp;→</a>
+    </div>
+    <div class="term" id="t-stock-a-venir" data-q="stock a venir quantite attendue, avec sa date de reapprovisionnement, qui plafonne la vente a decouvert quand la rupture est autorisee. stock a venir">
+      <h3 class="t-name">Stock à venir</h3>
+      <p>Quantité attendue, avec sa date de réapprovisionnement, qui plafonne la vente à découvert quand la rupture est autorisée.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Stock à venir&nbsp;»</p>
+      <a class="t-link" href="stocks.html#s4">Les stocks › Rupture et stock à venir&nbsp;→</a>
+    </div>
+    <div class="term" id="t-stock-mobilise" data-q="stock mobilise quantites presentes dans les commandes en cours (non payees), puisque le stock baisse des l'ajout au panier. stock mobilise">
+      <h3 class="t-name">Stock mobilisé</h3>
+      <p>Quantités présentes dans les commandes en cours (non payées), puisque le stock baisse dès l'ajout au panier.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Stock mobilisé&nbsp;»</p>
+      <a class="t-link" href="stocks.html#s3-1">Les stocks › Le stock mobilisé&nbsp;→</a>
+    </div>
+    <div class="term" id="t-suivi-d-equipe" data-q="suivi d'equipe ecran qui compare l'activite du reseau, ou d'une conseillere et de son equipe, entre deux periodes. les chiffres sont calcules chaque nuit. suivi d'equipe">
+      <h3 class="t-name">Suivi d'équipe</h3>
+      <p>Écran qui compare l'activité du réseau, ou d'une conseillère et de son équipe, entre deux périodes. Les chiffres sont calculés chaque nuit.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Suivi d'équipe&nbsp;»</p>
+      <a class="t-link" href="suivi-equipe.html#definition">Suivi d'équipe › À quoi sert le suivi d'équipe&nbsp;→</a>
+    </div>
+    <div class="term" id="t-suppression-commande" data-q="suppression (commande) possible seulement pour une commande jamais payee ; elle disparait alors des listes. une commande payee s'annule. ">
+      <h3 class="t-name">Suppression (commande)</h3>
+      <p>Possible seulement pour une commande jamais payée&nbsp;; elle disparaît alors des listes. Une commande payée s'annule.</p>
+      
+      <a class="t-link" href="commandes-comprendre.html#s5-1">Comprendre les commandes › Supprimer une commande non payée&nbsp;→</a>
+    </div>
+  </div>
+</section>
+
+<section id="l-t" class="letter">
+  <div class="sec-head"><span class="sec-num">T</span><h2>Tableau de bord <span class="muted">→</span> Type de commande</h2></div>
+  <div class="terms">
+    <div class="term" id="t-tableau-de-bord" data-q="tableau de bord page d'accueil de l'espace marque : chiffre d'affaires, moyennes, compteurs, graphiques et palmares sur la periode choisie. tableau de bord">
+      <h3 class="t-name">Tableau de bord</h3>
+      <p>Page d'accueil de l'espace marque&nbsp;: chiffre d'affaires, moyennes, compteurs, graphiques et palmarès sur la période choisie.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Tableau de bord&nbsp;»</p>
+      <a class="t-link" href="espace-marque.html#dashboard">Découvrir l'espace marque › Le tableau de bord&nbsp;→</a>
+    </div>
+    <div class="term" id="t-tarif" data-q="tarif prix d'un produit pour un pays, lie a une taxe. un seul tarif par pays ; saisi ttc, il est conserve ht. tarifs">
+      <h3 class="t-name">Tarif</h3>
+      <p>Prix d'un produit pour un pays, lié à une taxe. Un seul tarif par pays&nbsp;; saisi TTC, il est conservé HT.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Tarifs&nbsp;»</p>
+      <a class="t-link" href="prix-taxes.html#s1">Prix, prix par rôle et taxes › Les principes&nbsp;→</a>
+    </div>
+    <div class="term" id="t-taux-de-change-points" data-q="taux de change (points) valeur en euros d'un point au moment ou il est depense. il depend du role de la personne qui depense. 1 point = … €">
+      <h3 class="t-name">Taux de change (points)</h3>
+      <p>Valeur en euros d'un point au moment où il est dépensé. Il dépend du rôle de la personne qui dépense.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;1 point = … €&nbsp;»</p>
+      <a class="t-link" href="fidelite-guide.html#s10-1">La fidélité › Le taux de change&nbsp;→</a>
+    </div>
+    <div class="term" id="t-terminee-commande" data-q="terminee (commande) statut de gestion d'une commande payee qui est livree, ou qui n'avait rien a livrer. une commande seulement expediee n'est pas terminee. terminee">
+      <h3 class="t-name">Terminée (commande)</h3>
+      <p>Statut de gestion d'une commande payée qui est livrée, ou qui n'avait rien à livrer. Une commande seulement expédiée n'est pas terminée.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Terminée&nbsp;»</p>
+      <a class="t-link" href="commandes-comprendre.html#s4-1">Comprendre les commandes › Quand une commande devient-elle «&nbsp;Terminée&nbsp;»&nbsp;?&nbsp;→</a>
+    </div>
+    <div class="term" id="t-terminee-reunion" data-q="terminee (reunion) statut d'une reunion cloturee, par la conseillere ou automatiquement. terminee">
+      <h3 class="t-name">Terminée (réunion)</h3>
+      <p>Statut d'une réunion clôturée, par la conseillère ou automatiquement.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Terminée&nbsp;»</p>
+      <a class="t-link" href="reunion-cycle-de-vie.html#statuts">Le cycle de vie d'une réunion › Les trois statuts&nbsp;→</a>
+    </div>
+    <div class="term" id="t-type-d-activite" data-q="type d'activite modele d'activite cree par la marque (nom, description, documents), propose seulement aux conseilleres concernees par son attribution. ">
+      <h3 class="t-name">Type d'activité</h3>
+      <p>Modèle d'activité créé par la marque (nom, description, documents), proposé seulement aux conseillères concernées par son attribution.</p>
+      
+      <a class="t-link" href="activites.html#creer">Activités et agenda › Créer un type d'activité&nbsp;→</a>
+    </div>
+    <div class="term" id="t-type-de-commande" data-q="type de commande origine de la commande (reunion, vente directe, web, cadeau, mini-boutique…). il conditionne livraison, paiement, reductions et statistiques. ">
+      <h3 class="t-name">Type de commande</h3>
+      <p>Origine de la commande (réunion, vente directe, web, cadeau, mini-boutique…). Il conditionne livraison, paiement, réductions et statistiques.</p>
+      
+      <a class="t-link" href="commandes-comprendre.html#types">Comprendre les commandes › Les types de commande&nbsp;→</a>
+    </div>
+  </div>
+</section>
+
+<section id="l-v" class="letter">
+  <div class="sec-head"><span class="sec-num">V</span><h2>Validité (bon d'achat) <span class="muted">→</span> Verrous après clôture</h2></div>
+  <div class="terms">
+    <div class="term" id="t-validite-bon-d-achat" data-q="validite (bon d'achat) dates pendant lesquelles un bon attribue peut etre utilise. la date de fin est exclue. ">
+      <h3 class="t-name">Validité (bon d'achat)</h3>
+      <p>Dates pendant lesquelles un bon attribué peut être utilisé. La date de fin est exclue.</p>
+      
+      <a class="t-link" href="bons-achat-guide.html#s7-2">Les bons d'achat › Validité&nbsp;→</a>
+    </div>
+    <div class="term" id="t-validite-points" data-q="validite (points) duree au-dela de laquelle chaque gain de points expire, si votre marque l'a activee. aucune alerte n'est envoyee avant l'expiration. ">
+      <h3 class="t-name">Validité (points)</h3>
+      <p>Durée au-delà de laquelle chaque gain de points expire, si votre marque l'a activée. Aucune alerte n'est envoyée avant l'expiration.</p>
+      
+      <a class="t-link" href="fidelite-guide.html#s10-2">La fidélité › La durée de validité&nbsp;→</a>
+    </div>
+    <div class="term" id="t-vdi" data-q="vdi vendeur a domicile independant : le statut des conseilleres, et le nom que l'espace marque leur donne souvent. vdi, vendeur">
+      <h3 class="t-name">VDI</h3>
+      <p>Vendeur à domicile indépendant&nbsp;: le statut des conseillères, et le nom que l'espace marque leur donne souvent.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;VDI, Vendeur&nbsp;»</p>
+      <a class="t-link" href="comprendre-sellingathome.html#vocabulaire">Comprendre SellingAtHome en 10 minutes › Le vocabulaire&nbsp;→</a>
+    </div>
+    <div class="term" id="t-vendeurs-actifs" data-q="vendeurs actifs au tableau de bord : les conseilleres avec au moins une commande payee sur la periode. dans l'onglet commissions : celles dont le ca commissionnable du mois est positif. vendeurs actifs">
+      <h3 class="t-name">Vendeurs actifs</h3>
+      <p>Au tableau de bord&nbsp;: les conseillères avec au moins une commande payée sur la période. Dans l'onglet Commissions&nbsp;: celles dont le CA commissionnable du mois est positif.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Vendeurs actifs&nbsp;»</p>
+      <a class="t-link" href="espace-marque.html#s4-4">Découvrir l'espace marque › Les compteurs&nbsp;→</a>
+    </div>
+    <div class="term" id="t-vente-directe" data-q="vente directe vente en dehors de toute reunion (une cliente qui recommande, un achat de la conseillere pour elle-meme…). vente directe">
+      <h3 class="t-name">Vente directe</h3>
+      <p>Vente en dehors de toute réunion (une cliente qui recommande, un achat de la conseillère pour elle-même…).</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Vente directe&nbsp;»</p>
+      <a class="t-link" href="commandes-comprendre.html#s2-1">Comprendre les commandes › Les quatre types principaux&nbsp;→</a>
+    </div>
+    <div class="term" id="t-vente-en-reunion" data-q="vente en reunion commande saisie pendant une reunion, pour l'hotesse ou une invitee, toujours rattachee a la reunion. vente en reunion">
+      <h3 class="t-name">Vente en réunion</h3>
+      <p>Commande saisie pendant une réunion, pour l'hôtesse ou une invitée, toujours rattachée à la réunion.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Vente en réunion&nbsp;»</p>
+      <a class="t-link" href="commandes-comprendre.html#s2-1">Comprendre les commandes › Les quatre types principaux&nbsp;→</a>
+    </div>
+    <div class="term" id="t-verrous-apres-cloture" data-q="verrous apres cloture actions que la conseillere ne peut plus faire une fois la reunion terminee (changement d'hotesse, de date, ajout de commande…), case par case selon votre reglage. ">
+      <h3 class="t-name">Verrous après clôture</h3>
+      <p>Actions que la conseillère ne peut plus faire une fois la réunion terminée (changement d'hôtesse, de date, ajout de commande…), case par case selon votre réglage.</p>
+      
+      <a class="t-link" href="reunion-cycle-de-vie.html#s5-4">Le cycle de vie d'une réunion › Après la clôture&nbsp;: les verrous&nbsp;→</a>
+    </div>
+  </div>
+</section>
+
+<section id="l-z" class="letter">
+  <div class="sec-head"><span class="sec-num">Z</span><h2>Zone d'informations <span class="muted">→</span> Zone de taxe</h2></div>
+  <div class="terms">
+    <div class="term" id="t-zone-d-informations" data-q="zone d'informations message affiche aux conseilleres sur la page de saisie des commandes, permanent ou entre deux dates (date de fin exclue). zones d'informations page commande">
+      <h3 class="t-name">Zone d'informations</h3>
+      <p>Message affiché aux conseillères sur la page de saisie des commandes, permanent ou entre deux dates (date de fin exclue).</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Zones d'informations page commande&nbsp;»</p>
+      <a class="t-link" href="commandes-parametres.html#zones">Paramètres des commandes › Les zones d'informations de la page commande&nbsp;→</a>
+    </div>
+    <div class="term" id="t-zone-de-taxe" data-q="zone de taxe regroupement de plusieurs pays (une taxe par pays) pour creer en une fois un tarif au meme prix ttc dans chacun. zones de taxes">
+      <h3 class="t-name">Zone de taxe</h3>
+      <p>Regroupement de plusieurs pays (une taxe par pays) pour créer en une fois un tarif au même prix TTC dans chacun.</p>
+      <p class="t-ui"><span>Dans l'espace marque</span> «&nbsp;Zones de taxes&nbsp;»</p>
+      <a class="t-link" href="prix-taxes.html#s4-2">Prix, prix par rôle et taxes › Les zones de taxe&nbsp;→</a>
+    </div>
+  </div>
+</section>
+
+  </main>
+</div>
+
+<script>
+(function () {
+  var input = document.getElementById('glq');
+  if (!input) return;
+  var terms = Array.prototype.slice.call(document.querySelectorAll('.term'));
+  var letters = Array.prototype.slice.call(document.querySelectorAll('section.letter'));
+  var count = document.getElementById('glCount'), empty = document.getElementById('glEmpty');
+  function norm(s) { return (s || '').normalize ? s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim() : (s || '').toLowerCase().trim(); }
+  function apply() {
+    var words = norm(input.value).split(/\s+/).filter(Boolean), shown = 0;
+    terms.forEach(function (t) {
+      var q = t.getAttribute('data-q') || '';
+      var ok = words.every(function (w) { return q.indexOf(w) !== -1; });
+      t.classList.toggle('hidden', !ok);
+      if (ok) shown++;
+    });
+    letters.forEach(function (sec) {
+      var any = sec.querySelector('.term:not(.hidden)');
+      sec.classList.toggle('hidden', !any);
+      var li = document.querySelector('.toc li[data-sec="' + sec.id + '"]');
+      if (li) li.classList.toggle('empty', !any);
+    });
+    count.textContent = shown + (shown > 1 ? ' termes' : ' terme');
+    empty.style.display = shown ? 'none' : 'flex';
+  }
+  input.addEventListener('input', apply);
+  input.addEventListener('keydown', function (e) { if (e.key === 'Escape') { input.value = ''; apply(); } });
+})();
+</script>

@@ -1,0 +1,284 @@
+<!--page {"title":"Gérer les conseillères"} -->
+<style>
+.timeline { display:flex; flex-direction:column; border-left:3px solid var(--rule); margin-left:10px; }
+.tl { position:relative; padding:0 0 20px 28px; }
+.tl::before { content:""; position:absolute; left:-9px; top:4px; width:15px; height:15px; border-radius:50%; background:var(--card); border:3px solid var(--accent); }
+.tl.stop::before { border-color:var(--pink); }
+.tl b { color:var(--heading); display:block; }
+.tl p { color:var(--muted); font-size:.93rem; margin-top:4px; }
+.chip { display:inline-block; border-radius:100px; padding:3px 11px; font-size:.78rem; font-weight:700; background:var(--surface); color:var(--heading); border:1px solid var(--rule); }
+.chip.g { background:var(--accent-wash); color:var(--accent-ink); border-color:transparent; }
+.chip.p { background:var(--pink-wash); color:var(--pink-ink); border-color:transparent; }
+.opts td:first-child { width:32%; }
+.tabs-map { display:grid; grid-template-columns:repeat(auto-fit, minmax(210px,1fr)); gap:12px; }
+.tabs-map .card { border-top:5px solid var(--accent); }
+.tabs-map .card:nth-child(3n+2) { border-top-color:var(--pink); }
+.tabs-map .card:nth-child(3n) { border-top-color:var(--yellow); }
+.tabs-map .card p { font-size:.92rem; }
+</style>
+<header class="hero">
+  <div class="hero-in">
+    <div>
+      <span class="eyebrow">Réseau et rémunération</span>
+      <h1>Gérer <span class="script">les conseillères</span></h1>
+      <p class="lede">La liste de vos conseillères, l'ajout d'une nouvelle conseillère, sa fiche et tous les onglets de la fiche d'édition&nbsp;: rattachement, statut, fonctionnalités activées, verrouillage de l'accès, mot de passe, coordonnées bancaires, stock.</p>
+    </div>
+    <div class="voucher-art" aria-hidden="true">
+      <div class="v-top"><span>Conseillère</span><span>N° 11</span></div>
+      <div class="v-amount">Léa<span> B.</span></div>
+      <div class="v-name">Accès déverrouillé</div>
+      <div class="v-sep"></div>
+      <div class="v-meta"><span>Statut <b>Conseillère</b></span><span>Animatrice <b>Sophie</b></span></div>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="toc" aria-label="Sommaire">
+    <details id="tocDetails" open>
+      <summary>Sommaire</summary>
+      <div class="toc-title">Sommaire</div>
+      <ol>
+        <li data-sec="definition"><a href="#definition"><span class="toc-n">1</span>Une conseillère dans SellingAtHome</a></li>
+        <li data-sec="ou"><a href="#ou"><span class="toc-n">2</span>Où trouver vos conseillères</a></li>
+        <li data-sec="liste"><a href="#liste"><span class="toc-n">3</span>La liste</a>
+          <ol class="toc-sub"><li><a href="#s3-1"><span class="toc-n">3.1</span>Les colonnes</a></li><li><a href="#s3-2"><span class="toc-n">3.2</span>Rechercher et filtrer</a></li><li><a href="#s3-3"><span class="toc-n">3.3</span>Les onglets du haut</a></li></ol>
+        </li>
+        <li data-sec="ajout"><a href="#ajout"><span class="toc-n">4</span>Ajouter une conseillère</a></li>
+        <li data-sec="fiche"><a href="#fiche"><span class="toc-n">5</span>La fiche (consultation)</a></li>
+        <li data-sec="edition"><a href="#edition"><span class="toc-n">6</span>La fiche d'édition</a>
+          <ol class="toc-sub"><li><a href="#s6-1"><span class="toc-n">6.1</span>Informations générales</a></li><li><a href="#s6-2"><span class="toc-n">6.2</span>Gestion du vendeur</a></li><li><a href="#s6-3"><span class="toc-n">6.3</span>Sécurité</a></li><li><a href="#s6-4"><span class="toc-n">6.4</span>Informations bancaires</a></li><li><a href="#s6-5"><span class="toc-n">6.5</span>Les autres onglets</a></li></ol>
+        </li>
+        <li data-sec="espace"><a href="#espace"><span class="toc-n">7</span>Ouvrir l'espace de la conseillère</a></li>
+        <li data-sec="client"><a href="#client"><span class="toc-n">8</span>Son compte client</a></li>
+        <li data-sec="attention"><a href="#attention"><span class="toc-n">9</span>Points d'attention</a></li>
+        <li data-sec="faq"><a href="#faq"><span class="toc-n">10</span>Questions fréquentes</a></li>
+      </ol>
+    </details>
+  </nav>
+
+  <main>
+
+<!-- 1 -->
+<section id="definition">
+  <div class="sec-head"><span class="sec-num">01</span><h2>Une conseillère dans SellingAtHome</h2></div>
+  <p class="lede">Chaque conseillère a un <strong>compte</strong> qui lui ouvre son espace (sur ordinateur et sur l'application). Ce compte porte ses coordonnées, sa place dans le réseau (recruteur, animatrice), son <strong>statut</strong>, ses <strong>rôles</strong>, et un interrupteur essentiel&nbsp;: l'<strong>accès</strong>, verrouillé ou déverrouillé.</p>
+  <div class="example"><span class="ex-label">Exemple</span><p>Léa vient de signer son contrat. Vous créez sa fiche, vous la rattachez à Sophie, son animatrice, puis vous <strong>déverrouillez son accès</strong>&nbsp;: Léa reçoit alors l'email qui lui permet d'activer son compte et de se connecter.</p></div>
+  <div class="tip"><span class="ex-label">Vocabulaire</span><p>Dans l'espace marque, la conseillère est appelée <strong>vendeur</strong>, la recruteuse <strong>recruteur du vendeur</strong> et l'animatrice <strong>animateur du vendeur</strong>. Cette page cite les libellés exactement comme à l'écran.</p></div>
+</section>
+
+<!-- 2 -->
+<section id="ou">
+  <div class="sec-head"><span class="sec-num">02</span><h2>Où trouver vos conseillères</h2></div>
+  <div class="figrow">
+    <figure><img src="Captures/Reseau/menu-vendeurs.png" alt="Menu Vendeurs ouvert : Vendeurs, Suivi d'équipe, Gérer les rôles, Gérer les statuts, Entreposage" loading="lazy"><figcaption>Le menu Vendeurs.</figcaption></figure>
+    <div class="prose" style="display:flex;flex-direction:column;gap:12px">
+      <div class="path" aria-label="Chemin d'accès"><span>Espace marque</span><span>Vendeurs</span><span><b>Vendeurs</b></span></div>
+      <p>Le menu <strong>Vendeurs</strong> regroupe tout ce qui concerne votre réseau&nbsp;:</p>
+      <ul class="prose">
+        <li><strong>Vendeurs</strong>&nbsp;: la liste, objet de cette page&nbsp;;</li>
+        <li><strong>Suivi d'équipe</strong>&nbsp;: voir <a href="suivi-equipe.html">Suivi d'équipe</a>&nbsp;;</li>
+        <li><strong>Gérer les rôles</strong>&nbsp;: voir <a href="roles-conseilleres.html">Rôles des conseillères</a>&nbsp;;</li>
+        <li><strong>Gérer les statuts</strong>&nbsp;: voir <a href="statuts.html">Statuts et automatisation</a>&nbsp;;</li>
+        <li><strong>Entreposage</strong> <span class="tag yellow" style="display:inline-block">Module optionnel</span>&nbsp;: voir <a href="stock-conseilleres.html">Stocks chez les conseillères</a>.</li>
+      </ul>
+      <p class="muted">Certaines entrées n'apparaissent que si le module correspondant est activé pour votre marque.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 3 -->
+<section id="liste">
+  <div class="sec-head"><span class="sec-num">03</span><h2>La liste</h2></div>
+  <figure><img src="Captures/Reseau/liste-conseilleres.png" alt="Liste des vendeurs : onglets Liste, Carte, Graph, Commissions, Cotisations Sociales, Récompenses de challenges, Notifications ; bouton Filtrer, recherche ; colonnes #, Nom, Prénom, Email, Crée le, Date de début d'activité du vendeur, Dernière connexion, et boutons d'action" loading="lazy"><figcaption>La liste des conseillères (noms fictifs).</figcaption></figure>
+
+  <h3 id="s3-1"><span class="sub-num">3.1</span> Les colonnes</h3>
+  <div class="table-wrap"><table class="opts">
+    <thead><tr><th>Colonne</th><th>Ce qu'elle contient</th></tr></thead>
+    <tbody>
+      <tr><td><b>#</b></td><td>Le numéro de la conseillère. Selon votre réglage, c'est son numéro interne SellingAtHome ou un numéro d'affichage (sa référence dans votre logiciel s'il y en a une).</td></tr>
+      <tr><td><b>Seller parent n+2</b>, <b>Seller parent n+1</b></td><td>Sur option&nbsp;: l'animatrice de la conseillère (n+1) et l'animatrice de cette animatrice (n+2). 10 marques sur 35 les affichent.</td></tr>
+      <tr><td><b>Nom</b>, <b>Prénom</b>, <b>Email</b></td><td>L'identité de la conseillère. L'email est aussi son identifiant de connexion.</td></tr>
+      <tr><td><b>Crée le</b></td><td>La date de création du compte sur SellingAtHome. Un badge «&nbsp;Nouveau&nbsp;!&nbsp;» signale les comptes créés depuis moins de 7 jours.</td></tr>
+      <tr><td><b>Date de début d'activité du vendeur</b></td><td>La date de sa <strong>première commande payée</strong>, renseignée automatiquement (ou reçue de votre logiciel si vous en avez un). «&nbsp;Jamais&nbsp;» tant qu'elle n'a rien vendu.</td></tr>
+      <tr><td><b>Dernière connexion</b></td><td>La dernière fois qu'elle s'est connectée à son espace. «&nbsp;Jamais&nbsp;»&nbsp;: elle n'a pas encore activé son compte.</td></tr>
+      <tr><td>Boutons</td><td>La fusée <strong>Ouvrir l'espace vendeur</strong> (si l'accès est déverrouillé), <strong>Voir la fiche</strong> et <strong>Éditer le vendeur</strong>.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 id="s3-2"><span class="sub-num">3.2</span> Rechercher et filtrer</h3>
+  <div class="figrow">
+    <figure><img src="Captures/Reseau/filtres-conseilleres.png" alt="Fenêtre Filtrer : Intervalle de dates, sur Création de compte ou Activité du compte, case Comptes avec accès déverrouillé uniquement, boutons Effacer tous les filtres et Appliquer" loading="lazy"><figcaption>Les filtres de la liste.</figcaption></figure>
+    <div class="prose" style="display:flex;flex-direction:column;gap:12px">
+      <p>Le champ <strong>Rechercher…</strong> cherche dans le nom, le prénom, l'email et le numéro.</p>
+      <p>Le bouton <strong>Filtrer</strong> ouvre trois critères&nbsp;:</p>
+      <ul class="prose">
+        <li><strong>Intervalle</strong>, appliqué <strong>sur</strong>&nbsp;:
+          <ul><li><strong>Création de compte</strong>&nbsp;: les comptes créés pendant la période&nbsp;;</li>
+          <li><strong>Activité du compte</strong>&nbsp;: les conseillères qui ont <strong>au moins une commande payée</strong> sur la période (la même définition que le compteur de conseillères actives du tableau de bord).</li></ul></li>
+        <li><strong>Comptes avec accès déverrouillé uniquement</strong>.</li>
+      </ul>
+      <p>Vos filtres restent mémorisés dans votre navigateur&nbsp;: un badge sur le bouton rappelle combien sont actifs.</p>
+    </div>
+  </div>
+
+  <h3 id="s3-3"><span class="sub-num">3.3</span> Les onglets du haut</h3>
+  <p>Au-dessus de la liste, des onglets mènent aux autres écrans du réseau&nbsp;:</p>
+  <div class="tabs-map">
+    <div class="card"><span class="tag">Carte</span><p>Vos conseillères placées sur une carte, d'après leur adresse. Voir l'univers <a href="recrutement.html">Recrutement</a>.</p></div>
+    <div class="card"><span class="tag pink">Graph</span><p>L'organigramme de votre réseau. Voir <a href="organigramme.html">L'organigramme</a>.</p></div>
+    <div class="card"><span class="tag yellow">Commissions</span><p>Les commissions calculées. Voir l'univers <a href="reseau.html">Réseau et rémunération</a>.</p></div>
+    <div class="card"><span class="tag">Cotisations Sociales</span><p>Le précompte des cotisations. Voir l'univers <a href="reseau.html">Réseau et rémunération</a>.</p></div>
+    <div class="card"><span class="tag pink">Récompenses de challenges</span><p>Les gains de challenges. Voir le <a href="challenges-guide.html">guide des challenges</a>.</p></div>
+    <div class="card"><span class="tag yellow">Notifications</span><p>L'envoi de notifications en masse aux conseillères. Voir l'univers <a href="pilotage.html">Communication et pilotage</a>.</p></div>
+  </div>
+</section>
+
+<!-- 4 -->
+<section id="ajout">
+  <div class="sec-head"><span class="sec-num">04</span><h2>Ajouter une conseillère</h2></div>
+  <p class="lede">La plupart des conseillères arrivent par le <a href="recrutement.html">recrutement dématérialisé</a>. Vous pouvez aussi créer une fiche vous-même avec le bouton <strong>Ajouter un vendeur</strong>.</p>
+  <div class="timeline">
+    <div class="tl"><b>1. Remplir la fiche</b><p>Identité, email, téléphones, adresse (obligatoire), langue, rôles, statut juridique, champs personnalisés de votre marque. La case <strong>Créer un compte client associé</strong> est cochée par défaut.</p></div>
+    <div class="tl"><b>2. Ajouter le vendeur</b><p>SellingAtHome vérifie que l'email n'est pas déjà utilisé par une autre conseillère de votre marque, et refuse les adresses jetables (sauf réglage contraire). La conseillère reçoit automatiquement le <strong>statut par défaut</strong> de votre marque et les <strong>rôles par défaut</strong>, s'il y en a.</p></div>
+    <div class="tl"><b>3. Rattacher</b><p>Dans l'onglet <strong>Gestion du vendeur</strong>, choisissez son recruteur et son animatrice.</p></div>
+    <div class="tl stop"><b>4. Déverrouiller l'accès</b><p>Une fiche créée depuis l'espace marque naît avec l'<strong>accès verrouillé</strong>. Au premier déverrouillage (onglet <strong>Sécurité</strong>), la conseillère reçoit l'email d'activation de son compte.</p></div>
+  </div>
+  <div class="tip"><span class="ex-label">Bon à savoir</span><p>Si votre marque gère les cotisations sociales, certains champs deviennent obligatoires pour une conseillère française au statut VDI&nbsp;: date et lieu de naissance, pays de naissance, régime de cotisations, et un numéro de sécurité sociale cohérent avec la date de naissance. Le régime est déduit automatiquement du code postal (Alsace-Moselle ou régime général).</p></div>
+</section>
+
+<!-- 5 -->
+<section id="fiche">
+  <div class="sec-head"><span class="sec-num">05</span><h2>La fiche (consultation)</h2></div>
+  <p>Le bouton <strong>Voir la fiche</strong> de la liste ouvre une page de synthèse, faite de cartes&nbsp;:</p>
+  <figure><img src="Captures/Reseau/fiche-conseillere.png" alt="Fiche d'une conseillère : carte profil avec statut, email, téléphone, animatrice n+1, nombre de réunions, de commandes et d'articles vendus ; cartes Réunions (calendrier), SMS, Formation et Notifications ; boutons Ouvrir l'espace vendeur et Éditer le vendeur" loading="lazy"><figcaption>La fiche d'une conseillère (données fictives).</figcaption></figure>
+  <div class="table-wrap"><table class="opts">
+    <thead><tr><th>Carte</th><th>Ce qu'elle montre</th></tr></thead>
+    <tbody>
+      <tr><td><b>Profil</b></td><td>Photo, nom, référence, <strong>statut</strong> (ou «&nbsp;A définir&nbsp;»), rôles, email (signalé s'il semble non fiable), téléphone, animatrices n+1 et n+2. En bas, trois compteurs depuis toujours&nbsp;: les <strong>réunions</strong> non annulées, les <strong>commandes</strong> (payées ou non, hors supprimées) et les <strong>articles vendus</strong> (lignes de commandes payées). Un cadenas apparaît si son accès est verrouillé.</td></tr>
+      <tr><td><b>Réunions</b></td><td>Un calendrier mois par mois&nbsp;: chaque case colorée est un jour de réunion.</td></tr>
+      <tr><td><b>SMS</b></td><td>Le dernier message échangé par SMS, et la conversation complète avec <strong>Voir la conversation</strong>, d'où vous pouvez écrire (crédits SMS de votre marque).</td></tr>
+      <tr><td><b>Formation</b></td><td>Si vous avez des formations&nbsp;: modules commencés, terminés, maîtrisés, avancement et taux de réussite.</td></tr>
+      <tr><td><b>Notifications</b></td><td>Les dernières notifications reçues, avec leur état d'envoi, et le bouton <strong>+</strong> pour en envoyer une.</td></tr>
+      <tr><td><b>Compteurs</b>, <b>E-wallet</b></td><td>Selon vos options&nbsp;: ses compteurs, et son porte-monnaie électronique mois par mois (avec ajout manuel d'un montant).</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- 6 -->
+<section id="edition">
+  <div class="sec-head"><span class="sec-num">06</span><h2>La fiche d'édition</h2></div>
+  <p class="lede">Le bouton <strong>Éditer le vendeur</strong> ouvre la fiche complète, organisée en onglets. Attention&nbsp;: chaque onglet s'enregistre <strong>séparément</strong>, et certains réglages s'appliquent dès le clic.</p>
+
+  <h3 id="s6-1"><span class="sub-num">6.1</span> Informations générales</h3>
+  <figure><img src="Captures/Reseau/edit-infos.png" alt="Onglet Informations générales : Informations personnelles (civilité, prénom, nom, email, téléphones, naissance, rôles, nationalité, langue, sécurité sociale, régime de cotisations), Adresse du vendeur avec carte, Société, Contrat, Consentement marketing" loading="lazy"><figcaption>L'onglet Informations générales (valeurs fictives, carte floutée).</figcaption></figure>
+  <ul class="prose">
+    <li><strong>Informations personnelles</strong>&nbsp;: identité, email, téléphones, naissance, <strong>rôles</strong>, langue de ses emails, données sociales.</li>
+    <li><strong>Adresse du vendeur</strong>&nbsp;: elle place la conseillère sur la carte.</li>
+    <li><strong>Société</strong>&nbsp;: son statut juridique (VDI, VDI inscrit au RCS, auto-entrepreneur, agent commercial…, selon la liste de votre marque), sa société et un <strong>statut additionnel</strong> libre. Chaque changement de statut juridique est historisé.</li>
+    <li><strong>Contrat</strong>, <strong>Consentement marketing</strong>&nbsp;: selon vos réglages.</li>
+  </ul>
+  <p>Ces champs s'enregistrent avec <strong>Enregistrer les modifications</strong>. Les champs personnalisés de votre marque ont leur propre onglet, <strong>Champs personnalisés</strong>, quand le module est actif.</p>
+
+  <h3 id="s6-2"><span class="sub-num">6.2</span> Gestion du vendeur</h3>
+  <figure><img src="Captures/Reseau/edit-gestion.png" alt="Onglet Gestion du vendeur : Recruteur du vendeur, Animateur du vendeur, bouton Valider ; Statuts : Statut ; Fonctionnalités activées : Présent sur le widget carto, Activer la mini-boutique, Activer le module réunion virtuelle, Accès au chat Mon assistant, Quota chat" loading="lazy"><figcaption>L'onglet Gestion du vendeur.</figcaption></figure>
+  <div class="table-wrap"><table class="opts">
+    <thead><tr><th>Réglage</th><th>Effet</th><th>Enregistrement</th></tr></thead>
+    <tbody>
+      <tr><td><b>Recruteur du vendeur</b>, <b>Animateur du vendeur</b></td><td>Sa place dans le réseau. Si votre marque a choisi que le recruteur soit aussi l'animateur, l'animatrice suit automatiquement. Détails dans <a href="organigramme.html">L'organigramme</a>.</td><td>Bouton <strong>Valider</strong></td></tr>
+      <tr><td><b>Statut</b></td><td>Son niveau dans votre plan de carrière. L'icône <strong>i</strong> ouvre l'historique des statuts. Selon vos réglages s'affichent aussi le <strong>Statut à vie</strong> et le <strong>Statut estimé</strong>. Voir <a href="statuts.html">Statuts et automatisation</a>.</td><td>Dès le choix dans la liste</td></tr>
+      <tr><td><b>Présent sur le widget carto</b></td><td>La conseillère apparaît sur la carte publique de votre site (formulaire de contact).</td><td>Dès le clic</td></tr>
+      <tr><td><b>Activer la mini-boutique</b></td><td>Ouvre ou ferme sa mini-boutique en ligne. Visible seulement si elle l'a déjà configurée.</td><td>Dès le clic</td></tr>
+      <tr><td><b>Activer le module réunion virtuelle</b></td><td>Lui donne la visio dans ses réunions (si votre marque a la visio).</td><td>Dès le clic</td></tr>
+      <tr><td><b>Accès au chat «&nbsp;Mon assistant&nbsp;»</b></td><td>Lui ouvre l'assistant IA de son espace.</td><td>Dès le clic</td></tr>
+      <tr><td><b>Quota chat (questions/jour)</b></td><td>Nombre de questions par jour. Vide = le quota par défaut de votre marque, 0 = illimité.</td><td>En quittant le champ</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 id="s6-3"><span class="sub-num">6.3</span> Sécurité</h3>
+  <figure><img src="Captures/Reseau/edit-securite.png" alt="Onglet Sécurité : Autorisation d'accès avec le bouton Accès déverrouillé, Réinitialiser le mot de passe avec le bouton Réinitialiser" loading="lazy"><figcaption>L'onglet Sécurité.</figcaption></figure>
+  <div class="grid-2">
+    <div class="card"><span class="tag">Autorisation d'accès</span>
+      <p>Le bouton affiche l'<strong>état actuel</strong>&nbsp;: «&nbsp;Accès déverrouillé&nbsp;» ou «&nbsp;Accès verrouillé&nbsp;». Un clic l'inverse.</p>
+      <ul class="prose">
+        <li><strong>Verrouiller</strong>&nbsp;: la conseillère ne peut plus se connecter, son compte client perd le rôle «&nbsp;vendeur&nbsp;». Une double question vous propose de <strong>rattacher son équipe à sa propre animatrice</strong>.</li>
+        <li><strong>Déverrouiller</strong>&nbsp;: elle retrouve l'accès. Si elle ne s'est jamais connectée, elle reçoit l'email d'activation.</li>
+      </ul>
+      <p class="muted">Avec les cotisations sociales, le déverrouillage est refusé tant que ses informations sociales sont incomplètes&nbsp;: un message liste les champs à corriger.</p>
+    </div>
+    <div class="card"><span class="tag pink">Réinitialiser le mot de passe</span>
+      <p>Son mot de passe actuel est <strong>annulé</strong> et elle reçoit un email pour en choisir un nouveau. À utiliser quand elle a perdu son mot de passe ou en cas de doute sur la sécurité de son compte.</p>
+    </div>
+  </div>
+  <div class="example"><span class="ex-label">Exemple</span><p>Chloé arrête son activité. Vous verrouillez son accès et répondez «&nbsp;Oui&nbsp;» deux fois&nbsp;: Manon et Zoé, qu'elle animait, sont rattachées à Sophie, l'animatrice de Chloé. Leur historique d'animation garde la trace de Chloé.</p></div>
+
+  <h3 id="s6-4"><span class="sub-num">6.4</span> Informations bancaires</h3>
+  <figure><img src="Captures/Reseau/edit-bancaire.png" alt="Onglet Informations bancaires : bloc Versement (RIB facultatif, IBAN, SWIFT/BIC, nom de la banque, domiciliation, propriétaire du compte) et bloc Prélèvement (IBAN, SWIFT/BIC, nom de la banque), bouton Enregistrer" loading="lazy"><figcaption>L'onglet Informations bancaires (vide pour l'exemple).</figcaption></figure>
+  <ul class="prose">
+    <li><strong>Versement</strong>&nbsp;: le compte sur lequel vous versez ses commissions (fichier de virement SEPA). Saisir le RIB calcule l'IBAN.</li>
+    <li><strong>Prélèvement</strong>&nbsp;: un second compte, pour les prélèvements.</li>
+  </ul>
+  <div class="warn"><span class="ex-label">Attention</span><p>Si l'IBAN saisi est invalide, l'enregistrement <strong>efface</strong> les coordonnées de versement existantes, sans message d'erreur. Vérifiez l'IBAN avant d'enregistrer.</p></div>
+
+  <h3 id="s6-5"><span class="sub-num">6.5</span> Les autres onglets</h3>
+  <div class="table-wrap"><table class="opts">
+    <thead><tr><th>Onglet</th><th>Contenu</th></tr></thead>
+    <tbody>
+      <tr><td><b>Champs personnalisés</b></td><td>Les champs propres à votre marque (module optionnel).</td></tr>
+      <tr><td><b>Historique statut de la société</b></td><td>Sur option&nbsp;: les statuts juridiques successifs, avec référence externe et dates de début et de fin modifiables.</td></tr>
+      <tr><td><b>Stock</b> <span class="tag yellow" style="display:inline-block">Module optionnel</span></td><td>Le stock détenu par la conseillère. Voir <a href="stock-conseilleres.html">Stocks chez les conseillères</a>.</td></tr>
+      <tr><td><b>Historique des animateurs</b></td><td>Toutes ses animatrices successives, avec la date de chaque changement. Voir <a href="organigramme.html#historique">L'organigramme</a>.</td></tr>
+      <tr><td><b>Notifications</b></td><td>Les notifications qu'elle a reçues (catégorie, statut d'envoi) et l'envoi d'une nouvelle notification, selon vos crédits et son consentement.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- 7 -->
+<section id="espace">
+  <div class="sec-head"><span class="sec-num">07</span><h2>Ouvrir l'espace de la conseillère</h2></div>
+  <p>Le bouton <strong>Ouvrir l'espace vendeur</strong> (une fusée) ouvre, dans un nouvel onglet, l'espace conseillère <strong>connecté en son nom</strong>&nbsp;: vous voyez exactement ce qu'elle voit, pour l'aider ou vérifier un réglage.</p>
+  <ul class="prose">
+    <li>Il apparaît dans la liste, sur la fiche et sur la fiche d'édition, si votre marque l'autorise (34 marques sur 35) et si l'accès de la conseillère est déverrouillé.</li>
+    <li>Chaque ouverture est <strong>enregistrée</strong> (qui, quand, pour quelle conseillère).</li>
+    <li>Tout ce que vous faites dans son espace est fait <strong>en son nom</strong>&nbsp;: une commande créée sera la sienne.</li>
+  </ul>
+  <div class="warn"><span class="ex-label">Attention</span><p>Le lien d'ouverture reste valable tant que la conseillère ne change pas son mot de passe. Ne le copiez pas et ne le partagez pas.</p></div>
+</section>
+
+<!-- 8 -->
+<section id="client">
+  <div class="sec-head"><span class="sec-num">08</span><h2>Son compte client</h2></div>
+  <p>Une conseillère est aussi cliente&nbsp;: son <strong>compte client</strong> lui permet de commander pour elle-même. En haut de la fiche d'édition&nbsp;:</p>
+  <ul class="prose">
+    <li><strong>Accéder à sa fiche client</strong>&nbsp;: ouvre son compte client.</li>
+    <li><strong>Créer un compte client associé</strong>&nbsp;: affiché quand elle n'en a pas&nbsp;; un clic le crée aussitôt.</li>
+  </ul>
+  <p>Si un compte client existait déjà avec le même email au moment de la création de la conseillère, il lui est rattaché au lieu d'en créer un nouveau.</p>
+</section>
+
+<!-- 9 -->
+<section id="attention">
+  <div class="sec-head"><span class="sec-num">09</span><h2>Points d'attention</h2></div>
+  <ul class="prose">
+    <li><strong>Une conseillère créée à la main est verrouillée</strong>&nbsp;: pensez à déverrouiller son accès, sinon elle ne reçoit pas son email d'activation.</li>
+    <li><strong>Chaque onglet s'enregistre à part</strong>&nbsp;: le bouton <strong>Enregistrer les modifications</strong> ne concerne que les informations générales.</li>
+    <li><strong>Changer le statut dans la liste est immédiat</strong>, et la conseillère en est notifiée.</li>
+    <li><strong>Un IBAN invalide efface les coordonnées bancaires</strong> existantes.</li>
+    <li><strong>Verrouiller n'efface rien</strong>&nbsp;: commandes, clientes et historique restent en place&nbsp;; seul l'accès est coupé.</li>
+  </ul>
+</section>
+
+<!-- 10 -->
+<section id="faq">
+  <div class="sec-head"><span class="sec-num">10</span><h2>Questions fréquentes</h2></div>
+  <div class="faq">
+    <details><summary>Une conseillère n'a jamais reçu son email d'activation.</summary><div><p>Vérifiez que son accès est déverrouillé (onglet <strong>Sécurité</strong>). L'email part au premier déverrouillage. Si elle l'a perdu, utilisez <strong>Réinitialiser</strong>&nbsp;: elle recevra un email pour choisir son mot de passe.</p></div></details>
+    <details><summary>Le bouton «&nbsp;Ouvrir l'espace vendeur&nbsp;» n'apparaît pas.</summary><div><p>L'accès de la conseillère est verrouillé, elle n'a pas encore de mot de passe, ou votre marque n'a pas activé cette possibilité.</p></div></details>
+    <details><summary>«&nbsp;Cet email existe déjà&nbsp;» à la création.</summary><div><p>Une autre conseillère de votre marque utilise déjà cette adresse. Cherchez-la dans la liste&nbsp;: c'est peut-être une ancienne conseillère verrouillée qu'il suffit de déverrouiller.</p></div></details>
+    <details><summary>Comment retirer une conseillère qui arrête&nbsp;?</summary><div><p>Verrouillez son accès. Il n'y a pas de suppression depuis l'espace marque&nbsp;: ses ventes passées doivent rester rattachées à elle pour l'historique et les commissions.</p></div></details>
+    <details><summary>Que signifie «&nbsp;Jamais&nbsp;» dans «&nbsp;Date de début d'activité&nbsp;»&nbsp;?</summary><div><p>Elle n'a encore aucune commande payée. La date se remplit automatiquement à sa première vente payée.</p></div></details>
+  </div>
+</section>
+
+  </main>
+</div>

@@ -1,0 +1,166 @@
+<!--page {"title":"Carte des conseillères et formulaire de contact"} -->
+<style>
+.timeline { display:flex; flex-direction:column; border-left:3px solid var(--rule); margin-left:10px; }
+.tl { position:relative; padding:0 0 20px 28px; }
+.tl::before { content:""; position:absolute; left:-9px; top:4px; width:15px; height:15px; border-radius:50%; background:var(--card); border:3px solid var(--accent); }
+.tl.stop::before { border-color:var(--pink); }
+.tl b { color:var(--heading); display:block; }
+.tl p { color:var(--muted); font-size:.93rem; margin-top:4px; }
+.opts td:first-child { width:34%; }
+.opts td:nth-child(3) { width:13%; white-space:nowrap; font-size:.88rem; color:var(--muted); }
+</style>
+<header class="hero">
+  <div class="hero-in">
+    <div>
+      <span class="eyebrow">Recrutement</span>
+      <h1>Carte des conseillères <span class="script">et formulaire de contact</span></h1>
+      <p class="lede">Une carte à intégrer sur votre site&nbsp;: vos visiteuses trouvent la conseillère la plus proche et lui écrivent. Les messages arrivent chez la conseillère et dans votre espace marque, avec un suivi du traitement.</p>
+    </div>
+    <div class="voucher-art" aria-hidden="true">
+      <div class="v-top"><span>Carte des VDIs</span><span>Message</span></div>
+      <div class="v-amount">59<span> h</span></div>
+      <div class="v-name">Délai médian de traitement</div>
+      <div class="v-sep"></div>
+      <div class="v-meta"><span>Messages traités <b>64 %</b></span><span>Marques <b>18</b></span></div>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="toc" aria-label="Sommaire">
+    <details id="tocDetails" open>
+      <summary>Sommaire</summary>
+      <div class="toc-title">Sommaire</div>
+      <ol>
+        <li data-sec="definition"><a href="#definition"><span class="toc-n">1</span>À quoi sert la carte&nbsp;?</a></li>
+        <li data-sec="visiteuse"><a href="#visiteuse"><span class="toc-n">2</span>Ce que voit la visiteuse</a></li>
+        <li data-sec="presence"><a href="#presence"><span class="toc-n">3</span>Qui apparaît sur la carte&nbsp;?</a></li>
+        <li data-sec="configuration"><a href="#configuration"><span class="toc-n">4</span>Configurer la carte</a></li>
+        <li data-sec="integration"><a href="#integration"><span class="toc-n">5</span>L'intégrer sur votre site</a></li>
+        <li data-sec="messages"><a href="#messages"><span class="toc-n">6</span>Traiter les messages reçus</a>
+          <ol class="toc-sub"><li><a href="#s6-1"><span class="toc-n">6.1</span>Côté marque</a></li><li><a href="#s6-2"><span class="toc-n">6.2</span>Côté conseillère</a></li></ol>
+        </li>
+        <li data-sec="chiffres"><a href="#chiffres"><span class="toc-n">7</span>La carte en chiffres</a></li>
+        <li data-sec="attention"><a href="#attention"><span class="toc-n">8</span>Points d'attention</a></li>
+        <li data-sec="faq"><a href="#faq"><span class="toc-n">9</span>Questions fréquentes</a></li>
+      </ol>
+    </details>
+  </nav>
+
+  <main>
+
+<section id="definition">
+  <div class="sec-head"><span class="sec-num">01</span><h2>À quoi sert la carte&nbsp;?</h2></div>
+  <p class="lede">La carte des conseillères est une page publique que vous intégrez à votre site. Une visiteuse saisit sa ville, voit les conseillères proches, et en contacte une par un formulaire. C'est une source de clientes, d'hôtesses et de futures recrues pour votre réseau.</p>
+  <div class="example"><span class="ex-label">Exemple</span><p>Camille cherche une conseillère près de Nantes sur votre site. La carte lui montre Chloé, à 8&nbsp;km. Camille clique sur «&nbsp;Me contacter&nbsp;» et écrit qu'elle aimerait organiser une réunion. Chloé reçoit une notification et un email&nbsp;; Camille reçoit un accusé de réception. Le lendemain, Chloé l'appelle, puis marque le message comme traité.</p></div>
+  <div class="path" aria-label="Chemin d'accès"><span>Espace marque</span><span>Formulaires</span><span><b>Carte des VDIs</b></span></div>
+  <p>L'écran comporte deux onglets&nbsp;: <strong>Messages reçus</strong> et <strong>Configuration</strong>. Le menu est présent si le module est activé pour votre marque (34 marques sur 35).</p>
+  <div class="tip"><span class="ex-label">Vocabulaire</span><p>L'espace marque parle de <strong>VDI</strong> ou de <strong>vendeur</strong> pour la conseillère, et de <strong>client</strong> pour la visiteuse. Les titres de ces écrans affichent par erreur «&nbsp;Formulaire hôte&nbsp;»&nbsp;: il s'agit bien de la carte des conseillères.</p></div>
+</section>
+
+<section id="visiteuse">
+  <div class="sec-head"><span class="sec-num">02</span><h2>Ce que voit la visiteuse</h2></div>
+  <div class="timeline">
+    <div class="tl"><b>1. Elle cherche</b><p>Elle tape sa ville ou son code postal&nbsp;; des suggestions d'adresses s'affichent. La carte se centre sur le lieu choisi.</p></div>
+    <div class="tl"><b>2. Elle voit les conseillères</b><p>Chaque conseillère est un repère&nbsp;; les repères proches se regroupent en une pastille chiffrée. Si personne n'est dans la zone, une fenêtre le lui dit et propose «&nbsp;Nous contacter&nbsp;».</p></div>
+    <div class="tl"><b>3. Elle choisit</b><p>Un clic sur un repère affiche la photo de la conseillère, son prénom, l'initiale de son nom, sa ville, le bouton <strong>Me contacter</strong> et, si elle en a une, <strong>Ma boutique</strong>.</p></div>
+    <div class="tl stop"><b>4. Elle écrit</b><p>Le formulaire demande nom, prénom, email, téléphone, adresse, code postal, ville et message, plus une case de consentement obligatoire. Le message part à la conseillère choisie, ou à votre marque si elle a cliqué sur «&nbsp;Nous contacter&nbsp;».</p></div>
+  </div>
+  <p>Un système anti-abus limite les envois répétés (trop de messages pour une même adresse email ou une même conseillère dans un délai court)&nbsp;: la visiteuse est alors invitée à réessayer quelques minutes plus tard.</p>
+</section>
+
+<section id="presence">
+  <div class="sec-head"><span class="sec-num">03</span><h2>Qui apparaît sur la carte&nbsp;?</h2></div>
+  <p>Une conseillère apparaît si toutes ces conditions sont réunies&nbsp;:</p>
+  <ul class="prose">
+    <li>son option de présence sur la carte est cochée&nbsp;;</li>
+    <li>son compte est actif (sauf réglage contraire de votre marque)&nbsp;;</li>
+    <li>son adresse principale a pu être localisée&nbsp;;</li>
+    <li>si vous avez fixé un chiffre d'affaires minimum, elle l'a dépassé le mois précédent.</li>
+  </ul>
+  <p>L'option de présence se règle à deux endroits&nbsp;:</p>
+  <div class="grid-2">
+    <div class="card"><span class="tag">Par votre marque</span><p>Dans la fiche de la conseillère (Vendeurs), bloc <strong>Fonctionnalités activées</strong>, case <strong>Présent sur le widget carto</strong>. Le changement est enregistré dès le clic.</p></div>
+    <div class="card"><span class="tag pink">Par la conseillère</span><p>Dans son profil, bloc <strong>Options de la carte des vendeurs</strong>, case <strong>Je souhaite être visible sur la carte des vendeurs</strong>.</p></div>
+  </div>
+  <p class="muted">Selon la façon dont les comptes ont été créés, la case est cochée ou non au départ&nbsp;: sur l'ensemble des marques, 60&nbsp;% des conseillères actives sont visibles sur la carte. Vérifiez-la pour vos nouvelles recrues.</p>
+</section>
+
+<section id="configuration">
+  <div class="sec-head"><span class="sec-num">04</span><h2>Configurer la carte</h2></div>
+  <div class="path" aria-label="Chemin d'accès"><span>Espace marque</span><span>Formulaires</span><span>Carte des VDIs</span><span>Onglet <b>Configuration</b></span></div>
+  <figure><img src="Captures/Recrutement/configuration-carte.png" alt="Onglet Configuration de la carte : Widget URL avec Aperçu et Copier le lien, liens Editer l'email pour l'email envoyé au vendeur et au client, cases Afficher le pin sur la localisation recherchée et Afficher la pop-up pas de vendeur dans cette zone, Niveau de zoom en mètres, Rayon sans vendeurs, Saisie de l'adresse obligatoire, chiffre d'affaires minimum, Focaliser sur un pays, Mention RGPD par langue" loading="lazy"><figcaption>L'onglet Configuration (adresse du widget floutée).</figcaption></figure>
+  <div class="table-wrap"><table class="opts">
+    <thead><tr><th>Réglage</th><th>Effet</th><th>Défaut</th></tr></thead>
+    <tbody>
+      <tr><td><b>Widget URL</b></td><td>L'adresse de la carte, à intégrer sur votre site. <strong>Aperçu</strong> l'ouvre, <strong>Copier le lien</strong> la copie.</td><td>—</td></tr>
+      <tr><td><b>Email envoyé au vendeur</b> / <b>au client</b></td><td>Liens <strong>Editer l'email</strong> vers les modèles d'emails envoyés à la conseillère et à la visiteuse.</td><td>—</td></tr>
+      <tr><td><b>Afficher le pin sur la localisation recherchée</b></td><td>Place un repère sur le lieu saisi par la visiteuse.</td><td>Non</td></tr>
+      <tr><td><b>Afficher la pop-up ‘pas de vendeur dans cette zone’</b></td><td>Affiche la fenêtre «&nbsp;Nous sommes désolés…&nbsp;» quand aucune conseillère ne se trouve dans le rayon sans vendeurs.</td><td>Oui</td></tr>
+      <tr><td><b>Niveau de zoom sur la zone recherchée (en mètres)</b></td><td>Rayon de la zone affichée autour du lieu recherché. 50&nbsp;000 = environ 50&nbsp;km autour.</td><td>50 000</td></tr>
+      <tr><td><b>Rayon sans vendeurs (en mètres)</b></td><td>Distance en deçà de laquelle on considère qu'il n'y a «&nbsp;pas de vendeur&nbsp;» si personne n'y est. À 0, la fenêtre s'affiche tout le temps&nbsp;: renseignez une valeur, par exemple 20&nbsp;000.</td><td>—</td></tr>
+      <tr><td><b>Saisie de l'adresse obligatoire</b></td><td>Décoché, l'adresse, le code postal et la ville deviennent facultatifs dans le formulaire.</td><td>Oui</td></tr>
+      <tr><td><b>Afficher uniquement les vendeurs qui ont un chiffre d'affaires supérieur à&nbsp;:</b></td><td>Chiffre d'affaires TTC du mois civil précédent. 0 désactive le filtre. Utilisé par 1 marque sur 35.</td><td>0</td></tr>
+      <tr><td><b>Focaliser sur un pays</b></td><td>Cadre la carte sur ce pays à l'ouverture. «&nbsp;Aucun&nbsp;» cadre sur l'ensemble des conseillères.</td><td>Aucun</td></tr>
+      <tr><td><b>Mention RGPD du formulaire de contact</b></td><td>Phrase affichée sous la case de consentement, une par langue. Vide = texte par défaut (affiché en grisé). Le texte accepté par la visiteuse est conservé avec son message.</td><td>Texte par défaut</td></tr>
+    </tbody>
+  </table></div>
+  <div class="example"><span class="ex-label">Exemple</span><p>Zoom à 30&nbsp;000 et rayon sans vendeurs à 15&nbsp;000. Inès cherche «&nbsp;Vannes&nbsp;»&nbsp;: la carte montre 30&nbsp;km autour de Vannes. La conseillère la plus proche est à 22&nbsp;km&nbsp;: Inès la voit sur la carte, mais la fenêtre «&nbsp;pas de conseillère près de chez vous&nbsp;» s'affiche aussi, avec «&nbsp;Nous contacter&nbsp;».</p></div>
+</section>
+
+<section id="integration">
+  <div class="sec-head"><span class="sec-num">05</span><h2>L'intégrer sur votre site</h2></div>
+  <p>Copiez la <strong>Widget URL</strong> et transmettez-la à la personne qui gère votre site&nbsp;: elle l'insère dans une page, généralement dans un cadre intégré (iframe) assez haut pour la carte, ou derrière un bouton «&nbsp;Trouver une conseillère&nbsp;». La carte s'affiche dans la langue principale de votre marque&nbsp;; ajoutez le code langue à la fin de l'adresse (<code>/mapwidget/en</code>, <code>/mapwidget/de</code>…) pour une autre langue.</p>
+  <div class="tip"><span class="ex-label">Conseil</span><p>Avant de publier, ouvrez l'<strong>Aperçu</strong> et faites une recherche sur une ville où vous avez des conseillères, puis sur une zone sans conseillère, pour vérifier le zoom et la fenêtre «&nbsp;pas de vendeur&nbsp;».</p></div>
+</section>
+
+<section id="messages">
+  <div class="sec-head"><span class="sec-num">06</span><h2>Traiter les messages reçus</h2></div>
+  <h3 id="s6-1"><span class="sub-num">6.1</span> Côté marque</h3>
+  <figure><img src="Captures/Recrutement/messages-carte.png" alt="Onglet Messages reçus : indicateurs Temps de réponse moyen et Taux de traitement, recherche, colonnes Nom, Prénom, Email, Téléphone, Date, Vendeur, Message traité ? (Oui ou Non), Message (flouté), Détails" loading="lazy"><figcaption>Les messages reçus (noms fictifs, messages floutés).</figcaption></figure>
+  <ul class="prose">
+    <li><strong>Temps de réponse moyen</strong>&nbsp;: délai moyen entre l'arrivée d'un message et son passage en «&nbsp;traité&nbsp;», sur tous les messages traités depuis le début.</li>
+    <li><strong>Taux de traitement</strong>&nbsp;: part des messages marqués traités.</li>
+    <li>Le tableau liste tous les messages&nbsp;: visiteuse, date, <strong>Vendeur</strong> contacté (vide si elle a écrit à la marque), <strong>Message traité&nbsp;?</strong> Oui/Non et le message. <strong>Rechercher…</strong> filtre la liste.</li>
+    <li>L'enveloppe ouvre le détail&nbsp;: coordonnées et adresse de la visiteuse, consentement RGPD (date et texte accepté) et la case <strong>Message traité</strong>, à cocher une fois la visiteuse recontactée (la date est enregistrée).</li>
+  </ul>
+  <p>Un badge sur le menu Formulaires compte les messages non traités.</p>
+  <h3 id="s6-2"><span class="sub-num">6.2</span> Côté conseillère</h3>
+  <p>La conseillère reçoit une notification et un email à chaque message. Dans son espace, le menu <strong>Notifications › Messages</strong> liste ses messages, qu'elle peut marquer comme traités. C'est cette action qui alimente vos indicateurs&nbsp;: encouragez vos conseillères à la faire.</p>
+  <p class="muted">Sur demande, SellingAtHome peut activer une relance par email des conseillères qui ont des messages non traités.</p>
+</section>
+
+<section id="chiffres">
+  <div class="sec-head"><span class="sec-num">07</span><h2>La carte en chiffres</h2></div>
+  <div class="stats">
+    <div class="stat"><b>18</b><span>marques ont reçu des messages par la carte sur un an</span></div>
+    <div class="stat"><b>≈ 4 900</b><span>messages reçus sur un an</span></div>
+    <div class="stat"><b>64 %</b><span>sont marqués traités</span></div>
+    <div class="stat"><b>59 h</b><span>délai médian avant traitement</span></div>
+    <div class="stat"><b>6 %</b><span>sont adressés à la marque plutôt qu'à une conseillère</span></div>
+    <div class="stat"><b>60 %</b><span>des conseillères actives sont visibles sur la carte</span></div>
+  </div>
+</section>
+
+<section id="attention">
+  <div class="sec-head"><span class="sec-num">08</span><h2>Points d'attention</h2></div>
+  <ul class="prose">
+    <li><strong>Une conseillère sans adresse localisable</strong> n'apparaît pas&nbsp;: vérifiez l'adresse principale de sa fiche.</li>
+    <li><strong>Le filtre de chiffre d'affaires</strong> retire une conseillère dès qu'elle a un mois creux.</li>
+    <li><strong>Le temps de réponse</strong> ne reflète que les messages marqués traités&nbsp;: un message traité mais jamais coché fait baisser le taux de traitement.</li>
+    <li><strong>Un rayon sans vendeurs à 0</strong> affiche la fenêtre «&nbsp;pas de vendeur&nbsp;» à chaque recherche.</li>
+  </ul>
+</section>
+
+<section id="faq">
+  <div class="sec-head"><span class="sec-num">09</span><h2>Questions fréquentes</h2></div>
+  <div class="faq">
+    <details><summary>Une conseillère n'apparaît pas sur la carte.</summary><div><p>Vérifiez dans l'ordre&nbsp;: la case «&nbsp;Présent sur le widget carto&nbsp;» de sa fiche, son accès (actif), son adresse principale, et le seuil de chiffre d'affaires de la configuration.</p></div></details>
+    <details><summary>Qui reçoit le message quand la visiteuse clique sur «&nbsp;Nous contacter&nbsp;»&nbsp;?</summary><div><p>Votre marque, par email. Le message apparaît dans la liste sans vendeur.</p></div></details>
+    <details><summary>Peut-on changer le texte des emails envoyés&nbsp;?</summary><div><p>Oui, avec les liens «&nbsp;Editer l'email&nbsp;» de l'onglet Configuration.</p></div></details>
+    <details><summary>La visiteuse doit-elle donner son adresse&nbsp;?</summary><div><p>Par défaut oui (code postal et ville). Décochez «&nbsp;Saisie de l'adresse obligatoire&nbsp;» pour la rendre facultative.</p></div></details>
+  </div>
+</section>
+
+  </main>
+</div>

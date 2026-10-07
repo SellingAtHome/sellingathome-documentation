@@ -1,0 +1,201 @@
+<!--page {"title":"Suivi d'équipe"} -->
+<style>
+.opts td:first-child { width:28%; }
+.clock { display:grid; grid-template-columns:repeat(auto-fit, minmax(170px,1fr)); gap:10px; }
+.clock div { background:var(--card); border:1px solid var(--rule); border-radius:14px; padding:12px 14px; font-size:.9rem; }
+.clock b { display:block; color:var(--heading); font-size:1.05rem; }
+.tree { background:var(--card); border:1px solid var(--rule); border-radius:14px; padding:14px 18px; line-height:1.9; }
+.tree .n { display:inline-block; padding:1px 10px; border-radius:100px; background:var(--accent-wash); color:var(--accent-ink); font-weight:700; font-size:.88rem; }
+.tree .n.p { background:var(--pink-wash); color:var(--pink-ink); }
+.tree .i1 { padding-left:26px; } .tree .i2 { padding-left:52px; }
+</style>
+<header class="hero">
+  <div class="hero-in">
+    <div>
+      <span class="eyebrow">Réseau et rémunération</span>
+      <h1>Suivi <span class="script">d'équipe</span></h1>
+      <p class="lede">Comparer l'activité de votre réseau, d'une conseillère ou d'une équipe, entre une période de référence et une période comparée. Avec la définition exacte de chaque indicateur.</p>
+    </div>
+    <div class="voucher-art" aria-hidden="true">
+      <div class="v-top"><span>Équipe de Sophie</span><span>Mars</span></div>
+      <div class="v-amount">+12<span> %</span></div>
+      <div class="v-name">C.A. HT 8&nbsp;400&nbsp;€</div>
+      <div class="v-sep"></div>
+      <div class="v-meta"><span>Réunions <b>21</b></span><span>Recrues <b>2</b></span></div>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="toc" aria-label="Sommaire">
+    <details id="tocDetails" open>
+      <summary>Sommaire</summary>
+      <div class="toc-title">Sommaire</div>
+      <ol>
+        <li data-sec="definition"><a href="#definition"><span class="toc-n">1</span>À quoi sert le suivi d'équipe</a></li>
+        <li data-sec="ou"><a href="#ou"><span class="toc-n">2</span>Où le trouver</a></li>
+        <li data-sec="periodes"><a href="#periodes"><span class="toc-n">3</span>Période de référence et période comparée</a></li>
+        <li data-sec="equipe"><a href="#equipe"><span class="toc-n">4</span>Qui compte dans «&nbsp;l'équipe&nbsp;»</a></li>
+        <li data-sec="indicateurs"><a href="#indicateurs"><span class="toc-n">5</span>Les indicateurs</a></li>
+        <li data-sec="grille"><a href="#grille"><span class="toc-n">6</span>Le tableau des conseillères</a></li>
+        <li data-sec="panneau"><a href="#panneau"><span class="toc-n">7</span>Le panneau d'une conseillère</a></li>
+        <li data-sec="config"><a href="#config"><span class="toc-n">8</span>Configuration</a></li>
+        <li data-sec="exemple"><a href="#exemple"><span class="toc-n">9</span>Exemple</a></li>
+        <li data-sec="attention"><a href="#attention"><span class="toc-n">10</span>Points d'attention</a></li>
+        <li data-sec="faq"><a href="#faq"><span class="toc-n">11</span>Questions fréquentes</a></li>
+      </ol>
+    </details>
+  </nav>
+
+  <main>
+
+<!-- 1 -->
+<section id="definition">
+  <div class="sec-head"><span class="sec-num">01</span><h2>À quoi sert le suivi d'équipe</h2></div>
+  <p class="lede">Le suivi d'équipe répond à la question «&nbsp;comment va cette équipe par rapport à l'an dernier, ou au mois dernier&nbsp;?&nbsp;». Il donne, pour votre réseau entier ou pour une conseillère et son équipe, le chiffre d'affaires, les commandes, les réunions, les nouvelles clientes et les recrues, avec leur progression.</p>
+  <div class="tip"><span class="ex-label">Bon à savoir</span><p>Les chiffres sont <strong>calculés chaque nuit</strong>, pas en temps réel&nbsp;: ceux du jour apparaissent le lendemain. Les écarts avec le <a href="espace-marque.html">tableau de bord</a> viennent de là, et des définitions détaillées ci-dessous.</p></div>
+  <div class="tip"><span class="ex-label">Vocabulaire</span><p>L'écran parle de <strong>vendeur</strong> pour la conseillère et de <strong>manager</strong> pour son animatrice.</p></div>
+</section>
+
+<!-- 2 -->
+<section id="ou">
+  <div class="sec-head"><span class="sec-num">02</span><h2>Où le trouver</h2></div>
+  <div class="path" aria-label="Chemin d'accès"><span>Espace marque</span><span>Vendeurs</span><span><b>Suivi d'équipe</b></span></div>
+  <figure><img src="Captures/Reseau/suivi-equipe.png" alt="Suivi d'équipe : Période de référence et Période comparée (Du… Au…), Rechercher un vendeur, Le vendeur compte pour les stats d'équipe, Réinitialiser, Configuration ; tableau Equipe avec C.A. HT, C.A. TTC, C.A Retourné, C.A. Commissionnable HT et TTC, C.A. Moyen par commande, Nombre de commandes, Nombre de réunions, Nb nouveau client, Nb nouvelle recrue, C.A. en attente HT et TTC, colonnes Période de référence, Période comparée, Progression ; puis le tableau des vendeurs avec Mode d'affichage, Statut, Seulement les actifs" loading="lazy"><figcaption>Le suivi d'équipe, en mode «&nbsp;date à date&nbsp;» (noms fictifs).</figcaption></figure>
+  <p>L'écran se lit de haut en bas&nbsp;: les <strong>périodes</strong> et la conseillère choisie, le <strong>tableau de synthèse</strong> (indicateurs de l'équipe), puis le <strong>tableau des conseillères</strong>.</p>
+</section>
+
+<!-- 3 -->
+<section id="periodes">
+  <div class="sec-head"><span class="sec-num">03</span><h2>Période de référence et période comparée</h2></div>
+  <p>Selon le réglage de votre marque, vous choisissez les périodes de deux façons&nbsp;:</p>
+  <div class="grid-2">
+    <div class="card"><span class="tag">Date à date</span><p>20 marques sur 35. Vous saisissez librement la <strong>Période de référence</strong> et la <strong>Période comparée</strong>, puis validez avec la coche. Par défaut&nbsp;: du 1er du mois à aujourd'hui, comparé à la même période un mois ou un an plus tôt.</p></div>
+    <div class="card"><span class="tag pink">Mois / année</span><p>15 marques sur 35. Vous choisissez un <strong>Mois</strong> et une <strong>Année</strong>&nbsp;: le mois entier est comparé au mois précédent, ou au même mois de l'année précédente, selon la <a href="#config">configuration</a>.</p></div>
+  </div>
+  <p>La <strong>Progression</strong> vaut (référence − comparée) ÷ comparée × 100. Elle affiche «&nbsp;∞&nbsp;%&nbsp;» quand la période comparée vaut 0.</p>
+  <div class="warn"><span class="ex-label">Attention</span><p>En mode mois, le <strong>mois en cours</strong> (incomplet, arrêté à la veille) est comparé à un mois <strong>complet</strong>&nbsp;: la progression est forcément négative en début de mois. Comparez des périodes de même longueur.</p></div>
+</section>
+
+<!-- 4 -->
+<section id="equipe">
+  <div class="sec-head"><span class="sec-num">04</span><h2>Qui compte dans «&nbsp;l'équipe&nbsp;»</h2></div>
+  <ul class="prose">
+    <li><strong>Sans conseillère choisie</strong>&nbsp;: le tableau porte sur tout votre réseau.</li>
+    <li><strong>Avec une conseillère</strong> (<strong>Rechercher un vendeur</strong>)&nbsp;: le tableau donne ses chiffres personnels et ceux de son <strong>équipe</strong>, c'est-à-dire toutes les conseillères qu'elle anime, directement ou indirectement, <strong>sans limite de profondeur</strong>.</li>
+    <li>L'équipe suit le lien d'<strong>animation</strong> (voir <a href="organigramme.html">L'organigramme</a>), tel qu'il était à la <strong>fin du mois</strong> de chaque période&nbsp;: un changement d'animatrice ne réécrit pas les mois passés.</li>
+    <li><strong>Le vendeur compte pour les stats d'équipe</strong>&nbsp;: «&nbsp;Non&nbsp;» (par défaut) donne l'équipe sans la conseillère elle-même&nbsp;; «&nbsp;Oui&nbsp;» l'y inclut.</li>
+  </ul>
+  <div class="tree" aria-label="Exemple d'équipe">
+    <div><span class="n p">Sophie</span> conseillère choisie</div>
+    <div class="i1">├ <span class="n">Léa</span> niveau 1</div>
+    <div class="i1">└ <span class="n">Chloé</span> niveau 1</div>
+    <div class="i2">└ <span class="n">Manon</span> niveau 2</div>
+  </div>
+  <p>Ici, l'équipe de Sophie = Léa, Chloé et Manon (plus Sophie si vous choisissez «&nbsp;Oui&nbsp;»).</p>
+  <p class="muted">Certains statuts juridiques limitent la profondeur prise en compte. Deux marques utilisent en plus des «&nbsp;groupes détachés&nbsp;»&nbsp;: les statistiques sont alors séparées entre groupe personnel et groupe détaché.</p>
+</section>
+
+<!-- 5 -->
+<section id="indicateurs">
+  <div class="sec-head"><span class="sec-num">05</span><h2>Les indicateurs</h2></div>
+  <p>Sauf mention contraire, une commande compte <strong>le jour de son paiement</strong>, pour la conseillère à qui elle est attribuée, si elle est <strong>payée</strong> et non supprimée. Les frais de livraison ne sont jamais inclus.</p>
+  <div class="table-wrap"><table class="opts">
+    <thead><tr><th>Indicateur</th><th>Définition</th></tr></thead>
+    <tbody>
+      <tr><td><b>C.A. HT</b>, <b>C.A. TTC</b></td><td>Montant des produits des commandes payées, après réductions, points de fidélité et e-wallet, moins les avoirs émis ce jour-là. Les types de commande que votre marque exclut du chiffre d'affaires ne comptent pas.</td></tr>
+      <tr><td><b>C.A Retourné</b></td><td>Valeur TTC des produits retournés enregistrés sur la période.</td></tr>
+      <tr><td><b>C.A . Commissionnable HT</b>, <b>TTC</b></td><td>La part du chiffre d'affaires qui entre dans les commissions, selon votre plan de rémunération&nbsp;: sans les produits non commissionnés ni ceux à commission fixe, moins les avoirs commissionnables.</td></tr>
+      <tr><td><b>Nombre de commandes</b></td><td>Commandes payées, non annulées, hors commandes cadeaux.</td></tr>
+      <tr><td><b>C.A. Moyen par commande</b></td><td>C.A. TTC ÷ Nombre de commandes.</td></tr>
+      <tr><td><b>Nombre de réunions</b></td><td>Réunions non annulées dont la date tombe dans la période, avec ou sans commande.</td></tr>
+      <tr><td><b>Nb nouveau client</b></td><td>Clientes <strong>créées</strong> sur la période et rattachées à la conseillère, qu'elles aient commandé ou non.</td></tr>
+      <tr><td><b>Nb nouvelle recrue</b></td><td>Conseillères dont le compte a été <strong>créé</strong> sur la période et dont la conseillère est la recruteuse.</td></tr>
+      <tr><td><b>C.A. en attente HT</b>, <b>TTC</b></td><td>Une photo à date, sans période&nbsp;: les commandes marquées payées dont le paiement n'est pas encore encaissé (par exemple dans un regroupement pas encore réglé). Pas de comparaison ni de progression.</td></tr>
+    </tbody>
+  </table></div>
+  <p class="muted">D'autres indicateurs peuvent être activés dans la <a href="#config">configuration</a>&nbsp;: C.A. expédié, C.A. web, nombre de clientes ayant commandé, C.A. moyen par réunion. Les deux derniers sont calculés au mois et ne s'affichent pas en mode date à date.</p>
+</section>
+
+<!-- 6 -->
+<section id="grille">
+  <div class="sec-head"><span class="sec-num">06</span><h2>Le tableau des conseillères</h2></div>
+  <p>Sous la synthèse, chaque ligne est une conseillère de l'équipe (ou de tout le réseau), avec ses indicateurs.</p>
+  <div class="table-wrap"><table class="opts">
+    <thead><tr><th>Colonne ou filtre</th><th>Signification</th></tr></thead>
+    <tbody>
+      <tr><td><b>Vendeur</b>, <b>Manager</b></td><td>La conseillère et son animatrice.</td></tr>
+      <tr><td><b>Statut</b>, <b>Statut estimé</b></td><td>Son statut tel qu'il était lors du calcul de l'équipe, et son statut estimé actuel.</td></tr>
+      <tr><td><b>Niveau</b></td><td>Sa profondeur sous la conseillère choisie&nbsp;: 0 pour elle-même, 1 pour ses filleules directes…</td></tr>
+      <tr><td><b>Activé</b></td><td>Son accès est déverrouillé.</td></tr>
+      <tr><td><b>Début d'activité</b></td><td>La date de sa première commande payée.</td></tr>
+      <tr><td><b>Mode d'affichage</b></td><td><strong>Liste</strong> ou <strong>Arbre</strong>.</td></tr>
+      <tr><td><b>Seulement les actifs ?</b></td><td>Ne garde que les conseillères «&nbsp;actives&nbsp;» selon vos <strong>Conditions de statut actif</strong> (Paramètres › Commissionnement)&nbsp;; sans condition, celles qui ont un C.A. commissionnable HT sur la période.</td></tr>
+      <tr><td><b>Colonnes</b>, <b>Filtres</b></td><td>Les volets latéraux choisissent les colonnes et filtrent. <strong>Enregistrer les filtres</strong>, <strong>Appliquer les filtres enregistrés</strong> et <strong>Definir les filtres par défaut</strong> mémorisent votre présentation&nbsp;; l'icône de téléchargement exporte le tableau.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- 7 -->
+<section id="panneau">
+  <div class="sec-head"><span class="sec-num">07</span><h2>Le panneau d'une conseillère</h2></div>
+  <p>Le bouton <strong>i</strong> d'une ligne (ou d'une carte de l'<a href="organigramme.html">organigramme</a>) ouvre un panneau <strong>Informations vendeur</strong>, avec <strong>ses propres dates</strong> (par défaut du 1er du mois à aujourd'hui), calculé en direct. Une case permet d'y inclure son équipe.</p>
+  <div class="table-wrap"><table class="opts">
+    <thead><tr><th>Onglet</th><th>Ce qu'il liste</th></tr></thead>
+    <tbody>
+      <tr><td><b>Nouveaux clients</b></td><td>Les clientes créées et rattachées à la conseillère sur la période, avec leur nombre de commandes payées et les points de fidélité gagnés.</td></tr>
+      <tr><td><b>Réunions</b></td><td>Les réunions non annulées de la période, avec l'hôtesse, le nombre d'invitées et le nombre de clientes qui ont commandé.</td></tr>
+      <tr><td><b>Commandes</b></td><td>Les commandes payées de la période (hors annulées et cadeaux)&nbsp;: date, cliente, montant TTC, nombre de produits.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- 8 -->
+<section id="config">
+  <div class="sec-head"><span class="sec-num">08</span><h2>Configuration</h2></div>
+  <p>Le bouton <strong>Configuration</strong> règle, séparément pour l'<strong>Interface admin</strong> (vous) et l'<strong>Interface vendeur</strong> (vos animatrices)&nbsp;:</p>
+  <ul class="prose">
+    <li><strong>Statistiques à afficher</strong>&nbsp;: les indicateurs proposés&nbsp;;</li>
+    <li><strong>Choix de la période comparée</strong>&nbsp;: mois précédent ou même mois de l'année précédente.</li>
+  </ul>
+  <p>Le choix entre le mode date à date et le mode mois/année est réglé par SellingAtHome.</p>
+</section>
+
+<!-- 9 -->
+<section id="exemple">
+  <div class="sec-head"><span class="sec-num">09</span><h2>Exemple</h2></div>
+  <div class="example"><span class="ex-label">Exemple</span><p>Le 1er avril, vous choisissez Sophie et comparez mars à mars de l'an dernier, «&nbsp;Le vendeur compte pour les stats d'équipe&nbsp;» sur «&nbsp;Non&nbsp;».</p>
+    <ul class="prose">
+      <li>Léa a vendu 3&nbsp;100&nbsp;€ HT en 9 commandes, Chloé 2&nbsp;800&nbsp;€ HT en 7, Manon 2&nbsp;500&nbsp;€ HT en 8&nbsp;: <strong>C.A. HT</strong> de l'équipe = 8&nbsp;400&nbsp;€, <strong>Nombre de commandes</strong> = 24.</li>
+      <li>L'an dernier en mars, l'équipe faisait 7&nbsp;500&nbsp;€&nbsp;: <strong>Progression</strong> = (8&nbsp;400 − 7&nbsp;500) ÷ 7&nbsp;500 = <strong>+12&nbsp;%</strong>.</li>
+      <li>Chloé a recruté Zoé le 18 mars&nbsp;: <strong>Nb nouvelle recrue</strong> = 1 pour l'équipe.</li>
+      <li>Une commande de Camille payée le 31 mars à 23&nbsp;h compte en mars, le jour de son paiement.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 10 -->
+<section id="attention">
+  <div class="sec-head"><span class="sec-num">10</span><h2>Points d'attention</h2></div>
+  <ul class="prose">
+    <li><strong>Les chiffres datent de la nuit</strong>&nbsp;; votre navigateur les garde en mémoire pour la journée.</li>
+    <li><strong>Une conseillère verrouillée</strong> n'est plus recalculée&nbsp;: une correction tardive sur ses commandes passées n'apparaît pas.</li>
+    <li><strong>«&nbsp;Nouveau client&nbsp;» compte les fiches créées</strong>, pas les premières commandes.</li>
+    <li><strong>«&nbsp;Nouvelle recrue&nbsp;» suit le recruteur</strong>, pas l'animatrice.</li>
+    <li><strong>C.A. en attente</strong> est une photo du jour&nbsp;: il ne se compare pas.</li>
+  </ul>
+</section>
+
+<!-- 11 -->
+<section id="faq">
+  <div class="sec-head"><span class="sec-num">11</span><h2>Questions fréquentes</h2></div>
+  <div class="faq">
+    <details><summary>Les chiffres diffèrent de ceux du tableau de bord.</summary><div><p>Le suivi d'équipe est calculé chaque nuit, avec ses propres règles (date de paiement, avoirs, types exclus). Le tableau de bord est en temps réel.</p></div></details>
+    <details><summary>La progression affiche «&nbsp;∞&nbsp;%&nbsp;».</summary><div><p>La période comparée vaut 0&nbsp;: la progression n'est pas calculable.</p></div></details>
+    <details><summary>Une conseillère qui a changé d'équipe apparaît encore dans l'ancienne.</summary><div><p>Pour les mois antérieurs au changement, c'est normal&nbsp;: l'équipe de chaque mois est celle de la fin de ce mois.</p></div></details>
+    <details><summary>Les chiffres d'aujourd'hui n'apparaissent pas.</summary><div><p>Ils seront calculés cette nuit. Le lendemain, rechargez la page.</p></div></details>
+  </div>
+</section>
+
+  </main>
+</div>

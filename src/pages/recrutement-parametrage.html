@@ -1,0 +1,202 @@
+<!--page {"title":"Paramétrer le recrutement"} -->
+<style>
+.opts td:first-child { width:32%; }
+.opts td:nth-child(3) { width:12%; white-space:nowrap; font-size:.88rem; color:var(--muted); }
+.opts td:nth-child(4) { width:14%; white-space:nowrap; font-size:.88rem; color:var(--muted); }
+.cols3 { display:grid; grid-template-columns:repeat(auto-fit, minmax(210px,1fr)); gap:14px; }
+.cols3 .card { border-top:5px solid var(--accent); }
+.cols3 .card:nth-child(2) { border-top-color:var(--pink); }
+.cols3 .card:nth-child(3) { border-top-color:var(--yellow); }
+</style>
+<header class="hero">
+  <div class="hero-in">
+    <div>
+      <span class="eyebrow">Recrutement</span>
+      <h1>Paramétrer <span class="script">le recrutement</span></h1>
+      <p class="lede">Les cinq onglets de configuration des candidatures&nbsp;: le comportement général, les champs du formulaire, les textes, les documents demandés et le kit de démarrage. Chaque option, son effet, sa valeur par défaut et son adoption réelle.</p>
+    </div>
+    <div class="voucher-art" aria-hidden="true">
+      <div class="v-top"><span>Configuration</span><span>5 onglets</span></div>
+      <div class="v-amount">13<span> options</span></div>
+      <div class="v-name">Configuration générale</div>
+      <div class="v-sep"></div>
+      <div class="v-meta"><span>Formulaire <b>8 langues</b></span><span>Demandes <b>par pays</b></span></div>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="toc" aria-label="Sommaire">
+    <details id="tocDetails" open>
+      <summary>Sommaire</summary>
+      <div class="toc-title">Sommaire</div>
+      <ol>
+        <li data-sec="acces"><a href="#acces"><span class="toc-n">1</span>Où trouver les réglages</a></li>
+        <li data-sec="general"><a href="#general"><span class="toc-n">2</span>Configuration générale</a>
+          <ol class="toc-sub"><li><a href="#s2-1"><span class="toc-n">2.1</span>Le déroulé</a></li><li><a href="#s2-2"><span class="toc-n">2.2</span>Recruteuse et animatrice</a></li><li><a href="#s2-3"><span class="toc-n">2.3</span>Consentement et banque</a></li></ol>
+        </li>
+        <li data-sec="formulaires"><a href="#formulaires"><span class="toc-n">3</span>Formulaires&nbsp;: les champs</a></li>
+        <li data-sec="contenus"><a href="#contenus"><span class="toc-n">4</span>Contenus&nbsp;: les textes</a></li>
+        <li data-sec="demandes"><a href="#demandes"><span class="toc-n">5</span>Demandes&nbsp;: les documents</a></li>
+        <li data-sec="kit"><a href="#kit"><span class="toc-n">6</span>Kit de démarrage</a></li>
+        <li data-sec="autres"><a href="#autres"><span class="toc-n">7</span>Réglages gérés par SellingAtHome</a></li>
+        <li data-sec="exemples"><a href="#exemples"><span class="toc-n">8</span>Deux configurations types</a></li>
+        <li data-sec="attention"><a href="#attention"><span class="toc-n">9</span>Points d'attention</a></li>
+        <li data-sec="faq"><a href="#faq"><span class="toc-n">10</span>Questions fréquentes</a></li>
+      </ol>
+    </details>
+  </nav>
+
+  <main>
+
+<section id="acces">
+  <div class="sec-head"><span class="sec-num">01</span><h2>Où trouver les réglages</h2></div>
+  <div class="path" aria-label="Chemin d'accès"><span>Espace marque</span><span>Formulaires</span><span>Recrutements</span><span>Onglet <b>Configuration</b></span></div>
+  <p>La page <strong>Configurations</strong> compte cinq onglets&nbsp;: <strong>Configuration générale</strong>, <strong>Formulaires</strong>, <strong>Contenus</strong>, <strong>Demandes</strong> et <strong>Kit de démarrage</strong>. Chaque onglet a son propre bouton <strong>Enregistrer</strong>&nbsp;: enregistrez avant de changer d'onglet.</p>
+  <p>Ces réglages pilotent le parcours décrit dans <a href="recrutement-principe.html">Le recrutement dématérialisé</a>.</p>
+  <div class="tip"><span class="ex-label">Vocabulaire</span><p>Les écrans parlent de <strong>vendeur</strong> pour la conseillère, de <strong>parrain</strong> pour la recruteuse et d'<strong>animateur</strong> pour l'animatrice.</p></div>
+  <p class="muted">Les pourcentages d'adoption portent sur les 32 marques qui utilisent cette version des candidatures. Toutes les cases sont décochées par défaut.</p>
+</section>
+
+<section id="general">
+  <div class="sec-head"><span class="sec-num">02</span><h2>Configuration générale</h2></div>
+  <figure><img src="Captures/Recrutement/parametres-general.png" alt="Onglet Configuration générale : cases Regrouper le formulaire et les demandes à télécharger, Validation automatique des demandes, Création automatique du vendeur, Gestion automatisée du parrain, Gestion automatisée de l'animateur, Demande de consentement avec fichier et texte de la case, Gestion automatisée des informations bancaires avec Versement et Prélèvement, Activer une page de confirmation" loading="lazy"><figcaption>L'onglet Configuration générale.</figcaption></figure>
+
+  <h3 id="s2-1"><span class="sub-num">2.1</span> Le déroulé</h3>
+  <div class="table-wrap"><table class="opts">
+    <thead><tr><th>Option</th><th>Effet</th><th>Défaut</th><th>Marques</th></tr></thead>
+    <tbody>
+      <tr><td><b>Regrouper le formulaire et les demandes à télécharger</b></td><td>Les documents de l'onglet Demandes sont demandés <strong>dans le formulaire de candidature</strong>. La candidature arrive complète, au statut «&nbsp;A valider&nbsp;». Décoché, vous lancez la demande de documents vous-même, candidature par candidature.</td><td>Non</td><td>19 sur 32</td></tr>
+      <tr><td><b>Validation automatique des demandes</b></td><td>Les documents déposés par la candidate sont validés sans contrôle de votre part&nbsp;; dès que tout est déposé, le contrat part en signature.</td><td>Non</td><td>6 sur 32</td></tr>
+      <tr><td><b>Création automatique du vendeur</b></td><td>Le compte conseillère est créé dès que votre signataire a signé le contrat, sans clic sur «&nbsp;Créer un VDI&nbsp;».</td><td>Non</td><td>18 sur 32</td></tr>
+      <tr><td><b>Activer une page de confirmation</b></td><td>Après l'envoi de sa candidature, la candidate voit une page personnalisée (visuel, titre, texte et bouton de l'onglet Contenus). Sinon, un simple message de confirmation.</td><td>Non</td><td>16 sur 32</td></tr>
+    </tbody>
+  </table></div>
+  <p>Les deux premières options n'apparaissent que si l'onglet Demandes est actif pour votre marque (c'est le cas de 31 marques sur 32).</p>
+  <p>En dessous des cases, le champ <strong>URL du formulaire de candidature</strong> donne le lien public à diffuser.</p>
+
+  <h3 id="s2-2"><span class="sub-num">2.2</span> Recruteuse et animatrice</h3>
+  <div class="table-wrap"><table class="opts">
+    <thead><tr><th>Option</th><th>Effet</th><th>Défaut</th><th>Marques</th></tr></thead>
+    <tbody>
+      <tr><td><b>Gestion automatisée du parrain</b></td><td>Ajoute au formulaire une section parrainage&nbsp;: la candidate indique si elle connaît une conseillère et la recherche par nom, prénom ou code. Seules les conseillères actives sont proposées. La recruteuse choisie est reprise à la création du compte.</td><td>Non</td><td>18 sur 32</td></tr>
+      <tr><td><b>Gestion automatisée de l'animateur</b></td><td>Accessible seulement si la précédente est cochée, et si votre marque n'a pas choisi «&nbsp;recruteur = animateur&nbsp;». La candidate indique si sa recruteuse est aussi son animatrice&nbsp;; sinon elle choisit une autre conseillère.</td><td>Non</td><td>2 sur 32</td></tr>
+    </tbody>
+  </table></div>
+  <div class="example"><span class="ex-label">Exemple</span><p>Votre marque sépare recrutement et animation. Manon choisit Léa comme recruteuse, puis répond «&nbsp;Non&nbsp;» à la question sur l'animatrice et choisit Sophie. À la création de son compte, Manon est rattachée à Léa comme recruteuse et à Sophie comme animatrice.</p></div>
+  <p class="muted">13 marques sur 32 ont choisi que la recruteuse soit toujours l'animatrice&nbsp;: la case de l'animateur n'est alors pas affichée.</p>
+
+  <h3 id="s2-3"><span class="sub-num">2.3</span> Consentement et banque</h3>
+  <div class="table-wrap"><table class="opts">
+    <thead><tr><th>Option</th><th>Effet</th><th>Défaut</th><th>Marques</th></tr></thead>
+    <tbody>
+      <tr><td><b>Demande de consentement</b></td><td>Ajoute une case à cocher obligatoire en bas du formulaire, dont le libellé est un lien vers un document (vos conditions, une charte…). Choisissez le document avec <strong>Ajouter fichier</strong> et saisissez le texte de la case. Un fichier est obligatoire pour enregistrer.</td><td>Non</td><td>3 sur 32</td></tr>
+      <tr><td><b>Gestion automatisée des informations bancaires</b></td><td>Ajoute une section coordonnées bancaires au formulaire (IBAN, BIC, nom de la banque), contrôlée&nbsp;: l'IBAN doit être valide et appartenir à l'un des pays de votre marque.</td><td>Non</td><td>16 sur 32</td></tr>
+      <tr><td>↳ <b>Versement (commissions)</b></td><td>Le compte sert à verser les commissions.</td><td>Non</td><td>13 sur 32</td></tr>
+      <tr><td>↳ <b>Prélèvement (si oui, signature inclue dans le contrat)</b></td><td>Le compte sert aux prélèvements. Si les deux sont cochés, la candidate peut donner un second compte&nbsp;; sinon le même est utilisé pour les deux.</td><td>Non</td><td>6 sur 32</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="formulaires">
+  <div class="sec-head"><span class="sec-num">03</span><h2>Formulaires&nbsp;: les champs</h2></div>
+  <figure><img src="Captures/Recrutement/parametres-formulaires.png" alt="Onglet Formulaires : trois colonnes Champs obligatoires (Civilité, Nom, Prénom, Date de naissance…), Champs additionnels et Champs disponibles (Numéro de carte d'identité, Statut de la société, Numéro de TVA, Siret, Nationalité…), chaque champ avec boutons voir et modifier" loading="lazy"><figcaption>L'onglet Formulaires.</figcaption></figure>
+  <div class="cols3">
+    <div class="card"><span class="tag">Champs obligatoires</span><p>Les champs de base (civilité, nom, naissance, sécurité sociale, coordonnées, adresse, banque). Toujours présents&nbsp;: vous pouvez modifier leur libellé et, pour certains, les rendre obligatoires ou non (astérisque).</p></div>
+    <div class="card"><span class="tag pink">Champs additionnels</span><p>Les champs supplémentaires <strong>affichés</strong> dans le formulaire, dans l'ordre de la colonne.</p></div>
+    <div class="card"><span class="tag yellow">Champs disponibles</span><p>Les champs créés mais <strong>non affichés</strong>. Faites-les glisser vers la colonne du milieu pour les afficher.</p></div>
+  </div>
+  <p><strong>Ajouter un champ</strong> ouvre une fenêtre&nbsp;: <strong>Type de champ</strong> (Texte, Radio, Contenu, Date), <strong>Nom système</strong> (minuscules, sans espace&nbsp;: il ne change plus ensuite), <strong>Libellé du champ</strong> dans chaque langue, case <strong>Obligatoire</strong> et, pour un champ Radio, les <strong>valeurs disponibles</strong>. Le type Contenu affiche un texte d'information, sans saisie.</p>
+  <p>L'œil affiche le nom système du champ&nbsp;; le crayon le modifie&nbsp;; la croix rouge supprime un champ que vous avez créé. <strong>Prévisualiser le formulaire</strong> ouvre le formulaire public.</p>
+  <div class="tip"><span class="ex-label">Conseil</span><p>Un champ additionnel peut servir de condition à une demande de document (voir <a href="#demandes">Demandes</a>)&nbsp;: par exemple ne demander l'extrait Kbis qu'aux candidates qui ont répondu «&nbsp;Oui&nbsp;» à «&nbsp;Êtes-vous déjà immatriculée&nbsp;?&nbsp;».</p></div>
+  <p class="muted">Quelques marques ont un formulaire sur mesure&nbsp;: l'onglet Formulaires n'apparaît alors pas.</p>
+</section>
+
+<section id="contenus">
+  <div class="sec-head"><span class="sec-num">04</span><h2>Contenus&nbsp;: les textes</h2></div>
+  <figure><img src="Captures/Recrutement/parametres-contenus.png" alt="Onglet Contenus : un onglet par langue, champs Titre du formulaire, Visuel, Texte d'introduction du formulaire, Titre section parrainage, Description section parrainage, Texte candidature sans parrainage" loading="lazy"><figcaption>L'onglet Contenus, une saisie par langue.</figcaption></figure>
+  <p>Tous les textes se saisissent <strong>langue par langue</strong> (un onglet par langue active de votre marque). Un champ laissé vide affiche le texte par défaut de SellingAtHome.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Champ</th><th>Où il s'affiche</th></tr></thead>
+    <tbody>
+      <tr><td><b>Titre du formulaire</b> (50 caractères) et <b>Visuel</b></td><td>En tête du formulaire de candidature (le visuel sert aussi à la page de confirmation).</td></tr>
+      <tr><td><b>Texte d'introduction du formulaire</b></td><td>Sous le titre du formulaire.</td></tr>
+      <tr><td><b>Texte d'introduction des demandes</b></td><td>Sur la page de dépôt des documents (masqué si les demandes sont regroupées dans le formulaire).</td></tr>
+      <tr><td><b>Titre</b> et <b>Description section parrainage</b></td><td>La section où la candidate choisit sa recruteuse.</td></tr>
+      <tr><td><b>Texte candidature sans parrainage</b></td><td>Affiché quand la candidate répond qu'elle ne connaît pas de conseillère.</td></tr>
+      <tr><td><b>Texte informations bancaires</b></td><td>En tête de la section bancaire.</td></tr>
+      <tr><td><b>Titre</b> et <b>Description section demandes</b></td><td>La section des documents, dans le formulaire regroupé.</td></tr>
+      <tr><td><b>Titre du bouton de validation</b></td><td>Le bouton d'envoi du formulaire.</td></tr>
+      <tr><td><b>Titre</b>, <b>Texte</b> et <b>Lien bouton redirection</b> de la page de confirmation</td><td>La page de confirmation, si elle est activée. Le «&nbsp;lien&nbsp;» est l'adresse vers laquelle renvoie le bouton (par exemple votre site).</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="demandes">
+  <div class="sec-head"><span class="sec-num">05</span><h2>Demandes&nbsp;: les documents</h2></div>
+  <figure><img src="Captures/Recrutement/parametres-demandes.png" alt="Onglet Demandes, sous-onglet Par défaut : vignettes Carte identité (Obligatoire), Contrat VDI, Attestation de sécurité sociale (Obligatoire) et Ajouter une demande" loading="lazy"><figcaption>L'onglet Demandes&nbsp;: la liste des pièces demandées à chaque candidate.</figcaption></figure>
+  <p>Cet onglet définit les <strong>demandes</strong> faites à chaque candidate&nbsp;: un sous-onglet <strong>Par défaut</strong>, et éventuellement un par pays (la candidate reçoit la liste de son pays, sinon celle par défaut). La vignette du <strong>contrat</strong> représente le document à signer&nbsp;: elle n'est ni modifiable ni supprimable ici.</p>
+  <p><strong>Ajouter une demande</strong> ouvre un volet&nbsp;:</p>
+  <ul class="prose">
+    <li><strong>Libellé par défaut</strong>, puis un <strong>Libellé</strong> et une <strong>Description</strong> par langue (ce que lit la candidate).</li>
+    <li><strong>Format</strong>&nbsp;: <em>Document seul</em> (un fichier à déposer), <em>Texte seul</em> (une réponse écrite), <em>Document + Texte</em>, ou <em>Chèque de caution</em>.</li>
+    <li><strong>Conditions d'affichage</strong>&nbsp;: la demande n'est faite que si un champ additionnel a la <strong>valeur attendue</strong>.</li>
+    <li><strong>La ressource est-elle obligatoire&nbsp;?</strong>&nbsp;: une demande facultative ne bloque pas la suite du parcours.</li>
+    <li><strong>Renvoyer ce document au candidat avec le contrat signé</strong>&nbsp;: le fichier est joint à l'email final.</li>
+  </ul>
+  <div class="example"><span class="ex-label">Exemple</span><p>Votre liste par défaut&nbsp;: carte d'identité (obligatoire), attestation de sécurité sociale (obligatoire), RIB (facultatif). Chloé dépose les deux premiers&nbsp;: votre équipe peut les valider et envoyer le contrat sans attendre le RIB.</p></div>
+  <p class="muted">La candidate peut déposer des images ou des documents (PDF, Word…). Les changements de cet onglet s'appliquent aux nouvelles candidatures&nbsp;: une candidature en cours garde sa liste, que vous pouvez compléter depuis sa fiche.</p>
+</section>
+
+<section id="kit">
+  <div class="sec-head"><span class="sec-num">06</span><h2>Kit de démarrage</h2></div>
+  <p>Le dernier onglet active et habille le tunnel d'achat du kit. Il est détaillé, option par option, dans la page <a href="kit-demarrage.html#parametres">Le kit de démarrage</a>.</p>
+</section>
+
+<section id="autres">
+  <div class="sec-head"><span class="sec-num">07</span><h2>Réglages gérés par SellingAtHome</h2></div>
+  <p>D'autres comportements ne sont pas dans ces onglets&nbsp;: demandez-les à SellingAtHome.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Réglage</th><th>Effet</th><th>Marques</th></tr></thead>
+    <tbody>
+      <tr><td>Signature électronique obligatoire</td><td>Le contrat est signé en ligne par la candidate puis par la marque.</td><td>30 sur 32</td></tr>
+      <tr><td>Recruteur = animateur</td><td>L'animatrice est toujours la recruteuse.</td><td>13 sur 32</td></tr>
+      <tr><td>Déverrouillage automatique de l'accès</td><td>L'accès de la nouvelle conseillère s'ouvre au paiement de son kit.</td><td>5 sur 32</td></tr>
+      <tr><td>Redirection vers le kit</td><td>Sans signature, la candidate est envoyée vers l'achat du kit juste après son formulaire.</td><td>2 sur 32</td></tr>
+      <tr><td>Signataire de la marque</td><td>La personne qui reçoit les notifications et signe les contrats, éventuellement par pays.</td><td>—</td></tr>
+      <tr><td>Statut et rôles des nouvelles conseillères</td><td>Attribués automatiquement à la création du compte.</td><td>—</td></tr>
+      <tr><td>Modification des documents par la marque</td><td>Permet de remplacer un fichier déposé par la candidate.</td><td>0 sur 32</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="exemples">
+  <div class="sec-head"><span class="sec-num">08</span><h2>Deux configurations types</h2></div>
+  <div class="grid-2">
+    <div class="card"><span class="tag">Tout automatique</span><p>Regrouper le formulaire et les demandes, Validation automatique, Création automatique du vendeur, Gestion automatisée du parrain. La candidate dépose tout d'un coup, le contrat part tout seul, et le compte est créé à la signature. Votre équipe n'intervient que pour signer.</p></div>
+    <div class="card"><span class="tag pink">Sous contrôle</span><p>Aucune des trois premières options. Vous lisez chaque candidature, vous lancez la demande de documents après un entretien, vous contrôlez chaque pièce et vous créez le compte vous-même. Plus long, mais rien n'échappe à votre équipe.</p></div>
+  </div>
+</section>
+
+<section id="attention">
+  <div class="sec-head"><span class="sec-num">09</span><h2>Points d'attention</h2></div>
+  <ul class="prose">
+    <li><strong>La validation automatique</strong> ne vérifie pas le contenu des fichiers&nbsp;: une photo floue ou le mauvais document part tel quel dans le dossier.</li>
+    <li><strong>Le nom système d'un champ</strong> ne se modifie plus après sa création.</li>
+    <li><strong>Le champ «&nbsp;Texte informations bancaires&nbsp;»</strong> annonce 200 caractères mais n'en accepte que 50 à la saisie.</li>
+    <li><strong>Enregistrez chaque onglet</strong> séparément.</li>
+  </ul>
+</section>
+
+<section id="faq">
+  <div class="sec-head"><span class="sec-num">10</span><h2>Questions fréquentes</h2></div>
+  <div class="faq">
+    <details><summary>Je ne vois pas l'onglet Demandes.</summary><div><p>Il est masqué pour votre marque (une seule marque est dans ce cas). Les options «&nbsp;Regrouper…&nbsp;» et «&nbsp;Validation automatique…&nbsp;» le sont aussi.</p></div></details>
+    <details><summary>Je ne peux pas cocher «&nbsp;Gestion automatisée de l'animateur&nbsp;».</summary><div><p>Cochez d'abord «&nbsp;Gestion automatisée du parrain&nbsp;». Si la case n'apparaît pas du tout, votre marque a choisi que la recruteuse soit toujours l'animatrice.</p></div></details>
+    <details><summary>L'enregistrement échoue quand je coche «&nbsp;Demande de consentement&nbsp;».</summary><div><p>Un document doit être choisi avec «&nbsp;Ajouter fichier&nbsp;» avant d'enregistrer.</p></div></details>
+    <details><summary>Comment demander un document seulement à certaines candidates&nbsp;?</summary><div><p>Créez un champ additionnel (onglet Formulaires), puis ajoutez une condition d'affichage sur la demande (onglet Demandes).</p></div></details>
+  </div>
+</section>
+
+  </main>
+</div>

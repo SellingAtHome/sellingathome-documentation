@@ -1,0 +1,240 @@
+<!--page {"title":"L'assistant IA"} -->
+<style>
+.two { display:grid; grid-template-columns:repeat(auto-fit, minmax(240px,1fr)); gap:14px; }
+.two .card { border-top:5px solid var(--accent); }
+.two .card:nth-child(2) { border-top-color:var(--pink); }
+.opts td:first-child { width:28%; }
+.bubble { background:var(--card); border:1px solid var(--rule); border-radius:16px; padding:12px 16px; margin:8px 0; max-width:560px; font-size:.95rem; }
+.bubble.q { margin-left:auto; background:var(--accent-wash); border-color:transparent; }
+.bubble small { display:block; color:var(--muted); font-size:.78rem; margin-bottom:4px; }
+.narrow img { max-width:360px; }
+</style>
+<header class="hero">
+  <div class="hero-in">
+    <div>
+      <span class="eyebrow">Communication et pilotage</span>
+      <h1>L'assistant <span class="script">IA</span></h1>
+      <p class="lede">«&nbsp;Mon assistant&nbsp;» répond aux questions de vos conseillères, en langage courant&nbsp;: leurs chiffres, leurs clientes, leurs réunions, vos produits, vos documents et votre FAQ. Voici comment l'activer, le nourrir, en maîtriser le coût et suivre son usage.</p>
+    </div>
+    <div class="voucher-art" aria-hidden="true">
+      <div class="v-top"><span>Mon assistant</span><span>Crédits</span></div>
+      <div class="v-amount">0,02<span> €</span></div>
+      <div class="v-name">Coût médian d'une question</div>
+      <div class="v-sep"></div>
+      <div class="v-meta"><span>Quota <b>50/jour</b></span><span>Offertes <b>30</b></span></div>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="toc" aria-label="Sommaire">
+    <details id="tocDetails" open>
+      <summary>Sommaire</summary>
+      <div class="toc-title">Sommaire</div>
+      <ol>
+        <li data-sec="definition"><a href="#definition"><span class="toc-n">1</span>Qu'est-ce que c'est&nbsp;?</a></li>
+        <li data-sec="sait"><a href="#sait"><span class="toc-n">2</span>Ce qu'il sait faire, et ne fait pas</a></li>
+        <li data-sec="ou"><a href="#ou"><span class="toc-n">3</span>Où le trouver, comment l'activer</a>
+          <ol class="toc-sub"><li><a href="#s3-1"><span class="toc-n">3.1</span>Pour la marque</a></li><li><a href="#s3-2"><span class="toc-n">3.2</span>Pour chaque conseillère</a></li></ol>
+        </li>
+        <li data-sec="sources"><a href="#sources"><span class="toc-n">4</span>Le nourrir&nbsp;: documents et FAQ</a></li>
+        <li data-sec="cout"><a href="#cout"><span class="toc-n">5</span>Coût, crédits et quotas</a>
+          <ol class="toc-sub"><li><a href="#s5-1"><span class="toc-n">5.1</span>Deux unités</a></li><li><a href="#s5-2"><span class="toc-n">5.2</span>Les crédits</a></li><li><a href="#s5-3"><span class="toc-n">5.3</span>Le quota quotidien</a></li></ol>
+        </li>
+        <li data-sec="suivi"><a href="#suivi"><span class="toc-n">6</span>Suivre l'usage</a>
+          <ol class="toc-sub"><li><a href="#s6-1"><span class="toc-n">6.1</span>Reporting</a></li><li><a href="#s6-2"><span class="toc-n">6.2</span>Conversations</a></li><li><a href="#s6-3"><span class="toc-n">6.3</span>Feedbacks</a></li></ol>
+        </li>
+        <li data-sec="conseillere"><a href="#conseillere"><span class="toc-n">7</span>Ce que voit la conseillère</a></li>
+        <li data-sec="chiffres"><a href="#chiffres"><span class="toc-n">8</span>L'usage réel</a></li>
+        <li data-sec="attention"><a href="#attention"><span class="toc-n">9</span>Points d'attention</a></li>
+        <li data-sec="faq"><a href="#faq"><span class="toc-n">10</span>Questions fréquentes</a></li>
+      </ol>
+    </details>
+  </nav>
+
+  <main>
+
+<!-- 1 -->
+<section id="definition">
+  <div class="sec-head"><span class="sec-num">01</span><h2>Qu'est-ce que c'est&nbsp;?</h2></div>
+  <p class="lede">Un assistant conversationnel, dans l'espace de chaque conseillère. Elle pose sa question comme à une collègue&nbsp;; l'assistant va chercher la réponse dans ses données SellingAtHome et dans les contenus de votre marque, puis répond en citant ses sources.</p>
+  <div class="bubble q"><small>Léa</small>Quelles sont mes clientes qui n'ont rien commandé depuis 3 mois&nbsp;?</div>
+  <div class="bubble"><small>Mon assistant</small>Vous avez 12 clientes sans commande depuis le 7 juillet. Les trois plus importantes&nbsp;: Camille (6 commandes, dernière le 2 juin), Inès… Voulez-vous la liste de leurs derniers achats&nbsp;?</div>
+  <div class="bubble q"><small>Léa</small>Comment je déclare mon début d'activité&nbsp;?</div>
+  <div class="bubble"><small>Mon assistant</small>D'après la FAQ de votre marque, la déclaration se fait dans les 15 jours qui suivent le début de l'activité… (lien vers le document «&nbsp;Déclaration de début d'activité&nbsp;»)</div>
+  <div class="tip"><span class="ex-label">Vocabulaire</span><p>Dans l'espace marque, les conseillères sont appelées <strong>vendeurs</strong>.</p></div>
+</section>
+
+<!-- 2 -->
+<section id="sait">
+  <div class="sec-head"><span class="sec-num">02</span><h2>Ce qu'il sait faire, et ne fait pas</h2></div>
+  <div class="two">
+    <div class="card"><span class="tag">Il sait</span><ul class="prose">
+      <li>donner le chiffre d'affaires, le nombre de commandes, le panier moyen, les meilleures ventes d'une période&nbsp;;</li>
+      <li>retrouver une cliente, ses commandes, ses achats, sa liste de souhaits, ses points de fidélité, ses bons d'achat et codes promo&nbsp;;</li>
+      <li>lister des clientes selon des critères (réunion, commande, bon d'achat, anniversaire…)&nbsp;;</li>
+      <li>lister et détailler les réunions, les commandes en attente de paiement, le suivi d'un colis, les commandes de regroupement&nbsp;;</li>
+      <li>présenter les challenges en cours et les commissions clôturées&nbsp;;</li>
+      <li>chercher un produit, son prix, sa fiche et sa disponibilité&nbsp;;</li>
+      <li>pour une animatrice&nbsp;: son équipe, ses recrues, le classement de l'équipe&nbsp;;</li>
+      <li>répondre à partir de votre <strong>FAQ</strong>, de vos <strong>documents</strong> autorisés, et de guides généraux rédigés par SellingAtHome (statut, prospection, animation, usage de l'outil).</li>
+    </ul></div>
+    <div class="card"><span class="tag pink">Il ne fait pas</span><ul class="prose">
+      <li><strong>Il ne modifie rien</strong>&nbsp;: aucune commande passée, aucune fiche changée, aucun email envoyé. Il lit, il ne fait pas.</li>
+      <li>Il ne voit que le portefeuille de la conseillère connectée, et son équipe si elle est animatrice (sans adresses ni noms des invitées des réunions de l'équipe).</li>
+      <li>Il ne voit pas les documents non autorisés pour lui, ni ceux réservés à un statut supérieur à celui de la conseillère.</li>
+      <li>Il ne lit pas les commissions d'un mois non clôturé.</li>
+      <li>Il peut se tromper&nbsp;: la conseillère est invitée à vérifier un chiffre important.</li>
+    </ul></div>
+  </div>
+  <p class="muted">Certaines capacités n'apparaissent que si la fonction existe chez vous (par exemple les commandes de regroupement).</p>
+</section>
+
+<!-- 3 -->
+<section id="ou">
+  <div class="sec-head"><span class="sec-num">03</span><h2>Où le trouver, comment l'activer</h2></div>
+  <div class="path" aria-label="Chemin d'accès"><span>Espace marque</span><span><b>Mon assistant</b></span></div>
+  <p>Le menu comprend cinq écrans&nbsp;: <strong>Reporting</strong>, <strong>Conversations</strong>, <strong>Feedbacks</strong>, <strong>Crédits</strong> et <strong>Paramètres</strong>.</p>
+  <span class="tag yellow" style="display:inline-block">Module optionnel</span>
+
+  <h3 id="s3-1"><span class="sub-num">3.1</span> Pour la marque</h3>
+  <p>L'assistant est activé par SellingAtHome. Une fois actif, le menu <strong>Mon assistant</strong> apparaît dans votre espace et l'entrée <strong>Mon assistant</strong> dans le menu des conseillères. Le menu de l'espace marque peut être visible avant que les conseillères y aient accès&nbsp;: c'est l'activation côté conseillères qui compte.</p>
+
+  <h3 id="s3-2"><span class="sub-num">3.2</span> Pour chaque conseillère</h3>
+  <div class="figrow">
+    <figure class="narrow"><img src="Captures/Pilotage/fiche-assistant.png" alt="Fiche d'une conseillère, encadré Fonctionnalités activées : cases Présent sur le widget carto, Activer la mini-boutique, Activer le module réunion virtuelle, Accès au chat « Mon assistant », et champ Quota chat (questions/jour) avec l'aide Vide = quota par défaut de la marque · 0 = illimité" loading="lazy"><figcaption>L'accès et le quota, sur la fiche de la conseillère.</figcaption></figure>
+    <div class="prose" style="display:flex;flex-direction:column;gap:12px">
+      <p>Sur la fiche d'une conseillère (Vendeurs › modifier, encadré <strong>Fonctionnalités activées</strong>)&nbsp;:</p>
+      <ul class="prose">
+        <li><strong>Accès au chat «&nbsp;Mon assistant&nbsp;»</strong>&nbsp;: coché par défaut pour toutes les conseillères. Décochez pour retirer l'accès à une personne.</li>
+        <li><strong>Quota chat (questions/jour)</strong>&nbsp;: vide = le quota de la marque&nbsp;; 0 = illimité&nbsp;; un nombre = son propre plafond.</li>
+      </ul>
+      <p>Les deux réglages s'enregistrent dès que vous les modifiez.</p>
+      <div class="example"><span class="ex-label">Exemple</span><p>Le quota de la marque est de 50 questions par jour. Sophie, animatrice d'une grande équipe, en pose beaucoup&nbsp;: vous lui mettez 150. Pour Manon, en pause, vous décochez l'accès.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 -->
+<section id="sources">
+  <div class="sec-head"><span class="sec-num">04</span><h2>Le nourrir&nbsp;: documents et FAQ</h2></div>
+  <div class="two">
+    <div class="card"><span class="tag">FAQ</span><p>Toute votre FAQ est utilisée, <strong>sans réglage</strong>. Pour une question pratique, l'assistant la consulte en premier, et la réponse de la marque prime sur ses connaissances générales.</p></div>
+    <div class="card"><span class="tag pink">Documents</span><p>Seuls les documents cochés <strong>Utilisable par l'assistant</strong>, non périmés et dont le texte a été extrait. L'assistant consulte d'abord leur titre et leur résumé, puis lit ceux qui semblent utiles, et donne le lien vers le fichier.</p></div>
+  </div>
+  <p>Le réglage se fait document par document, dans <a href="base-documentaire.html#s3-4">la base de connaissances</a>&nbsp;: case «&nbsp;Utilisable par l'assistant&nbsp;», résumé, date de validité, et note de qualité de l'extraction.</p>
+  <div class="tip"><span class="ex-label">Bon à savoir</span><p>Un bon résumé fait un bon assistant&nbsp;: «&nbsp;Grille des remises conseillère selon le chiffre d'affaires mensuel, valable 2026&nbsp;» aide bien plus que «&nbsp;Document PDF&nbsp;». L'extraction du texte des documents n'est pas facturée à la marque.</p></div>
+</section>
+
+<!-- 5 -->
+<section id="cout">
+  <div class="sec-head"><span class="sec-num">05</span><h2>Coût, crédits et quotas</h2></div>
+
+  <h3 id="s5-1"><span class="sub-num">5.1</span> Deux unités</h3>
+  <div class="decide">
+    <div class="row"><span class="q">Ce que paie la marque</span><span class="arrow">→</span><span class="pill">des euros, prélevés sur un solde de crédits</span></div>
+    <div class="row"><span class="q">Ce que peut consommer une conseillère</span><span class="arrow">→</span><span class="pill yellow">un nombre de questions par 24 heures</span></div>
+  </div>
+  <p>Chaque réponse est débitée selon le travail réellement demandé&nbsp;: à ce jour, entre <strong>0,01&nbsp;€</strong> et <strong>0,10&nbsp;€ HT</strong> par question. Une question simple coûte le minimum, aucune ne dépasse le plafond. Les <strong>30 premières questions</strong> de chaque conseillère sont offertes et ne touchent pas votre solde.</p>
+  <div class="example"><span class="ex-label">Exemple chiffré</span><p>100 conseillères posent chacune 40 questions dans le mois. Les 30 premières de chacune sont offertes&nbsp;: restent 1&nbsp;000 questions payantes. Au coût médian constaté (0,02&nbsp;€), cela fait environ <strong>20&nbsp;€ HT</strong>&nbsp;; au plafond (0,10&nbsp;€), au pire <strong>100&nbsp;€ HT</strong>.</p></div>
+
+  <h3 id="s5-2"><span class="sub-num">5.2</span> Les crédits</h3>
+  <div class="path" aria-label="Chemin d'accès"><span>Mon assistant</span><span><b>Crédits</b></span></div>
+  <figure><img src="Captures/Pilotage/assistant-credits.png" alt="Écran Mon assistant — Crédits : Solde disponible, Consommé ce mois-ci, Acheté ce mois-ci ; Acheter des crédits (montant en € HT, bouton Acheter) ; Recharge automatique et alertes (Seuil de solde bas, M'alerter par email sous ce seuil, Recharger automatiquement sous ce seuil, Montant rechargé, Adresse de notification, Enregistrer) ; Historique des crédits (Date, Type Achat ou Offert, Montant, Auteur flouté, Motif)" loading="lazy"><figcaption>Le solde, l'achat, la recharge automatique et l'historique.</figcaption></figure>
+  <div class="table-wrap"><table class="opts">
+    <thead><tr><th>Réglage</th><th>Fonctionnement</th></tr></thead>
+    <tbody>
+      <tr><td><b>Acheter des crédits</b></td><td>Saisissez un montant en € HT, puis <strong>Acheter</strong> et confirmez. Le montant est ajouté tout de suite et facturé en fin de mois avec votre licence. Un email de confirmation part à votre adresse. Bornes par défaut&nbsp;: 30&nbsp;€ minimum, 5&nbsp;000&nbsp;€ maximum par achat et par mois calendaire.</td></tr>
+      <tr><td><b>Seuil de solde bas</b></td><td>Sous ce montant&nbsp;: un bandeau d'alerte s'affiche sur les pages Mon assistant, l'email d'alerte part et la recharge automatique se déclenche (si activés). 0 = aucune alerte.</td></tr>
+      <tr><td><b>M'alerter par email sous ce seuil</b></td><td>Envoie un email d'alerte au passage sous le seuil.</td></tr>
+      <tr><td><b>Recharger automatiquement sous ce seuil</b> + <b>Montant rechargé</b></td><td>Achète automatiquement ce montant au passage sous le seuil. C'est un achat facturé comme les autres, soumis aux mêmes bornes&nbsp;: si elles l'interdisent, vous recevez l'alerte à la place.</td></tr>
+      <tr><td><b>Adresse de notification</b></td><td>Destinataire des emails d'alerte et de recharge automatique. Vide = l'email de contact de la marque.</td></tr>
+      <tr><td><b>Historique des crédits</b></td><td>Achats, crédits offerts par SellingAtHome et ajustements, avec l'auteur et le motif. Les consommations, question par question, sont dans le Reporting.</td></tr>
+    </tbody>
+  </table></div>
+  <p>Les crédits <strong>n'expirent pas</strong>. À solde nul (et sans recharge automatique possible), l'assistant ne répond plus, sauf aux conseillères à qui il reste des questions offertes.</p>
+  <div class="example"><span class="ex-label">Exemple</span><p>Seuil 10&nbsp;€, recharge automatique de 100&nbsp;€. Votre solde passe de 10,02&nbsp;€ à 9,99&nbsp;€ après une question de Chloé&nbsp;: 100&nbsp;€ sont achetés automatiquement, le solde remonte à 109,99&nbsp;€ et un email vous prévient.</p></div>
+
+  <h3 id="s5-3"><span class="sub-num">5.3</span> Le quota quotidien</h3>
+  <div class="path" aria-label="Chemin d'accès"><span>Mon assistant</span><span><b>Paramètres</b></span></div>
+  <figure><img src="Captures/Pilotage/assistant-parametres.png" alt="Écran Mon assistant — Paramètres : encadré Facturation et quotas (facturation à l'usage, fenêtre glissante 24 h, plafond par conseillère, blocage temporaire), bouton Voir la consommation ; encadré Quotas avec le champ Questions par conseillère et par jour, bouton Enregistrer et lien Gérer mes crédits" loading="lazy"><figcaption>Le quota par défaut de la marque.</figcaption></figure>
+  <ul class="prose">
+    <li><strong>Questions par conseillère et par jour</strong>&nbsp;: le plafond par défaut, 50 en standard. 0 = aucune limite.</li>
+    <li>Le quota se compte sur les <strong>24 dernières heures glissantes</strong>, pas par jour calendaire&nbsp;: pas de remise à zéro à minuit.</li>
+    <li>Une conseillère qui atteint son quota voit «&nbsp;Vous avez atteint votre quota d'utilisation pour aujourd'hui&nbsp;». Les autres ne sont pas affectées.</li>
+    <li>Le quota d'une conseillère précise se règle sur sa fiche (<a href="#s3-2">3.2</a>).</li>
+  </ul>
+  <div class="warn"><span class="ex-label">Attention</span><p>Si vous avez enregistré 0 (illimité), le champ réaffiche 50 à la visite suivante&nbsp;: ne cliquez pas sur <strong>Enregistrer</strong> sans le remettre à 0. SellingAtHome applique en outre un plafond de sécurité journalier par marque, qui ne doit pas être atteint en usage normal.</p></div>
+</section>
+
+<!-- 6 -->
+<section id="suivi">
+  <div class="sec-head"><span class="sec-num">06</span><h2>Suivre l'usage</h2></div>
+
+  <h3 id="s6-1"><span class="sub-num">6.1</span> Reporting</h3>
+  <figure><img src="Captures/Pilotage/assistant-reporting.png" alt="Écran Mon assistant (Reporting) : boutons de période Aujourd'hui, 3 derniers jours, Cette semaine, Ce mois, 3 derniers mois et dates Du / Au ; indicateurs Coût total, Messages, Conversations, Vendeurs actifs ; encadré Questions offertes ; graphiques Consommation par jour et Messages par jour" loading="lazy"><figcaption>Le reporting, sur trois mois.</figcaption></figure>
+  <ul class="prose">
+    <li><strong>Coût total (€)</strong>&nbsp;: ce qui a été réellement débité sur la période, et en orange ce que les questions offertes auraient coûté («&nbsp;+ 0,17&nbsp;€ offerts&nbsp;»), pour anticiper votre budget.</li>
+    <li><strong>Messages</strong>, <strong>Conversations</strong>, <strong>Vendeurs actifs</strong>.</li>
+    <li><strong>Consommation par jour (€)</strong> et <strong>Messages par jour</strong>, ce dernier distinguant les réponses avec un retour positif, négatif ou sans retour.</li>
+    <li><strong>Consommation par vendeur</strong>&nbsp;: un tableau avec, pour chaque conseillère, le nombre de messages, le coût et son quota en questions par jour.</li>
+  </ul>
+
+  <h3 id="s6-2"><span class="sub-num">6.2</span> Conversations</h3>
+  <figure><img src="Captures/Pilotage/assistant-conversations.png" alt="Écran Conversations — Mon assistant : champ Rechercher un vendeur, puis la liste des conversations de la conseillère choisie, chacune avec sa première question et sa date" loading="lazy"><figcaption>Les conversations d'une conseillère (nom flouté).</figcaption></figure>
+  <p>Choisissez une conseillère dans <strong>Rechercher un vendeur</strong>&nbsp;: ses conversations s'affichent, de la plus récente à la plus ancienne, et s'ouvrent pour lire les questions et les réponses. C'est le meilleur outil pour repérer ce que vos conseillères cherchent et ce qui manque à votre FAQ.</p>
+  <div class="warn"><span class="ex-label">Attention</span><p>Les conversations contiennent des données de clientes (noms, achats). Réservez cet écran aux personnes qui en ont besoin, et informez vos conseillères que la marque peut les consulter.</p></div>
+
+  <h3 id="s6-3"><span class="sub-num">6.3</span> Feedbacks</h3>
+  <p>Sous chaque réponse, la conseillère peut cliquer «&nbsp;Réponse utile&nbsp;» (pouce haut) ou «&nbsp;Réponse à améliorer&nbsp;» (pouce bas, avec un commentaire facultatif). L'écran <strong>Feedbacks</strong> affiche, sur la période choisie, les <strong>Pouces haut</strong>, les <strong>Pouces bas</strong>, le <strong>Taux de satisfaction</strong> et les commentaires des pouces bas, avec un lien <strong>Voir la conversation</strong>.</p>
+</section>
+
+<!-- 7 -->
+<section id="conseillere">
+  <div class="sec-head"><span class="sec-num">07</span><h2>Ce que voit la conseillère</h2></div>
+  <ul class="prose">
+    <li>Une entrée <strong>Mon assistant</strong> dans son menu, et une barre de question en haut de toutes ses pages.</li>
+    <li>Un écran «&nbsp;Comment puis-je vous aider&nbsp;?&nbsp;» avec des suggestions («&nbsp;Quel est mon chiffre d'affaires ce mois-ci&nbsp;?&nbsp;», «&nbsp;Mes réunions à venir&nbsp;», «&nbsp;Mes commandes en attente de paiement&nbsp;»…), l'historique de ses conversations et une aide «&nbsp;Ce que je sais faire&nbsp;».</li>
+    <li>Des réponses avec des liens directs vers ses commandes, clientes ou réunions, et l'avertissement «&nbsp;les réponses peuvent contenir des erreurs&nbsp;».</li>
+    <li>En cas de solde épuisé&nbsp;: «&nbsp;L'assistant est momentanément indisponible&nbsp;: votre quota est atteint. Contactez votre responsable pour en savoir plus.&nbsp;»</li>
+  </ul>
+</section>
+
+<!-- 8 -->
+<section id="chiffres">
+  <div class="sec-head"><span class="sec-num">08</span><h2>L'usage réel</h2></div>
+  <p>Depuis son ouverture mi-août 2026&nbsp;:</p>
+  <div class="stats">
+    <div class="stat"><b>8</b><span>marques dont les conseillères l'ont utilisé</span></div>
+    <div class="stat"><b>630</b><span>conseillères, pour environ 1&nbsp;600 conversations</span></div>
+    <div class="stat"><b>1,4</b><span>question par conversation en moyenne</span></div>
+    <div class="stat"><b>0,02&nbsp;€</b><span>coût médian d'une question payante</span></div>
+  </div>
+  <p>La quasi-totalité des questions posées jusqu'ici l'ont été sur les questions offertes. Environ 1 réponse sur 100 reçoit un pouce, en très grande majorité un pouce haut. Côté documents, 7 marques ont déjà autorisé des documents pour l'assistant.</p>
+</section>
+
+<!-- 9 -->
+<section id="attention">
+  <div class="sec-head"><span class="sec-num">09</span><h2>Points d'attention</h2></div>
+  <ul class="prose">
+    <li><strong>Surveillez le solde</strong>&nbsp;: activez l'alerte ou la recharge automatique. Le message vu par la conseillère à solde nul parle de «&nbsp;quota&nbsp;», ce qui peut l'induire en erreur.</li>
+    <li><strong>Votre FAQ devient la parole officielle</strong> de l'assistant&nbsp;: une réponse périmée sera répétée.</li>
+    <li><strong>Les documents restent fermés par défaut</strong>&nbsp;: ouvrez ceux qui aident vraiment, avec un résumé clair.</li>
+    <li><strong>L'assistant ne remplace pas une vérification</strong> avant d'annoncer un chiffre à une cliente.</li>
+  </ul>
+</section>
+
+<!-- 10 -->
+<section id="faq">
+  <div class="sec-head"><span class="sec-num">10</span><h2>Questions fréquentes</h2></div>
+  <div class="faq">
+    <details><summary>Une conseillère ne voit pas «&nbsp;Mon assistant&nbsp;».</summary><div><p>Vérifiez sur sa fiche que «&nbsp;Accès au chat «&nbsp;Mon assistant&nbsp;»&nbsp;» est coché. Si aucune conseillère ne le voit, l'accès côté conseillères n'est pas encore activé pour votre marque&nbsp;: contactez SellingAtHome.</p></div></details>
+    <details><summary>L'assistant ne cite jamais tel document.</summary><div><p>Le document doit être coché «&nbsp;Utilisable par l'assistant&nbsp;», non périmé, avec un texte extrait de qualité suffisante, et visible pour le statut de la conseillère. Améliorez aussi son résumé.</p></div></details>
+    <details><summary>Les crédits expirent-ils&nbsp;?</summary><div><p>Non.</p></div></details>
+    <details><summary>Que coûte une question offerte&nbsp;?</summary><div><p>Rien pour la marque. Le reporting montre en orange ce qu'elle aurait coûté.</p></div></details>
+    <details><summary>L'assistant peut-il passer une commande pour la conseillère&nbsp;?</summary><div><p>Non. Il lit les données, il ne modifie rien.</p></div></details>
+  </div>
+</section>
+
+  </main>
+</div>

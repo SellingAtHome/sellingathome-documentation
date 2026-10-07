@@ -1,0 +1,275 @@
+<!--page {"title":"Découvrir l'espace marque"} -->
+<style>
+.kpi td:first-child { width:24%; }
+.kpi td:nth-child(3) { width:30%; font-size:.88rem; color:var(--muted); }
+.zones { display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:14px; }
+.zones .card { border-top:5px solid var(--accent); }
+.zones .card:nth-child(2) { border-top-color:var(--pink); }
+.zones .card:nth-child(3) { border-top-color:var(--yellow); }
+.avg { display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:12px; }
+.avg .card { gap:6px; }
+.avg .card b { font-size:1.5rem; color:var(--heading); font-variant-numeric:tabular-nums; }
+</style>
+<header class="hero">
+  <div class="hero-in">
+    <div>
+      <span class="eyebrow">Démarrer</span>
+      <h1>Découvrir <span class="script">l'espace marque</span></h1>
+      <p class="lede">Se connecter, se repérer dans les menus, lire le tableau de bord sans se tromper, gérer son profil. Tout ce qu'il faut pour être à l'aise dès la première connexion.</p>
+    </div>
+    <div class="voucher-art" aria-hidden="true">
+      <div class="v-top"><span>Tableau de bord</span><span>12 mois</span></div>
+      <div class="v-amount">140<span> cmd</span></div>
+      <div class="v-name">Vue d'ensemble</div>
+      <div class="v-sep"></div>
+      <div class="v-meta"><span>Vendeurs actifs <b>24</b></span><span>Réunions <b>123</b></span></div>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="toc" aria-label="Sommaire">
+    <details id="tocDetails" open>
+      <summary>Sommaire</summary>
+      <div class="toc-title">Sommaire</div>
+      <ol>
+        <li data-sec="connexion"><a href="#connexion"><span class="toc-n">1</span>Se connecter</a>
+          <ol class="toc-sub"><li><a href="#s1-1"><span class="toc-n">1.1</span>Mot de passe oublié</a></li><li><a href="#s1-2"><span class="toc-n">1.2</span>Plusieurs marques, un seul accès</a></li></ol>
+        </li>
+        <li data-sec="ecran"><a href="#ecran"><span class="toc-n">2</span>L'écran en un coup d'œil</a></li>
+        <li data-sec="menu"><a href="#menu"><span class="toc-n">3</span>Le menu</a>
+          <ol class="toc-sub"><li><a href="#s3-1"><span class="toc-n">3.1</span>Les rubriques</a></li><li><a href="#s3-2"><span class="toc-n">3.2</span>Les pastilles de compteur</a></li><li><a href="#s3-3"><span class="toc-n">3.3</span>Un menu absent&nbsp;?</a></li></ol>
+        </li>
+        <li data-sec="dashboard"><a href="#dashboard"><span class="toc-n">4</span>Le tableau de bord</a>
+          <ol class="toc-sub"><li><a href="#s4-1"><span class="toc-n">4.1</span>Choisir la période</a></li><li><a href="#s4-2"><span class="toc-n">4.2</span>Le chiffre d'affaires</a></li><li><a href="#s4-3"><span class="toc-n">4.3</span>Les moyennes</a></li><li><a href="#s4-4"><span class="toc-n">4.4</span>Les compteurs</a></li><li><a href="#s4-5"><span class="toc-n">4.5</span>Graphiques et Top 10</a></li></ol>
+        </li>
+        <li data-sec="haut"><a href="#haut"><span class="toc-n">5</span>Actualités et profil</a>
+          <ol class="toc-sub"><li><a href="#s5-1"><span class="toc-n">5.1</span>Les actualités</a></li><li><a href="#s5-2"><span class="toc-n">5.2</span>Mon profil</a></li></ol>
+        </li>
+        <li data-sec="fichiers"><a href="#fichiers"><span class="toc-n">6</span>Fichiers et support</a></li>
+        <li data-sec="attention"><a href="#attention"><span class="toc-n">7</span>Points d'attention</a></li>
+        <li data-sec="faq"><a href="#faq"><span class="toc-n">8</span>Questions fréquentes</a></li>
+      </ol>
+    </details>
+  </nav>
+
+  <main>
+
+<!-- 1 -->
+<section id="connexion">
+  <div class="sec-head"><span class="sec-num">01</span><h2>Se connecter</h2></div>
+  <p class="lede">L'espace marque est l'outil d'administration de votre marque&nbsp;: c'est là que vous gérez vos conseillères, vos commandes, votre catalogue et tous vos paramétrages.</p>
+  <div class="path" aria-label="Adresse de connexion"><span>Adresse</span><span><b>brand.sellingathome.com</b></span></div>
+  <ol class="prose">
+    <li>Ouvrez <strong>brand.sellingathome.com</strong> dans votre navigateur.</li>
+    <li>Saisissez l'<strong>adresse email</strong> et le <strong>mot de passe</strong> de votre compte.</li>
+    <li>Cliquez sur <strong>Connexion</strong>&nbsp;: vous arrivez sur le tableau de bord.</li>
+  </ol>
+  <p>Les comptes de l'espace marque sont créés par SellingAtHome. Pour ajouter ou retirer un collaborateur, ou changer le nom ou l'adresse email d'un compte, adressez-vous à votre interlocuteur SellingAtHome.</p>
+  <div class="tip"><span class="ex-label">À ne pas confondre</span><p>Ce compte ne sert qu'à l'espace marque. Les conseillères ont leur propre espace, avec leurs propres identifiants&nbsp;: votre compte marque ne permet pas de vous y connecter directement (voir la <a href="#faq">FAQ</a> pour voir ce que voit une conseillère).</p></div>
+
+  <h3 id="s1-1"><span class="sub-num">1.1</span> Mot de passe oublié</h3>
+  <p>Sur la page de connexion, cliquez sur <strong>Mot de passe oublié&nbsp;?</strong> et saisissez votre adresse email&nbsp;: vous recevez un lien pour en choisir un nouveau. Une fois connecté, vous pouvez aussi le changer à tout moment depuis <a href="#s5-2">Mon profil</a>.</p>
+
+  <h3 id="s1-2"><span class="sub-num">1.2</span> Plusieurs marques, un seul accès</h3>
+  <p>Si vous administrez plusieurs marques avec la <strong>même adresse email</strong>, le menu de votre nom (en haut à droite) liste les autres marques, chacune sur sa couleur. Un clic vous connecte directement à l'autre marque, sans ressaisir de mot de passe.</p>
+</section>
+
+<!-- 2 -->
+<section id="ecran">
+  <div class="sec-head"><span class="sec-num">02</span><h2>L'écran en un coup d'œil</h2></div>
+  <p class="lede">Toutes les pages de l'espace marque sont construites de la même façon, en trois zones.</p>
+  <div class="zones">
+    <div class="card"><span class="tag">En haut</span><h4>La barre de la marque</h4><p>Le bouton ☰ pour replier le menu, la cloche des <a href="#s5-1">actualités</a> et votre nom, qui ouvre le menu de votre compte.</p></div>
+    <div class="card"><span class="tag pink">À gauche</span><h4>Le menu</h4><p>Toutes les rubriques&nbsp;: réunions, vendeurs, clients, commandes, catalogue… Une flèche indique un sous-menu.</p></div>
+    <div class="card"><span class="tag yellow">Au centre</span><h4>La page en cours</h4><p>Son titre, le fil d'Ariane (pour revenir en arrière) et son contenu.</p></div>
+  </div>
+  <figure><img src="Captures/Espace%20marque/dashboard-complet.png" alt="Espace marque de la marque de démonstration : barre du haut, menu à gauche, tableau de bord au centre avec le chiffre d'affaires, les moyennes, les compteurs, les graphiques et les Top 10" loading="lazy"><figcaption>L'espace marque, ici sur le tableau de bord (marque de démonstration, 12 derniers mois).</figcaption></figure>
+  <div class="tip"><span class="ex-label">Vocabulaire</span><p>Dans l'espace marque, les conseillères sont appelées <strong>vendeurs</strong> (menu «&nbsp;Vendeurs&nbsp;», «&nbsp;CA moyen / vendeur&nbsp;»…). Cette documentation parle de <strong>conseillères</strong>, mais il s'agit bien des mêmes personnes.</p></div>
+</section>
+
+<!-- 3 -->
+<section id="menu">
+  <div class="sec-head"><span class="sec-num">03</span><h2>Le menu</h2></div>
+  <h3 id="s3-1"><span class="sub-num">3.1</span> Les rubriques</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Rubrique</th><th>Ce qu'on y trouve</th><th>Documentation</th></tr></thead>
+    <tbody>
+      <tr><td><b>Tableau de bord</b></td><td>Les indicateurs clés sur la période de votre choix.</td><td><a href="#dashboard">Ci-dessous</a></td></tr>
+      <tr><td><b>Réunions</b></td><td>La liste des réunions et la carte de chaleur de l'activité.</td><td><a href="reunions.html">Réunions</a></td></tr>
+      <tr><td><b>Vendeurs</b></td><td>Les conseillères, le suivi d'équipe, les rôles, les statuts.</td><td><a href="reseau.html">Réseau et rémunération</a></td></tr>
+      <tr><td><b>Clients</b></td><td>Les clientes, leurs rôles et les segments.</td><td><a href="animation.html">Animation et fidélisation</a></td></tr>
+      <tr><td><b>Commandes</b></td><td>Les commandes, les commandes de regroupement, les expéditions.</td><td><a href="ventes.html">Commandes et boutiques</a></td></tr>
+      <tr><td><b>Catalogue</b></td><td>Produits, catégories, attributs, listes de souhaits.</td><td><a href="catalogue.html">Catalogue et logistique</a></td></tr>
+      <tr><td><b>Bons d'achat</b></td><td>Les modèles de bons d'achat.</td><td><a href="bons-achat-guide.html">Guide des bons d'achat</a></td></tr>
+      <tr><td><b>Rapports</b></td><td>Stock faible, meilleures ventes, réponses aux questions, emails envoyés, exports.</td><td><a href="pilotage.html">Communication et pilotage</a></td></tr>
+      <tr><td><b>Approvisionnement</b></td><td>Fournisseurs et commandes fournisseurs.</td><td><a href="catalogue.html">Catalogue et logistique</a></td></tr>
+      <tr><td><b>Formulaires</b></td><td>Messages reçus par la carte des conseillères, candidatures, retours, réservations.</td><td><a href="recrutement.html">Recrutement</a></td></tr>
+      <tr><td><b>Mon assistant</b></td><td>L'assistant IA des conseillères&nbsp;: suivi, conversations, crédits, réglages.</td><td><a href="pilotage.html">Communication et pilotage</a></td></tr>
+      <tr><td><b>Base de connaissances</b></td><td>Documents, FAQ et formations pour les conseillères.</td><td><a href="pilotage.html">Communication et pilotage</a></td></tr>
+      <tr><td><b>Paramètres</b></td><td>La configuration de la marque&nbsp;: réunions, commandes, fidélité, livraison, réductions, commissions, taxes, emails…</td><td>Dans chaque univers</td></tr>
+      <tr><td><b>Gestion de fichiers</b></td><td>La médiathèque de la marque.</td><td><a href="#fichiers">Ci-dessous</a></td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 id="s3-2"><span class="sub-num">3.2</span> Les pastilles de compteur</h3>
+  <div class="figrow">
+    <figure><img src="Captures/Espace%20marque/menu-commandes-ouvert.png" alt="Menu de gauche avec le sous-menu Commandes ouvert : pastille 379 sur Commandes, et pastille 14 sur Formulaires" loading="lazy"><figcaption>Les pastilles signalent ce qui attend une action.</figcaption></figure>
+    <div class="prose" style="display:flex;flex-direction:column;gap:14px">
+      <p>Certaines rubriques affichent un nombre dans une pastille. Ce n'est pas un total sur une période&nbsp;: c'est ce qui <strong>reste à traiter maintenant</strong>.</p>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Pastille</th><th>Ce qu'elle compte</th></tr></thead>
+        <tbody>
+          <tr><td><b>Commandes</b></td><td>Les commandes payées, non annulées, <strong>pas encore expédiées ou expédiées en partie</strong>.</td></tr>
+          <tr><td><b>Formulaires</b></td><td>Le total des éléments non traités&nbsp;: messages reçus via la carte des conseillères, candidatures, demandes de retour, réservations.</td></tr>
+          <tr><td><b>Sous-menus de Formulaires</b></td><td>Le détail de ce total, rubrique par rubrique.</td></tr>
+        </tbody>
+      </table></div>
+      <div class="warn"><span class="ex-label">Attention</span><p>Une pastille Commandes qui ne descend jamais signifie souvent que les expéditions ne sont pas mises à jour (statut «&nbsp;Expédiée&nbsp;» non renseigné). Voir <a href="ventes.html">Commandes et boutiques</a>.</p></div>
+    </div>
+  </div>
+
+  <h3 id="s3-3"><span class="sub-num">3.3</span> Un menu absent&nbsp;?</h3>
+  <p>Chaque rubrique correspond à une fonctionnalité qui peut être activée ou non pour votre marque. Si vous ne voyez pas un menu décrit dans cette documentation (Approvisionnement, Mon assistant, Commandes de regroupement…), c'est que la fonctionnalité n'est pas activée&nbsp;: votre interlocuteur SellingAtHome peut vous renseigner. Dans la documentation, ces fonctionnalités portent le badge <span class="tag yellow" style="display:inline-block">Module optionnel</span>.</p>
+</section>
+
+<!-- 4 -->
+<section id="dashboard">
+  <div class="sec-head"><span class="sec-num">04</span><h2>Le tableau de bord</h2></div>
+  <p class="lede">C'est la page d'accueil de l'espace marque. Elle résume l'activité de votre réseau sur une période&nbsp;: chiffre d'affaires, moyennes, compteurs, évolutions et palmarès.</p>
+  <div class="path" aria-label="Chemin d'accès"><span>Espace marque</span><span><b>Tableau de bord</b></span></div>
+  <figure><img src="Captures/Espace%20marque/dashboard-indicateurs.png" alt="Haut du tableau de bord : période du 01/10/2025 au 07/10/2026, échelle Mois, chiffre d'affaires HT de 2 811,24 euros avec sa courbe mensuelle, CA moyen par réunion 91,32 euros, CA moyen par vendeur 378,13 euros, paniers moyens, C.A global 16 627,31 euros, et compteurs : 24 vendeurs actifs, 140 commandes, 123 réunions terminées" loading="lazy"><figcaption>Le haut du tableau de bord&nbsp;: période, chiffre d'affaires, moyennes et compteurs.</figcaption></figure>
+
+  <h3 id="s4-1"><span class="sub-num">4.1</span> Choisir la période</h3>
+  <ul class="prose">
+    <li><strong>Intervalle</strong>&nbsp;: les dates de début et de fin. Par défaut, <strong>du 1er du mois en cours à aujourd'hui</strong>.</li>
+    <li><strong>Échelle</strong>&nbsp;: le découpage des graphiques (jours, semaines, mois, années). Les échelles trop grandes pour la période choisie sont grisées&nbsp;: sur 7 jours, seuls les jours sont possibles&nbsp;; jusqu'à 31 jours, pas de mois ni d'années&nbsp;; jusqu'à un an, pas d'années.</li>
+    <li>Votre choix est <strong>mémorisé par votre navigateur</strong>&nbsp;: vous retrouvez la même période à votre prochaine visite, sur le même ordinateur.</li>
+  </ul>
+  <div class="warn"><span class="ex-label">Attention</span><p>Une date de fin dans le futur est automatiquement ramenée à <strong>aujourd'hui</strong>. Conséquence&nbsp;: les réunions prévues après aujourd'hui ne sont jamais comptées dans «&nbsp;Réunions en préparation&nbsp;», même si votre période va jusqu'à la fin du mois.</p></div>
+
+  <h3 id="s4-2"><span class="sub-num">4.2</span> Le chiffre d'affaires</h3>
+  <p><strong>Chiffre d'affaires (HT)</strong> est l'indicateur principal. Il additionne, hors taxes&nbsp;:</p>
+  <ul class="prose">
+    <li>les commandes <strong>payées</strong> dont le paiement a été validé <strong>pendant la période</strong> (c'est la date du paiement qui compte, pas celle de la commande)&nbsp;;</li>
+    <li>après déduction des <strong>réductions</strong> et des parts réglées en <strong>points de fidélité</strong> ou avec la <strong>cagnotte</strong>&nbsp;;</li>
+    <li>sans les <strong>commandes cadeaux</strong>&nbsp;;</li>
+    <li>moins les <strong>avoirs</strong> émis pendant la période.</li>
+  </ul>
+  <div class="example"><span class="ex-label">Exemple</span><p>Une commande de réunion de 120&nbsp;€ HT est passée le 28 février et payée le 3 mars&nbsp;: elle compte dans le chiffre d'affaires de <strong>mars</strong>. Si un avoir de 40&nbsp;€ HT est émis le 10 avril sur cette commande, le chiffre d'affaires d'<strong>avril</strong> baisse de 40&nbsp;€.</p></div>
+  <div class="tip"><span class="ex-label">Bon à savoir</span><p>Un mois peut afficher un chiffre d'affaires <strong>négatif</strong>&nbsp;: c'est le cas quand les avoirs émis ce mois-là dépassent les ventes payées. Sur la capture ci-dessus, février en est un exemple.</p></div>
+  <p><strong>C.A global</strong> (tuile avec un «&nbsp;i&nbsp;») n'apparaît que si les paiements de vos commandes sont validés manuellement. Il ajoute au chiffre d'affaires les commandes <strong>en attente de validation de paiement</strong>, quelle que soit leur date&nbsp;: c'est une vision «&nbsp;tout ce qui est encaissé ou en cours d'encaissement&nbsp;». Il ne déduit pas les avoirs et compte les commandes cadeaux&nbsp;: il ne se compare donc pas directement au chiffre d'affaires.</p>
+
+  <h3 id="s4-3"><span class="sub-num">4.3</span> Les moyennes</h3>
+  <div class="table-wrap"><table class="kpi">
+    <thead><tr><th>Indicateur</th><th>Ce qu'il mesure</th><th>À savoir</th></tr></thead>
+    <tbody>
+      <tr><td><b>CA moyen / réunion</b></td><td>Le chiffre d'affaires HT moyen d'une réunion, sur les réunions qui ont eu lieu pendant la période et ont au moins une commande payée.</td><td>Moyenne calculée par conseillère, puis entre conseillères (voir l'exemple).</td></tr>
+      <tr><td><b>CA moyen / vendeur</b></td><td>Le chiffre d'affaires HT moyen d'une conseillère.</td><td>Seules les conseillères qui ont vendu sur la période sont comptées.</td></tr>
+      <tr><td><b>Panier moyen / réunion</b></td><td>Le montant moyen d'une commande passée en réunion.</td><td><strong>TTC</strong>. Moyenne par conseillère puis entre conseillères.</td></tr>
+      <tr><td><b>Panier moyen / vente directe</b></td><td>Le montant moyen d'une commande passée hors réunion (vente directe, commande en ligne…).</td><td><strong>TTC</strong>. Moyenne par conseillère puis entre conseillères.</td></tr>
+      <tr><td><b>Indice de vente</b></td><td>Le nombre moyen d'articles par commande.</td><td>Arrondi à l'entier. Sans les commandes cadeaux.</td></tr>
+      <tr><td><b>Participants / réunion</b></td><td>Le nombre moyen d'invités par réunion terminée.</td><td>Arrondi à l'entier.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="example"><span class="ex-label">Exemple&nbsp;: la moyenne des moyennes</span>
+    <p>Sur la période, Léa a animé deux réunions (100&nbsp;€ et 300&nbsp;€ HT) et Chloé une seule (500&nbsp;€ HT).</p>
+    <div class="avg">
+      <div class="card"><span class="muted">Moyenne de Léa</span><b>200 €</b></div>
+      <div class="card"><span class="muted">Moyenne de Chloé</span><b>500 €</b></div>
+      <div class="card"><span class="muted">CA moyen / réunion affiché</span><b class="hl">350 €</b></div>
+    </div>
+    <p>Le tableau de bord affiche <strong>350&nbsp;€</strong> (moyenne de 200 et 500), et non 300&nbsp;€ (900&nbsp;€ divisés par 3 réunions). Chaque conseillère pèse le même poids, quel que soit son nombre de réunions.</p>
+  </div>
+
+  <h3 id="s4-4"><span class="sub-num">4.4</span> Les compteurs</h3>
+  <div class="table-wrap"><table class="kpi">
+    <thead><tr><th>Compteur</th><th>Ce qu'il compte sur la période</th><th>À savoir</th></tr></thead>
+    <tbody>
+      <tr><td><b>Vendeurs actifs</b></td><td>Les conseillères qui ont au moins une commande payée pendant la période.</td><td>Un clic ouvre la liste de ces conseillères.</td></tr>
+      <tr><td><b>Nouveaux vendeurs</b></td><td>Les comptes de conseillères créés pendant la période.</td><td>Quel que soit leur statut.</td></tr>
+      <tr><td><b>Commandes</b></td><td>Les commandes payées pendant la période, hors commandes annulées.</td><td>Les commandes cadeaux sont comptées.</td></tr>
+      <tr><td><b>Ventes directes</b></td><td>Parmi elles, les commandes de type «&nbsp;vente directe&nbsp;».</td><td>Les commandes en ligne ne sont pas des ventes directes.</td></tr>
+      <tr><td><b>Nouveaux clients</b></td><td>Les fiches clientes créées pendant la période.</td><td>Une cliente créée puis supprimée reste comptée.</td></tr>
+      <tr><td><b>Nouveaux parrainages</b></td><td>Les nouvelles clientes inscrites avec une marraine.</td><td>Visible si le parrainage client est activé.</td></tr>
+      <tr><td><b>Réunions en préparation</b></td><td>Les réunions à venir dont la date tombe dans la période.</td><td>Jamais au-delà d'aujourd'hui (voir <a href="#s4-1">la période</a>).</td></tr>
+      <tr><td><b>Réunions terminées</b></td><td>Les réunions clôturées dont la date tombe dans la période.</td><td>C'est la date de la réunion qui compte, pas celle de la clôture.</td></tr>
+      <tr><td><b>Mini-sites activés</b></td><td>Les mini-boutiques actives de vos conseillères actives.</td><td><strong>Ne dépend pas de la période</strong>&nbsp;: c'est le nombre du jour.</td></tr>
+      <tr><td><b>Produits actifs</b></td><td>Le nombre de produits <strong>différents vendus</strong> pendant la période.</td><td>Ce n'est <strong>pas</strong> le nombre de produits de votre catalogue.</td></tr>
+      <tr><td><b>Réunions prises dans une réunion</b></td><td>Les réunions créées pendant la période à partir d'une autre réunion (une invitée qui devient hôtesse).</td><td>Bon indicateur du «&nbsp;rebond&nbsp;» de vos réunions.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 id="s4-5"><span class="sub-num">4.5</span> Graphiques et Top 10</h3>
+  <ul class="prose">
+    <li><strong>Les quatre graphiques</strong> (chiffre d'affaires, vendeurs actifs, commandes, réunions) découpent la période selon l'échelle choisie.</li>
+    <li>Le graphique <strong>Commandes</strong> ne compte pas les commandes cadeaux, alors que le compteur Commandes les inclut&nbsp;: leurs totaux peuvent donc différer.</li>
+    <li>Le graphique <strong>Réunions</strong> compte toutes les réunions non annulées, quel que soit leur statut.</li>
+    <li><strong>Top 10 des produits</strong>&nbsp;: classés par quantité vendue. Le montant est la somme des prix HT des articles, avant les réductions portant sur toute la commande.</li>
+    <li><strong>Top 10 des vendeurs</strong>&nbsp;: les conseillères classées par chiffre d'affaires HT, avec le nombre d'articles vendus.</li>
+  </ul>
+  <div class="tip"><span class="ex-label">Bon à savoir</span><p>Selon les options de votre marque, d'autres tuiles peuvent apparaître&nbsp;: chiffre d'affaires des commandes en ligne, chiffre d'affaires commissionnable, chiffre d'affaires des regroupements clôturés…</p></div>
+</section>
+
+<!-- 5 -->
+<section id="haut">
+  <div class="sec-head"><span class="sec-num">05</span><h2>Actualités et profil</h2></div>
+  <h3 id="s5-1"><span class="sub-num">5.1</span> Les actualités</h3>
+  <div class="figrow">
+    <figure><img src="Captures/Espace%20marque/actualites.png" alt="Cloche ouverte en haut de l'écran : panneau Actualités, ici vide avec le message Aucune actualité" loading="lazy"><figcaption>Le panneau des actualités.</figcaption></figure>
+    <div class="prose" style="display:flex;flex-direction:column;gap:12px">
+      <p>La <strong>cloche</strong> rassemble les informations publiées par SellingAtHome&nbsp;: nouveautés, maintenances prévues, points d'attention. Une pastille rouge indique le nombre d'actualités non lues.</p>
+      <p>Une actualité est considérée comme lue dès que vous cliquez dessus. Cet état est mémorisé par votre navigateur&nbsp;: sur un autre ordinateur, les actualités réapparaissent comme non lues.</p>
+    </div>
+  </div>
+
+  <h3 id="s5-2"><span class="sub-num">5.2</span> Mon profil</h3>
+  <div class="figrow">
+    <figure><img src="Captures/Espace%20marque/menu-utilisateur.png" alt="Menu du compte ouvert en haut à droite : nom de la marque, nom de l'utilisateur, email, bouton Éditer mon profil et lien Déconnexion" loading="lazy"><figcaption>Le menu de votre compte.</figcaption></figure>
+    <figure><img src="Captures/Espace%20marque/profil.png" alt="Page Éditer mon profil : photo de profil, champ Mot de passe avec bouton Enregistrer, et choix de la langue" loading="lazy"><figcaption>La page Éditer mon profil.</figcaption></figure>
+  </div>
+  <p>Cliquez sur votre nom en haut à droite, puis sur <strong>Éditer mon profil</strong>. Vous pouvez y changer&nbsp;:</p>
+  <ul class="prose">
+    <li>votre <strong>photo</strong>&nbsp;;</li>
+    <li>votre <strong>mot de passe</strong>&nbsp;;</li>
+    <li>la <strong>langue</strong> de l'espace marque, parmi les langues de votre marque.</li>
+  </ul>
+  <p>Chaque bloc a son propre bouton <strong>Enregistrer</strong>. Le nom et l'adresse email du compte ne sont pas modifiables ici. Le même menu donne accès à la <strong>Déconnexion</strong>.</p>
+</section>
+
+<!-- 6 -->
+<section id="fichiers">
+  <div class="sec-head"><span class="sec-num">06</span><h2>Fichiers et support</h2></div>
+  <div class="grid-2">
+    <div class="card"><span class="tag">Gestion de fichiers</span><p>La médiathèque de votre marque&nbsp;: images, documents, visuels utilisés dans vos produits, mini-sites, formations… Vous pouvez y créer des dossiers, envoyer des fichiers (un par un, en lot ou par glisser-déposer), les renommer, les déplacer et les rechercher.</p><p class="muted">Un espace de stockage maximum est défini pour votre marque, et seuls certains formats de fichiers sont acceptés. Certains dossiers sont en lecture seule.</p></div>
+    <div class="card"><span class="tag pink">Support</span><p>Le bouton <strong>Support</strong>, en bas du menu, ouvre le site d'aide de SellingAtHome dans un nouvel onglet.</p></div>
+  </div>
+</section>
+
+<!-- 7 -->
+<section id="attention">
+  <div class="sec-head"><span class="sec-num">07</span><h2>Points d'attention</h2></div>
+  <ul class="prose">
+    <li><strong>Le chiffre d'affaires suit la date de paiement</strong>, pas la date de commande. Une commande payée le mois suivant compte le mois suivant.</li>
+    <li><strong>Les avoirs viennent en déduction</strong> du mois où ils sont émis, pas du mois de la commande d'origine.</li>
+    <li><strong>Les moyennes sont des moyennes par conseillère</strong>&nbsp;: elles ne se recalculent pas en divisant un total par un nombre de réunions ou de commandes.</li>
+    <li><strong>HT ou TTC</strong>&nbsp;: le chiffre d'affaires et les CA moyens sont HT, les paniers moyens sont TTC.</li>
+    <li><strong>Mini-sites activés</strong> ne dépend pas de la période choisie.</li>
+    <li><strong>La période est propre à chaque navigateur</strong>&nbsp;: un collègue qui ouvre le tableau de bord peut voir une autre période que vous.</li>
+  </ul>
+</section>
+
+<!-- 8 -->
+<section id="faq">
+  <div class="sec-head"><span class="sec-num">08</span><h2>Questions fréquentes</h2></div>
+  <div class="faq">
+    <details><summary>Pourquoi mon chiffre d'affaires ne correspond-il pas au total de la liste des commandes&nbsp;?</summary><div><p>Le chiffre d'affaires du tableau de bord est <strong>HT</strong>, suit la <strong>date de paiement</strong>, exclut les commandes cadeaux et déduit les avoirs de la période. Pour comparer avec la liste des commandes, filtrez-la sur la <strong>date de paiement</strong> (et non sur la date de commande) et tenez compte de ces différences.</p></div></details>
+    <details><summary>Comment voir l'espace d'une conseillère&nbsp;?</summary><div><p>Depuis la liste ou la fiche de la conseillère (menu Vendeurs), le bouton <strong>Ouvrir l'espace vendeur</strong> (une fusée) ouvre son espace tel qu'elle le voit, si cette option est activée pour votre marque. Voir <a href="conseilleres.html#espace">Gérer les conseillères</a>.</p></div></details>
+    <details><summary>Je ne retrouve plus la même période qu'hier&nbsp;: pourquoi&nbsp;?</summary><div><p>La période est mémorisée par le navigateur. Si vous changez d'ordinateur, de navigateur, ou si les données de navigation sont effacées, le tableau de bord revient à la période par défaut&nbsp;: du 1er du mois à aujourd'hui.</p></div></details>
+    <details><summary>Le nombre de réunions en préparation me semble trop faible.</summary><div><p>Ce compteur ne compte que les réunions à venir dont la date est comprise entre le début de la période et <strong>aujourd'hui</strong>. Pour voir toutes les réunions planifiées, utilisez la liste des réunions avec un filtre sur le statut.</p></div></details>
+    <details><summary>Comment ajouter un collaborateur à l'espace marque&nbsp;?</summary><div><p>Les comptes sont créés par SellingAtHome&nbsp;: transmettez à votre interlocuteur le nom et l'adresse email de la personne à ajouter.</p></div></details>
+  </div>
+</section>
+
+  </main>
+</div>

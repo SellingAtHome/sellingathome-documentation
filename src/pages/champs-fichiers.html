@@ -1,0 +1,253 @@
+<!--page {"title":"Champs personnalisés et fichiers"} -->
+<style>
+.opts td:first-child { width:30%; }
+.where td:nth-child(2), .where td:nth-child(3) { width:22%; }
+.tree { background:var(--card); border:1px solid var(--rule); border-radius:16px; padding:16px 20px; font-size:.93rem; line-height:1.9; }
+.tree ul { list-style:none; margin:0; padding-left:22px; border-left:2px dotted var(--rule); }
+.tree > ul { padding-left:0; border-left:0; }
+.tree .lock::after { content:" 🔒"; font-size:.8rem; }
+.tree small { color:var(--muted); }
+.formats { display:grid; grid-template-columns:repeat(auto-fit, minmax(150px,1fr)); gap:10px; }
+.formats div { background:var(--card); border:1px solid var(--rule); border-radius:14px; padding:12px 14px; font-size:.9rem; }
+.formats b { display:block; color:var(--heading); }
+</style>
+<header class="hero">
+  <div class="hero-in">
+    <div>
+      <span class="eyebrow">Communication et pilotage</span>
+      <h1>Champs personnalisés <span class="script">et fichiers</span></h1>
+      <p class="lede">Ajouter vos propres informations aux fiches des conseillères, des clientes et des produits, et ranger les documents, images et vidéos de votre marque dans la Gestion de fichiers.</p>
+      <p><span class="tag yellow" style="display:inline-block">Module optionnel</span> <span style="opacity:.85">pour les champs personnalisés&nbsp;; la Gestion de fichiers est disponible pour toutes les marques.</span></p>
+    </div>
+    <div class="voucher-art" aria-hidden="true">
+      <div class="v-top"><span>Fiche de Léa</span><span>Champs</span></div>
+      <div class="v-amount">3<span> champs</span></div>
+      <div class="v-name">Taille de tenue · Atelier préféré</div>
+      <div class="v-sep"></div>
+      <div class="v-meta"><span>Fichiers <b>252 Mo</b></span><span>Quota <b>1 Go</b></span></div>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="toc" aria-label="Sommaire">
+    <details id="tocDetails" open>
+      <summary>Sommaire</summary>
+      <div class="toc-title">Sommaire</div>
+      <ol>
+        <li data-sec="definition"><a href="#definition"><span class="toc-n">1</span>Deux outils, deux usages</a></li>
+        <li data-sec="champs"><a href="#champs"><span class="toc-n">2</span>Les champs personnalisés</a>
+          <ol class="toc-sub"><li><a href="#s2-1"><span class="toc-n">2.1</span>Où les trouver</a></li><li><a href="#s2-2"><span class="toc-n">2.2</span>Pour quelles fiches</a></li><li><a href="#s2-3"><span class="toc-n">2.3</span>Créer un champ</a></li><li><a href="#s2-4"><span class="toc-n">2.4</span>Les types de champs</a></li><li><a href="#s2-5"><span class="toc-n">2.5</span>L'onglet Champs désactivés</a></li><li><a href="#s2-6"><span class="toc-n">2.6</span>Où les champs apparaissent</a></li></ol>
+        </li>
+        <li data-sec="complementaires"><a href="#complementaires"><span class="toc-n">3</span>Les champs complémentaires paramétrés par SellingAtHome</a></li>
+        <li data-sec="fichiers"><a href="#fichiers"><span class="toc-n">4</span>La Gestion de fichiers</a>
+          <ol class="toc-sub"><li><a href="#s4-1"><span class="toc-n">4.1</span>L'écran</a></li><li><a href="#s4-2"><span class="toc-n">4.2</span>Dossiers et fichiers</a></li><li><a href="#s4-3"><span class="toc-n">4.3</span>Formats et tailles</a></li><li><a href="#s4-4"><span class="toc-n">4.4</span>L'espace de stockage</a></li><li><a href="#s4-5"><span class="toc-n">4.5</span>Le Dossier système</a></li><li><a href="#s4-6"><span class="toc-n">4.6</span>Utiliser un fichier ailleurs</a></li></ol>
+        </li>
+        <li data-sec="attention"><a href="#attention"><span class="toc-n">5</span>Points d'attention</a></li>
+        <li data-sec="faq"><a href="#faq"><span class="toc-n">6</span>Questions fréquentes</a></li>
+      </ol>
+    </details>
+  </nav>
+
+  <main>
+
+<!-- 1 -->
+<section id="definition">
+  <div class="sec-head"><span class="sec-num">01</span><h2>Deux outils, deux usages</h2></div>
+  <div class="grid-2">
+    <div class="card"><span class="tag yellow">Module optionnel</span><h4>Champs personnalisés</h4><p>Ajouter à une fiche (conseillère, cliente, produit, retour d'article) des informations que SellingAtHome ne prévoit pas en standard&nbsp;: taille de tenue, date de formation, centre d'intérêt…</p><p class="muted">Paramètres › Champs personnalisés</p></div>
+    <div class="card"><span class="tag">Pour toutes les marques</span><h4>Gestion de fichiers</h4><p>Un espace de stockage en ligne pour les documents, images, sons et vidéos de votre marque, réutilisables dans les documents, emails, formations, mini-sites…</p><p class="muted">Menu Gestion de fichiers</p></div>
+  </div>
+  <div class="tip"><span class="ex-label">Vocabulaire</span><p>L'espace marque parle de <strong>vendeur</strong> pour la conseillère (module «&nbsp;Vendeur&nbsp;», onglet «&nbsp;VDIs&nbsp;» du dossier système) et de <strong>client</strong> pour la cliente.</p></div>
+</section>
+
+<!-- 2 -->
+<section id="champs">
+  <div class="sec-head"><span class="sec-num">02</span><h2>Les champs personnalisés</h2></div>
+  <p class="lede">Le module est activé par SellingAtHome sur demande&nbsp;: <strong>7 marques sur 35</strong> l'ont, et peu de champs y sont définis aujourd'hui. Sans lui, le menu et les onglets «&nbsp;Champs personnalisés&nbsp;» des fiches n'apparaissent pas.</p>
+
+  <h3 id="s2-1"><span class="sub-num">2.1</span> Où les trouver</h3>
+  <div class="path" aria-label="Chemin d'accès"><span>Espace marque</span><span>Paramètres</span><span><b>Champs personnalisés</b></span></div>
+  <p>L'écran s'intitule <strong>Gérer les champs</strong>. Il présente la «&nbsp;Liste des modules pouvant être personnalisés&nbsp;», avec pour chacun le <strong>Nom du module</strong>, le <strong>Nombre de champs</strong> et un crayon pour l'éditer.</p>
+
+  <h3 id="s2-2"><span class="sub-num">2.2</span> Pour quelles fiches</h3>
+  <div class="table-wrap"><table class="opts">
+    <thead><tr><th>Module</th><th>La fiche concernée</th></tr></thead>
+    <tbody>
+      <tr><td><b>Vendeur</b></td><td>La fiche de la conseillère.</td></tr>
+      <tr><td><b>Client</b></td><td>La fiche de la cliente.</td></tr>
+      <tr><td><b>Produit</b></td><td>La fiche produit.</td></tr>
+      <tr><td><b>Retour d'article</b></td><td>Le formulaire de retour produit rempli par la conseillère.</td></tr>
+    </tbody>
+  </table></div>
+  <p class="muted">Les commandes et les candidatures n'ont pas de module ici. Les questions du formulaire de candidature se règlent dans le paramétrage du recrutement&nbsp;: voir <a href="recrutement.html">Le recrutement</a>.</p>
+
+  <h3 id="s2-3"><span class="sub-num">2.3</span> Créer un champ</h3>
+  <p>Cliquez sur le crayon d'un module. L'onglet <strong>Formulaire</strong> présente un constructeur de formulaire&nbsp;:</p>
+  <ol class="prose">
+    <li>Dans <strong>Ajouter un champ</strong>, cliquez sur le type voulu&nbsp;: le champ s'ajoute au formulaire.</li>
+    <li>Cliquez sur le champ pour le régler&nbsp;: <strong>Libellé</strong> (obligatoire, et différent des autres champs), description, case <strong>Obligatoire</strong>, case <strong>Disponible à la création</strong>, et les options propres au type.</li>
+    <li>Faites glisser les champs pour changer leur ordre&nbsp;; les icônes permettent de <strong>Dupliquer le champ</strong> ou de <strong>Supprimer le champ</strong>.</li>
+    <li>Cliquez sur <strong>Sauvegarder</strong>.</li>
+  </ol>
+  <div class="example"><span class="ex-label">Exemple</span><p>Votre marque fournit une tenue à ses conseillères. Dans le module Vendeur, vous ajoutez une <strong>Liste déroulante</strong> «&nbsp;Taille de tenue&nbsp;» (S, M, L, XL) et une <strong>Date</strong> «&nbsp;Date de remise de la tenue&nbsp;». La fiche de Léa affiche alors un onglet «&nbsp;Champs personnalisés&nbsp;» avec ces deux informations.</p></div>
+  <div class="warn"><span class="ex-label">Attention</span><p>Ne renommez pas un champ déjà rempli&nbsp;: l'identifiant interne du champ est calculé à partir de son libellé, et les valeurs déjà saisies ne seraient plus rattachées au nouveau libellé.</p></div>
+
+  <h3 id="s2-4"><span class="sub-num">2.4</span> Les types de champs</h3>
+  <div class="table-wrap"><table class="opts">
+    <thead><tr><th>Type</th><th>Options</th></tr></thead>
+    <tbody>
+      <tr><td><b>Texte</b>, <b>Paragraphe</b></td><td>Taille limite (minimum, maximum), en lettres ou en mots.</td></tr>
+      <tr><td><b>Choix multiple</b>, <b>Choix unique</b></td><td>La liste des options proposées.</td></tr>
+      <tr><td><b>Liste déroulante</b></td><td>La liste des options, et «&nbsp;Inclure une option vide&nbsp;».</td></tr>
+      <tr><td><b>Date</b></td><td>Date de début, minimum, maximum.</td></tr>
+      <tr><td><b>Heure</b></td><td>Minimum et maximum.</td></tr>
+      <tr><td><b>Nombre</b></td><td>Minimum, maximum, unité, «&nbsp;Entier Uniquement&nbsp;».</td></tr>
+      <tr><td><b>Site Web</b>, <b>Email</b>, <b>Téléphone</b></td><td>Aucune&nbsp;: la saisie est contrôlée selon le type.</td></tr>
+      <tr><td><b>Photos</b></td><td>Nombre de photos maximum. Non proposé pour les modules Produit et Retour d'article.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 id="s2-5"><span class="sub-num">2.5</span> L'onglet Champs désactivés</h3>
+  <p>Le second onglet, <strong>Champs désactivés</strong>, est prévu pour lister les champs standard masqués pour ce module, avec un bouton <strong>Réactiver</strong>. Dans la version actuelle de l'espace marque, il n'affiche aucun champ&nbsp;: les champs standard des fiches ne se désactivent pas depuis cet écran. Si vous souhaitez masquer un champ standard, adressez-vous à SellingAtHome.</p>
+
+  <h3 id="s2-6"><span class="sub-num">2.6</span> Où les champs apparaissent</h3>
+  <div class="table-wrap"><table class="where">
+    <thead><tr><th>Module</th><th>Espace marque</th><th>Espace conseillère</th><th>Remarques</th></tr></thead>
+    <tbody>
+      <tr><td><b>Vendeur</b></td><td>Onglet «&nbsp;Champs personnalisés&nbsp;» de la fiche</td><td>Non</td><td>Pas proposés à la création de la conseillère.</td></tr>
+      <tr><td><b>Client</b></td><td>Onglet «&nbsp;Champs personnalisés&nbsp;» de la fiche</td><td>Onglet «&nbsp;Champs personnalisés&nbsp;» de la fiche cliente</td><td>La conseillère peut les remplir pour ses clientes.</td></tr>
+      <tr><td><b>Produit</b></td><td>Onglet «&nbsp;Champs personnalisés&nbsp;» de la fiche produit</td><td>Non</td><td></td></tr>
+      <tr><td><b>Retour d'article</b></td><td>Fiche et listes des retours</td><td>Formulaire de retour</td><td>Les champs texte, nombre, email, téléphone et site web servent aussi à la recherche des retours.</td></tr>
+    </tbody>
+  </table></div>
+  <p class="muted">Ces champs ne figurent pas dans les exports de données.</p>
+  <div class="warn"><span class="ex-label">Avant de vous lancer</span><p>Faites un essai sur une fiche&nbsp;: saisissez une valeur, enregistrez, puis rouvrez la fiche pour vérifier qu'elle est bien conservée. En cas de doute, contactez SellingAtHome avant de demander à votre équipe de remplir ces champs.</p></div>
+</section>
+
+<!-- 3 -->
+<section id="complementaires">
+  <div class="sec-head"><span class="sec-num">03</span><h2>Les champs complémentaires paramétrés par SellingAtHome</h2></div>
+  <p class="lede">Il existe un second mécanisme, plus récent&nbsp;: des <strong>champs complémentaires</strong> créés par SellingAtHome à la demande de la marque, et affichés <strong>directement dans le formulaire principal</strong> des fiches, souvent regroupés en blocs. C'est aujourd'hui le plus utilisé&nbsp;: 10 marques sur 35 en ont.</p>
+  <div class="table-wrap"><table class="opts">
+    <thead><tr><th>Fiche</th><th>Usage constaté</th></tr></thead>
+    <tbody>
+      <tr><td><b>Conseillère</b></td><td>9 marques. Exemples réels&nbsp;: date de fin de contrat, spécialité, référence dans le logiciel de gestion de la marque, informations du mandat de prélèvement.</td></tr>
+      <tr><td><b>Cliente</b></td><td>7 marques. Exemples&nbsp;: commentaire, lieu de travail, moyen de contact préféré, cliente d'une autre gamme (case à cocher).</td></tr>
+      <tr><td><b>Produit</b></td><td>6 marques. Exemples&nbsp;: ingrédients, précautions d'emploi, conseils d'utilisation, certifications (textes mis en forme, traduits). Les champs marqués visibles pour les conseillères s'affichent sur la page produit de leur catalogue.</td></tr>
+      <tr><td><b>Commande de regroupement</b>, <b>commande</b></td><td>Quelques marques.</td></tr>
+    </tbody>
+  </table></div>
+  <p>Pour chaque champ, SellingAtHome règle notamment&nbsp;: le type (texte, liste, date, case à cocher, conseillère…), s'il est <strong>obligatoire</strong>, s'il est <strong>proposé à la création</strong> de la fiche, s'il est <strong>visible</strong> et <strong>modifiable par la conseillère</strong>, ou <strong>réservé à la marque</strong>.</p>
+  <p>Ces champs figurent dans les exports de données des conseillères, des clientes et des produits (voir <a href="pilotage.html">Communication et pilotage</a>).</p>
+  <div class="tip"><span class="ex-label">Comment l'obtenir</span><p>Décrivez à votre interlocuteur SellingAtHome les informations à ajouter, la fiche concernée, et qui doit les voir ou les modifier (marque seule, conseillère). Les questions du formulaire de candidature, elles, se gèrent dans le recrutement.</p></div>
+</section>
+
+<!-- 4 -->
+<section id="fichiers">
+  <div class="sec-head"><span class="sec-num">04</span><h2>La Gestion de fichiers</h2></div>
+  <div class="path" aria-label="Chemin d'accès"><span>Espace marque</span><span><b>Gestion de fichiers</b></span></div>
+  <p class="lede">L'écran s'intitule <strong>Explorateur de fichiers</strong>. Il fonctionne comme l'explorateur de votre ordinateur&nbsp;: une arborescence de dossiers à gauche, le contenu du dossier ouvert à droite. Presque toutes les marques s'en servent&nbsp;: 33 sur 35 y ont déposé des fichiers.</p>
+
+  <h3 id="s4-1"><span class="sub-num">4.1</span> L'écran</h3>
+  <figure><img src="Captures/Pilotage/gestion-fichiers.png" alt="Explorateur de fichiers : à gauche l'arborescence des dossiers (Base de connaissances, Dossier système, Facebook, Outils, Recrutement) ; en haut à droite la jauge Utilisé 252 Mo sur 6 Go ; barre de recherche Rechercher partout, menu Trier par, bouton Nouveau dossier et bouton Ajouter un fichier ; au centre les dossiers et fichiers en vignettes" loading="lazy"><figcaption>L'explorateur de fichiers de la marque de démonstration (vignettes floutées).</figcaption></figure>
+  <ul class="prose">
+    <li><strong>Arborescence des dossiers</strong>&nbsp;: le dossier racine porte le nom de votre marque.</li>
+    <li><strong>Utilisé</strong>&nbsp;: la jauge de l'espace occupé par rapport à votre quota.</li>
+    <li><strong>Rechercher partout …</strong>&nbsp;: recherche par nom dans tous les dossiers.</li>
+    <li><strong>Trier par</strong>&nbsp;: Nom, Date de création, Date de modification, Type. Les dossiers restent toujours en tête.</li>
+    <li>L'icône de dossier crée un <strong>Nouveau dossier</strong>&nbsp;; <strong>Ajouter un fichier</strong> ouvre le formulaire d'envoi.</li>
+  </ul>
+
+  <h3 id="s4-2"><span class="sub-num">4.2</span> Dossiers et fichiers</h3>
+  <div class="figrow">
+    <figure><img src="Captures/Pilotage/gestion-fichiers-menu.png" alt="Menu contextuel ouvert sur un dossier : Renommer, Copier, Couper, Supprimer" loading="lazy"><figcaption>Le clic droit sur un élément.</figcaption></figure>
+    <div class="prose" style="display:flex;flex-direction:column;gap:10px">
+      <p><strong>Clic</strong> pour sélectionner, <strong>double-clic</strong> pour ouvrir, <strong>clic droit</strong> pour le menu, <strong>glisser</strong> pour déplacer dans un autre dossier.</p>
+      <p>Le menu propose <strong>Renommer</strong>, <strong>Copier</strong>, <strong>Couper</strong>, puis <strong>Coller</strong> dans le dossier de destination, et <strong>Supprimer</strong>. Sur un fichier, <strong>Aperçu</strong> l'affiche en grand.</p>
+      <p>On peut sélectionner plusieurs éléments à la fois.</p>
+    </div>
+  </div>
+  <ul class="prose">
+    <li><strong>Envoyer un fichier</strong>&nbsp;: «&nbsp;Ajouter un fichier&nbsp;» (choix du fichier et de son «&nbsp;Nom du fichier&nbsp;»), ou glisser-déposer plusieurs fichiers dans la zone «&nbsp;Déposez votre ou vos fichier(s) ici&nbsp;».</li>
+    <li><strong>Supprimer un dossier</strong> supprime aussi tout son contenu&nbsp;: une confirmation le rappelle.</li>
+    <li><strong>Même nom</strong>&nbsp;: si un élément du même nom existe déjà dans le dossier, un numéro est ajouté («&nbsp;(2)&nbsp;», «&nbsp;(3)&nbsp;»…). Un fichier strictement identique déjà présent dans le dossier est refusé («&nbsp;Le fichier existe déjà&nbsp;»).</li>
+  </ul>
+
+  <h3 id="s4-3"><span class="sub-num">4.3</span> Formats et tailles</h3>
+  <div class="formats">
+    <div><b>Documents</b>PDF, Word (doc, docx), Excel (xls, xlsx, xlsm)</div>
+    <div><b>Images</b>JPG, JPEG, PNG</div>
+    <div><b>Son</b>MP3</div>
+    <div><b>Vidéo</b>MP4</div>
+  </div>
+  <ul class="prose">
+    <li><strong>100&nbsp;Mo maximum</strong> par fichier envoyé avec «&nbsp;Ajouter un fichier&nbsp;»&nbsp;; au-delà de 25&nbsp;Mo, un message prévient que l'envoi peut prendre quelques minutes.</li>
+    <li>Le <strong>glisser-déposer</strong> accepte les images, sons, vidéos et PDF&nbsp;: pour un document Word ou Excel, passez par «&nbsp;Ajouter un fichier&nbsp;».</li>
+    <li>Nom de fichier&nbsp;: <strong>100 caractères</strong> maximum.</li>
+  </ul>
+
+  <h3 id="s4-4"><span class="sub-num">4.4</span> L'espace de stockage</h3>
+  <p>Chaque marque dispose d'un <strong>quota</strong>, fixé par SellingAtHome&nbsp;: <strong>1&nbsp;Go</strong> par défaut (23 marques sur 35), davantage sur demande (de 3 à 120&nbsp;Go selon les marques). Un envoi qui dépasserait le quota est refusé («&nbsp;Espace insuffisant&nbsp;»).</p>
+  <div class="stats">
+    <div class="stat"><b>32</b><span>fichiers déposés par marque (médiane)</span></div>
+    <div class="stat"><b>380&nbsp;Mo</b><span>occupés par marque (médiane)</span></div>
+    <div class="stat"><b>31&nbsp;/&nbsp;35</b><span>marques ayant ajouté des fichiers sur un an</span></div>
+  </div>
+  <div class="example"><span class="ex-label">Exemple</span><p>Votre marque a 1&nbsp;Go et utilise déjà 950&nbsp;Mo. La vidéo de présentation de la collection pèse 80&nbsp;Mo&nbsp;: l'envoi est refusé. Supprimez d'anciennes vidéos, ou demandez à SellingAtHome d'augmenter votre quota.</p></div>
+
+  <h3 id="s4-5"><span class="sub-num">4.5</span> Le Dossier système</h3>
+  <p>À la demande, SellingAtHome peut faire apparaître dans votre explorateur un <strong>Dossier système</strong> qui rassemble, en <strong>lecture seule</strong>, des fichiers déposés ailleurs dans SellingAtHome. Chaque sous-dossier correspond à une option activée pour votre marque&nbsp;:</p>
+  <div class="tree" aria-label="Arborescence type du Dossier système">
+    <ul><li>📁 Votre marque
+      <ul>
+        <li>📁 Vos dossiers <small>(modifiables)</small></li>
+        <li>📁 Dossier système <small>🔒 lecture seule</small>
+          <ul>
+            <li class="lock">Candidatures <small>— pièces des candidatures et contrats signés</small></li>
+            <li class="lock">Catalogues <small>— images des catalogues</small></li>
+            <li class="lock">Catégories <small>— images des catégories</small></li>
+            <li class="lock">Articles <small>— photos des produits</small></li>
+            <li class="lock">VDIs <small>— photos des conseillères</small></li>
+            <li class="lock">Clients <small>— photos et documents des clientes, un dossier par cliente</small></li>
+            <li class="lock">Formations <small>— médias des formations</small></li>
+            <li class="lock">Sepa <small>— mandats de prélèvement SEPA</small></li>
+            <li class="lock">Logos <small>— logo de la marque et images de mini-site</small></li>
+          </ul>
+        </li>
+      </ul>
+    </li></ul>
+  </div>
+  <p>Dans un dossier en lecture seule, on ne peut ni ajouter, ni renommer, ni coller, ni supprimer&nbsp;: le message «&nbsp;Dossier en lecture seule.&nbsp;» s'affiche. Les fichiers restent consultables et réutilisables. Le sous-dossier <strong>Candidatures</strong> est de loin le plus répandu (31 marques sur 35)&nbsp;; les autres concernent quelques marques.</p>
+  <div class="warn"><span class="ex-label">Données personnelles</span><p>Les sous-dossiers Candidatures, Clients et Sepa contiennent des données personnelles (pièces d'identité, coordonnées bancaires…). Limitez l'accès à l'espace marque aux personnes qui en ont besoin.</p></div>
+
+  <h3 id="s4-6"><span class="sub-num">4.6</span> Utiliser un fichier ailleurs</h3>
+  <p>L'explorateur sert aussi de <strong>sélecteur de fichiers</strong> dans d'autres écrans&nbsp;: documents de la base de connaissances, formations, modèles d'emails, mini-sites, paramétrage du recrutement, réglages des réunions. Le bouton <strong>Sélectionner ce fichier</strong> y apparaît. Déposez donc vos fichiers une fois dans la Gestion de fichiers, puis réutilisez-les partout.</p>
+  <p>Quand vous supprimez un fichier utilisé par un document de candidature ou un thème de réunion, le lien est retiré de ces écrans.</p>
+</section>
+
+<!-- 5 -->
+<section id="attention">
+  <div class="sec-head"><span class="sec-num">05</span><h2>Points d'attention</h2></div>
+  <ul class="prose">
+    <li><strong>Supprimer est définitif</strong>&nbsp;: il n'y a pas de corbeille. Supprimer un dossier supprime tout son contenu.</li>
+    <li><strong>Organisez par usage</strong>&nbsp;: un dossier par thème (Formations, Catalogues, Réunions…) facilite la recherche et le sélecteur de fichiers.</li>
+    <li><strong>Les vidéos consomment vite le quota</strong>&nbsp;: compressez-les avant envoi, ou hébergez-les sur une plateforme vidéo.</li>
+    <li><strong>Champs personnalisés</strong>&nbsp;: vérifiez la conservation des valeurs sur une fiche test avant de généraliser (voir <a href="#s2-6">2.6</a>).</li>
+  </ul>
+</section>
+
+<!-- 6 -->
+<section id="faq">
+  <div class="sec-head"><span class="sec-num">06</span><h2>Questions fréquentes</h2></div>
+  <div class="faq">
+    <details><summary>Je ne vois pas Paramètres › Champs personnalisés.</summary><div><p>Le module n'est pas activé pour votre marque. Il s'active sur demande auprès de SellingAtHome&nbsp;; voir <a href="modules-options.html">Modules et options</a>.</p></div></details>
+    <details><summary>Ma conseillère ne voit pas les champs personnalisés de sa fiche.</summary><div><p>C'est normal&nbsp;: les champs du module Vendeur ne s'affichent que dans l'espace marque. Pour un champ visible par la conseillère, demandez un champ complémentaire à SellingAtHome (voir <a href="#complementaires">section 3</a>).</p></div></details>
+    <details><summary>Je ne peux pas déposer un fichier dans un dossier.</summary><div><p>Le dossier est en lecture seule (Dossier système et ses sous-dossiers). Déposez votre fichier dans un de vos propres dossiers.</p></div></details>
+    <details><summary>Mon fichier Word est refusé quand je le glisse.</summary><div><p>Le glisser-déposer n'accepte que les images, sons, vidéos et PDF. Utilisez le bouton <strong>Ajouter un fichier</strong>.</p></div></details>
+    <details><summary>Comment augmenter mon espace de stockage&nbsp;?</summary><div><p>Le quota est fixé par SellingAtHome&nbsp;: contactez votre interlocuteur.</p></div></details>
+  </div>
+</section>
+
+  </main>
+</div>

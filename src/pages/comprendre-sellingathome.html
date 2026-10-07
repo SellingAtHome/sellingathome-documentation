@@ -1,0 +1,223 @@
+<!--page {"title":"Comprendre SellingAtHome en 10 minutes"} -->
+<style>
+.map { display:grid; grid-template-columns:minmax(0,1fr) auto minmax(0,1fr) auto minmax(0,1fr); gap:14px; align-items:center; }
+.map .node { background:var(--card); border:1px solid var(--rule); border-radius:18px; padding:18px; text-align:center; display:flex; flex-direction:column; gap:6px; }
+.map .node.brand { background:var(--hero); color:var(--on-hero); border-color:transparent; }
+.map .node.brand b { color:#fff; }
+.map .node b { font-size:1.08rem; color:var(--heading); }
+.map .node span { font-size:.88rem; color:var(--muted); }
+.map .node.brand span { color:var(--on-hero-mut); }
+.map .arr { color:var(--accent-ink); font-size:1.5rem; text-align:center; }
+.map .arr small { display:block; font-size:.72rem; color:var(--muted); letter-spacing:.06em; text-transform:uppercase; }
+.tree { background:var(--card); border:1px solid var(--rule); border-radius:18px; padding:20px 22px; font-size:.95rem; display:flex; flex-direction:column; gap:8px; }
+.tree .lvl1 { margin-left:28px; border-left:2px solid var(--rule); padding-left:14px; display:flex; flex-direction:column; gap:8px; }
+.tree .lvl2 { margin-left:28px; border-left:2px dashed var(--rule); padding-left:14px; }
+.tree b { color:var(--heading); }
+.tree .who { font-size:.8rem; color:var(--muted); }
+.flows { display:grid; grid-template-columns:repeat(auto-fit, minmax(240px,1fr)); gap:14px; }
+.flows .card { border-top:5px solid var(--accent); }
+.flows .card:nth-child(2) { border-top-color:var(--pink); }
+.flows .card:nth-child(3) { border-top-color:var(--yellow); }
+.flows .card:nth-child(4) { border-top-color:var(--heading); }
+.flows ol { padding-left:1.2em; font-size:.93rem; }
+@media (max-width: 760px) { .map { grid-template-columns:1fr; } .map .arr { transform:rotate(90deg); } }
+</style>
+<header class="hero">
+  <div class="hero-in">
+    <div>
+      <span class="eyebrow">Démarrer</span>
+      <h1>Comprendre SellingAtHome <span class="script">en 10 minutes</span></h1>
+      <p class="lede">Les personnes, les espaces, la façon dont une vente arrive, dont une conseillère est rémunérée et dont une hôtesse est récompensée. Les notions qui reviennent dans toute la documentation, expliquées une fois pour toutes.</p>
+    </div>
+    <div class="voucher-art" aria-hidden="true">
+      <div class="v-top"><span>Une marque type</span><span>sur un an</span></div>
+      <div class="v-amount">4 159<span> cmd</span></div>
+      <div class="v-name">83 conseillères</div>
+      <div class="v-sep"></div>
+      <div class="v-meta"><span>Clientes <b>3 561</b></span><span>Réunions <b>416</b></span></div>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="toc" aria-label="Sommaire">
+    <details id="tocDetails" open>
+      <summary>Sommaire</summary>
+      <div class="toc-title">Sommaire</div>
+      <ol>
+        <li data-sec="principe"><a href="#principe"><span class="toc-n">1</span>Le principe</a></li>
+        <li data-sec="acteurs"><a href="#acteurs"><span class="toc-n">2</span>Les personnes</a></li>
+        <li data-sec="reseau"><a href="#reseau"><span class="toc-n">3</span>Le réseau des conseillères</a>
+          <ol class="toc-sub"><li><a href="#s3-1"><span class="toc-n">3.1</span>Recruteur et animatrice</a></li><li><a href="#s3-2"><span class="toc-n">3.2</span>Statuts et rôles</a></li></ol>
+        </li>
+        <li data-sec="espaces"><a href="#espaces"><span class="toc-n">4</span>Les espaces</a></li>
+        <li data-sec="flux"><a href="#flux"><span class="toc-n">5</span>Les quatre grands parcours</a>
+          <ol class="toc-sub"><li><a href="#s5-1"><span class="toc-n">5.1</span>Une vente</a></li><li><a href="#s5-2"><span class="toc-n">5.2</span>Une réunion</a></li><li><a href="#s5-3"><span class="toc-n">5.3</span>La rémunération</a></li><li><a href="#s5-4"><span class="toc-n">5.4</span>Le recrutement</a></li></ol>
+        </li>
+        <li data-sec="chiffres"><a href="#chiffres"><span class="toc-n">6</span>Ordres de grandeur</a></li>
+        <li data-sec="vocabulaire"><a href="#vocabulaire"><span class="toc-n">7</span>Le vocabulaire</a></li>
+        <li data-sec="suite"><a href="#suite"><span class="toc-n">8</span>Par où continuer&nbsp;?</a></li>
+      </ol>
+    </details>
+  </nav>
+
+  <main>
+
+<!-- 1 -->
+<section id="principe">
+  <div class="sec-head"><span class="sec-num">01</span><h2>Le principe</h2></div>
+  <p class="lede">SellingAtHome est la plateforme de <strong>vente à domicile</strong> de votre marque. Vos produits sont vendus par un réseau de <strong>conseillères</strong> indépendantes, principalement lors de <strong>réunions</strong> organisées chez des <strong>hôtesses</strong>, et aussi en vente directe et en ligne. La plateforme relie tout&nbsp;: catalogue, commandes, réseau, rémunération, fidélité.</p>
+  <div class="map" aria-label="Schéma : la marque, ses conseillères, leurs clientes">
+    <div class="node brand"><b>Votre marque</b><span>catalogue, prix, règles, commissions</span></div>
+    <div class="arr">→<small>recrute</small></div>
+    <div class="node"><b>Les conseillères</b><span>vendent, recrutent, animent leur équipe</span></div>
+    <div class="arr">→<small>vendent à</small></div>
+    <div class="node"><b>Les clientes</b><span>dont les hôtesses et leurs invitées</span></div>
+  </div>
+  <div class="example"><span class="ex-label">Une journée type</span><p>Le matin, Léa, conseillère, prépare sa réunion du soir chez Jade. Le soir, cinq invitées commandent pour 460&nbsp;€&nbsp;; deux prennent date pour leur propre réunion. Les jours suivants, la marque expédie les commandes. À la fin du mois, la marque clôture les commissions&nbsp;: Léa est rémunérée sur ses ventes, et sa recruteuse sur celles de son équipe. Jade, elle, a gagné un bon d'achat calculé sur le chiffre de sa réunion.</p></div>
+</section>
+
+<!-- 2 -->
+<section id="acteurs">
+  <div class="sec-head"><span class="sec-num">02</span><h2>Les personnes</h2></div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Qui</th><th>Rôle</th><th>Son espace</th></tr></thead>
+    <tbody>
+      <tr><td><b>La marque</b><br><span class="muted">vous</span></td><td>Définit le catalogue, les prix, les règles commerciales, la rémunération. Suit l'activité, traite les commandes et les candidatures.</td><td>L'espace marque</td></tr>
+      <tr><td><b>La conseillère</b><br><span class="muted">«&nbsp;vendeur&nbsp;» dans l'interface</span></td><td>Vend vos produits, organise des réunions, gère ses clientes, recrute et anime son équipe.</td><td>L'espace conseillère (ordinateur et application mobile)</td></tr>
+      <tr><td><b>L'hôtesse</b><br><span class="muted">«&nbsp;hôte&nbsp;» dans l'interface</span></td><td>Une cliente qui reçoit une réunion chez elle (ou en visio). Elle est récompensée selon le résultat.</td><td>Le mini-site de sa réunion, si votre marque l'utilise</td></tr>
+      <tr><td><b>L'invitée, la cliente</b></td><td>Commande pendant une réunion, auprès de sa conseillère ou en ligne.</td><td>Les boutiques en ligne, si votre marque les utilise</td></tr>
+    </tbody>
+  </table></div>
+  <div class="tip"><span class="ex-label">Bon à savoir</span><ul class="prose"><li>Une cliente est rattachée à <strong>une conseillère principale</strong>, et parfois à plusieurs conseillères.</li><li>Chaque conseillère dispose aussi d'un <strong>compte client</strong> à son nom, pour commander pour elle-même.</li><li>Une cliente devient «&nbsp;hôtesse&nbsp;» quand elle reçoit une réunion&nbsp;: à la clôture de cette réunion, elle reçoit le rôle client <strong>Hôte</strong>.</li></ul></div>
+</section>
+
+<!-- 3 -->
+<section id="reseau">
+  <div class="sec-head"><span class="sec-num">03</span><h2>Le réseau des conseillères</h2></div>
+  <p class="lede">Les conseillères forment un réseau&nbsp;: chacune a été recrutée par une autre, et peut à son tour recruter. Ce réseau sert à la rémunération (une conseillère peut toucher des commissions sur les ventes de son équipe), aux challenges et au suivi d'activité.</p>
+  <div class="tree" aria-label="Exemple d'organigramme">
+    <div><b>Sophie</b> <span class="who">— conseillère, animatrice de l'équipe</span></div>
+    <div class="lvl1">
+      <div><b>Léa</b> <span class="who">— recrutée par Sophie (1re lignée)</span></div>
+      <div class="lvl2"><b>Chloé</b> <span class="who">— recrutée par Léa (2e lignée de Sophie)</span></div>
+      <div><b>Manon</b> <span class="who">— recrutée par Sophie (1re lignée)</span></div>
+    </div>
+  </div>
+
+  <h3 id="s3-1"><span class="sub-num">3.1</span> Recruteur et animatrice&nbsp;: deux liens différents</h3>
+  <div class="grid-2">
+    <div class="card"><span class="tag">Recruteur</span><p>La personne qui a <strong>fait entrer</strong> la conseillère dans le réseau. Ce lien ne change en principe pas. Il sert par exemple aux primes de recrutement.</p><p class="muted">Dans l'interface&nbsp;: «&nbsp;Recruteur du vendeur&nbsp;», parfois «&nbsp;parrain&nbsp;» ou «&nbsp;marraine&nbsp;».</p></div>
+    <div class="card"><span class="tag pink">Animatrice</span><p>La personne qui <strong>encadre</strong> la conseillère dans son équipe aujourd'hui. Elle peut changer au fil du temps, et l'historique est conservé. C'est ce lien qui construit l'équipe pour les commissions.</p><p class="muted">Dans l'interface&nbsp;: «&nbsp;Animateur du vendeur&nbsp;».</p></div>
+  </div>
+  <p>Votre marque peut choisir que <strong>le recruteur soit toujours l'animateur</strong>&nbsp;: les deux liens n'en font alors qu'un. Environ la moitié des marques fonctionne ainsi.</p>
+  <div class="example"><span class="ex-label">Exemple</span><p>Léa a été recrutée par Sophie. Sophie déménage et confie son équipe à Manon. Léa a toujours Sophie comme <strong>recruteuse</strong>, mais Manon devient son <strong>animatrice</strong>&nbsp;: c'est désormais dans l'équipe de Manon que les ventes de Léa comptent.</p></div>
+
+  <h3 id="s3-2"><span class="sub-num">3.2</span> Statuts et rôles</h3>
+  <ul class="prose">
+    <li><strong>Le statut</strong> est le niveau de la conseillère dans votre plan de carrière (par exemple conseillère, animatrice, manager). Une marque en a en général 4. Il peut évoluer automatiquement selon des règles. Une conseillère porte en fait trois statuts&nbsp;: son <strong>statut</strong> actuel, son <strong>statut estimé</strong> (calculé chaque nuit pendant le mois) et, selon votre plan, un <strong>statut à vie</strong>.</li>
+    <li><strong>Les rôles</strong> sont des étiquettes libres (par exemple «&nbsp;Formatrice&nbsp;», «&nbsp;Ambassadrice&nbsp;»). Une conseillère peut en avoir plusieurs. Ils servent notamment à réserver des produits ou des catégories du catalogue.</li>
+  </ul>
+  <p>Voir l'univers <a href="reseau.html">Réseau et rémunération</a>.</p>
+</section>
+
+<!-- 4 -->
+<section id="espaces">
+  <div class="sec-head"><span class="sec-num">04</span><h2>Les espaces</h2></div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Espace</th><th>Pour qui</th><th>Pour quoi faire</th></tr></thead>
+    <tbody>
+      <tr><td><b>Espace marque</b><br><span class="muted">brand.sellingathome.com</span></td><td>Vos équipes</td><td>Tout administrer&nbsp;: voir <a href="espace-marque.html">Découvrir l'espace marque</a>.</td></tr>
+      <tr><td><b>Espace conseillère</b></td><td>Les conseillères, sur ordinateur</td><td>Réunions, commandes, clientes, équipe, commissions, formation.</td></tr>
+      <tr><td><b>Application mobile</b></td><td>Les conseillères, sur smartphone</td><td>L'essentiel de l'espace conseillère, en mobilité. Près d'une commande sur cinq y est saisie.</td></tr>
+      <tr><td><b>Mini-site de réunion</b> <span class="tag yellow" style="display:inline-block">Optionnel</span></td><td>L'hôtesse et ses invitées</td><td>Inviter, confirmer sa venue, découvrir les produits, commander à distance.</td></tr>
+      <tr><td><b>Mini-boutique</b> <span class="tag yellow" style="display:inline-block">Optionnel</span></td><td>Les clientes d'une conseillère</td><td>La boutique en ligne personnelle de la conseillère.</td></tr>
+      <tr><td><b>Boutique de marque</b> <span class="tag yellow" style="display:inline-block">Optionnel</span></td><td>Toutes les clientes</td><td>La boutique en ligne de la marque, qui attribue les ventes à une conseillère.</td></tr>
+    </tbody>
+  </table></div>
+  <p class="muted">L'équipe SellingAtHome dispose de son propre outil d'administration, qui sert notamment à activer les options de votre marque.</p>
+</section>
+
+<!-- 5 -->
+<section id="flux">
+  <div class="sec-head"><span class="sec-num">05</span><h2>Les quatre grands parcours</h2></div>
+  <div class="flows">
+    <div class="card"><span class="tag">Une vente</span><ol><li>La conseillère saisit la commande.</li><li>La cliente paie.</li><li>La marque prépare et expédie.</li><li>La vente compte dans le CA, les commissions, la fidélité, les challenges.</li></ol></div>
+    <div class="card"><span class="tag pink">Une réunion</span><ol><li>Création, avec une hôtesse.</li><li>Invitations.</li><li>Commandes pendant la réunion.</li><li>Clôture&nbsp;: gains de l'hôtesse figés.</li></ol></div>
+    <div class="card"><span class="tag yellow">La rémunération</span><ol><li>Ventes payées du mois.</li><li>Estimation chaque nuit.</li><li>Clôture mensuelle par la marque.</li><li>Commissions, bulletins, paiement.</li></ol></div>
+    <div class="card"><span class="tag">Le recrutement</span><ol><li>Candidature en ligne.</li><li>Documents et contrat signé.</li><li>Création du compte conseillère.</li><li>Kit de démarrage.</li></ol></div>
+  </div>
+
+  <h3 id="s5-1"><span class="sub-num">5.1</span> Une vente</h3>
+  <p>Une vente se concrétise par une <strong>commande</strong>, qui a un <strong>type</strong> selon son origine. Sur un an, toutes marques confondues&nbsp;:</p>
+  <div class="share">
+    <div class="share-row"><span><b>En réunion</b></span><div class="share-bar"><i style="width:62.5%"></i></div><span class="pct">62&nbsp;%</span></div>
+    <div class="share-row"><span><b>Vente directe</b></span><div class="share-bar"><i style="width:18%"></i></div><span class="pct">18&nbsp;%</span></div>
+    <div class="share-row"><span><b>En ligne</b> (site de la marque)</span><div class="share-bar"><i style="width:11.5%"></i></div><span class="pct">12&nbsp;%</span></div>
+    <div class="share-row"><span>Cadeaux et autres</span><div class="share-bar"><i style="width:8%"></i></div><span class="pct">8&nbsp;%</span></div>
+  </div>
+  <p>Tout le détail dans <a href="commandes-comprendre.html">Comprendre les commandes</a>.</p>
+
+  <h3 id="s5-2"><span class="sub-num">5.2</span> Une réunion</h3>
+  <p>La réunion reste le cœur du métier&nbsp;: près des deux tiers des commandes y sont passées. Une réunion a une conseillère, une hôtesse et des participantes&nbsp;; elle reste ouverte quelques jours après sa date, puis elle est clôturée. Voir <a href="reunion-cycle-de-vie.html">Le cycle de vie d'une réunion</a>.</p>
+
+  <h3 id="s5-3"><span class="sub-num">5.3</span> La rémunération</h3>
+  <ul class="prose">
+    <li>La rémunération de la conseillère est calculée <strong>chaque mois</strong> selon le <strong>plan de rémunération</strong> de votre marque&nbsp;: un pourcentage de ses ventes, des primes, et des commissions sur les ventes de son équipe, lignée par lignée.</li>
+    <li>Pendant le mois, une <strong>estimation</strong> est recalculée chaque nuit&nbsp;: la conseillère voit où elle en est.</li>
+    <li>En début de mois suivant, la marque <strong>clôture</strong> le mois&nbsp;: les commissions deviennent définitives, les bulletins sont produits, les statuts sont mis à jour.</li>
+  </ul>
+  <p>L'hôtesse, elle, n'est pas rémunérée&nbsp;: elle est <strong>récompensée</strong> en avantages (bons d'achat, produits offerts, points) selon vos <a href="fidelite-guide.html">règles de fidélité</a>.</p>
+
+  <h3 id="s5-4"><span class="sub-num">5.4</span> Le recrutement</h3>
+  <p>Une future conseillère remplit une <strong>candidature en ligne</strong>, en indiquant qui l'a recrutée. Elle fournit ses documents et signe son contrat électroniquement&nbsp;; la marque valide. Son compte conseillère est alors créé, rattaché à sa recruteuse, et elle peut commander son <strong>kit de démarrage</strong>. Voir l'univers <a href="recrutement.html">Recrutement</a>.</p>
+</section>
+
+<!-- 6 -->
+<section id="chiffres">
+  <div class="sec-head"><span class="sec-num">06</span><h2>Ordres de grandeur</h2></div>
+  <p class="lede">Les marques qui utilisent SellingAtHome sont de tailles très différentes. Voici la marque «&nbsp;médiane&nbsp;» sur un an&nbsp;: la moitié des marques font moins, l'autre moitié plus.</p>
+  <div class="stats">
+    <div class="stat"><b>83</b><span>conseillères ayant vendu au moins une fois</span></div>
+    <div class="stat"><b>3 561</b><span>clientes en base, dont 1 353 ont acheté dans l'année</span></div>
+    <div class="stat"><b>416</b><span>réunions terminées</span></div>
+    <div class="stat"><b>4 159</b><span>commandes payées</span></div>
+    <div class="stat"><b>≈ 100 €</b><span>panier moyen TTC</span></div>
+    <div class="stat"><b>4</b><span>statuts de conseillère</span></div>
+  </div>
+  <p class="muted">Les plus grandes marques comptent plusieurs milliers de conseillères et des centaines de milliers de commandes par an.</p>
+</section>
+
+<!-- 7 -->
+<section id="vocabulaire">
+  <div class="sec-head"><span class="sec-num">07</span><h2>Le vocabulaire</h2></div>
+  <p>Cette documentation emploie un vocabulaire unique. L'interface, elle, utilise parfois d'autres mots&nbsp;: voici la correspondance.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Dans la documentation</th><th>Dans l'espace marque</th><th>Remarque</th></tr></thead>
+    <tbody>
+      <tr><td><b>Conseillère</b></td><td>Vendeur, VDI</td><td>Vendeur à domicile indépendant.</td></tr>
+      <tr><td><b>Recruteur, recruteuse</b></td><td>Recruteur du vendeur, parrain, marraine</td><td>À ne pas confondre avec la marraine d'une cliente (parrainage client).</td></tr>
+      <tr><td><b>Animatrice</b></td><td>Animateur du vendeur</td><td>Encadre l'équipe&nbsp;; peut être la même personne que le recruteur.</td></tr>
+      <tr><td><b>Filleule</b></td><td>Filleul</td><td>Conseillère recrutée par une autre.</td></tr>
+      <tr><td><b>Équipe, lignée</b></td><td>Équipe, lignée 1, 2, 3…</td><td>Lignée 1&nbsp;: les recrues directes&nbsp;; lignée 2&nbsp;: leurs recrues…</td></tr>
+      <tr><td><b>Hôtesse</b></td><td>Hôte</td><td>Cliente qui reçoit une réunion.</td></tr>
+      <tr><td><b>Participante, invitée</b></td><td>Participant, invité</td><td>Cliente rattachée à une réunion.</td></tr>
+      <tr><td><b>Réunion</b></td><td>Réunion, atelier</td><td>Chez l'hôtesse ou en visio.</td></tr>
+      <tr><td><b>Cliente</b></td><td>Client</td><td>Toute personne qui achète.</td></tr>
+      <tr><td><b>Marraine (cliente)</b></td><td>Parrain</td><td>Cliente qui recommande la marque à une autre cliente.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- 8 -->
+<section id="suite">
+  <div class="sec-head"><span class="sec-num">08</span><h2>Par où continuer&nbsp;?</h2></div>
+  <div class="grid-3">
+    <a class="page-card" href="espace-marque.html"><h3>Découvrir l'espace marque</h3><p>Se repérer dans les menus et lire le tableau de bord.</p><span class="more">Lire →</span></a>
+    <a class="page-card" href="commandes-comprendre.html"><h3>Comprendre les commandes</h3><p>Types, statuts, cycle de vie, annulations.</p><span class="more">Lire →</span></a>
+    <a class="page-card" href="reunion-cycle-de-vie.html"><h3>Le cycle de vie d'une réunion</h3><p>Acteurs, clôture, gains de l'hôtesse, réglages.</p><span class="more">Lire →</span></a>
+  </div>
+</section>
+
+  </main>
+</div>

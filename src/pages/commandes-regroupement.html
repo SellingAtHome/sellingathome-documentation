@@ -1,0 +1,368 @@
+<!--page {"title":"Les commandes de regroupement"} -->
+<style>
+.timeline { display:flex; flex-direction:column; border-left:3px solid var(--rule); margin-left:10px; }
+.tl { position:relative; padding:0 0 20px 28px; }
+.tl::before { content:""; position:absolute; left:-9px; top:4px; width:15px; height:15px; border-radius:50%; background:var(--card); border:3px solid var(--accent); }
+.tl.stop::before { border-color:var(--pink); }
+.tl b { color:var(--heading); display:block; }
+.tl .st { display:flex; flex-wrap:wrap; gap:6px; margin-top:6px; }
+.tl p { color:var(--muted); font-size:.93rem; margin-top:4px; }
+.chip { display:inline-block; border-radius:100px; padding:3px 11px; font-size:.78rem; font-weight:700; background:var(--surface); color:var(--heading); border:1px solid var(--rule); }
+.chip.g { background:var(--accent-wash); color:var(--accent-ink); border-color:transparent; }
+.chip.p { background:var(--pink-wash); color:var(--pink-ink); border-color:transparent; }
+.chip.y { background:var(--yellow-wash); color:var(--yellow-ink); border-color:transparent; }
+.flows { display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:14px; }
+.flows .card { border-top:5px solid var(--accent); }
+.flows .card:nth-child(2) { border-top-color:var(--pink); }
+.flows .card:nth-child(3) { border-top-color:var(--yellow); }
+.flows .card p { font-size:.93rem; }
+.levels { display:grid; grid-template-columns:1fr; gap:10px; max-width:640px; }
+.levels .lv { background:var(--card); border:1px solid var(--rule); border-radius:14px; padding:12px 16px; }
+.levels .lv b { color:var(--heading); }
+.levels .kids { display:grid; grid-template-columns:repeat(auto-fit, minmax(150px,1fr)); gap:8px; margin-left:22px; }
+.levels .kids div { background:var(--surface); border:1px dashed var(--rule); border-radius:12px; padding:8px 12px; font-size:.9rem; }
+.opts td:first-child { width:34%; }
+</style>
+<header class="hero">
+  <div class="hero-in">
+    <div>
+      <span class="eyebrow">Commandes et boutiques</span>
+      <h1>Les commandes <span class="script">de regroupement</span></h1>
+      <p class="lede">Rassembler les commandes d'une conseillère pour les livrer et les régler en une seule fois&nbsp;: le principe, les trois circuits de paiement, la livraison, la clôture, et l'écran de suivi de l'espace marque.</p>
+      <p><span class="tag yellow" style="display:inline-block">Module optionnel</span></p>
+    </div>
+    <div class="voucher-art" aria-hidden="true">
+      <div class="v-top"><span>MASTER-261002-4</span><span>Léa</span></div>
+      <div class="v-amount">156,90<span> €</span></div>
+      <div class="v-name">3 commandes · 1 colis</div>
+      <div class="v-sep"></div>
+      <div class="v-meta"><span>Statut <b>Clôturé</b></span><span>Livraison <b>chez Léa</b></span></div>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="toc" aria-label="Sommaire">
+    <details id="tocDetails" open>
+      <summary>Sommaire</summary>
+      <div class="toc-title">Sommaire</div>
+      <ol>
+        <li data-sec="definition"><a href="#definition"><span class="toc-n">1</span>Qu'est-ce qu'un regroupement&nbsp;?</a></li>
+        <li data-sec="ou"><a href="#ou"><span class="toc-n">2</span>Où le trouver</a></li>
+        <li data-sec="cycle"><a href="#cycle"><span class="toc-n">3</span>Le cycle de vie</a>
+          <ol class="toc-sub"><li><a href="#s3-1"><span class="toc-n">3.1</span>Une seule ouverte à la fois</a></li><li><a href="#s3-2"><span class="toc-n">3.2</span>Ajouter et retirer des commandes</a></li></ol>
+        </li>
+        <li data-sec="paiements"><a href="#paiements"><span class="toc-n">4</span>Les paiements</a>
+          <ol class="toc-sub"><li><a href="#s4-1"><span class="toc-n">4.1</span>Trois circuits</a></li><li><a href="#s4-2"><span class="toc-n">4.2</span>Combien la conseillère règle-t-elle&nbsp;?</a></li><li><a href="#s4-3"><span class="toc-n">4.3</span>La validation par la marque</a></li></ol>
+        </li>
+        <li data-sec="livraison"><a href="#livraison"><span class="toc-n">5</span>La livraison</a></li>
+        <li data-sec="cloture"><a href="#cloture"><span class="toc-n">6</span>La clôture</a></li>
+        <li data-sec="expedition"><a href="#expedition"><span class="toc-n">7</span>L'expédition</a></li>
+        <li data-sec="frais"><a href="#frais"><span class="toc-n">8</span>Frais fixes et cadeaux automatiques</a>
+          <ol class="toc-sub"><li><a href="#s8-1"><span class="toc-n">8.1</span>Les frais fixes</a></li><li><a href="#s8-2"><span class="toc-n">8.2</span>Les cadeaux automatiques</a></li></ol>
+        </li>
+        <li data-sec="ecran"><a href="#ecran"><span class="toc-n">9</span>L'écran de suivi</a>
+          <ol class="toc-sub"><li><a href="#s9-1"><span class="toc-n">9.1</span>La liste</a></li><li><a href="#s9-2"><span class="toc-n">9.2</span>La fiche</a></li><li><a href="#s9-3"><span class="toc-n">9.3</span>Les documents PDF</a></li></ol>
+        </li>
+        <li data-sec="exemple"><a href="#exemple"><span class="toc-n">10</span>Exemple complet</a></li>
+        <li data-sec="options"><a href="#options"><span class="toc-n">11</span>Les options de votre marque</a></li>
+        <li data-sec="conseillere"><a href="#conseillere"><span class="toc-n">12</span>Ce que voit la conseillère</a></li>
+        <li data-sec="attention"><a href="#attention"><span class="toc-n">13</span>Points d'attention</a></li>
+        <li data-sec="faq"><a href="#faq"><span class="toc-n">14</span>Questions fréquentes</a></li>
+      </ol>
+    </details>
+  </nav>
+
+  <main>
+
+<!-- 1 -->
+<section id="definition">
+  <div class="sec-head"><span class="sec-num">01</span><h2>Qu'est-ce qu'une commande de regroupement&nbsp;?</h2></div>
+  <p class="lede">Une commande de regroupement est un <strong>panier de commandes</strong>. La conseillère y range plusieurs commandes de ses clientes (ventes en réunion, ventes directes), puis la <strong>clôture</strong>&nbsp;: elle choisit une livraison commune et règle l'ensemble à la marque. La cliente de la commande de regroupement, c'est la conseillère elle-même.</p>
+  <div class="levels" aria-label="Les deux niveaux d'une commande de regroupement">
+    <div class="lv"><b>Commande de regroupement de Léa</b> — un mode de livraison, un paiement de Léa à la marque</div>
+    <div class="kids">
+      <div>Commande de Camille<br><small>vente directe</small></div>
+      <div>Commande d'Inès<br><small>vente directe</small></div>
+      <div>Commande d'Emma<br><small>vente en réunion chez Jade</small></div>
+    </div>
+  </div>
+  <p>Chaque commande garde son existence propre&nbsp;: sa cliente, ses produits, son paiement, ses documents. Le regroupement ajoute un <strong>second niveau</strong>, qui porte la livraison et le règlement de la conseillère.</p>
+  <div class="tip"><span class="ex-label">Vocabulaire</span><p>L'espace marque dit «&nbsp;Vendeur&nbsp;» pour la conseillère et «&nbsp;Client&nbsp;» pour la cliente. Dans les écrans, la commande de regroupement est parfois appelée «&nbsp;master order&nbsp;» ou abrégée en «&nbsp;comm. de regroupement&nbsp;».</p></div>
+  <div class="stats">
+    <div class="stat"><b>13</b><span>marques sur 35 ont activé le module</span></div>
+    <div class="stat"><b>≈ 68&nbsp;600</b><span>regroupements clôturés sur un an, toutes marques confondues</span></div>
+    <div class="stat"><b>3 sur 4</b><span>ventes en réunion et ventes directes payées passent par un regroupement, chez ces marques</span></div>
+    <div class="stat"><b>2</b><span>commandes par regroupement (médiane), pour 228&nbsp;€ (médiane)</span></div>
+    <div class="stat"><b>≈ 2 jours</b><span>entre l'ouverture et la clôture (médiane)</span></div>
+  </div>
+  <p class="muted">Le module est activé par l'équipe SellingAtHome. Les écarts de pratique sont grands&nbsp;: certaines marques y font passer presque toutes les commandes des conseillères, d'autres l'utilisent ponctuellement.</p>
+</section>
+
+<!-- 2 -->
+<section id="ou">
+  <div class="sec-head"><span class="sec-num">02</span><h2>Où le trouver</h2></div>
+  <div class="path" aria-label="Chemin d'accès"><span>Espace marque</span><span>Commandes</span><span><b>Commandes de regroupement</b></span></div>
+  <p>Le sous-menu n'apparaît que si le module est actif pour votre marque. Trois autres endroits en parlent&nbsp;:</p>
+  <ul class="prose">
+    <li>la <strong>fiche d'une commande</strong> (Commandes › Commandes)&nbsp;: un sélecteur «&nbsp;Commandes de regroupement&nbsp;» rattache ou détache la commande&nbsp;;</li>
+    <li>la liste des commandes&nbsp;: une colonne «&nbsp;Commandes de regroupement&nbsp;» indique à quel regroupement appartient chaque commande (voir <a href="commandes-comprendre.html#ecran">l'écran Commandes</a>)&nbsp;;</li>
+    <li>les <a href="commandes-parametres.html">paramètres des commandes</a>&nbsp;: frais fixes et cadeaux automatiques propres aux regroupements, bons de préparation «&nbsp;Par commande de regroupement&nbsp;».</li>
+  </ul>
+</section>
+
+<!-- 3 -->
+<section id="cycle">
+  <div class="sec-head"><span class="sec-num">03</span><h2>Le cycle de vie</h2></div>
+  <p class="lede">Un regroupement passe par trois statuts&nbsp;: <span class="chip">Créée</span> (vide), <span class="chip">En cours</span> (il contient des commandes), <span class="chip g">Clôturé</span>.</p>
+  <div class="timeline">
+    <div class="tl"><b>1. La conseillère ouvre un regroupement</b><div class="st"><span class="chip">Créée</span></div><p>Depuis son menu «&nbsp;Commandes de regroupement&nbsp;» (bouton «&nbsp;Nouvelle commande de regroupement&nbsp;»), ou au moment de créer une commande, quand on lui propose de l'y ranger. Il reçoit une référence provisoire du type <code>M1-12345</code>.</p></div>
+    <div class="tl"><b>2. Elle y range des commandes</b><div class="st"><span class="chip">En cours</span></div><p>Les commandes de ses clientes s'ajoutent au fil des jours. Le total du regroupement se recalcule à chaque ajout ou retrait.</p></div>
+    <div class="tl"><b>3. Ses clientes paient leurs commandes</b><p>À elle (espèces, chèque…) ou à la marque (carte…), selon les moyens de paiement prévus. <strong>Toutes</strong> les commandes doivent être payées avant la clôture.</p></div>
+    <div class="tl"><b>4. Elle choisit la livraison et clôture</b><div class="st"><span class="chip g">Clôturé</span><span class="chip y">Pas encore expédiée</span></div><p>Elle choisit le mode de livraison, puis le moyen de paiement de son règlement. Le regroupement reçoit sa référence définitive (<code>MASTER-aammjj-N</code>).</p></div>
+    <div class="tl stop"><b>5. La marque expédie</b><div class="st"><span class="chip y">Commande expédiée</span></div><p>Un seul colis pour la conseillère. Le statut d'expédition choisi sur le regroupement est recopié sur toutes ses commandes.</p></div>
+  </div>
+
+  <h3 id="s3-1"><span class="sub-num">3.1</span> Une seule commande de regroupement ouverte à la fois</h3>
+  <p>Par défaut, une conseillère ne peut avoir qu'<strong>un seul regroupement non clôturé</strong>. Tant qu'il est ouvert, le bouton de création est grisé. Cela évite que les commandes s'éparpillent dans plusieurs regroupements oubliés. Une option, activée chez 2 marques, lève cette limite.</p>
+
+  <h3 id="s3-2"><span class="sub-num">3.2</span> Ajouter et retirer des commandes</h3>
+  <div class="decide">
+    <div class="row"><span class="q">La commande n'est pas payée, et le regroupement est ouvert</span><span class="arrow">→</span><span class="pill">Ajout et retrait possibles</span></div>
+    <div class="row"><span class="q">La commande est payée</span><span class="arrow">→</span><span class="pill pink">Elle reste où elle est</span></div>
+    <div class="row"><span class="q">Le regroupement est clôturé</span><span class="arrow">→</span><span class="pill yellow">Plus de rattachement</span></div>
+  </div>
+  <ul class="prose">
+    <li><strong>Qui&nbsp;?</strong> La conseillère, depuis sa commande ou son regroupement. La marque, depuis la fiche de la commande&nbsp;: le sélecteur «&nbsp;Commandes de regroupement&nbsp;» propose les regroupements ouverts <strong>de la même conseillère</strong>.</li>
+    <li><strong>Quelles commandes&nbsp;?</strong> Les ventes en réunion et ventes directes de la conseillère. Les commandes de mini-boutique et de boutique de marque ne sont pas proposées au rattachement tant qu'elles ne sont pas payées.</li>
+    <li><strong>Au rattachement</strong>, les produits qui ne remplissent plus leurs conditions de vente dans ce contexte sont retirés de la commande et remis en stock.</li>
+    <li><strong>Retirer une commande payée</strong> n'est possible qu'avec une option spécifique (activée chez aucune marque aujourd'hui).</li>
+  </ul>
+  <div class="tip"><span class="ex-label">Bon à savoir</span><p>Chez 10 des 13 marques qui utilisent le module, une option <strong>range automatiquement</strong> les commandes de la conseillère dans son regroupement ouvert (ou en crée un). La conseillère n'a alors rien à choisir.</p></div>
+</section>
+
+<!-- 4 -->
+<section id="paiements">
+  <div class="sec-head"><span class="sec-num">04</span><h2>Les paiements</h2></div>
+
+  <h3 id="s4-1"><span class="sub-num">4.1</span> Trois circuits de paiement</h3>
+  <p>Le regroupement permet de faire cohabiter trois circuits&nbsp;:</p>
+  <div class="flows">
+    <div class="card"><span class="tag">Cliente → conseillère</span><p>Pour les commandes rangées dans le regroupement. La cliente règle la conseillère (espèces, chèque à l'ordre de la conseillère…). La conseillère déclare le paiement sur la commande.</p></div>
+    <div class="card"><span class="tag pink">Conseillère → marque</span><p>Pour le regroupement lui-même. À la clôture, la conseillère règle à la marque le montant de l'ensemble (carte, prélèvement, chèque, virement… selon ce qui est prévu pour les regroupements).</p></div>
+    <div class="card"><span class="tag yellow">Cliente → marque</span><p>Pour les commandes hors regroupement, ou réglées en ligne. La cliente paie directement la marque, comme d'habitude.</p></div>
+  </div>
+  <p>Les moyens de paiement proposés pour une commande <strong>dans</strong> un regroupement, et pour le regroupement lui-même, sont paramétrés par l'équipe SellingAtHome. Une option (3 marques) va plus loin&nbsp;: une commande de réunion ou de vente directe <strong>ne peut pas être payée</strong> tant qu'elle n'est pas rangée dans un regroupement.</p>
+  <div class="warn"><span class="ex-label">Attention</span><p>Payer le regroupement <strong>ne paie pas</strong> les commandes qui le composent&nbsp;: chacune a déjà dû être payée avant la clôture. Les deux niveaux ont chacun leur propre statut de paiement.</p></div>
+
+  <h3 id="s4-2"><span class="sub-num">4.2</span> Combien la conseillère règle-t-elle&nbsp;?</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Situation</th><th>Montant réglé par la conseillère</th></tr></thead>
+    <tbody>
+      <tr><td><b>Cas général</b></td><td>Le total des commandes (après remises), plus les frais de livraison du regroupement et les éventuels frais fixes.</td></tr>
+      <tr><td><b>Option «&nbsp;Marge vendeur&nbsp;»</b> (9 marques sur 13)</td><td>Le total diminué de la marge de la conseillère&nbsp;: elle encaisse le prix public auprès de ses clientes et ne reverse que la part de la marque. La fiche affiche «&nbsp;Montant des produits&nbsp;», «&nbsp;Marge vendeur&nbsp;», «&nbsp;Sous-total après marge&nbsp;» puis le «&nbsp;Net à payer TTC&nbsp;». Le taux est réglé par SellingAtHome (par exemple, la conseillère reverse 75&nbsp;% du TTC et garde 25&nbsp;%)&nbsp;; un seuil de chiffre d'affaires mensuel peut conditionner la marge.</td></tr>
+      <tr><td><b>Option «&nbsp;Montant dû par le vendeur&nbsp;»</b> (2 marques)</td><td>Le total, moins ce que les clientes ont déjà payé directement à la marque. La fiche affiche «&nbsp;Montant payé par les clients&nbsp;» et «&nbsp;Montant dû par le vendeur&nbsp;».</td></tr>
+    </tbody>
+  </table></div>
+  <p class="muted">Quand il ne reste rien à payer, le regroupement est réglé par un moyen interne («&nbsp;Avantage&nbsp;»). Sur un an, les regroupements ont surtout été réglés par carte (54&nbsp;%), prélèvement (29&nbsp;%) et «&nbsp;Avantage&nbsp;» (14&nbsp;%).</p>
+
+  <h3 id="s4-3"><span class="sub-num">4.3</span> La validation du paiement par la marque</h3>
+  <p>Dans la fiche du regroupement, le bloc <strong>Moyen de paiement</strong> liste les règlements enregistrés. Pour un règlement à confirmer (chèque, espèces, virement), le bouton <strong>Valider</strong> le marque comme encaissé. Pour un chèque, un bouton permet aussi de corriger son numéro.</p>
+</section>
+
+<!-- 5 -->
+<section id="livraison">
+  <div class="sec-head"><span class="sec-num">05</span><h2>La livraison</h2></div>
+  <p class="lede">Le regroupement est livré <strong>en un seul envoi</strong>, selon le mode choisi par la conseillère avant la clôture&nbsp;: chez elle, à une adresse qu'elle saisit, ou en point relais.</p>
+  <ul class="prose">
+    <li><strong>Modes proposés</strong>&nbsp;: les modes de livraison actifs de votre marque, sauf ceux que vous avez rendus indisponibles pour le type «&nbsp;Commande de regroupement&nbsp;». La livraison chez la cliente et chez l'hôtesse ne sont <strong>jamais</strong> proposées pour un regroupement.</li>
+    <li><strong>Pour les commandes rangées dans un regroupement</strong>, vous pouvez aussi restreindre les modes avec les types «&nbsp;Vente en réunion dans comm. de regroupement&nbsp;» et «&nbsp;Vente direct dans une comm. de regroupement&nbsp;». Exemple&nbsp;: interdire la livraison chez la cliente quand la commande voyage avec le colis de la conseillère.</li>
+    <li><strong>Frais</strong>&nbsp;: le tarif du mode choisi, ou 0 si une condition de gratuité est remplie par le regroupement (par exemple un montant minimum)&nbsp;; si plusieurs conditions tarifaires sont remplies, la moins chère s'applique.</li>
+  </ul>
+  <div class="path" aria-label="Chemin d'accès"><span>Paramètres</span><span>Configuration générale</span><span><b>Paramètres des livraisons</b></span></div>
+  <div class="example"><span class="ex-label">Exemple</span><p>Votre livraison «&nbsp;chez la conseillère&nbsp;» coûte 6,90&nbsp;€, gratuite dès 300&nbsp;€. Le regroupement de Léa totalise 200&nbsp;€&nbsp;: elle paie 6,90&nbsp;€ de port pour ses trois commandes, au lieu de trois fois des frais de port.</p></div>
+</section>
+
+<!-- 6 -->
+<section id="cloture">
+  <div class="sec-head"><span class="sec-num">06</span><h2>La clôture</h2></div>
+  <p class="lede">C'est la conseillère qui clôture, en choisissant le moyen de paiement de son règlement. Il n'y a pas de bouton «&nbsp;Clôturer&nbsp;» dans l'espace marque.</p>
+  <p>La clôture est possible si&nbsp;:</p>
+  <ul class="prose">
+    <li>le regroupement contient <strong>au moins une commande</strong>&nbsp;;</li>
+    <li><strong>toutes</strong> ses commandes sont payées (sinon, il faut payer ou retirer celles qui ne le sont pas)&nbsp;;</li>
+    <li>le regroupement n'est pas déjà payé&nbsp;;</li>
+    <li>les règles propres à votre marque sont respectées, s'il y en a (montant minimum, déclaration de marge…).</li>
+  </ul>
+  <p>À la clôture&nbsp;:</p>
+  <ul class="prose">
+    <li>le regroupement reçoit sa référence définitive <code>MASTER-aammjj-N</code> (la référence provisoire reste affichée entre parenthèses)&nbsp;;</li>
+    <li>les <a href="#s8-2">cadeaux automatiques de regroupement</a> sont calculés&nbsp;;</li>
+    <li>le règlement est enregistré&nbsp;; pour un paiement par carte, la clôture n'est effective qu'au retour du paiement accepté&nbsp;;</li>
+    <li>le statut passe à <span class="chip g">Clôturé</span> et l'expédition à <span class="chip y">Pas encore expédiée</span>&nbsp;;</li>
+    <li>la facture du regroupement est générée s'il est payé.</li>
+  </ul>
+  <div class="tip"><span class="ex-label">Clôture automatique</span><p>Trois marques font créer et clôturer automatiquement un regroupement pour certains types de commandes (par exemple les commandes de mini-boutique ou les kits de démarrage), dès leur paiement. C'est un réglage de l'équipe SellingAtHome.</p></div>
+</section>
+
+<!-- 7 -->
+<section id="expedition">
+  <div class="sec-head"><span class="sec-num">07</span><h2>L'expédition</h2></div>
+  <p>Une fois le regroupement clôturé, le bloc <strong>Expédition</strong> de sa fiche propose une liste de statuts&nbsp;: Commande non expédiée, expédiée, livrée… Le statut choisi est <strong>recopié sur toutes les commandes du regroupement</strong>.</p>
+  <ul class="prose">
+    <li>Dans l'autre sens, quand toutes les commandes du regroupement sont expédiées (ou sans expédition requise), le regroupement passe automatiquement à «&nbsp;Expédiée&nbsp;».</li>
+    <li>Les autres mises à jour (logisticien, bons de préparation, fiche d'une commande) ne concernent que la commande touchée&nbsp;: elles ne se propagent pas aux autres commandes du regroupement.</li>
+  </ul>
+  <div class="warn"><span class="ex-label">Attention</span><p>Si vous modifiez ensuite le statut d'une seule commande depuis sa fiche, elle prend sa propre valeur. Le prochain changement fait sur le regroupement l'écrasera à nouveau.</p></div>
+  <p>Pour préparer les colis, les bons de préparation peuvent être regroupés <strong>Par commande de regroupement</strong> (option des <a href="commandes-parametres.html#preparation">paramètres des commandes</a>).</p>
+</section>
+
+<!-- 8 -->
+<section id="frais">
+  <div class="sec-head"><span class="sec-num">08</span><h2>Frais fixes et cadeaux automatiques</h2></div>
+
+  <h3 id="s8-1"><span class="sub-num">8.1</span> Les frais fixes du regroupement</h3>
+  <p>Dans <a href="commandes-parametres.html#s7-2">Paramètres des commandes</a>, le bloc <strong>Frais fixes master order</strong> ajoute un montant à chaque regroupement&nbsp;: frais de gestion, de préparation… Chaque frais a un nom (par langue), un montant TTC ou HT et des conditions&nbsp;:</p>
+  <ul class="prose">
+    <li>sur le type des commandes du regroupement, sur la présence d'une commande cadeau ou d'une commande web, ou sur la devise de la conseillère&nbsp;;</li>
+    <li>avec un quantificateur «&nbsp;Pour toutes les commandes actives&nbsp;» ou «&nbsp;Pour au moins une commande active&nbsp;»&nbsp;;</li>
+    <li>une condition peut être <strong>excluante</strong> («&nbsp;Exclut le frais&nbsp;»)&nbsp;: elle l'emporte sur les autres. Sans condition, le frais est «&nbsp;Toujours appliqué&nbsp;».</li>
+  </ul>
+  <p>La TVA appliquée est celle des frais de port. Toute modification met à jour les regroupements non clôturés. Aucune marque n'utilise ces frais aujourd'hui.</p>
+
+  <h3 id="s8-2"><span class="sub-num">8.2</span> Les cadeaux automatiques de regroupement</h3>
+  <p>Le bloc <strong>Ajout automatique dans une commande de regroupement</strong> (bouton «&nbsp;Voir le détail&nbsp;») offre un produit à la conseillère quand son regroupement remplit des conditions&nbsp;:</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Condition</th><th>Exemple</th></tr></thead>
+    <tbody>
+      <tr><td><b>Date</b></td><td>Pendant le mois de décembre.</td></tr>
+      <tr><td><b>Montant TTC de la commande de regroupement</b></td><td>À partir de 300&nbsp;€.</td></tr>
+      <tr><td><b>Nombre de points de la commande de regroupement</b></td><td>Seulement si votre marque utilise des points personnalisés.</td></tr>
+    </tbody>
+  </table></div>
+  <ul class="prose">
+    <li>Toutes les conditions d'une règle doivent être remplies. Une règle sans condition donne le cadeau à chaque clôture.</li>
+    <li>Le calcul a lieu <strong>à la clôture</strong> seulement. Le cadeau devient une commande «&nbsp;Cadeau&nbsp;» au nom de la conseillère, payée, livrée gratuitement avec le regroupement, et le document est envoyé à la conseillère par e-mail.</li>
+    <li>Il faut que la conseillère ait un compte client, que le produit soit en stock (ou commandable hors stock), et qu'une option de votre marque autorise ces cadeaux (activée chez 11 des 13 marques).</li>
+  </ul>
+  <p class="muted">Ne pas confondre avec les <a href="commandes-parametres.html#cadeaux">cadeaux automatiques des commandes</a>, qui s'ajoutent à la commande d'une cliente. Une seule marque a créé des règles de cadeau de regroupement.</p>
+</section>
+
+<!-- 9 -->
+<section id="ecran">
+  <div class="sec-head"><span class="sec-num">09</span><h2>L'écran Commandes de regroupement</h2></div>
+
+  <h3 id="s9-1"><span class="sub-num">9.1</span> La liste</h3>
+  <figure><img src="Captures/Commandes/regroupement-liste.png" alt="Liste des commandes de regroupement : bouton Filtrer, champ Rechercher, colonnes Référence (avec badge En cours ou Créée pour les regroupements ouverts), Vendeur, Nombre de commandes, Nombre de produits, Date de création, Date de paiement, Total TTC, bouton œil ou crayon, panneau Colonnes à droite" loading="lazy"><figcaption>La liste des regroupements&nbsp;: les références «&nbsp;MASTER-…&nbsp;» sont clôturées, les «&nbsp;M…&nbsp;» sont encore ouvertes (noms fictifs).</figcaption></figure>
+  <ul class="prose">
+    <li><strong>Référence</strong>&nbsp;: la référence provisoire et un badge de statut tant que le regroupement est ouvert&nbsp;; la référence définitive ensuite.</li>
+    <li><strong>Vendeur</strong>, <strong>Nombre de commandes</strong>, <strong>Nombre de produits</strong>, <strong>Date de création</strong>, <strong>Date de paiement</strong>, <strong>Total TTC</strong>.</li>
+    <li>Le bouton <strong>œil</strong> ouvre un regroupement clôturé, le <strong>crayon</strong> un regroupement ouvert. Une corbeille apparaît sur un regroupement ouvert et vide.</li>
+    <li>Le panneau <strong>Colonnes</strong>, à droite, masque ou affiche des colonnes. D'autres colonnes peuvent être ajoutées par SellingAtHome (numéro de livraison, champs propres à votre marque).</li>
+    <li>La <strong>recherche</strong> porte sur la référence et le nom de la conseillère. Le bouton <strong>Filtrer</strong> ouvre une fenêtre&nbsp;: intervalle de dates de création, statut (Créée, En cours, Clôturé), expédition et paiement (Réglée, Non réglée).</li>
+  </ul>
+
+  <h3 id="s9-2"><span class="sub-num">9.2</span> La fiche</h3>
+  <figure><img src="Captures/Commandes/regroupement-fiche.png" alt="Fiche d'une commande de regroupement, onglet Infos commande : bloc Informations sur la commande (Référence, Vendeur, Créé le, Clôturée le, Statut en cours, Nombre de commandes, Commentaires, Bon de commande), bloc Expédition avec le mode de livraison et la liste des statuts, et à droite le listing des commandes avec Référence Commande, Client, Nombre de produits, Total TTC, Total vendeur, documents et Actions" loading="lazy"><figcaption>La fiche d'un regroupement clôturé (noms fictifs).</figcaption></figure>
+  <p>Deux onglets&nbsp;:</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Onglet / bloc</th><th>Contenu</th></tr></thead>
+    <tbody>
+      <tr><td><b>Infos commande</b> › Informations sur la commande</td><td>Référence (définitive et provisoire), conseillère, dates de création et de clôture, statut en cours, nombre de commandes, commentaires, documents PDF.</td></tr>
+      <tr><td>› Expédition</td><td>Le mode de livraison choisi et la liste des statuts d'expédition (active une fois le regroupement clôturé). Voir <a href="#expedition">plus haut</a>.</td></tr>
+      <tr><td>› Moyen de paiement</td><td>Le moyen choisi par la conseillère, les règlements et le bouton <b>Valider</b>.</td></tr>
+      <tr><td>› Commande de regroupement&nbsp;: listing des commandes</td><td>Chaque commande avec sa référence (lien vers sa fiche), son badge, sa cliente, son nombre de produits, son total TTC, son «&nbsp;Total vendeur&nbsp;», ses documents. «&nbsp;Voir le détail&nbsp;» déplie les produits. En bas, les totaux&nbsp;: livraison, frais fixes, marge et net à payer.</td></tr>
+      <tr><td><b>Historique statut</b></td><td>Chaque changement de statut général ou d'expédition, daté.</td></tr>
+    </tbody>
+  </table></div>
+  <figure><img src="Captures/Commandes/regroupement-historique.png" alt="Onglet Historique statut : tableau Date, Type (Général ou Livraison), Statut (Créée, En cours, Clôturé, Pas encore expédiée), Commentaires, bouton Recharger" loading="lazy"><figcaption>L'historique des statuts&nbsp;: création, passage en cours, clôture, puis expédition.</figcaption></figure>
+
+  <h3 id="s9-3"><span class="sub-num">9.3</span> Les documents PDF</h3>
+  <ul class="prose">
+    <li><strong>Bon de commande</strong> (une fois clôturé)&nbsp;: pour chaque commande, sa référence, sa cliente, ses produits, puis les sous-totaux HT, la TVA, la livraison et le total TTC. Votre marque peut avoir un modèle personnalisé. Il est affiché chez 6 des 13 marques.</li>
+    <li><strong>Facture</strong>&nbsp;: générée à la clôture d'un regroupement payé, affichée si votre marque l'a choisi (8 marques sur 13).</li>
+  </ul>
+  <p>Chaque commande garde aussi ses propres documents (menu «&nbsp;Voir les documents&nbsp;» de la liste).</p>
+</section>
+
+<!-- 10 -->
+<section id="exemple">
+  <div class="sec-head"><span class="sec-num">10</span><h2>Exemple complet</h2></div>
+  <p class="lede">Léa, conseillère, regroupe ses ventes de la semaine. Votre marque range automatiquement les commandes dans le regroupement, applique la marge vendeur (la conseillère reverse 75&nbsp;% du TTC) et facture 6,90&nbsp;€ la livraison chez la conseillère.</p>
+  <div class="timeline">
+    <div class="tl"><b>Lundi</b><p>Léa vend un coffret à Camille (60&nbsp;€, vente directe). Son regroupement s'ouvre automatiquement&nbsp;: <code>M1-12345</code>, <span class="chip">En cours</span>. Camille la paie en espèces.</p></div>
+    <div class="tl"><b>Mercredi</b><p>Inès commande pour 45&nbsp;€ et paie par chèque à l'ordre de Léa. La commande rejoint le regroupement.</p></div>
+    <div class="tl"><b>Jeudi</b><p>Réunion chez Jade&nbsp;: Emma commande pour 95&nbsp;€ et paie par chèque à Léa. Total du regroupement&nbsp;: 200&nbsp;€.</p></div>
+    <div class="tl stop"><b>Vendredi</b><p>Les trois commandes sont payées&nbsp;: Léa choisit «&nbsp;Livraison à l'adresse du vendeur&nbsp;», puis paie par carte. Le regroupement devient <code>MASTER-261002-4</code>, <span class="chip g">Clôturé</span>.</p></div>
+  </div>
+  <div class="grid-2">
+    <div class="receipt" aria-label="Calcul du montant réglé par Léa">
+      <div class="line"><span>Montant des produits <small>(3 commandes)</small></span><span>200,00&nbsp;€</span></div>
+      <div class="line v"><span>Marge vendeur (25&nbsp;%)</span><span>− 50,00&nbsp;€</span></div>
+      <div class="line"><span>Sous-total après marge</span><span>150,00&nbsp;€</span></div>
+      <div class="line"><span>Frais de livraison</span><span>+ 6,90&nbsp;€</span></div>
+      <div class="line total"><span>Net à payer TTC</span><span>156,90&nbsp;€</span></div>
+    </div>
+    <div class="prose">
+      <p>Léa a encaissé 200&nbsp;€ de ses clientes et en reverse 156,90&nbsp;€ à la marque&nbsp;: elle garde sa marge de 50&nbsp;€ et paie le port une seule fois.</p>
+      <p>Sans l'option marge vendeur, elle aurait payé 206,90&nbsp;€ (200&nbsp;€ + 6,90&nbsp;€), et sa rémunération lui serait versée par ailleurs.</p>
+      <p>Lundi suivant, vous passez le regroupement en «&nbsp;Commande expédiée&nbsp;»&nbsp;: les commandes de Camille, Inès et Emma passent toutes les trois en «&nbsp;Commande expédiée&nbsp;».</p>
+    </div>
+  </div>
+</section>
+
+<!-- 11 -->
+<section id="options">
+  <div class="sec-head"><span class="sec-num">11</span><h2>Les options de votre marque</h2></div>
+  <p class="lede">La plupart de ces réglages sont faits par l'équipe SellingAtHome, à votre demande. Les chiffres indiquent combien des 13 marques utilisatrices les ont activés.</p>
+  <div class="table-wrap"><table class="opts">
+    <thead><tr><th>Option</th><th>Effet</th><th>Adoption</th></tr></thead>
+    <tbody>
+      <tr><td><b>Ranger automatiquement les commandes</b></td><td>Chaque commande de la conseillère va dans son regroupement ouvert (créé si besoin).</td><td>10 / 13</td></tr>
+      <tr><td><b>Marge vendeur</b></td><td>La conseillère ne règle que la part de la marque (taux, seuil de CA mensuel).</td><td>9 / 13</td></tr>
+      <tr><td><b>Cadeaux automatiques de regroupement</b></td><td>Autorise les règles du <a href="#s8-2">§&nbsp;8.2</a>.</td><td>11 / 13</td></tr>
+      <tr><td><b>Commandes cadeaux des challenges dans un regroupement</b></td><td>Les récompenses de challenge sont rangées dans le regroupement de la conseillère.</td><td>11 / 13</td></tr>
+      <tr><td><b>Paiement interdit hors regroupement</b></td><td>Une vente en réunion ou directe doit être dans un regroupement pour être payée.</td><td>3 / 13</td></tr>
+      <tr><td><b>Clôture automatique</b></td><td>Création et clôture automatiques pour certains types de commandes payées.</td><td>3 / 13</td></tr>
+      <tr><td><b>Plusieurs regroupements ouverts</b></td><td>Lève la limite d'un seul regroupement ouvert.</td><td>2 / 13</td></tr>
+      <tr><td><b>Montant dû par le vendeur</b></td><td>Déduit ce que les clientes ont payé directement à la marque.</td><td>2 / 13</td></tr>
+      <tr><td><b>Annuler un regroupement</b></td><td>Affiche un bouton d'annulation sur la fiche.</td><td>1 / 13</td></tr>
+      <tr><td><b>Retirer une commande payée</b></td><td>Autorise la sortie d'une commande déjà payée.</td><td>0 / 13</td></tr>
+      <tr><td><b>Bon de commande / facture PDF</b></td><td>Affichage des documents du regroupement.</td><td>6 / 13 et 8 / 13</td></tr>
+    </tbody>
+  </table></div>
+  <p>Les réglages accessibles à la marque elle-même sont dans <a href="commandes-parametres.html">Paramètres des commandes</a>&nbsp;: frais fixes master order, cadeaux automatiques de regroupement, bons de préparation par regroupement.</p>
+</section>
+
+<!-- 12 -->
+<section id="conseillere">
+  <div class="sec-head"><span class="sec-num">12</span><h2>Ce que voit la conseillère</h2></div>
+  <p>Dans son espace, un menu «&nbsp;Commandes de regroupement&nbsp;» liste ses regroupements, avec le bouton «&nbsp;Nouvelle commande de regroupement&nbsp;». Sa fiche de regroupement lui permet de retirer une commande non payée, de choisir le mode et l'adresse de livraison, de voir le détail des frais et de la marge, puis de clôturer en choisissant son moyen de paiement. Si la clôture est impossible, un message lui indique pourquoi (commande non payée, montant minimum non atteint…). Après la clôture, elle retrouve la facture et le bon de commande.</p>
+</section>
+
+<!-- 13 -->
+<section id="attention">
+  <div class="sec-head"><span class="sec-num">13</span><h2>Points d'attention</h2></div>
+  <ul class="prose">
+    <li><strong>Deux niveaux de paiement</strong>&nbsp;: chaque commande doit être payée, puis le regroupement. Un regroupement «&nbsp;Réglée&nbsp;» ne dit rien de plus sur les commandes qu'il contient.</li>
+    <li><strong>Un regroupement oublié bloque</strong>&nbsp;: tant qu'il n'est pas clôturé, la conseillère ne peut pas en ouvrir un autre. Un regroupement vide peut être supprimé (corbeille de la liste).</li>
+    <li><strong>Le statut d'expédition se propage</strong> du regroupement vers ses commandes, pas l'inverse (sauf le passage automatique à «&nbsp;Expédiée&nbsp;» quand tout est parti).</li>
+    <li><strong>La marque ne clôture pas</strong>&nbsp;: si une conseillère tarde, c'est à elle d'agir (ou à l'équipe SellingAtHome, si la clôture automatique est en place).</li>
+    <li><strong>Les modes de livraison</strong> des regroupements se règlent dans les paramètres des livraisons, avec les types «&nbsp;Commande de regroupement&nbsp;» et «&nbsp;… dans comm. de regroupement&nbsp;».</li>
+  </ul>
+</section>
+
+<!-- 14 -->
+<section id="faq">
+  <div class="sec-head"><span class="sec-num">14</span><h2>Questions fréquentes</h2></div>
+  <div class="faq">
+    <details><summary>Je ne vois pas le menu Commandes de regroupement.</summary><div><p>Le module n'est pas actif pour votre marque. Contactez l'équipe SellingAtHome.</p></div></details>
+    <details><summary>Pourquoi la conseillère ne peut-elle pas clôturer&nbsp;?</summary><div><p>Une de ses commandes n'est pas payée, le regroupement est vide, ou une règle de votre marque n'est pas respectée (montant minimum, marge à déclarer). Le message affiché dans son espace précise la raison.</p></div></details>
+    <details><summary>Je ne trouve pas le regroupement dans le sélecteur de la fiche commande.</summary><div><p>Le sélecteur ne propose que les regroupements ouverts et non payés <strong>de la conseillère de la commande</strong>. Si la commande est payée, il n'est plus modifiable.</p></div></details>
+    <details><summary>J'ai passé le regroupement en «&nbsp;Commande expédiée&nbsp;»&nbsp;: que deviennent les commandes&nbsp;?</summary><div><p>Elles passent toutes en «&nbsp;Commande expédiée&nbsp;». Pour qu'elles deviennent «&nbsp;Terminée&nbsp;», passez le regroupement en «&nbsp;Commande livrée&nbsp;» (voir <a href="commandes-comprendre.html#s4-1">quand une commande est terminée</a>).</p></div></details>
+    <details><summary>Le regroupement a-t-il un chiffre d'affaires&nbsp;?</summary><div><p>Le chiffre d'affaires reste celui des commandes qui le composent. Une option du tableau de bord peut afficher en plus le chiffre d'affaires des regroupements clôturés.</p></div></details>
+  </div>
+</section>
+
+  </main>
+</div>

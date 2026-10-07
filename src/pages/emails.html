@@ -1,0 +1,196 @@
+<!--page {"title":"Les emails"} -->
+<style>
+.chip { display:inline-block; border-radius:100px; padding:3px 11px; font-size:.78rem; font-weight:700; background:var(--surface); color:var(--heading); border:1px solid var(--rule); }
+.chip.g { background:var(--accent-wash); color:var(--accent-ink); border-color:transparent; }
+.chip.p { background:var(--pink-wash); color:var(--pink-ink); border-color:transparent; }
+.chip.y { background:var(--yellow-wash); color:var(--yellow-ink); border-color:transparent; }
+.opts td:first-child { width:28%; }
+.cats { display:grid; grid-template-columns:repeat(auto-fit, minmax(180px,1fr)); gap:10px; }
+.cats .card { padding:12px 14px; }
+.cats .card b { color:var(--heading); }
+</style>
+<header class="hero">
+  <div class="hero-in">
+    <div>
+      <span class="eyebrow">Communication et pilotage</span>
+      <h1>Les <span class="script">emails</span></h1>
+      <p class="lede">SellingAtHome envoie en votre nom des dizaines d'emails&nbsp;: bon de commande, création de compte, invitation à une réunion, candidature… Vous en choisissez le contenu, la langue et l'apparence, et vous suivez chaque envoi&nbsp;: délivré, ouvert, cliqué ou rejeté.</p>
+    </div>
+    <div class="voucher-art" aria-hidden="true">
+      <div class="v-top"><span>Email</span><span>Délivré</span></div>
+      <div class="v-amount">84<span> modèles</span></div>
+      <div class="v-name">Votre bon de commande</div>
+      <div class="v-sep"></div>
+      <div class="v-meta"><span>Ouvertures <b>2</b></span><span>Clics <b>1</b></span></div>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="toc" aria-label="Sommaire">
+    <details id="tocDetails" open>
+      <summary>Sommaire</summary>
+      <div class="toc-title">Sommaire</div>
+      <ol>
+        <li data-sec="definition"><a href="#definition"><span class="toc-n">1</span>Comment ça marche</a></li>
+        <li data-sec="modeles"><a href="#modeles"><span class="toc-n">2</span>Les modèles d'email</a>
+          <ol class="toc-sub"><li><a href="#s2-1"><span class="toc-n">2.1</span>La liste</a></li><li><a href="#s2-2"><span class="toc-n">2.2</span>Modifier un modèle</a></li><li><a href="#s2-3"><span class="toc-n">2.3</span>L'éditeur et les variables</a></li><li><a href="#s2-4"><span class="toc-n">2.4</span>Entête et bas de page</a></li><li><a href="#s2-5"><span class="toc-n">2.5</span>Désactiver un email</a></li></ol>
+        </li>
+        <li data-sec="envoyes"><a href="#envoyes"><span class="toc-n">3</span>Les emails envoyés</a>
+          <ol class="toc-sub"><li><a href="#s3-1"><span class="toc-n">3.1</span>La liste et les filtres</a></li><li><a href="#s3-2"><span class="toc-n">3.2</span>Le détail d'un email</a></li></ol>
+        </li>
+        <li data-sec="delivrabilite"><a href="#delivrabilite"><span class="toc-n">4</span>La délivrabilité</a>
+          <ol class="toc-sub"><li><a href="#s4-1"><span class="toc-n">4.1</span>L'adresse d'expédition</a></li><li><a href="#s4-2"><span class="toc-n">4.2</span>Rejets et adresses bloquées</a></li><li><a href="#s4-3"><span class="toc-n">4.3</span>Les signalements spam</a></li></ol>
+        </li>
+        <li data-sec="chiffres"><a href="#chiffres"><span class="toc-n">5</span>En chiffres</a></li>
+        <li data-sec="attention"><a href="#attention"><span class="toc-n">6</span>Points d'attention</a></li>
+        <li data-sec="faq"><a href="#faq"><span class="toc-n">7</span>Questions fréquentes</a></li>
+      </ol>
+    </details>
+  </nav>
+
+  <main>
+
+<!-- 1 -->
+<section id="definition">
+  <div class="sec-head"><span class="sec-num">01</span><h2>Comment ça marche</h2></div>
+  <p class="lede">Chaque email automatique correspond à un <strong>modèle</strong> (template). Quand l'événement se produit, SellingAtHome prend le modèle dans la langue du destinataire, remplace les <strong>variables</strong> (nom, référence de commande…), ajoute votre <strong>entête</strong> et votre <strong>bas de page</strong>, et envoie. Chaque envoi est tracé dans un rapport.</p>
+  <div class="example"><span class="ex-label">Exemple</span><p>Léa enregistre la commande d'Inès. Inès reçoit l'email du modèle <strong>SendPdfOrderDocument</strong>&nbsp;: «&nbsp;Votre bon de commande (nom de votre marque)&nbsp;», avec le bon de commande en pièce jointe. Le lendemain, dans Rapports › Emails envoyés, vous voyez qu'il a été délivré à 18&nbsp;h&nbsp;02 et ouvert deux fois.</p></div>
+  <div class="tip"><span class="ex-label">Vocabulaire</span><p>Les écrans parlent de «&nbsp;vendeur&nbsp;» pour la conseillère et de «&nbsp;client&nbsp;» pour la cliente.</p></div>
+</section>
+
+<!-- 2 -->
+<section id="modeles">
+  <div class="sec-head"><span class="sec-num">02</span><h2>Les modèles d'email</h2></div>
+  <div class="path" aria-label="Chemin d'accès"><span>Espace marque</span><span>Paramètres</span><span><b>Templates email</b></span></div>
+
+  <h3 id="s2-1"><span class="sub-num">2.1</span> La liste</h3>
+  <figure><img src="Captures/Pilotage/templates-liste.png" alt="Liste des templates de mail : boutons Configurer l'entête et Configurer le bas de page, Filtrer, recherche ; colonnes Template actif ?, Catégorie, Nom du template, Description, Action (modifier)" loading="lazy"><figcaption>Les modèles d'email de la marque.</figcaption></figure>
+  <p>Chaque marque dispose de <strong>84 modèles</strong>. La liste montre s'il est actif (coche grise, non cliquable ici), sa catégorie, son nom technique et une description de l'email. Le bouton <strong>Filtrer</strong> sélectionne une catégorie&nbsp;:</p>
+  <div class="cats">
+    <div class="card"><b>Commande</b><span class="muted">bon de commande, facture, avoir, suivi de colis, demande de paiement…</span></div>
+    <div class="card"><b>Recrutement</b><span class="muted">étapes de la candidature, signature, kit de démarrage</span></div>
+    <div class="card"><b>Mini-sites</b><span class="muted">invitations et réponses autour de la réunion en ligne</span></div>
+    <div class="card"><b>Réunion</b><span class="muted">demande de réunion, réunion virtuelle, décharge</span></div>
+    <div class="card"><b>Gestion des retours</b><span class="muted">demande, acceptation, refus, étiquette</span></div>
+    <div class="card"><b>Customer</b>, <b>Seller</b>, <b>Accès VDI</b></div>
+    <div class="card"><b>Formulaire leadshote</b><span class="muted">formulaire de la carte des conseillères</span></div>
+    <div class="card"><b>Sans catégorie</b><span class="muted">emails internes à la marque&nbsp;: exports, synchronisation, crédits de l'assistant…</span></div>
+  </div>
+
+  <h3 id="s2-2"><span class="sub-num">2.2</span> Modifier un modèle</h3>
+  <figure><img src="Captures/Pilotage/template-edition.png" alt="Édition d'un modèle : Nom du template (non modifiable), case Actif, onglets de langue, case Template par défaut, Description du template, Sujet du message contenant une variable entre étoiles et barres, Contenu du message avec un bouton Modifier et un aperçu (flouté)" loading="lazy"><figcaption>Un modèle&nbsp;: activation, une fiche par langue, sujet et contenu.</figcaption></figure>
+  <div class="table-wrap"><table class="opts">
+    <thead><tr><th>Champ</th><th>Rôle</th></tr></thead>
+    <tbody>
+      <tr><td><b>Actif</b></td><td>Décoché, l'email n'est plus envoyé (voir <a href="#s2-5">2.5</a>).</td></tr>
+      <tr><td><b>Onglets de langue</b></td><td>Une version par langue de votre marque.</td></tr>
+      <tr><td><b>Template par défaut</b></td><td>La langue de secours&nbsp;: si un destinataire parle une langue dont la version est vide, il reçoit celle-ci.</td></tr>
+      <tr><td><b>Sujet du message</b></td><td>L'objet de l'email, avec ses variables.</td></tr>
+      <tr><td><b>Contenu du message</b></td><td><strong>Modifier</strong> ouvre l'éditeur visuel&nbsp;; un aperçu du rendu (avec entête et bas de page) s'affiche dessous.</td></tr>
+      <tr><td><b>Envoyer un mail de test</b></td><td>Envoie la version de la langue affichée à l'adresse de votre choix.</td></tr>
+    </tbody>
+  </table></div>
+  <p>Cliquez sur <strong>Enregistrer</strong> pour garder l'activation, le sujet et la langue par défaut. Le contenu, lui, s'enregistre depuis l'éditeur.</p>
+
+  <h3 id="s2-3"><span class="sub-num">2.3</span> L'éditeur et les variables</h3>
+  <p>L'éditeur est un éditeur visuel par blocs (texte, image, bouton, colonnes…). Les images que vous y déposez sont hébergées par SellingAtHome. Le panneau <strong>Variables</strong> liste celles que ce modèle accepte&nbsp;: elles s'écrivent entre <code>*|</code> et <code>|*</code>, par exemple <code>*|brand|*</code>, et sont remplacées à l'envoi.</p>
+  <p>Certaines variables valent pour tous les modèles&nbsp;: nom, description, téléphone, email de contact, adresse et couleur de votre marque, année en cours. Elles sont reprises de la configuration générale de votre marque (voir <a href="pilotage.html">Communication et pilotage</a>).</p>
+  <div class="warn"><span class="ex-label">Attention</span><p>Une variable mal orthographiée n'est pas remplacée&nbsp;: le destinataire verra <code>*|prenom|*</code> tel quel. Copiez les variables depuis le panneau et faites un envoi de test.</p></div>
+
+  <h3 id="s2-4"><span class="sub-num">2.4</span> Entête et bas de page</h3>
+  <p>Les boutons <strong>Configurer l'entête</strong> et <strong>Configurer le bas de page</strong> ouvrent deux modèles particuliers, ajoutés automatiquement en haut et en bas de chaque email. Modifiez-les une fois (logo, couleurs, mentions légales, liens) et tous vos emails en profitent.</p>
+
+  <h3 id="s2-5"><span class="sub-num">2.5</span> Désactiver un email</h3>
+  <p>Décochez <strong>Actif</strong> et enregistrez&nbsp;: l'email n'est plus envoyé. Il reste néanmoins tracé dans Emails envoyés, sans date de délivrance.</p>
+  <div class="example"><span class="ex-label">Exemple</span><p>Votre logisticien envoie déjà un email de suivi de colis&nbsp;: vous désactivez <strong>SendOrderUrlTracking</strong> pour que Zoé ne reçoive pas deux fois l'information.</p></div>
+  <div class="warn"><span class="ex-label">Attention</span><p>Désactivez avec prudence les emails de compte (création de mot de passe, mot de passe perdu)&nbsp;: sans eux, une cliente ou une conseillère ne peut plus accéder à son espace.</p></div>
+  <p class="muted">SellingAtHome peut aussi, à votre demande, bloquer l'envoi vers certaines adresses (par motif) ou couper les emails pour un rôle de conseillère&nbsp;: ces réglages n'ont pas d'écran dans l'espace marque.</p>
+</section>
+
+<!-- 3 -->
+<section id="envoyes">
+  <div class="sec-head"><span class="sec-num">03</span><h2>Les emails envoyés</h2></div>
+  <div class="path" aria-label="Chemin d'accès"><span>Espace marque</span><span>Rapports</span><span><b>Emails envoyés</b></span></div>
+
+  <h3 id="s3-1"><span class="sub-num">3.1</span> La liste et les filtres</h3>
+  <figure><img src="Captures/Pilotage/emails-envoyes.png" alt="Rapport Emails envoyés : Filtrer, recherche ; colonnes Id, Modèle de message, Destinataire (flouté), Créé le, Etat (date de délivrance ou croix orange ou rouge) et Actions (œil)" loading="lazy"><figcaption>Le journal des emails (destinataires floutés).</figcaption></figure>
+  <p>Chaque ligne est un email&nbsp;: son modèle, son destinataire, sa date de création et son <strong>État</strong>&nbsp;:</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>État</th><th>Signification</th></tr></thead>
+    <tbody>
+      <tr><td>Une date</td><td>L'email a été <strong>délivré</strong> au serveur du destinataire à cette date.</td></tr>
+      <tr><td><span class="chip y">croix orange</span></td><td>Le destinataire a choisi de ne pas recevoir cet email (préférence enregistrée sur sa fiche)&nbsp;: rien n'est parti, la ligne sert de trace.</td></tr>
+      <tr><td><span class="chip p">croix rouge</span></td><td>Pas de délivrance&nbsp;: email rejeté, adresse bloquée, modèle inactif, ou délivrance pas encore confirmée.</td></tr>
+    </tbody>
+  </table></div>
+  <p><strong>Filtrer</strong> propose un <strong>Intervalle</strong> de dates, un ou plusieurs <strong>Modèles de message</strong> et la case <strong>Seulement les modèles actifs&nbsp;?</strong>. La recherche porte notamment sur le destinataire&nbsp;: c'est le moyen le plus rapide de répondre à «&nbsp;Camille dit ne pas avoir reçu son bon de commande&nbsp;».</p>
+
+  <h3 id="s3-2"><span class="sub-num">3.2</span> Le détail d'un email</h3>
+  <figure><img src="Captures/Pilotage/email-detail.png" alt="Détail d'un email : Infos (Statut Envoyé, Expéditeur, Destinataire, Créé le, Délivré le) et Contenu de l'email (Modèle, Sujet, Contenu flouté), puis Evénements" loading="lazy"><figcaption>Le détail d'un email&nbsp;: statut, dates et contenu exact reçu (contenu flouté).</figcaption></figure>
+  <ul class="prose">
+    <li><strong>Infos</strong>&nbsp;: statut (Envoyé, Non délivré, Rejeté, Spam…), expéditeur, destinataire, dates de création et de délivrance, et en cas de rejet le type, le statut et le motif.</li>
+    <li><strong>Contenu de l'email</strong>&nbsp;: le modèle, le sujet et le contenu exactement tel qu'il a été envoyé.</li>
+    <li><strong>Pièces jointes</strong>&nbsp;: téléchargeables depuis le détail (bon de commande, facture…).</li>
+    <li><strong>Evénements</strong>&nbsp;: le nombre d'<strong>Ouvertures</strong> et de <strong>Clics</strong>, avec pour chaque clic le lien cliqué.</li>
+  </ul>
+  <div class="tip"><span class="ex-label">Bon à savoir</span><p>Le comptage des ouvertures est indicatif&nbsp;: certaines messageries ouvrent automatiquement les emails (ouvertures en trop), d'autres bloquent les images (ouvertures manquées). Un clic, lui, est fiable.</p></div>
+</section>
+
+<!-- 4 -->
+<section id="delivrabilite">
+  <div class="sec-head"><span class="sec-num">04</span><h2>La délivrabilité</h2></div>
+
+  <h3 id="s4-1"><span class="sub-num">4.1</span> L'adresse d'expédition</h3>
+  <p>Les emails partent avec l'<strong>email de contact de votre marque</strong> comme expéditeur, à une condition&nbsp;: que son domaine (ou l'adresse elle-même) ait été <strong>validé</strong> auprès du service d'envoi utilisé par SellingAtHome. Sinon, l'email part depuis une adresse SellingAtHome, avec le nom de votre marque et votre adresse de contact en «&nbsp;répondre à&nbsp;».</p>
+  <div class="decide">
+    <div class="row"><span class="q">Domaine de la marque validé</span><span class="arrow">→</span><span class="pill">De&nbsp;: contact@votre-marque.fr</span></div>
+    <div class="row"><span class="q">Domaine non validé</span><span class="arrow">→</span><span class="pill yellow">De&nbsp;: une adresse SellingAtHome, réponse vers votre marque</span></div>
+  </div>
+  <p>La validation demande d'ajouter des enregistrements DNS à votre domaine&nbsp;: elle se fait avec SellingAtHome. Un domaine validé améliore la confiance des messageries et la reconnaissance par vos clientes.</p>
+
+  <h3 id="s4-2"><span class="sub-num">4.2</span> Rejets et adresses bloquées</h3>
+  <p>Quand une adresse est rejetée définitivement (adresse inexistante, boîte fermée), SellingAtHome <strong>bloque</strong> l'envoi vers cette adresse pour la cliente ou la conseillère concernée&nbsp;: les emails suivants ne partent plus et apparaissent avec une croix rouge. Un rejet temporaire (boîte pleine) ne bloque pas.</p>
+  <div class="example"><span class="ex-label">Exemple</span><p>Emma a fait une faute de frappe dans son adresse. Son premier email est rejeté&nbsp;: les suivants ne partent plus. Corrigez l'adresse sur sa fiche&nbsp;; si les envois restent bloqués, contactez le support.</p></div>
+
+  <h3 id="s4-3"><span class="sub-num">4.3</span> Les signalements spam</h3>
+  <p>Si une destinataire classe votre email en spam, sa messagerie le signale&nbsp;: le détail de l'email affiche alors «&nbsp;Marqué comme spam&nbsp;» et la date de la plainte. Un signalement ne bloque pas les envois suivants. Des signalements répétés nuisent pourtant à la réputation de l'expéditeur&nbsp;: surveillez les modèles concernés (sujet trompeur, email inattendu, envoi trop fréquent).</p>
+</section>
+
+<!-- 5 -->
+<section id="chiffres">
+  <div class="sec-head"><span class="sec-num">05</span><h2>En chiffres</h2></div>
+  <p>Sur les 30 derniers jours, pour l'ensemble des marques actives&nbsp;:</p>
+  <div class="stats">
+    <div class="stat"><b>177&nbsp;000</b><span>emails envoyés par 31 marques</span></div>
+    <div class="stat"><b>73&nbsp;%</b><span>délivrés&nbsp;; 18&nbsp;% non envoyés par choix du destinataire</span></div>
+    <div class="stat"><b>&lt;&nbsp;3&nbsp;%</b><span>rejetés par la messagerie du destinataire</span></div>
+    <div class="stat"><b>15&nbsp;%</b><span>des emails délivrés reçoivent au moins un clic (sur une semaine)</span></div>
+  </div>
+  <p class="muted">22 marques sur 31 envoient toujours depuis leur propre domaine&nbsp;; 8 envoient majoritairement depuis l'adresse SellingAtHome. Les signalements spam restent exceptionnels (environ 1 email sur 1&nbsp;500).</p>
+</section>
+
+<!-- 6 -->
+<section id="attention">
+  <div class="sec-head"><span class="sec-num">06</span><h2>Points d'attention</h2></div>
+  <ul class="prose">
+    <li><strong>Testez avant de publier</strong>&nbsp;: «&nbsp;Envoyer un mail de test&nbsp;» pour chaque langue modifiée.</li>
+    <li><strong>Gardez une langue par défaut remplie</strong>, sinon une destinataire d'une langue vide risque de recevoir un email vide.</li>
+    <li><strong>Votre email de contact est votre expéditeur</strong>&nbsp;: le changer dans la configuration change l'expéditeur de tous vos emails, et le nouveau domaine doit être validé.</li>
+    <li><strong>Une adresse bloquée ne se débloque pas d'elle-même</strong>&nbsp;: corrigez-la.</li>
+  </ul>
+</section>
+
+<!-- 7 -->
+<section id="faq">
+  <div class="sec-head"><span class="sec-num">07</span><h2>Questions fréquentes</h2></div>
+  <div class="faq">
+    <details><summary>Une cliente n'a pas reçu son bon de commande.</summary><div><p>Recherchez son adresse dans Rapports › Emails envoyés. Date affichée&nbsp;: l'email est arrivé chez sa messagerie (regardez ses indésirables). Croix orange&nbsp;: elle a refusé ces emails. Croix rouge&nbsp;: ouvrez le détail pour voir le motif du rejet.</p></div></details>
+    <details><summary>Puis-je créer un nouveau modèle d'email&nbsp;?</summary><div><p>Non&nbsp;: la liste des modèles est fixée par SellingAtHome, chaque modèle correspondant à un événement. Vous en modifiez le contenu et l'activation.</p></div></details>
+    <details><summary>Puis-je envoyer une newsletter à mes clientes depuis SellingAtHome&nbsp;?</summary><div><p>Ces écrans ne servent qu'aux emails automatiques. Pour une communication à vos conseillères, utilisez les <a href="notifications.html">notifications</a>.</p></div></details>
+    <details><summary>Pourquoi l'expéditeur affiché est-il une adresse SellingAtHome&nbsp;?</summary><div><p>Le domaine de votre email de contact n'est pas validé auprès du service d'envoi. Demandez la validation à SellingAtHome.</p></div></details>
+  </div>
+</section>
+
+  </main>
+</div>

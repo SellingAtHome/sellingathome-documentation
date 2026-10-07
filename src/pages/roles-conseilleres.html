@@ -1,0 +1,141 @@
+<!--page {"title":"Rôles des conseillères"} -->
+<style>
+.uses { display:grid; grid-template-columns:repeat(auto-fit, minmax(230px,1fr)); gap:14px; }
+.uses .card { border-top:5px solid var(--accent); }
+.uses .card:nth-child(3n+2) { border-top-color:var(--pink); }
+.uses .card:nth-child(3n) { border-top-color:var(--yellow); }
+.uses .card p { font-size:.93rem; }
+.opts td:first-child { width:30%; }
+</style>
+<header class="hero">
+  <div class="hero-in">
+    <div>
+      <span class="eyebrow">Réseau et rémunération</span>
+      <h1>Rôles <span class="script">des conseillères</span></h1>
+      <p class="lede">Des étiquettes que vous posez sur vos conseillères pour leur réserver des produits, adapter leur rémunération, leurs challenges ou leurs moyens de paiement.</p>
+    </div>
+    <div class="voucher-art" aria-hidden="true">
+      <div class="v-top"><span>Rôle</span><span>Actif</span></div>
+      <div class="v-amount">Formatrice</div>
+      <div class="v-name">3 conseillères</div>
+      <div class="v-sep"></div>
+      <div class="v-meta"><span>Catégorie <b>Pro</b></span><span>Prime <b>+2 %</b></span></div>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="toc" aria-label="Sommaire">
+    <details id="tocDetails" open>
+      <summary>Sommaire</summary>
+      <div class="toc-title">Sommaire</div>
+      <ol>
+        <li data-sec="definition"><a href="#definition"><span class="toc-n">1</span>Qu'est-ce qu'un rôle&nbsp;?</a></li>
+        <li data-sec="ou"><a href="#ou"><span class="toc-n">2</span>Où gérer les rôles</a></li>
+        <li data-sec="creer"><a href="#creer"><span class="toc-n">3</span>Créer et attribuer un rôle</a></li>
+        <li data-sec="usages"><a href="#usages"><span class="toc-n">4</span>À quoi servent les rôles</a>
+          <ol class="toc-sub"><li><a href="#s4-1"><span class="toc-n">4.1</span>Réserver une partie du catalogue</a></li><li><a href="#s4-2"><span class="toc-n">4.2</span>Les autres usages</a></li></ol>
+        </li>
+        <li data-sec="defaut"><a href="#defaut"><span class="toc-n">5</span>Les rôles par défaut</a></li>
+        <li data-sec="exemple"><a href="#exemple"><span class="toc-n">6</span>Exemple</a></li>
+        <li data-sec="attention"><a href="#attention"><span class="toc-n">7</span>Points d'attention</a></li>
+        <li data-sec="faq"><a href="#faq"><span class="toc-n">8</span>Questions fréquentes</a></li>
+      </ol>
+    </details>
+  </nav>
+
+  <main>
+
+<!-- 1 -->
+<section id="definition">
+  <div class="sec-head"><span class="sec-num">01</span><h2>Qu'est-ce qu'un rôle&nbsp;?</h2></div>
+  <p class="lede">Un rôle est une <strong>étiquette libre</strong> («&nbsp;Formatrice&nbsp;», «&nbsp;Ambassadrice&nbsp;», «&nbsp;Esthéticienne&nbsp;»…). Une conseillère peut en avoir <strong>plusieurs</strong>, ou aucun. À la différence du <a href="statuts.html">statut</a>, le rôle n'est pas un niveau de carrière et ne change jamais automatiquement.</p>
+  <p>Sur l'ensemble des marques actives, 27 sur 35 ont créé au moins un rôle (2 en général), et environ une conseillère active sur dix en porte un.</p>
+  <div class="tip"><span class="ex-label">Vocabulaire</span><p>L'espace marque parle de <strong>vendeur</strong> pour la conseillère. Les rôles des conseillères (menu Vendeurs) sont distincts des <strong>rôles clients</strong> (menu Clients), qui servent aux réductions et à la fidélité.</p></div>
+</section>
+
+<!-- 2 -->
+<section id="ou">
+  <div class="sec-head"><span class="sec-num">02</span><h2>Où gérer les rôles</h2></div>
+  <div class="path" aria-label="Chemin d'accès"><span>Espace marque</span><span>Vendeurs</span><span><b>Gérer les rôles</b></span></div>
+  <figure><img src="Captures/Reseau/roles.png" alt="Gérer les rôles : liste des rôles avec colonnes Nom et Actif, boutons modifier et supprimer, bouton Ajouter un rôle" loading="lazy"><figcaption>La liste des rôles.</figcaption></figure>
+  <p class="muted">L'onglet du navigateur affiche «&nbsp;Rôles clients&nbsp;»&nbsp;: c'est une erreur de libellé, il s'agit bien des rôles des conseillères.</p>
+</section>
+
+<!-- 3 -->
+<section id="creer">
+  <div class="sec-head"><span class="sec-num">03</span><h2>Créer et attribuer un rôle</h2></div>
+  <div class="figrow">
+    <figure><img src="Captures/Reseau/role-creation.png" alt="Créer un rôle : champs Nom et Actif, bouton Ajouter le rôle" loading="lazy"><figcaption>La création d'un rôle.</figcaption></figure>
+    <div class="prose" style="display:flex;flex-direction:column;gap:12px">
+      <p><strong>Ajouter un rôle</strong> ne demande qu'un <strong>Nom</strong> (et une case <strong>Actif</strong>, sans effet aujourd'hui&nbsp;: un rôle inactif reste proposé partout).</p>
+      <p>Le rôle se configure ensuite <strong>là où il sert</strong>&nbsp;: catalogue, plan de rémunération, challenges, moyens de paiement (voir <a href="#usages">plus bas</a>).</p>
+      <p>Pour l'<strong>attribuer</strong>, ouvrez la fiche de la conseillère, onglet <strong>Informations générales</strong>, champ <strong>Rôles</strong> (plusieurs choix possibles), puis <strong>Enregistrer les modifications</strong>. Ses rôles s'affichent sur sa fiche et sur sa carte dans l'<a href="organigramme.html">organigramme</a>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 4 -->
+<section id="usages">
+  <div class="sec-head"><span class="sec-num">04</span><h2>À quoi servent les rôles</h2></div>
+
+  <h3 id="s4-1"><span class="sub-num">4.1</span> Réserver une partie du catalogue</h3>
+  <p>C'est l'usage le plus courant (12 marques sur 35). Sur la fiche d'une <strong>catégorie</strong> ou d'un <strong>produit</strong> (menu Catalogue), le champ <strong>Rôles vendeur</strong> réserve l'élément à certains rôles&nbsp;:</p>
+  <div class="decide">
+    <div class="row"><span class="q">Aucun rôle choisi sur la catégorie ou le produit</span><span class="arrow">→</span><span class="pill">Visible par toutes les conseillères</span></div>
+    <div class="row"><span class="q">Un ou plusieurs rôles choisis</span><span class="arrow">→</span><span class="pill pink">Visible seulement par les conseillères qui ont au moins un de ces rôles</span></div>
+  </div>
+  <p>La restriction s'applique au catalogue de l'espace conseillère et de l'application, à la recherche de produits, aux catalogues de points et à l'assistant IA. Voir l'univers <a href="catalogue.html">Catalogue et logistique</a>.</p>
+  <div class="warn"><span class="ex-label">Attention</span><p>La restriction <strong>masque</strong> les produits dans les catalogues&nbsp;; elle n'est pas revérifiée à l'enregistrement d'une commande. Ne vous en servez pas comme d'une interdiction stricte de vente.</p></div>
+
+  <h3 id="s4-2"><span class="sub-num">4.2</span> Les autres usages</h3>
+  <div class="uses">
+    <div class="card"><span class="tag">Rémunération</span><p>Dans votre plan de rémunération et dans l'<a href="statuts.html#s5-1">automatisation des statuts</a>, la condition <strong>Rôle vendeur</strong> réserve une règle aux conseillères qui ont (ou n'ont pas) un rôle. Voir l'univers <a href="reseau.html">Réseau et rémunération</a>.</p></div>
+    <div class="card"><span class="tag pink">Challenges</span><p>Une récompense de challenge peut être réservée à certains rôles. Voir le <a href="challenges-guide.html">guide des challenges</a>.</p></div>
+    <div class="card"><span class="tag yellow">Moyens de paiement</span><p>Un moyen de paiement peut être proposé ou masqué selon les rôles de la conseillère de la commande (14 marques l'utilisent).</p></div>
+    <div class="card"><span class="tag">Suivi et organigramme</span><p>Les rôles s'affichent sur les cartes de l'organigramme et dans les statistiques des conseillères.</p></div>
+    <div class="card"><span class="tag pink">Intégrations</span><p>Certaines synchronisations avec votre site e-commerce ou votre logiciel utilisent un rôle pour choisir les conseillères concernées.</p></div>
+    <div class="card"><span class="tag yellow">Emails</span><p>Le moteur sait couper les emails pour certains rôles, mais aucun écran ne le règle et aucune marque ne l'utilise aujourd'hui.</p></div>
+  </div>
+</section>
+
+<!-- 5 -->
+<section id="defaut">
+  <div class="sec-head"><span class="sec-num">05</span><h2>Les rôles par défaut</h2></div>
+  <div class="path" aria-label="Chemin d'accès"><span>Espace marque</span><span>Paramètres</span><span>Configuration générale</span><span>Onglet <b>Paramètres généraux</b></span><span>Bloc <b>Vendeurs</b></span></div>
+  <p>Le réglage <strong>A la création rôle par défaut =</strong> ajoute automatiquement un ou plusieurs rôles&nbsp;:</p>
+  <ul class="prose">
+    <li>aux conseillères créées depuis l'espace marque (<strong>Ajouter un vendeur</strong>)&nbsp;;</li>
+    <li>aux candidates transformées en conseillères à la fin du <a href="recrutement.html">recrutement</a>.</li>
+  </ul>
+  <p>Il ne s'applique pas aux conseillères créées par import ou par l'API. Une seule marque l'utilise aujourd'hui.</p>
+</section>
+
+<!-- 6 -->
+<section id="exemple">
+  <div class="sec-head"><span class="sec-num">06</span><h2>Exemple</h2></div>
+  <div class="example"><span class="ex-label">Exemple</span><p>Votre marque lance une gamme professionnelle réservée aux conseillères formées. Vous créez le rôle <strong>Formatrice</strong>, vous le donnez à Sophie et à Chloé, puis vous choisissez «&nbsp;Formatrice&nbsp;» dans <strong>Rôles vendeur</strong> de la catégorie «&nbsp;Gamme pro&nbsp;». Sophie et Chloé voient la gamme dans leur catalogue&nbsp;; Léa, qui n'a pas le rôle, ne la voit pas. Dans votre plan de rémunération, une règle «&nbsp;Rôle vendeur = Formatrice&nbsp;» leur verse en plus 2&nbsp;% sur les ventes de leur équipe.</p></div>
+</section>
+
+<!-- 7 -->
+<section id="attention">
+  <div class="sec-head"><span class="sec-num">07</span><h2>Points d'attention</h2></div>
+  <ul class="prose">
+    <li><strong>Supprimer un rôle</strong> le retire de toutes les conseillères, sans avertissement. Les catégories et produits réservés à ce rôle restent réservés à un rôle qui n'existe plus&nbsp;: plus aucune conseillère ne les voit. Retirez d'abord le rôle des catégories, produits et règles.</li>
+    <li><strong>La case Actif ne désactive rien</strong>&nbsp;: pour arrêter un rôle, retirez-le des conseillères et des réglages.</li>
+    <li><strong>Enregistrer la fiche d'une conseillère remplace tous ses rôles</strong> par ceux du champ <strong>Rôles</strong>&nbsp;: vérifiez la liste avant d'enregistrer.</li>
+  </ul>
+</section>
+
+<!-- 8 -->
+<section id="faq">
+  <div class="sec-head"><span class="sec-num">08</span><h2>Questions fréquentes</h2></div>
+  <div class="faq">
+    <details><summary>Une conseillère ne voit pas un produit.</summary><div><p>Vérifiez le champ <strong>Rôles vendeur</strong> du produit et de sa catégorie&nbsp;: s'il est rempli, la conseillère doit avoir au moins un de ces rôles.</p></div></details>
+    <details><summary>Plus personne ne voit une catégorie.</summary><div><p>Elle est sans doute réservée à un rôle supprimé. Ouvrez la catégorie, videz le champ <strong>Rôles vendeur</strong> ou choisissez un rôle existant, puis enregistrez.</p></div></details>
+    <details><summary>Un rôle peut-il être donné automatiquement selon les ventes&nbsp;?</summary><div><p>Non. Les rôles se donnent à la main, par le rôle par défaut à la création, ou par import. Pour un niveau qui évolue selon l'activité, utilisez les <a href="statuts.html">statuts</a>.</p></div></details>
+  </div>
+</section>
+
+  </main>
+</div>

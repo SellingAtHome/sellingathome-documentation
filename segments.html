@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Les segments de clientes – Documentation SellingAtHome</title>
+<meta name="description" content="Regrouper des clientes selon leur profil et leurs achats.">
+<link rel="stylesheet" href="assets/sah.css">
+<link rel="stylesheet" href="assets/site.css">
+<script>try{var t=localStorage.getItem('ba-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<style>
+.steps4 { display:grid; grid-template-columns:repeat(auto-fit, minmax(170px,1fr)); gap:10px; counter-reset:st; }
+.steps4 div { background:var(--card); border:1px solid var(--rule); border-radius:14px; padding:12px 14px; font-size:.92rem; }
+.steps4 b { display:block; color:var(--heading); }
+.filt td:first-child { width:28%; }
+.filt td:nth-child(3) { width:30%; font-size:.9rem; }
+.know { display:block; margin-top:4px; font-size:.86rem; color:var(--muted); }
+.know::before { content:"À savoir : "; font-weight:700; }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="sah-logo" viewBox="0 0 225 46"> <g transform="matrix(1,0,0,1,-3078,-558)"> <g transform="matrix(0.982533,0,0,0.351145,3869.92,548.87)"> <rect x="-806" y="26" width="229" height="131" style="fill:none;"></rect> <clipPath id="sahclip"> <rect x="-806" y="26" width="229" height="131"></rect> </clipPath> <g clip-path="url(#sahclip)"> <g transform="matrix(1,0,0,0.956522,0,3.97826)"> <g transform="matrix(1.01778,0,0,2.97727,-3938.72,-1638.3)"> <path d="M3224.65,572.289C3225.06,572.296 3225.39,572.628 3225.4,573.033L3225.4,588.748C3225.39,589.153 3225.06,589.484 3224.65,589.491L3223.51,589.491C3223.11,589.484 3222.77,589.153 3222.77,588.748L3222.77,586.233C3222.76,585.828 3222.43,585.497 3222.02,585.49L3217.68,585.49C3217.23,585.522 3216.81,585.753 3216.54,586.12L3214.77,588.864C3214.5,589.231 3214.08,589.462 3213.62,589.494L3212.02,589.494C3211.62,589.494 3211.45,589.208 3211.68,588.864L3221.74,572.92C3222.01,572.552 3222.43,572.322 3222.88,572.289L3224.65,572.289ZM3236.88,572.289C3237.29,572.296 3237.62,572.628 3237.62,573.033L3237.62,574.175C3237.62,574.58 3237.29,574.911 3236.88,574.918L3234.71,574.918C3234.3,574.925 3233.97,575.256 3233.97,575.661L3233.97,588.748C3233.96,589.153 3233.63,589.484 3233.22,589.491L3232.08,589.491C3231.68,589.484 3231.34,589.153 3231.34,588.748L3231.34,575.661C3231.33,575.256 3231,574.925 3230.59,574.918L3228.42,574.918C3228.02,574.911 3227.69,574.58 3227.68,574.175L3227.68,573.033C3227.69,572.628 3228.02,572.296 3228.42,572.289L3236.88,572.289ZM3218.94,582.233C3218.71,582.576 3218.88,582.864 3219.28,582.864L3222.02,582.864C3222.43,582.856 3222.76,582.525 3222.77,582.12L3222.77,576.975C3222.77,576.576 3222.6,576.518 3222.37,576.861L3218.94,582.233Z" style="fill:var(--logo-at);fill-rule:nonzero;"></path> </g> <g transform="matrix(1.01778,0,0,2.97727,-3938.72,-1638.3)"> <path d="M3100,559C3100,559 3100,559 3100,559C3087.93,559 3078,568.932 3078,581.001C3078,593.071 3087.93,603.003 3100,603.003C3112.07,603.003 3122,593.071 3122,581.001C3122,568.934 3112.07,559.006 3100,559ZM3256.54,587.09C3254.93,585.463 3254.02,583.261 3254.02,580.969C3254.02,576.201 3257.94,572.277 3262.71,572.277C3267.48,572.277 3271.41,576.201 3271.41,580.969C3271.41,585.738 3267.48,589.662 3262.71,589.662C3262.71,589.662 3262.71,589.662 3262.71,589.662C3260.39,589.693 3258.15,588.762 3256.54,587.09ZM3200.25,587.09C3198.62,585.452 3197.7,583.231 3197.7,580.918C3197.7,576.13 3201.63,572.186 3206.42,572.175C3207.6,572.171 3208.77,572.404 3209.85,572.861L3209.11,574.576C3208.95,574.949 3208.53,575.146 3208.14,575.033C3207.58,574.858 3207.01,574.762 3206.42,574.747C3203.06,574.785 3200.32,577.56 3200.32,580.919C3200.32,584.279 3203.06,587.053 3206.42,587.091C3206.97,587.103 3207.51,587.026 3208.02,586.862L3208.02,582.92C3208.02,582.516 3207.68,582.185 3207.28,582.178L3205.97,582.178C3205.56,582.171 3205.23,581.839 3205.22,581.434L3205.22,580.287C3205.23,579.882 3205.56,579.551 3205.97,579.544L3209.91,579.544C3210.31,579.551 3210.64,579.882 3210.65,580.287L3210.65,587.888C3210.68,588.24 3210.53,588.582 3210.25,588.802C3209.9,588.964 3209.54,589.097 3209.16,589.202C3208.27,589.462 3207.35,589.616 3206.42,589.659C3204.1,589.691 3201.87,588.761 3200.25,587.09ZM3142.31,582.236C3141.12,580.902 3139.54,579.981 3137.79,579.607C3135.45,578.921 3134.3,578.064 3134.36,576.978C3134.37,576.111 3134.92,575.337 3135.73,575.035C3137.05,574.52 3138.54,574.669 3139.73,575.435C3140.08,575.675 3140.55,575.652 3140.88,575.378L3142.25,574.116C3141.1,572.919 3139.51,572.239 3137.85,572.23C3136.5,572.106 3135.14,572.405 3133.97,573.087C3132.58,573.884 3131.72,575.372 3131.74,576.973C3131.68,579.429 3133.45,581.202 3137.11,582.23C3139.45,582.861 3140.59,583.773 3140.54,584.859C3140.51,585.479 3140.19,586.052 3139.68,586.402C3138.96,586.951 3138.07,587.216 3137.17,587.145C3136.53,587.143 3135.9,586.986 3135.34,586.688C3135,586.525 3134.71,586.291 3134.48,586.002C3134.23,585.668 3133.79,585.529 3133.39,585.659L3131.62,586.29C3132.03,587.385 3132.82,588.297 3133.85,588.858C3134.95,589.384 3136.16,589.658 3137.39,589.658L3137.45,589.658C3138.86,589.697 3140.24,589.23 3141.33,588.343C3142.42,587.504 3143.09,586.23 3143.16,584.857C3143.22,583.907 3142.91,582.969 3142.31,582.236ZM3302.26,572.404C3302.66,572.411 3302.99,572.742 3303,573.146L3303,574.171C3302.99,574.576 3302.66,574.907 3302.26,574.915L3297.57,574.915C3297.17,574.922 3296.84,575.253 3296.83,575.657L3296.83,578.858C3296.84,579.263 3297.17,579.593 3297.57,579.601L3300.83,579.601C3301.23,579.608 3301.57,579.939 3301.57,580.344L3301.57,581.486C3301.57,581.891 3301.23,582.223 3300.83,582.23L3297.57,582.23C3297.17,582.237 3296.84,582.568 3296.83,582.972L3296.83,586.23C3296.84,586.635 3297.17,586.966 3297.57,586.973L3302.26,586.973C3302.66,586.98 3302.99,587.311 3303,587.716L3303,588.859C3302.99,589.264 3302.66,589.595 3302.26,589.602L3294.94,589.602C3294.54,589.595 3294.21,589.264 3294.2,588.859L3294.2,573.146C3294.21,572.741 3294.54,572.41 3294.94,572.404L3302.26,572.404ZM3153.16,572.404C3153.57,572.41 3153.9,572.741 3153.91,573.146L3153.91,574.171C3153.9,574.576 3153.57,574.907 3153.16,574.915L3148.48,574.915C3148.07,574.921 3147.74,575.252 3147.73,575.657L3147.73,578.858C3147.74,579.263 3148.07,579.594 3148.48,579.601L3151.73,579.601C3152.14,579.608 3152.47,579.939 3152.48,580.344L3152.48,581.486C3152.47,581.891 3152.14,582.223 3151.73,582.23L3148.48,582.23C3148.07,582.236 3147.74,582.567 3147.73,582.972L3147.73,586.23C3147.74,586.635 3148.07,586.966 3148.48,586.973L3153.16,586.973C3153.57,586.98 3153.9,587.311 3153.91,587.716L3153.91,588.859C3153.9,589.264 3153.57,589.595 3153.16,589.602L3145.91,589.602C3145.5,589.595 3145.17,589.264 3145.16,588.859L3145.16,573.146C3145.17,572.741 3145.5,572.41 3145.91,572.404L3153.16,572.404ZM3251.51,580.064C3251.88,580.311 3252.11,580.711 3252.14,581.15L3252.14,588.751C3252.14,589.156 3251.81,589.487 3251.4,589.494L3250.26,589.494C3249.85,589.487 3249.52,589.156 3249.51,588.751L3249.51,582.919C3249.48,582.464 3249.25,582.046 3248.88,581.776L3246.77,580.519C3246.38,580.291 3245.9,580.291 3245.51,580.519L3243.17,581.833C3242.79,582.07 3242.56,582.476 3242.54,582.919L3242.54,588.748C3242.53,589.153 3242.2,589.484 3241.8,589.491L3240.65,589.491C3240.25,589.484 3239.92,589.153 3239.91,588.748L3239.91,581.318C3239.93,580.875 3240.16,580.469 3240.54,580.233L3245.45,577.316C3245.84,577.088 3246.33,577.088 3246.71,577.316L3251.51,580.064ZM3168.76,572.289C3169.17,572.296 3169.5,572.628 3169.51,573.033L3169.51,586.119C3169.51,586.524 3169.85,586.856 3170.25,586.863L3174.93,586.863C3175.34,586.87 3175.67,587.201 3175.68,587.606L3175.68,588.749C3175.67,589.154 3175.34,589.485 3174.93,589.492L3167.62,589.492C3167.22,589.485 3166.89,589.154 3166.88,588.749L3166.88,573.033C3166.89,572.628 3167.22,572.296 3167.62,572.289L3168.76,572.289ZM3157.91,572.289C3158.31,572.296 3158.64,572.628 3158.65,573.033L3158.65,586.119C3158.66,586.524 3158.99,586.856 3159.39,586.863L3164.08,586.863C3164.48,586.87 3164.81,587.201 3164.82,587.606L3164.82,588.749C3164.81,589.153 3164.48,589.485 3164.08,589.492L3156.76,589.492C3156.36,589.485 3156.03,589.154 3156.02,588.749L3156.02,573.033C3156.03,572.628 3156.36,572.296 3156.76,572.289L3157.91,572.289ZM3180.37,588.748C3180.36,589.153 3180.03,589.484 3179.62,589.491L3178.48,589.491C3178.07,589.484 3177.74,589.153 3177.73,588.748L3177.73,573.033C3177.74,572.628 3178.07,572.296 3178.48,572.289L3179.62,572.289C3180.02,572.296 3180.36,572.628 3180.36,573.033L3180.37,588.748ZM3290.6,572.289C3291.01,572.296 3291.34,572.628 3291.34,573.033L3291.34,588.748C3291.34,589.153 3291.01,589.484 3290.6,589.491L3289.46,589.491C3289.05,589.484 3288.72,589.153 3288.72,588.748L3288.72,579.318C3288.72,578.919 3288.6,578.861 3288.43,579.262L3284.26,588.805C3284.05,589.189 3283.67,589.447 3283.23,589.49L3281.75,589.49C3281.3,589.47 3280.91,589.205 3280.72,588.805L3276.61,579.318C3276.43,578.919 3276.32,578.975 3276.32,579.375L3276.32,588.748C3276.31,589.153 3275.98,589.484 3275.58,589.491L3274.43,589.491C3274.03,589.484 3273.7,589.153 3273.69,588.748L3273.69,573.033C3273.7,572.628 3274.03,572.296 3274.43,572.289L3275.69,572.289C3276.13,572.31 3276.53,572.575 3276.72,572.975L3282.2,585.661C3282.37,586.061 3282.6,586.061 3282.77,585.661L3288.32,572.975C3288.5,572.575 3288.9,572.31 3289.34,572.289L3290.6,572.289ZM3194.99,572.289C3195.4,572.296 3195.73,572.628 3195.74,573.033L3195.74,588.748C3195.73,589.153 3195.4,589.484 3194.99,589.491L3193.74,589.491C3193.28,589.459 3192.86,589.228 3192.59,588.861L3186.02,577.831C3185.79,577.489 3185.62,577.545 3185.62,577.946L3185.62,588.746C3185.62,589.151 3185.28,589.483 3184.88,589.49L3183.74,589.49C3183.33,589.483 3183,589.151 3182.99,588.746L3182.99,573.033C3183,572.628 3183.33,572.296 3183.74,572.289L3184.99,572.289C3185.45,572.322 3185.87,572.552 3186.14,572.92L3192.71,583.949C3192.94,584.292 3193.11,584.234 3193.11,583.835L3193.11,573.034C3193.11,572.629 3193.45,572.298 3193.85,572.291L3194.99,572.289ZM3096.52,587.287C3095.58,588.032 3094.4,588.417 3093.2,588.373L3092.92,588.373C3091.97,588.336 3091.05,588.061 3090.23,587.572C3089.36,587.1 3088.69,586.328 3088.35,585.401L3089.72,584.887C3090.12,584.758 3090.56,584.896 3090.81,585.23C3090.98,585.424 3091.2,585.579 3091.44,585.687C3091.92,585.914 3092.44,586.049 3092.98,586.087C3093.74,586.161 3094.5,585.934 3095.09,585.456C3095.51,585.136 3095.78,584.662 3095.84,584.142C3095.89,583.228 3094.92,582.485 3092.92,581.914C3089.83,581.057 3088.29,579.571 3088.41,577.456C3088.38,576.107 3089.11,574.852 3090.29,574.199C3091.27,573.621 3092.41,573.361 3093.55,573.456C3094.95,573.467 3096.29,574.044 3097.26,575.056L3096.18,576.081C3095.85,576.355 3095.38,576.379 3095.03,576.138C3094.56,575.829 3094,575.652 3093.43,575.623C3092.85,575.603 3092.27,575.68 3091.72,575.852C3091.03,576.103 3090.57,576.77 3090.58,577.507C3090.52,578.422 3091.49,579.165 3093.49,579.736C3094.95,580.061 3096.28,580.841 3097.26,581.965C3097.75,582.604 3098.02,583.389 3098.01,584.193C3098.04,585.404 3097.48,586.557 3096.52,587.287ZM3111.54,587.516C3111.54,587.921 3111.21,588.252 3110.8,588.259L3110.12,588.259C3109.71,588.252 3109.38,587.921 3109.37,587.516L3109.37,582.83C3109.34,582.375 3109.11,581.956 3108.74,581.687L3107.14,580.715C3106.75,580.486 3106.27,580.486 3105.88,580.715L3104.11,581.74C3103.74,581.976 3103.5,582.383 3103.48,582.826L3103.48,587.512C3103.47,587.917 3103.14,588.248 3102.74,588.255L3101.99,588.255C3101.59,588.248 3101.26,587.916 3101.25,587.512L3101.25,581.401C3101.27,580.958 3101.51,580.552 3101.88,580.316L3105.83,577.973C3106.21,577.744 3106.7,577.744 3107.08,577.973L3110.91,580.201C3111.28,580.448 3111.51,580.848 3111.54,581.287L3111.54,587.515L3111.54,587.516ZM3258.43,576.518C3257.32,577.652 3256.7,579.175 3256.7,580.76C3256.7,584.09 3259.44,586.831 3262.77,586.831C3266.1,586.831 3268.84,584.09 3268.84,580.76C3268.84,577.43 3266.1,574.69 3262.77,574.69C3261.14,574.698 3259.57,575.356 3258.43,576.518L3258.43,576.518ZM3101.37,574.486C3101.38,574.082 3101.71,573.75 3102.12,573.743L3102.8,573.743C3103.21,573.75 3103.54,574.081 3103.55,574.486L3103.55,576.941C3103.53,577.384 3103.29,577.791 3102.91,578.027L3102,578.598C3101.66,578.827 3101.37,578.655 3101.37,578.255L3101.37,574.486L3101.37,574.486ZM3111.66,578.087C3111.66,578.103 3111.66,578.119 3111.66,578.135C3111.66,578.358 3111.48,578.542 3111.25,578.542C3111.15,578.542 3111.05,578.502 3110.97,578.43L3110.06,577.858C3109.69,577.612 3109.46,577.212 3109.43,576.773L3109.43,574.372C3109.43,573.967 3109.76,573.636 3110.17,573.63L3110.91,573.63C3111.32,573.636 3111.65,573.967 3111.66,574.372L3111.66,578.087L3111.66,578.087ZM3242.48,573.033C3242.47,572.628 3242.14,572.296 3241.74,572.289L3240.65,572.289C3240.25,572.297 3239.91,572.628 3239.91,573.033L3239.91,577.719C3239.91,578.118 3240.19,578.29 3240.54,578.062L3241.85,577.261C3242.22,577.015 3242.45,576.615 3242.48,576.176L3242.48,573.033L3242.48,573.033ZM3250.31,572.289C3249.91,572.296 3249.58,572.628 3249.57,573.033L3249.57,576.116C3249.59,576.559 3249.82,576.965 3250.2,577.202L3251.51,578.002C3251.86,578.23 3252.14,578.059 3252.14,577.659L3252.14,573.033C3252.14,572.628 3251.81,572.296 3251.4,572.289L3250.31,572.289Z" style="fill:var(--logo-ink);fill-rule:nonzero;"></path> </g> </g> </g> </g> </g> </symbol></svg>
+<div class="sitebar">
+  <a class="brand-link" href="index.html" aria-label="Accueil de la documentation"><svg viewBox="0 0 225 46" role="img" aria-label="SellingAtHome"><use href="#sah-logo"></use></svg></a>
+  <nav class="topnav" id="topnav" aria-label="Univers"><div class="mm-item c-accent">
+    <a class="mm-link" href="demarrer.html">Démarrer</a>
+    <button class="mm-toggle" type="button" aria-expanded="false" aria-controls="mm-demarrer" aria-label="Pages de l'univers Démarrer"></button>
+    <div class="mm-panel" id="mm-demarrer">
+      <div class="mm-head"><a href="demarrer.html">Démarrer <span class="script">avec SellingAtHome</span></a><p>Les notions clés du métier, la découverte de l'espace marque et l'ordre conseillé pour paramétrer votre marque.</p></div>
+      <ul class="mm-list"><li><a href="comprendre-sellingathome.html"><b>Comprendre SellingAtHome en 10 minutes</b><span>Marque, conseillère, hôtesse, cliente, réunion, réseau : les notions qui structurent toute la plateforme.</span></a></li><li><a href="espace-marque.html"><b>Découvrir l'espace marque</b><span>Connexion, menus, tableau de bord et ses indicateurs, actualités et profil.</span></a></li><li><a href="mise-en-route.html"><b>Check-list de mise en route</b><span>L'ordre conseillé pour paramétrer une marque, étape par étape.</span></a></li><li><a href="modules-options.html"><b>Modules et options</b><span>Ce qui s'active sur demande, et pourquoi un menu peut ne pas apparaître.</span></a></li><li><a href="glossaire.html"><b>Glossaire</b><span>Toutes les définitions, de « animatrice » à « zone de taxe ».</span></a></li></ul>
+    </div>
+  </div><div class="mm-item c-pink">
+    <a class="mm-link" href="reseau.html">Réseau</a>
+    <button class="mm-toggle" type="button" aria-expanded="false" aria-controls="mm-reseau" aria-label="Pages de l'univers Réseau"></button>
+    <div class="mm-panel" id="mm-reseau">
+      <div class="mm-head"><a href="reseau.html">Réseau et <span class="script">rémunération</span></a><p>Gérer vos conseillères, leur organigramme et leurs statuts, puis calculer et verser leurs commissions.</p></div>
+      <ul class="mm-list"><li><a href="conseilleres.html"><b>Gérer les conseillères</b><span>La liste, la fiche et ses onglets, verrouiller un accès, se connecter en tant que conseillère.</span></a></li><li><a href="organigramme.html"><b>L'organigramme</b><span>Recruteur, animatrice, changements de rattachement et leurs effets sur les commissions.</span></a></li><li><a href="statuts.html"><b>Statuts et automatisation</b><span>Grille des statuts, statut estimé et statut officiel, règles de passage automatique.</span></a></li><li><a href="roles-conseilleres.html"><b>Rôles des conseillères</b><span>Des profils de droits pour adapter ce que chaque conseillère peut faire.</span></a></li><li><a href="suivi-equipe.html"><b>Suivi d'équipe</b><span>Comparer l'activité de vos équipes d'une période à l'autre.</span></a></li><li><a href="plan-remuneration.html"><b>Le plan de rémunération</b><span>Règles, valeurs, lignées et conditions : construire un plan de bout en bout.</span></a></li><li><a href="cloture-commissions.html"><b>Clôture et versement des commissions</b><span>Clôture mensuelle, bulletins, fichier SEPA, exports et emails de clôture.</span></a></li><li><a href="cotisations-sociales.html"><b>Cotisations sociales et précompte</b><span>Calcul, régularisation et consultation des cotisations des conseillères.</span></a></li><li><a href="stock-conseilleres.html"><b>Stocks chez les conseillères</b> <span class="mm-opt">Module optionnel</span><span>Suivre le stock détenu par chaque conseillère.</span></a></li></ul>
+    </div>
+  </div><div class="mm-item c-yellow">
+    <a class="mm-link" href="recrutement.html">Recrutement</a>
+    <button class="mm-toggle" type="button" aria-expanded="false" aria-controls="mm-recrutement" aria-label="Pages de l'univers Recrutement"></button>
+    <div class="mm-panel" id="mm-recrutement">
+      <div class="mm-head"><a href="recrutement.html">Le <span class="script">recrutement</span></a><p>Du formulaire de candidature à la signature électronique du contrat, puis au kit de démarrage.</p></div>
+      <ul class="mm-list"><li><a href="recrutement-principe.html"><b>Le recrutement dématérialisé</b><span>Le parcours complet du candidat, du formulaire à la création de son compte.</span></a></li><li><a href="recrutement-parametrage.html"><b>Paramétrer le recrutement</b><span>Les 5 onglets de configuration : formulaire, contenus, demandes, kit de démarrage.</span></a></li><li><a href="candidatures.html"><b>Traiter une candidature</b><span>Documents, refus, signature, création du compte conseillère.</span></a></li><li><a href="kit-demarrage.html"><b>Le kit de démarrage</b><span>Le tunnel d'achat du kit, ses frais de livraison et ses relances.</span></a></li><li><a href="carte-conseilleres.html"><b>Carte des conseillères et formulaire de contact</b><span>Le widget à intégrer sur votre site et le traitement des demandes reçues.</span></a></li></ul>
+    </div>
+  </div><div class="mm-item c-accent">
+    <a class="mm-link" href="reunions.html">Réunions</a>
+    <button class="mm-toggle" type="button" aria-expanded="false" aria-controls="mm-reunions" aria-label="Pages de l'univers Réunions"></button>
+    <div class="mm-panel" id="mm-reunions">
+      <div class="mm-head"><a href="reunions.html">Les <span class="script">réunions</span></a><p>Le cœur de la vente à domicile : le cycle de vie d'une réunion, ses réglages, son mini-site et la visio.</p></div>
+      <ul class="mm-list"><li><a href="reunion-cycle-de-vie.html"><b>Le cycle de vie d'une réunion</b><span>Création, invitations, commandes, clôture et gains de l’hôtesse.</span></a></li><li><a href="mini-site-reunion.html"><b>Le mini-site de réunion</b><span>Modes d'activation, onboarding de l'hôtesse, gestion des invités.</span></a></li><li><a href="reunion-virtuelle.html"><b>Réunion virtuelle et live</b><span>Visio, mode broadcast et mise en avant des offres pendant le live.</span></a></li><li><a href="activites.html"><b>Activités et agenda</b><span>Les types d'activités proposés aux conseillères dans leur agenda.</span></a></li></ul>
+    </div>
+  </div><div class="mm-item c-pink">
+    <a class="mm-link" href="ventes.html">Ventes</a>
+    <button class="mm-toggle" type="button" aria-expanded="false" aria-controls="mm-ventes" aria-label="Pages de l'univers Ventes"></button>
+    <div class="mm-panel" id="mm-ventes">
+      <div class="mm-head"><a href="ventes.html">Commandes et <span class="script">boutiques</span></a><p>Comprendre, créer et suivre les commandes, gérer les regroupements et les retours, animer les boutiques en ligne.</p></div>
+      <ul class="mm-list"><li><a href="commandes-comprendre.html"><b>Comprendre les commandes</b><span>Types de commande, statut de gestion et statut logistique, cycle de vie.</span></a></li><li><a href="commandes-gerer.html"><b>Créer, modifier et finaliser une commande</b><span>Création par la marque, paiement, changement de conseillère, liaison à une réunion.</span></a></li><li><a href="commandes-annulation-documents.html"><b>Annulations, avoirs et documents</b><span>Annuler tout ou partie, rembourser, éditer factures et bons de commande.</span></a></li><li><a href="commandes-regroupement.html"><b>Les commandes de regroupement</b><span>Regrouper les commandes d’une conseillère : paiement, livraison, clôture.</span></a></li><li><a href="commandes-parametres.html"><b>Paramètres des commandes</b><span>Cadeaux automatiques, produits suggérés, questions, plafonds, blocs de contenu.</span></a></li><li><a href="retours-produits.html"><b>Les retours produits</b><span>Motifs de retour et traitement des demandes des conseillères.</span></a></li><li><a href="boutiques-panorama.html"><b>Les boutiques en ligne</b><span>Mini-site de réunion, mini-boutique, boutique de marque : lequel pour quoi ?</span></a></li><li><a href="mini-boutiques.html"><b>Les mini-boutiques des conseillères</b><span>Activation, personnalisation, produits disponibles, réglages de la conseillère.</span></a></li><li><a href="boutique-marque.html"><b>La boutique de marque</b> <span class="mm-opt">Module optionnel</span><span>Votre boutique en ligne et l’attribution des ventes aux conseillères.</span></a></li><li><a href="collections.html"><b>Collections et réservations</b> <span class="mm-opt">Module optionnel</span><span>Proposer des produits sur réservation, par périodes.</span></a></li></ul>
+    </div>
+  </div><div class="mm-item c-yellow">
+    <a class="mm-link" href="catalogue.html">Catalogue</a>
+    <button class="mm-toggle" type="button" aria-expanded="false" aria-controls="mm-catalogue" aria-label="Pages de l'univers Catalogue"></button>
+    <div class="mm-panel" id="mm-catalogue">
+      <div class="mm-head"><a href="catalogue.html">Catalogue et <span class="script">logistique</span></a><p>Créer et tarifer vos produits, gérer les stocks, la livraison, la préparation et l’approvisionnement.</p></div>
+      <ul class="mm-list"><li><a href="produits.html"><b>Créer et éditer un produit</b><span>Produit simple, lot, kit variable, produit virtuel, et tous les onglets de la fiche.</span></a></li><li><a href="attributs-declinaisons.html"><b>Catégories, attributs et déclinaisons</b><span>Organiser le catalogue et décliner un produit en tailles, couleurs…</span></a></li><li><a href="prix-taxes.html"><b>Prix, prix par rôle et taxes</b><span>Tarifs, prix réservés à certains rôles, taxes et zones de pays.</span></a></li><li><a href="livraison.html"><b>Livraison : modes et frais</b><span>Modes de livraison, frais, gratuité et conditions, avec exemples chiffrés.</span></a></li><li><a href="stocks.html"><b>Les stocks</b><span>Méthodes de suivi, rupture, stock faible, historique et import.</span></a></li><li><a href="preparation-livraison.html"><b>Bons de préparation et de livraison</b><span>Préparer les commandes par réunion, conseillère ou produit, éditer les BL.</span></a></li><li><a href="approvisionnement.html"><b>L'approvisionnement</b> <span class="mm-opt">Module optionnel</span><span>Fournisseurs, commandes fournisseurs et réception du stock.</span></a></li><li><a href="expeditions-transporteurs.html"><b>Expéditions et transporteurs</b> <span class="mm-opt">Module optionnel</span><span>Suivi des envois, étiquettes GLS, DPD, Colissimo, Mondial Relay.</span></a></li></ul>
+    </div>
+  </div><div class="mm-item c-pink">
+    <a class="mm-link" href="animation.html" aria-current="page">Animation</a>
+    <button class="mm-toggle" type="button" aria-expanded="false" aria-controls="mm-animation" aria-label="Pages de l'univers Animation"></button>
+    <div class="mm-panel" id="mm-animation">
+      <div class="mm-head"><a href="animation.html">Animation et <span class="script">fidélisation</span></a><p>Motiver vos conseillères, récompenser vos hôtesses et fidéliser vos clientes.</p></div>
+      <ul class="mm-list"><li><a href="challenges-guide.html"><b>Les challenges</b><span>Fixer des objectifs aux conseillères et récompenser automatiquement celles qui les atteignent.</span></a></li><li><a href="fidelite-guide.html"><b>La fidélité</b><span>Récompenser hôtesses, clientes et conseillères selon les réunions et les ventes.</span></a></li><li><a href="bons-achat-guide.html"><b>Les bons d'achat</b><span>Offrir un montant nominatif, déduit d’une prochaine commande.</span></a></li><li><a href="reductions-guide.html"><b>Les réductions</b><span>Baisser le prix d’une commande, automatiquement ou par code promo.</span></a></li><li><a href="conditions-achat-guide.html"><b>Les conditions d'achat</b><span>Limiter qui peut acheter un produit, et en quelle quantité.</span></a></li><li><a href="parrainage-client.html"><b>Le parrainage client</b><span>Récompenser les clientes qui recommandent la marque.</span></a></li><li><a href="clients.html"><b>Les clientes</b><span>La fiche cliente, ses rôles, ses points et bons, l’anonymisation RGPD.</span></a></li><li><a href="segments.html" aria-current="page"><b>Les segments de clientes</b><span>Regrouper des clientes selon leur profil et leurs achats.</span></a></li></ul>
+    </div>
+  </div><div class="mm-item c-accent">
+    <a class="mm-link" href="pilotage.html">Pilotage</a>
+    <button class="mm-toggle" type="button" aria-expanded="false" aria-controls="mm-pilotage" aria-label="Pages de l'univers Pilotage"></button>
+    <div class="mm-panel" id="mm-pilotage">
+      <div class="mm-head"><a href="pilotage.html">Communication et <span class="script">pilotage</span></a><p>Former et informer vos conseillères, piloter l’activité avec les rapports, paramétrer la marque.</p></div>
+      <ul class="mm-list"><li><a href="base-documentaire.html"><b>Documents, FAQ et formations</b><span>Mettre à disposition des conseillères documents, réponses et parcours de formation.</span></a></li><li><a href="notifications.html"><b>Les notifications</b><span>Envoyer des notifications aux conseillères, une à une ou en masse.</span></a></li><li><a href="emails.html"><b>Les emails</b><span>Modèles d’emails, suivi des envois et délivrabilité.</span></a></li><li><a href="assistant-ia.html"><b>L'assistant IA</b><span>Activation, quotas, crédits, documents indexés, conversations et retours.</span></a></li><li><a href="rapports-exports.html"><b>Rapports et exports</b><span>Meilleures ventes, stock faible, réponses aux questions, exports de données.</span></a></li><li><a href="configuration-generale.html"><b>La configuration de la marque</b><span>Tous les réglages généraux de la marque, un par un.</span></a></li><li><a href="champs-fichiers.html"><b>Champs personnalisés et fichiers</b><span>Ajouter vos propres champs et gérer les médias de la marque.</span></a></li><li><a href="comptabilite.html"><b>La comptabilité</b> <span class="mm-opt">Module optionnel</span><span>Comptes comptables et exports vers votre logiciel.</span></a></li><li><a href="integrations.html"><b>Les intégrations</b> <span class="mm-opt">Module optionnel</span><span>Boutiques externes, logisticiens, outils marketing : ce qui existe et comment l’activer.</span></a></li></ul>
+    </div>
+  </div><div class="mm-item mm-plain"><a class="mm-link" href="cas-usage.html">Cas d'usage</a></div><div class="mm-item mm-plain"><a class="mm-link" href="depannage.html">Dépannage</a></div></nav>
+  <div class="sitebar-right">
+    <div class="search-box"><input type="search" data-search placeholder="Rechercher…" aria-label="Rechercher dans la documentation" autocomplete="off"><div class="search-results" role="listbox"></div></div>
+    <button class="theme-btn" id="themeBtn" type="button" aria-label="Passer au thème sombre" title="Passer au thème sombre"></button>
+    <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="topnav" aria-label="Ouvrir le menu" title="Menu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="hero-in">
+    <div>
+      <span class="eyebrow">Animation et fidélisation</span>
+      <h1>Les segments <span class="script">de clientes</span></h1>
+      <p class="lede">Regrouper des clientes selon leur profil et leurs achats, pour les retrouver, les faire relancer par les conseillères et les exporter. Avec la liste de tous les filtres et leurs pièges.</p>
+    </div>
+    <div class="voucher-art" aria-hidden="true">
+      <div class="v-top"><span>Segment</span><span>Actif</span></div>
+      <div class="v-amount">3<span> filtres</span></div>
+      <div class="v-name">Anniversaire de juillet</div>
+      <div class="v-sep"></div>
+      <div class="v-meta"><span>Profil <b>2</b></span><span>Commercial <b>1</b></span></div>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="toc" aria-label="Sommaire">
+    <details id="tocDetails" open>
+      <summary>Menu et sommaire</summary>
+      <div class="unav"><a class="unav-title" href="animation.html">Animation et fidélisation</a><ul><li><a href="challenges-guide.html">Les challenges</a></li><li><a href="fidelite-guide.html">La fidélité</a></li><li><a href="bons-achat-guide.html">Les bons d'achat</a></li><li><a href="reductions-guide.html">Les réductions</a></li><li><a href="conditions-achat-guide.html">Les conditions d'achat</a></li><li><a href="parrainage-client.html">Le parrainage client</a></li><li><a href="clients.html">Les clientes</a></li><li class="here"><span>Les segments de clientes</span></li></ul></div>
+      <div class="toc-title">Sommaire</div>
+      <ol>
+        <li data-sec="definition"><a href="#definition"><span class="toc-n">1</span>Qu'est-ce qu'un segment&nbsp;?</a></li>
+        <li data-sec="usages"><a href="#usages"><span class="toc-n">2</span>Où un segment est-il utilisé&nbsp;?</a></li>
+        <li data-sec="ecran"><a href="#ecran"><span class="toc-n">3</span>L'écran des segments</a></li>
+        <li data-sec="creer"><a href="#creer"><span class="toc-n">4</span>Créer un segment</a>
+          <ol class="toc-sub"><li><a href="#s4-1"><span class="toc-n">4.1</span>Les quatre étapes</a></li><li><a href="#s4-2"><span class="toc-n">4.2</span>Activer le segment</a></li></ol>
+        </li>
+        <li data-sec="filtres"><a href="#filtres"><span class="toc-n">5</span>Tous les filtres</a>
+          <ol class="toc-sub"><li><a href="#s5-1"><span class="toc-n">5.1</span>Les opérateurs</a></li><li><a href="#s5-2"><span class="toc-n">5.2</span>Filtres profil</a></li><li><a href="#s5-3"><span class="toc-n">5.3</span>Filtres commerciaux</a></li></ol>
+        </li>
+        <li data-sec="export"><a href="#export"><span class="toc-n">6</span>L'export</a></li>
+        <li data-sec="exemples"><a href="#exemples"><span class="toc-n">7</span>Exemples de segments</a></li>
+        <li data-sec="conseillere"><a href="#conseillere"><span class="toc-n">8</span>Ce que voit la conseillère</a></li>
+        <li data-sec="attention"><a href="#attention"><span class="toc-n">9</span>Points d'attention</a></li>
+        <li data-sec="faq"><a href="#faq"><span class="toc-n">10</span>Questions fréquentes</a></li>
+      </ol>
+    </details>
+  </nav>
+
+  <main>
+
+<!-- 1 -->
+<section id="definition">
+  <div class="sec-head"><span class="sec-num">01</span><h2>Qu'est-ce qu'un segment&nbsp;?</h2></div>
+  <p class="lede">Un segment est un <strong>groupe de clientes défini par des filtres</strong>&nbsp;: «&nbsp;les clientes nées en juillet qui ont dépensé plus de 300&nbsp;€&nbsp;», «&nbsp;les hôtesses sans commande depuis 6 mois&nbsp;». Le segment n'est pas une liste figée&nbsp;: il est recalculé à chaque utilisation, avec les données du moment.</p>
+  <div class="example"><span class="ex-label">Exemple</span><p>Vous créez le segment «&nbsp;Hôtesses à relancer&nbsp;»&nbsp;: rôle Hôte, et pas de commande depuis 180 jours. Le 1<sup>er</sup> octobre, il compte 240 clientes&nbsp;; Léa n'en voit que les 12 de son carnet d'adresses et les appelle pour leur proposer une nouvelle réunion. Le 1<sup>er</sup> novembre, Jade, qui a recommandé entre-temps, en est sortie toute seule.</p></div>
+  <div class="tip"><span class="ex-label">Vocabulaire</span><p>Dans les écrans, la cliente est appelée <strong>client</strong>, la conseillère <strong>vendeur</strong> et l'hôtesse <strong>hôte</strong>.</p></div>
+  <div class="warn"><span class="ex-label">Ne pas confondre</span><p>Le menu <strong>Paramètres › Segmentations</strong>, présent chez certaines marques, est un autre outil, qui n'est utilisé par aucune marque. Cette page traite uniquement de <strong>Clients › Gérer les segments</strong>.</p></div>
+</section>
+
+<!-- 2 -->
+<section id="usages">
+  <div class="sec-head"><span class="sec-num">02</span><h2>Où un segment est-il utilisé&nbsp;?</h2></div>
+  <p class="lede">Un segment sert à <strong>trouver et extraire</strong> des clientes. Il n'envoie rien et ne donne rien par lui-même.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Où</th><th>Ce que permet le segment</th></tr></thead>
+    <tbody>
+      <tr><td><b>Espace marque › Clients › Clients</b></td><td>Filtre «&nbsp;Segments&nbsp;» de la liste des clientes (segments actifs). Voir <a href="clients.html#s3-2"><em>Les clientes</em></a>.</td></tr>
+      <tr><td><b>Espace marque › Gérer les segments</b></td><td>Export CSV ou Excel de toutes les clientes du segment.</td></tr>
+      <tr><td><b>Espace conseillère et application</b></td><td>Filtre de la liste des clientes de la conseillère, et export de ses clientes par segment. Seules <strong>ses</strong> clientes apparaissent.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="decide">
+    <div class="row"><span class="q">Cibler une réduction ou un code promo</span><span class="arrow">→</span><span class="pill pink">Pas de segment&nbsp;: condition de la réduction (rôle…)</span></div>
+    <div class="row"><span class="q">Envoyer une notification ou un email</span><span class="arrow">→</span><span class="pill pink">Pas de segment&nbsp;: exportez, puis votre outil d'emailing</span></div>
+    <div class="row"><span class="q">Donner des points</span><span class="arrow">→</span><span class="pill pink">Pas de segment&nbsp;: règles de fidélité</span></div>
+    <div class="row"><span class="q">Faire relancer des clientes par les conseillères</span><span class="arrow">→</span><span class="pill">Segment actif</span></div>
+  </div>
+  <p class="muted">Pour cibler des avantages, voir les guides des <a href="reductions-guide.html">réductions</a> et de la <a href="fidelite-guide.html">fidélité</a>&nbsp;: leurs conditions sur le rôle, les achats ou l'historique jouent le rôle d'un segment.</p>
+</section>
+
+<!-- 3 -->
+<section id="ecran">
+  <div class="sec-head"><span class="sec-num">03</span><h2>L'écran des segments</h2></div>
+  <div class="path" aria-label="Chemin d'accès"><span>Espace marque</span><span>Clients</span><span><b>Gérer les segments</b></span></div>
+  <figure><img src="Captures/Clientes/liste-segments.png" alt="Écran Segmentation clients : bouton Ajouter un segment, colonnes Nom, Description, Actif (interrupteurs), Crée le, Actions (modifier, supprimer), Exporter (CSV et XLS) ; quatre segments dont deux actifs" loading="lazy"><figcaption>L'écran «&nbsp;Segmentation clients&nbsp;».</figcaption></figure>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Colonne</th><th>Rôle</th></tr></thead>
+    <tbody>
+      <tr><td><b>Actif</b></td><td>L'interrupteur rend le segment visible dans les filtres de la marque et des conseillères. Il s'enregistre immédiatement.</td></tr>
+      <tr><td><b>Actions</b></td><td>Le crayon rouvre l'assistant&nbsp;; la croix supprime le segment (après confirmation).</td></tr>
+      <tr><td><b>Exporter</b></td><td>Les deux boutons CSV et XLS téléchargent les clientes du segment, actif ou non (<a href="#export">section 6</a>).</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- 4 -->
+<section id="creer">
+  <div class="sec-head"><span class="sec-num">04</span><h2>Créer un segment</h2></div>
+  <h3 id="s4-1"><span class="sub-num">4.1</span> Les quatre étapes</h3>
+  <p>Cliquez sur <strong>Ajouter un segment</strong>&nbsp;: un assistant en quatre étapes s'ouvre. Passez de l'une à l'autre avec <strong>Suivant</strong> et <strong>Précedent</strong>.</p>
+  <div class="steps4">
+    <div><b>1. Nom du segment</b>Un nom et une description (visibles par les conseillères).</div>
+    <div><b>2. Filtres profil</b>Âge, anniversaire, pays, département, civilité, rôles.</div>
+    <div><b>3. Filtres commerciaux</b>Achats, montants, réunions, points, bons et réductions.</div>
+    <div><b>4. Validation</b>Le récapitulatif de tous les filtres&nbsp;; le bouton <strong>Terminé</strong> enregistre.</div>
+  </div>
+  <figure><img src="Captures/Clientes/segment-profil.png" alt="Étape 2 Filtres profil de l'assistant : bouton ET, deux filtres Date d'anniversaire, inférieur à 01/08/2026 et supérieur ou égal à 01/07/2026, bouton d'ajout de filtre en haut à droite, boutons Précedent et Suivant" loading="lazy"><figcaption>Étape 2&nbsp;: les filtres profil d'un segment «&nbsp;anniversaire de juillet&nbsp;».</figcaption></figure>
+  <ul class="prose">
+    <li>Ajoutez un filtre avec le bouton en haut à droite du bloc, choisissez-le, puis l'opérateur et la valeur. La corbeille rouge le retire.</li>
+    <li><strong>Tous les filtres se combinent en ET</strong>, profil et commerciaux confondus&nbsp;: une cliente doit les remplir tous. Il n'y a ni «&nbsp;OU&nbsp;» ni groupe. Pour deux cibles différentes, créez deux segments.</li>
+    <li>Une étape peut rester vide.</li>
+  </ul>
+  <div class="grid-2" style="align-items:start">
+    <figure><img src="Captures/Clientes/segment-commercial.png" alt="Étape 3 Filtres commerciaux : filtre Pas de commande passée depuis X jours, opérateur égal, valeur 30" loading="lazy"><figcaption>Étape 3&nbsp;: un filtre commercial.</figcaption></figure>
+    <figure><img src="Captures/Clientes/segment-validation.png" alt="Étape 4 Validation : Nom Anniversaire client, Description, récapitulatif en ET des filtres Date d'anniversaire inférieur à 01/08/2026, supérieur ou égal à 01/07/2026 et Montant total dépensé TTC supérieur à 300" loading="lazy"><figcaption>Étape 4&nbsp;: le récapitulatif avant enregistrement.</figcaption></figure>
+  </div>
+  <div class="tip"><span class="ex-label">Bon à savoir</span><p>L'assistant n'affiche pas d'aperçu des clientes. Pour vérifier un segment, enregistrez-le puis filtrez la liste des clientes sur ce segment, ou exportez-le.</p></div>
+
+  <h3 id="s4-2"><span class="sub-num">4.2</span> Activer le segment</h3>
+  <div class="warn"><span class="ex-label">Un nouveau segment est inactif</span><p>Après <strong>Terminé</strong>, le segment apparaît dans la liste avec l'interrupteur <strong>Actif</strong> éteint. Tant qu'il n'est pas activé, il n'est proposé ni dans le filtre de la liste des clientes, ni aux conseillères. Seul l'export fonctionne.</p></div>
+  <figure><img src="Captures/Clientes/liste-clientes-segment.png" alt="Fenêtre Filtrer de la liste des clients avec le segment Role Hôte choisi dans la liste Segments" loading="lazy" style="max-width:520px"><figcaption>Un segment actif, choisi dans le filtre de la liste des clientes.</figcaption></figure>
+</section>
+
+<!-- 5 -->
+<section id="filtres">
+  <div class="sec-head"><span class="sec-num">05</span><h2>Tous les filtres</h2></div>
+  <p class="lede">20 filtres, cités avec leur libellé exact. Les montants et compteurs portent sur les commandes <strong>payées et non supprimées</strong>.</p>
+
+  <h3 id="s5-1"><span class="sub-num">5.1</span> Les opérateurs</h3>
+  <p>Selon le filtre&nbsp;: «&nbsp;égal&nbsp;», «&nbsp;non égal&nbsp;», «&nbsp;inférieur&nbsp;», «&nbsp;inférieur ou égal&nbsp;», «&nbsp;supérieur&nbsp;», «&nbsp;supérieur ou égal&nbsp;», et pour les produits «&nbsp;dans&nbsp;» / «&nbsp;pas dans&nbsp;» une liste.</p>
+  <div class="warn"><span class="ex-label">Le piège du zéro</span><p>Les filtres de comptage et de montant ignorent les clientes qui n'ont <strong>rien</strong>&nbsp;: «&nbsp;Nb de réunions hôte égal 0&nbsp;» ou «&nbsp;Montant total dépensé TTC inférieur à 50&nbsp;» ne retiennent pas les clientes qui n'ont jamais accueilli de réunion ou jamais acheté. Pour les clientes sans achat, utilisez «&nbsp;Pas de commande passée depuis X jours&nbsp;».</p></div>
+
+  <h3 id="s5-2"><span class="sub-num">5.2</span> Filtres profil</h3>
+  <div class="table-wrap"><table class="filt">
+    <thead><tr><th>Filtre</th><th>Ce qu'il vérifie</th><th>Exemple</th></tr></thead>
+    <tbody>
+      <tr><td><b>Age</b></td><td>L'âge, calculé avec la date de naissance.<span class="know">sans date de naissance, la cliente n'est jamais retenue.</span></td><td>Age supérieur ou égal 25</td></tr>
+      <tr><td><b>Date d’anniversaire</b></td><td>Le jour et le mois de naissance, <strong>sans l'année</strong>&nbsp;: l'année de la date saisie ne compte pas.<span class="know">évitez l'opérateur «&nbsp;non égal&nbsp;», qui ne fonctionne pas correctement.</span></td><td>Deux filtres&nbsp;: ≥ 01/07 et &lt; 01/08 = anniversaires de juillet</td></tr>
+      <tr><td><b>Pays</b></td><td>Le pays d'au moins une de ses adresses.</td><td>Pays égal Belgique</td></tr>
+      <tr><td><b>Département</b></td><td>Le code postal d'au moins une de ses adresses commence par la valeur saisie.</td><td>Département égal 69</td></tr>
+      <tr><td><b>Civilité</b></td><td>M, Mme, Mlle.</td><td>Civilité égal Mme</td></tr>
+      <tr><td><b>Rôles</b></td><td>Porte (égal) ou ne porte pas (non égal) un rôle, système ou libre.</td><td>Rôles égal Hôte</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 id="s5-3"><span class="sub-num">5.3</span> Filtres commerciaux</h3>
+  <div class="table-wrap"><table class="filt">
+    <thead><tr><th>Filtre</th><th>Ce qu'il vérifie</th><th>Exemple</th></tr></thead>
+    <tbody>
+      <tr><td><b>Achat du produit X</b></td><td>A acheté (ou pas) un ou plusieurs produits choisis.</td><td>Achat du produit X dans [collier torsadé]</td></tr>
+      <tr><td><b>Produit X dans la wishlist</b></td><td>A mis (ou pas) un produit dans sa liste de souhaits.</td><td>Relancer les clientes qui attendent un produit</td></tr>
+      <tr><td><b>Montant total dépensé TTC</b></td><td>Total de ses commandes payées, hors commandes annulées.</td><td>supérieur 300</td></tr>
+      <tr><td><b>CA client par catégorie</b></td><td>Ce qu'elle a dépensé dans une catégorie de produits. Ajoute une colonne à l'export.</td><td>Bijoux argent supérieur ou égal 100</td></tr>
+      <tr><td><b>CA client par catégorie (prix vendeur)</b></td><td>Même chose, calculé sur le prix conseillère.</td><td>Utile pour les comptes clients des conseillères</td></tr>
+      <tr><td><b>Nb de produits achetés</b></td><td>Le nombre de <strong>lignes</strong> de produits dans ses commandes payées (une ligne de 3 bracelets compte pour 1).</td><td>supérieur ou égal 10</td></tr>
+      <tr><td><b>Pas de commande passée depuis X jours</b></td><td>Aucune commande payée depuis X jours. Inclut les clientes qui n'ont <strong>jamais</strong> commandé. Ajoute la colonne «&nbsp;Dernière commande passée&nbsp;».</td><td>égal 180 = inactives depuis 6 mois</td></tr>
+      <tr><td><b>Nb de réunions hôte</b></td><td>Le nombre de réunions qu'elle a accueillies.</td><td>supérieur ou égal 2</td></tr>
+      <tr><td><b>Nb de réunions présent</b></td><td>Le nombre de réunions où elle a été marquée présente.</td><td>supérieur ou égal 3</td></tr>
+      <tr><td><b>Chiffre d'affaires réunion hôte</b></td><td>Le total des commandes payées des réunions qu'elle a accueillies.</td><td>supérieur ou égal 1000</td></tr>
+      <tr><td><b>Solde points de fidelité</b></td><td>Son solde de points encore valides. Ajoute une colonne à l'export.</td><td>supérieur ou égal 50</td></tr>
+      <tr><td><b>Bon d'achat X expirant</b></td><td>Possède un bon d'achat de ce type, non utilisé, qui expire dans les N prochains jours.</td><td>Bon de 10&nbsp;€, 15 jours</td></tr>
+      <tr><td><b>Réduction X disponible</b></td><td>Possède un code promo réservé, non utilisé, encore valable. Ajoute sa date d'expiration à l'export.</td><td>Code anniversaire non utilisé</td></tr>
+      <tr><td><b>Réduction X utilisée (avec vérification rôle client)</b></td><td>A utilisé (ou pas) un code promo réservé, avec en plus une condition sur ses rôles.</td><td>Code bienvenue utilisé, rôle VIP</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- 6 -->
+<section id="export">
+  <div class="sec-head"><span class="sec-num">06</span><h2>L'export</h2></div>
+  <p>Les boutons <strong>CSV</strong> et <strong>XLS</strong> de l'écran des segments téléchargent un fichier nommé «&nbsp;date_nom du segment&nbsp;». Il contient, pour chaque cliente&nbsp;:</p>
+  <ul class="prose">
+    <li>son numéro, son nom, son prénom, son email, ses téléphones fixe et portable, son adresse principale, ses rôles&nbsp;;</li>
+    <li>une colonne de plus pour certains filtres&nbsp;: «&nbsp;Solde points de fidélité&nbsp;», «&nbsp;Dernière commande passée&nbsp;», «&nbsp;CA client pour la catégorie&nbsp;», date d'expiration de la réduction ou du bon d'achat.</li>
+  </ul>
+  <div class="warn"><span class="ex-label">Données personnelles</span><p>Le fichier contient les coordonnées de vos clientes. Conservez-le en lieu sûr, supprimez-le après usage, et ne l'utilisez pour de la prospection qu'avec le consentement des clientes (voir <a href="clients.html#rgpd">Consentement et RGPD</a>).</p></div>
+</section>
+
+<!-- 7 -->
+<section id="exemples">
+  <div class="sec-head"><span class="sec-num">07</span><h2>Exemples de segments</h2></div>
+  <p class="lede">Sur l'ensemble des marques, 12 marques actives sur 35 ont créé des segments (87 au total, dont 67 actifs). Les filtres les plus utilisés sont la date d'anniversaire, l'achat d'un produit, les rôles et l'absence de commande.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Segment</th><th>Filtres</th><th>Pour quoi faire</th></tr></thead>
+    <tbody>
+      <tr><td><b>Anniversaires de juillet</b></td><td>Date d’anniversaire ≥ 01/07 ET &lt; 01/08</td><td>Les conseillères souhaitent l'anniversaire et proposent une réunion</td></tr>
+      <tr><td><b>Hôtesses à relancer</b></td><td>Rôles égal Hôte ET Pas de commande passée depuis 180 jours</td><td>Proposer une nouvelle réunion</td></tr>
+      <tr><td><b>Bons qui vont expirer</b></td><td>Bon d'achat X expirant (bon de 10&nbsp;€, 15 jours)</td><td>Rappeler aux clientes d'utiliser leur bon</td></tr>
+      <tr><td><b>Grandes clientes</b></td><td>Montant total dépensé TTC ≥ 500 ET Nb de réunions présent ≥ 3</td><td>Leur proposer de devenir hôtesse ou conseillère</td></tr>
+      <tr><td><b>Marraines</b></td><td>Rôles égal Sponsor</td><td>Les remercier, suivre le <a href="parrainage-client.html">parrainage</a></td></tr>
+    </tbody>
+  </table></div>
+  <div class="example"><span class="ex-label">Exemple pas à pas</span><p>Pour «&nbsp;Anniversaires de juillet&nbsp;»&nbsp;: <strong>Ajouter un segment</strong> › nom «&nbsp;Anniversaires de juillet&nbsp;» › <strong>Suivant</strong> › ajoutez «&nbsp;Date d’anniversaire&nbsp;», «&nbsp;supérieur ou égal&nbsp;», 01/07/2026, puis «&nbsp;Date d’anniversaire&nbsp;», «&nbsp;inférieur&nbsp;», 01/08/2026 › <strong>Suivant</strong> deux fois › <strong>Terminé</strong> › activez l'interrupteur <strong>Actif</strong>. Camille, née le 14 juillet 1988, y figure&nbsp;; Emma, née le 2 août, non.</p></div>
+</section>
+
+<!-- 8 -->
+<section id="conseillere">
+  <div class="sec-head"><span class="sec-num">08</span><h2>Ce que voit la conseillère</h2></div>
+  <p>Dans son espace et dans l'application, la conseillère retrouve les segments <strong>actifs</strong> dans le filtre de sa liste de clientes, avec leur nom et leur description. Le segment ne lui montre que <strong>ses propres clientes</strong>&nbsp;: Léa voit les 12 hôtesses à relancer de son carnet, pas les 240 de la marque. Elle peut aussi exporter ses clientes, avec ou sans segment.</p>
+  <div class="tip"><span class="ex-label">Conseil</span><p>Donnez aux segments un nom et une description parlants pour les conseillères («&nbsp;Hôtesses sans commande depuis 6 mois&nbsp;» plutôt que «&nbsp;Test 2&nbsp;»), et désactivez ceux qui ne servent plus.</p></div>
+</section>
+
+<!-- 9 -->
+<section id="attention">
+  <div class="sec-head"><span class="sec-num">09</span><h2>Points d'attention</h2></div>
+  <ul class="prose">
+    <li><strong>Activez le segment</strong> après sa création, sinon personne ne le voit dans les filtres.</li>
+    <li><strong>Tout est en ET</strong>&nbsp;: plus vous ajoutez de filtres, plus le segment est petit.</li>
+    <li><strong>Le piège du zéro</strong>&nbsp;: les clientes sans achat ou sans réunion échappent aux filtres de montant et de comptage (<a href="#s5-1">section 5.1</a>).</li>
+    <li><strong>Pas d'aperçu</strong>&nbsp;: contrôlez le résultat par la liste des clientes ou l'export.</li>
+    <li><strong>Un segment ne déclenche rien</strong>&nbsp;: ni réduction, ni notification, ni email.</li>
+    <li><strong>Supprimer un segment</strong> le retire des filtres de la marque et des conseillères.</li>
+  </ul>
+</section>
+
+<!-- 10 -->
+<section id="faq">
+  <div class="sec-head"><span class="sec-num">10</span><h2>Questions fréquentes</h2></div>
+  <div class="faq">
+    <details><summary>Mon segment n'apparaît pas dans le filtre de la liste des clientes.</summary><div><p>Il est inactif. Allumez l'interrupteur <strong>Actif</strong> dans Clients › Gérer les segments.</p></div></details>
+    <details><summary>Puis-je réserver une réduction aux clientes d'un segment&nbsp;?</summary><div><p>Non. Les réductions se ciblent par leurs propres conditions (rôle, historique…). Vous pouvez en revanche donner un rôle à ces clientes et conditionner la réduction à ce rôle. Voir le <a href="reductions-guide.html">guide des réductions</a>.</p></div></details>
+    <details><summary>Mon segment «&nbsp;Nb de réunions hôte égal 0&nbsp;» est vide.</summary><div><p>C'est le piège du zéro&nbsp;: les clientes qui n'ont jamais accueilli de réunion ne sont pas comptées. Utilisez plutôt «&nbsp;Rôles non égal Hôte&nbsp;».</p></div></details>
+    <details><summary>Le segment se met-il à jour tout seul&nbsp;?</summary><div><p>Oui. Il est recalculé à chaque filtre ou export&nbsp;: une cliente y entre ou en sort selon ses données du moment.</p></div></details>
+    <details><summary>Quelle différence avec Paramètres › Segmentations&nbsp;?</summary><div><p>Ce sont deux outils distincts. Segmentations n'est utilisé par aucune marque&nbsp;; les segments de clientes décrits ici sont ceux que voient les conseillères.</p></div></details>
+  </div>
+</section>
+
+  </main>
+</div>
+<div class="pager-wrap"><nav class="pager" aria-label="Pages de l'univers"><a class="prev" href="clients.html"><small>← Précédent</small><span>Les clientes</span></a><span></span></nav>
+</div>
+<footer><div class="ft"><a href="animation.html">← Animation</a><span>SellingAtHome · Les segments de clientes</span><span>Version 1.0.0 · octobre 2026</span></div></footer>
+
+<button class="to-top" id="toTop" type="button" aria-label="Remonter en haut de la page" title="Haut de page"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Capture agrandie"><img alt=""></div>
+
+<script src="assets/sah.js"></script>
+<script src="assets/search-index.js"></script>
+<script src="assets/search.js"></script>
+
+</body>
+</html>

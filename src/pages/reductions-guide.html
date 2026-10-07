@@ -1,0 +1,723 @@
+<!--page {"title":"Guide des réductions"} -->
+<style>
+.cond td:first-child { width:26%; }
+.cond td:nth-child(2) { width:17%; color:var(--muted); font-size:.88rem; }
+.cond .know { display:block; margin-top:6px; font-size:.86rem; color:var(--pink-ink); }
+.cond .know::before { content:"À savoir : "; font-weight:700; }
+.modes { display:grid; grid-template-columns:repeat(auto-fit, minmax(210px,1fr)); gap:14px; }
+.modes .card { border-top:5px solid var(--accent); }
+.modes .card:nth-child(2) { border-top-color:var(--pink); }
+.modes .card:nth-child(3) { border-top-color:var(--yellow); }
+.modes .card:nth-child(4) { border-top-color:var(--heading); }
+.fields td, .fields th { text-align:center; white-space:nowrap; padding:8px 8px; font-size:.84rem; }
+.fields td:first-child, .fields th:first-child { text-align:left; white-space:normal; min-width:170px; }
+.y { color:var(--accent-ink); font-weight:800; } .n { color:var(--muted); opacity:.55; }
+.timeline { display:flex; flex-direction:column; border-left:3px solid var(--rule); margin-left:10px; }
+.tl { position:relative; padding:0 0 18px 26px; }
+.tl::before { content:""; position:absolute; left:-9px; top:4px; width:15px; height:15px; border-radius:50%; background:var(--card); border:3px solid var(--accent); }
+.tl.stop::before { border-color:var(--pink); }
+.tl b { color:var(--heading); display:block; } .tl span { color:var(--muted); font-size:.92rem; }
+.sim .cart { display:flex; flex-wrap:wrap; gap:8px; }
+.sim .item { background:rgba(255,255,255,.08); border:1px solid rgba(241,236,248,.2); border-radius:12px; padding:8px 12px; font-size:.9rem; font-variant-numeric:tabular-nums; display:flex; align-items:center; gap:8px; }
+.sim .item.free { background:rgba(255,242,101,.16); border-color:var(--yellow); }
+.sim .item .lbl { color:var(--yellow); font-weight:700; font-size:.78rem; }
+.sim select { font:inherit; font-size:1rem; color:#2B2237; background:#fff; border:0; border-radius:10px; padding:10px 12px; width:100%; }
+</style>
+<header class="hero">
+  <div class="hero-in">
+    <div>
+      <span class="eyebrow">Guide fonctionnel</span>
+      <h1>Tout comprendre des <span class="script">réductions</span></h1>
+      <p class="lede">Les 8 types de réduction, les codes promo, les 14 conditions, l'offre promotionnelle, le cumul et toutes les options. Avec des exemples chiffrés à chaque étape.</p>
+    </div>
+    <div class="voucher-art" aria-hidden="true">
+      <div class="v-top"><span>Offre promotionnelle</span><span>Code ETE2026</span></div>
+      <div class="v-amount">−20<span> %</span></div>
+      <div class="v-name">Gamme Été</div>
+      <div class="v-sep"></div>
+      <div class="v-meta"><span>3 achetés&nbsp;: <b>le moins cher offert</b></span><span>Jusqu'au <b>30/06</b></span></div>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="toc" aria-label="Sommaire">
+    <details id="tocDetails" open>
+      <summary>Sommaire</summary>
+      <div class="toc-title">Sommaire</div>
+      <ol>
+        <li data-sec="definition"><a href="#definition"><span class="toc-n">1</span>Qu'est-ce qu'une réduction&nbsp;?</a>
+          <ol class="toc-sub"><li><a href="#s1-1"><span class="toc-n">1.1</span>Réduction, code promo, bon d'achat, points&nbsp;: quelles différences&nbsp;?</a></li><li><a href="#s1-2"><span class="toc-n">1.2</span>Les quatre façons dont une réduction arrive dans une commande</a></li></ol>
+        </li>
+        <li data-sec="ecran"><a href="#ecran"><span class="toc-n">2</span>Créer une réduction</a>
+          <ol class="toc-sub"><li><a href="#s2-1"><span class="toc-n">2.1</span>Les champs principaux</a></li></ol>
+        </li>
+        <li data-sec="types"><a href="#types"><span class="toc-n">3</span>Les 8 types</a>
+          <ol class="toc-sub"><li><a href="#s3-1"><span class="toc-n">3.1</span>Réduction sur le total de la commande</a></li><li><a href="#s3-2"><span class="toc-n">3.2</span>Réduction aux produits</a></li><li><a href="#s3-3"><span class="toc-n">3.3</span>Réduction aux catégories</a></li><li><a href="#s3-4"><span class="toc-n">3.4</span>Liste de produits</a></li><li><a href="#s3-5"><span class="toc-n">3.5</span>Nombre défini de produits (catégorie ou liste)</a></li><li><a href="#s3-6"><span class="toc-n">3.6</span>Offre promotionnelle</a></li><li><a href="#s3-7"><span class="toc-n">3.7</span>Réduction aux frais de ports</a></li><li><a href="#s3-8"><span class="toc-n">3.8</span>Quels champs pour quel type&nbsp;?</a></li></ol>
+        </li>
+        <li data-sec="valeur"><a href="#valeur"><span class="toc-n">4</span>Montant et maximum</a>
+          <ol class="toc-sub"><li><a href="#s4-1"><span class="toc-n">4.1</span>Montant ou pourcentage</a></li><li><a href="#s4-2"><span class="toc-n">4.2</span>Le montant maximum&nbsp;: attention, son effet dépend du type</a></li><li><a href="#s4-3"><span class="toc-n">4.3</span>Pourcentages successifs</a></li></ol>
+        </li>
+        <li data-sec="dates"><a href="#dates"><span class="toc-n">5</span>Dates et publication</a></li>
+        <li data-sec="acces"><a href="#acces"><span class="toc-n">6</span>Auto, manuelle, code</a></li>
+        <li data-sec="limites"><a href="#limites"><span class="toc-n">7</span>Limites d'utilisation</a></li>
+        <li data-sec="cumul"><a href="#cumul"><span class="toc-n">8</span>Le cumul</a>
+          <ol class="toc-sub"><li><a href="#s8-1"><span class="toc-n">8.1</span>Que se passe-t-il quand on ajoute une réduction&nbsp;?</a></li><li><a href="#s8-2"><span class="toc-n">8.2</span>Avec les bons d'achat</a></li></ol>
+        </li>
+        <li data-sec="conditions"><a href="#conditions"><span class="toc-n">9</span>Les 14 conditions</a>
+          <ol class="toc-sub"><li><a href="#s9-1"><span class="toc-n">9.1</span>Conditions sur le client</a></li><li><a href="#s9-2"><span class="toc-n">9.2</span>Conditions sur la commande</a></li><li><a href="#s9-3"><span class="toc-n">9.3</span>Condition sur la conseillère</a></li></ol>
+        </li>
+        <li data-sec="offre"><a href="#offre"><span class="toc-n">10</span>L'offre promotionnelle</a>
+          <ol class="toc-sub"><li><a href="#s10-1"><span class="toc-n">10.1</span>Les trois conditions de l'offre</a></li><li><a href="#s10-2"><span class="toc-n">10.2</span>La récompense</a></li><li><a href="#s10-3"><span class="toc-n">10.3</span>Combien de fois l'offre s'applique</a></li><li><a href="#s10-4"><span class="toc-n">10.4</span>ET ou OU entre les conditions de l'offre</a></li></ol>
+        </li>
+        <li data-sec="codes"><a href="#codes"><span class="toc-n">11</span>Les codes promo</a></li>
+        <li data-sec="clients"><a href="#clients"><span class="toc-n">12</span>Réserver à des clients</a></li>
+        <li data-sec="calcul"><a href="#calcul"><span class="toc-n">13</span>Calcul dans la commande</a>
+          <ol class="toc-sub"><li><a href="#s13-1"><span class="toc-n">13.1</span>L'ordre d'application</a></li><li><a href="#s13-2"><span class="toc-n">13.2</span>Frais de port</a></li><li><a href="#s13-3"><span class="toc-n">13.3</span>Commission des conseillères</a></li></ol>
+        </li>
+        <li data-sec="vie"><a href="#vie"><span class="toc-n">14</span>Recalcul et paiement</a></li>
+        <li data-sec="suivi"><a href="#suivi"><span class="toc-n">15</span>Suivi et duplication</a>
+          <ol class="toc-sub"><li><a href="#s15-1"><span class="toc-n">15.1</span>Le suivi d'utilisation</a></li><li><a href="#s15-2"><span class="toc-n">15.2</span>Dupliquer une réduction</a></li><li><a href="#s15-3"><span class="toc-n">15.3</span>Importer des produits</a></li></ol>
+        </li>
+        <li data-sec="usages"><a href="#usages"><span class="toc-n">16</span>Paramétrages fréquents</a></li>
+        <li data-sec="attention"><a href="#attention"><span class="toc-n">17</span>Points d'attention</a></li>
+        <li data-sec="faq"><a href="#faq"><span class="toc-n">18</span>Questions fréquentes</a></li>
+        <li data-sec="glossaire"><a href="#glossaire"><span class="toc-n">19</span>Glossaire</a></li>
+      </ol>
+    </details>
+  </nav>
+
+  <main>
+<style>
+.cond td:first-child { width:26%; }
+.cond td:nth-child(2) { width:17%; color:var(--muted); font-size:.88rem; }
+.cond .know { display:block; margin-top:6px; font-size:.86rem; color:var(--pink-ink); }
+.cond .know::before { content:"À savoir : "; font-weight:700; }
+.modes { display:grid; grid-template-columns:repeat(auto-fit, minmax(210px,1fr)); gap:14px; }
+.modes .card { border-top:5px solid var(--accent); }
+.modes .card:nth-child(2) { border-top-color:var(--pink); }
+.modes .card:nth-child(3) { border-top-color:var(--yellow); }
+.modes .card:nth-child(4) { border-top-color:var(--heading); }
+.fields td, .fields th { text-align:center; white-space:nowrap; padding:8px 8px; font-size:.84rem; }
+.fields td:first-child, .fields th:first-child { text-align:left; white-space:normal; min-width:170px; }
+.y { color:var(--accent-ink); font-weight:800; } .n { color:var(--muted); opacity:.55; }
+.timeline { display:flex; flex-direction:column; border-left:3px solid var(--rule); margin-left:10px; }
+.tl { position:relative; padding:0 0 18px 26px; }
+.tl::before { content:""; position:absolute; left:-9px; top:4px; width:15px; height:15px; border-radius:50%; background:var(--card); border:3px solid var(--accent); }
+.tl.stop::before { border-color:var(--pink); }
+.tl b { color:var(--heading); display:block; } .tl span { color:var(--muted); font-size:.92rem; }
+.sim .cart { display:flex; flex-wrap:wrap; gap:8px; }
+.sim .item { background:rgba(255,255,255,.08); border:1px solid rgba(241,236,248,.2); border-radius:12px; padding:8px 12px; font-size:.9rem; font-variant-numeric:tabular-nums; display:flex; align-items:center; gap:8px; }
+.sim .item.free { background:rgba(255,242,101,.16); border-color:var(--yellow); }
+.sim .item .lbl { color:var(--yellow); font-weight:700; font-size:.78rem; }
+.sim select { font:inherit; font-size:1rem; color:#2B2237; background:#fff; border:0; border-radius:10px; padding:10px 12px; width:100%; }
+</style>
+
+<!-- 1 -->
+<section id="definition">
+  <div class="sec-head"><span class="sec-num">01</span><h2>Qu'est-ce qu'une réduction&nbsp;?</h2></div>
+  <p class="lede">Une réduction diminue le prix d'une commande&nbsp;: un <strong>pourcentage</strong> ou un <strong>montant</strong>, sur toute la commande, sur certains produits ou sur les frais de port. Elle peut s'appliquer toute seule, être choisie par la conseillère, ou être déclenchée par un <strong>code promo</strong>.</p>
+  <div class="example"><span class="ex-label">Exemple</span><p>«&nbsp;−20&nbsp;% sur les produits de la gamme Été, du 1er au 30 juin, pour toutes les commandes en réunion&nbsp;». Une cliente commande deux produits de la gamme à 25&nbsp;€&nbsp;: elle paie <strong>40&nbsp;€</strong> au lieu de 50&nbsp;€.</p></div>
+  <div class="tip"><span class="ex-label">Vocabulaire</span><p>L'interface de l'espace marque dit «&nbsp;vendeur&nbsp;» là où cette documentation dit «&nbsp;conseillère&nbsp;». Les libellés de l'écran (conditions «&nbsp;Client (Vendeur)&nbsp;», «&nbsp;Chiffre d'affaires vendeur depuis la création&nbsp;», limite «&nbsp;N fois par vendeur&nbsp;»…) sont cités tels quels.</p></div>
+  <h3 id="s1-1"><span class="sub-num">1.1</span> Réduction, code promo, bon d'achat, points&nbsp;: quelles différences&nbsp;?</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Outil</th><th>Principe</th><th>Pour qui&nbsp;?</th></tr></thead>
+    <tbody>
+      <tr><td><b>Réduction</b></td><td>Une remise définie par la marque, avec des règles (dates, conditions, limites).</td><td>Tous ceux qui remplissent les conditions</td></tr>
+      <tr><td><b>Code promo</b></td><td>Une réduction qui ne se déclenche qu'avec un <strong>code</strong> saisi sur la commande. C'est une option de la réduction.</td><td>Ceux qui connaissent le code</td></tr>
+      <tr><td><b>Bon d'achat</b></td><td>Un montant nominatif, offert à une personne. Voir le <a href="bons-achat-guide.html"><em>Guide des bons d'achat</em></a>.</td><td>Une personne précise</td></tr>
+      <tr><td><b>Points de fidélité</b></td><td>Un solde accumulé, converti en euros. Voir le <a href="fidelite-guide.html"><em>Guide de la fidélité</em></a>.</td><td>Les bénéficiaires du programme</td></tr>
+    </tbody>
+  </table></div>
+  <h3 id="s1-2"><span class="sub-num">1.2</span> Les quatre façons dont une réduction arrive dans une commande</h3>
+  <div class="modes">
+    <div class="card"><span class="tag">Automatique</span><p>Elle s'applique <strong>toute seule</strong> dès que la commande remplit les conditions. Rien à faire.</p></div>
+    <div class="card"><span class="tag pink">Manuelle</span><p>Elle apparaît dans la liste des <strong>réductions disponibles</strong> de la commande. La conseillère choisit de l'appliquer.</p></div>
+    <div class="card"><span class="tag yellow">Code promo</span><p>Elle ne s'applique que si l'on <strong>saisit un code</strong> sur la commande.</p></div>
+    <div class="card"><span class="tag">Réservée à des clients</span><p>Seuls les <strong>clients choisis</strong> y ont droit. Elle figure dans leurs codes promo disponibles.</p></div>
+  </div>
+</section>
+
+<!-- 2 -->
+<section id="ecran">
+  <div class="sec-head"><span class="sec-num">02</span><h2>Créer une réduction</h2></div>
+  <div class="path" aria-label="Chemin d'accès dans l'espace marque"><span>Espace marque</span><span>Réductions</span><span>Créer une réduction</span></div>
+  <p>La création se fait en <strong>deux temps</strong>&nbsp;:</p>
+  <ol class="prose">
+    <li><strong>Création</strong>&nbsp;: nom, type, montant, dates, limites et options. Cliquez sur <strong>«&nbsp;Créer la réduction&nbsp;»</strong>.</li>
+    <li><strong>Édition</strong> (ouverte automatiquement)&nbsp;: les blocs qui dépendent du type apparaissent. Produits ou catégories, <strong>conditions</strong>, clients autorisés, codes promo. Cliquez sur <strong>Enregistrer</strong>.</li>
+  </ol>
+  <div class="tip"><span class="ex-label">Bon à savoir</span><p>Les <strong>conditions</strong> ne peuvent être ajoutées qu'en <strong>édition</strong>, après la création. Pensez à laisser la case <strong>Publier</strong> décochée tant que la réduction n'est pas complète&nbsp;: une réduction publiée et automatique s'applique immédiatement.</p></div>
+  <div class="grid-2" style="align-items:start">
+    <figure><img src="Captures/R%C3%A9ductions/Creation-reduction-1.png" alt="Formulaire de création d'une réduction, partie haute : nom, référence, type de réduction, pourcentage, montant, livraison offerte, dates, conditions d'utilisation et premières options" loading="lazy"><figcaption>Création&nbsp;: informations principales.</figcaption></figure>
+    <figure><img src="Captures/R%C3%A9ductions/Creation-reduction-2.png" alt="Formulaire de création d'une réduction, partie basse : options de cumul, restrictions, frais d'expédition, masquage, publication et bouton Créer la réduction" loading="lazy"><figcaption>Création&nbsp;: options et publication.</figcaption></figure>
+  </div>
+  <figure><img src="Captures/R%C3%A9ductions/edition-reduction.png" alt="Écran d'édition de la réduction BON PLAN PAYANT : réduction aux produits de 50 pour cent, liste de 2 produits, conditions Montant TTC dépensé par le client égal à 120 et Rôle client dans Seller" loading="lazy"><figcaption>L'écran d'édition&nbsp;: informations à gauche, produits et conditions à droite.</figcaption></figure>
+
+  <h3 id="s2-1"><span class="sub-num">2.1</span> Les champs principaux</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Champ</th><th>Rôle</th></tr></thead>
+    <tbody>
+      <tr><td><b>Nom</b></td><td>Affiché aux conseillères et aux clients (liste des réductions disponibles, détail de la commande).</td></tr>
+      <tr><td><b>Référence</b></td><td>Code interne libre (15 caractères maximum). Purement informatif&nbsp;: ce n'est <strong>pas</strong> un code promo.</td></tr>
+      <tr><td><b>Type de réduction</b></td><td>Ce qui est remisé et comment. Voir <a href="#types">section 3</a>.</td></tr>
+      <tr><td><b>Pourcentage&nbsp;?</b></td><td>Cochée&nbsp;: la réduction est un pourcentage. Décochée&nbsp;: un montant fixe.</td></tr>
+      <tr><td><b>Montant / Pourcentage de réduction</b></td><td>La valeur de la remise.</td></tr>
+      <tr><td><b>Montant maximum de la réduction</b></td><td>Voir <a href="#valeur">section 4</a>&nbsp;: son effet dépend du type.</td></tr>
+      <tr><td><b>Livraison offerte</b></td><td>Les frais de port sont offerts quand la réduction est appliquée.</td></tr>
+      <tr><td><b>Date de début / Date de fin</b></td><td>Période de validité, avec l'heure. Voir <a href="#dates">section 5</a>.</td></tr>
+      <tr><td><b>Publier</b></td><td>Active la réduction. Non publiée, elle ne s'applique nulle part. C'est la colonne «&nbsp;Actif&nbsp;» de la liste.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- 3 -->
+<section id="types">
+  <div class="sec-head"><span class="sec-num">03</span><h2>Les 8 types de réduction</h2></div>
+  <p class="lede">Le type définit <strong>ce qui est remisé</strong>. Tous les calculs se font en TTC, ou en HT si la marque affiche ses prix hors taxes.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Type</th><th>Ce qui est remisé</th><th>Exemple</th></tr></thead>
+    <tbody>
+      <tr><td><b>Réduction sur le total de la commande</b></td><td>Tous les produits de la commande</td><td>−10&nbsp;% sur toute la commande</td></tr>
+      <tr><td><b>Réduction aux produits</b></td><td>Les produits d'une liste</td><td>−5&nbsp;€ sur le parfum X</td></tr>
+      <tr><td><b>Réduction aux catégories</b></td><td>Les produits de certaines catégories</td><td>−20&nbsp;% sur la gamme Été</td></tr>
+      <tr><td><b>Liste de produits</b></td><td>Chaque produit de la liste, avec sa propre remise</td><td>−3&nbsp;€ sur A, −8&nbsp;€ sur B, −15&nbsp;% sur C</td></tr>
+      <tr><td><b>Nombre défini de produits d'une catégorie</b></td><td>Un nombre limité d'articles, choisis dans une catégorie</td><td>−50&nbsp;% sur 2 articles au choix de la gamme Été</td></tr>
+      <tr><td><b>Nombre défini de produits dans une liste</b></td><td>Un nombre limité d'articles, choisis dans une liste</td><td>1 article au choix offert parmi 5 produits</td></tr>
+      <tr><td><b>Offre promotionnelle</b></td><td>Une récompense déclenchée par le contenu du panier</td><td>3 achetés, le moins cher offert</td></tr>
+      <tr><td><b>Réduction aux frais de ports</b></td><td>Les frais de livraison</td><td>−50&nbsp;% sur le port</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 id="s3-1"><span class="sub-num">3.1</span> Réduction sur le total de la commande</h3>
+  <p>La remise porte sur l'ensemble des produits (jamais sur les frais de port).</p>
+  <ul class="prose">
+    <li><strong>En pourcentage</strong>&nbsp;: chaque produit est remisé du pourcentage.</li>
+    <li><strong>En montant</strong>&nbsp;: le montant est réparti entre les produits au prorata de leur prix.</li>
+  </ul>
+  <div class="example"><span class="ex-label">Exemple&nbsp;: 20&nbsp;€ sur le total</span><p>Commande&nbsp;: produit A à 60&nbsp;€ + produit B à 40&nbsp;€. A reçoit 12&nbsp;€ de remise, B reçoit 8&nbsp;€. Total&nbsp;: <strong>80&nbsp;€</strong>.</p></div>
+
+  <h3 id="s3-2"><span class="sub-num">3.2</span> Réduction aux produits</h3>
+  <p>La remise ne porte que sur les produits de la liste (bloc <strong>Réduction aux produits</strong> en édition). Vous pouvez cibler un produit entier ou une déclinaison précise, et fixer une <strong>quantité minimale</strong> par produit.</p>
+  <ul class="prose">
+    <li><strong>En pourcentage</strong>&nbsp;: chaque article éligible est remisé du pourcentage.</li>
+    <li><strong>En montant</strong>&nbsp;: chaque article éligible est remisé du montant, sans descendre sous&nbsp;0.</li>
+    <li><strong>Nombre maximum de produits remisés</strong>&nbsp;: limite le nombre d'articles remisés <strong>par ligne</strong> (0 = tous). Les articles les plus chers sont remisés en premier.</li>
+    <li><strong>Appliquer sur un seul produit</strong>&nbsp;: la remise ne s'applique qu'à une seule ligne, la moins chère ou la plus chère.</li>
+  </ul>
+  <div class="example"><span class="ex-label">Exemple</span><p>Produit à 50&nbsp;€, 3 exemplaires dans le panier. −20&nbsp;% avec «&nbsp;Nombre maximum de produits remisés&nbsp;» = 2&nbsp;: 2 × 10&nbsp;€ = <strong>20&nbsp;€ de remise</strong>. En montant de 5&nbsp;€ sans maximum&nbsp;: 3 × 5&nbsp;€ = <strong>15&nbsp;€</strong>.</p></div>
+  <p>Les produits s'ajoutent un par un, ou par import d'un fichier (une colonne de références produits, ou de SKU de déclinaisons). Voir <a href="#suivi">section 15</a>.</p>
+
+  <h3 id="s3-3"><span class="sub-num">3.3</span> Réduction aux catégories</h3>
+  <p>Même fonctionnement que la réduction aux produits, pour tous les produits des catégories cochées. Avec <strong>«&nbsp;Appliquer aux sous-catégories&nbsp;»</strong>, les produits des sous-catégories sont aussi concernés. Un produit présent dans plusieurs catégories n'est remisé qu'une fois.</p>
+
+  <h3 id="s3-4"><span class="sub-num">3.4</span> Liste de produits</h3>
+  <p>Chaque produit de la liste a <strong>sa propre remise</strong>, saisie dans la colonne «&nbsp;montant de la réduction&nbsp;»&nbsp;: un pourcentage si «&nbsp;Pourcentage&nbsp;?&nbsp;» est coché, un montant sinon. Le montant global n'est pas utilisé. Idéal pour une opération «&nbsp;prix barrés&nbsp;» sur une sélection.</p>
+
+  <h3 id="s3-5"><span class="sub-num">3.5</span> Nombre défini de produits (catégorie ou liste)</h3>
+  <p>Ces deux types offrent une remise sur un <strong>nombre limité d'articles</strong>, que la conseillère <strong>choisit</strong> dans la commande au moment d'appliquer la réduction.</p>
+  <ul class="prose">
+    <li>Ils sont <strong>toujours manuels</strong>&nbsp;: ils apparaissent dans les réductions disponibles, jamais automatiquement.</li>
+    <li>Le nombre d'articles est fixé par <strong>«&nbsp;Nombre maximum de produits remisés&nbsp;»</strong>. Avec 0, la réduction ne peut pas s'appliquer.</li>
+  </ul>
+  <div class="example"><span class="ex-label">Exemple</span><p>«&nbsp;2 articles au choix de la gamme Été à −50&nbsp;%&nbsp;». La cliente achète 4 articles de la gamme&nbsp;: la conseillère choisit les 2 articles remisés.</p></div>
+
+  <h3 id="s3-6"><span class="sub-num">3.6</span> Offre promotionnelle</h3>
+  <p>Le type le plus riche&nbsp;: la remise se déclenche selon le <strong>contenu du panier</strong> («&nbsp;3 achetés…&nbsp;») et peut se répéter. Il est détaillé en <a href="#offre">section 10</a>.</p>
+
+  <h3 id="s3-7"><span class="sub-num">3.7</span> Réduction aux frais de ports</h3>
+  <p>La remise porte sur les frais de livraison&nbsp;: un pourcentage du port (avec un vrai plafond au montant maximum), ou un montant (sans dépasser le port). Pour offrir totalement le port, la case <strong>Livraison offerte</strong> des autres types est plus simple.</p>
+
+  <h3 id="s3-8"><span class="sub-num">3.8</span> Quels champs pour quel type&nbsp;?</h3>
+  <div class="table-wrap"><table class="fields">
+    <thead><tr><th>Type</th><th>Pourcentage</th><th>Montant max</th><th>Livraison offerte</th><th>Nb max remisés</th><th>Un seul produit</th><th>Manuelle</th><th>Codes / clients</th></tr></thead>
+    <tbody>
+      <tr><td>Total de la commande</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="n">—</td><td class="n">—</td><td class="y">✓</td><td class="y">✓</td></tr>
+      <tr><td>Aux produits</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
+      <tr><td>Aux catégories</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="n">—</td><td class="y">✓</td><td class="y">✓</td></tr>
+      <tr><td>Liste de produits</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
+      <tr><td>Nb défini d'une catégorie</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="n">—</td><td>toujours</td><td class="y">✓</td></tr>
+      <tr><td>Nb défini dans une liste</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td>toujours</td><td class="y">✓</td></tr>
+      <tr><td>Offre promotionnelle</td><td class="n">—</td><td class="n">—</td><td class="n">—</td><td class="y">✓</td><td class="n">—</td><td>jamais</td><td class="n">—</td></tr>
+      <tr><td>Frais de ports</td><td class="y">✓</td><td class="y">✓</td><td class="n">—</td><td class="n">—</td><td class="n">—</td><td class="y">✓</td><td class="y">✓</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- 4 -->
+<section id="valeur">
+  <div class="sec-head"><span class="sec-num">04</span><h2>Montant, pourcentage et montant maximum</h2></div>
+  <h3 id="s4-1"><span class="sub-num">4.1</span> Montant ou pourcentage</h3>
+  <p>Cochez <strong>«&nbsp;Pourcentage&nbsp;?&nbsp;»</strong> pour une remise en %. Sinon, la remise est un montant, exprimé dans la devise de la marque, en TTC (ou en HT si la marque affiche ses prix hors taxes).</p>
+  <h3 id="s4-2"><span class="sub-num">4.2</span> Le montant maximum&nbsp;: attention, son effet dépend du type</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Type</th><th>Effet du montant maximum</th></tr></thead>
+    <tbody>
+      <tr><td><b>Total de la commande</b> en %</td><td><span class="hl-pink">Seuil d'exclusion</span>&nbsp;: si 10&nbsp;% de la commande dépasse le maximum, la réduction est <strong>retirée</strong>, pas plafonnée.</td></tr>
+      <tr><td><b>Aux produits, aux catégories, liste de produits</b> en %</td><td>Plafond <strong>par ligne</strong> de commande.</td></tr>
+      <tr><td><b>Nombre défini de produits</b> en %</td><td>Si le maximum est dépassé, l'ajout de la réduction est refusé.</td></tr>
+      <tr><td><b>Frais de ports</b></td><td>Vrai plafond de la remise sur le port.</td></tr>
+      <tr><td>Remise en <b>montant</b></td><td>Sans effet.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="warn"><span class="ex-label">Exemple du piège</span><p>«&nbsp;−10&nbsp;% sur le total, montant maximum 50&nbsp;€&nbsp;». Commande de 300&nbsp;€&nbsp;: remise de 30&nbsp;€. Commande de 1&nbsp;000&nbsp;€&nbsp;: 10&nbsp;% = 100&nbsp;€ &gt; 50&nbsp;€, la réduction est <strong>retirée</strong> de la commande. Le client ne reçoit pas 50&nbsp;€, il ne reçoit rien.</p></div>
+  <h3 id="s4-3"><span class="sub-num">4.3</span> Pourcentages successifs</h3>
+  <p>Quand plusieurs réductions en pourcentage s'appliquent, chacune porte sur le prix <strong>déjà remisé</strong> par les précédentes&nbsp;: −10&nbsp;% puis −10&nbsp;% donnent −19&nbsp;%, pas −20&nbsp;%.</p>
+</section>
+
+<!-- 5 -->
+<section id="dates">
+  <div class="sec-head"><span class="sec-num">05</span><h2>Dates et publication</h2></div>
+  <ul class="prose">
+    <li>Les dates se saisissent avec l'heure, dans votre fuseau horaire.</li>
+    <li><strong>Sans dates</strong>&nbsp;: la réduction est valable en permanence (tant qu'elle est publiée).</li>
+    <li><strong>Avec les deux dates</strong>&nbsp;: elle n'est valable qu'entre ces deux moments.</li>
+  </ul>
+  <div class="warn"><span class="ex-label">Une seule date = piège</span><p>Avec seulement une date de début, ou seulement une date de fin, la réduction n'est <strong>jamais appliquée automatiquement</strong> ni proposée dans les réductions disponibles. Elle ne fonctionne qu'avec un code promo. Renseignez les deux dates, ou aucune.</p></div>
+  <p>La colonne <strong>Actif</strong> de la liste reflète uniquement la case <strong>Publier</strong>, pas les dates&nbsp;: une réduction expirée reste «&nbsp;active&nbsp;» dans la liste.</p>
+</section>
+
+<!-- 6 -->
+<section id="acces">
+  <div class="sec-head"><span class="sec-num">06</span><h2>Automatique, manuelle, code promo ou réservée</h2></div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Réglage</th><th>Comportement</th></tr></thead>
+    <tbody>
+      <tr><td><b>«&nbsp;Application manuelle&nbsp;» décochée</b></td><td>Réduction <strong>automatique</strong>&nbsp;: elle s'ajoute seule à toute commande qui remplit les conditions, et se retire seule quand ce n'est plus le cas.</td></tr>
+      <tr><td><b>«&nbsp;Application manuelle&nbsp;» cochée</b></td><td>Elle apparaît dans les <strong>réductions disponibles</strong> de la commande (si les conditions sont remplies). La conseillère ou l'administrateur l'applique.</td></tr>
+      <tr><td><b>«&nbsp;Restreindre à des codes promotionnels&nbsp;»</b></td><td>Elle ne s'applique <strong>que par la saisie d'un code</strong>. Elle n'apparaît jamais dans les listes. Elle est forcément manuelle.</td></tr>
+      <tr><td><b>«&nbsp;Restreindre à des clients&nbsp;»</b></td><td>Seuls les clients de la liste y ont droit (voir <a href="#clients">section 12</a>).</td></tr>
+      <tr><td><b>«&nbsp;Masquer dans les codes promo disponibles du client&nbsp;»</b></td><td>Le client ne la voit pas dans <strong>ses</strong> codes promo disponibles (fiche client, application). La conseillère la voit toujours dans les réductions disponibles de la commande.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="tip"><span class="ex-label">Bon à savoir</span><p>L'<strong>offre promotionnelle</strong> est toujours automatique (sauf si elle est restreinte à des codes). Les types <strong>Nombre défini de produits</strong> sont toujours manuels.</p></div>
+</section>
+
+<!-- 7 -->
+<section id="limites">
+  <div class="sec-head"><span class="sec-num">07</span><h2>Les conditions d'utilisation (limites)</h2></div>
+  <p>Le champ <strong>«&nbsp;Conditions d'utilisation de la réduction&nbsp;»</strong> limite le nombre d'utilisations. Une utilisation = une <strong>commande payée</strong> (non supprimée) qui porte la réduction.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Choix</th><th>Effet</th><th>Exemple</th></tr></thead>
+    <tbody>
+      <tr><td><b>Illimités</b></td><td>Aucune limite</td><td>Promotion permanente</td></tr>
+      <tr><td><b>N fois seulement</b></td><td>N commandes au total, tous clients confondus</td><td>«&nbsp;Les 100 premières commandes&nbsp;»</td></tr>
+      <tr><td><b>N fois par client</b></td><td>N commandes par client</td><td>«&nbsp;Une fois par cliente&nbsp;»</td></tr>
+      <tr><td><b>N fois par vendeur</b></td><td>N commandes par conseillère</td><td>«&nbsp;5 commandes par conseillère&nbsp;»</td></tr>
+    </tbody>
+  </table></div>
+  <p>Le champ <strong>Nombre de fois</strong> apparaît pour les trois derniers choix.</p>
+  <ul class="prose">
+    <li>Une commande payée puis annulée reste comptée&nbsp;: le compteur ne redescend jamais.</li>
+    <li>Pour une réduction réservée à des clients, chaque client a en plus son propre quota (voir <a href="#clients">section 12</a>).</li>
+  </ul>
+</section>
+
+<!-- 8 -->
+<section id="cumul">
+  <div class="sec-head"><span class="sec-num">08</span><h2>Le cumul</h2></div>
+  <p class="lede">Trois cases règlent ce qui peut se combiner avec la réduction.</p>
+  <div class="grid-3">
+    <div class="card"><span class="tag">Cumulable avec d'autres réductions</span><p>Elle peut coexister avec d'autres réductions sur la même commande.</p></div>
+    <div class="card"><span class="tag pink">Cumulable avec les points de FID</span><p>Elle reste valable si le client paie une partie en points de fidélité. Décochée&nbsp;: dès que des points sont utilisés, la réduction est retirée.</p></div>
+    <div class="card"><span class="tag yellow">Cumulable sur elle-même</span><p>La même réduction peut être appliquée plusieurs fois sur une commande. Exemple&nbsp;: un client qui possède trois exemplaires d'une réduction qui lui est réservée peut les utiliser ensemble.</p></div>
+  </div>
+  <h3 id="s8-1"><span class="sub-num">8.1</span> Que se passe-t-il quand on ajoute une réduction&nbsp;?</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Déjà dans la commande</th><th>Nouvelle réduction cumulable</th><th>Nouvelle réduction non cumulable</th></tr></thead>
+    <tbody>
+      <tr><td><b>Des réductions cumulables</b></td><td>Elle s'ajoute</td><td><span class="hl-pink">Elle remplace toutes les autres</span></td></tr>
+      <tr><td><b>Une réduction non cumulable</b></td><td><span class="hl-pink">Elle remplace l'existante</span></td><td><span class="hl-pink">Elle remplace l'existante</span></td></tr>
+    </tbody>
+  </table></div>
+  <p>En clair&nbsp;: <strong>une réduction non cumulable ne cohabite avec aucune autre</strong>, et c'est la dernière ajoutée qui l'emporte.</p>
+  <div class="warn"><span class="ex-label">Attention aux réductions automatiques</span><p>Si une conseillère ajoute une réduction manuelle non cumulable, elle retire la réduction automatique… qui se ré-applique toute seule à l'enregistrement suivant et peut à son tour évincer la réduction manuelle. Pour qu'une réduction manuelle et une automatique coexistent, cochez «&nbsp;Cumulable avec d'autres réductions&nbsp;» sur <strong>les deux</strong>.</p></div>
+  <h3 id="s8-2"><span class="sub-num">8.2</span> Avec les bons d'achat</h3>
+  <p>Les bons d'achat s'appliquent <strong>après</strong> les réductions. Une option du paramétrage des bons d'achat («&nbsp;Désactiver l'utilisation des codes promo en cas d'utilisation de bon d'achat&nbsp;») retire les réductions quand un bon est ajouté. Voir le <a href="bons-achat-guide.html"><em>Guide des bons d'achat</em></a>.</p>
+</section>
+
+<!-- 9 -->
+<section id="conditions">
+  <div class="sec-head"><span class="sec-num">09</span><h2>Les 14 conditions</h2></div>
+  <p class="lede">Le bloc <strong>Conditions</strong> (en édition) restreint la réduction aux commandes qui remplissent <strong>toutes</strong> les conditions (ET). Il est disponible pour tous les types. Pour un «&nbsp;OU&nbsp;», créez deux réductions.</p>
+  <p>Les conditions sont <strong>réévaluées à chaque modification</strong> de la commande&nbsp;: si elles ne sont plus remplies, la réduction est retirée automatiquement.</p>
+
+  <h3 id="s9-1"><span class="sub-num">9.1</span> Conditions sur le client</h3>
+  <div class="table-wrap"><table class="cond">
+    <thead><tr><th>Condition</th><th>Saisie</th><th>Ce qu'elle vérifie</th></tr></thead>
+    <tbody>
+      <tr><td><b>Rôle client</b></td><td>Liste de rôles</td><td>Les rôles du client. «&nbsp;égal&nbsp;»&nbsp;: exactement ces rôles. «&nbsp;est dans&nbsp;»&nbsp;: au moins un de ses rôles. «&nbsp;n'est pas dans&nbsp;»&nbsp;: aucun (un client sans rôle est accepté). C'est la condition la plus utilisée.</td></tr>
+      <tr><td><b>Montant TTC dépensé par le client</b></td><td>Montant</td><td>Le <strong>cumul</strong> de toutes les commandes payées du client depuis la création de son compte (net des remises, points et e-wallet, hors port).<span class="know">la commande en cours n'est pas comptée. Les commandes payées puis annulées le sont.</span></td></tr>
+      <tr><td><b>Montant TTC dépensé par le client dans son panier actuel</b></td><td>Montant</td><td>Le montant de la commande en cours, <strong>sans la réduction elle-même</strong> mais avec les autres. Sert aux seuils «&nbsp;dès 50&nbsp;€ d'achat&nbsp;».<span class="know">toujours en TTC, frais de port non compris.</span></td></tr>
+      <tr><td><b>Date d'anniversaire</b></td><td>Date</td><td>Le jour et le mois de naissance du client (l'année est ignorée). «&nbsp;= 15/06&nbsp;» cible les clients nés un 15 juin.<span class="know">la comparaison ne tient pas compte de la date du jour&nbsp;: pour une offre «&nbsp;mois d'anniversaire&nbsp;», il faut une réduction par mois, avec les dates de validité adaptées. Sans date de naissance, la condition est fausse.</span></td></tr>
+      <tr><td><b>Pays du client</b></td><td>Liste de pays</td><td>Le pays d'une adresse du client.<span class="know">si le client a plusieurs adresses, celle qui est retenue n'est pas forcément son adresse principale. Un client sans adresse peut bloquer l'enregistrement de la commande.</span></td></tr>
+      <tr><td><b>Date de première commande</b></td><td>Date</td><td>La date de la première commande payée du client. «&nbsp;entre&nbsp;» cible une ancienneté.<span class="know">sans première commande, la condition est fausse.</span></td></tr>
+      <tr><td><b>Si nouveau</b></td><td>Clients / Client (Vendeur)</td><td>Le client n'a <strong>jamais</strong> eu de commande payée. «&nbsp;Clients&nbsp;»&nbsp;: hors compte client de la conseillère de la commande. «&nbsp;Client (Vendeur)&nbsp;»&nbsp;: le compte client de cette conseillère. Les deux, ou aucun choix&nbsp;: tout nouveau client.</td></tr>
+      <tr><td><b>Nouveau client pour le catalogue</b></td><td>Catalogue + Oui / Non</td><td>«&nbsp;Oui&nbsp;»&nbsp;: le client n'a aucune commande dans ce catalogue. «&nbsp;Non&nbsp;»&nbsp;: il en a au moins une. Visible seulement pour les marques multi-catalogues.<span class="know">un simple panier non payé dans ce catalogue suffit à rendre le client «&nbsp;non nouveau&nbsp;».</span></td></tr>
+      <tr><td><b>Nouveau parrainage avec première commande</b></td><td>Nombre + période</td><td>Le nombre de filleuls du client dont la première commande tombe dans la période.<span class="know">les deux dates de la période sont exclues. Sans dates, le compteur vaut toujours 0.</span></td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 id="s9-2"><span class="sub-num">9.2</span> Conditions sur la commande</h3>
+  <div class="table-wrap"><table class="cond">
+    <thead><tr><th>Condition</th><th>Saisie</th><th>Ce qu'elle vérifie</th></tr></thead>
+    <tbody>
+      <tr><td><b>Produits dans le panier</b></td><td>Produits + quantité minimale</td><td>La présence de produits (ou de déclinaisons précises) avec une quantité minimale. «&nbsp;est dans&nbsp;»&nbsp;: <strong>tous</strong> les produits listés. «&nbsp;contient&nbsp;»&nbsp;: <strong>au moins un</strong>. «&nbsp;n'est pas dans&nbsp;»&nbsp;: au moins un manque. «&nbsp;ne contient pas&nbsp;»&nbsp;: aucun n'est présent.<span class="know">n'utilisez pas «&nbsp;égal&nbsp;» ni «&nbsp;différent&nbsp;»&nbsp;: ils ne fonctionnent pas correctement. Les cadeaux sont comptés.</span></td></tr>
+      <tr><td><b>Type de commande</b></td><td>Liste</td><td>Le canal&nbsp;: vente en réunion, vente directe, vente web, mini-site, boutique… Une vente placée dans une commande groupée prend le type «&nbsp;… en commande groupée&nbsp;»&nbsp;: pensez à le sélectionner.</td></tr>
+      <tr><td><b>Catalogue</b></td><td>Liste de catalogues</td><td>Le catalogue de la commande.<span class="know">une commande sans catalogue ne remplit jamais la condition, même avec «&nbsp;n'est pas dans&nbsp;».</span></td></tr>
+      <tr><td><b>Pays de livraison</b></td><td>Liste de pays</td><td>Le pays de la commande.<span class="know">malgré son libellé, c'est par défaut le pays de la <strong>conseillère</strong> (ou de la marque). Il ne devient le pays de livraison que si la marque est configurée pour appliquer la TVA du pays de livraison.</span></td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 id="s9-3"><span class="sub-num">9.3</span> Condition sur la conseillère</h3>
+  <div class="table-wrap"><table class="cond">
+    <thead><tr><th>Condition</th><th>Saisie</th><th>Ce qu'elle vérifie</th></tr></thead>
+    <tbody>
+      <tr><td><b>Chiffre d'affaires vendeur depuis la création</b></td><td>Montant</td><td>Le CA total (TTC, commandes payées non annulées, hors port) de la conseillère de la commande depuis son inscription. Exemple&nbsp;: réserver une réduction aux conseillères qui ont dépassé un palier.<span class="know">une commande sans conseillère compte pour 0.</span></td></tr>
+    </tbody>
+  </table></div>
+  <p class="muted">Trois autres conditions (Quantité, Produit, Quantité ou produit) sont propres à l'offre promotionnelle&nbsp;: voir <a href="#offre">section 10</a>.</p>
+</section>
+
+<!-- 10 -->
+<section id="offre">
+  <div class="sec-head"><span class="sec-num">10</span><h2>L'offre promotionnelle en détail</h2></div>
+  <p class="lede">L'offre promotionnelle récompense le <strong>contenu du panier</strong>&nbsp;: «&nbsp;3 produits achetés, le moins cher offert&nbsp;», «&nbsp;2 achetés = −20&nbsp;% sur chacun&nbsp;»… Elle se compose de trois blocs.</p>
+  <div class="grid-3">
+    <div class="card"><span class="tag">1. Produits de l'offre</span><p>Les produits et/ou <strong>catégories de l'offre</strong> (avec ou sans sous-catégories). Ce sont les <strong>produits éligibles</strong>&nbsp;: seuls eux sont comptés et remisés. Les cadeaux ne comptent jamais.</p></div>
+    <div class="card"><span class="tag pink">2. Conditions de l'offre</span><p>Ce que le panier doit contenir, en produits éligibles. Combinables en <strong>ET</strong> ou en <strong>OU</strong>. Chaque condition porte sa <strong>récompense</strong>.</p></div>
+    <div class="card"><span class="tag yellow">3. Conditions</span><p>Le bloc général (<a href="#conditions">section 9</a>)&nbsp;: qui a droit à l'offre, sur quel type de commande…</p></div>
+  </div>
+
+  <h3 id="s10-1"><span class="sub-num">10.1</span> Les trois conditions de l'offre</h3>
+  <div class="table-wrap"><table class="cond">
+    <thead><tr><th>Condition</th><th>Saisie</th><th>Ce qu'elle compte</th></tr></thead>
+    <tbody>
+      <tr><td><b>Quantité</b></td><td>Nombre</td><td>Le nombre total d'articles éligibles. 3 exemplaires d'un même produit comptent pour 3.</td></tr>
+      <tr><td><b>Produit</b></td><td>Nombre</td><td>Le nombre de <strong>lignes</strong> éligibles dans le panier.<span class="know">deux déclinaisons d'un même produit forment deux lignes et comptent pour 2.</span></td></tr>
+      <tr><td><b>Quantité ou produit</b></td><td>Nombre</td><td>Prévue pour «&nbsp;quantité ou nombre de produits&nbsp;».<span class="know">elle se comporte en pratique comme «&nbsp;Quantité&nbsp;».</span></td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 id="s10-2"><span class="sub-num">10.2</span> La récompense</h3>
+  <p>Chaque condition de l'offre a une récompense&nbsp;: une valeur, une unité (<strong>%</strong> ou <strong>montant</strong>) et une application&nbsp;:</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Application</th><th>Ce qui est remisé</th></tr></thead>
+    <tbody>
+      <tr><td><b>Sur le produit le moins cher</b></td><td>Les articles éligibles les moins chers, autant de fois que l'offre est atteinte</td></tr>
+      <tr><td><b>Sur le produit le plus cher</b></td><td>Les articles éligibles les plus chers, autant de fois que l'offre est atteinte</td></tr>
+      <tr><td><b>Sur chaque quantité</b></td><td>Tous les articles éligibles</td></tr>
+      <tr><td><b>Sur chaque produit</b></td><td><strong>Un seul article par ligne</strong> éligible (pas chaque exemplaire)</td></tr>
+      <tr><td><b>Sur le total de la commande</b></td><td>Toute la commande, y compris les produits hors offre</td></tr>
+    </tbody>
+  </table></div>
+  <p>Pour offrir un article, choisissez <strong>100&nbsp;%</strong> sur le moins cher (ou le plus cher).</p>
+
+  <h3 id="s10-3"><span class="sub-num">10.3</span> Combien de fois l'offre s'applique</h3>
+  <p>Avec l'opérateur «&nbsp;supérieur ou égal&nbsp;», l'offre <strong>se répète</strong>&nbsp;: nombre d'articles ÷ seuil, arrondi à l'inférieur. Avec 7 articles et «&nbsp;Quantité ≥ 3&nbsp;», l'offre est atteinte 2 fois. Le champ <strong>«&nbsp;Nombre maximum de produits remisés&nbsp;»</strong> plafonne ce nombre (0 = sans plafond). La répétition ne vaut que pour «&nbsp;le moins cher&nbsp;» et «&nbsp;le plus cher&nbsp;».</p>
+
+  <div class="sim" id="simOffre">
+    <div><h3 style="color:#fff">Simulateur d'offre «&nbsp;X achetés, Y offerts&nbsp;»</h3><p class="sub">Modifiez le panier et les paramètres de l'offre (produits éligibles uniquement).</p></div>
+    <div class="sim-form">
+      <label>Seuil «&nbsp;Quantité ≥&nbsp;»<input type="number" id="soMin" min="1" step="1" value="3"></label>
+      <label>Remise (%)<input type="number" id="soPct" min="1" max="100" step="1" value="100"></label>
+      <label>Application<select id="soApp"><option value="cheap">Sur le produit le moins cher</option><option value="exp">Sur le produit le plus cher</option><option value="all">Sur chaque quantité</option></select></label>
+      <label>Nb max de produits remisés (0 = illimité)<input type="number" id="soMax" min="0" step="1" value="0"></label>
+    </div>
+    <div class="sim-add">
+      <input type="number" id="soNew" min="0" step="0.5" placeholder="Prix (€)" aria-label="Prix de l'article à ajouter">
+      <button class="btn" type="button" id="soAdd">Ajouter un article</button>
+      <button class="btn ghost" type="button" id="soReset">Vider</button>
+    </div>
+    <div class="cart" id="soCart" aria-live="polite"></div>
+    <div class="sim-total">
+      <div><b id="soNb">0</b><span>articles</span></div>
+      <div><b id="soTimes">0</b><span>fois l'offre atteinte</span></div>
+      <div><b id="soDisc">0&nbsp;€</b><span>de remise</span></div>
+      <div><b id="soPay">0&nbsp;€</b><span>à payer</span></div>
+    </div>
+  </div>
+
+  <h3 id="s10-4"><span class="sub-num">10.4</span> ET ou OU entre les conditions de l'offre</h3>
+  <ul class="prose">
+    <li><strong>ET</strong>&nbsp;: toutes les conditions de l'offre doivent être remplies, et <strong>toutes leurs récompenses s'additionnent</strong>.</li>
+    <li><strong>OU</strong>&nbsp;: la première condition remplie donne sa récompense, seule.</li>
+  </ul>
+  <div class="warn"><span class="ex-label">Attention avec le OU</span><p>En mode OU, dès qu'une condition de l'offre est remplie, l'offre s'applique <strong>sans vérifier le bloc Conditions</strong> (rôle, type de commande…). Si vous avez besoin de ces restrictions, utilisez le mode ET.</p></div>
+</section>
+
+<!-- 11 -->
+<section id="codes">
+  <div class="sec-head"><span class="sec-num">11</span><h2>Les codes promotionnels</h2></div>
+  <p>Cochez <strong>«&nbsp;Restreindre à des codes promotionnels&nbsp;»</strong> puis, en édition, créez les codes&nbsp;:</p>
+  <div class="grid-2">
+    <div class="card"><h4>Générer des codes promotionnels</h4><p>Indiquez un nombre&nbsp;: autant de codes uniques de 10 caractères sont créés (ex. <code>4F9A1C2B7E</code>). Idéal pour distribuer un code différent à chaque client.</p></div>
+    <div class="card"><h4>Ajouter des codes manuellement</h4><p>Saisissez vos codes (ex. <code>ETE2026</code>), séparés par une virgule, un point-virgule ou un retour à la ligne. Les espaces sont supprimés&nbsp;; un code qui existe déjà dans la marque est ignoré.</p></div>
+  </div>
+  <ul class="prose">
+    <li>La <strong>liste des codes promotionnels</strong> indique le nombre d'utilisations de chaque code et le détail des commandes.</li>
+    <li><strong>«&nbsp;Conditions d'utilisation des codes promotionnels&nbsp;»</strong> limite l'usage de chaque code&nbsp;: illimité, N fois seulement, N fois par client ou N fois par vendeur.</li>
+    <li>Le code est saisi sur la commande (espace conseillère, BrandAdmin, application, e-shop).</li>
+  </ul>
+  <div class="warn"><span class="ex-label">À savoir</span>
+    <ul>
+      <li>Les codes sont <strong>sensibles à la casse</strong>&nbsp;: <code>ete2026</code> ne fonctionne pas si le code est <code>ETE2026</code>. Préférez les majuscules et prévenez vos clients.</li>
+      <li>Pour les limites «&nbsp;N fois seulement&nbsp;» et «&nbsp;N fois par client&nbsp;», un code saisi sur un <strong>panier jamais payé</strong> compte déjà comme une utilisation.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 12 -->
+<section id="clients">
+  <div class="sec-head"><span class="sec-num">12</span><h2>Réserver une réduction à des clients</h2></div>
+  <p>Cochez <strong>«&nbsp;Restreindre à des clients&nbsp;»</strong> puis, en édition, ajoutez les clients autorisés&nbsp;:</p>
+  <ul class="prose">
+    <li><strong>Ajouter un client</strong>&nbsp;: recherche par nom.</li>
+    <li><strong>Importer des clients</strong>&nbsp;: un fichier CSV ou Excel avec un e-mail par ligne (5 Mo maximum). Vous pouvez ajouter à la liste existante ou la remplacer.</li>
+  </ul>
+  <p>La <strong>liste des clients possédant cette réduction</strong> indique la date d'acquisition, le nombre d'utilisations et la dernière date d'utilisation.</p>
+  <ul class="prose">
+    <li>Chaque client a son propre quota, égal au «&nbsp;Nombre de fois&nbsp;» des conditions d'utilisation.</li>
+    <li>La réduction apparaît dans les <strong>codes promo disponibles</strong> du client (fiche client de l'espace conseillère, application), sauf si elle est masquée.</li>
+    <li>Une réduction réservée peut aussi être <strong>gagnée</strong>&nbsp;: comme récompense d'une règle de fidélité (type «&nbsp;Code promo&nbsp;») ou d'un challenge vendeur. Elle est alors ajoutée au client automatiquement.</li>
+  </ul>
+  <div class="tip"><span class="ex-label">Bon à savoir</span><p>Un client qui a déjà utilisé la réduction <strong>avant</strong> qu'elle soit restreinte garde son droit.</p></div>
+</section>
+
+<!-- 13 -->
+<section id="calcul">
+  <div class="sec-head"><span class="sec-num">13</span><h2>Le calcul dans la commande</h2></div>
+  <h3 id="s13-1"><span class="sub-num">13.1</span> L'ordre d'application</h3>
+  <ol class="prose">
+    <li>Réductions sur les produits (aux produits, catégories, liste, offres)&nbsp;: d'abord les automatiques, puis les manuelles, dans l'ordre de création des réductions.</li>
+    <li>Réductions sur le total de la commande.</li>
+    <li>Bons d'achat.</li>
+    <li>Points de fidélité, puis e-wallet.</li>
+    <li>Frais de port, puis réductions aux frais de ports et livraison offerte.</li>
+  </ol>
+  <div class="receipt">
+    <div class="line"><span>Produits</span><span>100,00&nbsp;€</span></div>
+    <div class="line v"><span>Réduction aux produits −20&nbsp;% <small>(sur 50&nbsp;€ de gamme Été)</small></span><span>− 10,00&nbsp;€</span></div>
+    <div class="line v"><span>Réduction sur le total −5&nbsp;%</span><span>− 4,50&nbsp;€</span></div>
+    <div class="line"><span>Bon d'achat</span><span>− 10,00&nbsp;€</span></div>
+    <div class="line"><span>Frais de port <small>(livraison offerte)</small></span><span>0,00&nbsp;€</span></div>
+    <div class="line total"><span>À payer</span><span>75,50&nbsp;€</span></div>
+  </div>
+  <h3 id="s13-2"><span class="sub-num">13.2</span> Frais de port</h3>
+  <p>L'option <strong>«&nbsp;Ne pas prendre en compte les produits remisés dans le calcul des frais d'expédition&nbsp;»</strong> retire les produits remisés par cette réduction du montant qui sert à calculer le port. Exemple&nbsp;: une marque offre le port dès 60&nbsp;€ d'achat&nbsp;; avec cette option, les produits en promotion ne comptent pas pour atteindre les 60&nbsp;€.</p>
+  <h3 id="s13-3"><span class="sub-num">13.3</span> Commission des conseillères</h3>
+  <p>Dans le calcul standard des commissions, le montant remisé n'est pas commissionné&nbsp;: la commission se calcule sur le prix après réductions. Les plans de commissionnement propres à une marque peuvent différer.</p>
+</section>
+
+<!-- 14 -->
+<section id="vie">
+  <div class="sec-head"><span class="sec-num">14</span><h2>Recalcul, paiement et annulation</h2></div>
+  <div class="timeline">
+    <div class="tl"><b>À chaque modification de la commande</b><span>Toutes les réductions sont revérifiées. Celles qui ne sont plus valables (date dépassée, produit retiré, conditions non remplies, points ajoutés…) sont retirées. Les réductions automatiques valables sont ajoutées.</span></div>
+    <div class="tl"><b>Au paiement</b><span>Les réductions sont vérifiées une dernière fois. Si l'une n'est plus valable, le paiement est refusé avec un message.</span></div>
+    <div class="tl stop"><b>Après le paiement</b><span>Les réductions sont figées. Le compteur d'utilisation augmente.</span></div>
+  </div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Situation</th><th>Effet</th></tr></thead>
+    <tbody>
+      <tr><td><b>Commande non payée supprimée</b></td><td>Les réductions sont retirées.</td></tr>
+      <tr><td><b>Commande payée puis annulée</b></td><td>L'utilisation reste comptée dans les limites et le suivi.</td></tr>
+      <tr><td><b>Réduction modifiée</b></td><td>Les commandes non payées sont recalculées avec la nouvelle version à leur prochaine modification.</td></tr>
+      <tr><td><b>Réduction dépubliée ou supprimée</b></td><td>Elle disparaît des commandes non payées à leur prochaine modification.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- 15 -->
+<section id="suivi">
+  <div class="sec-head"><span class="sec-num">15</span><h2>Suivi, duplication et imports</h2></div>
+  <h3 id="s15-1"><span class="sub-num">15.1</span> Le suivi d'utilisation</h3>
+  <p>Depuis la liste des réductions, l'icône de suivi ouvre la liste des clients qui ont utilisé la réduction, avec leur nombre d'utilisations et la dernière date. Seules les commandes <strong>payées</strong> sont comptées.</p>
+  <figure><img src="Captures/R%C3%A9ductions/suivi-r%C3%A9duction.png" alt="Fenêtre Suivi d'utilisation de la réduction : liste des clients avec numéro, prénom, nom, nombre d'utilisation et dernière date d'utilisation" loading="lazy"><figcaption>Le suivi d'utilisation d'une réduction.</figcaption></figure>
+  <h3 id="s15-2"><span class="sub-num">15.2</span> Dupliquer une réduction</h3>
+  <p>L'action <strong>Dupliquer</strong> copie la réduction dans la même marque ou dans d'autres marques de votre société.</p>
+  <figure><img src="Captures/R%C3%A9ductions/dupliquer-r%C3%A9duction.png" alt="Fenêtre de duplication : choix des marques cibles, bouton Tout sélectionner, message sur les marques de devise différente" loading="lazy"><figcaption>Choix des marques de destination.</figcaption></figure>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Copié</th><th>Non copié</th></tr></thead>
+    <tbody>
+      <tr><td>Tous les paramètres, les conditions, les récompenses d'offre, les produits et catégories</td><td>Les codes promo, les clients autorisés, l'historique d'utilisation</td></tr>
+    </tbody>
+  </table></div>
+  <ul class="prose">
+    <li>La copie est créée <strong>non publiée</strong>, nommée «&nbsp;Nom - Copie&nbsp;» (même marque) ou «&nbsp;Nom - Marque d'origine&nbsp;».</li>
+    <li>Une réduction en <strong>montant</strong> ne peut être copiée que vers les marques de même devise. Une réduction en pourcentage peut l'être vers toutes.</li>
+    <li>Vérifiez les conditions de la copie&nbsp;: rôles et catalogues sont ceux de la marque d'origine.</li>
+  </ul>
+  <h3 id="s15-3"><span class="sub-num">15.3</span> Importer des produits</h3>
+  <p>Dans le bloc des produits&nbsp;: <strong>Importer une liste de produits</strong> (une colonne de références produits) ou <strong>Importer une liste de combinaisons</strong> (une colonne de SKU de déclinaisons), au format CSV ou Excel, sans ligne d'en-tête. La quantité minimale est fixée à 1. <strong>Tout supprimer</strong> vide la liste.</p>
+</section>
+
+<!-- 16 -->
+<section id="usages">
+  <div class="sec-head"><span class="sec-num">16</span><h2>Les paramétrages les plus fréquents</h2></div>
+  <p class="lede">Les configurations que l'on retrouve le plus souvent chez les marques.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Usage</th><th>Paramétrage typique</th></tr></thead>
+    <tbody>
+      <tr><td><b>Prix promotionnels sur une sélection</b></td><td>Réduction aux produits (souvent une réduction par produit) ou Liste de produits, automatique, cumulable</td></tr>
+      <tr><td><b>Remise réservée aux conseillères ou à un rôle</b></td><td>Réduction sur le total ou aux produits, condition «&nbsp;Rôle client est dans …&nbsp;»</td></tr>
+      <tr><td><b>Remise dès un montant d'achat</b></td><td>Réduction sur le total, condition «&nbsp;Montant TTC dépensé par le client dans son panier actuel ≥ …&nbsp;»</td></tr>
+      <tr><td><b>Produit acheté = remise</b></td><td>Condition «&nbsp;Produits dans le panier contient …&nbsp;»</td></tr>
+      <tr><td><b>Remise selon le canal</b></td><td>Condition «&nbsp;Type de commande est dans …&nbsp;» (réunion, web, mini-site…)</td></tr>
+      <tr><td><b>Geste commercial au choix de la conseillère</b></td><td>Réduction sur le total, application manuelle, souvent réservée à des clients</td></tr>
+      <tr><td><b>Offre «&nbsp;X achetés, le moins cher offert&nbsp;»</b></td><td>Offre promotionnelle, condition «&nbsp;Quantité ≥ 3&nbsp;», récompense 100&nbsp;% sur le produit le moins cher</td></tr>
+      <tr><td><b>Code promo d'opération</b></td><td>Restreinte à des codes promotionnels, code saisi manuellement, limite «&nbsp;N fois par client&nbsp;»</td></tr>
+      <tr><td><b>Offre anniversaire</b></td><td>Condition «&nbsp;Date d'anniversaire&nbsp;» sur une période donnée, réservée ou par code</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- 17 -->
+<section id="attention">
+  <div class="sec-head"><span class="sec-num">17</span><h2>Points d'attention</h2></div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Sujet</th><th>Comportement</th><th>Conseil</th></tr></thead>
+    <tbody>
+      <tr><td><b>Montant maximum en %</b></td><td>Sur le total de la commande, il retire la réduction au lieu de la plafonner.</td><td>Ne pas l'utiliser comme plafond sur ce type.</td></tr>
+      <tr><td><b>Une seule date</b></td><td>La réduction n'est jamais automatique ni proposée.</td><td>Deux dates ou aucune.</td></tr>
+      <tr><td><b>Réductions non cumulables</b></td><td>La dernière ajoutée remplace toutes les autres. Une automatique peut évincer une manuelle.</td><td>Cocher «&nbsp;Cumulable&nbsp;» sur les réductions qui doivent coexister.</td></tr>
+      <tr><td><b>Points de fidélité</b></td><td>Une réduction non cumulable avec les points est retirée dès que des points sont utilisés.</td><td>—</td></tr>
+      <tr><td><b>Offre en OU</b></td><td>Le bloc Conditions n'est pas vérifié.</td><td>Préférer le mode ET.</td></tr>
+      <tr><td><b>Offre «&nbsp;Sur chaque produit&nbsp;»</b></td><td>Un seul article remisé par ligne.</td><td>Utiliser «&nbsp;Sur chaque quantité&nbsp;» pour tous les articles.</td></tr>
+      <tr><td><b>Offre «&nbsp;Produit&nbsp;» et «&nbsp;Quantité ou produit&nbsp;»</b></td><td>«&nbsp;Produit&nbsp;» compte les lignes&nbsp;; «&nbsp;Quantité ou produit&nbsp;» se comporte comme «&nbsp;Quantité&nbsp;».</td><td>—</td></tr>
+      <tr><td><b>Valeur 0 dans une condition d'offre</b></td><td>«&nbsp;Quantité &gt; 0&nbsp;» ou «&nbsp;≥ 0&nbsp;» provoque une erreur à l'enregistrement des commandes.</td><td>Utiliser «&nbsp;≥ 1&nbsp;».</td></tr>
+      <tr><td><b>Produits dans le panier</b></td><td>«&nbsp;égal&nbsp;» et «&nbsp;différent&nbsp;» ne fonctionnent pas correctement.</td><td>Utiliser «&nbsp;est dans&nbsp;», «&nbsp;contient&nbsp;»…</td></tr>
+      <tr><td><b>Quantité minimale</b> (réduction aux produits)</td><td>Elle conditionne l'éligibilité de la réduction, mais un produit sous son minimum peut quand même être remisé si un autre produit de la liste remplit le sien.</td><td>Une réduction par produit si le minimum compte.</td></tr>
+      <tr><td><b>Pays de livraison</b></td><td>C'est le pays de la conseillère, sauf configuration TVA de la marque.</td><td>Vérifier avec SellingAtHome.</td></tr>
+      <tr><td><b>Date d'anniversaire</b></td><td>Pas de lien avec la date du jour.</td><td>Une réduction par mois.</td></tr>
+      <tr><td><b>Codes promo</b></td><td>Sensibles à la casse&nbsp;; un panier abandonné consomme une utilisation.</td><td>Codes en majuscules.</td></tr>
+      <tr><td><b>Catégories décochées</b></td><td>Une catégorie décochée en édition peut rester active sur la réduction.</td><td>Recréer la réduction si une catégorie doit être retirée.</td></tr>
+      <tr><td><b>Livraison offerte masquée</b></td><td>Si la case a été cochée puis le type changé vers un type qui la masque, elle reste active.</td><td>Décocher avant de changer de type.</td></tr>
+      <tr><td><b>Masquer dans les codes promo du client</b></td><td>La conseillère voit toujours la réduction.</td><td>—</td></tr>
+      <tr><td><b>Duplication</b></td><td>Codes et clients ne sont pas copiés&nbsp;; la copie n'est pas publiée.</td><td>Compléter puis publier la copie.</td></tr>
+      <tr><td><b>Valeurs saisies</b></td><td>Aucun contrôle&nbsp;: un pourcentage supérieur à 100 ou un montant négatif est accepté.</td><td>Relire avant de publier.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- 18 -->
+<section id="faq">
+  <div class="sec-head"><span class="sec-num">18</span><h2>Questions fréquentes</h2></div>
+  <div class="faq">
+    <details><summary>Ma réduction automatique ne s'applique pas.</summary><div><ol>
+      <li>Est-elle <strong>publiée</strong>&nbsp;?</li>
+      <li>Les deux <strong>dates</strong> sont-elles renseignées (ou aucune), et la date du jour est-elle comprise entre elles&nbsp;?</li>
+      <li>«&nbsp;Application manuelle&nbsp;» et «&nbsp;Restreindre à des codes&nbsp;» sont-elles bien décochées&nbsp;?</li>
+      <li>La commande contient-elle les produits ou catégories de la réduction, et remplit-elle toutes les <strong>conditions</strong>&nbsp;?</li>
+      <li>La limite d'utilisation est-elle atteinte&nbsp;?</li>
+      <li>Une autre réduction non cumulable ou des points de fidélité l'ont-ils retirée&nbsp;?</li>
+      <li>En pourcentage sur le total, le montant maximum est-il dépassé&nbsp;?</li>
+    </ol></div></details>
+    <details><summary>La réduction disparaît quand on modifie la commande.</summary><div><p>Les réductions sont revérifiées à chaque modification&nbsp;: le panier ne remplit probablement plus une condition (montant, produit, quantité), ou une réduction non cumulable a été ajoutée.</p></div></details>
+    <details><summary>Le client saisit le code mais il est refusé.</summary><div><p>Vérifiez la casse, les dates, la limite d'utilisation du code et les conditions de la réduction. Le message indique le nom de la réduction concernée.</p></div></details>
+    <details><summary>Comment offrir le 3e article&nbsp;?</summary><div><p>Offre promotionnelle, produits de l'offre = la sélection, condition «&nbsp;Quantité ≥ 3&nbsp;», récompense 100&nbsp;% sur le produit le moins cher.</p></div></details>
+    <details><summary>Comment faire «&nbsp;−10&nbsp;€ dès 50&nbsp;€ d'achat&nbsp;»&nbsp;?</summary><div><p>Réduction sur le total, montant 10&nbsp;€, condition «&nbsp;Montant TTC dépensé par le client dans son panier actuel ≥ 50&nbsp;».</p></div></details>
+    <details><summary>Une réduction peut-elle porter sur les frais de port&nbsp;?</summary><div><p>Oui&nbsp;: type «&nbsp;Réduction aux frais de ports&nbsp;», ou case «&nbsp;Livraison offerte&nbsp;» sur les autres types.</p></div></details>
+    <details><summary>Pourquoi deux réductions de 10&nbsp;% ne font-elles pas 20&nbsp;%&nbsp;?</summary><div><p>Chaque pourcentage s'applique au prix déjà remisé&nbsp;: 10&nbsp;% puis 10&nbsp;% donnent 19&nbsp;%.</p></div></details>
+  </div>
+</section>
+
+<!-- 19 -->
+<section id="glossaire">
+  <div class="sec-head"><span class="sec-num">19</span><h2>Glossaire</h2></div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Terme</th><th>Définition</th></tr></thead>
+    <tbody>
+      <tr><td><b>Réduction automatique</b></td><td>S'applique seule aux commandes qui remplissent les conditions.</td></tr>
+      <tr><td><b>Réduction manuelle</b></td><td>Proposée dans les réductions disponibles, appliquée par la conseillère.</td></tr>
+      <tr><td><b>Code promo</b></td><td>Code à saisir pour déclencher une réduction restreinte à des codes.</td></tr>
+      <tr><td><b>Réductions disponibles</b></td><td>Liste des réductions manuelles applicables à une commande.</td></tr>
+      <tr><td><b>Codes promo disponibles du client</b></td><td>Réductions réservées à un client, visibles sur sa fiche.</td></tr>
+      <tr><td><b>Produits éligibles</b></td><td>Produits du panier concernés par une offre promotionnelle.</td></tr>
+      <tr><td><b>Cumulable</b></td><td>Peut coexister avec d'autres réductions.</td></tr>
+      <tr><td><b>Utilisation</b></td><td>Commande payée portant la réduction.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<script>
+(function () {
+  var cart = [12, 25, 8, 30, 15, 20, 10];
+  var $ = function (id) { return document.getElementById(id); };
+  var eur = function (n) { return (Math.round(n * 100) / 100).toLocaleString('fr-FR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' €'; };
+  function render() {
+    var min = Math.max(1, parseInt($('soMin').value, 10) || 1);
+    var pct = Math.min(100, Math.max(0, parseFloat($('soPct').value) || 0)) / 100;
+    var max = Math.max(0, parseInt($('soMax').value, 10) || 0);
+    var app = $('soApp').value;
+    var n = cart.length, times = Math.floor(n / min);
+    if (max > 0) times = Math.min(times, max);
+    var idx = cart.map(function (p, i) { return i; });
+    var free = {};
+    if (app === 'all') { if (n >= min) idx.forEach(function (i) { free[i] = true; }); }
+    else {
+      idx.sort(function (a, b) { return app === 'cheap' ? cart[a] - cart[b] : cart[b] - cart[a]; });
+      idx.slice(0, times).forEach(function (i) { free[i] = true; });
+    }
+    var total = 0, disc = 0;
+    $('soCart').innerHTML = cart.map(function (p, i) {
+      total += p; var d = free[i] ? p * pct : 0; disc += d;
+      return '<span class="item' + (free[i] ? ' free' : '') + '">' + eur(p) + (free[i] ? ' <span class="lbl">−' + Math.round(pct * 100) + ' %</span>' : '') +
+        '<button type="button" data-i="' + i + '" aria-label="Retirer cet article" style="all:unset;cursor:pointer;opacity:.7">×</button></span>';
+    }).join('');
+    $('soNb').textContent = n;
+    $('soTimes').textContent = app === 'all' ? (n >= min ? 1 : 0) : times;
+    $('soDisc').textContent = eur(disc);
+    $('soPay').textContent = eur(total - disc);
+  }
+  ['soMin', 'soPct', 'soMax', 'soApp'].forEach(function (id) { $(id).addEventListener('input', render); $(id).addEventListener('change', render); });
+  function add() { var v = parseFloat($('soNew').value); if (v > 0) { cart.push(v); $('soNew').value = ''; render(); } $('soNew').focus(); }
+  $('soAdd').addEventListener('click', add);
+  $('soNew').addEventListener('keydown', function (e) { if (e.key === 'Enter') add(); });
+  $('soReset').addEventListener('click', function () { cart = []; render(); });
+  $('soCart').addEventListener('click', function (e) { var b = e.target.closest('button[data-i]'); if (b) { cart.splice(+b.dataset.i, 1); render(); } });
+  render();
+})();
+</script>
+
+  </main>
+</div>
+<script>
+(function () {
+  var cart = [12, 25, 8, 30, 15, 20, 10];
+  var $ = function (id) { return document.getElementById(id); };
+  var eur = function (n) { return (Math.round(n * 100) / 100).toLocaleString('fr-FR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' €'; };
+  function render() {
+    var min = Math.max(1, parseInt($('soMin').value, 10) || 1);
+    var pct = Math.min(100, Math.max(0, parseFloat($('soPct').value) || 0)) / 100;
+    var max = Math.max(0, parseInt($('soMax').value, 10) || 0);
+    var app = $('soApp').value;
+    var n = cart.length, times = Math.floor(n / min);
+    if (max > 0) times = Math.min(times, max);
+    var idx = cart.map(function (p, i) { return i; });
+    var free = {};
+    if (app === 'all') { if (n >= min) idx.forEach(function (i) { free[i] = true; }); }
+    else {
+      idx.sort(function (a, b) { return app === 'cheap' ? cart[a] - cart[b] : cart[b] - cart[a]; });
+      idx.slice(0, times).forEach(function (i) { free[i] = true; });
+    }
+    var total = 0, disc = 0;
+    $('soCart').innerHTML = cart.map(function (p, i) {
+      total += p; var d = free[i] ? p * pct : 0; disc += d;
+      return '<span class="item' + (free[i] ? ' free' : '') + '">' + eur(p) + (free[i] ? ' <span class="lbl">−' + Math.round(pct * 100) + ' %</span>' : '') +
+        '<button type="button" data-i="' + i + '" aria-label="Retirer cet article" style="all:unset;cursor:pointer;opacity:.7">×</button></span>';
+    }).join('');
+    $('soNb').textContent = n;
+    $('soTimes').textContent = app === 'all' ? (n >= min ? 1 : 0) : times;
+    $('soDisc').textContent = eur(disc);
+    $('soPay').textContent = eur(total - disc);
+  }
+  ['soMin', 'soPct', 'soMax', 'soApp'].forEach(function (id) { $(id).addEventListener('input', render); $(id).addEventListener('change', render); });
+  function add() { var v = parseFloat($('soNew').value); if (v > 0) { cart.push(v); $('soNew').value = ''; render(); } $('soNew').focus(); }
+  $('soAdd').addEventListener('click', add);
+  $('soNew').addEventListener('keydown', function (e) { if (e.key === 'Enter') add(); });
+  $('soReset').addEventListener('click', function () { cart = []; render(); });
+  $('soCart').addEventListener('click', function (e) { var b = e.target.closest('button[data-i]'); if (b) { cart.splice(+b.dataset.i, 1); render(); } });
+  render();
+})();
+</script>

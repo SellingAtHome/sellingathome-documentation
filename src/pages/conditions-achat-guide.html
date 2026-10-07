@@ -1,0 +1,398 @@
+<!--page {"title":"Guide des conditions d’achat"} -->
+<style>
+.cond td:first-child { width:26%; }
+.cond td:nth-child(2) { width:17%; color:var(--muted); font-size:.88rem; }
+.cond .know { display:block; margin-top:6px; font-size:.86rem; color:var(--pink-ink); }
+.cond .know::before { content:"À savoir : "; font-weight:700; }
+.tree { background:var(--card); border:1px solid var(--rule); border-radius:16px; padding:18px 20px; font-size:.95rem; display:flex; flex-direction:column; gap:8px; }
+.tree .op { display:inline-block; font-weight:800; font-size:.75rem; letter-spacing:.08em; border-radius:8px; padding:3px 9px; background:var(--hero); color:#fff; margin-right:8px; }
+.tree .op.or { background:var(--pink-ink); }
+.tree .grp { margin-left:26px; border-left:2px solid var(--rule); padding-left:14px; display:flex; flex-direction:column; gap:6px; }
+.tree .r { margin-left:26px; }
+.tree .r::before, .tree .grp .r2::before { content:"▸ "; color:var(--accent-ink); }
+.sim select { font:inherit; font-size:1rem; color:#2B2237; background:#fff; border:0; border-radius:10px; padding:10px 12px; width:100%; }
+.sim .verdict { border-radius:14px; padding:14px 18px; font-size:1.05rem; font-weight:700; }
+.sim .verdict.ok { background:rgba(121,198,192,.18); border:1px solid var(--accent); color:#fff; }
+.sim .verdict.ko { background:rgba(242,154,194,.16); border:1px solid var(--pink); color:#fff; }
+.sim .calc { color:var(--on-hero-mut); font-size:.92rem; }
+.timeline { display:flex; flex-direction:column; border-left:3px solid var(--rule); margin-left:10px; }
+.tl { position:relative; padding:0 0 18px 26px; }
+.tl::before { content:""; position:absolute; left:-9px; top:4px; width:15px; height:15px; border-radius:50%; background:var(--card); border:3px solid var(--accent); }
+.tl.stop::before { border-color:var(--pink); }
+.tl b { color:var(--heading); display:block; } .tl span { color:var(--muted); font-size:.92rem; }
+</style>
+<header class="hero">
+  <div class="hero-in">
+    <div>
+      <span class="eyebrow">Guide fonctionnel</span>
+      <h1>Tout comprendre des <span class="script">conditions d'achat</span></h1>
+      <p class="lede">Qui peut commander un produit, quand et en quelle quantité&nbsp;: toutes les conditions, les plafonds, le moment des contrôles et les pièges à éviter. Avec des exemples à chaque étape.</p>
+    </div>
+    <div class="voucher-art" aria-hidden="true">
+      <div class="v-top"><span>Condition d'achat</span><span>T-shirt</span></div>
+      <div class="v-amount">4<span> max</span></div>
+      <div class="v-name">par conseillère</div>
+      <div class="v-sep"></div>
+      <div class="v-meta"><span>Commandes ouvertes <b>3 / 4</b></span><span>Encore <b>1</b></span></div>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="toc" aria-label="Sommaire">
+    <details id="tocDetails" open>
+      <summary>Sommaire</summary>
+      <div class="toc-title">Sommaire</div>
+      <ol>
+        <li data-sec="definition"><a href="#definition"><span class="toc-n">1</span>Qu'est-ce qu'une condition&nbsp;?</a>
+          <ol class="toc-sub"><li><a href="#s1-1"><span class="toc-n">1.1</span>À quoi servent les conditions d'achat&nbsp;?</a></li></ol>
+        </li>
+        <li data-sec="ecran"><a href="#ecran"><span class="toc-n">2</span>Où paramétrer</a></li>
+        <li data-sec="principe"><a href="#principe"><span class="toc-n">3</span>ET, OU et groupes</a></li>
+        <li data-sec="quand"><a href="#quand"><span class="toc-n">4</span>Quand sont-elles vérifiées</a>
+          <ol class="toc-sub"><li><a href="#s4-1"><span class="toc-n">4.1</span>Réunions en visio</a></li></ol>
+        </li>
+        <li data-sec="conditions"><a href="#conditions"><span class="toc-n">5</span>Les conditions disponibles</a>
+          <ol class="toc-sub"><li><a href="#s5-1"><span class="toc-n">5.1</span>Le client et la commande</a></li><li><a href="#s5-2"><span class="toc-n">5.2</span>Les autres produits</a></li><li><a href="#s5-3"><span class="toc-n">5.3</span>Les plafonds de quantité</a></li></ol>
+        </li>
+        <li data-sec="plafonds"><a href="#plafonds"><span class="toc-n">6</span>Les plafonds de quantité</a></li>
+        <li data-sec="messages"><a href="#messages"><span class="toc-n">7</span>Ce que voit la conseillère</a></li>
+        <li data-sec="contournement"><a href="#contournement"><span class="toc-n">8</span>Ce qui échappe aux conditions</a></li>
+        <li data-sec="duplication"><a href="#duplication"><span class="toc-n">9</span>Duplication et import</a></li>
+        <li data-sec="exemples"><a href="#exemples"><span class="toc-n">10</span>Exemples pas à pas</a>
+          <ol class="toc-sub"><li><a href="#s10-1"><span class="toc-n">10.1</span>Un produit réservé au kit de démarrage</a></li><li><a href="#s10-2"><span class="toc-n">10.2</span>Une nouveauté limitée à 2 par client pendant un mois</a></li><li><a href="#s10-3"><span class="toc-n">10.3</span>Un accessoire vendu uniquement avec le produit principal</a></li><li><a href="#s10-4"><span class="toc-n">10.4</span>Un produit réservé aux conseillères, limité par mois</a></li><li><a href="#s10-5"><span class="toc-n">10.5</span>Un produit en stock limité réparti entre les conseillères</a></li></ol>
+        </li>
+        <li data-sec="usages"><a href="#usages"><span class="toc-n">11</span>Paramétrages fréquents</a></li>
+        <li data-sec="attention"><a href="#attention"><span class="toc-n">12</span>Points d'attention</a></li>
+        <li data-sec="faq"><a href="#faq"><span class="toc-n">13</span>Questions fréquentes</a></li>
+        <li data-sec="glossaire"><a href="#glossaire"><span class="toc-n">14</span>Glossaire</a></li>
+      </ol>
+    </details>
+  </nav>
+
+  <main>
+<style>
+.cond td:first-child { width:26%; }
+.cond td:nth-child(2) { width:17%; color:var(--muted); font-size:.88rem; }
+.cond .know { display:block; margin-top:6px; font-size:.86rem; color:var(--pink-ink); }
+.cond .know::before { content:"À savoir : "; font-weight:700; }
+.tree { background:var(--card); border:1px solid var(--rule); border-radius:16px; padding:18px 20px; font-size:.95rem; display:flex; flex-direction:column; gap:8px; }
+.tree .op { display:inline-block; font-weight:800; font-size:.75rem; letter-spacing:.08em; border-radius:8px; padding:3px 9px; background:var(--hero); color:#fff; margin-right:8px; }
+.tree .op.or { background:var(--pink-ink); }
+.tree .grp { margin-left:26px; border-left:2px solid var(--rule); padding-left:14px; display:flex; flex-direction:column; gap:6px; }
+.tree .r { margin-left:26px; }
+.tree .r::before, .tree .grp .r2::before { content:"▸ "; color:var(--accent-ink); }
+.sim select { font:inherit; font-size:1rem; color:#2B2237; background:#fff; border:0; border-radius:10px; padding:10px 12px; width:100%; }
+.sim .verdict { border-radius:14px; padding:14px 18px; font-size:1.05rem; font-weight:700; }
+.sim .verdict.ok { background:rgba(121,198,192,.18); border:1px solid var(--accent); color:#fff; }
+.sim .verdict.ko { background:rgba(242,154,194,.16); border:1px solid var(--pink); color:#fff; }
+.sim .calc { color:var(--on-hero-mut); font-size:.92rem; }
+.timeline { display:flex; flex-direction:column; border-left:3px solid var(--rule); margin-left:10px; }
+.tl { position:relative; padding:0 0 18px 26px; }
+.tl::before { content:""; position:absolute; left:-9px; top:4px; width:15px; height:15px; border-radius:50%; background:var(--card); border:3px solid var(--accent); }
+.tl.stop::before { border-color:var(--pink); }
+.tl b { color:var(--heading); display:block; } .tl span { color:var(--muted); font-size:.92rem; }
+</style>
+
+<!-- 1 -->
+<section id="definition">
+  <div class="sec-head"><span class="sec-num">01</span><h2>Qu'est-ce qu'une condition d'achat&nbsp;?</h2></div>
+  <p class="lede">Une condition d'achat est une <strong>règle posée sur un produit</strong> qui dit <strong>qui peut le commander, quand et en quelle quantité</strong>. Si la règle n'est pas respectée, le produit est <strong>refusé</strong> à l'ajout dans la commande, avec un message.</p>
+  <div class="example"><span class="ex-label">Exemple</span><p>Un T-shirt de lancement est limité à <strong>4 exemplaires</strong> dans les commandes en cours de chaque conseillère. Quand une conseillère en a déjà 4 dans ses commandes non payées, l'ajout d'un 5e est refusé.</p></div>
+  <div class="tip"><span class="ex-label">Vocabulaire</span><p>L'interface de l'espace marque dit «&nbsp;vendeur&nbsp;» là où cette documentation dit «&nbsp;conseillère&nbsp;». Les libellés de l'écran (conditions «&nbsp;Quantité maximum par vendeur&nbsp;», «&nbsp;Quantité maximum dans les commandes ouvertes par vendeur&nbsp;», rôle «&nbsp;Vendeur&nbsp;»…) sont cités tels quels.</p></div>
+  <h3 id="s1-1"><span class="sub-num">1.1</span> À quoi servent les conditions d'achat&nbsp;?</h3>
+  <div class="grid-3">
+    <div class="card"><span class="tag">Réserver</span><p>Un produit réservé aux conseillères, à un rôle de clientèle ou à un type de commande (kit de démarrage, réunion…).</p></div>
+    <div class="card"><span class="tag pink">Limiter</span><p>Une quantité maximum par commande, par client, par conseillère, ou sur une période.</p></div>
+    <div class="card"><span class="tag yellow">Programmer</span><p>Une date de disponibilité&nbsp;: ouvrir ou fermer un produit à la vente.</p></div>
+    <div class="card"><span class="tag">Conditionner</span><p>Un produit vendu seulement avec un autre produit, ou à partir d'un montant de panier.</p></div>
+    <div class="card"><span class="tag pink">Fidéliser</span><p>Un produit réservé aux clients qui ont déjà acheté un produit d'entrée de gamme.</p></div>
+    <div class="card"><span class="tag yellow">Protéger le stock</span><p>Éviter qu'un produit en quantité limitée soit accaparé par quelques conseillères.</p></div>
+  </div>
+  <div class="tip"><span class="ex-label">À ne pas confondre</span><p>Les conditions d'achat <strong>restreignent</strong> la vente d'un produit. Elles ne donnent aucune remise&nbsp;: pour récompenser un achat, voir le <a href="reductions-guide.html"><em>Guide des réductions</em></a>. Le produit reste visible dans le catalogue&nbsp;: il est refusé au moment de l'ajout.</p></div>
+</section>
+
+<!-- 2 -->
+<section id="ecran">
+  <div class="sec-head"><span class="sec-num">02</span><h2>Où se paramètrent les conditions d'achat&nbsp;?</h2></div>
+  <div class="path" aria-label="Chemin d'accès dans l'espace marque"><span>Espace marque</span><span>Catalogue</span><span>Produits</span><span>Modifier un produit</span><span>Onglet <b>Conditions d'achat</b></span></div>
+  <figure><img src="Captures/Conditions%20d'achat/Edition-condition-achat.png" alt="Onglet Conditions d'achat du produit Test T-Shirt : bloc ET/OU avec la condition Quantité maximum dans les commandes ouvertes par vendeur égal 4, bouton Enregistrer" loading="lazy"><figcaption>L'onglet Conditions d'achat d'un produit.</figcaption></figure>
+  <ol class="prose">
+    <li>Ouvrez le produit et cliquez sur l'onglet <strong>Conditions d'achat</strong>.</li>
+    <li>Cliquez sur le bouton à une étiquette pour ajouter une condition, ou à deux étiquettes pour ajouter un groupe.</li>
+    <li>Choisissez la condition, l'opérateur et la valeur.</li>
+    <li>Choisissez <strong>ET</strong> ou <strong>OU</strong> en haut du bloc.</li>
+    <li>Cliquez sur <strong>Enregistrer</strong>.</li>
+  </ol>
+  <p class="muted">Sans aucune condition, le produit peut être commandé par tous, sans limite. L'onglet n'apparaît que pour les produits de votre marque.</p>
+</section>
+
+<!-- 3 -->
+<section id="principe">
+  <div class="sec-head"><span class="sec-num">03</span><h2>ET, OU et groupes</h2></div>
+  <p class="lede">Contrairement aux réductions et aux bons d'achat, les conditions d'achat acceptent le <strong>OU</strong> et les <strong>groupes</strong>.</p>
+  <div class="grid-2">
+    <div class="card"><span class="tag">ET</span><p>Toutes les conditions doivent être vraies.</p></div>
+    <div class="card"><span class="tag pink">OU</span><p>Une seule condition vraie suffit.</p></div>
+  </div>
+  <p>Un <strong>groupe</strong> rassemble plusieurs conditions avec son propre ET/OU. On peut créer des groupes sous le bloc principal, mais pas de groupe dans un groupe.</p>
+  <div class="example"><span class="ex-label">Exemple&nbsp;: «&nbsp;(conseillère ET au plus 2 par commande) OU kit de démarrage&nbsp;»</span>
+    <div class="tree">
+      <div><span class="op or">OU</span></div>
+      <div class="grp"><div><span class="op">ET</span> groupe</div><div class="r2">Rôle client est dans «&nbsp;Vendeur&nbsp;»</div><div class="r2">Quantité maximum par commande égal 2</div></div>
+      <div class="r">Type de commande est dans «&nbsp;Kit de démarrage&nbsp;»</div>
+    </div>
+    <p>Une conseillère peut commander 2 exemplaires au maximum&nbsp;; dans un kit de démarrage, le produit est toujours accepté.</p>
+  </div>
+</section>
+
+<!-- 4 -->
+<section id="quand">
+  <div class="sec-head"><span class="sec-num">04</span><h2>Quand les conditions sont-elles vérifiées&nbsp;?</h2></div>
+  <div class="timeline">
+    <div class="tl"><b>À l'ajout du produit</b><span>Si les conditions ne sont pas remplies, le produit est refusé et un message s'affiche. Espace conseillère, BrandAdmin, mini-site, boutique, application mobile.</span></div>
+    <div class="tl"><b>À la modification de quantité</b><span>Si la nouvelle quantité ne respecte plus les conditions, elle est refusée et l'ancienne quantité est rétablie.</span></div>
+    <div class="tl"><b>Quand la commande change</b><span>Après la suppression d'un produit, un changement de quantité, un rattachement à une commande groupée ou un changement de pays de livraison, les autres produits sont revérifiés. Ceux qui ne respectent plus leurs conditions sont <strong>retirés de la commande</strong>.</span></div>
+    <div class="tl stop"><b>Avant le paiement (espace conseillère)</b><span>Un dernier contrôle liste les produits qui ne respectent plus leurs conditions et bloque la finalisation tant qu'ils ne sont pas retirés.</span></div>
+  </div>
+  <div class="warn"><span class="ex-label">Effet en cascade</span><p>Un produit soumis à «&nbsp;Produits dans le panier contient X&nbsp;» <strong>disparaît de la commande</strong> si le produit X est retiré. Prévenez vos conseillères.</p></div>
+  <h3 id="s4-1"><span class="sub-num">4.1</span> Réunions en visio</h3>
+  <p>Votre marque peut être configurée par SellingAtHome pour <strong>autoriser tous les produits en visio</strong>&nbsp;: les conditions d'achat sont alors entièrement ignorées sur les commandes rattachées à une réunion en visioconférence.</p>
+</section>
+
+<!-- 5 -->
+<section id="conditions">
+  <div class="sec-head"><span class="sec-num">05</span><h2>Les conditions disponibles</h2></div>
+  <p class="lede">Les libellés sont ceux de l'écran.</p>
+
+  <h3 id="s5-1"><span class="sub-num">5.1</span> Le client et la commande</h3>
+  <div class="table-wrap"><table class="cond">
+    <thead><tr><th>Condition</th><th>Saisie</th><th>Ce qu'elle vérifie</th></tr></thead>
+    <tbody>
+      <tr><td><b>Rôle client</b></td><td>Liste de rôles</td><td>Les rôles du client de la commande. «&nbsp;égal&nbsp;»&nbsp;: exactement ces rôles. «&nbsp;dans&nbsp;»&nbsp;: au moins un de ses rôles est dans la liste. «&nbsp;pas dans&nbsp;»&nbsp;: aucun.</td></tr>
+      <tr><td><b>Type de commande</b></td><td>Liste</td><td>Le type de la commande&nbsp;: vente en réunion, vente directe, web, mini-site vendeur, boutique, kit de démarrage, commande par points… Une vente placée dans une commande groupée prend le type «&nbsp;… en commande groupée&nbsp;»&nbsp;: pensez à le cocher.<span class="know">«&nbsp;égal&nbsp;» et «&nbsp;non égal&nbsp;» ne fonctionnent qu'avec une seule valeur cochée. Avec plusieurs valeurs, utilisez «&nbsp;dans&nbsp;» / «&nbsp;pas dans&nbsp;».</span></td></tr>
+      <tr><td><b>Date de disponibilité</b></td><td>Date</td><td>La date du jour, comparée à la date saisie. «&nbsp;est entre&nbsp;» (bornes incluses) ouvre le produit à la vente sur une période.</td></tr>
+      <tr><td><b>Montant de la commande</b></td><td>Montant</td><td>Le montant de la commande <strong>sans ce produit</strong>, remises et points de fidélité déduits. Sert à réserver un produit à partir d'un panier minimum.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 id="s5-2"><span class="sub-num">5.2</span> Les autres produits</h3>
+  <div class="table-wrap"><table class="cond">
+    <thead><tr><th>Condition</th><th>Saisie</th><th>Ce qu'elle vérifie</th></tr></thead>
+    <tbody>
+      <tr><td><b>Produits dans le panier</b></td><td>Produits + quantité minimale</td><td>La présence d'autres produits dans la commande en cours (produit entier ou déclinaison précise), avec une quantité minimale. «&nbsp;dans&nbsp;»&nbsp;: <strong>tous</strong> les produits listés. «&nbsp;contient&nbsp;»&nbsp;: <strong>au moins un</strong>. «&nbsp;pas dans&nbsp;»&nbsp;: au moins un manque. «&nbsp;ne contient pas&nbsp;»&nbsp;: aucun n'est présent.<span class="know">la quantité minimale s'apprécie ligne par ligne (deux lignes du même produit ne s'additionnent pas). N'utilisez pas «&nbsp;non égal&nbsp;», qui ne fonctionne pas.</span></td></tr>
+      <tr><td><b>Produit déjà acheté</b></td><td>Produits + quantité minimale</td><td>Les quantités que le client a <strong>déjà commandées par le passé</strong>. «&nbsp;dans&nbsp;»&nbsp;: tous atteints. «&nbsp;contient&nbsp;»&nbsp;: au moins un.<span class="know">la commande en cours n'est pas comptée. «&nbsp;dans&nbsp;» et «&nbsp;contient&nbsp;» ne comptent que les commandes payées&nbsp;; «&nbsp;pas dans&nbsp;» et «&nbsp;ne contient pas&nbsp;» comptent toutes les commandes, même non payées ou annulées.</span></td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 id="s5-3"><span class="sub-num">5.3</span> Les plafonds de quantité</h3>
+  <p>Cinq conditions limitent une quantité. Elles n'ont qu'un opérateur, <strong>«&nbsp;égal&nbsp;»</strong>, qui se lit <strong>«&nbsp;au maximum&nbsp;»</strong> (voir <a href="#plafonds">section 6</a>).</p>
+  <div class="table-wrap"><table class="cond">
+    <thead><tr><th>Condition</th><th>Saisie</th><th>Quantité comptée</th></tr></thead>
+    <tbody>
+      <tr><td><b>Quantité maximum par commande</b></td><td>Nombre</td><td>La quantité de ce produit dans la commande en cours.</td></tr>
+      <tr><td><b>Quantité maximum par client</b></td><td>Nombre</td><td>Tout ce que ce client a commandé de ce produit, <strong>depuis toujours</strong>, commande en cours comprise.</td></tr>
+      <tr><td><b>Quantité maximum par vendeur</b></td><td>Nombre</td><td>Tout ce que cette conseillère a vendu de ce produit, tous clients confondus, depuis toujours, commande en cours comprise.</td></tr>
+      <tr><td><b>Quantité maximum dans les commandes ouvertes par vendeur</b></td><td>Nombre</td><td>La quantité de ce produit dans les commandes <strong>non encore payées</strong> de la conseillère, tous clients confondus. Une fois les commandes payées, le compteur se libère.<span class="know">une commande sans conseillère (boutique de la marque) n'est jamais bloquée. Une valeur de 0 désactive la condition.</span></td></tr>
+      <tr><td><b>Quantité maximum par vendeur pour lui-même (date)</b></td><td>Nombre + période</td><td>La quantité commandée par la conseillère sur une période&nbsp;: dates fixes, ou période dynamique (semaine, mois, trimestre ou année courante).<span class="know">malgré son nom, elle compte aussi les ventes de la conseillère à ses clients. Le dernier jour d'une période en dates fixes n'est pas inclus.</span></td></tr>
+    </tbody>
+  </table></div>
+  <p class="muted">Certaines marques disposent d'une règle développée sur mesure. Si elle apparaît dans votre back-office, son fonctionnement vous a été présenté lors de sa mise en place.</p>
+</section>
+
+<!-- 6 -->
+<section id="plafonds">
+  <div class="sec-head"><span class="sec-num">06</span><h2>Bien comprendre les plafonds de quantité</h2></div>
+  <p class="lede">«&nbsp;Égal 4&nbsp;» ne veut pas dire «&nbsp;exactement 4&nbsp;»&nbsp;: c'est un <strong>plafond</strong>. Le produit est accepté tant que la quantité comptée, <strong>plus la quantité en cours d'ajout</strong>, reste inférieure ou égale à 4.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Ce qui est compté</th><th>Par commande</th><th>Par client</th><th>Par vendeur</th><th>Commandes ouvertes</th><th>Vendeur pour lui-même</th></tr></thead>
+    <tbody>
+      <tr><td><b>Commande en cours</b></td><td class="hl">oui</td><td class="hl">oui</td><td class="hl">oui</td><td class="hl">oui</td><td class="hl">oui</td></tr>
+      <tr><td><b>Commandes passées non payées</b></td><td>—</td><td class="hl">oui</td><td class="hl">oui</td><td class="hl">oui</td><td class="hl">oui</td></tr>
+      <tr><td><b>Commandes payées</b></td><td>—</td><td class="hl">oui</td><td class="hl">oui</td><td>non</td><td class="hl">oui</td></tr>
+      <tr><td><b>Commandes annulées ou supprimées</b></td><td>—</td><td>non</td><td>non</td><td>non</td><td>non</td></tr>
+      <tr><td><b>Période</b></td><td>—</td><td>depuis toujours</td><td>depuis toujours</td><td>tant que non payée</td><td>la période choisie</td></tr>
+    </tbody>
+  </table></div>
+  <ul class="prose">
+    <li>Toutes les déclinaisons du produit sont additionnées.</li>
+    <li>Les retours ne sont pas déduits. Les commandes refusées et les produits offerts comptent.</li>
+    <li>Une commande annulée libère sa quantité&nbsp;; une commande non payée oubliée la bloque.</li>
+  </ul>
+
+  <div class="sim" id="simPlafond">
+    <div><h3 style="color:#fff">Simulateur de plafond</h3><p class="sub">Indiquez le plafond et les quantités&nbsp;: le simulateur dit si l'ajout est accepté.</p></div>
+    <div class="sim-form">
+      <label>Plafond («&nbsp;égal&nbsp;»)<input type="number" id="pfMax" min="0" step="1" value="4"></label>
+      <label>Déjà compté (autres commandes du périmètre)<input type="number" id="pfOther" min="0" step="1" value="2"></label>
+      <label>Déjà dans la commande en cours<input type="number" id="pfCur" min="0" step="1" value="1"></label>
+      <label>Quantité ajoutée<input type="number" id="pfAdd" min="1" step="1" value="1"></label>
+    </div>
+    <p class="calc" id="pfCalc"></p>
+    <div class="verdict" id="pfOut" aria-live="polite"></div>
+  </div>
+</section>
+
+<!-- 7 -->
+<section id="messages">
+  <div class="sec-head"><span class="sec-num">07</span><h2>Ce que voit la conseillère</h2></div>
+  <p>Quand un produit est refusé, la conseillère voit le message&nbsp;:</p>
+  <div class="example"><span class="ex-label">Message</span><p>«&nbsp;Des conditions particulières ne permettent pas d'ajouter ce produit au panier.&nbsp;» suivi de la liste des conditions du produit (par exemple «&nbsp;La quantité maximum d'achat de ce produit par commande est égal à 2&nbsp;»). Dans le BrandAdmin, le message ajoute «&nbsp;Contactez votre responsable pour plus d'informations&nbsp;».</p></div>
+  <ul class="prose">
+    <li>Le message liste <strong>toutes</strong> les conditions du produit, pas seulement celle qui bloque.</li>
+    <li>Pour la condition «&nbsp;commandes ouvertes&nbsp;», le message précise&nbsp;: «&nbsp;Quantité maximum atteinte (4) dans les commandes ouvertes du vendeur pour la référence …&nbsp;».</li>
+    <li>Avant paiement, l'écran «&nbsp;Produit non éligible&nbsp;» liste les produits à retirer.</li>
+    <li>Après un changement de pays de livraison&nbsp;: «&nbsp;Un ou plusieurs produits ont été retirés de la commande car ils ne sont pas disponibles pour ce pays de livraison&nbsp;».</li>
+  </ul>
+  <div class="tip"><span class="ex-label">Conseil</span><p>Indiquez la règle dans la description du produit («&nbsp;Limité à 2 par commande&nbsp;», «&nbsp;Réservé aux kits de démarrage&nbsp;»)&nbsp;: les conseillères comprendront le refus avant même d'essayer.</p></div>
+</section>
+
+<!-- 8 -->
+<section id="contournement">
+  <div class="sec-head"><span class="sec-num">08</span><h2>Ce qui n'est pas soumis aux conditions</h2></div>
+  <p>Certains mécanismes ajoutent des produits aux commandes <strong>sans vérifier les conditions d'achat</strong>&nbsp;:</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Mécanisme</th><th>Exemple</th></tr></thead>
+    <tbody>
+      <tr><td><b>Cadeaux automatiques</b></td><td>Produit offert dès un montant de panier</td></tr>
+      <tr><td><b>Fidélité et challenges</b></td><td>Cadeau hôtesse, produits du catalogue en points, récompense de challenge</td></tr>
+      <tr><td><b>Échanges et retours</b></td><td>Produit de remplacement</td></tr>
+      <tr><td><b>Collections</b></td><td>Ajout d'une collection de produits</td></tr>
+      <tr><td><b>Imports de commandes</b></td><td>Commandes créées par API depuis un système externe</td></tr>
+      <tr><td><b>Composants de kit</b></td><td>Seul le kit est contrôlé, pas les produits qui le composent</td></tr>
+      <tr><td><b>Réunions en visio</b></td><td>Si l'option «&nbsp;tous les produits en visio&nbsp;» est active</td></tr>
+    </tbody>
+  </table></div>
+  <p class="muted">Dans le BrandAdmin, la finalisation d'une commande ne refait pas le contrôle «&nbsp;avant paiement&nbsp;» de l'espace conseillère.</p>
+</section>
+
+<!-- 9 -->
+<section id="duplication">
+  <div class="sec-head"><span class="sec-num">09</span><h2>Duplication et import de produits</h2></div>
+  <ul class="prose">
+    <li><strong>Dupliquer un produit</strong> copie ses conditions d'achat telles quelles. Une condition qui cite le produit d'origine (par exemple «&nbsp;Produits dans le panier&nbsp;») n'est pas adaptée&nbsp;: vérifiez-la.</li>
+    <li>L'<strong>import Excel</strong> de produits ne gère pas les conditions d'achat&nbsp;: elles se saisissent dans l'onglet du produit.</li>
+    <li>Si vos produits sont synchronisés par <strong>API</strong> depuis un autre système, une mise à jour peut remplacer les conditions saisies à la main. Vérifiez avec votre interlocuteur technique.</li>
+  </ul>
+</section>
+
+<!-- 10 -->
+<section id="exemples">
+  <div class="sec-head"><span class="sec-num">10</span><h2>Exemples pas à pas</h2></div>
+  <h3 id="s10-1"><span class="sub-num">10.1</span> Un produit réservé au kit de démarrage</h3>
+  <div class="example"><span class="ex-label">Paramétrage</span><p>«&nbsp;Type de commande&nbsp;» <strong>dans</strong> «&nbsp;Kit de démarrage&nbsp;». Le produit ne peut être ajouté que dans une commande de ce type.</p></div>
+  <h3 id="s10-2"><span class="sub-num">10.2</span> Une nouveauté limitée à 2 par client pendant un mois</h3>
+  <div class="example"><span class="ex-label">Paramétrage (ET)</span><p>«&nbsp;Date de disponibilité&nbsp;» <strong>est entre</strong> 01/04 et 30/04, ET «&nbsp;Quantité maximum par client&nbsp;» <strong>égal</strong> 2.</p><p>Une cliente qui en a déjà commandé 2 ne peut plus en recommander, même le mois suivant&nbsp;: le plafond par client vaut depuis toujours.</p></div>
+  <h3 id="s10-3"><span class="sub-num">10.3</span> Un accessoire vendu uniquement avec le produit principal</h3>
+  <div class="example"><span class="ex-label">Paramétrage</span><p>«&nbsp;Produits dans le panier&nbsp;» <strong>contient</strong> «&nbsp;Produit principal&nbsp;», quantité minimale 1. Si la conseillère retire ensuite le produit principal, l'accessoire est retiré automatiquement.</p></div>
+  <h3 id="s10-4"><span class="sub-num">10.4</span> Un produit réservé aux conseillères, limité par mois</h3>
+  <div class="example"><span class="ex-label">Paramétrage (ET)</span><p>«&nbsp;Rôle client&nbsp;» <strong>dans</strong> «&nbsp;Vendeur&nbsp;», ET «&nbsp;Quantité maximum par vendeur pour lui-même (date)&nbsp;» <strong>égal</strong> 5, période dynamique «&nbsp;Mois courant&nbsp;». Chaque conseillère peut commander 5 unités par mois civil.</p></div>
+  <h3 id="s10-5"><span class="sub-num">10.5</span> Un produit en stock limité réparti entre les conseillères</h3>
+  <div class="example"><span class="ex-label">Paramétrage</span><p>«&nbsp;Quantité maximum dans les commandes ouvertes par vendeur&nbsp;» <strong>égal</strong> 4. Une conseillère ne peut pas immobiliser plus de 4 unités dans des commandes non payées&nbsp;: elle doit faire payer ses commandes pour en reprendre.</p></div>
+</section>
+
+<!-- 11 -->
+<section id="usages">
+  <div class="sec-head"><span class="sec-num">11</span><h2>Les paramétrages les plus fréquents</h2></div>
+  <p class="lede">Les configurations que l'on retrouve le plus souvent chez les marques.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Usage</th><th>Condition utilisée</th></tr></thead>
+    <tbody>
+      <tr><td><b>Produit réservé à un canal</b> (kit de démarrage, commande par points, réunion…)</td><td>Type de commande, de très loin la plus utilisée</td></tr>
+      <tr><td><b>Limiter les achats d'une conseillère</b></td><td>Quantité maximum par vendeur, ou dans les commandes ouvertes par vendeur</td></tr>
+      <tr><td><b>Limiter une commande</b></td><td>Quantité maximum par commande</td></tr>
+      <tr><td><b>Produit lié à un autre</b></td><td>Produits dans le panier</td></tr>
+      <tr><td><b>Produit réservé à une clientèle</b></td><td>Rôle client</td></tr>
+      <tr><td><b>Ouverture programmée</b></td><td>Date de disponibilité</td></tr>
+    </tbody>
+  </table></div>
+  <p class="muted">La grande majorité des produits utilisent des conditions en ET&nbsp;; le OU reste rare.</p>
+</section>
+
+<!-- 12 -->
+<section id="attention">
+  <div class="sec-head"><span class="sec-num">12</span><h2>Points d'attention</h2></div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Sujet</th><th>Comportement</th><th>Conseil</th></tr></thead>
+    <tbody>
+      <tr><td><b>«&nbsp;égal&nbsp;» sur une quantité</b></td><td>C'est un plafond («&nbsp;au maximum&nbsp;»), pas une égalité.</td><td>—</td></tr>
+      <tr><td><b>Ajout de plusieurs unités d'un coup</b></td><td>Sur la plupart des écrans, l'ajout initial n'est contrôlé que pour une unité&nbsp;: un plafond peut être dépassé si l'on ajoute directement plusieurs unités.</td><td>Surveiller les commandes sur les produits sensibles.</td></tr>
+      <tr><td><b>Produits retirés automatiquement</b></td><td>Un produit qui ne respecte plus ses conditions après une modification de la commande est retiré.</td><td>Prévenir les conseillères.</td></tr>
+      <tr><td><b>Commandes non payées</b></td><td>Elles comptent dans les plafonds par client et par conseillère.</td><td>Supprimer les paniers abandonnés.</td></tr>
+      <tr><td><b>Plafond par client / par conseillère</b></td><td>Il vaut depuis toujours.</td><td>Utiliser la période dynamique si besoin d'un plafond mensuel.</td></tr>
+      <tr><td><b>«&nbsp;Vendeur pour lui-même&nbsp;»</b></td><td>Compte aussi les ventes à ses clients&nbsp;; le dernier jour d'une période fixe est exclu.</td><td>Saisir le lendemain du dernier jour voulu.</td></tr>
+      <tr><td><b>Type de commande «&nbsp;égal&nbsp;»</b></td><td>Ne fonctionne qu'avec une seule valeur.</td><td>Utiliser «&nbsp;dans&nbsp;».</td></tr>
+      <tr><td><b>Produits dans le panier «&nbsp;non égal&nbsp;»</b></td><td>Ne fonctionne pas.</td><td>Utiliser «&nbsp;pas dans&nbsp;» ou «&nbsp;ne contient pas&nbsp;».</td></tr>
+      <tr><td><b>Produit déjà acheté</b></td><td>La commande en cours n'est pas comptée.</td><td>—</td></tr>
+      <tr><td><b>Message d'erreur</b></td><td>Il liste toutes les conditions, pas seulement celle qui bloque.</td><td>Décrire la règle dans la fiche produit.</td></tr>
+      <tr><td><b>Valeurs saisies</b></td><td>Une valeur vide ou mal formée provoque une erreur à chaque ajout du produit.</td><td>Saisir des nombres simples (ex. 4, 50).</td></tr>
+      <tr><td><b>Mécanismes non contrôlés</b></td><td>Cadeaux, fidélité, échanges, imports, collections passent outre.</td><td>Voir <a href="#contournement">section 8</a>.</td></tr>
+      <tr><td><b>Duplication</b></td><td>Les conditions sont copiées sans adaptation.</td><td>Relire après duplication.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- 13 -->
+<section id="faq">
+  <div class="sec-head"><span class="sec-num">13</span><h2>Questions fréquentes</h2></div>
+  <div class="faq">
+    <details><summary>Le produit est refusé, mais je ne vois pas pourquoi.</summary><div><p>Le message liste toutes les conditions du produit. Vérifiez d'abord les plafonds de quantité&nbsp;: ils comptent les autres commandes (payées ou non) du client ou de la conseillère, pas seulement la commande en cours.</p></div></details>
+    <details><summary>Je veux «&nbsp;A ou B&nbsp;», pas «&nbsp;A et B&nbsp;».</summary><div><p>Passez le bloc en OU, ou créez un groupe en OU pour une partie des conditions.</p></div></details>
+    <details><summary>Le plafond se déclenche trop tôt.</summary><div><p>La quantité en cours d'ajout est comptée&nbsp;: avec un plafond de 3 et 3 unités déjà commandées, la 4e est refusée. Des commandes non payées oubliées peuvent aussi bloquer.</p></div></details>
+    <details><summary>Un produit a disparu de la commande.</summary><div><p>Il ne respectait plus ses conditions après une modification (produit lié retiré, quantité changée, passage en commande groupée, changement de pays). Il a été retiré automatiquement.</p></div></details>
+    <details><summary>Les conditions ne s'appliquent pas en visio.</summary><div><p>Votre marque a l'option «&nbsp;autoriser tous les produits en visio&nbsp;». Contactez SellingAtHome pour la modifier.</p></div></details>
+    <details><summary>Mes ventes en commande groupée ne passent pas la condition «&nbsp;Type de commande&nbsp;».</summary><div><p>Une vente directe ou en réunion placée dans une commande groupée prend le type «&nbsp;… en commande groupée&nbsp;». Cochez aussi ces types.</p></div></details>
+  </div>
+</section>
+
+<!-- 14 -->
+<section id="glossaire">
+  <div class="sec-head"><span class="sec-num">14</span><h2>Glossaire</h2></div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Terme</th><th>Définition</th></tr></thead>
+    <tbody>
+      <tr><td><b>Condition d'achat</b></td><td>Règle qui autorise ou refuse l'ajout d'un produit à une commande.</td></tr>
+      <tr><td><b>Plafond</b></td><td>Quantité maximum autorisée, saisie avec l'opérateur «&nbsp;égal&nbsp;».</td></tr>
+      <tr><td><b>Commande ouverte</b></td><td>Commande non supprimée, non annulée, pas encore payée.</td></tr>
+      <tr><td><b>Groupe</b></td><td>Ensemble de conditions avec son propre ET/OU.</td></tr>
+      <tr><td><b>Période dynamique</b></td><td>Semaine, mois, trimestre ou année en cours, recalculés automatiquement.</td></tr>
+      <tr><td><b>Commande groupée</b></td><td>Regroupement de plusieurs commandes pour une livraison commune.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  function v(id) { return Math.max(0, parseInt($(id).value, 10) || 0); }
+  function render() {
+    var max = v('pfMax'), other = v('pfOther'), cur = v('pfCur'), add = Math.max(1, v('pfAdd'));
+    var total = other + cur + add, ok = total <= max;
+    $('pfCalc').textContent = other + ' (autres commandes) + ' + cur + ' (commande en cours) + ' + add + ' (ajout) = ' + total + (ok ? ' ≤ ' : ' > ') + max;
+    var out = $('pfOut');
+    out.className = 'verdict ' + (ok ? 'ok' : 'ko');
+    out.textContent = ok ? 'Ajout accepté : il reste ' + (max - total) + ' unité(s) avant le plafond.' : 'Ajout refusé : le plafond de ' + max + ' serait dépassé de ' + (total - max) + '.';
+  }
+  ['pfMax', 'pfOther', 'pfCur', 'pfAdd'].forEach(function (id) { $(id).addEventListener('input', render); });
+  render();
+})();
+</script>
+
+  </main>
+</div>
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  function v(id) { return Math.max(0, parseInt($(id).value, 10) || 0); }
+  function render() {
+    var max = v('pfMax'), other = v('pfOther'), cur = v('pfCur'), add = Math.max(1, v('pfAdd'));
+    var total = other + cur + add, ok = total <= max;
+    $('pfCalc').textContent = other + ' (autres commandes) + ' + cur + ' (commande en cours) + ' + add + ' (ajout) = ' + total + (ok ? ' ≤ ' : ' > ') + max;
+    var out = $('pfOut');
+    out.className = 'verdict ' + (ok ? 'ok' : 'ko');
+    out.textContent = ok ? 'Ajout accepté : il reste ' + (max - total) + ' unité(s) avant le plafond.' : 'Ajout refusé : le plafond de ' + max + ' serait dépassé de ' + (total - max) + '.';
+  }
+  ['pfMax', 'pfOther', 'pfCur', 'pfAdd'].forEach(function (id) { $(id).addEventListener('input', render); });
+  render();
+})();
+</script>

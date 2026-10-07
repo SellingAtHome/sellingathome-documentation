@@ -1,0 +1,232 @@
+<!--page {"title":"Les segments de clientes"} -->
+<style>
+.steps4 { display:grid; grid-template-columns:repeat(auto-fit, minmax(170px,1fr)); gap:10px; counter-reset:st; }
+.steps4 div { background:var(--card); border:1px solid var(--rule); border-radius:14px; padding:12px 14px; font-size:.92rem; }
+.steps4 b { display:block; color:var(--heading); }
+.filt td:first-child { width:28%; }
+.filt td:nth-child(3) { width:30%; font-size:.9rem; }
+.know { display:block; margin-top:4px; font-size:.86rem; color:var(--muted); }
+.know::before { content:"À savoir : "; font-weight:700; }
+</style>
+<header class="hero">
+  <div class="hero-in">
+    <div>
+      <span class="eyebrow">Animation et fidélisation</span>
+      <h1>Les segments <span class="script">de clientes</span></h1>
+      <p class="lede">Regrouper des clientes selon leur profil et leurs achats, pour les retrouver, les faire relancer par les conseillères et les exporter. Avec la liste de tous les filtres et leurs pièges.</p>
+    </div>
+    <div class="voucher-art" aria-hidden="true">
+      <div class="v-top"><span>Segment</span><span>Actif</span></div>
+      <div class="v-amount">3<span> filtres</span></div>
+      <div class="v-name">Anniversaire de juillet</div>
+      <div class="v-sep"></div>
+      <div class="v-meta"><span>Profil <b>2</b></span><span>Commercial <b>1</b></span></div>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="toc" aria-label="Sommaire">
+    <details id="tocDetails" open>
+      <summary>Sommaire</summary>
+      <div class="toc-title">Sommaire</div>
+      <ol>
+        <li data-sec="definition"><a href="#definition"><span class="toc-n">1</span>Qu'est-ce qu'un segment&nbsp;?</a></li>
+        <li data-sec="usages"><a href="#usages"><span class="toc-n">2</span>Où un segment est-il utilisé&nbsp;?</a></li>
+        <li data-sec="ecran"><a href="#ecran"><span class="toc-n">3</span>L'écran des segments</a></li>
+        <li data-sec="creer"><a href="#creer"><span class="toc-n">4</span>Créer un segment</a>
+          <ol class="toc-sub"><li><a href="#s4-1"><span class="toc-n">4.1</span>Les quatre étapes</a></li><li><a href="#s4-2"><span class="toc-n">4.2</span>Activer le segment</a></li></ol>
+        </li>
+        <li data-sec="filtres"><a href="#filtres"><span class="toc-n">5</span>Tous les filtres</a>
+          <ol class="toc-sub"><li><a href="#s5-1"><span class="toc-n">5.1</span>Les opérateurs</a></li><li><a href="#s5-2"><span class="toc-n">5.2</span>Filtres profil</a></li><li><a href="#s5-3"><span class="toc-n">5.3</span>Filtres commerciaux</a></li></ol>
+        </li>
+        <li data-sec="export"><a href="#export"><span class="toc-n">6</span>L'export</a></li>
+        <li data-sec="exemples"><a href="#exemples"><span class="toc-n">7</span>Exemples de segments</a></li>
+        <li data-sec="conseillere"><a href="#conseillere"><span class="toc-n">8</span>Ce que voit la conseillère</a></li>
+        <li data-sec="attention"><a href="#attention"><span class="toc-n">9</span>Points d'attention</a></li>
+        <li data-sec="faq"><a href="#faq"><span class="toc-n">10</span>Questions fréquentes</a></li>
+      </ol>
+    </details>
+  </nav>
+
+  <main>
+
+<!-- 1 -->
+<section id="definition">
+  <div class="sec-head"><span class="sec-num">01</span><h2>Qu'est-ce qu'un segment&nbsp;?</h2></div>
+  <p class="lede">Un segment est un <strong>groupe de clientes défini par des filtres</strong>&nbsp;: «&nbsp;les clientes nées en juillet qui ont dépensé plus de 300&nbsp;€&nbsp;», «&nbsp;les hôtesses sans commande depuis 6 mois&nbsp;». Le segment n'est pas une liste figée&nbsp;: il est recalculé à chaque utilisation, avec les données du moment.</p>
+  <div class="example"><span class="ex-label">Exemple</span><p>Vous créez le segment «&nbsp;Hôtesses à relancer&nbsp;»&nbsp;: rôle Hôte, et pas de commande depuis 180 jours. Le 1<sup>er</sup> octobre, il compte 240 clientes&nbsp;; Léa n'en voit que les 12 de son carnet d'adresses et les appelle pour leur proposer une nouvelle réunion. Le 1<sup>er</sup> novembre, Jade, qui a recommandé entre-temps, en est sortie toute seule.</p></div>
+  <div class="tip"><span class="ex-label">Vocabulaire</span><p>Dans les écrans, la cliente est appelée <strong>client</strong>, la conseillère <strong>vendeur</strong> et l'hôtesse <strong>hôte</strong>.</p></div>
+  <div class="warn"><span class="ex-label">Ne pas confondre</span><p>Le menu <strong>Paramètres › Segmentations</strong>, présent chez certaines marques, est un autre outil, qui n'est utilisé par aucune marque. Cette page traite uniquement de <strong>Clients › Gérer les segments</strong>.</p></div>
+</section>
+
+<!-- 2 -->
+<section id="usages">
+  <div class="sec-head"><span class="sec-num">02</span><h2>Où un segment est-il utilisé&nbsp;?</h2></div>
+  <p class="lede">Un segment sert à <strong>trouver et extraire</strong> des clientes. Il n'envoie rien et ne donne rien par lui-même.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Où</th><th>Ce que permet le segment</th></tr></thead>
+    <tbody>
+      <tr><td><b>Espace marque › Clients › Clients</b></td><td>Filtre «&nbsp;Segments&nbsp;» de la liste des clientes (segments actifs). Voir <a href="clients.html#s3-2"><em>Les clientes</em></a>.</td></tr>
+      <tr><td><b>Espace marque › Gérer les segments</b></td><td>Export CSV ou Excel de toutes les clientes du segment.</td></tr>
+      <tr><td><b>Espace conseillère et application</b></td><td>Filtre de la liste des clientes de la conseillère, et export de ses clientes par segment. Seules <strong>ses</strong> clientes apparaissent.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="decide">
+    <div class="row"><span class="q">Cibler une réduction ou un code promo</span><span class="arrow">→</span><span class="pill pink">Pas de segment&nbsp;: condition de la réduction (rôle…)</span></div>
+    <div class="row"><span class="q">Envoyer une notification ou un email</span><span class="arrow">→</span><span class="pill pink">Pas de segment&nbsp;: exportez, puis votre outil d'emailing</span></div>
+    <div class="row"><span class="q">Donner des points</span><span class="arrow">→</span><span class="pill pink">Pas de segment&nbsp;: règles de fidélité</span></div>
+    <div class="row"><span class="q">Faire relancer des clientes par les conseillères</span><span class="arrow">→</span><span class="pill">Segment actif</span></div>
+  </div>
+  <p class="muted">Pour cibler des avantages, voir les guides des <a href="reductions-guide.html">réductions</a> et de la <a href="fidelite-guide.html">fidélité</a>&nbsp;: leurs conditions sur le rôle, les achats ou l'historique jouent le rôle d'un segment.</p>
+</section>
+
+<!-- 3 -->
+<section id="ecran">
+  <div class="sec-head"><span class="sec-num">03</span><h2>L'écran des segments</h2></div>
+  <div class="path" aria-label="Chemin d'accès"><span>Espace marque</span><span>Clients</span><span><b>Gérer les segments</b></span></div>
+  <figure><img src="Captures/Clientes/liste-segments.png" alt="Écran Segmentation clients : bouton Ajouter un segment, colonnes Nom, Description, Actif (interrupteurs), Crée le, Actions (modifier, supprimer), Exporter (CSV et XLS) ; quatre segments dont deux actifs" loading="lazy"><figcaption>L'écran «&nbsp;Segmentation clients&nbsp;».</figcaption></figure>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Colonne</th><th>Rôle</th></tr></thead>
+    <tbody>
+      <tr><td><b>Actif</b></td><td>L'interrupteur rend le segment visible dans les filtres de la marque et des conseillères. Il s'enregistre immédiatement.</td></tr>
+      <tr><td><b>Actions</b></td><td>Le crayon rouvre l'assistant&nbsp;; la croix supprime le segment (après confirmation).</td></tr>
+      <tr><td><b>Exporter</b></td><td>Les deux boutons CSV et XLS téléchargent les clientes du segment, actif ou non (<a href="#export">section 6</a>).</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- 4 -->
+<section id="creer">
+  <div class="sec-head"><span class="sec-num">04</span><h2>Créer un segment</h2></div>
+  <h3 id="s4-1"><span class="sub-num">4.1</span> Les quatre étapes</h3>
+  <p>Cliquez sur <strong>Ajouter un segment</strong>&nbsp;: un assistant en quatre étapes s'ouvre. Passez de l'une à l'autre avec <strong>Suivant</strong> et <strong>Précedent</strong>.</p>
+  <div class="steps4">
+    <div><b>1. Nom du segment</b>Un nom et une description (visibles par les conseillères).</div>
+    <div><b>2. Filtres profil</b>Âge, anniversaire, pays, département, civilité, rôles.</div>
+    <div><b>3. Filtres commerciaux</b>Achats, montants, réunions, points, bons et réductions.</div>
+    <div><b>4. Validation</b>Le récapitulatif de tous les filtres&nbsp;; le bouton <strong>Terminé</strong> enregistre.</div>
+  </div>
+  <figure><img src="Captures/Clientes/segment-profil.png" alt="Étape 2 Filtres profil de l'assistant : bouton ET, deux filtres Date d'anniversaire, inférieur à 01/08/2026 et supérieur ou égal à 01/07/2026, bouton d'ajout de filtre en haut à droite, boutons Précedent et Suivant" loading="lazy"><figcaption>Étape 2&nbsp;: les filtres profil d'un segment «&nbsp;anniversaire de juillet&nbsp;».</figcaption></figure>
+  <ul class="prose">
+    <li>Ajoutez un filtre avec le bouton en haut à droite du bloc, choisissez-le, puis l'opérateur et la valeur. La corbeille rouge le retire.</li>
+    <li><strong>Tous les filtres se combinent en ET</strong>, profil et commerciaux confondus&nbsp;: une cliente doit les remplir tous. Il n'y a ni «&nbsp;OU&nbsp;» ni groupe. Pour deux cibles différentes, créez deux segments.</li>
+    <li>Une étape peut rester vide.</li>
+  </ul>
+  <div class="grid-2" style="align-items:start">
+    <figure><img src="Captures/Clientes/segment-commercial.png" alt="Étape 3 Filtres commerciaux : filtre Pas de commande passée depuis X jours, opérateur égal, valeur 30" loading="lazy"><figcaption>Étape 3&nbsp;: un filtre commercial.</figcaption></figure>
+    <figure><img src="Captures/Clientes/segment-validation.png" alt="Étape 4 Validation : Nom Anniversaire client, Description, récapitulatif en ET des filtres Date d'anniversaire inférieur à 01/08/2026, supérieur ou égal à 01/07/2026 et Montant total dépensé TTC supérieur à 300" loading="lazy"><figcaption>Étape 4&nbsp;: le récapitulatif avant enregistrement.</figcaption></figure>
+  </div>
+  <div class="tip"><span class="ex-label">Bon à savoir</span><p>L'assistant n'affiche pas d'aperçu des clientes. Pour vérifier un segment, enregistrez-le puis filtrez la liste des clientes sur ce segment, ou exportez-le.</p></div>
+
+  <h3 id="s4-2"><span class="sub-num">4.2</span> Activer le segment</h3>
+  <div class="warn"><span class="ex-label">Un nouveau segment est inactif</span><p>Après <strong>Terminé</strong>, le segment apparaît dans la liste avec l'interrupteur <strong>Actif</strong> éteint. Tant qu'il n'est pas activé, il n'est proposé ni dans le filtre de la liste des clientes, ni aux conseillères. Seul l'export fonctionne.</p></div>
+  <figure><img src="Captures/Clientes/liste-clientes-segment.png" alt="Fenêtre Filtrer de la liste des clients avec le segment Role Hôte choisi dans la liste Segments" loading="lazy" style="max-width:520px"><figcaption>Un segment actif, choisi dans le filtre de la liste des clientes.</figcaption></figure>
+</section>
+
+<!-- 5 -->
+<section id="filtres">
+  <div class="sec-head"><span class="sec-num">05</span><h2>Tous les filtres</h2></div>
+  <p class="lede">20 filtres, cités avec leur libellé exact. Les montants et compteurs portent sur les commandes <strong>payées et non supprimées</strong>.</p>
+
+  <h3 id="s5-1"><span class="sub-num">5.1</span> Les opérateurs</h3>
+  <p>Selon le filtre&nbsp;: «&nbsp;égal&nbsp;», «&nbsp;non égal&nbsp;», «&nbsp;inférieur&nbsp;», «&nbsp;inférieur ou égal&nbsp;», «&nbsp;supérieur&nbsp;», «&nbsp;supérieur ou égal&nbsp;», et pour les produits «&nbsp;dans&nbsp;» / «&nbsp;pas dans&nbsp;» une liste.</p>
+  <div class="warn"><span class="ex-label">Le piège du zéro</span><p>Les filtres de comptage et de montant ignorent les clientes qui n'ont <strong>rien</strong>&nbsp;: «&nbsp;Nb de réunions hôte égal 0&nbsp;» ou «&nbsp;Montant total dépensé TTC inférieur à 50&nbsp;» ne retiennent pas les clientes qui n'ont jamais accueilli de réunion ou jamais acheté. Pour les clientes sans achat, utilisez «&nbsp;Pas de commande passée depuis X jours&nbsp;».</p></div>
+
+  <h3 id="s5-2"><span class="sub-num">5.2</span> Filtres profil</h3>
+  <div class="table-wrap"><table class="filt">
+    <thead><tr><th>Filtre</th><th>Ce qu'il vérifie</th><th>Exemple</th></tr></thead>
+    <tbody>
+      <tr><td><b>Age</b></td><td>L'âge, calculé avec la date de naissance.<span class="know">sans date de naissance, la cliente n'est jamais retenue.</span></td><td>Age supérieur ou égal 25</td></tr>
+      <tr><td><b>Date d’anniversaire</b></td><td>Le jour et le mois de naissance, <strong>sans l'année</strong>&nbsp;: l'année de la date saisie ne compte pas.<span class="know">évitez l'opérateur «&nbsp;non égal&nbsp;», qui ne fonctionne pas correctement.</span></td><td>Deux filtres&nbsp;: ≥ 01/07 et &lt; 01/08 = anniversaires de juillet</td></tr>
+      <tr><td><b>Pays</b></td><td>Le pays d'au moins une de ses adresses.</td><td>Pays égal Belgique</td></tr>
+      <tr><td><b>Département</b></td><td>Le code postal d'au moins une de ses adresses commence par la valeur saisie.</td><td>Département égal 69</td></tr>
+      <tr><td><b>Civilité</b></td><td>M, Mme, Mlle.</td><td>Civilité égal Mme</td></tr>
+      <tr><td><b>Rôles</b></td><td>Porte (égal) ou ne porte pas (non égal) un rôle, système ou libre.</td><td>Rôles égal Hôte</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 id="s5-3"><span class="sub-num">5.3</span> Filtres commerciaux</h3>
+  <div class="table-wrap"><table class="filt">
+    <thead><tr><th>Filtre</th><th>Ce qu'il vérifie</th><th>Exemple</th></tr></thead>
+    <tbody>
+      <tr><td><b>Achat du produit X</b></td><td>A acheté (ou pas) un ou plusieurs produits choisis.</td><td>Achat du produit X dans [collier torsadé]</td></tr>
+      <tr><td><b>Produit X dans la wishlist</b></td><td>A mis (ou pas) un produit dans sa liste de souhaits.</td><td>Relancer les clientes qui attendent un produit</td></tr>
+      <tr><td><b>Montant total dépensé TTC</b></td><td>Total de ses commandes payées, hors commandes annulées.</td><td>supérieur 300</td></tr>
+      <tr><td><b>CA client par catégorie</b></td><td>Ce qu'elle a dépensé dans une catégorie de produits. Ajoute une colonne à l'export.</td><td>Bijoux argent supérieur ou égal 100</td></tr>
+      <tr><td><b>CA client par catégorie (prix vendeur)</b></td><td>Même chose, calculé sur le prix conseillère.</td><td>Utile pour les comptes clients des conseillères</td></tr>
+      <tr><td><b>Nb de produits achetés</b></td><td>Le nombre de <strong>lignes</strong> de produits dans ses commandes payées (une ligne de 3 bracelets compte pour 1).</td><td>supérieur ou égal 10</td></tr>
+      <tr><td><b>Pas de commande passée depuis X jours</b></td><td>Aucune commande payée depuis X jours. Inclut les clientes qui n'ont <strong>jamais</strong> commandé. Ajoute la colonne «&nbsp;Dernière commande passée&nbsp;».</td><td>égal 180 = inactives depuis 6 mois</td></tr>
+      <tr><td><b>Nb de réunions hôte</b></td><td>Le nombre de réunions qu'elle a accueillies.</td><td>supérieur ou égal 2</td></tr>
+      <tr><td><b>Nb de réunions présent</b></td><td>Le nombre de réunions où elle a été marquée présente.</td><td>supérieur ou égal 3</td></tr>
+      <tr><td><b>Chiffre d'affaires réunion hôte</b></td><td>Le total des commandes payées des réunions qu'elle a accueillies.</td><td>supérieur ou égal 1000</td></tr>
+      <tr><td><b>Solde points de fidelité</b></td><td>Son solde de points encore valides. Ajoute une colonne à l'export.</td><td>supérieur ou égal 50</td></tr>
+      <tr><td><b>Bon d'achat X expirant</b></td><td>Possède un bon d'achat de ce type, non utilisé, qui expire dans les N prochains jours.</td><td>Bon de 10&nbsp;€, 15 jours</td></tr>
+      <tr><td><b>Réduction X disponible</b></td><td>Possède un code promo réservé, non utilisé, encore valable. Ajoute sa date d'expiration à l'export.</td><td>Code anniversaire non utilisé</td></tr>
+      <tr><td><b>Réduction X utilisée (avec vérification rôle client)</b></td><td>A utilisé (ou pas) un code promo réservé, avec en plus une condition sur ses rôles.</td><td>Code bienvenue utilisé, rôle VIP</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- 6 -->
+<section id="export">
+  <div class="sec-head"><span class="sec-num">06</span><h2>L'export</h2></div>
+  <p>Les boutons <strong>CSV</strong> et <strong>XLS</strong> de l'écran des segments téléchargent un fichier nommé «&nbsp;date_nom du segment&nbsp;». Il contient, pour chaque cliente&nbsp;:</p>
+  <ul class="prose">
+    <li>son numéro, son nom, son prénom, son email, ses téléphones fixe et portable, son adresse principale, ses rôles&nbsp;;</li>
+    <li>une colonne de plus pour certains filtres&nbsp;: «&nbsp;Solde points de fidélité&nbsp;», «&nbsp;Dernière commande passée&nbsp;», «&nbsp;CA client pour la catégorie&nbsp;», date d'expiration de la réduction ou du bon d'achat.</li>
+  </ul>
+  <div class="warn"><span class="ex-label">Données personnelles</span><p>Le fichier contient les coordonnées de vos clientes. Conservez-le en lieu sûr, supprimez-le après usage, et ne l'utilisez pour de la prospection qu'avec le consentement des clientes (voir <a href="clients.html#rgpd">Consentement et RGPD</a>).</p></div>
+</section>
+
+<!-- 7 -->
+<section id="exemples">
+  <div class="sec-head"><span class="sec-num">07</span><h2>Exemples de segments</h2></div>
+  <p class="lede">Sur l'ensemble des marques, 12 marques actives sur 35 ont créé des segments (87 au total, dont 67 actifs). Les filtres les plus utilisés sont la date d'anniversaire, l'achat d'un produit, les rôles et l'absence de commande.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Segment</th><th>Filtres</th><th>Pour quoi faire</th></tr></thead>
+    <tbody>
+      <tr><td><b>Anniversaires de juillet</b></td><td>Date d’anniversaire ≥ 01/07 ET &lt; 01/08</td><td>Les conseillères souhaitent l'anniversaire et proposent une réunion</td></tr>
+      <tr><td><b>Hôtesses à relancer</b></td><td>Rôles égal Hôte ET Pas de commande passée depuis 180 jours</td><td>Proposer une nouvelle réunion</td></tr>
+      <tr><td><b>Bons qui vont expirer</b></td><td>Bon d'achat X expirant (bon de 10&nbsp;€, 15 jours)</td><td>Rappeler aux clientes d'utiliser leur bon</td></tr>
+      <tr><td><b>Grandes clientes</b></td><td>Montant total dépensé TTC ≥ 500 ET Nb de réunions présent ≥ 3</td><td>Leur proposer de devenir hôtesse ou conseillère</td></tr>
+      <tr><td><b>Marraines</b></td><td>Rôles égal Sponsor</td><td>Les remercier, suivre le <a href="parrainage-client.html">parrainage</a></td></tr>
+    </tbody>
+  </table></div>
+  <div class="example"><span class="ex-label">Exemple pas à pas</span><p>Pour «&nbsp;Anniversaires de juillet&nbsp;»&nbsp;: <strong>Ajouter un segment</strong> › nom «&nbsp;Anniversaires de juillet&nbsp;» › <strong>Suivant</strong> › ajoutez «&nbsp;Date d’anniversaire&nbsp;», «&nbsp;supérieur ou égal&nbsp;», 01/07/2026, puis «&nbsp;Date d’anniversaire&nbsp;», «&nbsp;inférieur&nbsp;», 01/08/2026 › <strong>Suivant</strong> deux fois › <strong>Terminé</strong> › activez l'interrupteur <strong>Actif</strong>. Camille, née le 14 juillet 1988, y figure&nbsp;; Emma, née le 2 août, non.</p></div>
+</section>
+
+<!-- 8 -->
+<section id="conseillere">
+  <div class="sec-head"><span class="sec-num">08</span><h2>Ce que voit la conseillère</h2></div>
+  <p>Dans son espace et dans l'application, la conseillère retrouve les segments <strong>actifs</strong> dans le filtre de sa liste de clientes, avec leur nom et leur description. Le segment ne lui montre que <strong>ses propres clientes</strong>&nbsp;: Léa voit les 12 hôtesses à relancer de son carnet, pas les 240 de la marque. Elle peut aussi exporter ses clientes, avec ou sans segment.</p>
+  <div class="tip"><span class="ex-label">Conseil</span><p>Donnez aux segments un nom et une description parlants pour les conseillères («&nbsp;Hôtesses sans commande depuis 6 mois&nbsp;» plutôt que «&nbsp;Test 2&nbsp;»), et désactivez ceux qui ne servent plus.</p></div>
+</section>
+
+<!-- 9 -->
+<section id="attention">
+  <div class="sec-head"><span class="sec-num">09</span><h2>Points d'attention</h2></div>
+  <ul class="prose">
+    <li><strong>Activez le segment</strong> après sa création, sinon personne ne le voit dans les filtres.</li>
+    <li><strong>Tout est en ET</strong>&nbsp;: plus vous ajoutez de filtres, plus le segment est petit.</li>
+    <li><strong>Le piège du zéro</strong>&nbsp;: les clientes sans achat ou sans réunion échappent aux filtres de montant et de comptage (<a href="#s5-1">section 5.1</a>).</li>
+    <li><strong>Pas d'aperçu</strong>&nbsp;: contrôlez le résultat par la liste des clientes ou l'export.</li>
+    <li><strong>Un segment ne déclenche rien</strong>&nbsp;: ni réduction, ni notification, ni email.</li>
+    <li><strong>Supprimer un segment</strong> le retire des filtres de la marque et des conseillères.</li>
+  </ul>
+</section>
+
+<!-- 10 -->
+<section id="faq">
+  <div class="sec-head"><span class="sec-num">10</span><h2>Questions fréquentes</h2></div>
+  <div class="faq">
+    <details><summary>Mon segment n'apparaît pas dans le filtre de la liste des clientes.</summary><div><p>Il est inactif. Allumez l'interrupteur <strong>Actif</strong> dans Clients › Gérer les segments.</p></div></details>
+    <details><summary>Puis-je réserver une réduction aux clientes d'un segment&nbsp;?</summary><div><p>Non. Les réductions se ciblent par leurs propres conditions (rôle, historique…). Vous pouvez en revanche donner un rôle à ces clientes et conditionner la réduction à ce rôle. Voir le <a href="reductions-guide.html">guide des réductions</a>.</p></div></details>
+    <details><summary>Mon segment «&nbsp;Nb de réunions hôte égal 0&nbsp;» est vide.</summary><div><p>C'est le piège du zéro&nbsp;: les clientes qui n'ont jamais accueilli de réunion ne sont pas comptées. Utilisez plutôt «&nbsp;Rôles non égal Hôte&nbsp;».</p></div></details>
+    <details><summary>Le segment se met-il à jour tout seul&nbsp;?</summary><div><p>Oui. Il est recalculé à chaque filtre ou export&nbsp;: une cliente y entre ou en sort selon ses données du moment.</p></div></details>
+    <details><summary>Quelle différence avec Paramètres › Segmentations&nbsp;?</summary><div><p>Ce sont deux outils distincts. Segmentations n'est utilisé par aucune marque&nbsp;; les segments de clientes décrits ici sont ceux que voient les conseillères.</p></div></details>
+  </div>
+</section>
+
+  </main>
+</div>

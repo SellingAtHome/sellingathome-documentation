@@ -1,0 +1,217 @@
+<!--page {"title":"Bons de préparation et de livraison"} -->
+<style>
+.timeline { display:flex; flex-direction:column; border-left:3px solid var(--rule); margin-left:10px; }
+.tl { position:relative; padding:0 0 20px 28px; }
+.tl::before { content:""; position:absolute; left:-9px; top:4px; width:15px; height:15px; border-radius:50%; background:var(--card); border:3px solid var(--accent); }
+.tl.stop::before { border-color:var(--pink); }
+.tl b { color:var(--heading); display:block; }
+.tl p { color:var(--muted); font-size:.93rem; margin-top:4px; }
+.chip { display:inline-block; border-radius:100px; padding:3px 11px; font-size:.78rem; font-weight:700; background:var(--surface); color:var(--heading); border:1px solid var(--rule); }
+.chip.g { background:var(--accent-wash); color:var(--accent-ink); border-color:transparent; }
+.chip.p { background:var(--pink-wash); color:var(--pink-ink); border-color:transparent; }
+.chip.y { background:var(--yellow-wash); color:var(--yellow-ink); border-color:transparent; }
+.opts td:first-child { width:32%; }
+</style>
+<header class="hero">
+  <div class="hero-in">
+    <div>
+      <span class="eyebrow">Catalogue et logistique</span>
+      <h1>Bons de préparation <span class="script">et de livraison</span></h1>
+      <p class="lede">Préparer en une seule fois toutes les commandes d'une réunion, d'une conseillère ou d'une période&nbsp;: le bon de préparation liste les articles à sortir du stock. Le bon de livraison accompagne chaque colis. Voici comment les éditer, et ce qu'ils changent au statut de vos commandes.</p>
+    </div>
+    <div class="voucher-art" aria-hidden="true">
+      <div class="v-top"><span>Bon de préparation</span><span>Par réunion</span></div>
+      <div class="v-amount">23<span> articles</span></div>
+      <div class="v-name">Réunion chez Jade</div>
+      <div class="v-sep"></div>
+      <div class="v-meta"><span>Commandes <b>5</b></span><span>Tri <b>Emplacement</b></span></div>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="toc" aria-label="Sommaire">
+    <details id="tocDetails" open>
+      <summary>Sommaire</summary>
+      <div class="toc-title">Sommaire</div>
+      <ol>
+        <li data-sec="definition"><a href="#definition"><span class="toc-n">1</span>Deux documents, deux usages</a></li>
+        <li data-sec="activer"><a href="#activer"><span class="toc-n">2</span>Activer et paramétrer</a>
+          <ol class="toc-sub"><li><a href="#s2-1"><span class="toc-n">2.1</span>Utiliser un bon de préparation</a></li><li><a href="#s2-2"><span class="toc-n">2.2</span>Paramétrage des bons de préparation</a></li></ol>
+        </li>
+        <li data-sec="pas"><a href="#pas"><span class="toc-n">3</span>Éditer un bon de préparation</a>
+          <ol class="toc-sub"><li><a href="#s3-1"><span class="toc-n">3.1</span>Les cinq étapes</a></li><li><a href="#s3-2"><span class="toc-n">3.2</span>Les quatre types</a></li><li><a href="#s3-3"><span class="toc-n">3.3</span>Le contenu du document</a></li></ol>
+        </li>
+        <li data-sec="statuts"><a href="#statuts"><span class="toc-n">4</span>Les statuts mis à jour</a></li>
+        <li data-sec="bl"><a href="#bl"><span class="toc-n">5</span>Les bons de livraison</a>
+          <ol class="toc-sub"><li><a href="#s5-1"><span class="toc-n">5.1</span>Quand sont-ils créés&nbsp;?</a></li><li><a href="#s5-2"><span class="toc-n">5.2</span>La livraison partielle</a></li><li><a href="#s5-3"><span class="toc-n">5.3</span>Modèle par défaut ou personnalisé</a></li></ol>
+        </li>
+        <li data-sec="exemple"><a href="#exemple"><span class="toc-n">6</span>Exemple complet</a></li>
+        <li data-sec="attention"><a href="#attention"><span class="toc-n">7</span>Points d'attention</a></li>
+        <li data-sec="faq"><a href="#faq"><span class="toc-n">8</span>Questions fréquentes</a></li>
+      </ol>
+    </details>
+  </nav>
+
+  <main>
+
+<!-- 1 -->
+<section id="definition">
+  <div class="sec-head"><span class="sec-num">01</span><h2>Deux documents, deux usages</h2></div>
+  <div class="grid-2">
+    <div class="card"><span class="tag">Bon de préparation</span><h4>Pour l'entrepôt</h4><p>Un document PDF qui <strong>additionne les articles</strong> de plusieurs commandes (une réunion, une conseillère, une période…), triés par référence ou par emplacement de stockage. On s'en sert pour «&nbsp;faire la cueillette&nbsp;» dans les rayons.</p></div>
+    <div class="card"><span class="tag pink">Bon de livraison</span><h4>Pour le colis</h4><p>Un document PDF par <strong>expédition</strong> d'une commande («&nbsp;Bordereau de livraison&nbsp;»)&nbsp;: les articles envoyés, et ceux qui restent à envoyer en cas de livraison partielle.</p></div>
+  </div>
+  <div class="tip"><span class="ex-label">Vocabulaire</span><p>Les écrans disent «&nbsp;Vendeur&nbsp;» pour la conseillère, «&nbsp;Client&nbsp;» pour la cliente et «&nbsp;Hôte&nbsp;» pour l'hôtesse.</p></div>
+  <span class="tag yellow" style="display:inline-block">Option activée par SellingAtHome</span>
+  <p>Les bons de préparation et les bons de livraison PDF sont deux options distinctes, activées à la demande par SellingAtHome. Aujourd'hui, 6 marques actives sur 35 utilisent les bons de préparation et 4 génèrent des bons de livraison.</p>
+</section>
+
+<!-- 2 -->
+<section id="activer">
+  <div class="sec-head"><span class="sec-num">02</span><h2>Activer et paramétrer</h2></div>
+  <div class="path" aria-label="Chemin d'accès"><span>Paramètres</span><span>Configuration générale</span><span><b>Paramètres des commandes</b></span></div>
+
+  <h3 id="s2-1"><span class="sub-num">2.1</span> «&nbsp;Utiliser un bon de préparation&nbsp;»</h3>
+  <p>Une fois l'option ouverte par SellingAtHome, la liste des réglages de commande contient la case <strong>Utiliser un bon de préparation</strong>. Cochée&nbsp;:</p>
+  <ul class="prose">
+    <li>le bouton <strong>Bons de préparation de commande</strong> apparaît en haut de la liste des commandes&nbsp;;</li>
+    <li>le bloc <strong>Paramétrage des bons de préparation</strong> s'affiche plus bas sur la même page.</li>
+  </ul>
+  <p>Dans la même liste, deux réglages concernent les bons de livraison&nbsp;: <strong>Autoriser la Livraison partielle de commande</strong> et <strong>Utiliser un modèle de bon de livraison personnalisé</strong> (voir <a href="#bl">section 5</a>).</p>
+
+  <h3 id="s2-2"><span class="sub-num">2.2</span> Le bloc «&nbsp;Paramétrage des bons de préparation&nbsp;»</h3>
+  <p>Il décide de ce que vos équipes pourront choisir dans l'assistant. Cochez puis cliquez sur <strong>Enregistrer les paramètres</strong>.</p>
+  <div class="table-wrap"><table class="opts">
+    <thead><tr><th>Réglage</th><th>Effet</th></tr></thead>
+    <tbody>
+      <tr><td colspan="2"><b>Types d'entrées possibles</b></td></tr>
+      <tr><td>Par réunion</td><td>Propose le type «&nbsp;Par réunion&nbsp;».</td></tr>
+      <tr><td>&nbsp;&nbsp;↳ Imprimer un bon de livraison par client</td><td>Ajoute, pour ce type, l'option «&nbsp;Imprimer le bon de livraison de chaque commande&nbsp;».</td></tr>
+      <tr><td>Par vendeur</td><td>Propose le type «&nbsp;Par vendeur&nbsp;».</td></tr>
+      <tr><td>&nbsp;&nbsp;↳ Imprimer un bon de livraison par client</td><td>Même option pour le type «&nbsp;Par vendeur&nbsp;».</td></tr>
+      <tr><td>Par commande</td><td>Propose le type «&nbsp;Par commande&nbsp;».</td></tr>
+      <tr><td>Par commande de regroupement</td><td>Propose ce type (seulement si les commandes de regroupement sont actives).</td></tr>
+      <tr><td colspan="2"><b>Regroupements possibles</b></td></tr>
+      <tr><td>Par emplacement</td><td>Articles triés selon le champ «&nbsp;Emplacement&nbsp;» de la fiche produit (allée, étagère…).</td></tr>
+      <tr><td>Par produit</td><td>Articles triés par référence.</td></tr>
+      <tr><td colspan="2"><b>Statut des commandes</b></td></tr>
+      <tr><td>Passer les commandes en préparation lors de la génération du bon de préparation</td><td>Les commandes du bon passent au statut d'expédition «&nbsp;En préparation&nbsp;».</td></tr>
+      <tr><td>Passer les commandes en expédition lors de l'impression du bon de livraison</td><td>Quand vous imprimez les bons de livraison depuis l'assistant, les commandes passent en «&nbsp;Commande expédiée&nbsp;». <strong>Coché par défaut.</strong></td></tr>
+    </tbody>
+  </table></div>
+  <div class="warn"><span class="ex-label">Attention</span><p>Cochez au moins un type et un regroupement&nbsp;: l'assistant exige un choix à chacune de ces étapes pour avancer.</p></div>
+</section>
+
+<!-- 3 -->
+<section id="pas">
+  <div class="sec-head"><span class="sec-num">03</span><h2>Éditer un bon de préparation</h2></div>
+  <div class="path" aria-label="Chemin d'accès"><span>Commandes</span><span>Commandes</span><span><b>Bons de préparation de commande</b></span></div>
+
+  <h3 id="s3-1"><span class="sub-num">3.1</span> Les cinq étapes de l'assistant</h3>
+  <figure><img src="Captures/Logistique/bons-preparation.png" alt="Page Bons de préparation de commande : assistant en cinq étapes (Type de bon de préparation, Groupement, Date, Choix, Visualisation du bon de préparation) ; type Par réunion sélectionné avec les options Imprimer un récapitulatif des commandes, Imprimer le bon de livraison de chaque commande, Imprimer la facture de chaque commande, Grouper les documents par réunion ; types Par vendeur et Par commande ; boutons Précédent et Suivant" loading="lazy"><figcaption>Étape 1&nbsp;: le type de bon, ici «&nbsp;Par réunion&nbsp;» avec ses options.</figcaption></figure>
+  <div class="timeline">
+    <div class="tl"><b>1. Type de bon de préparation</b><p>Par réunion, par vendeur, par commande ou par commande de regroupement, avec les options d'impression (voir 3.2).</p></div>
+    <div class="tl"><b>2. Groupement</b><p>Par emplacement ou par produit&nbsp;: l'ordre des lignes dans le bon.</p></div>
+    <div class="tl"><b>3. Date</b><p>L'intervalle à traiter, par défaut le mois en cours. Pour les commandes, c'est la date de paiement qui compte&nbsp;; pour les réunions, la date de la réunion.</p></div>
+    <div class="tl"><b>4. Choix</b><p>La liste des réunions, commandes ou regroupements trouvés. Cochez ceux à préparer. Pour les commandes, un filtre «&nbsp;Mode de livraison&nbsp;» permet de ne garder, par exemple, que les livraisons chez la cliente.</p></div>
+    <div class="tl stop"><b>5. Visualisation du bon de préparation</b><p>En passant à cette étape, SellingAtHome crée le PDF (bon de préparation, puis bons de livraison et factures si demandés) et l'affiche. C'est aussi à ce moment que les statuts sont mis à jour (section 4).</p></div>
+  </div>
+
+  <h3 id="s3-2"><span class="sub-num">3.2</span> Les quatre types</h3>
+  <div class="table-wrap"><table class="opts">
+    <thead><tr><th>Type</th><th>Ce qui est proposé à l'étape «&nbsp;Choix&nbsp;»</th><th>Options</th></tr></thead>
+    <tbody>
+      <tr><td><b>Par réunion</b></td><td>Les réunions de la période (nom, date, statut, CA, nombre de commandes et de participantes).</td><td>Imprimer un récapitulatif des commandes, Imprimer le bon de livraison de chaque commande, Imprimer la facture de chaque commande, Grouper les documents par réunion.</td></tr>
+      <tr><td><b>Par vendeur</b></td><td>Les commandes payées des conseillères choisies avec «&nbsp;Sélectionner un vendeur&nbsp;».</td><td>Les mêmes, plus «&nbsp;Afficher les commandes déjà expédiées&nbsp;».</td></tr>
+      <tr><td><b>Par commande</b></td><td>Les commandes payées de la période, filtrées par type&nbsp;: Vente directe, Vente Web, Vente en réunion (au moins un).</td><td>Récapitulatif, bon de livraison, facture, «&nbsp;Afficher les commandes déjà expédiées&nbsp;».</td></tr>
+      <tr><td><b>Par commande de regroupement</b></td><td>Les commandes de regroupement des conseillères choisies.</td><td>Récapitulatif, bon de livraison, facture.</td></tr>
+    </tbody>
+  </table></div>
+  <p>Pour les types «&nbsp;Par vendeur&nbsp;» et «&nbsp;Par commande&nbsp;», seules les commandes <strong>payées, non annulées</strong> sont listées, et par défaut les commandes déjà expédiées ou terminées sont masquées.</p>
+
+  <h3 id="s3-3"><span class="sub-num">3.3</span> Le contenu du document</h3>
+  <ul class="prose">
+    <li>la liste des commandes regroupées et des conseillères concernées&nbsp;;</li>
+    <li>une ligne par article à préparer (référence, désignation, emplacement, quantité), avec le <strong>total des articles à préparer</strong>&nbsp;;</li>
+    <li>les lots et kits sont détaillés en produits qui les composent&nbsp;; les quantités déjà annulées sont retirées&nbsp;;</li>
+    <li>un avertissement si les commandes ont <strong>plusieurs modes de livraison</strong> différents, ou (regroupement) si une commande est déjà expédiée&nbsp;;</li>
+    <li>en option, le récapitulatif détaillé des commandes, puis les bons de livraison et les factures de chaque commande, le tout dans un seul PDF.</li>
+  </ul>
+</section>
+
+<!-- 4 -->
+<section id="statuts">
+  <div class="sec-head"><span class="sec-num">04</span><h2>Les statuts mis à jour</h2></div>
+  <p class="lede">Éditer un bon n'est pas qu'une impression&nbsp;: selon vos réglages, le statut d'expédition des commandes change au moment où le PDF est créé.</p>
+  <div class="decide">
+    <div class="row"><span class="q">Bons de livraison non demandés, «&nbsp;Passer les commandes en préparation…&nbsp;» coché</span><span class="arrow">→</span><span class="pill">En préparation</span></div>
+    <div class="row"><span class="q">«&nbsp;Imprimer le bon de livraison de chaque commande&nbsp;» coché, «&nbsp;Passer les commandes en expédition…&nbsp;» coché</span><span class="arrow">→</span><span class="pill pink">Commande expédiée</span></div>
+    <div class="row"><span class="q">Bons de livraison demandés, seule l'option «&nbsp;en préparation&nbsp;» cochée</span><span class="arrow">→</span><span class="pill">En préparation</span></div>
+    <div class="row"><span class="q">Aucune des deux options cochée</span><span class="arrow">→</span><span class="pill yellow">Statut inchangé</span></div>
+  </div>
+  <p>Ces changements ne concernent que les commandes <strong>sans expédition existante</strong>. Quand un bon de livraison est demandé pour une telle commande, SellingAtHome crée une <strong>expédition</strong> couvrant toutes les quantités restantes&nbsp;: c'est elle que le bon de livraison décrit. Pour les statuts, voir <a href="commandes-comprendre.html#s3-3">Comprendre les commandes</a>.</p>
+  <div class="warn"><span class="ex-label">Attention</span><p>Avec le réglage par défaut, imprimer les bons de livraison depuis l'assistant <strong>marque les commandes comme expédiées</strong>. N'imprimez les bons de livraison qu'au moment où les colis partent vraiment, ou décochez «&nbsp;Passer les commandes en expédition lors de l'impression du bon de livraison&nbsp;».</p></div>
+</section>
+
+<!-- 5 -->
+<section id="bl">
+  <div class="sec-head"><span class="sec-num">05</span><h2>Les bons de livraison</h2></div>
+
+  <h3 id="s5-1"><span class="sub-num">5.1</span> Quand sont-ils créés&nbsp;?</h3>
+  <p>Si l'option est activée pour votre marque, un bon de livraison PDF est créé <strong>à chaque expédition</strong>&nbsp;:</p>
+  <ul class="prose">
+    <li>quand une commande passe en «&nbsp;Commande expédiée&nbsp;» (action groupée «&nbsp;Modifier le statut d'expédition&nbsp;», fiche commande, logisticien connecté)&nbsp;;</li>
+    <li>lors d'une expédition partielle&nbsp;;</li>
+    <li>depuis l'assistant des bons de préparation (section 4).</li>
+  </ul>
+  <p>Chaque bon de livraison porte la référence de l'expédition. On le retrouve dans la colonne <strong>Documents</strong> de la liste des commandes et dans l'historique de la fiche commande.</p>
+
+  <h3 id="s5-2"><span class="sub-num">5.2</span> La livraison partielle</h3>
+  <p>Avec <strong>Autoriser la Livraison partielle de commande</strong> (option ouverte par SellingAtHome, utilisée par 6 marques), la fiche d'une commande payée affiche, en face de chaque produit, la quantité restant à expédier et un bouton <strong>Valider</strong>. Vous indiquez ce qui part aujourd'hui&nbsp;: une expédition est créée pour ces quantités, la commande passe en «&nbsp;Expédiée partiellement&nbsp;», et le bon de livraison liste les articles envoyés ainsi que ceux encore en attente.</p>
+  <div class="example"><span class="ex-label">Exemple</span><p>Camille a commandé 2 colliers et 3 bougies. Les bougies sont en rupture&nbsp;: vous expédiez les 2 colliers. Le premier bon de livraison montre 2 colliers envoyés et 3 bougies en attente. À la réception des bougies, une seconde expédition crée un second bon de livraison, et la commande passe en «&nbsp;Commande expédiée&nbsp;».</p></div>
+
+  <h3 id="s5-3"><span class="sub-num">5.3</span> Modèle par défaut ou personnalisé</h3>
+  <p>Par défaut, bons de livraison et bons de préparation utilisent le modèle standard de SellingAtHome, dans la langue de la cliente (bon de livraison) ou de l'utilisateur (bon de préparation). Avec <strong>Utiliser un modèle de bon de livraison personnalisé</strong>, SellingAtHome utilise une mise en page propre à votre marque, préparée à votre demande. Si ce modèle est introuvable, le modèle standard est utilisé.</p>
+</section>
+
+<!-- 6 -->
+<section id="exemple">
+  <div class="sec-head"><span class="sec-num">06</span><h2>Exemple complet</h2></div>
+  <div class="example"><span class="ex-label">La réunion de Jade</span>
+    <p>Léa a animé la réunion de Jade le 12&nbsp;: 5 commandes payées, livraison chez l'hôtesse. Le lundi, votre préparatrice ouvre <strong>Bons de préparation de commande</strong>&nbsp;:</p>
+    <ol class="prose">
+      <li>Type <strong>Par réunion</strong>, options «&nbsp;Imprimer un récapitulatif des commandes&nbsp;» et «&nbsp;Imprimer le bon de livraison de chaque commande&nbsp;»&nbsp;;</li>
+      <li>Groupement <strong>Par emplacement</strong>&nbsp;;</li>
+      <li>Date&nbsp;: du 1er au 15 du mois&nbsp;;</li>
+      <li>Choix&nbsp;: elle coche la réunion de Jade&nbsp;;</li>
+      <li>Visualisation&nbsp;: un PDF avec 23 articles triés par allée, le récapitulatif des 5 commandes et 5 bons de livraison à glisser dans le colis.</li>
+    </ol>
+    <p>Avec les réglages par défaut, les 5 commandes sont passées en «&nbsp;Commande expédiée&nbsp;» à cet instant.</p>
+  </div>
+</section>
+
+<!-- 7 -->
+<section id="attention">
+  <div class="sec-head"><span class="sec-num">07</span><h2>Points d'attention</h2></div>
+  <ul class="prose">
+    <li><strong>Par réunion = toutes les commandes de la réunion</strong>&nbsp;: le bon reprend toutes les commandes non supprimées de la réunion. Vérifiez que la réunion est bien clôturée et payée avant de la préparer.</li>
+    <li><strong>Pas de retour arrière</strong>&nbsp;: revenir à une étape précédente de l'assistant n'annule pas un changement de statut déjà fait.</li>
+    <li><strong>Emplacements</strong>&nbsp;: le regroupement par emplacement n'a d'intérêt que si le champ «&nbsp;Emplacement&nbsp;» est rempli dans vos fiches produit.</li>
+    <li><strong>Commandes déjà expédiées</strong>&nbsp;: cochez «&nbsp;Afficher les commandes déjà expédiées&nbsp;» seulement pour réimprimer un bon.</li>
+  </ul>
+</section>
+
+<!-- 8 -->
+<section id="faq">
+  <div class="sec-head"><span class="sec-num">08</span><h2>Questions fréquentes</h2></div>
+  <div class="faq">
+    <details><summary>Je ne vois pas le bouton «&nbsp;Bons de préparation de commande&nbsp;»</summary><div><p>L'option doit être ouverte par SellingAtHome, puis la case «&nbsp;Utiliser un bon de préparation&nbsp;» cochée dans Paramètres des commandes.</p></div></details>
+    <details><summary>L'assistant refuse de passer à l'étape suivante</summary><div><p>Il faut choisir un type (et, pour «&nbsp;Par vendeur&nbsp;», une conseillère&nbsp;; pour «&nbsp;Par commande&nbsp;», au moins un type de vente), puis un groupement, puis au moins un élément à l'étape Choix.</p></div></details>
+    <details><summary>Une commande n'apparaît pas dans la liste</summary><div><p>Elle n'est pas payée, elle est annulée, elle a été payée en dehors de l'intervalle de dates, ou elle est déjà expédiée (cochez «&nbsp;Afficher les commandes déjà expédiées&nbsp;»). Vérifiez aussi le filtre «&nbsp;Mode de livraison&nbsp;».</p></div></details>
+    <details><summary>Où retrouver un bon de livraison&nbsp;?</summary><div><p>Dans la colonne Documents de la liste des commandes, ou dans la fiche commande.</p></div></details>
+  </div>
+</section>
+
+  </main>
+</div>

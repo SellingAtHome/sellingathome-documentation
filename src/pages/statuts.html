@@ -1,0 +1,224 @@
+<!--page {"title":"Statuts et automatisation"} -->
+<style>
+.timeline { display:flex; flex-direction:column; border-left:3px solid var(--rule); margin-left:10px; }
+.tl { position:relative; padding:0 0 20px 28px; }
+.tl::before { content:""; position:absolute; left:-9px; top:4px; width:15px; height:15px; border-radius:50%; background:var(--card); border:3px solid var(--accent); }
+.tl.stop::before { border-color:var(--pink); }
+.tl b { color:var(--heading); display:block; }
+.tl p { color:var(--muted); font-size:.93rem; margin-top:4px; }
+.chip { display:inline-block; border-radius:100px; padding:3px 11px; font-size:.78rem; font-weight:700; background:var(--surface); color:var(--heading); border:1px solid var(--rule); }
+.chip.g { background:var(--accent-wash); color:var(--accent-ink); border-color:transparent; }
+.chip.p { background:var(--pink-wash); color:var(--pink-ink); border-color:transparent; }
+.chip.y { background:var(--yellow-wash); color:var(--yellow-ink); border-color:transparent; }
+.three { display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:14px; }
+.three .card { border-top:5px solid var(--accent); }
+.three .card:nth-child(2) { border-top-color:var(--yellow); }
+.three .card:nth-child(3) { border-top-color:var(--pink); }
+.opts td:first-child { width:30%; }
+.levels { display:flex; flex-direction:column; gap:8px; }
+.levels div { display:flex; gap:10px; align-items:center; flex-wrap:wrap; background:var(--card); border:1px solid var(--rule); border-radius:12px; padding:10px 14px; }
+.levels b { min-width:90px; color:var(--heading); }
+</style>
+<header class="hero">
+  <div class="hero-in">
+    <div>
+      <span class="eyebrow">Réseau et rémunération</span>
+      <h1>Statuts <span class="script">et automatisation</span></h1>
+      <p class="lede">La grille des statuts de votre plan de carrière, les trois statuts que porte chaque conseillère (statut, statut estimé, statut à vie), et les règles qui la font monter automatiquement.</p>
+    </div>
+    <div class="voucher-art" aria-hidden="true">
+      <div class="v-top"><span>Statut</span><span>Niveau N-1</span></div>
+      <div class="v-amount">Animatrice</div>
+      <div class="v-name">Estimé&nbsp;: Manager</div>
+      <div class="v-sep"></div>
+      <div class="v-meta"><span>Clôture <b>1er du mois</b></span><span>Règle <b>n°2</b></span></div>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="toc" aria-label="Sommaire">
+    <details id="tocDetails" open>
+      <summary>Sommaire</summary>
+      <div class="toc-title">Sommaire</div>
+      <ol>
+        <li data-sec="definition"><a href="#definition"><span class="toc-n">1</span>À quoi sert un statut&nbsp;?</a></li>
+        <li data-sec="grille"><a href="#grille"><span class="toc-n">2</span>La grille des statuts</a>
+          <ol class="toc-sub"><li><a href="#s2-1"><span class="toc-n">2.1</span>Niveaux et ordre</a></li><li><a href="#s2-2"><span class="toc-n">2.2</span>Créer, modifier, supprimer</a></li></ol>
+        </li>
+        <li data-sec="trois"><a href="#trois"><span class="toc-n">3</span>Trois statuts par conseillère</a></li>
+        <li data-sec="manuel"><a href="#manuel"><span class="toc-n">4</span>Changer un statut à la main</a></li>
+        <li data-sec="auto"><a href="#auto"><span class="toc-n">5</span>L'automatisation des statuts</a>
+          <ol class="toc-sub"><li><a href="#s5-1"><span class="toc-n">5.1</span>Les règles</a></li><li><a href="#s5-2"><span class="toc-n">5.2</span>Quand le statut est recalculé</a></li><li><a href="#s5-3"><span class="toc-n">5.3</span>Statut manuel et automatisation</a></li></ol>
+        </li>
+        <li data-sec="exemple"><a href="#exemple"><span class="toc-n">6</span>Un exemple complet</a></li>
+        <li data-sec="defaut"><a href="#defaut"><span class="toc-n">7</span>Le statut par défaut</a></li>
+        <li data-sec="conseillere"><a href="#conseillere"><span class="toc-n">8</span>Ce que voit la conseillère</a></li>
+        <li data-sec="attention"><a href="#attention"><span class="toc-n">9</span>Points d'attention</a></li>
+        <li data-sec="faq"><a href="#faq"><span class="toc-n">10</span>Questions fréquentes</a></li>
+      </ol>
+    </details>
+  </nav>
+
+  <main>
+
+<!-- 1 -->
+<section id="definition">
+  <div class="sec-head"><span class="sec-num">01</span><h2>À quoi sert un statut&nbsp;?</h2></div>
+  <p class="lede">Le statut est le <strong>niveau de la conseillère dans votre plan de carrière</strong>&nbsp;: conseillère, animatrice, manager… Il conditionne sa rémunération (les règles de commission peuvent dépendre du statut), apparaît sur sa fiche, dans l'organigramme et dans son espace.</p>
+  <p>Sur l'ensemble des marques actives, 31 sur 35 utilisent des statuts, avec une <strong>médiane de 4 statuts</strong>. Près de 16&nbsp;600 conseillères actives sur 16&nbsp;700 en ont un.</p>
+  <div class="tip"><span class="ex-label">Vocabulaire</span><p>L'espace marque parle de <strong>vendeur</strong> pour la conseillère. Ne confondez pas le statut (le niveau dans le plan de carrière) avec le <strong>statut de la société</strong> (statut juridique&nbsp;: VDI, auto-entrepreneur…) ni avec les <a href="roles-conseilleres.html">rôles</a>.</p></div>
+</section>
+
+<!-- 2 -->
+<section id="grille">
+  <div class="sec-head"><span class="sec-num">02</span><h2>La grille des statuts</h2></div>
+  <div class="path" aria-label="Chemin d'accès"><span>Espace marque</span><span>Vendeurs</span><span><b>Gérer les statuts</b></span></div>
+  <figure><img src="Captures/Reseau/statuts.png" alt="Gérer les statuts : statuts rangés par niveau (Niveau N : Manager ; Niveau N-1 : Responsable secteur, Animateur réseau ; Niveau N-2 : Conseiller Gold, Conseiller Sénior, Conseiller Silver, Académicien), boutons Automatisation des statuts et Nouveau statut" loading="lazy"><figcaption>La grille des statuts de la marque de démonstration.</figcaption></figure>
+
+  <h3 id="s2-1"><span class="sub-num">2.1</span> Niveaux et ordre</h3>
+  <ul class="prose">
+    <li><strong>Le niveau</strong> range les statuts par étage&nbsp;: le niveau <strong>0</strong> s'affiche «&nbsp;Niveau N&nbsp;» (le plus haut), le niveau 1 «&nbsp;Niveau N-1&nbsp;», le niveau 2 «&nbsp;Niveau N-2&nbsp;», etc. Plusieurs statuts peuvent partager un niveau. 17 marques sur 35 utilisent plusieurs niveaux.</li>
+    <li><strong>L'ordre</strong> à l'intérieur d'un niveau se règle par glisser-déposer. Il ne sert qu'à l'affichage&nbsp;: il ne hiérarchise pas les statuts d'un même niveau.</li>
+    <li><strong>La couleur</strong> colore le badge du statut dans l'organigramme.</li>
+  </ul>
+  <div class="levels" aria-label="Exemple de grille">
+    <div><b>Niveau N</b><span class="chip p">Manager</span></div>
+    <div><b>Niveau N-1</b><span class="chip y">Animatrice</span><span class="chip y">Responsable secteur</span></div>
+    <div><b>Niveau N-2</b><span class="chip g">Conseillère</span><span class="chip g">Conseillère confirmée</span></div>
+  </div>
+
+  <h3 id="s2-2"><span class="sub-num">2.2</span> Créer, modifier, supprimer</h3>
+  <div class="figrow">
+    <figure><img src="Captures/Reseau/statut-edition.png" alt="Éditer un statut : champs Nom, Description, Niveau, Code couleur, bouton Enregistrer" loading="lazy"><figcaption>L'édition d'un statut.</figcaption></figure>
+    <div class="prose" style="display:flex;flex-direction:column;gap:12px">
+      <p><strong>Nouveau statut</strong> (ou le <strong>+</strong> d'un niveau, qui pré-remplit le niveau)&nbsp;: <strong>Nom</strong>, <strong>Description</strong>, <strong>Niveau</strong>, <strong>Code couleur</strong>. Les marques reliées à un logiciel externe ont aussi une <strong>Référence externe</strong>.</p>
+      <p>Le <strong>crayon</strong> modifie un statut&nbsp;; changer son niveau le place en dernier dans son nouveau niveau.</p>
+      <p>La <strong>croix rouge</strong> supprime le statut, après confirmation.</p>
+    </div>
+  </div>
+  <div class="warn"><span class="ex-label">Attention</span><p><strong>Supprimer un statut</strong> retire ce statut (et le statut estimé) à toutes les conseillères qui l'avaient, ainsi que leur statut à vie s'il s'agissait de celui-ci. Elles n'ont plus de statut jusqu'au prochain changement. Les règles d'automatisation qui visaient ce statut ne sont pas supprimées&nbsp;: retirez-les à la main.</p></div>
+  <div class="warn"><span class="ex-label">Attention</span><p>Le formulaire d'édition s'ouvre avec la <strong>Description vide</strong>&nbsp;: si vous enregistrez sans la ressaisir, la description existante est effacée.</p></div>
+</section>
+
+<!-- 3 -->
+<section id="trois">
+  <div class="sec-head"><span class="sec-num">03</span><h2>Trois statuts par conseillère</h2></div>
+  <div class="three">
+    <div class="card"><span class="tag">Statut</span><p>Le statut <strong>officiel</strong>. C'est lui qu'utilisent les commissions et qu'affichent la fiche et l'organigramme. Il change à la main, ou à la <strong>clôture mensuelle</strong> si vous utilisez l'automatisation. Chaque changement est historisé et notifié à la conseillère.</p></div>
+    <div class="card"><span class="tag yellow">Statut estimé</span><p>Le statut que la conseillère <strong>obtiendrait si le mois se terminait aujourd'hui</strong>. Recalculé chaque nuit par les règles d'automatisation, il ne change rien d'officiel. À chaque changement du statut officiel, il est remis égal à celui-ci.</p></div>
+    <div class="card"><span class="tag pink">Statut à vie</span><p>Option (3 marques sur 35)&nbsp;: le <strong>plus haut niveau</strong> jamais atteint. À la clôture, il monte quand le nouveau statut est d'un niveau supérieur&nbsp;; il ne descend jamais seul. Il peut être corrigé à la main.</p></div>
+  </div>
+  <p>Dans la fiche d'édition (onglet <strong>Gestion du vendeur</strong>), le <strong>Statut à vie</strong> n'apparaît que si votre marque utilise l'option, et le <strong>Statut estimé</strong> (en lecture seule) que si vos statuts sont clôturés avant les commissions (voir <a href="#s5-2">5.2</a>).</p>
+  <p class="muted">Sur l'ensemble des marques, environ 7&nbsp;% des conseillères actives ont aujourd'hui un statut estimé différent de leur statut officiel.</p>
+</section>
+
+<!-- 4 -->
+<section id="manuel">
+  <div class="sec-head"><span class="sec-num">04</span><h2>Changer un statut à la main</h2></div>
+  <ul class="prose">
+    <li><strong>Depuis la fiche</strong>&nbsp;: onglet <strong>Gestion du vendeur</strong>, liste <strong>Statut</strong>. Le changement est enregistré <strong>dès que vous choisissez</strong> un statut, sans bouton.</li>
+    <li><strong>Depuis l'organigramme</strong>&nbsp;: crayon de la carte, champ <strong>Statut</strong>, puis <strong>Enregistrer</strong> (voir <a href="organigramme.html#s3-2">L'organigramme</a>).</li>
+  </ul>
+  <p>Dans les deux cas&nbsp;: le statut officiel et le statut estimé prennent la nouvelle valeur, une ligne s'ajoute à l'historique (icône <strong>i</strong> à côté de «&nbsp;Statut&nbsp;»), et la conseillère reçoit une notification de changement de statut. Un changement manuel ne modifie pas le statut à vie.</p>
+</section>
+
+<!-- 5 -->
+<section id="auto">
+  <div class="sec-head"><span class="sec-num">05</span><h2>L'automatisation des statuts</h2></div>
+  <p class="lede">Plutôt que de changer les statuts à la main chaque mois, vous décrivez les conditions de chaque statut&nbsp;: SellingAtHome les évalue chaque nuit (estimation) et à la clôture du mois (statut officiel). 9 marques sur 35 l'utilisent.</p>
+  <div class="path" aria-label="Chemin d'accès"><span>Espace marque</span><span>Vendeurs</span><span>Gérer les statuts</span><span>Bouton <b>Automatisation des statuts</b></span></div>
+  <p>Le bouton mène à l'onglet <strong>Automatisation des statuts</strong> de votre plan de commissionnement (Paramètres › Commissionnement). Il n'apparaît que si le module est activé et qu'un plan de commissionnement existe.</p>
+  <figure><img src="Captures/Reseau/statuts-auto.png" alt="Automatisation des statuts : tableau Rang, Valeur, Aperçu ; rang 1 Manager si Taille de l'équipe >= 6, Chiffre d'affaires TTC >= 1500 et Chiffre d'affaires TTC de l'équipe >= 5000 ; rang 2 Conseiller Gold ; rang 3 Manager si Rôle vendeur = Rôle Expert ; flèches pour changer le rang, crayon, suppression ; bouton Ajouter une valeur" loading="lazy"><figcaption>Les règles d'automatisation de la marque de démonstration.</figcaption></figure>
+
+  <h3 id="s5-1"><span class="sub-num">5.1</span> Les règles</h3>
+  <div class="figrow">
+    <figure><img src="Captures/Reseau/statuts-auto-regle.png" alt="Modifier une valeur : Statut Manager ; Conditions reliées par ET : Taille de l'équipe supérieur ou égal 6, Chiffre d'affaires TTC supérieur ou égal 1500, Chiffre d'affaires TTC de l'équipe supérieur ou égal 5000" loading="lazy"><figcaption>Une règle&nbsp;: un statut et ses conditions.</figcaption></figure>
+    <div class="prose" style="display:flex;flex-direction:column;gap:12px">
+      <p>Chaque ligne (<strong>Ajouter une valeur</strong>) associe un <strong>statut</strong> à des <strong>conditions</strong>, reliées par <strong>ET</strong>&nbsp;: toutes doivent être remplies.</p>
+      <p>Les conditions disponibles sont celles du plan de rémunération, calculées <strong>sur le mois</strong>&nbsp;: Chiffre d'affaires HT ou TTC, Chiffre d'affaire HT de l’équipe, Taille de l'équipe, Nombre de vendeurs actifs n-1, Nb statuts en N-1, Nombre de nouvelles recrues, Statut du vendeur, Rôle vendeur, L'historique de statut du vendeur…</p>
+      <p><strong>Le rang compte</strong>&nbsp;: pour chaque conseillère, les règles sont lues dans l'ordre des rangs et <strong>la première règle remplie donne le statut</strong>. Mettez donc les statuts les plus élevés en premier. Les flèches changent le rang.</p>
+    </div>
+  </div>
+
+  <h3 id="s5-2"><span class="sub-num">5.2</span> Quand le statut est recalculé</h3>
+  <div class="timeline">
+    <div class="tl"><b>Chaque nuit, du 2 au dernier jour du mois</b><p>Estimation sur le mois en cours&nbsp;: seul le <strong>statut estimé</strong> change.</p></div>
+    <div class="tl stop"><b>Dans la nuit du 1er du mois</b><p>Clôture du mois écoulé&nbsp;: le <strong>statut officiel</strong> est calculé, historisé et notifié, et le statut à vie mis à jour si l'option est active.</p></div>
+  </div>
+  <ul class="prose">
+    <li>SellingAtHome règle pour votre marque si les statuts sont clôturés <strong>avant</strong> ou <strong>après</strong> les commissions. Avant&nbsp;: les commissions du mois utilisent le statut qui vient d'être gagné. C'est le choix des 9 marques qui automatisent leurs statuts.</li>
+    <li>Le calcul part du bas de l'organigramme et remonte&nbsp;: une condition comme «&nbsp;Nb statuts en N-1&nbsp;» tient compte des statuts que l'équipe vient d'obtenir.</li>
+    <li>Les équipes sont lues par <strong>animation</strong> (ou par recrutement si votre marque l'a demandé).</li>
+    <li>Ne sont traitées que les conseillères à l'<strong>accès déverrouillé</strong> et créées avant la fin du mois.</li>
+  </ul>
+
+  <h3 id="s5-3"><span class="sub-num">5.3</span> Statut manuel et automatisation</h3>
+  <div class="decide">
+    <div class="row"><span class="q">Une règle est remplie pour cette conseillère&nbsp;?</span><span class="arrow">→</span><span class="pill">Oui&nbsp;: elle prend le statut de la première règle remplie, même si vous aviez mis un autre statut à la main</span></div>
+    <div class="row"><span class="q">Aucune règle n'est remplie&nbsp;?</span><span class="arrow">→</span><span class="pill pink">Son statut ne change pas&nbsp;: un statut posé à la main est conservé</span></div>
+  </div>
+  <div class="tip"><span class="ex-label">Conseil</span><p>Pour qu'une conseillère puisse <strong>redescendre</strong>, prévoyez une dernière règle, au rang le plus bas, pour le statut de base (par exemple «&nbsp;Chiffre d'affaires HT ≥ 0&nbsp;»). Sans elle, une conseillère qui ne remplit plus aucune règle garde son statut.</p></div>
+</section>
+
+<!-- 6 -->
+<section id="exemple">
+  <div class="sec-head"><span class="sec-num">06</span><h2>Un exemple complet</h2></div>
+  <p>Votre grille et vos règles&nbsp;:</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Rang</th><th>Statut</th><th>Conditions (sur le mois)</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td><span class="chip p">Manager</span> (niveau N)</td><td>Taille de l'équipe ≥ 6 ET Chiffre d'affaire HT de l’équipe ≥ 8&nbsp;000&nbsp;€</td></tr>
+      <tr><td>2</td><td><span class="chip y">Animatrice</span> (niveau N-1)</td><td>Taille de l'équipe ≥ 2 ET Chiffre d'affaires HT ≥ 1&nbsp;000&nbsp;€</td></tr>
+      <tr><td>3</td><td><span class="chip g">Conseillère</span> (niveau N-2)</td><td>Chiffre d'affaires HT ≥ 0&nbsp;€</td></tr>
+    </tbody>
+  </table></div>
+  <div class="example"><span class="ex-label">Exemple</span><p>Léa est <strong>Conseillère</strong>. En mars, elle recrute Camille et Inès, qu'elle anime, et vend 1&nbsp;240&nbsp;€ HT.</p>
+    <ul class="prose">
+      <li><strong>12 mars</strong>&nbsp;: Léa a vendu 600&nbsp;€. Règle 1&nbsp;: non. Règle 2&nbsp;: équipe de 2, mais 600&nbsp;€ &lt; 1&nbsp;000&nbsp;€&nbsp;: non. Règle 3&nbsp;: oui. Statut estimé&nbsp;: Conseillère.</li>
+      <li><strong>Nuit du 20 mars</strong>&nbsp;: elle atteint 1&nbsp;050&nbsp;€. La règle 2 est remplie&nbsp;: son <strong>statut estimé</strong> devient Animatrice. Son statut officiel reste Conseillère.</li>
+      <li><strong>Nuit du 1er avril</strong>&nbsp;: clôture de mars, 1&nbsp;240&nbsp;€ et une équipe de 2&nbsp;: Léa devient officiellement <strong>Animatrice</strong>. Elle est notifiée&nbsp;; si vos statuts sont clôturés avant les commissions, ses commissions de mars sont calculées avec ce statut.</li>
+      <li><strong>Avril</strong>&nbsp;: Inès arrête et Léa ne vend que 400&nbsp;€. À la clôture d'avril, seule la règle 3 est remplie&nbsp;: Léa redevient <strong>Conseillère</strong>. Avec l'option statut à vie, son statut à vie reste Animatrice.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 7 -->
+<section id="defaut">
+  <div class="sec-head"><span class="sec-num">07</span><h2>Le statut par défaut</h2></div>
+  <div class="path" aria-label="Chemin d'accès"><span>Espace marque</span><span>Paramètres</span><span>Configuration générale</span><span>Onglet <b>Paramètres généraux</b></span><span>Bloc <b>Vendeurs</b></span></div>
+  <p>Le réglage <strong>A la création statut par défaut =</strong> donne un statut à toute conseillère créée depuis l'espace marque&nbsp;: statut et statut estimé, avec une ligne d'historique. 13 marques sur 35 en ont choisi un. Sans réglage, la nouvelle conseillère n'a pas de statut («&nbsp;A définir&nbsp;» sur sa fiche) jusqu'au premier changement.</p>
+</section>
+
+<!-- 8 -->
+<section id="conseillere">
+  <div class="sec-head"><span class="sec-num">08</span><h2>Ce que voit la conseillère</h2></div>
+  <p>Dans son espace, sous son nom, la conseillère voit son statut, son <strong>statut estimé</strong> (si vos statuts sont clôturés avant les commissions) et son <strong>statut à vie</strong> (s'il est renseigné). Elle reçoit une notification à chaque changement de son statut officiel.</p>
+</section>
+
+<!-- 9 -->
+<section id="attention">
+  <div class="sec-head"><span class="sec-num">09</span><h2>Points d'attention</h2></div>
+  <ul class="prose">
+    <li><strong>Le rang des règles décide</strong>&nbsp;: une règle large placée en premier masque toutes les autres.</li>
+    <li><strong>Sans règle de base, personne ne redescend</strong>.</li>
+    <li><strong>Un statut posé à la main peut être écrasé</strong> à la clôture suivante si une règle est remplie.</li>
+    <li><strong>Une conseillère verrouillée n'est pas recalculée</strong>&nbsp;: elle garde son statut.</li>
+    <li><strong>Supprimer un statut</strong> le retire à toutes ses titulaires.</li>
+    <li><strong>Plusieurs plans de commissionnement</strong>&nbsp;: les règles utilisées sont celles du premier plan de votre marque.</li>
+  </ul>
+</section>
+
+<!-- 10 -->
+<section id="faq">
+  <div class="sec-head"><span class="sec-num">10</span><h2>Questions fréquentes</h2></div>
+  <div class="faq">
+    <details><summary>Le statut estimé d'une conseillère ne correspond pas à son statut.</summary><div><p>C'est normal en cours de mois&nbsp;: le statut estimé anticipe la prochaine clôture. Les deux redeviennent égaux au 1er du mois, ou dès que vous changez le statut à la main.</p></div></details>
+    <details><summary>J'ai changé un statut à la main et il a été remplacé le 1er.</summary><div><p>Une règle d'automatisation était remplie pour cette conseillère&nbsp;: c'est elle qui l'emporte. Ajustez vos règles, ou attendez la clôture pour corriger.</p></div></details>
+    <details><summary>Le bouton «&nbsp;Automatisation des statuts&nbsp;» n'apparaît pas.</summary><div><p>Le module n'est pas activé pour votre marque, ou vous n'avez pas encore de plan de commissionnement. Contactez SellingAtHome.</p></div></details>
+    <details><summary>Une conseillère n'a pas changé de statut alors qu'elle remplissait les conditions.</summary><div><p>Vérifiez que son accès est déverrouillé, qu'aucune règle mieux classée ne lui donnait déjà un autre statut, et que les chiffres utilisés (HT ou TTC, personnels ou d'équipe) sont bien ceux que vous attendiez.</p></div></details>
+  </div>
+</section>
+
+  </main>
+</div>

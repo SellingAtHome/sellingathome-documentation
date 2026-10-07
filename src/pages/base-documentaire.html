@@ -1,0 +1,277 @@
+<!--page {"title":"Documents, FAQ et formations"} -->
+<style>
+.three { display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:14px; }
+.three .card { border-top:5px solid var(--accent); }
+.three .card:nth-child(2) { border-top-color:var(--pink); }
+.three .card:nth-child(3) { border-top-color:var(--yellow); }
+.chip { display:inline-block; border-radius:100px; padding:3px 11px; font-size:.78rem; font-weight:700; background:var(--surface); color:var(--heading); border:1px solid var(--rule); }
+.chip.g { background:var(--accent-wash); color:var(--accent-ink); border-color:transparent; }
+.chip.p { background:var(--pink-wash); color:var(--pink-ink); border-color:transparent; }
+.chip.y { background:var(--yellow-wash); color:var(--yellow-ink); border-color:transparent; }
+.opts td:first-child { width:30%; }
+.narrow img { max-width:340px; }
+</style>
+<header class="hero">
+  <div class="hero-in">
+    <div>
+      <span class="eyebrow">Communication et pilotage</span>
+      <h1>Documents, FAQ <span class="script">et formations</span></h1>
+      <p class="lede">La base de connaissances réunit ce que vos conseillères doivent savoir&nbsp;: des documents à télécharger, une foire aux questions et des parcours de formation avec questionnaires. Voici comment la remplir, la tenir à jour et suivre ce qui est lu.</p>
+    </div>
+    <div class="voucher-art" aria-hidden="true">
+      <div class="v-top"><span>Base de connaissances</span><span>3 rubriques</span></div>
+      <div class="v-amount">22<span> docs</span></div>
+      <div class="v-name">Documents · FAQ · Formations</div>
+      <div class="v-sep"></div>
+      <div class="v-meta"><span>Formations <b>4</b></span><span>FAQ <b>7</b></span></div>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="toc" aria-label="Sommaire">
+    <details id="tocDetails" open>
+      <summary>Sommaire</summary>
+      <div class="toc-title">Sommaire</div>
+      <ol>
+        <li data-sec="definition"><a href="#definition"><span class="toc-n">1</span>À quoi ça sert&nbsp;?</a></li>
+        <li data-sec="ou"><a href="#ou"><span class="toc-n">2</span>Où la trouver</a></li>
+        <li data-sec="documents"><a href="#documents"><span class="toc-n">3</span>Les documents</a>
+          <ol class="toc-sub"><li><a href="#s3-1"><span class="toc-n">3.1</span>La liste</a></li><li><a href="#s3-2"><span class="toc-n">3.2</span>Ajouter un document</a></li><li><a href="#s3-3"><span class="toc-n">3.3</span>Le statut minimum</a></li><li><a href="#s3-4"><span class="toc-n">3.4</span>Le bloc «&nbsp;Assistant IA&nbsp;»</a></li><li><a href="#s3-5"><span class="toc-n">3.5</span>Les catégories</a></li></ol>
+        </li>
+        <li data-sec="faq-marque"><a href="#faq-marque"><span class="toc-n">4</span>La FAQ</a></li>
+        <li data-sec="formations"><a href="#formations"><span class="toc-n">5</span>Les formations</a>
+          <ol class="toc-sub"><li><a href="#s5-1"><span class="toc-n">5.1</span>Principe</a></li><li><a href="#s5-2"><span class="toc-n">5.2</span>Créer une formation</a></li><li><a href="#s5-3"><span class="toc-n">5.3</span>Les dépendances</a></li><li><a href="#s5-4"><span class="toc-n">5.4</span>Publier, dépublier, dupliquer</a></li><li><a href="#s5-5"><span class="toc-n">5.5</span>Les statistiques</a></li><li><a href="#s5-6"><span class="toc-n">5.6</span>Sur la fiche d'une conseillère</a></li></ol>
+        </li>
+        <li data-sec="conseillere"><a href="#conseillere"><span class="toc-n">6</span>Ce que voit la conseillère</a></li>
+        <li data-sec="chiffres"><a href="#chiffres"><span class="toc-n">7</span>En chiffres</a></li>
+        <li data-sec="attention"><a href="#attention"><span class="toc-n">8</span>Points d'attention</a></li>
+        <li data-sec="faq"><a href="#faq"><span class="toc-n">9</span>Questions fréquentes</a></li>
+      </ol>
+    </details>
+  </nav>
+
+  <main>
+
+<!-- 1 -->
+<section id="definition">
+  <div class="sec-head"><span class="sec-num">01</span><h2>À quoi ça sert&nbsp;?</h2></div>
+  <p class="lede">La base de connaissances est la bibliothèque de votre réseau. Vous y déposez une fois l'information, et chaque conseillère la retrouve dans son espace, au moment où elle en a besoin.</p>
+  <div class="three">
+    <div class="card"><span class="tag">Documents</span><h4>Des fichiers à consulter</h4><p>Catalogues, argumentaires, procédures, fiches réglementaires… classés par catégories, avec un accès réservé si besoin aux statuts les plus élevés.</p></div>
+    <div class="card"><span class="tag pink">FAQ</span><h4>Des réponses officielles</h4><p>Les questions que vos conseillères posent le plus souvent, avec la réponse validée par la marque, dans chaque langue.</p></div>
+    <div class="card"><span class="tag yellow">Formations</span><h4>Des parcours notés</h4><p>Des étapes (document, vidéo, questionnaire) à suivre dans l'ordre, avec des points, des prérequis et des statistiques de réussite.</p></div>
+  </div>
+  <div class="example"><span class="ex-label">Exemple</span><p>Léa vient d'entrer dans le réseau. Dans sa base de connaissances, elle télécharge le catalogue de la saison, lit dans la FAQ comment déclarer son activité, puis suit la formation «&nbsp;Bien démarrer&nbsp;»&nbsp;: un PDF de présentation suivi d'un questionnaire de 10 points. Elle obtient 8 points&nbsp;: la formation suivante, qui exige 7 points, se débloque.</p></div>
+  <div class="tip"><span class="ex-label">Vocabulaire</span><p>Dans l'espace marque, les conseillères sont appelées <strong>vendeurs</strong> (ou VDI). Le «&nbsp;statut minimum du vendeur&nbsp;» désigne donc le statut de la conseillère.</p></div>
+</section>
+
+<!-- 2 -->
+<section id="ou">
+  <div class="sec-head"><span class="sec-num">02</span><h2>Où la trouver</h2></div>
+  <div class="path" aria-label="Chemin d'accès"><span>Espace marque</span><span>Base de connaissances</span><span><b>Documents</b> · <b>FAQ</b> · <b>Formations</b></span></div>
+  <p>Chacune des trois rubriques est un module qui s'active séparément&nbsp;: le menu «&nbsp;Base de connaissances&nbsp;» n'affiche que les rubriques activées pour votre marque, et la conseillère voit les mêmes rubriques dans son propre menu «&nbsp;Base de connaissances&nbsp;». Si une rubrique vous manque, demandez son activation à SellingAtHome.</p>
+</section>
+
+<!-- 3 -->
+<section id="documents">
+  <div class="sec-head"><span class="sec-num">03</span><h2>Les documents</h2></div>
+
+  <h3 id="s3-1"><span class="sub-num">3.1</span> La liste</h3>
+  <figure><img src="Captures/Pilotage/documents-liste.png" alt="Liste des documents : onglets Documents et Catégories, bouton Ajouter un document, Filtrer, recherche ; colonnes Titre, Descriptif, Catégories, Statut minimum, Date de modification, Évaluation (étoiles), Assistant (coche, Texte extrait, Bonne, Extraction en attente) et Action (voir, modifier, supprimer)" loading="lazy"><figcaption>Les documents de la marque, avec leur état pour l'assistant IA.</figcaption></figure>
+  <div class="table-wrap"><table class="opts">
+    <thead><tr><th>Colonne</th><th>Ce qu'elle montre</th></tr></thead>
+    <tbody>
+      <tr><td><b>Titre</b>, <b>Descriptif</b></td><td>Le titre et la description du document dans votre langue.</td></tr>
+      <tr><td><b>Catégories</b></td><td>Les catégories auxquelles le document est rattaché (un document peut en avoir plusieurs).</td></tr>
+      <tr><td><b>Statut minimum</b></td><td>Le statut à partir duquel une conseillère voit le document («&nbsp;-&nbsp;» = toutes les conseillères).</td></tr>
+      <tr><td><b>Évaluation</b></td><td>La note moyenne sur 5 étoiles donnée par les conseillères, et le nombre de votes entre parenthèses.</td></tr>
+      <tr><td><b>Assistant</b></td><td>Uniquement si l'assistant IA est actif pour votre marque&nbsp;: la coche indique si le document peut servir à l'assistant, suivie de l'état de lecture du fichier (voir <a href="#s3-4">3.4</a>). Un clic sur la coche active ou désactive le document sans ouvrir sa fiche.</td></tr>
+      <tr><td><b>Action</b></td><td>Ouvrir le fichier, modifier, supprimer.</td></tr>
+    </tbody>
+  </table></div>
+  <p>Le bouton <strong>Filtrer</strong> permet de ne garder que certaines catégories ou certains statuts minimum, ou au contraire les <strong>Documents sans catégorie</strong> et les <strong>Documents sans statut minimum</strong>.</p>
+
+  <h3 id="s3-2"><span class="sub-num">3.2</span> Ajouter un document</h3>
+  <ol class="prose">
+    <li>Cliquez sur <strong>Ajouter un document</strong>.</li>
+    <li>Pour chaque langue de votre marque (un onglet par langue)&nbsp;: saisissez le <strong>Titre</strong>, la <strong>Description</strong>, puis <strong>Ajouter un fichier</strong>. Le fichier est choisi ou déposé dans l'explorateur de fichiers de la marque (100&nbsp;Mo maximum par fichier). Chaque langue peut avoir son propre fichier.</li>
+    <li>Choisissez une ou plusieurs <strong>Catégories</strong> (le bouton <strong>Ajouter une catégorie</strong> en crée une sans quitter la page).</li>
+    <li>Choisissez le <strong>Statut minimum du vendeur pour la consultation</strong>, ou laissez «&nbsp;-&nbsp;».</li>
+    <li>Si l'assistant IA est actif, réglez le bloc <strong>Assistant IA</strong>.</li>
+    <li>Cliquez sur <strong>Créer le document</strong>.</li>
+  </ol>
+  <p>À l'enregistrement, le document apparaît comme <strong>nouveau</strong> (pastille de non-lus) dans l'espace des conseillères, pour chaque langue où il a un titre.</p>
+  <div class="tip"><span class="ex-label">Bon à savoir</span><p>Si une langue n'est pas remplie, la conseillère qui travaille dans cette langue voit la version de la langue principale de votre marque.</p></div>
+
+  <h3 id="s3-3"><span class="sub-num">3.3</span> Le statut minimum</h3>
+  <p>Le statut minimum réserve un document aux conseillères d'un certain rang. La comparaison se fait sur le <strong>niveau</strong> du statut, réglé dans Vendeurs › Gérer les statuts (champ «&nbsp;Niveau&nbsp;»)&nbsp;: plus le chiffre est petit, plus le statut est élevé.</p>
+  <div class="example"><span class="ex-label">Exemple</span><p>Votre marque a trois niveaux&nbsp;: 0 «&nbsp;Manager&nbsp;», 1 «&nbsp;Animatrice&nbsp;», 2 «&nbsp;Conseillère&nbsp;». Vous réservez le «&nbsp;Plan de rémunération des animatrices&nbsp;» au statut «&nbsp;Animatrice&nbsp;» (niveau 1). Sophie (animatrice, niveau 1) et les managers le voient&nbsp;; Léa (conseillère, niveau 2) ne le voit pas.</p></div>
+  <div class="warn"><span class="ex-label">Attention</span><p>Deux statuts de même niveau sont équivalents&nbsp;: un document réservé à «&nbsp;Conseillère Gold&nbsp;» (niveau 2) est visible par toutes les conseillères de niveau 2, «&nbsp;Silver&nbsp;» comprises. Une conseillère sans statut ne voit que les documents sans statut minimum.</p></div>
+
+  <h3 id="s3-4"><span class="sub-num">3.4</span> Le bloc «&nbsp;Assistant IA&nbsp;»</h3>
+  <div class="figrow">
+    <figure class="narrow"><img src="Captures/Pilotage/document-assistant.png" alt="Fiche d'un document : Catégories, Statut minimum du vendeur pour la consultation, bloc Assistant IA avec le verdict Extraction de bonne qualité, la note Bonne 75/100 et son motif, la case Utilisable par l'assistant, les champs Résumé pour l'assistant (optionnel) et Valable jusqu'au, bouton Sauvegarder le document" loading="lazy"><figcaption>Le bloc «&nbsp;Assistant IA&nbsp;» d'un document.</figcaption></figure>
+    <div class="prose" style="display:flex;flex-direction:column;gap:12px">
+      <p>Ce bloc n'apparaît que si l'assistant IA est actif pour votre marque (voir <a href="assistant-ia.html">L'assistant IA</a>). Par défaut, un document n'est <strong>pas</strong> utilisé par l'assistant&nbsp;: c'est vous qui choisissez.</p>
+      <ul class="prose">
+        <li><strong>Utilisable par l'assistant</strong>&nbsp;: autorise l'assistant à lire ce document pour répondre aux conseillères.</li>
+        <li><strong>Résumé pour l'assistant (optionnel)</strong>&nbsp;: une phrase qui dit à quoi sert le document. C'est elle que l'assistant lit pour décider d'ouvrir le document. Vide, il utilise un résumé généré automatiquement, ou à défaut la description.</li>
+        <li><strong>Valable jusqu'au</strong>&nbsp;: passé cette date, l'assistant ne l'utilise plus et la liste affiche «&nbsp;Périmé&nbsp;». Idéal pour une offre du mois.</li>
+      </ul>
+    </div>
+  </div>
+  <p>Quand un document est coché et enregistré, SellingAtHome <strong>extrait son texte</strong> en arrière-plan, une fois pour toutes (l'extraction n'est refaite que si le fichier change). L'assistant ne lit jamais le fichier lui-même, seulement ce texte. L'état s'affiche dans la liste&nbsp;:</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>État</th><th>Signification</th></tr></thead>
+    <tbody>
+      <tr><td><span class="chip">Extraction en attente</span></td><td>Le texte n'a pas encore été extrait.</td></tr>
+      <tr><td><span class="chip g">Texte extrait</span></td><td>Le texte est disponible pour l'assistant.</td></tr>
+      <tr><td><span class="chip y">Aucun texte exploitable</span></td><td>Rien n'a pu être lu (format non pris en charge, image sans texte…).</td></tr>
+      <tr><td><span class="chip p">Échec de l'extraction</span></td><td>Une erreur technique a empêché la lecture.</td></tr>
+    </tbody>
+  </table></div>
+  <p>Le texte extrait reçoit ensuite une <strong>note de qualité sur 100</strong>, qui mesure sa lisibilité (pas l'intérêt du document)&nbsp;:</p>
+  <div class="decide">
+    <div class="row"><span class="q">70 à 100</span><span class="arrow">→</span><span class="pill">Bonne&nbsp;: activation recommandée</span></div>
+    <div class="row"><span class="q">40 à 69</span><span class="arrow">→</span><span class="pill yellow">Partielle&nbsp;: à vérifier</span></div>
+    <div class="row"><span class="q">0 à 39</span><span class="arrow">→</span><span class="pill pink">Insuffisante&nbsp;: déconseillé</span></div>
+  </div>
+  <p>Le motif affiché est le défaut qui a coûté le plus de points&nbsp;: texte illisible (encodage du PDF défectueux), mots collés, texte éclaté par des colonnes ou des tableaux, document surtout composé d'images, texte trop court, ou «&nbsp;Texte reconstitué visuellement&nbsp;» quand le PDF est un scan relu par l'IA (vérifiez alors les tableaux et grilles tarifaires).</p>
+  <div class="tip"><span class="ex-label">Bon à savoir</span><p>Formats lus&nbsp;: <strong>PDF</strong>, <strong>TXT</strong>, <strong>MD</strong>, <strong>CSV</strong>, et les images <strong>JPG, PNG, GIF, WEBP</strong> (lues visuellement, 20&nbsp;Mo maximum). Un Word, un Excel ou une vidéo ne donnent <strong>aucun texte exploitable</strong>&nbsp;: exportez-les en PDF.</p></div>
+
+  <h3 id="s3-5"><span class="sub-num">3.5</span> Les catégories</h3>
+  <p>L'onglet <strong>Catégories</strong> liste les catégories de documents. Chacune a un nom par langue, un <strong>Ordre d'affichage</strong> et éventuellement une <strong>Catégorie parente</strong>&nbsp;: vous pouvez ainsi construire une arborescence («&nbsp;Réglementation&nbsp;› Statut VDI&nbsp;»). La conseillère navigue dans ses documents par ces catégories.</p>
+</section>
+
+<!-- 4 -->
+<section id="faq-marque">
+  <div class="sec-head"><span class="sec-num">04</span><h2>La FAQ</h2></div>
+  <div class="path" aria-label="Chemin d'accès"><span>Espace marque</span><span>Base de connaissances</span><span><b>FAQ</b></span></div>
+  <figure><img src="Captures/Pilotage/faq-liste.png" alt="Écran Foire aux questions : onglets FAQ et Catégories, bouton Ajouter une question, Filtrer, recherche ; colonnes Question, Réponse, Catégories, Action" loading="lazy"><figcaption>La FAQ de la marque.</figcaption></figure>
+  <div class="figrow">
+    <figure><img src="Captures/Pilotage/faq-ajout.png" alt="Formulaire Ajouter une question : onglets de langue, champs Question et Réponse, Catégories avec bouton Ajouter une catégorie, bouton Ajouter" loading="lazy"><figcaption>Ajouter une question.</figcaption></figure>
+    <div class="prose" style="display:flex;flex-direction:column;gap:12px">
+      <p>Cliquez sur <strong>Ajouter une question</strong>, remplissez <strong>Question</strong> et <strong>Réponse</strong> pour chaque langue, choisissez des <strong>Catégories</strong>, puis <strong>Ajouter</strong>. La question apparaît comme nouvelle chez les conseillères.</p>
+      <p>La réponse est du texte simple&nbsp;: les adresses web et emails qu'elle contient deviennent automatiquement des liens chez la conseillère.</p>
+      <p>Les catégories de FAQ se gèrent dans l'onglet <strong>Catégories</strong> (un nom par langue).</p>
+    </div>
+  </div>
+  <div class="warn"><span class="ex-label">Attention</span><p>La FAQ n'a <strong>ni ordre réglable ni restriction par statut</strong>&nbsp;: toutes les conseillères voient toutes les questions. Elle sert aussi de source officielle à l'assistant IA, sans réglage&nbsp;: une réponse de la FAQ fait foi pour lui (voir <a href="assistant-ia.html">L'assistant IA</a>). Tenez-la à jour.</p></div>
+</section>
+
+<!-- 5 -->
+<section id="formations">
+  <div class="sec-head"><span class="sec-num">05</span><h2>Les formations</h2></div>
+  <div class="path" aria-label="Chemin d'accès"><span>Espace marque</span><span>Base de connaissances</span><span><b>Formations</b></span></div>
+
+  <h3 id="s5-1"><span class="sub-num">5.1</span> Principe</h3>
+  <p>Une formation est une suite d'<strong>étapes</strong>. Chaque étape contient un <strong>document</strong> (PDF, vidéo…), un <strong>questionnaire</strong>, ou les deux. Chaque bonne réponse rapporte des points, que vous fixez question par question.</p>
+  <figure><img src="Captures/Pilotage/formations-liste.png" alt="Écran Formations : bouton Nouvelle formation, cartes de formation avec poignée de déplacement, nombre d'étapes, nombre de conseillères ayant commencé (œil) et terminé (coche), taux de maîtrise en pourcentage, icône de dépendance et bouton Stats" loading="lazy"><figcaption>Les formations, dans l'ordre où les conseillères les voient.</figcaption></figure>
+  <p>Chaque carte indique le nombre d'étapes, le nombre de conseillères qui ont <strong>commencé</strong> (œil) et <strong>terminé</strong> (coche), et le <strong>Taux de maîtrise</strong> (ou le taux de lecture si la formation n'a pas de questionnaire). La poignée en haut à gauche permet de réordonner les formations par glisser-déposer. Une formation non publiée porte l'étiquette «&nbsp;Non publié&nbsp;».</p>
+
+  <h3 id="s5-2"><span class="sub-num">5.2</span> Créer une formation</h3>
+  <div class="figrow">
+    <figure><img src="Captures/Pilotage/formation-nouvelle.png" alt="Panneau de création d'une formation : boutons Publier, Enregistrer, Supprimer ; champ Description limité à 400 caractères ; zone des dépendances (Cette formation ne dépend d'aucune autre formation) ; bouton Nouvelle étape" loading="lazy"><figcaption>Le panneau d'édition d'une formation.</figcaption></figure>
+    <div class="prose" style="display:flex;flex-direction:column;gap:12px">
+      <ol class="prose">
+        <li>Cliquez sur <strong>Nouvelle formation</strong>&nbsp;: un panneau s'ouvre à droite.</li>
+        <li>Saisissez le <strong>Nom de la formation</strong> et sa <strong>Description</strong> (400 caractères maximum).</li>
+        <li>Ajoutez des étapes avec <strong>Nouvelle étape</strong>&nbsp;: un nom, une description, puis un document et/ou un questionnaire (questions, réponses justes, points par question).</li>
+        <li>Facultatif&nbsp;: ajoutez des dépendances (voir ci-dessous).</li>
+        <li><strong>Enregistrer</strong> garde la formation en brouillon&nbsp;; <strong>Publier</strong> la rend visible aux conseillères.</li>
+      </ol>
+      <p class="muted">Une formation doit avoir au moins une étape, et chaque étape au moins un document ou un questionnaire.</p>
+    </div>
+  </div>
+  <div class="tip"><span class="ex-label">Comment sont comptés les points</span><p>Une question ne rapporte ses points que si la réponse donnée est <strong>exactement</strong> la bonne (toutes les bonnes cases, et elles seules, pour une question à choix multiples). Une conseillère peut refaire un questionnaire&nbsp;: sa nouvelle tentative remplace l'ancienne.</p></div>
+
+  <h3 id="s5-3"><span class="sub-num">5.3</span> Les dépendances</h3>
+  <p>Deux niveaux de prérequis existent&nbsp;:</p>
+  <ul class="prose">
+    <li><strong>Entre formations</strong>&nbsp;: «&nbsp;Choisissez une formation&nbsp;», puis éventuellement «&nbsp;Et avoir au moins&nbsp;» un nombre de points. La formation reste bloquée tant que la conseillère n'a pas terminé la formation prérequise (et atteint le minimum de points).</li>
+    <li><strong>Entre étapes</strong>&nbsp;: «&nbsp;Dépend de l'étape précédente&nbsp;», avec ou sans minimum de points. L'étape reste verrouillée tant que la précédente n'est pas faite.</li>
+  </ul>
+  <div class="example"><span class="ex-label">Exemple</span><p>«&nbsp;Animer une réunion&nbsp;» dépend de «&nbsp;Bien démarrer&nbsp;» avec au moins 7 points sur 10. Chloé termine «&nbsp;Bien démarrer&nbsp;» avec 6 points&nbsp;: «&nbsp;Animer une réunion&nbsp;» reste grisée. Elle refait le questionnaire, obtient 9 points, et la formation se débloque.</p></div>
+
+  <h3 id="s5-4"><span class="sub-num">5.4</span> Publier, dépublier, dupliquer</h3>
+  <ul class="prose">
+    <li>Une formation <strong>publiée</strong> apparaît chez les conseillères, avec une pastille «&nbsp;nouveau&nbsp;».</li>
+    <li>Une formation publiée, ou déjà commencée par une conseillère, ne se modifie plus&nbsp;: son bouton devient <strong>Stats</strong>. Le panneau propose alors <strong>Dupliquer</strong>, <strong>Dépublier</strong> (ou <strong>Publier</strong> à nouveau) et <strong>Supprimer</strong>.</li>
+    <li><strong>Dupliquer</strong> crée une copie non publiée, avec le même nom, les mêmes étapes et les mêmes dépendances, placée en dernier. C'est la façon de faire évoluer une formation déjà suivie&nbsp;: modifiez la copie, publiez-la, dépubliez l'ancienne.</li>
+  </ul>
+  <div class="warn"><span class="ex-label">Attention</span><p><strong>Supprimer</strong> une formation est définitif&nbsp;: elle disparaît avec ses statistiques, et les formations qui en dépendaient perdent ce prérequis (elles se débloquent). Préférez <strong>Dépublier</strong> si vous voulez garder l'historique.</p></div>
+
+  <h3 id="s5-5"><span class="sub-num">5.5</span> Les statistiques</h3>
+  <figure><img src="Captures/Pilotage/formation-stats.png" alt="Panneau Stats d'une formation : boutons Dupliquer, Dépublier, Supprimer, date de publication, nombre de conseillères ayant commencé et terminé, Taux de lecture, Taux de participation, Taux de maîtrise, puis par étape un camembert Maîtrisé, Partiellement maîtrisée, Non maîtrisée, Non terminée, Non faite" loading="lazy"><figcaption>Les statistiques d'une formation, puis de chaque étape.</figcaption></figure>
+  <div class="table-wrap"><table class="opts">
+    <thead><tr><th>Indicateur</th><th>Calcul</th></tr></thead>
+    <tbody>
+      <tr><td><b>Taux de lecture</b></td><td>Conseillères ayant terminé la formation ÷ ensemble des conseillères de la marque.</td></tr>
+      <tr><td><b>Taux de participation</b></td><td>Conseillères ayant terminé ÷ conseillères ayant commencé (affiché quand la formation mêle documents et questionnaires).</td></tr>
+      <tr><td><b>Taux de maîtrise</b></td><td>Score moyen des conseillères qui ont terminé, rapporté au total des points. Vert au-delà de 66&nbsp;%, orange de 34 à 66&nbsp;%, rouge en dessous.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="example"><span class="ex-label">Exemple chiffré</span><p>Votre marque compte 200 conseillères. 40 ont commencé «&nbsp;Bien démarrer&nbsp;», 30 l'ont terminée avec en moyenne 8 points sur 10. Taux de lecture&nbsp;: 30 ÷ 200 = <strong>15&nbsp;%</strong>. Taux de participation&nbsp;: 30 ÷ 40 = <strong>75&nbsp;%</strong>. Taux de maîtrise&nbsp;: <strong>80&nbsp;%</strong>.</p></div>
+  <p>Pour chaque étape, <strong>Voir le détail</strong> ouvre l'analyse du questionnaire (taux de réussite question par question) et la liste des conseillères avec leur résultat.</p>
+
+  <h3 id="s5-6"><span class="sub-num">5.6</span> Sur la fiche d'une conseillère</h3>
+  <div class="figrow">
+    <figure class="narrow"><img src="Captures/Pilotage/widget-formations.png" alt="Encadré Formation de la fiche d'une conseillère : modules commencés, terminés, maîtrisés, jauges Avancement et Taux de réussite, date de la dernière formation, bouton Voir le détail" loading="lazy"><figcaption>L'encadré «&nbsp;Formation&nbsp;» de la fiche conseillère.</figcaption></figure>
+    <div class="prose" style="display:flex;flex-direction:column;gap:12px">
+      <p>Dès que votre marque a au moins une formation, la fiche de chaque conseillère (Vendeurs › fiche) affiche un encadré <strong>Formation</strong>&nbsp;: formations commencées, terminées et maîtrisées, <strong>Avancement</strong> (part des formations terminées), <strong>Taux de réussite</strong> et date de la <strong>Dernière formation</strong>. <strong>Voir le détail</strong> liste chaque formation et chaque étape avec son résultat.</p>
+      <div class="warn"><span class="ex-label">Attention</span><p>Le «&nbsp;Taux de réussite&nbsp;» de cet encadré peut dépasser 100&nbsp;% quand une conseillère a commencé des formations sans les terminer. Fiez-vous plutôt au détail par formation.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 6 -->
+<section id="conseillere">
+  <div class="sec-head"><span class="sec-num">06</span><h2>Ce que voit la conseillère</h2></div>
+  <ul class="prose">
+    <li>Un menu <strong>Base de connaissances</strong> avec <strong>Formations</strong>, <strong>Documents</strong> et <strong>FAQ</strong>, chacun avec une <strong>pastille</strong> qui compte les nouveautés non lues.</li>
+    <li><strong>Documents</strong>&nbsp;: navigation par catégories, documents visibles selon son statut, dans sa langue. Elle peut noter chaque document de 1 à 5 étoiles, une seule fois.</li>
+    <li><strong>FAQ</strong>&nbsp;: toutes les questions, dans sa langue, filtrables par catégorie.</li>
+    <li><strong>Formations</strong>&nbsp;: les formations publiées, dans votre ordre, avec ses points, celles qui sont terminées et celles qui sont bloquées (et pourquoi).</li>
+  </ul>
+</section>
+
+<!-- 7 -->
+<section id="chiffres">
+  <div class="sec-head"><span class="sec-num">07</span><h2>En chiffres</h2></div>
+  <p>Sur les 35 marques actives de SellingAtHome&nbsp;:</p>
+  <div class="stats">
+    <div class="stat"><b>27</b><span>marques ont des documents (22 en médiane, près de 1&nbsp;000 ajoutés sur un an)</span></div>
+    <div class="stat"><b>23</b><span>marques ont des formations (4 en médiane)</span></div>
+    <div class="stat"><b>15</b><span>marques ont une FAQ (7 questions en médiane)</span></div>
+    <div class="stat"><b>73&nbsp;%</b><span>des textes extraits pour l'assistant ont une qualité «&nbsp;Bonne&nbsp;»</span></div>
+  </div>
+  <p class="muted">Formats déposés&nbsp;: une large majorité de PDF, puis des images (PNG, JPG) et quelques vidéos et fichiers Word ou Excel.</p>
+</section>
+
+<!-- 8 -->
+<section id="attention">
+  <div class="sec-head"><span class="sec-num">08</span><h2>Points d'attention</h2></div>
+  <ul class="prose">
+    <li><strong>Statut minimum = niveau</strong>&nbsp;: vérifiez les niveaux de vos statuts avant de restreindre un document.</li>
+    <li><strong>Pour l'assistant, préférez le PDF</strong> dont le texte est sélectionnable. Un scan passe par une lecture visuelle, moins fiable sur les tableaux.</li>
+    <li><strong>Datez les documents temporaires</strong> (offres, opérations) avec «&nbsp;Valable jusqu'au&nbsp;» pour que l'assistant ne les cite pas après leur fin.</li>
+    <li><strong>Une formation suivie ne se modifie pas</strong>&nbsp;: dupliquez-la.</li>
+    <li><strong>La suppression est définitive</strong>, pour un document comme pour une formation (qui libère au passage les formations qui en dépendaient).</li>
+  </ul>
+</section>
+
+<!-- 9 -->
+<section id="faq">
+  <div class="sec-head"><span class="sec-num">09</span><h2>Questions fréquentes</h2></div>
+  <div class="faq">
+    <details><summary>Une conseillère ne voit pas un document&nbsp;: pourquoi&nbsp;?</summary><div><p>Son statut a un niveau inférieur au statut minimum du document, ou elle n'a pas de statut et le document en exige un. Vérifiez aussi que la rubrique Documents est active.</p></div></details>
+    <details><summary>Je ne vois pas la colonne «&nbsp;Assistant&nbsp;» ni le bloc «&nbsp;Assistant IA&nbsp;».</summary><div><p>Ils n'apparaissent que si l'assistant IA est actif pour votre marque.</p></div></details>
+    <details><summary>Mon document reste en «&nbsp;Extraction en attente&nbsp;».</summary><div><p>L'extraction est faite en arrière-plan quelques instants après l'enregistrement. Si l'état ne change pas, enregistrez à nouveau le document ou remplacez le fichier&nbsp;; si le problème persiste, contactez le support.</p></div></details>
+    <details><summary>Je veux corriger une question d'un questionnaire déjà publié.</summary><div><p>Une formation publiée ou commencée ne se modifie plus. Dupliquez-la, corrigez la copie, publiez-la et dépubliez l'ancienne.</p></div></details>
+    <details><summary>Puis-je ordonner les questions de la FAQ&nbsp;?</summary><div><p>Non, la FAQ n'a pas d'ordre réglable. Utilisez les catégories pour la structurer.</p></div></details>
+  </div>
+</section>
+
+  </main>
+</div>

@@ -1,0 +1,645 @@
+<!--page {"title":"Guide des challenges"} -->
+<style>
+.cond td:first-child { width:27%; }
+.cond td:nth-child(2) { width:16%; color:var(--muted); font-size:.88rem; }
+.cond .know { display:block; margin-top:6px; font-size:.86rem; color:var(--pink-ink); }
+.cond .know::before { content:"À savoir : "; font-weight:700; }
+.rule-anatomy { display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:12px; }
+.rule-anatomy .ra { background:var(--card); border:1px solid var(--rule); border-radius:16px; padding:18px; display:flex; flex-direction:column; gap:8px; }
+.rule-anatomy .ra .q { font-size:.72rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); }
+.rule-anatomy .ra b { font-size:1.05rem; color:var(--heading); }
+.rule-anatomy .ra:nth-child(1) { border-top:5px solid var(--accent); }
+.rule-anatomy .ra:nth-child(2) { border-top:5px solid var(--pink); }
+.rule-anatomy .ra:nth-child(3) { border-top:5px solid var(--yellow); }
+.rule-anatomy .ra:nth-child(4) { border-top:5px solid var(--heading); }
+.timeline { display:flex; flex-direction:column; border-left:3px solid var(--rule); margin-left:10px; }
+.tl { position:relative; padding:0 0 18px 26px; }
+.tl::before { content:""; position:absolute; left:-9px; top:4px; width:15px; height:15px; border-radius:50%; background:var(--card); border:3px solid var(--accent); }
+.tl.stop::before { border-color:var(--pink); }
+.tl b { color:var(--heading); display:block; } .tl span { color:var(--muted); font-size:.92rem; }
+.status-flow { display:flex; flex-wrap:wrap; align-items:center; gap:10px; }
+.status-flow .state { border-radius:14px; padding:12px 18px; font-weight:700; border:2px solid var(--rule); background:var(--card); }
+.status-flow .state small { display:block; font-weight:400; color:var(--muted); font-size:.8rem; }
+.status-flow .s1 { border-color:var(--yellow); } .status-flow .s2 { border-color:var(--accent); } .status-flow .s3 { border-color:var(--heading); }
+.status-flow .arr { color:var(--muted); }
+.sim select { font:inherit; font-size:1rem; color:#2B2237; background:#fff; border:0; border-radius:10px; padding:10px 12px; width:100%; }
+.sim .result { font-size:1.1rem; color:#fff; } .sim .result b { color:var(--yellow); }
+@media (max-width: 760px) { .rule-anatomy { grid-template-columns:1fr 1fr; } }
+@media (max-width: 460px) { .rule-anatomy { grid-template-columns:1fr; } }
+</style>
+<header class="hero">
+  <div class="hero-in">
+    <div>
+      <span class="eyebrow">Guide fonctionnel</span>
+      <h1>Tout comprendre des <span class="script">challenges</span></h1>
+      <p class="lede">Challenges vendeurs et classements, périodes, récompenses, bénéficiaires, toutes les conditions, le calcul et la validation des gains. Avec des exemples à chaque étape.</p>
+    </div>
+    <div class="voucher-art" aria-hidden="true">
+      <div class="v-top"><span>Challenge vendeur</span><span>Avril</span></div>
+      <div class="v-amount">87<span> %</span></div>
+      <div class="v-name">Gagne ton kit&nbsp;!</div>
+      <div class="v-sep"></div>
+      <div class="v-meta"><span>CA HT <b>870 / 1&nbsp;000&nbsp;€</b></span><span>Encore <b>5 jours</b></span></div>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="toc" aria-label="Sommaire">
+    <details id="tocDetails" open>
+      <summary>Sommaire</summary>
+      <div class="toc-title">Sommaire</div>
+      <ol>
+        <li data-sec="definition"><a href="#definition"><span class="toc-n">1</span>Qu'est-ce qu'un challenge&nbsp;?</a>
+          <ol class="toc-sub"><li><a href="#s1-1"><span class="toc-n">1.1</span>Les deux sortes de challenges</a></li><li><a href="#s1-2"><span class="toc-n">1.2</span>À quoi servent les challenges&nbsp;?</a></li></ol>
+        </li>
+        <li data-sec="principe"><a href="#principe"><span class="toc-n">2</span>Challenge et récompenses</a>
+          <ol class="toc-sub"><li><a href="#s2-1"><span class="toc-n">2.1</span>Trois règles à retenir</a></li></ol>
+        </li>
+        <li data-sec="ecran"><a href="#ecran"><span class="toc-n">3</span>Où paramétrer</a>
+          <ol class="toc-sub"><li><a href="#s3-1"><span class="toc-n">3.1</span>Créer un challenge vendeur</a></li><li><a href="#s3-2"><span class="toc-n">3.2</span>Les options générales</a></li></ol>
+        </li>
+        <li data-sec="periode"><a href="#periode"><span class="toc-n">4</span>La période</a>
+          <ol class="toc-sub"><li><a href="#s4-1"><span class="toc-n">4.1</span>Date personnalisée ou date prédéfinie</a></li><li><a href="#s4-2"><span class="toc-n">4.2</span>Les autres réglages de la période</a></li></ol>
+        </li>
+        <li data-sec="recompenses"><a href="#recompenses"><span class="toc-n">5</span>Les récompenses</a>
+          <ol class="toc-sub"><li><a href="#s5-1"><span class="toc-n">5.1</span>Les types de récompense</a></li><li><a href="#s5-2"><span class="toc-n">5.2</span>Les bénéficiaires</a></li></ol>
+        </li>
+        <li data-sec="conditions"><a href="#conditions"><span class="toc-n">6</span>Fonctionnement des conditions</a>
+          <ol class="toc-sub"><li><a href="#s6-1"><span class="toc-n">6.1</span>ET, OU et groupes</a></li><li><a href="#s6-2"><span class="toc-n">6.2</span>Conditions «&nbsp;objectif&nbsp;» et conditions «&nbsp;filtre&nbsp;»</a></li><li><a href="#s6-3"><span class="toc-n">6.3</span>Ce qui est compté sur la période</a></li><li><a href="#s6-4"><span class="toc-n">6.4</span>CA ou CA commissionnable&nbsp;?</a></li><li><a href="#s6-5"><span class="toc-n">6.5</span>Que signifie «&nbsp;équipe&nbsp;»&nbsp;?</a></li><li><a href="#s6-6"><span class="toc-n">6.6</span>La progression affichée à la conseillère</a></li></ol>
+        </li>
+        <li data-sec="catalogue"><a href="#catalogue"><span class="toc-n">7</span>Les conditions disponibles</a>
+          <ol class="toc-sub"><li><a href="#s7-1"><span class="toc-n">7.1</span>Chiffre d'affaires de la conseillère</a></li><li><a href="#s7-2"><span class="toc-n">7.2</span>Chiffre d'affaires de l'équipe</a></li><li><a href="#s7-3"><span class="toc-n">7.3</span>Points personnalisés</a></li><li><a href="#s7-4"><span class="toc-n">7.4</span>Produits et clients</a></li><li><a href="#s7-5"><span class="toc-n">7.5</span>Réunions</a></li><li><a href="#s7-6"><span class="toc-n">7.6</span>Recrutement</a></li><li><a href="#s7-7"><span class="toc-n">7.7</span>Profil de la conseillère (conditions filtre)</a></li><li><a href="#s7-8"><span class="toc-n">7.8</span>Conditions sur mesure</a></li><li><a href="#s7-9"><span class="toc-n">7.9</span>Position au classement</a></li></ol>
+        </li>
+        <li data-sec="activation"><a href="#activation"><span class="toc-n">8</span>Conditions par marque</a></li>
+        <li data-sec="calcul"><a href="#calcul"><span class="toc-n">9</span>Le calcul des gains</a></li>
+        <li data-sec="validation"><a href="#validation"><span class="toc-n">10</span>Valider et récupérer</a></li>
+        <li data-sec="manuel"><a href="#manuel"><span class="toc-n">11</span>Récompense manuelle</a></li>
+        <li data-sec="classement"><a href="#classement"><span class="toc-n">12</span>Challenges classement</a></li>
+        <li data-sec="vendeur"><a href="#vendeur"><span class="toc-n">13</span>Ce que voit la conseillère</a></li>
+        <li data-sec="gestion"><a href="#gestion"><span class="toc-n">14</span>Dupliquer, désactiver</a></li>
+        <li data-sec="usages"><a href="#usages"><span class="toc-n">15</span>Paramétrages fréquents</a></li>
+        <li data-sec="attention"><a href="#attention"><span class="toc-n">16</span>Points d'attention</a></li>
+        <li data-sec="faq"><a href="#faq"><span class="toc-n">17</span>Questions fréquentes</a></li>
+        <li data-sec="glossaire"><a href="#glossaire"><span class="toc-n">18</span>Glossaire</a></li>
+      </ol>
+    </details>
+  </nav>
+
+  <main>
+<style>
+.cond td:first-child { width:27%; }
+.cond td:nth-child(2) { width:16%; color:var(--muted); font-size:.88rem; }
+.cond .know { display:block; margin-top:6px; font-size:.86rem; color:var(--pink-ink); }
+.cond .know::before { content:"À savoir : "; font-weight:700; }
+.rule-anatomy { display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:12px; }
+.rule-anatomy .ra { background:var(--card); border:1px solid var(--rule); border-radius:16px; padding:18px; display:flex; flex-direction:column; gap:8px; }
+.rule-anatomy .ra .q { font-size:.72rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); }
+.rule-anatomy .ra b { font-size:1.05rem; color:var(--heading); }
+.rule-anatomy .ra:nth-child(1) { border-top:5px solid var(--accent); }
+.rule-anatomy .ra:nth-child(2) { border-top:5px solid var(--pink); }
+.rule-anatomy .ra:nth-child(3) { border-top:5px solid var(--yellow); }
+.rule-anatomy .ra:nth-child(4) { border-top:5px solid var(--heading); }
+.timeline { display:flex; flex-direction:column; border-left:3px solid var(--rule); margin-left:10px; }
+.tl { position:relative; padding:0 0 18px 26px; }
+.tl::before { content:""; position:absolute; left:-9px; top:4px; width:15px; height:15px; border-radius:50%; background:var(--card); border:3px solid var(--accent); }
+.tl.stop::before { border-color:var(--pink); }
+.tl b { color:var(--heading); display:block; } .tl span { color:var(--muted); font-size:.92rem; }
+.status-flow { display:flex; flex-wrap:wrap; align-items:center; gap:10px; }
+.status-flow .state { border-radius:14px; padding:12px 18px; font-weight:700; border:2px solid var(--rule); background:var(--card); }
+.status-flow .state small { display:block; font-weight:400; color:var(--muted); font-size:.8rem; }
+.status-flow .s1 { border-color:var(--yellow); } .status-flow .s2 { border-color:var(--accent); } .status-flow .s3 { border-color:var(--heading); }
+.status-flow .arr { color:var(--muted); }
+.sim select { font:inherit; font-size:1rem; color:#2B2237; background:#fff; border:0; border-radius:10px; padding:10px 12px; width:100%; }
+.sim .result { font-size:1.1rem; color:#fff; } .sim .result b { color:var(--yellow); }
+@media (max-width: 760px) { .rule-anatomy { grid-template-columns:1fr 1fr; } }
+@media (max-width: 460px) { .rule-anatomy { grid-template-columns:1fr; } }
+</style>
+
+<!-- 1 -->
+<section id="definition">
+  <div class="sec-head"><span class="sec-num">01</span><h2>Qu'est-ce qu'un challenge&nbsp;?</h2></div>
+  <p class="lede">Un challenge est un <strong>objectif proposé aux conseillères</strong> sur une période, avec une <strong>récompense</strong> à la clé&nbsp;: une prime, des points, un produit, un bon d'achat… La conseillère suit sa progression dans son espace, et la plateforme détecte automatiquement les gagnants.</p>
+  <div class="example"><span class="ex-label">Exemple</span><p>«&nbsp;Kit de démonstration offert&nbsp;: réalisez 1&nbsp;000&nbsp;€ de CA HT entre le 22 et le 24 avril&nbsp;». Chaque conseillère qui atteint 1&nbsp;000&nbsp;€ de CA HT sur ces trois jours gagne une prime de 199&nbsp;€.</p></div>
+  <div class="tip"><span class="ex-label">Vocabulaire</span><p>L'interface de l'espace marque dit «&nbsp;vendeur&nbsp;» là où cette documentation dit «&nbsp;conseillère&nbsp;» (de même, «&nbsp;Animateur du vendeur&nbsp;» désigne l'animatrice et «&nbsp;Recruteur du vendeur&nbsp;» la recruteuse). Les libellés de l'écran («&nbsp;Challenges vendeurs&nbsp;», bénéficiaire «&nbsp;Vendeur&nbsp;», conditions…) sont cités tels quels.</p></div>
+  <h3 id="s1-1"><span class="sub-num">1.1</span> Les deux sortes de challenges</h3>
+  <div class="grid-2">
+    <div class="card"><span class="tag">Challenge vendeur</span><p>Chaque conseillère est jugée <strong>seule, face à un objectif</strong>. Toutes celles qui l'atteignent gagnent.</p><p class="muted">«&nbsp;1&nbsp;000&nbsp;€ de CA = prime de 100&nbsp;€&nbsp;»</p></div>
+    <div class="card"><span class="tag pink">Challenge classement</span><p>Les conseillères sont <strong>classées entre elles</strong>. Les récompenses dépendent de la position.</p><p class="muted">«&nbsp;Les 3 meilleures conseillères du mois gagnent un voyage&nbsp;»</p></div>
+  </div>
+  <h3 id="s1-2"><span class="sub-num">1.2</span> À quoi servent les challenges&nbsp;?</h3>
+  <div class="grid-3">
+    <div class="card"><span class="tag">Démarrage</span><p>Accompagner les nouvelles recrues sur leurs premiers mois.</p></div>
+    <div class="card"><span class="tag pink">Animation commerciale</span><p>Booster le CA sur une période, une gamme ou un produit.</p></div>
+    <div class="card"><span class="tag yellow">Recrutement</span><p>Récompenser le parrainage de nouvelles conseillères.</p></div>
+    <div class="card"><span class="tag">Management</span><p>Récompenser une recruteuse ou une animatrice pour la réussite de son équipe.</p></div>
+    <div class="card"><span class="tag pink">Réunions</span><p>Encourager le nombre de réunions et de commandes par réunion.</p></div>
+    <div class="card"><span class="tag yellow">Compétition</span><p>Créer de l'émulation avec un classement.</p></div>
+  </div>
+</section>
+
+<!-- 2 -->
+<section id="principe">
+  <div class="sec-head"><span class="sec-num">02</span><h2>Le principe&nbsp;: un challenge, des récompenses</h2></div>
+  <p class="lede">Un challenge vendeur est un <strong>conteneur</strong>&nbsp;: une période et une ou plusieurs <strong>récompenses</strong>. Chaque récompense a ses propres conditions.</p>
+  <div class="rule-anatomy">
+    <div class="ra"><span class="q">Qui reçoit&nbsp;?</span><b>Bénéficiaire</b><span class="muted">La conseillère, sa recruteuse ou son animatrice.</span></div>
+    <div class="ra"><span class="q">Quoi&nbsp;?</span><b>Type et valeur</b><span class="muted">Une prime de 100&nbsp;€, 50&nbsp;points, un produit, un bon d'achat…</span></div>
+    <div class="ra"><span class="q">À quelles conditions&nbsp;?</span><b>Conditions</b><span class="muted">CA, produits vendus, réunions, recrues… sur la période.</span></div>
+    <div class="ra"><span class="q">Quand&nbsp;?</span><b>Période</b><span class="muted">Commune au challenge, fixe ou propre à chaque conseillère.</span></div>
+  </div>
+  <figure><img src="Captures/Challenges/Infobulle-challenge.png" alt="Fenêtre Informations : les challenges sont composés de une ou plusieurs récompenses indépendantes, calculés toutes les nuits, un vendeur peut gagner avant la fin, validation dans la page vendeurs onglet récompenses de challenge" loading="lazy"><figcaption>Le message d'aide de l'écran Challenges résume le fonctionnement.</figcaption></figure>
+  <h3 id="s2-1"><span class="sub-num">2.1</span> Trois règles à retenir</h3>
+  <div class="grid-3">
+    <div class="card"><h4>Les récompenses sont indépendantes</h4><p>Une conseillère peut gagner la première sans la deuxième, et inversement. Pour des paliers, créez une récompense par palier.</p></div>
+    <div class="card"><h4>Une récompense ne se gagne qu'une fois</h4><p>Une conseillère gagne une récompense donnée une seule fois. Une recruteuse peut la gagner une fois <strong>par recrue</strong> qui remplit les conditions.</p></div>
+    <div class="card"><h4>Le calcul est nocturne</h4><p>Les gains sont détectés chaque nuit, pas en direct. Une conseillère peut gagner avant la fin du challenge, sauf réglage contraire.</p></div>
+  </div>
+</section>
+
+<!-- 3 -->
+<section id="ecran">
+  <div class="sec-head"><span class="sec-num">03</span><h2>Où se paramètrent les challenges&nbsp;?</h2></div>
+  <div class="path" aria-label="Chemin d'accès dans l'espace marque"><span>Espace marque</span><span>Paramètres</span><span>Configuration générale</span><span>Onglet <b>Challenges</b></span></div>
+  <figure><img src="Captures/Challenges/Config-challenges.png" alt="Onglet Challenges : bloc Préconfiguration des filtres de challenges (date de début -30 jours, date de fin 30 jours), listes Challenges vendeurs et Challenges classement" loading="lazy"><figcaption>L'onglet Challenges&nbsp;: préconfiguration des filtres, challenges vendeurs et challenges classement.</figcaption></figure>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Bloc</th><th>Contenu</th></tr></thead>
+    <tbody>
+      <tr><td><b>Préconfiguration des filtres de challenges</b></td><td>Les dates par défaut du filtre «&nbsp;du… au…&nbsp;» de la page Challenge de l'espace conseillère, en jours par rapport à aujourd'hui (ex. −30 / +30&nbsp;: les challenges dont la période recoupe le mois passé ou le mois à venir). N'influence <strong>pas</strong> le calcul. Bouton «&nbsp;Enregistrer les paramètres&nbsp;».</td></tr>
+      <tr><td><b>Challenges vendeurs</b></td><td>La liste, avec le filtre «&nbsp;Challenges actifs / Tous les challenges&nbsp;». Actions&nbsp;: dupliquer, éditer.</td></tr>
+      <tr><td><b>Challenges classement</b></td><td>Idem, avec en plus l'œil «&nbsp;Voir le classement&nbsp;».</td></tr>
+    </tbody>
+  </table></div>
+  <h3 id="s3-1"><span class="sub-num">3.1</span> Créer un challenge vendeur</h3>
+  <ol class="prose">
+    <li>Cliquez sur <strong>«&nbsp;Ajouter un challenge&nbsp;»</strong> dans le bloc Challenges vendeurs.</li>
+    <li>Renseignez le nom, une photo (affichée aux conseillères), les options et la <strong>période</strong>. Cochez <strong>«&nbsp;Activer à l'enregistrement&nbsp;»</strong> si le challenge doit démarrer tout de suite.</li>
+    <li>Cliquez sur <strong>Enregistrer</strong>. Les récompenses ne peuvent être ajoutées qu'après ce premier enregistrement.</li>
+    <li>Cliquez sur <strong>«&nbsp;Ajouter une récompense&nbsp;»</strong> pour chaque récompense.</li>
+  </ol>
+  <figure><img src="Captures/Challenges/Edition-challenge.png" alt="Édition d'un challenge vendeur : informations générales (nom, photo, envoi de mail, validation automatique), période (ne pas calculer avant la fin, rétroactif, définir une période, dates personnalisées) et liste des récompenses" loading="lazy"><figcaption>L'édition d'un challenge vendeur&nbsp;: informations générales, période et récompenses.</figcaption></figure>
+  <h3 id="s3-2"><span class="sub-num">3.2</span> Les options générales</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Option</th><th>Effet</th></tr></thead>
+    <tbody>
+      <tr><td><b>Envoyé un mail lorsqu'une récompense est gagnée</b></td><td>Le bénéficiaire reçoit un e-mail au moment où son gain est <strong>validé</strong> (pas au moment où il est détecté).</td></tr>
+      <tr><td><b>Validation automatique des gains</b></td><td>Les gains sont validés automatiquement, sans action de l'administrateur. Voir <a href="#validation">section 10</a>.</td></tr>
+      <tr><td><b>Désactiver / Réactiver</b></td><td>Un challenge désactivé n'est plus calculé ni affiché aux conseillères. Les gains déjà obtenus restent.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- 4 -->
+<section id="periode">
+  <div class="sec-head"><span class="sec-num">04</span><h2>La période</h2></div>
+  <p class="lede">La période définit <strong>quelles ventes, réunions et recrues comptent</strong>. Elle se règle dans le bloc <strong>Période</strong> du challenge vendeur.</p>
+  <h3 id="s4-1"><span class="sub-num">4.1</span> Date personnalisée ou date prédéfinie</h3>
+  <div class="grid-2">
+    <div class="card"><span class="tag">Date personnalisée</span><p>Une date fixe, la même pour toutes les conseillères. Le début est à 00:00, la fin à 23:59:59 (heure de la marque).</p><p class="muted">«&nbsp;Du 1er au 30 juin&nbsp;»</p></div>
+    <div class="card"><span class="tag pink">Date prédéfinie</span><p>Une date propre à <strong>chaque conseillère</strong>, calculée à partir de sa fiche&nbsp;: date de création de la conseillère, date de début d'activité ou date de début de contrat, plus un délai éventuel.</p><p class="muted">«&nbsp;De la date de début d'activité à + 3 mois&nbsp;»&nbsp;: le challenge est individuel.</p></div>
+  </div>
+  <p>Le délai s'exprime en <strong>Jours</strong>, <strong>Semaines</strong>, <strong>Semaines complètes</strong>, <strong>Mois</strong>, <strong>Mois complets</strong> ou <strong>Années</strong>. Les variantes «&nbsp;complètes&nbsp;» partent de la fin de la semaine (dimanche) ou du mois en cours, pour obtenir des échéances nettes.</p>
+
+  <div class="sim" id="simPeriode">
+    <div><h3 style="color:#fff">Calculateur de période prédéfinie</h3><p class="sub">Exemple&nbsp;: début = date de début d'activité, fin = date de début d'activité + N.</p></div>
+    <div class="sim-form">
+      <label>Date de début d'activité<input type="date" id="spBase" value="2026-03-10"></label>
+      <label>Délai N<input type="number" id="spN" min="0" step="1" value="3"></label>
+      <label>Unité<select id="spUnit"><option value="1">Jours</option><option value="2">Semaines</option><option value="3">Semaines complètes</option><option value="4" selected>Mois</option><option value="5">Mois complets</option><option value="6">Années</option></select></label>
+    </div>
+    <p class="result" id="spOut" aria-live="polite"></p>
+  </div>
+  <div class="warn"><span class="ex-label">Attention</span><p>Pour une date de fin prédéfinie, renseignez toujours un délai supérieur à 0. Sans délai, la fin tombe à 00:00 le jour de base&nbsp;: le challenge dure 0 jour.</p></div>
+
+  <h3 id="s4-2"><span class="sub-num">4.2</span> Les autres réglages de la période</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Réglage</th><th>Effet</th></tr></thead>
+    <tbody>
+      <tr><td><b>Définir une période</b></td><td>Décochée&nbsp;: pas de dates, le challenge est <strong>permanent</strong> et porte sur une fenêtre glissante d'environ 6 mois. Il ne se termine jamais.</td></tr>
+      <tr><td><b>Est rétroactif</b></td><td>Cochée&nbsp;: l'activité réalisée <strong>avant la création du challenge</strong> compte, si elle est dans la période. Décochée&nbsp;: la période ne peut pas commencer avant la date de création du challenge.</td></tr>
+      <tr><td><b>Ne pas calculer les récompenses avant la fin du challenge</b></td><td>Cochée&nbsp;: aucun gain n'est attribué avant la fin de la période. Le calcul a lieu la nuit qui suit la fin. Indispensable si une condition peut redevenir fausse (avoir, statut, condition «&nbsp;inférieur à&nbsp;»).</td></tr>
+    </tbody>
+  </table></div>
+  <div class="warn"><span class="ex-label">Le traitement est limité aux 6 derniers mois</span><p>Le calcul ne charge que l'activité des 6 derniers mois environ. Une période plus longue, ou qui commence plus tôt, perd l'activité la plus ancienne. Les challenges sont recalculés jusqu'à 15 jours après leur fin, puis plus du tout.</p></div>
+</section>
+
+<!-- 5 -->
+<section id="recompenses">
+  <div class="sec-head"><span class="sec-num">05</span><h2>Les récompenses</h2></div>
+  <figure><img src="Captures/Challenges/Edition-r%C3%A9compense.png" alt="Édition d'une récompense : nom, bénéficiaire Vendeur, type Prime, récompense 199 euros, ordre d'affichage 0, condition Chiffre d'affaires HT supérieur ou égal à 1000" loading="lazy"><figcaption>L'écran «&nbsp;Modifier la récompense&nbsp;».</figcaption></figure>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Champ</th><th>Rôle</th></tr></thead>
+    <tbody>
+      <tr><td><b>Nom</b></td><td>Affiché à la conseillère. Soyez explicite&nbsp;: «&nbsp;Gagne ton kit dès 1&nbsp;000&nbsp;€ de CA HT&nbsp;».</td></tr>
+      <tr><td><b>Bénéficiaire</b></td><td>Qui reçoit la récompense (voir ci-dessous).</td></tr>
+      <tr><td><b>Type</b> et <b>Récompense</b></td><td>La nature et la valeur de la récompense.</td></tr>
+      <tr><td><b>Ordre d'affichage</b></td><td>Ordre des récompenses dans le challenge, côté conseillère et BrandAdmin.</td></tr>
+      <tr><td><b>Conditions</b></td><td>Ce que la conseillère doit réaliser (voir <a href="#conditions">section 6</a>). Sans condition, <strong>toutes les conseillères actives gagnent</strong>.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 id="s5-1"><span class="sub-num">5.1</span> Les types de récompense</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Type</th><th>Valeur saisie</th><th>Ce qui se passe à la validation</th></tr></thead>
+    <tbody>
+      <tr><td><b>Prime</b></td><td>Montant</td><td>La prime est ajoutée aux <strong>commissions</strong> du bénéficiaire, sur la période de commission où le gain est marqué <strong>«&nbsp;Récupéré&nbsp;»</strong>. Voir l'attention ci-dessous.</td></tr>
+      <tr><td><b>Points de fidélité</b></td><td>Nombre de points</td><td>Les points sont crédités sur le compte client du bénéficiaire, avec la validité des points de l'onglet Vendeur (voir le <a href="fidelite-guide.html"><em>Guide de la fidélité</em></a>).</td></tr>
+      <tr><td><b>Produits</b></td><td>Un ou plusieurs produits</td><td>Une <strong>commande cadeau</strong> gratuite est créée (un exemplaire de chaque produit, livraison offerte, stock décrémenté), avec envoi du bon de commande.</td></tr>
+      <tr><td><b>Réduction</b></td><td>Une ou plusieurs réductions</td><td>Les réductions sont ajoutées aux codes promo du bénéficiaire. Elles doivent être <strong>restreintes à des clients</strong> (voir le <a href="reductions-guide.html"><em>Guide des réductions</em></a>).</td></tr>
+      <tr><td><b>Bon d'achat</b></td><td>Un ou plusieurs bons</td><td>Les bons sont attribués au bénéficiaire, avec la validité du bon (voir le <a href="bons-achat-guide.html"><em>Guide des bons d'achat</em></a>).</td></tr>
+      <tr><td><b>Remboursement de caution</b></td><td>Montant</td><td><strong>Rien d'automatique</strong>&nbsp;: c'est une information pour vos équipes, à traiter manuellement.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="warn"><span class="ex-label">La prime n'est payée qu'une fois «&nbsp;Récupérée&nbsp;»</span><p>Valider une prime ne suffit pas&nbsp;: elle n'entre dans les commissions qu'au moment où le gain est marqué <strong>Récupéré</strong> (icône cadeau dans l'onglet Récompenses de challenge). Elle est versée avec les commissions de la période de ce clic. Pensez-y à chaque clôture de commissions.</p></div>
+  <p class="muted">Les récompenses Points, Produits, Réduction et Bon d'achat nécessitent que le bénéficiaire ait un <strong>compte client</strong>. Pour les points, sans compte client, aucun point n'est crédité alors que le gain apparaît validé.</p>
+
+  <h3 id="s5-2"><span class="sub-num">5.2</span> Les bénéficiaires</h3>
+  <div class="grid-3">
+    <div class="card"><span class="tag">Vendeur</span><p>La conseillère qui a rempli les conditions.</p></div>
+    <div class="card"><span class="tag pink">Recruteur du vendeur</span><p>Sa <strong>recruteuse</strong> (parrain de recrutement). Elle gagne une fois par recrue qui remplit les conditions.</p></div>
+    <div class="card"><span class="tag yellow">Animateur du vendeur</span><p>Son <strong>animatrice</strong> actuelle (dernier rattachement). Elle gagne une fois par conseillère animée qui remplit les conditions.</p></div>
+  </div>
+  <div class="example"><span class="ex-label">Exemple&nbsp;: récompenser la recruteuse</span><p>Récompense «&nbsp;Recruteur du vendeur&nbsp;», prime de 50&nbsp;€, condition «&nbsp;Chiffre d'affaires HT ≥ 500&nbsp;» sur les 3 premiers mois d'activité. Une recruteuse dont trois recrues atteignent 500&nbsp;€ gagne <strong>trois primes</strong> de 50&nbsp;€.</p></div>
+  <p>Les conditions sont <strong>toujours évaluées sur la conseillère</strong>, jamais sur la recruteuse ou l'animatrice bénéficiaire.</p>
+</section>
+
+<!-- 6 -->
+<section id="conditions">
+  <div class="sec-head"><span class="sec-num">06</span><h2>Comment fonctionnent les conditions</h2></div>
+  <h3 id="s6-1"><span class="sub-num">6.1</span> ET, OU et groupes</h3>
+  <p>Les conditions d'une récompense se combinent en <strong>ET</strong> (toutes doivent être vraies) ou en <strong>OU</strong> (une seule suffit). Le bouton à double étiquette ajoute un <strong>groupe</strong>, avec son propre ET/OU (un seul niveau de groupe).</p>
+  <div class="example"><span class="ex-label">Exemple</span><p>«&nbsp;Statut vendeur est dans Conseillère&nbsp;» <strong>ET</strong> («&nbsp;Chiffre d'affaires HT ≥ 1&nbsp;000&nbsp;» <strong>OU</strong> «&nbsp;Nombre de réunions ≥ 5&nbsp;»).</p></div>
+
+  <h3 id="s6-2"><span class="sub-num">6.2</span> Conditions «&nbsp;objectif&nbsp;» et conditions «&nbsp;filtre&nbsp;»</h3>
+  <div class="grid-2">
+    <div class="card"><span class="tag">Objectif</span><p>CA, produits, réunions, recrues… La conseillère voit la condition et sa <strong>progression en %</strong>.</p></div>
+    <div class="card"><span class="tag pink">Filtre</span><p>Statut, rôle, pays, dates. Elles disent <strong>qui participe</strong>. Si un filtre placé au premier niveau n'est pas rempli, la récompense est <strong>masquée</strong> pour cette conseillère. Rempli, il s'affiche «&nbsp;Oui&nbsp;».</p></div>
+  </div>
+
+  <h3 id="s6-3"><span class="sub-num">6.3</span> Ce qui est compté sur la période</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Élément</th><th>Règle</th></tr></thead>
+    <tbody>
+      <tr><td><b>Commande</b></td><td>Comptée si elle est payée, non supprimée, et que son <strong>premier paiement validé</strong> tombe dans la période. Les frais de port ne comptent jamais.</td></tr>
+      <tr><td><b>Avoir</b></td><td>Déduit à sa date de création, même si la commande a été payée avant la période.</td></tr>
+      <tr><td><b>Réunion</b></td><td>Comptée à sa date de début.</td></tr>
+      <tr><td><b>Recrue / filleul</b></td><td>Compté à sa date de parrainage.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 id="s6-4"><span class="sub-num">6.4</span> CA ou CA commissionnable&nbsp;?</h3>
+  <div class="grid-2">
+    <div class="card"><h4>Chiffre d'affaires (TTC ou HT)</h4><p>Prix des produits après remises, moins la cagnotte et les points de fidélité utilisés, moins les avoirs. Toutes les commandes de la conseillère comptent, y compris ses commandes personnelles.</p></div>
+    <div class="card"><h4>Chiffre d'affaires commissionnable</h4><p>Le même calcul, limité aux produits <strong>commissionnables</strong> (hors produits non commissionnés et produits à commission fixe), selon les réglages de votre plan de commissionnement&nbsp;: exclusion des commandes du compte client de la conseillère, points de fidélité commissionnés ou non, répartition des remises.</p></div>
+  </div>
+  <h3 id="s6-5"><span class="sub-num">6.5</span> Que signifie «&nbsp;équipe&nbsp;»&nbsp;?</h3>
+  <p>L'<strong>équipe</strong> d'une conseillère, c'est <strong>toute sa descendance</strong> (filleuls, filleuls des filleuls… sans limite de niveau), d'après les rattachements d'animation. «&nbsp;Équipe&nbsp;» exclut la conseillère&nbsp;; «&nbsp;équipe (vendeur inclus)&nbsp;» l'ajoute. Seules les conseillères actives comptent&nbsp;: une conseillère inactive coupe sa branche.</p>
+  <h3 id="s6-6"><span class="sub-num">6.6</span> La progression affichée à la conseillère</h3>
+  <p>Pour un objectif «&nbsp;≥&nbsp;», la progression = réalisé ÷ objectif, plafonnée à 100&nbsp;%. Avec plusieurs conditions en ET, c'est la moyenne des progressions. Les conditions «&nbsp;inférieur&nbsp;», «&nbsp;différent&nbsp;» ou de profil valent 0&nbsp;% ou 100&nbsp;%.</p>
+</section>
+
+<!-- 7 -->
+<section id="catalogue">
+  <div class="sec-head"><span class="sec-num">07</span><h2>Les conditions disponibles</h2></div>
+  <p class="lede">Les libellés sont ceux de l'écran. La liste proposée dans votre back-office dépend des conditions activées pour votre marque (voir <a href="#activation">section 8</a>).</p>
+
+  <h3 id="s7-1"><span class="sub-num">7.1</span> Chiffre d'affaires de la conseillère</h3>
+  <div class="table-wrap"><table class="cond">
+    <thead><tr><th>Condition</th><th>Saisie</th><th>Ce qu'elle mesure</th></tr></thead>
+    <tbody>
+      <tr><td><b>Chiffre d'affaires TTC</b> / <b>HT</b></td><td>Montant</td><td>Le CA de la conseillère sur la période.</td></tr>
+      <tr><td><b>Chiffre d'affaire Commissionnable TTC</b> / <b>HT</b></td><td>Montant</td><td>Le CA commissionnable de la conseillère.</td></tr>
+      <tr><td><b>Chiffre d'affaires TTC</b> / <b>HT pour le catalogue</b></td><td>Catalogue + montant</td><td>Le CA des commandes d'un catalogue choisi.<span class="know">une commande sans catalogue fait échouer la récompense pour cette conseillère.</span></td></tr>
+      <tr><td><b>CA commissionnable TTC</b> / <b>HT pour le catalogue</b></td><td>Catalogue + montant</td><td>Le CA commissionnable d'un catalogue choisi.</td></tr>
+      <tr><td><b>CA commissionnable TTC pour la catégorie</b></td><td>Catégorie + montant</td><td>Le CA commissionnable des produits d'une catégorie et de ses sous-catégories.</td></tr>
+      <tr><td><b>CA commissionnable fixe</b></td><td>Montant</td><td>Le total des commissions à montant fixe gagnées par la conseillère sur ses ventes, avoirs déduits.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 id="s7-2"><span class="sub-num">7.2</span> Chiffre d'affaires de l'équipe</h3>
+  <div class="table-wrap"><table class="cond">
+    <thead><tr><th>Condition</th><th>Saisie</th><th>Ce qu'elle mesure</th></tr></thead>
+    <tbody>
+      <tr><td><b>Chiffre d'affaires TTC</b> / <b>HT de l'équipe</b></td><td>Montant</td><td>Le CA de toute la descendance, sans la conseillère.</td></tr>
+      <tr><td><b>… de l'équipe (vendeur inclus)</b></td><td>Montant</td><td>Le même CA, avec les ventes de la conseillère.</td></tr>
+      <tr><td><b>Chiffre d'affaires commissionnable TTC</b> / <b>HT de l'équipe</b> (avec ou sans la conseillère)</td><td>Montant</td><td>Le CA commissionnable de l'équipe.</td></tr>
+    </tbody>
+  </table></div>
+  <p class="muted">Dans le suivi d'activité de la conseillère, la progression «&nbsp;équipe&nbsp;» ne compte que son premier niveau&nbsp;: elle peut paraître plus faible que le calcul réel, qui porte sur toute l'équipe.</p>
+
+  <h3 id="s7-3"><span class="sub-num">7.3</span> Points personnalisés</h3>
+  <p>Disponibles si votre marque utilise des points personnalisés. Le libellé reprend le nom de vos points («&nbsp;Étoiles du vendeur&nbsp;»…).</p>
+  <div class="table-wrap"><table class="cond">
+    <thead><tr><th>Condition</th><th>Saisie</th><th>Ce qu'elle mesure</th></tr></thead>
+    <tbody>
+      <tr><td><b>{points} du vendeur</b></td><td>Nombre</td><td>Les points cumulés sur les commandes de la conseillère.<span class="know">les avoirs ne sont pas déduits.</span></td></tr>
+      <tr><td><b>{points} de l'équipe</b> (avec ou sans la conseillère)</td><td>Nombre</td><td>Les points de la descendance.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 id="s7-4"><span class="sub-num">7.4</span> Produits et clients</h3>
+  <div class="table-wrap"><table class="cond">
+    <thead><tr><th>Condition</th><th>Saisie</th><th>Ce qu'elle mesure</th></tr></thead>
+    <tbody>
+      <tr><td><b>Nb total de produits vendus</b></td><td>Nombre</td><td>La quantité totale d'articles vendus, retours déduits.<span class="know">tous les articles comptent, y compris services et produits du catalogue fidélité.</span></td></tr>
+      <tr><td><b>Nb de produit vendus pour la catégorie</b></td><td>Catégories + nombre</td><td>La quantité vendue dans les catégories choisies et leurs sous-catégories.</td></tr>
+      <tr><td><b>Nb de quantité vendue pour le produit</b></td><td>Produit + nombre</td><td>La quantité vendue d'un produit (ou d'une déclinaison).<span class="know">un seul produit est pris en compte&nbsp;: sélectionnez-en un seul.</span></td></tr>
+      <tr><td><b>Nombre de clients un nombre commande supérieur ou égal à</b></td><td>Nb de clients + nb de commandes</td><td>Le nombre de clients distincts de la conseillère ayant passé au moins N commandes sur la période. Ex.&nbsp;: «&nbsp;au moins 10 clients avec 2 commandes ou plus&nbsp;».</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 id="s7-5"><span class="sub-num">7.5</span> Réunions</h3>
+  <div class="table-wrap"><table class="cond">
+    <thead><tr><th>Condition</th><th>Saisie</th><th>Ce qu'elle mesure</th></tr></thead>
+    <tbody>
+      <tr><td><b>Nombre de réunions</b></td><td>Nombre</td><td>Les réunions de la conseillère démarrées dans la période, hors réunions annulées.</td></tr>
+      <tr><td><b>Nombre de réunions pour le catalogue</b></td><td>Catalogue + nombre</td><td>Les réunions d'un catalogue choisi.<span class="know">les réunions annulées sont comptées.</span></td></tr>
+      <tr><td><b>Nombre moyen de commande par réunion</b></td><td>Nombre</td><td>Le nombre moyen de commandes par réunion.<span class="know">les commandes non payées et les réunions annulées sont comptées. Sans réunion, la condition est fausse.</span></td></tr>
+      <tr><td><b>Nombre de réunions redatées</b></td><td>Nombre</td><td>Les réunions prises depuis une autre réunion et ayant au moins une commande.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 id="s7-6"><span class="sub-num">7.6</span> Recrutement</h3>
+  <div class="table-wrap"><table class="cond">
+    <thead><tr><th>Condition</th><th>Saisie</th><th>Ce qu'elle mesure</th></tr></thead>
+    <tbody>
+      <tr><td><b>Nombre de nouveau vendeur filleul par recrutement (n-1)</b></td><td>Nombre</td><td>Les nouvelles recrues&nbsp;: conseillères dont elle est la <strong>toute première recruteuse</strong>, parrainées dans la période.</td></tr>
+      <tr><td><b>Nombre de nouveau vendeur filleul par animation (n-1)</b></td><td>Nombre</td><td>Les conseillères qui lui sont rattachées dans la période, <strong>y compris celles reprises d'un autre parrain</strong>. Toujours supérieur ou égal au précédent.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 id="s7-7"><span class="sub-num">7.7</span> Profil de la conseillère (conditions filtre)</h3>
+  <div class="table-wrap"><table class="cond">
+    <thead><tr><th>Condition</th><th>Saisie</th><th>Ce qu'elle vérifie</th></tr></thead>
+    <tbody>
+      <tr><td><b>Statut vendeur</b></td><td>Liste de statuts</td><td>Le statut de la conseillère. Par défaut, le statut au début de la période <strong>et tous les statuts traversés</strong> pendant la période. Avec «&nbsp;Ne pas calculer avant la fin&nbsp;», seul le statut à la fin de la période compte.<span class="know">avec «&nbsp;n'est pas dans&nbsp;», il suffit d'avoir eu un statut de la liste pendant la période pour être exclue.</span></td></tr>
+      <tr><td><b>Statut du recruteur</b></td><td>Liste de statuts</td><td>Le statut de la recruteuse (parrain de recrutement), même logique.</td></tr>
+      <tr><td><b>Statut de l'animateur</b></td><td>Liste de statuts</td><td>Le statut de l'animatrice, même logique.</td></tr>
+      <tr><td><b>Rôles vendeur</b></td><td>Liste de rôles</td><td>Les rôles actuels de la conseillère. «&nbsp;égal&nbsp;»&nbsp;: exactement ces rôles&nbsp;; «&nbsp;est dans&nbsp;»&nbsp;: au moins un.</td></tr>
+      <tr><td><b>Pays du vendeur</b></td><td>Liste de pays</td><td>Le pays de l'adresse du compte client de la conseillère (à défaut, de son adresse de conseillère). Sans adresse, la condition est fausse.</td></tr>
+      <tr><td><b>Date de début de contrat</b></td><td>Date</td><td>La date de début de contrat de la conseillère. Ex.&nbsp;: réserver une récompense aux conseillères entrées après le 1er janvier.</td></tr>
+      <tr><td><b>Date de début d'activité du vendeur</b></td><td>Date</td><td>Même principe, avec la date de début d'activité.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 id="s7-8"><span class="sub-num">7.8</span> Conditions sur mesure</h3>
+  <p>Certaines conditions ont été développées pour une marque et ne sont activées que pour elle&nbsp;: filleuls qualifiés (filleuls ayant atteint un seuil de CA), CA converti en points selon des barèmes propres, date de création de la conseillère, CA de regroupement clôturé… Si l'une apparaît dans votre back-office, son fonctionnement vous a été présenté lors de sa mise en place.</p>
+
+  <h3 id="s7-9"><span class="sub-num">7.9</span> Position au classement</h3>
+  <p>Réservée aux récompenses des <strong>challenges classement</strong>&nbsp;: la position de la conseillère dans le classement. Ex.&nbsp;: «&nbsp;Position au classement ≤ 3&nbsp;» pour le podium. Voir <a href="#classement">section 12</a>.</p>
+</section>
+
+<!-- 8 -->
+<section id="activation">
+  <div class="sec-head"><span class="sec-num">08</span><h2>Quelles conditions sont proposées à votre marque&nbsp;?</h2></div>
+  <p>La liste des conditions proposées est gérée par l'équipe SellingAtHome&nbsp;:</p>
+  <ul class="prose">
+    <li>La plupart des conditions sont actives <strong>pour toutes les marques</strong>.</li>
+    <li>Les conditions par catalogue et les conditions sur mesure ne sont activées que pour les marques concernées.</li>
+    <li>Les conditions de points personnalisés n'apparaissent que si votre marque utilise des points personnalisés.</li>
+  </ul>
+  <div class="tip"><span class="ex-label">Bon à savoir</span><p>Une condition qui n'apparaît pas dans votre back-office n'est pas activée pour votre marque&nbsp;: contactez votre interlocuteur SellingAtHome. Si une condition est retirée de votre marque, les récompenses qui l'utilisent ne peuvent plus être gagnées.</p></div>
+</section>
+
+<!-- 9 -->
+<section id="calcul">
+  <div class="sec-head"><span class="sec-num">09</span><h2>Le calcul des gains</h2></div>
+  <div class="timeline">
+    <div class="tl"><b>Chaque nuit</b><span>Pour chaque challenge actif et chaque conseillère active, la plateforme évalue chaque récompense sur la période de la conseillère.</span></div>
+    <div class="tl"><b>Conditions remplies</b><span>Un gain est créé, «&nbsp;en attente de validation&nbsp;». La conseillère voit la récompense comme gagnée.</span></div>
+    <div class="tl"><b>Validation</b><span>Automatique ou manuelle (voir <a href="#validation">section 10</a>). La récompense est alors attribuée.</span></div>
+    <div class="tl stop"><b>15 jours après la fin</b><span>Le challenge n'est plus calculé.</span></div>
+  </div>
+  <div class="warn"><span class="ex-label">Un gain n'est jamais retiré</span><p>Une fois créé, un gain reste, même si un avoir ou une annulation fait ensuite redescendre la conseillère sous l'objectif. Si ce risque compte pour vous, cochez <strong>«&nbsp;Ne pas calculer les récompenses avant la fin du challenge&nbsp;»</strong>&nbsp;: les gains ne seront attribués qu'une fois la période close.</p></div>
+  <p class="muted">Pour certaines marques, SellingAtHome peut activer les <strong>gains immédiats</strong>&nbsp;: la récompense est calculée et validée dès le paiement de la commande, sans attendre la nuit. Cela concerne les récompenses au bénéficiaire Vendeur, en validation automatique, sans l'option «&nbsp;Ne pas calculer avant la fin&nbsp;». L'écran signale ces récompenses par la mention «&nbsp;Eligible aux gains immédiats&nbsp;».</p>
+</section>
+
+<!-- 10 -->
+<section id="validation">
+  <div class="sec-head"><span class="sec-num">10</span><h2>Valider et récupérer les gains</h2></div>
+  <div class="path" aria-label="Chemin d'accès"><span>Espace marque</span><span>Vendeurs</span><span>Onglet <b>Récompenses de challenge</b></span></div>
+  <div class="status-flow">
+    <div class="state s1">En attente<small>gain détecté</small></div><span class="arr" aria-hidden="true">→</span>
+    <div class="state s2">Validé<small>récompense attribuée</small></div><span class="arr" aria-hidden="true">→</span>
+    <div class="state s3">Récupéré<small>remis à la conseillère</small></div>
+  </div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Étape</th><th>Ce qui se passe</th></tr></thead>
+    <tbody>
+      <tr><td><b>Valider</b></td><td>Automatique si «&nbsp;Validation automatique des gains&nbsp;» est cochée, sinon bouton <strong>Valider</strong>. Les points, produits, réductions et bons d'achat sont attribués&nbsp;; une notification et, si l'option est cochée, un e-mail partent vers le bénéficiaire.</td></tr>
+      <tr><td><b>Récupérer</b></td><td>Bouton <strong>Récupéré</strong> (icône cadeau)&nbsp;: indique que la récompense a été remise. <strong>Indispensable pour les primes</strong>, qui ne sont payées qu'à partir de ce clic.</td></tr>
+      <tr><td><b>Supprimer</b></td><td>Retire le gain de la liste. Ne reprend pas ce qui a déjà été attribué (points, bons, commande cadeau), et la conseillère ne pourra plus regagner cette récompense.</td></tr>
+    </tbody>
+  </table></div>
+  <p>Des filtres permettent d'afficher les gains non validés, non récupérés ou supprimés. Côté conseillère, la récompense apparaît «&nbsp;En attente de validation&nbsp;», «&nbsp;Validée&nbsp;» puis «&nbsp;Reçue le …&nbsp;».</p>
+</section>
+
+<!-- 11 -->
+<section id="manuel">
+  <div class="sec-head"><span class="sec-num">11</span><h2>Récompenser une conseillère manuellement</h2></div>
+  <p>Dans la liste des récompenses du challenge, le bouton <strong>+</strong> ouvre la fenêtre <strong>«&nbsp;Récompenser un vendeur&nbsp;»</strong>&nbsp;: choisissez une conseillère et cliquez sur <strong>Appliquer</strong>.</p>
+  <figure><img src="Captures/Challenges/Challenge-recompense-vendeur.png" alt="Fenêtre Récompenser un vendeur : champ de recherche du vendeur, avertissement sur le choix de la recrue quand le bénéficiaire est le recruteur ou l'animateur, bouton Appliquer" loading="lazy"><figcaption>Attribuer une récompense à la main.</figcaption></figure>
+  <ul class="prose">
+    <li>Les <strong>conditions ne sont pas vérifiées</strong>&nbsp;: c'est un geste de l'administrateur.</li>
+    <li>Si le bénéficiaire est la recruteuse ou l'animatrice, choisissez la <strong>recrue</strong> qui a réalisé le challenge&nbsp;: sa recruteuse ou son animatrice sera récompensée.</li>
+    <li>Le gain est validé immédiatement si la validation automatique est active.</li>
+  </ul>
+</section>
+
+<!-- 12 -->
+<section id="classement">
+  <div class="sec-head"><span class="sec-num">12</span><h2>Les challenges classement</h2></div>
+  <p class="lede">Un challenge classement range les conseillères selon une <strong>performance</strong> et récompense les mieux placés.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Élément</th><th>Rôle</th></tr></thead>
+    <tbody>
+      <tr><td><b>Date de début / Date de fin</b></td><td>Toujours des dates fixes (00:00 – 23:59).</td></tr>
+      <tr><td><b>Règle de classement</b></td><td>La performance qui sert à classer&nbsp;: une condition chiffrée (ex. Chiffre d'affaire Commissionnable HT, Nombre de nouvelles recrues).</td></tr>
+      <tr><td><b>Règles d'éligibilité</b></td><td>Qui participe (ET/OU)&nbsp;: statut, rôle, pays… Seules les conseillères éligibles sont classées.</td></tr>
+      <tr><td><b>Récompenses</b></td><td>Conditionnées par la <strong>Position au classement</strong>&nbsp;: «&nbsp;= 1&nbsp;» pour le premier, «&nbsp;≤ 3&nbsp;» pour le podium, «&nbsp;entre 4 et 10&nbsp;»…</td></tr>
+    </tbody>
+  </table></div>
+  <ul class="prose">
+    <li>Le classement est mis à jour régulièrement&nbsp;; la date de dernière mise à jour s'affiche.</li>
+    <li><strong>Ex æquo</strong>&nbsp;: deux conseillères à égalité ont la même position, et la suivante est sautée (1, 1, 3). Les deux gagnent la récompense de la position 1.</li>
+    <li>Les gains sont générés <strong>le lendemain de la date de fin</strong>, sur le classement final.</li>
+    <li>L'œil <strong>«&nbsp;Voir le classement&nbsp;»</strong> affiche le classement (position, conseillère, performance), les règles et les récompenses, avec une recherche par conseillère.</li>
+  </ul>
+  <div class="warn"><span class="ex-label">À savoir</span>
+    <ul>
+      <li>Choisissez une règle de classement <strong>chiffrée</strong> (CA, produits, réunions, recrues). Les conditions de profil (statut, rôle, pays, dates) ne mesurent rien et donnent un classement vide de sens.</li>
+      <li>Les conditions des récompenses d'un classement sont toujours lues en <strong>ET</strong>, sans groupe.</li>
+      <li>Une récompense désactivée dans un challenge classement est quand même attribuée&nbsp;: supprimez-la plutôt.</li>
+      <li>Le classement inclut toutes les conseillères de la marque, y compris inactives&nbsp;: filtrez avec les règles d'éligibilité (ex. statut).</li>
+      <li>La récompense «&nbsp;Statut&nbsp;» n'existe pas pour les classements.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 13 -->
+<section id="vendeur">
+  <div class="sec-head"><span class="sec-num">13</span><h2>Ce que voit la conseillère</h2></div>
+  <p>Dans son espace, menu <strong>Suivi d'activité › Challenge</strong>&nbsp;:</p>
+  <ul class="prose">
+    <li>Ses challenges en cours et terminés, avec la photo, les dates et les jours restants.</li>
+    <li>Pour chaque récompense, chaque condition objectif et sa <strong>progression</strong>.</li>
+    <li>Un onglet pour les résultats de ses <strong>recrues</strong>, et un onglet <strong>classement</strong>.</li>
+    <li>Le statut de ses gains&nbsp;: en attente de validation, validée, reçue.</li>
+    <li>Des pastilles «&nbsp;nouveau&nbsp;» pour un nouveau challenge ou une récompense gagnée, et des notifications.</li>
+  </ul>
+  <p>Le filtre de dates de cette page est pré-rempli avec la <strong>préconfiguration des filtres</strong> de l'onglet Challenges.</p>
+  <div class="tip"><span class="ex-label">Bon à savoir</span><p>Les conseillères sont notifiées lorsqu'un challenge est activé avec au moins une récompense. Préparez le challenge complet avant de l'activer.</p></div>
+</section>
+
+<!-- 14 -->
+<section id="gestion">
+  <div class="sec-head"><span class="sec-num">14</span><h2>Dupliquer, désactiver, supprimer</h2></div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Action</th><th>Effet</th></tr></thead>
+    <tbody>
+      <tr><td><b>Dupliquer</b></td><td>Copie le challenge et ses récompenses, nommé «&nbsp;… - Copie&nbsp;». La copie est créée <strong>désactivée</strong>&nbsp;: adaptez les dates puis activez-la. Idéal pour un challenge mensuel.</td></tr>
+      <tr><td><b>Désactiver</b></td><td>Le challenge n'est plus calculé ni affiché. Les gains existants restent. Réactivable.</td></tr>
+      <tr><td><b>Désactiver une récompense</b></td><td>La récompense n'est plus calculée (challenges vendeurs).</td></tr>
+      <tr><td><b>Supprimer</b></td><td>Possible seulement pour un challenge sans gagnant, si la fonction a été activée pour votre marque.</td></tr>
+    </tbody>
+  </table></div>
+  <p>Modifier une récompense après coup ne change pas les gains déjà obtenus&nbsp;: leur type et leur valeur sont figés au moment du gain.</p>
+</section>
+
+<!-- 15 -->
+<section id="usages">
+  <div class="sec-head"><span class="sec-num">15</span><h2>Les paramétrages les plus fréquents</h2></div>
+  <p class="lede">Les configurations que l'on retrouve le plus souvent chez les marques.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Usage</th><th>Paramétrage typique</th></tr></thead>
+    <tbody>
+      <tr><td><b>Challenge de démarrage</b></td><td>Période prédéfinie «&nbsp;date de début d'activité → + 3 mois&nbsp;», récompense <em>Produits</em> (kit) ou <em>Prime</em> avec une condition de CA, bénéficiaire Vendeur</td></tr>
+      <tr><td><b>Paliers de CA du mois</b></td><td>Période personnalisée, une récompense par palier (CA ≥ 300, ≥ 600, ≥ 1&nbsp;000), types <em>Bon d'achat</em> ou <em>Prime</em></td></tr>
+      <tr><td><b>Récompense de la recruteuse</b></td><td>Bénéficiaire «&nbsp;Recruteur du vendeur&nbsp;», condition de CA de la recrue sur ses premiers mois</td></tr>
+      <tr><td><b>Challenge produit</b></td><td>Condition «&nbsp;Nb de quantité vendue pour le produit&nbsp;» ou «&nbsp;Nb de produit vendus pour la catégorie&nbsp;»</td></tr>
+      <tr><td><b>Challenge réunions</b></td><td>Conditions «&nbsp;Nombre de réunions&nbsp;» et «&nbsp;Nombre moyen de commande par réunion&nbsp;»</td></tr>
+      <tr><td><b>Classement mensuel</b></td><td>Challenge classement sur le «&nbsp;Chiffre d'affaire Commissionnable HT&nbsp;», récompenses <em>Produits</em> par position, éligibilité par statut</td></tr>
+      <tr><td><b>Options</b></td><td>Le plus souvent&nbsp;: période définie, rétroactif, validation automatique et e-mail de gain</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- 16 -->
+<section id="attention">
+  <div class="sec-head"><span class="sec-num">16</span><h2>Points d'attention</h2></div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Sujet</th><th>Comportement</th><th>Conseil</th></tr></thead>
+    <tbody>
+      <tr><td><b>Primes</b></td><td>Payées seulement après le clic «&nbsp;Récupéré&nbsp;».</td><td>Marquer les primes récupérées avant chaque clôture de commissions.</td></tr>
+      <tr><td><b>Récompense sans condition</b></td><td>Toutes les conseillères actives la gagnent.</td><td>Toujours ajouter au moins une condition.</td></tr>
+      <tr><td><b>Gain jamais retiré</b></td><td>Un avoir ou une annulation après le gain ne le reprend pas.</td><td>«&nbsp;Ne pas calculer avant la fin&nbsp;» pour les challenges sensibles.</td></tr>
+      <tr><td><b>Fenêtre de 6 mois</b></td><td>L'activité plus ancienne n'est pas chargée.</td><td>Périodes de 6 mois maximum.</td></tr>
+      <tr><td><b>Fin prédéfinie sans délai</b></td><td>Le challenge dure 0 jour.</td><td>Toujours un délai &gt; 0.</td></tr>
+      <tr><td><b>Non rétroactif</b></td><td>L'activité antérieure à la création du challenge ne compte pas.</td><td>Créer le challenge avant son début, ou cocher «&nbsp;Est rétroactif&nbsp;».</td></tr>
+      <tr><td><b>Statut «&nbsp;n'est pas dans&nbsp;»</b></td><td>Avoir traversé un statut exclu pendant la période suffit à être exclu.</td><td>—</td></tr>
+      <tr><td><b>Récompense Points sans compte client</b></td><td>Le gain paraît validé mais aucun point n'est crédité.</td><td>Vérifier que les conseillères ont un compte client.</td></tr>
+      <tr><td><b>Récompense «&nbsp;Statut&nbsp;»</b></td><td>Ne fonctionne pas actuellement.</td><td>Changer le statut manuellement.</td></tr>
+      <tr><td><b>Récompense manuelle</b></td><td>Conditions non vérifiées&nbsp;; pour une recruteuse ou une animatrice, rien n'empêche d'attribuer deux fois.</td><td>Vérifier la liste des gains avant d'attribuer.</td></tr>
+      <tr><td><b>Classement</b></td><td>Ex æquo toutes gagnantes&nbsp;; OU ignoré dans les récompenses&nbsp;; récompense désactivée quand même attribuée&nbsp;; conseillères inactives classées.</td><td>Voir <a href="#classement">section 12</a>.</td></tr>
+      <tr><td><b>Image d'un classement</b></td><td>Elle peut être perdue si le challenge est réenregistré.</td><td>Ajouter l'image en dernier, et la vérifier.</td></tr>
+      <tr><td><b>Suppression d'un challenge</b></td><td>Un challenge avec un seul gagnant peut être supprimé par erreur.</td><td>Ne supprimer que des challenges vérifiés sans gagnant&nbsp;; préférer la désactivation.</td></tr>
+      <tr><td><b>Progression «&nbsp;équipe&nbsp;»</b></td><td>Affichée sur le premier niveau seulement.</td><td>Le calcul réel porte sur toute l'équipe.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- 17 -->
+<section id="faq">
+  <div class="sec-head"><span class="sec-num">17</span><h2>Questions fréquentes</h2></div>
+  <div class="faq">
+    <details><summary>Une conseillère a atteint l'objectif mais n'a pas de gain.</summary><div><ol>
+      <li>Le calcul est nocturne&nbsp;: attendez le lendemain.</li>
+      <li>«&nbsp;Ne pas calculer avant la fin&nbsp;» est-il coché&nbsp;?</li>
+      <li>Les commandes sont-elles payées, avec un premier paiement dans la période&nbsp;?</li>
+      <li>Une condition filtre (statut, rôle, pays) n'est-elle pas remplie&nbsp;?</li>
+      <li>Le challenge est-il rétroactif si l'activité date d'avant sa création&nbsp;?</li>
+      <li>La conseillère est-elle active&nbsp;?</li>
+    </ol></div></details>
+    <details><summary>La conseillère ne voit pas une récompense.</summary><div><p>Une condition filtre n'est pas remplie pour elle, ou le challenge est désactivé, ou sa période ne recoupe pas le filtre de dates de sa page.</p></div></details>
+    <details><summary>La prime validée n'apparaît pas dans les commissions.</summary><div><p>Marquez le gain comme «&nbsp;Récupéré&nbsp;»&nbsp;: la prime sera intégrée aux commissions de la période de ce clic.</p></div></details>
+    <details><summary>Comment créer des paliers&nbsp;?</summary><div><p>Une récompense par palier dans le même challenge&nbsp;: CA ≥ 300 → récompense 1&nbsp;; CA ≥ 600 → récompense 2… Les récompenses sont indépendantes et se cumulent.</p></div></details>
+    <details><summary>Comment faire un challenge différent pour chaque nouvelle recrue&nbsp;?</summary><div><p>Utilisez des dates prédéfinies&nbsp;: début = date de début d'activité, fin = date de début d'activité + 3 mois. Chaque conseillère a sa propre période.</p></div></details>
+    <details><summary>Le CA affiché ne correspond pas à mes exports.</summary><div><p>Vérifiez s'il s'agit du CA ou du CA commissionnable, en TTC ou en HT, et la date retenue&nbsp;: celle du premier paiement validé de la commande.</p></div></details>
+  </div>
+</section>
+
+<!-- 18 -->
+<section id="glossaire">
+  <div class="sec-head"><span class="sec-num">18</span><h2>Glossaire</h2></div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Terme</th><th>Définition</th></tr></thead>
+    <tbody>
+      <tr><td><b>Challenge vendeur</b></td><td>Chaque conseillère face à un objectif.</td></tr>
+      <tr><td><b>Challenge classement</b></td><td>Conseillères classées entre elles, récompensées selon leur position.</td></tr>
+      <tr><td><b>Récompense</b></td><td>Ce qui est gagné, avec son bénéficiaire et ses conditions.</td></tr>
+      <tr><td><b>Gain</b></td><td>Une récompense obtenue par une conseillère.</td></tr>
+      <tr><td><b>Vendeur lié</b></td><td>La conseillère qui a rempli les conditions (différente de la bénéficiaire pour une recruteuse ou une animatrice).</td></tr>
+      <tr><td><b>Date prédéfinie</b></td><td>Date de période propre à chaque conseillère.</td></tr>
+      <tr><td><b>Rétroactif</b></td><td>Prise en compte de l'activité antérieure à la création du challenge.</td></tr>
+      <tr><td><b>CA commissionnable</b></td><td>CA limité aux produits commissionnables, selon le plan de commissionnement.</td></tr>
+      <tr><td><b>Équipe</b></td><td>Toute la descendance d'une conseillère.</td></tr>
+      <tr><td><b>Récupéré</b></td><td>Gain remis à la conseillère&nbsp;; déclenche le paiement des primes.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  function fmt(d) { return d.toLocaleDateString('fr-FR', { weekday:'long', day:'numeric', month:'long', year:'numeric' }); }
+  function addMonths(d, n) { var r = new Date(d); var day = r.getDate(); r.setDate(1); r.setMonth(r.getMonth() + n); var last = new Date(r.getFullYear(), r.getMonth() + 1, 0).getDate(); r.setDate(Math.min(day, last)); return r; }
+  function render() {
+    var v = $('spBase').value; if (!v) { $('spOut').textContent = ''; return; }
+    var p = v.split('-'); var base = new Date(+p[0], +p[1] - 1, +p[2]);
+    var n = Math.max(0, parseInt($('spN').value, 10) || 0), u = $('spUnit').value, end = new Date(base);
+    if (n > 0) {
+      if (u === '1') end.setDate(end.getDate() + n);
+      else if (u === '2') end.setDate(end.getDate() + 7 * n);
+      else if (u === '3') { var toSun = (7 - end.getDay()) % 7 || 7; end.setDate(end.getDate() + toSun + 7 * n); }
+      else if (u === '4') end = addMonths(end, n);
+      else if (u === '5') { end = addMonths(new Date(end.getFullYear(), end.getMonth() + 1, 0), n); }
+      else if (u === '6') end = addMonths(end, 12 * n);
+      var days = Math.round((end - base) / 86400000) + 1;
+      $('spOut').innerHTML = 'Période du <b>' + fmt(base) + '</b> à 00:00 au <b>' + fmt(end) + '</b> à 23:59, soit ' + days + ' jours.';
+    } else {
+      $('spOut').innerHTML = 'Sans délai, la fin tombe le <b>' + fmt(base) + '</b> à 00:00 : <b>le challenge dure 0 jour</b>.';
+    }
+  }
+  ['spBase', 'spN', 'spUnit'].forEach(function (id) { $(id).addEventListener('input', render); $(id).addEventListener('change', render); });
+  render();
+})();
+</script>
+
+  </main>
+</div>
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  function fmt(d) { return d.toLocaleDateString('fr-FR', { weekday:'long', day:'numeric', month:'long', year:'numeric' }); }
+  function addMonths(d, n) { var r = new Date(d); var day = r.getDate(); r.setDate(1); r.setMonth(r.getMonth() + n); var last = new Date(r.getFullYear(), r.getMonth() + 1, 0).getDate(); r.setDate(Math.min(day, last)); return r; }
+  function render() {
+    var v = $('spBase').value; if (!v) { $('spOut').textContent = ''; return; }
+    var p = v.split('-'); var base = new Date(+p[0], +p[1] - 1, +p[2]);
+    var n = Math.max(0, parseInt($('spN').value, 10) || 0), u = $('spUnit').value, end = new Date(base);
+    if (n > 0) {
+      if (u === '1') end.setDate(end.getDate() + n);
+      else if (u === '2') end.setDate(end.getDate() + 7 * n);
+      else if (u === '3') { var toSun = (7 - end.getDay()) % 7 || 7; end.setDate(end.getDate() + toSun + 7 * n); }
+      else if (u === '4') end = addMonths(end, n);
+      else if (u === '5') { end = addMonths(new Date(end.getFullYear(), end.getMonth() + 1, 0), n); }
+      else if (u === '6') end = addMonths(end, 12 * n);
+      var days = Math.round((end - base) / 86400000) + 1;
+      $('spOut').innerHTML = 'Période du <b>' + fmt(base) + '</b> à 00:00 au <b>' + fmt(end) + '</b> à 23:59, soit ' + days + ' jours.';
+    } else {
+      $('spOut').innerHTML = 'Sans délai, la fin tombe le <b>' + fmt(base) + '</b> à 00:00 : <b>le challenge dure 0 jour</b>.';
+    }
+  }
+  ['spBase', 'spN', 'spUnit'].forEach(function (id) { $(id).addEventListener('input', render); $(id).addEventListener('change', render); });
+  render();
+})();
+</script>

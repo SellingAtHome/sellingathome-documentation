@@ -1,0 +1,288 @@
+<!--page {"title":"Rapports et exports"} -->
+<style>
+.reports { display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:14px; }
+.reports .card { border-top:5px solid var(--accent); }
+.reports .card:nth-child(3n+2) { border-top-color:var(--pink); }
+.reports .card:nth-child(3n+3) { border-top-color:var(--yellow); }
+.reports .card p { font-size:.92rem; }
+.exp td:first-child { width:24%; font-weight:600; color:var(--heading); }
+.exp td:nth-child(2) { width:20%; font-size:.9rem; }
+.exp td:nth-child(3) { font-size:.9rem; }
+.chip { display:inline-block; border-radius:100px; padding:3px 11px; font-size:.78rem; font-weight:700; background:var(--surface); color:var(--heading); border:1px solid var(--rule); }
+.chip.g { background:var(--accent-wash); color:var(--accent-ink); border-color:transparent; }
+.chip.p { background:var(--pink-wash); color:var(--pink-ink); border-color:transparent; }
+.chip.y { background:var(--yellow-wash); color:var(--yellow-ink); border-color:transparent; }
+</style>
+<header class="hero">
+  <div class="hero-in">
+    <div>
+      <span class="eyebrow">Communication et pilotage</span>
+      <h1>Rapports <span class="script">et exports</span></h1>
+      <p class="lede">Le menu Rapports réunit les tableaux prêts à lire (stock faible, meilleures ventes, réponses aux questions) et l'export de données, qui vous envoie par email des fichiers complets sur vos commandes, conseillères, clientes, produits ou commissions.</p>
+    </div>
+    <div class="voucher-art" aria-hidden="true">
+      <div class="v-top"><span>Export</span><span>.xlsx</span></div>
+      <div class="v-amount">28<span> exports</span></div>
+      <div class="v-name">Envoyés par email</div>
+      <div class="v-sep"></div>
+      <div class="v-meta"><span>Période <b>au choix</b></span><span>Formats <b>4</b></span></div>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="toc" aria-label="Sommaire">
+    <details id="tocDetails" open>
+      <summary>Sommaire</summary>
+      <div class="toc-title">Sommaire</div>
+      <ol>
+        <li data-sec="definition"><a href="#definition"><span class="toc-n">1</span>Le menu Rapports</a></li>
+        <li data-sec="stock"><a href="#stock"><span class="toc-n">2</span>Rapport stock faible</a>
+          <ol class="toc-sub"><li><a href="#s2-1"><span class="toc-n">2.1</span>Ce qui apparaît</a></li><li><a href="#s2-2"><span class="toc-n">2.2</span>Régler le seuil</a></li></ol>
+        </li>
+        <li data-sec="ventes"><a href="#ventes"><span class="toc-n">3</span>Meilleures ventes</a>
+          <ol class="toc-sub"><li><a href="#s3-1"><span class="toc-n">3.1</span>Ce qui est compté</a></li><li><a href="#s3-2"><span class="toc-n">3.2</span>Le détail par conseillère</a></li></ol>
+        </li>
+        <li data-sec="questions"><a href="#questions"><span class="toc-n">4</span>Réponses aux questions</a></li>
+        <li data-sec="export"><a href="#export"><span class="toc-n">5</span>Export de données</a>
+          <ol class="toc-sub"><li><a href="#s5-1"><span class="toc-n">5.1</span>Lancer un export</a></li><li><a href="#s5-2"><span class="toc-n">5.2</span>Ventes et commandes</a></li><li><a href="#s5-3"><span class="toc-n">5.3</span>Réseau et rémunération</a></li><li><a href="#s5-4"><span class="toc-n">5.4</span>Clientes, réunions, fidélité</a></li><li><a href="#s5-5"><span class="toc-n">5.5</span>Catalogue et stocks</a></li><li><a href="#s5-6"><span class="toc-n">5.6</span>Les plus utilisés</a></li></ol>
+        </li>
+        <li data-sec="autres"><a href="#autres"><span class="toc-n">6</span>Les autres entrées du menu</a>
+          <ol class="toc-sub"><li><a href="#s6-1"><span class="toc-n">6.1</span>Emails envoyés</a></li><li><a href="#s6-2"><span class="toc-n">6.2</span>Synchronisation</a></li><li><a href="#s6-3"><span class="toc-n">6.3</span>Récapitulatif mensuel des performances</a></li></ol>
+        </li>
+        <li data-sec="attention"><a href="#attention"><span class="toc-n">7</span>Points d'attention</a></li>
+        <li data-sec="faq"><a href="#faq"><span class="toc-n">8</span>Questions fréquentes</a></li>
+      </ol>
+    </details>
+  </nav>
+
+  <main>
+
+<!-- 1 -->
+<section id="definition">
+  <div class="sec-head"><span class="sec-num">01</span><h2>Le menu Rapports</h2></div>
+  <p class="lede">Deux familles d'outils&nbsp;: des <strong>rapports à l'écran</strong>, pour répondre vite à une question («&nbsp;qu'est-ce qui va manquer&nbsp;?&nbsp;», «&nbsp;qu'est-ce qui se vend&nbsp;?&nbsp;»), et des <strong>exports</strong>, pour travailler les données dans un tableur.</p>
+  <div class="path" aria-label="Chemin d'accès"><span>Espace marque</span><span><b>Rapports</b></span></div>
+  <div class="reports">
+    <div class="card"><span class="tag">À l'écran</span><h4>Rapport stock faible</h4><p>Les produits dont le stock est passé sous votre seuil d'alerte.</p></div>
+    <div class="card"><span class="tag pink">À l'écran</span><h4>Meilleures ventes</h4><p>Les produits classés par quantité vendue et chiffre d'affaires, avec le détail par conseillère.</p></div>
+    <div class="card"><span class="tag yellow">À l'écran</span><h4>Réponses aux questions</h4><p>Combien de clientes ont répondu oui ou non à chacune de vos questions de commande.</p></div>
+    <div class="card"><span class="tag">À l'écran</span><h4>Emails envoyés</h4><p>Le journal des emails partis de la plateforme. Détaillé dans la page des emails.</p></div>
+    <div class="card"><span class="tag pink">Par email</span><h4>Export de données</h4><p>Une trentaine de fichiers prêts à l'emploi, envoyés à votre adresse.</p></div>
+    <div class="card"><span class="tag yellow">Selon votre marque</span><h4>Synchronisation, récapitulatif mensuel</h4><p>Visibles seulement si votre marque utilise une synchronisation ou le plan de rémunération.</p></div>
+  </div>
+  <p class="muted">Le menu Rapports est actif pour toutes les marques. L'entrée «&nbsp;Exports comptables&nbsp;» n'apparaît que si un logiciel comptable est paramétré pour votre marque (voir <a href="pilotage.html">Communication et pilotage</a>).</p>
+</section>
+
+<!-- 2 -->
+<section id="stock">
+  <div class="sec-head"><span class="sec-num">02</span><h2>Rapport stock faible</h2></div>
+  <div class="path" aria-label="Chemin d'accès"><span>Rapports</span><span><b>Rapport stock faible</b></span></div>
+  <p class="lede">La liste des produits dont la quantité en stock est <strong>inférieure ou égale</strong> à votre seuil. C'est votre liste de réassort.</p>
+  <figure><img src="Captures/Pilotage/stock-faible.png" alt="Rapport stock faible : phrase d'introduction rappelant le seuil de 15 articles, bouton Filtrer, recherche, colonnes Nom, Méthode d'inventaire, Quantité en stock, Publié, Action ; un produit suivi par attributs affiche en dessous ses déclinaisons Couleur : Or, Argent, Or Blanc à 0" loading="lazy"><figcaption>Le rapport, sur la marque de démonstration (seuil réglé à 15).</figcaption></figure>
+
+  <h3 id="s2-1"><span class="sub-num">2.1</span> Ce qui apparaît</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Méthode d'inventaire du produit</th><th>Le produit apparaît si…</th></tr></thead>
+    <tbody>
+      <tr><td><b>Suivre les stocks</b></td><td>sa quantité en stock est inférieure ou égale au seuil, y compris quand elle est négative.</td></tr>
+      <tr><td><b>Suivre les stocks par attributs de produit</b></td><td>au moins une déclinaison est sous le seuil. Les déclinaisons concernées s'affichent sous le produit, avec leur quantité.</td></tr>
+      <tr><td><b>Lot</b> (produit groupé)</td><td>son stock calculé est sous le seuil, à condition que tous ses composants soient suivis en stock.</td></tr>
+      <tr><td>Stock non suivi</td><td>jamais.</td></tr>
+    </tbody>
+  </table></div>
+  <p>Les produits supprimés sont exclus. Le bouton <strong>Filtrer</strong> restreint la liste par catégorie, statut (publié ou non) et type de produit. L'œil ouvre la fiche produit, le crayon sa modification.</p>
+  <div class="example"><span class="ex-label">Exemple</span><p>Votre seuil est de 5. Le collier torsadé est à 3&nbsp;: il apparaît. Les créoles sont suivies par couleur&nbsp;: «&nbsp;Or&nbsp;» à 12, «&nbsp;Argent&nbsp;» à 2. Le produit apparaît, avec la seule ligne «&nbsp;Couleur&nbsp;: Argent – 2&nbsp;» en dessous.</p></div>
+
+  <h3 id="s2-2"><span class="sub-num">2.2</span> Régler le seuil</h3>
+  <p>Le seuil se règle dans <a href="configuration-generale.html#s7-1">la configuration de la marque</a>, bloc <strong>Rapports</strong>, champ «&nbsp;Stock minimal de produit pour apparaître dans le rapport de stock faible&nbsp;». Il vaut <strong>5</strong> par défaut. 21 marques actives sur 35 le conservent&nbsp;; les autres l'ont fixé entre 3 et 150.</p>
+  <div class="tip"><span class="ex-label">Bon à savoir</span><p>Ce seuil sert aussi dans l'espace conseillère&nbsp;: si vos conseillères voient les stocks, un produit sous le seuil y est signalé par un badge orange. Le changer modifie donc ce que voient les conseillères.</p></div>
+</section>
+
+<!-- 3 -->
+<section id="ventes">
+  <div class="sec-head"><span class="sec-num">03</span><h2>Meilleures ventes</h2></div>
+  <div class="path" aria-label="Chemin d'accès"><span>Rapports</span><span><b>Meilleures ventes</b></span></div>
+  <p class="lede">Chaque produit vendu, avec la <strong>quantité vendue</strong> et le <strong>chiffre d'affaires généré (HT)</strong>. La liste est triée par quantité, et se retrie d'un clic sur une colonne.</p>
+  <figure><img src="Captures/Pilotage/meilleures-ventes.png" alt="Meilleures ventes : bouton Filtrer, recherche, colonnes Nom (avec la référence entre parenthèses), Quantité vendue avec un bouton œil, Chiffre d'affaires généré (HT) avec une infobulle, Publié" loading="lazy"><figcaption>Le classement des produits, sur la marque de démonstration.</figcaption></figure>
+
+  <h3 id="s3-1"><span class="sub-num">3.1</span> Ce qui est compté</h3>
+  <ul class="prose">
+    <li>Les commandes <strong>payées</strong>, non supprimées et non annulées, de tous les types (réunion, vente directe, web, cadeau…).</li>
+    <li>Le chiffre d'affaires est la somme <strong>quantité × prix unitaire HT</strong> de chaque ligne.</li>
+    <li>Le filtre de dates porte sur la <strong>date de paiement</strong>. Sans filtre, tout l'historique est compté.</li>
+    <li>Le filtre «&nbsp;Statut&nbsp;» garde les produits publiés ou non publiés.</li>
+  </ul>
+  <div class="example"><span class="ex-label">Exemple</span><p>En mars, Léa vend 4 colliers à 39,17&nbsp;€ HT et Chloé en vend 2. Avec le filtre «&nbsp;du 1<sup>er</sup> au 31 mars&nbsp;», le collier affiche 6 en quantité vendue et 235,02&nbsp;€ de chiffre d'affaires HT.</p></div>
+  <div class="warn"><span class="ex-label">Attention</span><p>Une commande <strong>partiellement annulée</strong> reste comptée en entier&nbsp;: l'avoir n'est pas déduit. Et les produits offerts (commandes cadeaux) augmentent la quantité vendue sans chiffre d'affaires. Pour un chiffre d'affaires comptable, préférez les exports de commandes et d'avoirs.</p></div>
+
+  <h3 id="s3-2"><span class="sub-num">3.2</span> Le détail par conseillère</h3>
+  <p>L'œil de la colonne «&nbsp;Quantité vendue&nbsp;» ouvre, pour ce produit, la liste des conseillères qui l'ont vendu&nbsp;: numéro, nom, prénom, quantité et chiffre d'affaires HT, sur la même période. Le bouton <strong>Exporter</strong> vous envoie ce détail par email.</p>
+  <figure><img src="Captures/Pilotage/meilleures-ventes-detail.png" alt="Fenêtre de détail d'un produit : bouton Exporter, recherche, colonnes #, Nom, Prénom (floutés), Quantité vendue, Chiffre d'affaires généré (HT)" loading="lazy"><figcaption>Le détail d'un produit par conseillère (noms floutés).</figcaption></figure>
+</section>
+
+<!-- 4 -->
+<section id="questions">
+  <div class="sec-head"><span class="sec-num">04</span><h2>Réponses aux questions</h2></div>
+  <div class="path" aria-label="Chemin d'accès"><span>Rapports</span><span><b>Réponses aux questions</b></span></div>
+  <p class="lede">Vos <strong>questions de commande</strong> sont les cases à cocher que la cliente voit dans le tunnel d'achat ou sur le formulaire d'inscription&nbsp;: acceptation des conditions, consentement à recevoir des documents dématérialisés… Ce rapport compte, pour chaque question, les réponses <strong>Oui</strong> et <strong>Non</strong>, avec leur pourcentage.</p>
+  <figure><img src="Captures/Pilotage/questions.png" alt="Rapport Questions : recherche, colonnes Question, Oui, Non ; chaque ligne donne le nombre de réponses et le pourcentage, par exemple 466 (99,79 %) oui et 1 (0,21 %) non" loading="lazy"><figcaption>Le décompte des réponses, toutes périodes confondues.</figcaption></figure>
+  <ul class="prose">
+    <li>Le décompte porte sur <strong>tout l'historique</strong>&nbsp;: il n'y a pas de filtre de dates.</li>
+    <li>Les questions se créent dans <strong>Paramètres › Configuration générale › Paramètres des commandes</strong>, bloc «&nbsp;Paramètres des questions&nbsp;» (voir <a href="ventes.html">Commandes et boutiques</a>).</li>
+    <li>Pour savoir <strong>qui</strong> a répondu quoi, utilisez l'export «&nbsp;Export des réponses aux questions des commandes&nbsp;» (voir plus bas).</li>
+  </ul>
+  <p class="muted">Le menu dit «&nbsp;Réponses aux questions&nbsp;», la page s'intitule «&nbsp;Questions&nbsp;» : c'est le même écran.</p>
+</section>
+
+<!-- 5 -->
+<section id="export">
+  <div class="sec-head"><span class="sec-num">05</span><h2>Export de données</h2></div>
+  <div class="path" aria-label="Chemin d'accès"><span>Rapports</span><span><b>Export de données</b></span></div>
+  <p class="lede">La page «&nbsp;Requêtes d'export&nbsp;» liste les exports disponibles pour votre marque. Chaque export produit <strong>un fichier envoyé par email</strong> à l'adresse du compte connecté, en quelques minutes.</p>
+
+  <h3 id="s5-1"><span class="sub-num">5.1</span> Lancer un export</h3>
+  <div class="figrow">
+    <figure><img src="Captures/Pilotage/export-parametres.png" alt="Page Export de la requête Export des commandes : bloc Paramètres d'export avec Type d'export (Microsoft Excel .xlsx), Date de début, Date de fin et bouton Exporter" loading="lazy"><figcaption>Les paramètres d'un export.</figcaption></figure>
+    <div class="prose" style="display:flex;flex-direction:column;gap:12px">
+      <ol class="prose">
+        <li>Cliquez sur la flèche de téléchargement de l'export voulu.</li>
+        <li>Choisissez le <strong>Type d'export</strong>&nbsp;: Excel (.xlsx, par défaut), CSV, JSON ou XML.</li>
+        <li>Choisissez la <strong>Date de début</strong> et la <strong>Date de fin</strong> (par défaut, le dernier mois). La date de fin est incluse jusqu'à 23&nbsp;h&nbsp;59.</li>
+        <li>Cliquez sur <strong>Exporter</strong>, puis confirmez.</li>
+      </ol>
+      <p>Le fichier arrive en pièce jointe d'un email envoyé à <strong>votre</strong> adresse (celle de votre profil), pas à celle de la marque.</p>
+    </div>
+  </div>
+  <div class="warn"><span class="ex-label">Attention</span><p>Si la période demandée est trop volumineuse, l'export échoue et vous recevez un email «&nbsp;Le volume de données demandé excède la taille maximale autorisée, merci de refaire votre demande d'exports sur une période plus courte&nbsp;». Découpez alors la période (par mois, par exemple).</p></div>
+  <div class="tip"><span class="ex-label">Bon à savoir</span><p>La période ne veut pas dire la même chose pour tous les exports&nbsp;: date de commande, date de paiement, date de création de la cliente… Les tableaux ci-dessous l'indiquent pour chacun. Certains exports ignorent la période et donnent tout.</p></div>
+  <figure><img src="Captures/Pilotage/export-donnees.png" alt="Tableau Toutes les requêtes d'export : colonnes Nom, Description et Action (bouton de téléchargement), de Points de fidélité à Export des commandes" loading="lazy" style="max-width:480px"><figcaption>La liste des exports standards (les exports propres à certaines marques n'apparaissent pas ici).</figcaption></figure>
+  <div class="tip"><span class="ex-label">Vocabulaire</span><p>Dans les exports et les écrans, «&nbsp;Vendeur&nbsp;» désigne la conseillère, «&nbsp;Animateur&nbsp;» l'animatrice, «&nbsp;Hôte&nbsp;» l'hôtesse et «&nbsp;Client&nbsp;» la cliente.</p></div>
+
+  <h3 id="s5-2"><span class="sub-num">5.2</span> Ventes et commandes</h3>
+  <div class="table-wrap"><table class="exp">
+    <thead><tr><th>Export</th><th>Période = </th><th>Contenu (une ligne par…)</th></tr></thead>
+    <tbody>
+      <tr><td>Export des commandes</td><td>date de la commande</td><td><b>Commande</b>, payée ou non (hors supprimées)&nbsp;: référence, date, cliente et conseillère (identifiant, référence externe, nom, email), réunion et hôtesse, nombre de produits, montants (hors livraison, payé, HT, remise, points de fidélité), date et moyen de paiement, référence de facture, statuts (général, expédition, paiement, entreposage), montants commissionnables avant et après avoirs, écotaxe, livraison (montant, mode, adresse complète), date de commission, bons d'achat, rôles de la cliente, catalogue.</td></tr>
+      <tr><td>Export du détail des commandes</td><td>date de paiement</td><td><b>Produit commandé</b> (lignes annulées exclues), commandes payées&nbsp;: commande, type de commande, cliente (adresse, téléphone, rôles), conseillère, produit (référence, SKU, nom, attributs, type), quantité, prix unitaires HT et TTC, remises produit et commande, points de fidélité, frais et remise de livraison, bons d'achat, produit non commissionné.</td></tr>
+      <tr><td>Export des commandes payées et validées</td><td>date de paiement</td><td><b>Commande payée</b>&nbsp;: les mêmes informations que l'export des commandes, plus le «&nbsp;Prix vendeur&nbsp;». Une partie des colonnes porte un nom technique (en anglais).</td></tr>
+      <tr><td>Export des commandes avec les taux de TVA</td><td>date de la commande</td><td><b>Commande</b>&nbsp;: les informations de l'export des commandes, plus la ventilation de TVA à 5,5&nbsp;%, 6&nbsp;%, 20&nbsp;% et 21&nbsp;%.</td></tr>
+      <tr><td>Export des avoirs</td><td>date de l'avoir</td><td><b>Avoir</b>&nbsp;: référence de l'avoir et de la commande annulée, cliente, conseillère, réunion, hôtesse, produits annulés, montants TTC et HT, remises, points de fidélité, montant commissionnable, écotaxe, livraison, moyen de paiement.</td></tr>
+      <tr><td>Export des avoirs avec les taux de TVA</td><td>date de l'avoir</td><td><b>Avoir</b>, avec la ventilation de TVA.</td></tr>
+      <tr><td>Export des réductions des commandes</td><td>date de la commande (payée)</td><td><b>Réduction appliquée</b>&nbsp;: nom et type de la réduction, montant, commande, date de paiement, cliente, montant payé. Colonnes et types en libellés techniques.</td></tr>
+      <tr><td>Export des réponses aux questions des commandes</td><td>date de paiement</td><td><b>Réponse</b>&nbsp;: cliente (prénom, nom, email), commande, date de paiement, question et réponse.</td></tr>
+      <tr><td>Exports des retours et retour groupés</td><td>date du retour</td><td><b>Retour</b>&nbsp;: numéro du retour groupé et du retour, type (neuf ou qualité), motif, référence de la conseillère et du produit, quantité, date, statut.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 id="s5-3"><span class="sub-num">5.3</span> Réseau et rémunération</h3>
+  <div class="table-wrap"><table class="exp">
+    <thead><tr><th>Export</th><th>Période = </th><th>Contenu</th></tr></thead>
+    <tbody>
+      <tr><td>Export des vendeurs</td><td>toutes les conseillères&nbsp;; la période sert aux colonnes «&nbsp;sur la période&nbsp;»</td><td><b>Conseillère</b>&nbsp;: identité, coordonnées, naissance, numéro de sécurité sociale, adresse, société (SIRET, TVA), statuts (actuel, durant la période, à vie), recruteur, animatrice, activation, coordonnées bancaires (RIB, IBAN, BIC), rôles, chiffre d'affaires, réunions, panier moyen, indice de vente (au total et sur la période), commissions du mois, champs personnalisés, présence sur la carte, dernière connexion, adresse de son site.</td></tr>
+      <tr><td>Export des vendeurs activés et désactivés</td><td>sans période</td><td><b>Changement d'état</b>&nbsp;: conseillère, date de création, date d'activation ou de désactivation.</td></tr>
+      <tr><td>Export historique des liens animateur pour les vendeurs</td><td>sans période</td><td><b>Rattachement</b>&nbsp;: conseillère, animatrice (ou recruteur) et date du lien. Colonnes en libellés techniques.</td></tr>
+      <tr><td>Export des commissions</td><td>début de la période de commission</td><td><b>Bulletin de commission</b>&nbsp;: conseillère, recruteur, animatrice, statut, période, date de clôture, chiffre d'affaires commissionnable HT et TTC, montant des commissions, statut de société.</td></tr>
+      <tr><td>Export détaillé des commissions</td><td>début de la période de commission</td><td><b>Prime</b> d'un bulletin&nbsp;: nom de la prime, base, taux, montant. Colonnes en libellés techniques.</td></tr>
+      <tr><td>Export des détails des cotisations sociales URSSAF</td><td>début de la période de cotisation</td><td><b>Cotisation</b>&nbsp;: conseillère, revenus trimestriels bruts, abattement, assiette, tranche, cotisations VDI et entreprise.</td></tr>
+      <tr><td>Export des recrutements</td><td>date de création de la candidature</td><td><b>Candidature</b> (hors «&nbsp;à traiter&nbsp;», refusées et non retenues)&nbsp;: identité, adresse, naissance, sécurité sociale, IBAN et BIC, téléphone, email, statut, kit commandé, champs du formulaire.</td></tr>
+      <tr><td>Export des gagnants d'un challenge</td><td>date d'attribution</td><td><b>Récompense</b>&nbsp;: bénéficiaire, challenge, récompense (nom, type, valeur), dates de validation et de récupération.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 id="s5-4"><span class="sub-num">5.4</span> Clientes, réunions, fidélité</h3>
+  <div class="table-wrap"><table class="exp">
+    <thead><tr><th>Export</th><th>Période = </th><th>Contenu</th></tr></thead>
+    <tbody>
+      <tr><td>Export des clients</td><td><b>date de création de la cliente</b></td><td><b>Cliente</b>&nbsp;: identité, coordonnées, naissance, rôles, langue, adresse, parrainage, société, total des achats, nombre de commandes, de produits et de réunions, panier moyen, indice de vente, chiffre d'affaires sur la période, produits achetés, solde de points, conseillère rattachée, liste de souhaits, champs personnalisés.</td></tr>
+      <tr><td>Export des réunions</td><td>date de début de la réunion</td><td><b>Réunion</b>&nbsp;: hôtesse, nom, dates, statut, code, conseillère, thème, chiffre d'affaires, commandes, produits vendus, présentes, invitées, réunions associées, points de fidélité, adresse, catalogue, données visio.</td></tr>
+      <tr><td>Export des réunions virtuelles</td><td>date de début de la réunion</td><td><b>Réunion</b>, avec les minutes et participants de visio.</td></tr>
+      <tr><td>Export des clients des réunions</td><td>date de début de la réunion</td><td><b>Participante</b>&nbsp;: réunion, conseillère, cliente, hôtesse ou non, présente ou non, montant de son panier.</td></tr>
+      <tr><td>Points de fidélité</td><td>date du mouvement</td><td><b>Cliente</b>&nbsp;: points gagnés (hôtesse, réunion, commande, crédités manuellement), total gagné, points utilisés.</td></tr>
+      <tr><td>Export des bons d'achats</td><td>validité du bon</td><td><b>Bon d'achat non utilisé</b>&nbsp;: cliente, numéro, montant, dates de validité. Ne renvoie des lignes que pour les marques reliées à un logiciel de gestion qui fournit un code société (voir <a href="#attention">points d'attention</a>).</td></tr>
+      <tr><td>Export wishlist</td><td>date d'ajout</td><td><b>Produit en liste de souhaits</b>&nbsp;: cliente, conseillère, produit, stock.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 id="s5-5"><span class="sub-num">5.5</span> Catalogue et stocks</h3>
+  <div class="table-wrap"><table class="exp">
+    <thead><tr><th>Export</th><th>Période = </th><th>Contenu</th></tr></thead>
+    <tbody>
+      <tr><td>Export des produits</td><td>tous les produits</td><td><b>Produit</b>&nbsp;: référence, date de création, nom, catégories, taux de TVA, prix HT et TTC, prix d'achat, prix par rôle, supprimé, publié, rupture autorisée, stock, valorisation du stock, nombre de ventes, code-barres, emplacement en entrepôt.</td></tr>
+      <tr><td>Export des combinaisons de produits</td><td>tous les produits&nbsp;; ventes sur la période</td><td><b>Déclinaison</b>&nbsp;: produit, référence et nom de la déclinaison, stock, nombre vendu, prix.</td></tr>
+      <tr><td>Export des photos des produits</td><td>sans période</td><td><b>Photo</b>&nbsp;: produit, adresse de l'image, ordre, photo principale ou non.</td></tr>
+      <tr><td>Export du stock entrepôt vendeurs <span class="tag yellow" style="display:inline-block">Module optionnel</span></td><td>sans période</td><td><b>Produit détenu par une conseillère</b>&nbsp;: conseillère, produit, déclinaison, quantité, valorisation. N'apparaît que si la gestion du stock chez les conseillères est activée.</td></tr>
+    </tbody>
+  </table></div>
+  <p class="muted">Certaines marques disposent en plus d'exports créés pour elles&nbsp;: ils apparaissent dans la même liste.</p>
+
+  <h3 id="s5-6"><span class="sub-num">5.6</span> Les plus utilisés</h3>
+  <p>Les 35 marques actives ont toutes reçu au moins un export par email sur les douze derniers mois. Voici les exports demandés par le plus grand nombre de marques&nbsp;:</p>
+  <div class="share" aria-label="Nombre de marques ayant utilisé chaque export sur un an">
+    <div class="share-row"><span><b>Détail des commandes</b></span><div class="share-bar"><i style="width:71%"></i></div><span class="pct">25 / 35</span></div>
+    <div class="share-row"><span><b>Vendeurs</b></span><div class="share-bar"><i style="width:71%"></i></div><span class="pct">25 / 35</span></div>
+    <div class="share-row"><span><b>Commandes</b></span><div class="share-bar"><i style="width:66%"></i></div><span class="pct">23 / 35</span></div>
+    <div class="share-row"><span>Commandes payées et validées</span><div class="share-bar"><i style="width:49%"></i></div><span class="pct">17 / 35</span></div>
+    <div class="share-row"><span>Produits</span><div class="share-bar"><i style="width:46%"></i></div><span class="pct">16 / 35</span></div>
+    <div class="share-row"><span>Commissions</span><div class="share-bar"><i style="width:43%"></i></div><span class="pct">15 / 35</span></div>
+    <div class="share-row"><span>Gagnants d'un challenge</span><div class="share-bar"><i style="width:43%"></i></div><span class="pct">15 / 35</span></div>
+    <div class="share-row"><span>Clients</span><div class="share-bar"><i style="width:34%"></i></div><span class="pct">12 / 35</span></div>
+  </div>
+  <p class="muted">Décompte des emails d'export envoyés sur douze mois. Une douzaine de marques ont aussi reçu au moins un email d'échec (période trop volumineuse).</p>
+</section>
+
+<!-- 6 -->
+<section id="autres">
+  <div class="sec-head"><span class="sec-num">06</span><h2>Les autres entrées du menu</h2></div>
+
+  <h3 id="s6-1"><span class="sub-num">6.1</span> Emails envoyés</h3>
+  <p>Le journal des emails partis de la plateforme pour votre marque&nbsp;: destinataire, modèle, date, ouverture, clics, rebonds, pièces jointes. Il est détaillé avec les modèles d'emails dans <a href="pilotage.html">Communication et pilotage</a>.</p>
+
+  <h3 id="s6-2"><span class="sub-num">6.2</span> Synchronisation <span class="tag yellow" style="display:inline-block">Module optionnel</span></h3>
+  <p>Cette entrée n'apparaît que si votre marque échange des données avec un autre logiciel (logiciel de gestion, logistique, boutique WooCommerce pour les stocks). Sur les 35 marques actives, 6 synchronisent leurs commandes (et parfois leurs clientes ou conseillères) avec un logiciel de gestion ou de logistique, et 2 envoient leurs stocks vers WooCommerce. L'écran montre, onglet par onglet, ce qui est parti vers l'autre logiciel&nbsp;:</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Onglet</th><th>Ce que vous y voyez</th></tr></thead>
+    <tbody>
+      <tr><td><b>Commandes</b></td><td>Les commandes, avec leur <strong>référence externe</strong> (le numéro dans l'autre logiciel) et la date de <strong>dernière synchronisation</strong>. Le filtre propose «&nbsp;Tout afficher&nbsp;», «&nbsp;Non synchronisé&nbsp;» et «&nbsp;En erreur&nbsp;».</td></tr>
+      <tr><td><b>Clients</b></td><td>Les clientes et leur référence externe.</td></tr>
+      <tr><td><b>Vendeurs</b></td><td>Les conseillères et leur référence externe.</td></tr>
+      <tr><td><b>Stock</b></td><td>Les envois de stock vers WooCommerce, produit par produit, avec la possibilité de renvoyer un produit ou tous les stocks.</td></tr>
+    </tbody>
+  </table></div>
+  <ul class="prose">
+    <li>Le bouton <strong>Historique de synchronisation</strong> (horloge) affiche chaque tentative&nbsp;: date, méthode, statut, message de l'autre logiciel, temps d'exécution.</li>
+    <li>Le bouton <strong>Synchroniser</strong> (flèches) renvoie l'élément. Après confirmation, le message «&nbsp;Données envoyées pour synchronisation&nbsp;» s'affiche.</li>
+  </ul>
+  <p>La marque de démonstration n'a pas de synchronisation&nbsp;: l'écran n'est pas illustré ici. Voir aussi <a href="integrations.html">Les intégrations</a>.</p>
+
+  <h3 id="s6-3"><span class="sub-num">6.3</span> Récapitulatif mensuel des performances</h3>
+  <p>Présente si votre marque utilise le plan de rémunération. Vous y choisissez les indicateurs de l'email envoyé à chaque conseillère à la clôture mensuelle des commissions (chiffre d'affaires, commandes, réunions… comparés au mois précédent). Voir <a href="reseau.html">Réseau et rémunération</a>.</p>
+</section>
+
+<!-- 7 -->
+<section id="attention">
+  <div class="sec-head"><span class="sec-num">07</span><h2>Points d'attention</h2></div>
+  <ul class="prose">
+    <li><strong>Le seuil de stock faible agit aussi côté conseillère</strong>&nbsp;: il déclenche le badge orange dans son catalogue.</li>
+    <li><strong>Les filtres du rapport stock faible sont partagés avec la liste des produits</strong>&nbsp;: un filtre posé dans l'un s'applique à l'autre. Pensez à cliquer sur «&nbsp;Effacer tous les filtres&nbsp;» si une liste semble incomplète.</li>
+    <li><strong>Meilleures ventes n'est pas un chiffre comptable</strong>&nbsp;: les avoirs partiels ne sont pas déduits.</li>
+    <li><strong>L'export des clients filtre sur la date de création</strong>&nbsp;: pour avoir toutes vos clientes, choisissez une date de début antérieure à l'ouverture de votre marque.</li>
+    <li><strong>Les exports contiennent des données personnelles et bancaires</strong> (IBAN, numéro de sécurité sociale, adresses). Ne les transférez qu'aux personnes qui en ont besoin, et supprimez-les après usage.</li>
+    <li><strong>L'export des bons d'achats</strong> ne renvoie rien si votre marque n'est pas reliée à un logiciel de gestion qui fournit un code société&nbsp;: pour suivre vos bons, utilisez plutôt le menu Bons d'achat (voir <a href="bons-achat-guide.html">le guide des bons d'achat</a>).</li>
+  </ul>
+</section>
+
+<!-- 8 -->
+<section id="faq">
+  <div class="sec-head"><span class="sec-num">08</span><h2>Questions fréquentes</h2></div>
+  <div class="faq">
+    <details><summary>Je n'ai pas reçu mon export&nbsp;: que faire&nbsp;?</summary><div><p>Vérifiez l'adresse email de votre profil (c'est elle qui reçoit le fichier) et vos courriers indésirables. Si un email d'échec est arrivé, relancez l'export sur une période plus courte. Le journal «&nbsp;Emails envoyés&nbsp;» montre si l'email est bien parti.</p></div></details>
+    <details><summary>Un produit en rupture n'apparaît pas dans le rapport stock faible.</summary><div><p>Son stock n'est probablement pas suivi (méthode d'inventaire «&nbsp;Ne pas suivre&nbsp;»), ou c'est un lot dont un composant n'est pas suivi. Vérifiez aussi qu'aucun filtre n'est actif.</p></div></details>
+    <details><summary>Pourquoi le chiffre d'affaires des Meilleures ventes diffère-t-il du tableau de bord&nbsp;?</summary><div><p>Le rapport additionne les lignes de produits au prix unitaire HT, sur la date de paiement, sans déduire les avoirs partiels ni les frais de livraison. Le tableau de bord applique ses propres règles de calcul.</p></div></details>
+    <details><summary>Puis-je recevoir un export à une autre adresse que la mienne&nbsp;?</summary><div><p>Non&nbsp;: le fichier part toujours vers l'adresse email du compte qui lance l'export. Faites-le lancer par la personne concernée, avec son propre accès.</p></div></details>
+    <details><summary>Quel format choisir&nbsp;?</summary><div><p>Excel (.xlsx) pour travailler dans un tableur&nbsp;; CSV pour un import dans un autre logiciel&nbsp;; JSON et XML sont destinés à des traitements informatiques.</p></div></details>
+  </div>
+</section>
+
+  </main>
+</div>

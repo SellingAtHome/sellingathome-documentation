@@ -1,0 +1,322 @@
+<!--page {"title":"Comprendre les commandes"} -->
+<style>
+.three { display:grid; grid-template-columns:repeat(auto-fit, minmax(240px,1fr)); gap:14px; }
+.three .card { border-top:5px solid var(--accent); }
+.three .card:nth-child(2) { border-top-color:var(--pink); }
+.three .card:nth-child(3) { border-top-color:var(--yellow); }
+.three .card ul { font-size:.92rem; }
+.timeline { display:flex; flex-direction:column; border-left:3px solid var(--rule); margin-left:10px; }
+.tl { position:relative; padding:0 0 20px 28px; }
+.tl::before { content:""; position:absolute; left:-9px; top:4px; width:15px; height:15px; border-radius:50%; background:var(--card); border:3px solid var(--accent); }
+.tl.stop::before { border-color:var(--pink); }
+.tl b { color:var(--heading); display:block; }
+.tl .st { display:flex; flex-wrap:wrap; gap:6px; margin-top:6px; }
+.tl p { color:var(--muted); font-size:.93rem; margin-top:4px; }
+.chip { display:inline-block; border-radius:100px; padding:3px 11px; font-size:.78rem; font-weight:700; background:var(--surface); color:var(--heading); border:1px solid var(--rule); }
+.chip.g { background:var(--accent-wash); color:var(--accent-ink); border-color:transparent; }
+.chip.p { background:var(--pink-wash); color:var(--pink-ink); border-color:transparent; }
+.chip.y { background:var(--yellow-wash); color:var(--yellow-ink); border-color:transparent; }
+.chip small { font-weight:400; opacity:.8; }
+.types td:nth-child(3) { width:110px; }
+</style>
+<header class="hero">
+  <div class="hero-in">
+    <div>
+      <span class="eyebrow">Commandes et boutiques</span>
+      <h1>Comprendre <span class="script">les commandes</span></h1>
+      <p class="lede">Les types de commande, les trois statuts qu'une commande porte en même temps, ce qui la fait avancer d'une étape à l'autre, et ce qu'on peut encore modifier, supprimer ou annuler.</p>
+    </div>
+    <div class="voucher-art" aria-hidden="true">
+      <div class="v-top"><span>Commande C116</span><span>Réunion</span></div>
+      <div class="v-amount">47<span> €</span></div>
+      <div class="v-name">Payée · Expédiée</div>
+      <div class="v-sep"></div>
+      <div class="v-meta"><span>Gestion <b>En préparation</b></span><span>Paiement <b>CB</b></span></div>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="toc" aria-label="Sommaire">
+    <details id="tocDetails" open>
+      <summary>Sommaire</summary>
+      <div class="toc-title">Sommaire</div>
+      <ol>
+        <li data-sec="definition"><a href="#definition"><span class="toc-n">1</span>Qu'est-ce qu'une commande&nbsp;?</a></li>
+        <li data-sec="types"><a href="#types"><span class="toc-n">2</span>Les types de commande</a>
+          <ol class="toc-sub"><li><a href="#s2-1"><span class="toc-n">2.1</span>Les quatre types principaux</a></li><li><a href="#s2-2"><span class="toc-n">2.2</span>Les autres types</a></li></ol>
+        </li>
+        <li data-sec="statuts"><a href="#statuts"><span class="toc-n">3</span>Trois statuts en même temps</a>
+          <ol class="toc-sub"><li><a href="#s3-1"><span class="toc-n">3.1</span>Le statut de gestion</a></li><li><a href="#s3-2"><span class="toc-n">3.2</span>Le statut de paiement</a></li><li><a href="#s3-3"><span class="toc-n">3.3</span>Le statut d'expédition</a></li><li><a href="#s3-4"><span class="toc-n">3.4</span>Le badge de la liste</a></li></ol>
+        </li>
+        <li data-sec="cycle"><a href="#cycle"><span class="toc-n">4</span>Le cycle de vie</a>
+          <ol class="toc-sub"><li><a href="#s4-1"><span class="toc-n">4.1</span>Quand devient-elle «&nbsp;Terminée&nbsp;»&nbsp;?</a></li><li><a href="#s4-2"><span class="toc-n">4.2</span>La validation de l'encaissement</a></li></ol>
+        </li>
+        <li data-sec="regles"><a href="#regles"><span class="toc-n">5</span>Modifier, supprimer, annuler</a>
+          <ol class="toc-sub"><li><a href="#s5-1"><span class="toc-n">5.1</span>Supprimer une commande non payée</a></li><li><a href="#s5-2"><span class="toc-n">5.2</span>Les suppressions automatiques</a></li><li><a href="#s5-3"><span class="toc-n">5.3</span>Annuler une commande payée</a></li></ol>
+        </li>
+        <li data-sec="ecran"><a href="#ecran"><span class="toc-n">6</span>L'écran Commandes</a>
+          <ol class="toc-sub"><li><a href="#s6-1"><span class="toc-n">6.1</span>Les filtres</a></li><li><a href="#s6-2"><span class="toc-n">6.2</span>Les actions groupées</a></li></ol>
+        </li>
+        <li data-sec="paiements"><a href="#paiements"><span class="toc-n">7</span>Les moyens de paiement</a></li>
+        <li data-sec="attention"><a href="#attention"><span class="toc-n">8</span>Points d'attention</a></li>
+        <li data-sec="faq"><a href="#faq"><span class="toc-n">9</span>Questions fréquentes</a></li>
+        <li data-sec="glossaire"><a href="#glossaire"><span class="toc-n">10</span>Glossaire</a></li>
+      </ol>
+    </details>
+  </nav>
+
+  <main>
+
+<!-- 1 -->
+<section id="definition">
+  <div class="sec-head"><span class="sec-num">01</span><h2>Qu'est-ce qu'une commande&nbsp;?</h2></div>
+  <p class="lede">Une commande, c'est <strong>une cliente</strong>, <strong>une conseillère</strong> à qui la vente est attribuée, une liste de <strong>produits</strong> et, souvent, une <strong>réunion</strong>. Elle a un <strong>type</strong>, qui dit d'où elle vient, et <strong>trois statuts</strong>, qui disent où elle en est.</p>
+  <div class="example"><span class="ex-label">Exemple</span><p>Pendant la réunion de Jade, la conseillère Léa saisit la commande de Camille, invitée&nbsp;: un collier à 47&nbsp;€. Camille paie par carte sur place. La commande est de type <strong>Vente en réunion</strong>, elle est <strong>payée</strong>, et attend d'être <strong>expédiée</strong> par la marque.</p></div>
+  <div class="tip"><span class="ex-label">Bon à savoir</span><p>Chaque conseillère est aussi cliente&nbsp;: elle dispose d'un compte client à son nom, qui lui permet de commander pour elle-même. Ces commandes apparaissent comme les autres, avec la conseillère comme cliente.</p></div>
+</section>
+
+<!-- 2 -->
+<section id="types">
+  <div class="sec-head"><span class="sec-num">02</span><h2>Les types de commande</h2></div>
+  <p class="lede">Le type dit <strong>comment la commande est née</strong>. Il conditionne les frais de livraison, les moyens de paiement proposés, les réductions applicables et la façon dont la commande est comptée dans les statistiques.</p>
+
+  <h3 id="s2-1"><span class="sub-num">2.1</span> Les quatre types principaux</h3>
+  <p>Sur l'ensemble des marques utilisant SellingAtHome, ces quatre types représentent plus de 95&nbsp;% des commandes payées sur un an.</p>
+  <div class="share" aria-label="Répartition des commandes payées par type">
+    <div class="share-row"><span><b>Vente en réunion</b></span><div class="share-bar"><i style="width:62.5%"></i></div><span class="pct">62,5&nbsp;%</span></div>
+    <div class="share-row"><span><b>Vente directe</b></span><div class="share-bar"><i style="width:18%"></i></div><span class="pct">18&nbsp;%</span></div>
+    <div class="share-row"><span><b>Commande web</b></span><div class="share-bar"><i style="width:11.5%"></i></div><span class="pct">11,5&nbsp;%</span></div>
+    <div class="share-row"><span><b>Cadeau</b></span><div class="share-bar"><i style="width:3.3%"></i></div><span class="pct">3,3&nbsp;%</span></div>
+    <div class="share-row"><span>Tous les autres types</span><div class="share-bar"><i style="width:4.7%"></i></div><span class="pct">4,7&nbsp;%</span></div>
+  </div>
+  <div class="table-wrap"><table class="types">
+    <thead><tr><th>Type (libellé de l'espace marque)</th><th>D'où vient-elle&nbsp;?</th><th>Qui la crée</th></tr></thead>
+    <tbody>
+      <tr><td><b>Vente en réunion</b></td><td>Une commande saisie pendant une réunion, pour l'hôtesse ou une invitée. Elle est toujours rattachée à la réunion.</td><td>La conseillère (ordinateur, application, visio)</td></tr>
+      <tr><td><b>Vente directe</b></td><td>Une vente en dehors de toute réunion&nbsp;: une cliente qui recommande, un achat de la conseillère pour elle-même…</td><td>La conseillère, ou la marque depuis l'espace marque</td></tr>
+      <tr><td><b>Commande WEB</b></td><td>Une commande passée sur votre site e-commerce et importée dans SellingAtHome par une intégration (Shopify, WooCommerce…), puis attribuée à une conseillère.</td><td>L'intégration, automatiquement</td></tr>
+      <tr><td><b>Cadeau</b></td><td>Une commande gratuite qui matérialise un gain&nbsp;: cadeau de l'hôtesse, récompense de challenge, cadeau automatique.</td><td>SellingAtHome, automatiquement</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 id="s2-2"><span class="sub-num">2.2</span> Les autres types</h3>
+  <div class="table-wrap"><table class="types">
+    <thead><tr><th>Type</th><th>D'où vient-elle&nbsp;?</th><th>Qui la crée</th></tr></thead>
+    <tbody>
+      <tr><td><b>Mini-boutique vendeur</b></td><td>Une cliente commande en ligne sur la mini-boutique d'une conseillère.</td><td>La cliente</td></tr>
+      <tr><td><b>Boutique de la marque</b></td><td>Une cliente commande sur la boutique en ligne de la marque.</td><td>La cliente</td></tr>
+      <tr><td><b>Kit de démarrage</b></td><td>Le kit commandé par une nouvelle conseillère à son entrée dans le réseau.</td><td>La nouvelle conseillère, à la fin du recrutement</td></tr>
+      <tr><td><b>Commande de regroupement</b></td><td>Une commande qui rassemble plusieurs commandes d'une conseillère pour les payer ou les livrer ensemble.</td><td>La conseillère</td></tr>
+      <tr><td><b>Échange, Box, VCE, Réservation de collection, Boutique, Frais de livraison, SAV</b></td><td>Des types propres à certaines marques, activés à la demande.</td><td>Selon le type</td></tr>
+    </tbody>
+  </table></div>
+  <p class="muted">Les types proposés à la création d'une commande, et dans les filtres, dépendent des options activées pour votre marque.</p>
+</section>
+
+<!-- 3 -->
+<section id="statuts">
+  <div class="sec-head"><span class="sec-num">03</span><h2>Trois statuts en même temps</h2></div>
+  <p class="lede">C'est la notion la plus importante de cette page&nbsp;: une commande porte <strong>trois statuts indépendants</strong>. Une commande peut être à la fois «&nbsp;En préparation&nbsp;» (gestion), «&nbsp;Payée&nbsp;» (paiement) et «&nbsp;Commande expédiée partiellement&nbsp;» (expédition).</p>
+  <div class="three">
+    <div class="card"><span class="tag">Gestion</span><h4>Où en est le traitement&nbsp;?</h4><ul><li>Créée</li><li>En cours</li><li>Signée</li><li>En préparation</li><li>Terminée</li><li>Partiellement annulée</li><li>Annulée</li><li>Supprimée</li></ul></div>
+    <div class="card"><span class="tag pink">Paiement</span><h4>Est-elle réglée&nbsp;?</h4><ul><li>En attente de paiement</li><li>Payée</li><li>Encaissée</li><li>Paiement échoué</li><li>Partiellement payée</li></ul></div>
+    <div class="card"><span class="tag yellow">Expédition</span><h4>Où est le colis&nbsp;?</h4><ul><li>Commande non expédiée</li><li>En préparation</li><li>Expédiée partiellement</li><li>Commande expédiée</li><li>Commande livrée</li><li>Expédition non requise</li><li>Livraison annulée</li></ul></div>
+  </div>
+
+  <h3 id="s3-1"><span class="sub-num">3.1</span> Le statut de gestion</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Statut</th><th>Signification</th></tr></thead>
+    <tbody>
+      <tr><td><span class="chip">Créée</span></td><td>La commande existe mais ne contient encore aucun produit.</td></tr>
+      <tr><td><span class="chip">En cours</span></td><td>Le panier contient des produits, la commande n'est ni signée ni payée.</td></tr>
+      <tr><td><span class="chip g">Signée</span></td><td>La cliente a signé le bon de commande (code reçu par SMS ou signature à l'écran), ou la commande a été payée.</td></tr>
+      <tr><td><span class="chip g">En préparation</span></td><td>La marque ou son logisticien a commencé à préparer la commande.</td></tr>
+      <tr><td><span class="chip g">Terminée</span></td><td>La commande est livrée (ou n'avait rien à livrer)&nbsp;: plus rien ne doit se passer.</td></tr>
+      <tr><td><span class="chip p">Partiellement annulée</span></td><td>Une partie des produits a été annulée, avec un avoir.</td></tr>
+      <tr><td><span class="chip p">Annulée</span></td><td>Une commande payée a été entièrement annulée, avec un avoir.</td></tr>
+      <tr><td><span class="chip">Supprimée</span></td><td>Une commande jamais payée a été supprimée. Elle disparaît des listes.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 id="s3-2"><span class="sub-num">3.2</span> Le statut de paiement</h3>
+  <p>Il passe de <strong>En attente de paiement</strong> à <strong>Payée</strong> quand le paiement est enregistré&nbsp;: paiement en ligne réussi, ou paiement déclaré par la conseillère (chèque, espèces…). Si votre marque valide elle-même les encaissements, la commande passe ensuite à <strong>Encaissée</strong> (voir <a href="#s4-2">la validation de l'encaissement</a>).</p>
+
+  <h3 id="s3-3"><span class="sub-num">3.3</span> Le statut d'expédition</h3>
+  <p>Dès le paiement, la commande passe à <strong>Commande non expédiée</strong>&nbsp;: elle est «&nbsp;à expédier&nbsp;». Elle avance ensuite selon les mises à jour faites par la marque (actions groupées, fiche commande) ou envoyées automatiquement par votre logisticien.</p>
+  <div class="tip"><span class="ex-label">Bon à savoir</span><p>Passer une commande en «&nbsp;Commande expédiée&nbsp;» ne change pas son statut de gestion. Seul le passage en «&nbsp;Commande livrée&nbsp;» la termine (voir <a href="#s4-1">plus bas</a>).</p></div>
+
+  <h3 id="s3-4"><span class="sub-num">3.4</span> Le badge de la liste</h3>
+  <p>Dans la liste des commandes, chaque référence porte un badge de couleur. Ce badge affiche le <strong>dernier événement</strong> survenu sur la commande, tous statuts confondus&nbsp;: «&nbsp;En cours&nbsp;», «&nbsp;Pas encore expédiée&nbsp;», «&nbsp;Expédié&nbsp;», «&nbsp;Livrée&nbsp;», «&nbsp;Terminée&nbsp;», «&nbsp;Annulée&nbsp;»…</p>
+  <div class="example"><span class="ex-label">Exemple</span><p>Juste après son paiement, une commande affiche <span class="chip">Pas encore expédiée</span> et non «&nbsp;Payée&nbsp;»&nbsp;: le paiement fait passer la commande à «&nbsp;Commande non expédiée&nbsp;», qui devient le dernier événement. Pour savoir si une commande est payée, regardez la colonne <strong>Date de paiement</strong>.</p></div>
+</section>
+
+<!-- 4 -->
+<section id="cycle">
+  <div class="sec-head"><span class="sec-num">04</span><h2>Le cycle de vie d'une commande</h2></div>
+  <p class="lede">Voici le parcours d'une commande de réunion, le cas le plus fréquent. Une vente directe suit le même chemin, sans réunion.</p>
+  <div class="timeline">
+    <div class="tl"><b>1. La conseillère saisit la commande</b><div class="st"><span class="chip">Créée</span><span class="chip">En cours</span></div><p>Elle ajoute les produits, la cliente, le mode de livraison. Les réductions et conditions d'achat s'appliquent au fil de la saisie.</p></div>
+    <div class="tl"><b>2. La cliente signe (selon votre paramétrage)</b><div class="st"><span class="chip g">Signée</span></div><p>Par un code reçu par SMS ou une signature à l'écran.</p></div>
+    <div class="tl"><b>3. La cliente paie</b><div class="st"><span class="chip g">Payée</span><span class="chip y">Non expédiée</span></div><p>Souvent pendant la réunion&nbsp;: la moitié des commandes de réunion sont payées dans les 4 minutes qui suivent leur création. La commande entre alors dans le chiffre d'affaires, les points de fidélité et les challenges, et dans la pastille «&nbsp;à expédier&nbsp;» du menu Commandes.</p></div>
+    <div class="tl"><b>4. La marque prépare</b><div class="st"><span class="chip g">En préparation</span></div><p>Étape facultative&nbsp;: passage manuel (action groupée) ou automatique par votre logisticien.</p></div>
+    <div class="tl"><b>5. La marque expédie</b><div class="st"><span class="chip y">Expédiée</span><span class="chip y">Expédiée partiellement</span></div><p>Un bon d'expédition est créé pour les quantités envoyées. La commande sort de la pastille «&nbsp;à expédier&nbsp;» quand tout est parti.</p></div>
+    <div class="tl stop"><b>6. La commande est livrée</b><div class="st"><span class="chip y">Livrée</span><span class="chip g">Terminée</span></div><p>Le passage en «&nbsp;Livrée&nbsp;» termine automatiquement la commande.</p></div>
+  </div>
+
+  <h3 id="s4-1"><span class="sub-num">4.1</span> Quand une commande devient-elle «&nbsp;Terminée&nbsp;»&nbsp;?</h3>
+  <p>Une commande payée et non annulée passe automatiquement en <strong>Terminée</strong> dans ces cas&nbsp;:</p>
+  <ul class="prose">
+    <li>elle passe en <strong>Commande livrée</strong>, par la marque ou par le logisticien&nbsp;;</li>
+    <li>elle passe en <strong>Expédition non requise</strong>&nbsp;;</li>
+    <li>c'est un <strong>retrait sur place</strong>&nbsp;: elle est considérée comme livrée dès qu'elle est remise&nbsp;;</li>
+    <li>elle ne contient que des <strong>produits virtuels</strong> (formation, service…)&nbsp;: elle est terminée dès son paiement.</li>
+  </ul>
+  <div class="warn"><span class="ex-label">Attention</span><p>Une commande <strong>expédiée mais jamais marquée livrée</strong> ne devient jamais «&nbsp;Terminée&nbsp;». C'est le cas le plus courant&nbsp;: beaucoup de marques s'arrêtent au statut «&nbsp;Expédiée&nbsp;». Ce n'est pas un problème, sauf si vous utilisez le statut «&nbsp;Terminée&nbsp;» dans vos suivis.</p></div>
+
+  <h3 id="s4-2"><span class="sub-num">4.2</span> La validation de l'encaissement</h3>
+  <p>Par défaut, un paiement enregistré est considéré comme acquis. Certaines marques préfèrent <strong>valider elles-mêmes</strong> les encaissements (chèques, virements reçus)&nbsp;: c'est une option activée par SellingAtHome. Dans ce cas&nbsp;:</p>
+  <ul class="prose">
+    <li>le filtre <strong>Paiement non validé</strong> liste les paiements à vérifier&nbsp;;</li>
+    <li>l'action groupée <strong>Valider l'encaissement</strong> les confirme, et la commande passe à «&nbsp;Encaissée&nbsp;»&nbsp;;</li>
+    <li>une coche apparaît à côté de la date de paiement des commandes validées&nbsp;;</li>
+    <li>une commande dont le paiement n'est pas validé <strong>ne peut pas être annulée</strong>&nbsp;;</li>
+    <li>le tableau de bord affiche une tuile <a href="espace-marque.html#s4-2">C.A global</a>.</li>
+  </ul>
+</section>
+
+<!-- 5 -->
+<section id="regles">
+  <div class="sec-head"><span class="sec-num">05</span><h2>Modifier, supprimer, annuler</h2></div>
+  <p class="lede">La règle d'or&nbsp;: <strong>avant paiement, on supprime&nbsp;; après paiement, on annule.</strong></p>
+  <div class="decide">
+    <div class="row"><span class="q">La commande n'est pas payée</span><span class="arrow">→</span><span class="pill">Modifier ou supprimer</span></div>
+    <div class="row"><span class="q">La commande est payée</span><span class="arrow">→</span><span class="pill pink">Annuler (avoir)</span></div>
+    <div class="row"><span class="q">La commande est payée, une partie seulement est en cause</span><span class="arrow">→</span><span class="pill yellow">Annuler partiellement</span></div>
+  </div>
+  <p>Depuis l'espace marque, une commande <strong>non payée</strong> peut être modifiée, sauf exceptions&nbsp;: commande de mini-boutique ou de boutique de marque, commande partiellement payée, dossier de financement en cours. Le crayon de modification disparaît aussi dans la liste dès que la commande est signée.</p>
+
+  <h3 id="s5-1"><span class="sub-num">5.1</span> Supprimer une commande non payée</h3>
+  <p>Une commande peut être supprimée tant qu'elle n'est <strong>ni payée, ni partiellement payée, ni en cours de paiement</strong>. La suppression&nbsp;:</p>
+  <ul class="prose">
+    <li>retire les bons d'achat, réductions et points de fidélité utilisés, qui redeviennent disponibles&nbsp;;</li>
+    <li>remet les produits en stock, si votre marque a activé cette option&nbsp;;</li>
+    <li>fait disparaître la commande des listes et des statistiques.</li>
+  </ul>
+
+  <h3 id="s5-2"><span class="sub-num">5.2</span> Les suppressions automatiques</h3>
+  <p>Deux réglages de votre marque suppriment automatiquement les commandes jamais payées&nbsp;:</p>
+  <div class="grid-2">
+    <div class="card"><span class="tag">Paniers abandonnés</span><p>Après un délai réglable (48&nbsp;heures minimum), les commandes non payées sont supprimées. Les kits de démarrage et les commandes partiellement payées ne sont jamais concernés.</p><p class="muted">Paramètres › Configuration générale › Paramètres des commandes. Un délai à 0 désactive la suppression.</p></div>
+    <div class="card"><span class="tag pink">Clôture de réunion</span><p>À la clôture d'une réunion, ses commandes non payées peuvent être supprimées.</p><p class="muted">Paramètres › Configuration générale › Paramètres des Réunions, option «&nbsp;Supprimer les commandes non payées&nbsp;». Voir <a href="reunions.html">Réunions</a>.</p></div>
+  </div>
+  <div class="tip"><span class="ex-label">Bon à savoir</span><p>Une part importante des commandes créées n'est jamais payée (paniers préparés puis abandonnés). C'est normal&nbsp;: ces suppressions automatiques gardent vos listes propres.</p></div>
+
+  <h3 id="s5-3"><span class="sub-num">5.3</span> Annuler une commande payée</h3>
+  <p>L'annulation, totale ou partielle, crée un <strong>avoir</strong>. Elle&nbsp;:</p>
+  <ul class="prose">
+    <li>restitue les bons d'achat utilisés dans la commande&nbsp;;</li>
+    <li>remet les produits en stock si vous cochez l'option au moment d'annuler (et si votre marque l'autorise)&nbsp;;</li>
+    <li>réduit le chiffre d'affaires du mois de l'avoir, et le chiffre d'affaires commissionnable de la conseillère&nbsp;;</li>
+    <li>selon une option de votre marque, retire les points de fidélité liés à la commande.</li>
+  </ul>
+  <div class="warn"><span class="ex-label">Attention</span><p>L'annulation ne rembourse pas automatiquement la cliente&nbsp;: selon votre prestataire de paiement, une option de remboursement peut être proposée au moment d'annuler. Sinon, le remboursement se fait en dehors de SellingAtHome. Voir <a href="commandes-annulation-documents.html">Annulations, avoirs et documents</a>.</p></div>
+  <div class="example"><span class="ex-label">Exemple d'annulation partielle</span><p>Camille a commandé un collier (47&nbsp;€) et des boucles d'oreilles (25&nbsp;€). Les boucles sont en rupture&nbsp;: vous annulez cette seule ligne. Un avoir de 25&nbsp;€ est créé, la commande passe en <span class="chip p">Partiellement annulée</span>, et le collier continue son chemin vers l'expédition.</p></div>
+</section>
+
+<!-- 6 -->
+<section id="ecran">
+  <div class="sec-head"><span class="sec-num">06</span><h2>L'écran Commandes</h2></div>
+  <div class="path" aria-label="Chemin d'accès"><span>Espace marque</span><span>Commandes</span><span><b>Commandes</b></span></div>
+  <figure><img src="Captures/Commandes/liste-commandes.png" alt="Liste des commandes : boutons Nouvelle commande et Bons de préparation, Action pour la sélection, Filtrer, recherche ; colonnes Référence, Commandes de regroupement, Date commande, Date de paiement, Client, Vendeur, Réunion, Nombre d'articles, Total TTC, Documents ; lignes regroupées par réunion ou par type avec sous-totaux" loading="lazy"><figcaption>La liste des commandes, regroupées par réunion ou par type (noms fictifs).</figcaption></figure>
+  <ul class="prose">
+    <li>Les commandes sont <strong>regroupées</strong>&nbsp;: une réunion («&nbsp;date – Réunion de l'hôtesse (code)&nbsp;»), ou un type («&nbsp;Vente directe&nbsp;», «&nbsp;Boutique&nbsp;»…), avec un sous-total d'articles et de montant.</li>
+    <li>Un <strong>triangle rouge</strong> devant une commande signale qu'elle est payée et reste à expédier.</li>
+    <li>La <strong>recherche</strong> porte sur la référence, la cliente, la conseillère et le code ou le nom de la réunion.</li>
+    <li>La colonne <strong>Documents</strong> donne accès au bon de commande, aux avoirs et aux bordereaux d'expédition.</li>
+    <li>Le bouton <strong>Nouvelle commande</strong> permet à la marque de créer une commande pour une cliente.</li>
+  </ul>
+
+  <h3 id="s6-1"><span class="sub-num">6.1</span> Les filtres</h3>
+  <div class="figrow">
+    <figure><img src="Captures/Commandes/filtres-commandes.png" alt="Fenêtre Filtrer : date de création, date de paiement, statut, expédition, paiement, type de commande, case Paiement non validé, mode de livraison, boutons Effacer tous les filtres et Appliquer" loading="lazy"><figcaption>La fenêtre des filtres.</figcaption></figure>
+    <div class="prose" style="display:flex;flex-direction:column;gap:12px">
+      <p>Les filtres se combinent&nbsp;: dates de création et de paiement, statut, expédition, moyen de paiement, type de commande, mode de livraison, paiement non validé. Ils sont mémorisés par votre navigateur.</p>
+      <div class="warn"><span class="ex-label">Attention</span><p>Le filtre <strong>Statut</strong> ne propose pas «&nbsp;Terminée&nbsp;». Son choix «&nbsp;Payée&nbsp;» signifie «&nbsp;payée et non annulée&nbsp;», quel que soit l'avancement, et son choix «&nbsp;En cours&nbsp;» ne garde que les commandes non payées.</p></div>
+    </div>
+  </div>
+
+  <h3 id="s6-2"><span class="sub-num">6.2</span> Les actions groupées</h3>
+  <p>Cochez des commandes, puis ouvrez <strong>Action pour la sélection</strong>&nbsp;:</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Action</th><th>Ce qu'elle fait</th></tr></thead>
+    <tbody>
+      <tr><td><b>Valider l'encaissement</b></td><td>Confirme les paiements reçus (si votre marque valide les encaissements).</td></tr>
+      <tr><td><b>Passer les commandes en préparation</b></td><td>Pour les commandes payées, pas encore (ou partiellement) expédiées.</td></tr>
+      <tr><td><b>Modifier le statut d'expédition</b></td><td>Non expédiée, expédiée, livrée partiellement, livrée ou annulée. «&nbsp;Expédiée&nbsp;» crée le bon d'expédition des quantités restantes.</td></tr>
+      <tr><td><b>Annuler les commandes payées</b></td><td>Annulation totale avec avoir, et remise en stock en option.</td></tr>
+      <tr><td><b>Supprimer les commandes non payées</b></td><td>Suppression définitive des paniers.</td></tr>
+      <tr><td><b>Imprimer les bons de commande / les factures</b></td><td>Un seul fichier pour toute la sélection.</td></tr>
+      <tr><td><b>Générer l'étiquette GLS ou DPD</b></td><td>Si ces transporteurs sont activés pour votre marque.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- 7 -->
+<section id="paiements">
+  <div class="sec-head"><span class="sec-num">07</span><h2>Les moyens de paiement</h2></div>
+  <p class="lede">Les moyens de paiement proposés dépendent de votre paramétrage et du type de commande. Sur l'ensemble des marques, voici les plus utilisés sur un an.</p>
+  <div class="share">
+    <div class="share-row"><span><b>Carte bancaire</b></span><div class="share-bar"><i style="width:39.5%"></i></div><span class="pct">39&nbsp;%</span></div>
+    <div class="share-row"><span><b>Chèque</b> (à la marque ou à la conseillère)</span><div class="share-bar"><i style="width:28.8%"></i></div><span class="pct">29&nbsp;%</span></div>
+    <div class="share-row"><span><b>Espèces</b></span><div class="share-bar"><i style="width:11.2%"></i></div><span class="pct">11&nbsp;%</span></div>
+    <div class="share-row"><span><b>Virement</b></span><div class="share-bar"><i style="width:10.2%"></i></div><span class="pct">10&nbsp;%</span></div>
+    <div class="share-row"><span>Cadeau, avantage, prélèvement, financement, autres</span><div class="share-bar"><i style="width:10.3%"></i></div><span class="pct">11&nbsp;%</span></div>
+  </div>
+  <p class="muted">«&nbsp;Cadeau&nbsp;» correspond aux commandes cadeaux (rien à payer) et «&nbsp;Avantage&nbsp;» aux commandes réglées par un avantage (bon d'achat, points…).</p>
+</section>
+
+<!-- 8 -->
+<section id="attention">
+  <div class="sec-head"><span class="sec-num">08</span><h2>Points d'attention</h2></div>
+  <ul class="prose">
+    <li><strong>Trois statuts, pas un seul</strong>&nbsp;: pour savoir si une commande est payée, regardez la date de paiement&nbsp;; pour savoir si elle est partie, regardez l'expédition.</li>
+    <li><strong>La pastille du menu Commandes</strong> compte toutes les commandes payées pas encore expédiées, sans limite de date. Si vos expéditions ne sont pas mises à jour dans SellingAtHome, elle ne fait que grandir.</li>
+    <li><strong>«&nbsp;Terminée&nbsp;» suppose «&nbsp;Livrée&nbsp;»</strong>&nbsp;: une commande expédiée reste «&nbsp;Expédié&nbsp;» tant que la livraison n'est pas confirmée.</li>
+    <li><strong>Supprimer ou annuler</strong>&nbsp;: une commande payée ne se supprime pas, elle s'annule. Le remboursement dépend de votre prestataire de paiement (voir <a href="commandes-annulation-documents.html">Annulations, avoirs et documents</a>).</li>
+    <li><strong>Les suppressions automatiques</strong> remettent les produits en stock seulement si votre marque l'a choisi.</li>
+  </ul>
+</section>
+
+<!-- 9 -->
+<section id="faq">
+  <div class="sec-head"><span class="sec-num">09</span><h2>Questions fréquentes</h2></div>
+  <div class="faq">
+    <details><summary>Une commande payée affiche «&nbsp;Pas encore expédiée&nbsp;» au lieu de «&nbsp;Payée&nbsp;»&nbsp;: est-ce normal&nbsp;?</summary><div><p>Oui. Le badge affiche le dernier événement de la commande. Juste après le paiement, c'est le passage à «&nbsp;Commande non expédiée&nbsp;». La date de paiement, elle, confirme le règlement.</p></div></details>
+    <details><summary>Pourquoi je ne peux pas supprimer cette commande&nbsp;?</summary><div><p>Elle est payée (ou partiellement payée, ou un paiement est en cours). Une commande payée s'annule, avec un avoir. Les commandes de mini-boutique n'ont pas non plus de bouton de suppression.</p></div></details>
+    <details><summary>Pourquoi je ne peux pas annuler cette commande&nbsp;?</summary><div><p>Seules les commandes payées s'annulent. Si votre marque valide les encaissements, le paiement doit d'abord être validé.</p></div></details>
+    <details><summary>Une commande a disparu de la liste&nbsp;: que s'est-il passé&nbsp;?</summary><div><p>Elle a probablement été supprimée&nbsp;: par la conseillère, par la marque, ou automatiquement (panier non payé après le délai, ou clôture de la réunion). Les commandes supprimées ne sont plus affichées.</p></div></details>
+    <details><summary>Comment voir toutes les commandes d'une réunion&nbsp;?</summary><div><p>Recherchez le code de la réunion dans la liste des commandes, ou cliquez sur le nombre de commandes dans la liste des réunions.</p></div></details>
+  </div>
+</section>
+
+<!-- 10 -->
+<section id="glossaire">
+  <div class="sec-head"><span class="sec-num">10</span><h2>Glossaire</h2></div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Terme</th><th>Définition</th></tr></thead>
+    <tbody>
+      <tr><td><b>Type de commande</b></td><td>L'origine de la commande&nbsp;: réunion, vente directe, web, cadeau, mini-boutique…</td></tr>
+      <tr><td><b>Statut de gestion</b></td><td>L'avancement du traitement&nbsp;: de «&nbsp;Créée&nbsp;» à «&nbsp;Terminée&nbsp;».</td></tr>
+      <tr><td><b>Statut de paiement</b></td><td>Le règlement&nbsp;: en attente, payée, encaissée…</td></tr>
+      <tr><td><b>Statut d'expédition</b></td><td>La logistique&nbsp;: non expédiée, expédiée, livrée…</td></tr>
+      <tr><td><b>Avoir</b></td><td>Document qui annule tout ou partie d'une commande payée. Il vient en déduction du chiffre d'affaires.</td></tr>
+      <tr><td><b>Encaissement</b></td><td>Confirmation par la marque qu'un paiement a bien été reçu (option).</td></tr>
+      <tr><td><b>Bon d'expédition</b></td><td>Document qui détaille les quantités envoyées lors d'une expédition, totale ou partielle.</td></tr>
+      <tr><td><b>Panier abandonné</b></td><td>Commande jamais payée, supprimée automatiquement après un délai.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+  </main>
+</div>

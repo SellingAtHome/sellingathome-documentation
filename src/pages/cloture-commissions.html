@@ -1,0 +1,268 @@
+<!--page {"title":"Clôture et versement des commissions"} -->
+<style>
+.timeline { display:flex; flex-direction:column; border-left:3px solid var(--rule); margin-left:10px; }
+.tl { position:relative; padding:0 0 20px 28px; }
+.tl::before { content:""; position:absolute; left:-9px; top:4px; width:15px; height:15px; border-radius:50%; background:var(--card); border:3px solid var(--accent); }
+.tl.stop::before { border-color:var(--pink); }
+.tl b { color:var(--heading); display:block; }
+.tl p { color:var(--muted); font-size:.93rem; margin-top:4px; }
+.chip { display:inline-block; border-radius:100px; padding:3px 11px; font-size:.78rem; font-weight:700; background:var(--surface); color:var(--heading); border:1px solid var(--rule); }
+.chip.g { background:var(--accent-wash); color:var(--accent-ink); border-color:transparent; }
+.chip.p { background:var(--pink-wash); color:var(--pink-ink); border-color:transparent; }
+.chip.y { background:var(--yellow-wash); color:var(--yellow-ink); border-color:transparent; }
+.vs { display:grid; grid-template-columns:repeat(auto-fit, minmax(240px,1fr)); gap:14px; }
+.vs .card { border-top:5px solid var(--yellow); }
+.vs .card:nth-child(2) { border-top-color:var(--accent); }
+.opts td:first-child { width:32%; }
+</style>
+<header class="hero">
+  <div class="hero-in">
+    <div>
+      <span class="eyebrow">Réseau et rémunération</span>
+      <h1>Clôture et versement <span class="script">des commissions</span></h1>
+      <p class="lede">Chaque nuit, une estimation&nbsp;; chaque 1<sup>er</sup> du mois, la clôture. Ce que la clôture enchaîne, comment lire et corriger les commissions, puis éditer les bulletins, le fichier de virements SEPA et prévenir vos conseillères.</p>
+    </div>
+    <div class="voucher-art" aria-hidden="true">
+      <div class="v-top"><span>Clôture de septembre</span><span>1<sup>er</sup> octobre</span></div>
+      <div class="v-amount">61,69<span> €</span></div>
+      <div class="v-name">Commission médiane versée</div>
+      <div class="v-sep"></div>
+      <div class="v-meta"><span>Conseillères clôturées <b>15 412</b></span><span>Montant &gt; 0 <b>5 317</b></span></div>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="toc" aria-label="Sommaire">
+    <details id="tocDetails" open>
+      <summary>Sommaire</summary>
+      <div class="toc-title">Sommaire</div>
+      <ol>
+        <li data-sec="principe"><a href="#principe"><span class="toc-n">1</span>Estimation et clôture</a></li>
+        <li data-sec="calendrier"><a href="#calendrier"><span class="toc-n">2</span>Le calendrier d'un mois</a>
+          <ol class="toc-sub"><li><a href="#s2-1"><span class="toc-n">2.1</span>Qui lance la clôture&nbsp;?</a></li><li><a href="#s2-2"><span class="toc-n">2.2</span>Ce que la clôture enchaîne</a></li></ol>
+        </li>
+        <li data-sec="ecran"><a href="#ecran"><span class="toc-n">3</span>L'onglet Commissions</a>
+          <ol class="toc-sub"><li><a href="#s3-1"><span class="toc-n">3.1</span>La liste</a></li><li><a href="#s3-2"><span class="toc-n">3.2</span>Le détail d'une conseillère</a></li><li><a href="#s3-3"><span class="toc-n">3.3</span>Les lignes manuelles</a></li></ol>
+        </li>
+        <li data-sec="verser"><a href="#verser"><span class="toc-n">4</span>Verser les commissions</a>
+          <ol class="toc-sub"><li><a href="#s4-1"><span class="toc-n">4.1</span>Les bulletins</a></li><li><a href="#s4-2"><span class="toc-n">4.2</span>Le fichier SEPA</a></li><li><a href="#s4-3"><span class="toc-n">4.3</span>Les exports comptables</a></li></ol>
+        </li>
+        <li data-sec="prevenir"><a href="#prevenir"><span class="toc-n">5</span>Prévenir les conseillères</a>
+          <ol class="toc-sub"><li><a href="#s5-1"><span class="toc-n">5.1</span>La notification de clôture</a></li><li><a href="#s5-2"><span class="toc-n">5.2</span>Le récapitulatif mensuel</a></li></ol>
+        </li>
+        <li data-sec="annulations"><a href="#annulations"><span class="toc-n">6</span>Commandes annulées après clôture</a></li>
+        <li data-sec="conseillere"><a href="#conseillere"><span class="toc-n">7</span>Ce que voit la conseillère</a></li>
+        <li data-sec="chiffres"><a href="#chiffres"><span class="toc-n">8</span>La clôture en chiffres</a></li>
+        <li data-sec="checklist"><a href="#checklist"><span class="toc-n">9</span>Votre routine mensuelle</a></li>
+        <li data-sec="attention"><a href="#attention"><span class="toc-n">10</span>Points d'attention</a></li>
+        <li data-sec="faq"><a href="#faq"><span class="toc-n">11</span>Questions fréquentes</a></li>
+      </ol>
+    </details>
+  </nav>
+
+  <main>
+
+<!-- 1 -->
+<section id="principe">
+  <div class="sec-head"><span class="sec-num">01</span><h2>Estimation et clôture</h2></div>
+  <p class="lede">Les commissions sont calculées par le <a href="plan-remuneration.html">plan de rémunération</a> de votre marque, de deux façons.</p>
+  <div class="vs">
+    <div class="card"><span class="tag yellow">Estimation</span><h4>Chaque nuit, le mois en cours</h4><ul class="prose"><li>Recalculée chaque nuit, du 2 au dernier jour du mois.</li><li>Utilise le <strong>statut estimé</strong> des conseillères.</li><li>Provisoire&nbsp;: elle change jusqu'à la fin du mois.</li><li>On peut encore y ajouter des lignes manuelles.</li></ul></div>
+    <div class="card"><span class="tag">Clôture</span><h4>Le 1<sup>er</sup>, le mois écoulé</h4><ul class="prose"><li>Calculée une seule fois, la nuit du 1<sup>er</sup> du mois suivant.</li><li>Utilise le <strong>statut officiel</strong>.</li><li>Définitive&nbsp;: plus rien ne la modifie depuis l'espace marque.</li><li>Ouvre les bulletins, le fichier SEPA et les exports.</li></ul></div>
+  </div>
+  <div class="example"><span class="ex-label">Exemple</span><p>Le 15 mars, l'onglet Commissions affiche pour Léa une estimation de 410&nbsp;€, calculée la nuit précédente. Le 31 mars au soir, elle en est à 520&nbsp;€. Dans la nuit du 1<sup>er</sup> avril, mars est clôturé&nbsp;: Léa touchera <strong>537,10&nbsp;€</strong>, les commandes payées le 31 au soir comprises.</p></div>
+  <div class="tip"><span class="ex-label">Vocabulaire</span><p>Dans l'espace marque, les conseillères sont appelées <strong>vendeurs</strong>. «&nbsp;Vendeurs actifs&nbsp;» dans les filtres de cet écran a un sens particulier, expliqué <a href="#s3-1">plus bas</a>.</p></div>
+</section>
+
+<!-- 2 -->
+<section id="calendrier">
+  <div class="sec-head"><span class="sec-num">02</span><h2>Le calendrier d'un mois</h2></div>
+  <div class="timeline">
+    <div class="tl"><b>Du 2 au dernier jour du mois · chaque nuit</b><p>Estimation du mois en cours pour toutes les conseillères. L'onglet Commissions et l'espace conseillère affichent la date et l'heure de la dernière estimation.</p></div>
+    <div class="tl"><b>Pendant le mois · vous</b><p>Vous vérifiez les estimations, ajoutez si besoin des lignes manuelles, ajustez le plan avant la fin du mois.</p></div>
+    <div class="tl stop"><b>Le 1<sup>er</sup> du mois suivant · la nuit</b><p>Clôture du mois écoulé, et selon votre configuration&nbsp;: statuts officiels, cotisations sociales (fin de trimestre), e-mail récapitulatif aux conseillères.</p></div>
+    <div class="tl"><b>Les jours suivants · vous</b><p>Contrôle de la clôture, génération des bulletins et du fichier SEPA, virements, notification aux conseillères.</p></div>
+  </div>
+
+  <h3 id="s2-1"><span class="sub-num">2.1</span> Qui lance la clôture&nbsp;?</h3>
+  <p><strong>Personne&nbsp;: elle est automatique.</strong> Il n'y a pas de bouton «&nbsp;Clôturer&nbsp;» dans l'espace marque. SellingAtHome active la clôture automatique pour votre marque et règle ce qu'elle enchaîne (voir ci-dessous). La clôture d'un mois a lieu une seule fois&nbsp;; si votre marque est sur un fuseau horaire en retard sur l'heure de Paris, elle attend que le mois soit terminé chez vous.</p>
+  <div class="warn"><span class="ex-label">Rouvrir un mois clôturé</span><p>L'espace marque ne permet ni de rouvrir ni de relancer une clôture. Si une erreur de plan a faussé un mois clôturé, contactez SellingAtHome&nbsp;; sinon, corrigez par une ligne manuelle le mois suivant.</p></div>
+
+  <h3 id="s2-2"><span class="sub-num">2.2</span> Ce que la clôture enchaîne</h3>
+  <div class="table-wrap"><table class="opts">
+    <thead><tr><th>Étape</th><th>Ce qui se passe</th></tr></thead>
+    <tbody>
+      <tr><td><b>Statuts officiels</b> <span class="muted">(selon configuration)</span></td><td>Si votre marque utilise l'automatisation des statuts, les statuts officiels sont calculés <strong>avant</strong> les commissions, qui en tiennent compte. 9 marques sur 35 fonctionnent ainsi.</td></tr>
+      <tr><td><b>Commissions</b></td><td>Une ligne par conseillère active (et par conseillère désactivée ayant fait du chiffre dans le mois), avec le détail de chaque règle, les primes de challenge et les lignes manuelles du mois. Une facture de commission est numérotée pour chacune.</td></tr>
+      <tr><td><b>Retenue de cotisations</b> <span class="muted">(selon réglage)</span></td><td>Si votre marque déduit les cotisations sociales, une ligne de retenue s'ajoute au bulletin&nbsp;: voir <a href="cotisations-sociales.html">Cotisations sociales et précompte</a>.</td></tr>
+      <tr><td><b>Cotisations du trimestre</b> <span class="muted">(mars, juin, septembre, décembre)</span></td><td>Les bulletins de précompte trimestriels sont calculés pour les conseillères concernées.</td></tr>
+      <tr><td><b>Récapitulatif mensuel</b> <span class="muted">(si activé)</span></td><td>Un e-mail de performances part à chaque conseillère active (voir <a href="#s5-2">5.2</a>).</td></tr>
+    </tbody>
+  </table></div>
+  <p class="muted">Les bulletins PDF, le fichier SEPA et la notification ne sont <strong>pas</strong> produits automatiquement&nbsp;: c'est vous qui les lancez depuis l'onglet Commissions.</p>
+</section>
+
+<!-- 3 -->
+<section id="ecran">
+  <div class="sec-head"><span class="sec-num">03</span><h2>L'onglet Commissions</h2></div>
+  <div class="path" aria-label="Chemin d'accès"><span>Espace marque</span><span>Vendeurs</span><span>Vendeurs</span><span><b>Commissions</b></span></div>
+  <p>C'est un onglet de l'écran des conseillères, à côté de Liste, Carte, Graph et Cotisations Sociales. Il apparaît avec le module de commissionnement.</p>
+
+  <h3 id="s3-1"><span class="sub-num">3.1</span> La liste</h3>
+  <figure><img src="Captures/Remuneration/commissions-liste.png" alt="Onglet Commissions : boutons Générer un fichier SEPA pour ce mois, Générer les bulletins pour ce mois et Envoyer une notification aux vendeurs ; filtres Vendeurs actifs, Mois, Année et une icône d'information ; colonnes #, Nom, Prénom, Chiffre d'affaires commissionable TTC, Chiffre d'affaires commissionable HT, Commissions et un bouton œil" loading="lazy"><figcaption>Les commissions clôturées d'un mois (noms fictifs).</figcaption></figure>
+  <ul class="prose">
+    <li><strong>Mois et Année</strong>&nbsp;: le <strong>mois en cours</strong> affiche l'<strong>estimation</strong>&nbsp;; un mois passé affiche la <strong>clôture</strong>. Un mois passé jamais clôturé reste vide.</li>
+    <li><strong>Filtrer</strong>&nbsp;: «&nbsp;Vendeurs actifs&nbsp;» (par défaut) ne garde que les conseillères dont le <strong>CA commissionnable HT du mois est positif</strong>&nbsp;; «&nbsp;Tous les vendeurs&nbsp;» montre aussi les autres (commissions à 0, primes seules, frais…).</li>
+    <li>Colonnes&nbsp;: numéro, nom, prénom, CA commissionnable TTC et HT, <strong>Commissions</strong> (total des lignes, retenues comprises). Selon vos options, s'ajoutent une colonne «&nbsp;Fidelité&nbsp;» (rémunération en points) ou «&nbsp;Marges effectuées&nbsp;».</li>
+    <li>L'icône <strong>i</strong> rappelle que les chiffres sont mis à jour <strong>la nuit</strong>, d'où de possibles écarts avec le tableau de bord.</li>
+    <li>Le bouton <strong>œil</strong> ouvre le détail de la conseillère pour ce mois. La recherche porte sur le numéro, le nom et le prénom.</li>
+  </ul>
+  <div class="tip"><span class="ex-label">Bon à savoir</span><p>Le 1<sup>er</sup> du mois, la liste du mois qui commence est vide&nbsp;: la première estimation est calculée la nuit du 2.</p></div>
+
+  <h3 id="s3-2"><span class="sub-num">3.2</span> Le détail d'une conseillère</h3>
+  <figure><img src="Captures/Remuneration/commission-detail.png" alt="Détail des commissions de Léa Martin pour mars 2026 : tableau Libellé commission, Base, Taux, Montant avec une ligne Conseiller Perso, base 1 997,55 €, taux 17 %, montant 339,58 €, Montant total et bouton Télécharger le bulletin" loading="lazy"><figcaption>Le détail d'un mois clôturé&nbsp;: une ligne par règle du plan (nom fictif).</figcaption></figure>
+  <ul class="prose">
+    <li>Une ligne par règle appliquée&nbsp;: <strong>Libellé commission</strong> (le nom de la règle), <strong>Base</strong>, <strong>Taux</strong>, <strong>Montant</strong>, puis le <strong>Montant total</strong>.</li>
+    <li>Une icône permet d'afficher le <strong>détail du calcul</strong> d'une ligne&nbsp;: les commandes et avoirs qui composent la base.</li>
+    <li>Mois clôturé&nbsp;: bouton <strong>Télécharger le bulletin</strong> (et <strong>Télécharger le relevé fidélité</strong> si une partie est versée en points).</li>
+    <li>Mois en cours&nbsp;: un bandeau «&nbsp;Estimation pour le mois en cours (Réalisée le&nbsp;: … à …)&nbsp;» et le bouton <strong>Ajouter une nouvelle ligne de commission</strong>.</li>
+  </ul>
+
+  <h3 id="s3-3"><span class="sub-num">3.3</span> Les lignes manuelles</h3>
+  <p>Pour un geste commercial, une régularisation ou une prime hors plan, ajoutez une ligne à la main, <strong>pendant le mois en cours</strong>&nbsp;:</p>
+  <ol class="prose">
+    <li>Onglet Commissions, mois en cours, œil de la conseillère.</li>
+    <li><strong>Ajouter une nouvelle ligne de commission</strong>&nbsp;: un libellé (200 caractères au plus), une <strong>base</strong> et un <strong>taux</strong> (100&nbsp;% par défaut). L'aperçu affiche «&nbsp;base × taux = montant&nbsp;».</li>
+    <li>La ligne s'ajoute tout de suite à l'estimation. Elle reste modifiable et supprimable jusqu'à la clôture, qui la fige dans le bulletin.</li>
+  </ol>
+  <div class="example"><span class="ex-label">Exemple</span><p>Une commande de Camille, payée en février, a été annulée en mars&nbsp;: l'avoir réduit déjà la commission de mars de Léa. Mais vous aviez promis à Léa de ne pas la pénaliser&nbsp;: vous ajoutez en mars une ligne «&nbsp;Geste commercial avoir C116&nbsp;», base 47, taux 22&nbsp;% → 10,34&nbsp;€. Pour une retenue, saisissez une base négative.</p></div>
+  <div class="warn"><span class="ex-label">Uniquement le mois en cours</span><p>Il n'est pas possible d'ajouter une ligne sur un mois déjà clôturé. Une correction d'un mois passé se fait donc sur le mois en cours, avec un libellé explicite.</p></div>
+</section>
+
+<!-- 4 -->
+<section id="verser">
+  <div class="sec-head"><span class="sec-num">04</span><h2>Verser les commissions</h2></div>
+  <p class="lede">Les trois boutons du haut de l'onglet agissent sur le <strong>mois sélectionné</strong> dans les filtres&nbsp;: choisissez d'abord le mois clôturé.</p>
+
+  <h3 id="s4-1"><span class="sub-num">4.1</span> Les bulletins</h3>
+  <ul class="prose">
+    <li><strong>Générer les bulletins pour ce mois</strong> (désactivé sur le mois en cours) demande une adresse e-mail, préremplie avec la vôtre. Un fichier ZIP contenant <strong>un bulletin PDF par conseillère clôturée</strong>, y compris à 0&nbsp;€, est préparé en arrière-plan&nbsp;; le lien de téléchargement arrive par e-mail. Comptez environ 2 secondes par conseillère.</li>
+    <li>Le bulletin d'une seule conseillère se télécharge depuis son détail.</li>
+    <li>Le bulletin reprend&nbsp;: logo et coordonnées de la marque, période, identité, statut juridique et adresse de la conseillère, le tableau Libellé · Base · Taux · Montant et le total. Certaines marques ont un modèle personnalisé (numéro de facture, SIRET…).</li>
+  </ul>
+  <div class="tip"><span class="ex-label">Bon à savoir</span><p>Le bulletin est régénéré à chaque téléchargement&nbsp;: il reprend l'adresse et les coordonnées <strong>actuelles</strong> de la conseillère et de la marque, et la date du jour.</p></div>
+
+  <h3 id="s4-2"><span class="sub-num">4.2</span> Le fichier SEPA</h3>
+  <p><strong>Générer un fichier SEPA pour ce mois</strong> produit un fichier de virements groupés (XML au format SEPA) à importer dans votre banque.</p>
+  <div class="table-wrap"><table class="opts">
+    <thead><tr><th>Élément</th><th>Règle</th></tr></thead>
+    <tbody>
+      <tr><td><b>Conseillères incluses</b></td><td>Celles qui ont une commission <strong>clôturée</strong> ce mois-ci, un <strong>IBAN</strong> renseigné sur leur fiche et un total <strong>strictement positif</strong>.</td></tr>
+      <tr><td><b>Montant</b></td><td>Le total des lignes en euros (les lignes versées en points de fidélité sont exclues).</td></tr>
+      <tr><td><b>Compte débité</b></td><td>L'IBAN et le BIC de votre marque, saisis dans <strong>Paramètres › Configuration générale › Informations bancaires</strong>.</td></tr>
+      <tr><td><b>Date d'exécution</b></td><td>La date du jour de la génération.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="warn"><span class="ex-label">Avant de générer</span><ul class="prose"><li>Vérifiez que l'<strong>IBAN de votre marque</strong> est renseigné&nbsp;: l'écran ne le contrôle pas, et un fichier sans IBAN sera refusé par la banque. 15 marques actives sur 35 l'ont renseigné.</li><li>Si l'IBAN saisi dans la configuration est invalide, les coordonnées bancaires sont effacées à l'enregistrement, sans message&nbsp;: rouvrez la page pour vérifier.</li><li>Une conseillère sans IBAN n'apparaît pas dans le fichier&nbsp;: elle reste à payer autrement.</li><li>En cas d'erreur, le bouton ne s'ouvre simplement pas&nbsp;: aucun message ne s'affiche.</li></ul></div>
+
+  <h3 id="s4-3"><span class="sub-num">4.3</span> Les exports comptables</h3>
+  <p>Un bouton <strong>Générer les fichiers CEGID</strong> existe pour les marques qui ont fait développer un export vers ce logiciel de paie&nbsp;: il produit un fichier tableur des rémunérations du mois. Il n'est pas disponible par défaut. Pour vos propres extractions, utilisez <strong>Rapports › Export de données</strong> (voir <a href="pilotage.html">Pilotage</a>).</p>
+</section>
+
+<!-- 5 -->
+<section id="prevenir">
+  <div class="sec-head"><span class="sec-num">05</span><h2>Prévenir les conseillères</h2></div>
+
+  <h3 id="s5-1"><span class="sub-num">5.1</span> La notification de clôture</h3>
+  <p>Le bouton <strong>Envoyer une notification aux vendeurs</strong> (si les notifications sont activées pour votre marque) envoie une notification «&nbsp;clôture des commissions&nbsp;» du mois sélectionné à <strong>toutes les conseillères actives</strong>. Elle part immédiatement, sans aperçu.</p>
+  <div class="warn"><span class="ex-label">Message trompeur</span><p>Après l'envoi, l'écran affiche «&nbsp;Une erreur est survenue&nbsp;» alors que les notifications sont bien parties. Ne cliquez pas une seconde fois&nbsp;: vos conseillères recevraient la notification en double.</p></div>
+
+  <h3 id="s5-2"><span class="sub-num">5.2</span> Le récapitulatif mensuel des performances</h3>
+  <div class="path" aria-label="Chemin d'accès"><span>Espace marque</span><span>Rapports</span><span><b>Récapitulatif mensuel des performances</b></span></div>
+  <div class="figrow">
+    <figure><img src="Captures/Remuneration/suivi-emails.png" alt="Écran Récapitulatif mensuel des performances : liste Choix des indicateurs avec des cases à cocher (chiffre d'affaires TTC et HT, chiffre d'affaires commissionnable HT et TTC, produits vendus, réunions redatées, nombre de commandes payées, nombre de réunions terminées, participants par réunion, indice de vente, paniers moyens, C.A. moyen), bouton Enregistrer, puis bloc Envoyer un email de test à un vendeur" loading="lazy"><figcaption>Le choix des indicateurs et l'envoi de test.</figcaption></figure>
+    <div class="prose" style="display:flex;flex-direction:column;gap:12px">
+      <p>Cet écran (appelé aussi «&nbsp;suivi des e-mails de clôture des commissions&nbsp;») règle l'<strong>e-mail envoyé à chaque conseillère active le jour de la clôture</strong>. Il présente ses indicateurs du mois écoulé, du mois précédent et l'écart.</p>
+      <ul class="prose">
+        <li><strong>Choix des indicateurs</strong>&nbsp;: cochez ceux à faire figurer (CA, CA commissionnable, produits vendus, réunions, paniers moyens…), puis <strong>Enregistrer</strong>.</li>
+        <li><strong>Envoyer un email de test à un vendeur</strong>&nbsp;: choisissez une conseillère&nbsp;; le test porte sur le mois en cours, jusqu'à aujourd'hui.</li>
+        <li>À droite, l'aperçu du modèle et le bouton <strong>Voir le template d'email</strong>.</li>
+      </ul>
+      <div class="warn"><span class="ex-label">À activer</span><p>L'e-mail ne part que si son modèle est <strong>actif</strong> dans Paramètres › Templates email. Seules 3 marques actives sur 35 l'ont activé.</p></div>
+    </div>
+  </div>
+  <p class="muted">Cet écran ne liste pas les e-mails envoyés&nbsp;; pour cela, voyez Rapports › Emails envoyés.</p>
+</section>
+
+<!-- 6 -->
+<section id="annulations">
+  <div class="sec-head"><span class="sec-num">06</span><h2>Commandes annulées après clôture</h2></div>
+  <p class="lede">Un mois clôturé n'est jamais recalculé. Une commande annulée après la clôture est rattrapée <strong>le mois de l'avoir</strong>.</p>
+  <ul class="prose">
+    <li>Une commande compte le mois de son <strong>paiement</strong>&nbsp;; un avoir compte le mois de sa <strong>création</strong>, en déduction du CA commissionnable.</li>
+    <li>La déduction est automatique et silencieuse&nbsp;: aucune ligne «&nbsp;régularisation&nbsp;» n'apparaît, la base de la commission est simplement plus faible.</li>
+    <li>Les paliers sont évalués sur le CA du mois <strong>après</strong> déduction&nbsp;: un gros avoir peut faire descendre la conseillère d'un palier.</li>
+    <li>Si le total du mois devient <strong>négatif</strong>, il n'est pas reporté sur le mois suivant&nbsp;: le fichier SEPA ignore simplement les totaux négatifs ou nuls. À vous de décider d'une éventuelle retenue manuelle.</li>
+  </ul>
+  <div class="example"><span class="ex-label">Exemple</span><p>Léa a touché 22&nbsp;% sur une commande de 500&nbsp;€ HT payée en février (110&nbsp;€). Camille la retourne en mars&nbsp;: un avoir de 500&nbsp;€ HT est créé en mars. Février reste inchangé. En mars, Léa a vendu 1&nbsp;800&nbsp;€&nbsp;: son CA commissionnable est de 1&nbsp;300&nbsp;€, elle reste au palier de 18&nbsp;% (≥ 500, &lt; 1&nbsp;500 dans le plan d'exemple) au lieu de 22&nbsp;%.</p></div>
+  <p>Voir aussi <a href="commandes-comprendre.html#s5-3">Annuler une commande payée</a>.</p>
+</section>
+
+<!-- 7 -->
+<section id="conseillere">
+  <div class="sec-head"><span class="sec-num">07</span><h2>Ce que voit la conseillère</h2></div>
+  <p>Dans son espace conseillère, menu <strong>Suivi d'activité › Commissions</strong>&nbsp;: un tableau mois par mois (CA commissionnable TTC et HT, commissions), l'estimation du mois en cours avec sa date, le détail par ligne et le téléchargement de ses bulletins. Les lignes de retenue de cotisations y apparaissent comme les autres.</p>
+</section>
+
+<!-- 8 -->
+<section id="chiffres">
+  <div class="sec-head"><span class="sec-num">08</span><h2>La clôture en chiffres</h2></div>
+  <div class="stats">
+    <div class="stat"><b>33</b><span>marques actives sur 35 ont clôturé leurs commissions sur les 12 derniers mois, presque toutes chaque mois</span></div>
+    <div class="stat"><b>97&nbsp;%</b><span>des clôtures ont eu lieu dans la nuit du 1<sup>er</sup> du mois suivant, vers 3&nbsp;h (heure UTC)</span></div>
+    <div class="stat"><b>75</b><span>conseillères clôturées par marque et par mois (médiane)</span></div>
+    <div class="stat"><b>1 sur 3</b><span>conseillères clôturées touche une commission positive (5&nbsp;317 sur 15&nbsp;412 en septembre)</span></div>
+  </div>
+  <p class="muted">Les quelques clôtures hors du 1<sup>er</sup> correspondent à des relances exceptionnelles faites par SellingAtHome.</p>
+</section>
+
+<!-- 9 -->
+<section id="checklist">
+  <div class="sec-head"><span class="sec-num">09</span><h2>Votre routine mensuelle</h2></div>
+  <ol class="prose">
+    <li><strong>Avant la fin du mois</strong>&nbsp;: contrôlez l'estimation de quelques conseillères, ajoutez les lignes manuelles, terminez les modifications du plan et des statuts.</li>
+    <li><strong>Le 1<sup>er</sup> ou le 2</strong>&nbsp;: sélectionnez le mois écoulé dans l'onglet Commissions, filtre «&nbsp;Tous les vendeurs&nbsp;», et contrôlez les totaux (montants négatifs, oublis).</li>
+    <li><strong>Générez les bulletins</strong> et vérifiez-en un ou deux.</li>
+    <li><strong>Générez le fichier SEPA</strong>, importez-le dans votre banque, comparez le nombre de virements et le total avec la liste.</li>
+    <li><strong>Prévenez vos conseillères</strong>&nbsp;: notification de clôture, ou récapitulatif mensuel activé.</li>
+    <li><strong>En fin de trimestre</strong>&nbsp;: consultez les <a href="cotisations-sociales.html">cotisations sociales</a>.</li>
+  </ol>
+</section>
+
+<!-- 10 -->
+<section id="attention">
+  <div class="sec-head"><span class="sec-num">10</span><h2>Points d'attention</h2></div>
+  <ul class="prose">
+    <li><strong>Les boutons suivent le filtre Mois</strong>&nbsp;: le mois sélectionné est mémorisé par votre navigateur. Vérifiez-le avant de générer un SEPA ou d'envoyer une notification.</li>
+    <li><strong>«&nbsp;Vendeurs actifs&nbsp;» ≠ conseillères actives</strong>&nbsp;: le filtre garde celles qui ont un CA commissionnable positif. Une conseillère qui ne touche qu'une prime ou des frais n'y apparaît pas.</li>
+    <li><strong>Estimation et clôture peuvent différer</strong>&nbsp;: statut estimé contre statut officiel, commandes payées le dernier soir, avoirs de fin de mois.</li>
+    <li><strong>Les commissions négatives ne sont pas reportées</strong>&nbsp;: frais de licence supérieurs aux commissions, gros avoir… À traiter à la main si vous voulez les récupérer.</li>
+    <li><strong>Le récapitulatif mensuel</strong> ne part qu'aux conseillères actives, et seulement si son modèle d'e-mail est activé.</li>
+  </ul>
+</section>
+
+<!-- 11 -->
+<section id="faq">
+  <div class="sec-head"><span class="sec-num">11</span><h2>Questions fréquentes</h2></div>
+  <div class="faq">
+    <details><summary>Le mois dernier est vide dans l'onglet Commissions.</summary><div><p>La clôture n'a pas eu lieu (ou pas encore, si nous sommes le 1<sup>er</sup> au matin). Vérifiez le filtre «&nbsp;Tous les vendeurs&nbsp;», puis contactez SellingAtHome&nbsp;: la clôture automatique n'est peut-être pas activée pour votre marque.</p></div></details>
+    <details><summary>Je me suis trompée dans le plan, le mois est déjà clôturé.</summary><div><p>Corrigez le plan pour les mois suivants, et ajoutez des lignes manuelles sur le mois en cours pour les conseillères lésées. Une réouverture de la clôture ne peut être faite que par SellingAtHome.</p></div></details>
+    <details><summary>Une conseillère n'est pas dans le fichier SEPA.</summary><div><p>Son IBAN n'est pas renseigné, ou son total du mois est nul ou négatif, ou une partie de sa rémunération est en points de fidélité.</p></div></details>
+    <details><summary>Le bouton «&nbsp;Générer les bulletins&nbsp;» est grisé.</summary><div><p>Vous êtes sur le mois en cours&nbsp;: les bulletins ne se génèrent que pour un mois clôturé.</p></div></details>
+    <details><summary>Je n'ai pas reçu l'e-mail avec les bulletins.</summary><div><p>La préparation prend environ 2 secondes par conseillère. Vérifiez l'adresse saisie et vos courriers indésirables.</p></div></details>
+  </div>
+</section>
+
+  </main>
+</div>

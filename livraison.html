@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Livraison : modes et frais – Documentation SellingAtHome</title>
+<meta name="description" content="Modes de livraison, frais, gratuité et conditions, avec exemples chiffrés.">
+<link rel="stylesheet" href="assets/sah.css">
+<link rel="stylesheet" href="assets/site.css">
+<script>try{var t=localStorage.getItem('ba-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<style>
+.steps-calc { counter-reset: st; display:flex; flex-direction:column; gap:10px; margin:14px 0; }
+.steps-calc div { counter-increment: st; position:relative; padding:12px 14px 12px 52px; background:var(--card); border:1px solid var(--rule); border-radius:14px; font-size:.95rem; }
+.steps-calc div::before { content: counter(st); position:absolute; left:14px; top:12px; width:26px; height:26px; border-radius:50%; background:var(--accent); color:#fff; font-weight:700; text-align:center; line-height:26px; font-size:.85rem; }
+.steps-calc b { color:var(--heading); }
+.chip { display:inline-block; border-radius:100px; padding:3px 11px; font-size:.78rem; font-weight:700; background:var(--surface); color:var(--heading); border:1px solid var(--rule); }
+.chip.g { background:var(--accent-wash); color:var(--accent-ink); border-color:transparent; }
+.chip.p { background:var(--pink-wash); color:var(--pink-ink); border-color:transparent; }
+.chip.y { background:var(--yellow-wash); color:var(--yellow-ink); border-color:transparent; }
+.opts td:first-child { width:30%; }
+.calc td:last-child, .calc th:last-child { text-align:right; white-space:nowrap; }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="sah-logo" viewBox="0 0 225 46"> <g transform="matrix(1,0,0,1,-3078,-558)"> <g transform="matrix(0.982533,0,0,0.351145,3869.92,548.87)"> <rect x="-806" y="26" width="229" height="131" style="fill:none;"></rect> <clipPath id="sahclip"> <rect x="-806" y="26" width="229" height="131"></rect> </clipPath> <g clip-path="url(#sahclip)"> <g transform="matrix(1,0,0,0.956522,0,3.97826)"> <g transform="matrix(1.01778,0,0,2.97727,-3938.72,-1638.3)"> <path d="M3224.65,572.289C3225.06,572.296 3225.39,572.628 3225.4,573.033L3225.4,588.748C3225.39,589.153 3225.06,589.484 3224.65,589.491L3223.51,589.491C3223.11,589.484 3222.77,589.153 3222.77,588.748L3222.77,586.233C3222.76,585.828 3222.43,585.497 3222.02,585.49L3217.68,585.49C3217.23,585.522 3216.81,585.753 3216.54,586.12L3214.77,588.864C3214.5,589.231 3214.08,589.462 3213.62,589.494L3212.02,589.494C3211.62,589.494 3211.45,589.208 3211.68,588.864L3221.74,572.92C3222.01,572.552 3222.43,572.322 3222.88,572.289L3224.65,572.289ZM3236.88,572.289C3237.29,572.296 3237.62,572.628 3237.62,573.033L3237.62,574.175C3237.62,574.58 3237.29,574.911 3236.88,574.918L3234.71,574.918C3234.3,574.925 3233.97,575.256 3233.97,575.661L3233.97,588.748C3233.96,589.153 3233.63,589.484 3233.22,589.491L3232.08,589.491C3231.68,589.484 3231.34,589.153 3231.34,588.748L3231.34,575.661C3231.33,575.256 3231,574.925 3230.59,574.918L3228.42,574.918C3228.02,574.911 3227.69,574.58 3227.68,574.175L3227.68,573.033C3227.69,572.628 3228.02,572.296 3228.42,572.289L3236.88,572.289ZM3218.94,582.233C3218.71,582.576 3218.88,582.864 3219.28,582.864L3222.02,582.864C3222.43,582.856 3222.76,582.525 3222.77,582.12L3222.77,576.975C3222.77,576.576 3222.6,576.518 3222.37,576.861L3218.94,582.233Z" style="fill:var(--logo-at);fill-rule:nonzero;"></path> </g> <g transform="matrix(1.01778,0,0,2.97727,-3938.72,-1638.3)"> <path d="M3100,559C3100,559 3100,559 3100,559C3087.93,559 3078,568.932 3078,581.001C3078,593.071 3087.93,603.003 3100,603.003C3112.07,603.003 3122,593.071 3122,581.001C3122,568.934 3112.07,559.006 3100,559ZM3256.54,587.09C3254.93,585.463 3254.02,583.261 3254.02,580.969C3254.02,576.201 3257.94,572.277 3262.71,572.277C3267.48,572.277 3271.41,576.201 3271.41,580.969C3271.41,585.738 3267.48,589.662 3262.71,589.662C3262.71,589.662 3262.71,589.662 3262.71,589.662C3260.39,589.693 3258.15,588.762 3256.54,587.09ZM3200.25,587.09C3198.62,585.452 3197.7,583.231 3197.7,580.918C3197.7,576.13 3201.63,572.186 3206.42,572.175C3207.6,572.171 3208.77,572.404 3209.85,572.861L3209.11,574.576C3208.95,574.949 3208.53,575.146 3208.14,575.033C3207.58,574.858 3207.01,574.762 3206.42,574.747C3203.06,574.785 3200.32,577.56 3200.32,580.919C3200.32,584.279 3203.06,587.053 3206.42,587.091C3206.97,587.103 3207.51,587.026 3208.02,586.862L3208.02,582.92C3208.02,582.516 3207.68,582.185 3207.28,582.178L3205.97,582.178C3205.56,582.171 3205.23,581.839 3205.22,581.434L3205.22,580.287C3205.23,579.882 3205.56,579.551 3205.97,579.544L3209.91,579.544C3210.31,579.551 3210.64,579.882 3210.65,580.287L3210.65,587.888C3210.68,588.24 3210.53,588.582 3210.25,588.802C3209.9,588.964 3209.54,589.097 3209.16,589.202C3208.27,589.462 3207.35,589.616 3206.42,589.659C3204.1,589.691 3201.87,588.761 3200.25,587.09ZM3142.31,582.236C3141.12,580.902 3139.54,579.981 3137.79,579.607C3135.45,578.921 3134.3,578.064 3134.36,576.978C3134.37,576.111 3134.92,575.337 3135.73,575.035C3137.05,574.52 3138.54,574.669 3139.73,575.435C3140.08,575.675 3140.55,575.652 3140.88,575.378L3142.25,574.116C3141.1,572.919 3139.51,572.239 3137.85,572.23C3136.5,572.106 3135.14,572.405 3133.97,573.087C3132.58,573.884 3131.72,575.372 3131.74,576.973C3131.68,579.429 3133.45,581.202 3137.11,582.23C3139.45,582.861 3140.59,583.773 3140.54,584.859C3140.51,585.479 3140.19,586.052 3139.68,586.402C3138.96,586.951 3138.07,587.216 3137.17,587.145C3136.53,587.143 3135.9,586.986 3135.34,586.688C3135,586.525 3134.71,586.291 3134.48,586.002C3134.23,585.668 3133.79,585.529 3133.39,585.659L3131.62,586.29C3132.03,587.385 3132.82,588.297 3133.85,588.858C3134.95,589.384 3136.16,589.658 3137.39,589.658L3137.45,589.658C3138.86,589.697 3140.24,589.23 3141.33,588.343C3142.42,587.504 3143.09,586.23 3143.16,584.857C3143.22,583.907 3142.91,582.969 3142.31,582.236ZM3302.26,572.404C3302.66,572.411 3302.99,572.742 3303,573.146L3303,574.171C3302.99,574.576 3302.66,574.907 3302.26,574.915L3297.57,574.915C3297.17,574.922 3296.84,575.253 3296.83,575.657L3296.83,578.858C3296.84,579.263 3297.17,579.593 3297.57,579.601L3300.83,579.601C3301.23,579.608 3301.57,579.939 3301.57,580.344L3301.57,581.486C3301.57,581.891 3301.23,582.223 3300.83,582.23L3297.57,582.23C3297.17,582.237 3296.84,582.568 3296.83,582.972L3296.83,586.23C3296.84,586.635 3297.17,586.966 3297.57,586.973L3302.26,586.973C3302.66,586.98 3302.99,587.311 3303,587.716L3303,588.859C3302.99,589.264 3302.66,589.595 3302.26,589.602L3294.94,589.602C3294.54,589.595 3294.21,589.264 3294.2,588.859L3294.2,573.146C3294.21,572.741 3294.54,572.41 3294.94,572.404L3302.26,572.404ZM3153.16,572.404C3153.57,572.41 3153.9,572.741 3153.91,573.146L3153.91,574.171C3153.9,574.576 3153.57,574.907 3153.16,574.915L3148.48,574.915C3148.07,574.921 3147.74,575.252 3147.73,575.657L3147.73,578.858C3147.74,579.263 3148.07,579.594 3148.48,579.601L3151.73,579.601C3152.14,579.608 3152.47,579.939 3152.48,580.344L3152.48,581.486C3152.47,581.891 3152.14,582.223 3151.73,582.23L3148.48,582.23C3148.07,582.236 3147.74,582.567 3147.73,582.972L3147.73,586.23C3147.74,586.635 3148.07,586.966 3148.48,586.973L3153.16,586.973C3153.57,586.98 3153.9,587.311 3153.91,587.716L3153.91,588.859C3153.9,589.264 3153.57,589.595 3153.16,589.602L3145.91,589.602C3145.5,589.595 3145.17,589.264 3145.16,588.859L3145.16,573.146C3145.17,572.741 3145.5,572.41 3145.91,572.404L3153.16,572.404ZM3251.51,580.064C3251.88,580.311 3252.11,580.711 3252.14,581.15L3252.14,588.751C3252.14,589.156 3251.81,589.487 3251.4,589.494L3250.26,589.494C3249.85,589.487 3249.52,589.156 3249.51,588.751L3249.51,582.919C3249.48,582.464 3249.25,582.046 3248.88,581.776L3246.77,580.519C3246.38,580.291 3245.9,580.291 3245.51,580.519L3243.17,581.833C3242.79,582.07 3242.56,582.476 3242.54,582.919L3242.54,588.748C3242.53,589.153 3242.2,589.484 3241.8,589.491L3240.65,589.491C3240.25,589.484 3239.92,589.153 3239.91,588.748L3239.91,581.318C3239.93,580.875 3240.16,580.469 3240.54,580.233L3245.45,577.316C3245.84,577.088 3246.33,577.088 3246.71,577.316L3251.51,580.064ZM3168.76,572.289C3169.17,572.296 3169.5,572.628 3169.51,573.033L3169.51,586.119C3169.51,586.524 3169.85,586.856 3170.25,586.863L3174.93,586.863C3175.34,586.87 3175.67,587.201 3175.68,587.606L3175.68,588.749C3175.67,589.154 3175.34,589.485 3174.93,589.492L3167.62,589.492C3167.22,589.485 3166.89,589.154 3166.88,588.749L3166.88,573.033C3166.89,572.628 3167.22,572.296 3167.62,572.289L3168.76,572.289ZM3157.91,572.289C3158.31,572.296 3158.64,572.628 3158.65,573.033L3158.65,586.119C3158.66,586.524 3158.99,586.856 3159.39,586.863L3164.08,586.863C3164.48,586.87 3164.81,587.201 3164.82,587.606L3164.82,588.749C3164.81,589.153 3164.48,589.485 3164.08,589.492L3156.76,589.492C3156.36,589.485 3156.03,589.154 3156.02,588.749L3156.02,573.033C3156.03,572.628 3156.36,572.296 3156.76,572.289L3157.91,572.289ZM3180.37,588.748C3180.36,589.153 3180.03,589.484 3179.62,589.491L3178.48,589.491C3178.07,589.484 3177.74,589.153 3177.73,588.748L3177.73,573.033C3177.74,572.628 3178.07,572.296 3178.48,572.289L3179.62,572.289C3180.02,572.296 3180.36,572.628 3180.36,573.033L3180.37,588.748ZM3290.6,572.289C3291.01,572.296 3291.34,572.628 3291.34,573.033L3291.34,588.748C3291.34,589.153 3291.01,589.484 3290.6,589.491L3289.46,589.491C3289.05,589.484 3288.72,589.153 3288.72,588.748L3288.72,579.318C3288.72,578.919 3288.6,578.861 3288.43,579.262L3284.26,588.805C3284.05,589.189 3283.67,589.447 3283.23,589.49L3281.75,589.49C3281.3,589.47 3280.91,589.205 3280.72,588.805L3276.61,579.318C3276.43,578.919 3276.32,578.975 3276.32,579.375L3276.32,588.748C3276.31,589.153 3275.98,589.484 3275.58,589.491L3274.43,589.491C3274.03,589.484 3273.7,589.153 3273.69,588.748L3273.69,573.033C3273.7,572.628 3274.03,572.296 3274.43,572.289L3275.69,572.289C3276.13,572.31 3276.53,572.575 3276.72,572.975L3282.2,585.661C3282.37,586.061 3282.6,586.061 3282.77,585.661L3288.32,572.975C3288.5,572.575 3288.9,572.31 3289.34,572.289L3290.6,572.289ZM3194.99,572.289C3195.4,572.296 3195.73,572.628 3195.74,573.033L3195.74,588.748C3195.73,589.153 3195.4,589.484 3194.99,589.491L3193.74,589.491C3193.28,589.459 3192.86,589.228 3192.59,588.861L3186.02,577.831C3185.79,577.489 3185.62,577.545 3185.62,577.946L3185.62,588.746C3185.62,589.151 3185.28,589.483 3184.88,589.49L3183.74,589.49C3183.33,589.483 3183,589.151 3182.99,588.746L3182.99,573.033C3183,572.628 3183.33,572.296 3183.74,572.289L3184.99,572.289C3185.45,572.322 3185.87,572.552 3186.14,572.92L3192.71,583.949C3192.94,584.292 3193.11,584.234 3193.11,583.835L3193.11,573.034C3193.11,572.629 3193.45,572.298 3193.85,572.291L3194.99,572.289ZM3096.52,587.287C3095.58,588.032 3094.4,588.417 3093.2,588.373L3092.92,588.373C3091.97,588.336 3091.05,588.061 3090.23,587.572C3089.36,587.1 3088.69,586.328 3088.35,585.401L3089.72,584.887C3090.12,584.758 3090.56,584.896 3090.81,585.23C3090.98,585.424 3091.2,585.579 3091.44,585.687C3091.92,585.914 3092.44,586.049 3092.98,586.087C3093.74,586.161 3094.5,585.934 3095.09,585.456C3095.51,585.136 3095.78,584.662 3095.84,584.142C3095.89,583.228 3094.92,582.485 3092.92,581.914C3089.83,581.057 3088.29,579.571 3088.41,577.456C3088.38,576.107 3089.11,574.852 3090.29,574.199C3091.27,573.621 3092.41,573.361 3093.55,573.456C3094.95,573.467 3096.29,574.044 3097.26,575.056L3096.18,576.081C3095.85,576.355 3095.38,576.379 3095.03,576.138C3094.56,575.829 3094,575.652 3093.43,575.623C3092.85,575.603 3092.27,575.68 3091.72,575.852C3091.03,576.103 3090.57,576.77 3090.58,577.507C3090.52,578.422 3091.49,579.165 3093.49,579.736C3094.95,580.061 3096.28,580.841 3097.26,581.965C3097.75,582.604 3098.02,583.389 3098.01,584.193C3098.04,585.404 3097.48,586.557 3096.52,587.287ZM3111.54,587.516C3111.54,587.921 3111.21,588.252 3110.8,588.259L3110.12,588.259C3109.71,588.252 3109.38,587.921 3109.37,587.516L3109.37,582.83C3109.34,582.375 3109.11,581.956 3108.74,581.687L3107.14,580.715C3106.75,580.486 3106.27,580.486 3105.88,580.715L3104.11,581.74C3103.74,581.976 3103.5,582.383 3103.48,582.826L3103.48,587.512C3103.47,587.917 3103.14,588.248 3102.74,588.255L3101.99,588.255C3101.59,588.248 3101.26,587.916 3101.25,587.512L3101.25,581.401C3101.27,580.958 3101.51,580.552 3101.88,580.316L3105.83,577.973C3106.21,577.744 3106.7,577.744 3107.08,577.973L3110.91,580.201C3111.28,580.448 3111.51,580.848 3111.54,581.287L3111.54,587.515L3111.54,587.516ZM3258.43,576.518C3257.32,577.652 3256.7,579.175 3256.7,580.76C3256.7,584.09 3259.44,586.831 3262.77,586.831C3266.1,586.831 3268.84,584.09 3268.84,580.76C3268.84,577.43 3266.1,574.69 3262.77,574.69C3261.14,574.698 3259.57,575.356 3258.43,576.518L3258.43,576.518ZM3101.37,574.486C3101.38,574.082 3101.71,573.75 3102.12,573.743L3102.8,573.743C3103.21,573.75 3103.54,574.081 3103.55,574.486L3103.55,576.941C3103.53,577.384 3103.29,577.791 3102.91,578.027L3102,578.598C3101.66,578.827 3101.37,578.655 3101.37,578.255L3101.37,574.486L3101.37,574.486ZM3111.66,578.087C3111.66,578.103 3111.66,578.119 3111.66,578.135C3111.66,578.358 3111.48,578.542 3111.25,578.542C3111.15,578.542 3111.05,578.502 3110.97,578.43L3110.06,577.858C3109.69,577.612 3109.46,577.212 3109.43,576.773L3109.43,574.372C3109.43,573.967 3109.76,573.636 3110.17,573.63L3110.91,573.63C3111.32,573.636 3111.65,573.967 3111.66,574.372L3111.66,578.087L3111.66,578.087ZM3242.48,573.033C3242.47,572.628 3242.14,572.296 3241.74,572.289L3240.65,572.289C3240.25,572.297 3239.91,572.628 3239.91,573.033L3239.91,577.719C3239.91,578.118 3240.19,578.29 3240.54,578.062L3241.85,577.261C3242.22,577.015 3242.45,576.615 3242.48,576.176L3242.48,573.033L3242.48,573.033ZM3250.31,572.289C3249.91,572.296 3249.58,572.628 3249.57,573.033L3249.57,576.116C3249.59,576.559 3249.82,576.965 3250.2,577.202L3251.51,578.002C3251.86,578.23 3252.14,578.059 3252.14,577.659L3252.14,573.033C3252.14,572.628 3251.81,572.296 3251.4,572.289L3250.31,572.289Z" style="fill:var(--logo-ink);fill-rule:nonzero;"></path> </g> </g> </g> </g> </g> </symbol></svg>
+<div class="sitebar">
+  <a class="brand-link" href="index.html" aria-label="Accueil de la documentation"><svg viewBox="0 0 225 46" role="img" aria-label="SellingAtHome"><use href="#sah-logo"></use></svg></a>
+  <nav class="topnav" id="topnav" aria-label="Univers"><div class="mm-item c-accent">
+    <a class="mm-link" href="demarrer.html">Démarrer</a>
+    <button class="mm-toggle" type="button" aria-expanded="false" aria-controls="mm-demarrer" aria-label="Pages de l'univers Démarrer"></button>
+    <div class="mm-panel" id="mm-demarrer">
+      <div class="mm-head"><a href="demarrer.html">Démarrer <span class="script">avec SellingAtHome</span></a><p>Les notions clés du métier, la découverte de l'espace marque et l'ordre conseillé pour paramétrer votre marque.</p></div>
+      <ul class="mm-list"><li><a href="comprendre-sellingathome.html"><b>Comprendre SellingAtHome en 10 minutes</b><span>Marque, conseillère, hôtesse, cliente, réunion, réseau : les notions qui structurent toute la plateforme.</span></a></li><li><a href="espace-marque.html"><b>Découvrir l'espace marque</b><span>Connexion, menus, tableau de bord et ses indicateurs, actualités et profil.</span></a></li><li><a href="mise-en-route.html"><b>Check-list de mise en route</b><span>L'ordre conseillé pour paramétrer une marque, étape par étape.</span></a></li><li><a href="modules-options.html"><b>Modules et options</b><span>Ce qui s'active sur demande, et pourquoi un menu peut ne pas apparaître.</span></a></li><li><a href="glossaire.html"><b>Glossaire</b><span>Toutes les définitions, de « animatrice » à « zone de taxe ».</span></a></li></ul>
+    </div>
+  </div><div class="mm-item c-pink">
+    <a class="mm-link" href="reseau.html">Réseau</a>
+    <button class="mm-toggle" type="button" aria-expanded="false" aria-controls="mm-reseau" aria-label="Pages de l'univers Réseau"></button>
+    <div class="mm-panel" id="mm-reseau">
+      <div class="mm-head"><a href="reseau.html">Réseau et <span class="script">rémunération</span></a><p>Gérer vos conseillères, leur organigramme et leurs statuts, puis calculer et verser leurs commissions.</p></div>
+      <ul class="mm-list"><li><a href="conseilleres.html"><b>Gérer les conseillères</b><span>La liste, la fiche et ses onglets, verrouiller un accès, se connecter en tant que conseillère.</span></a></li><li><a href="organigramme.html"><b>L'organigramme</b><span>Recruteur, animatrice, changements de rattachement et leurs effets sur les commissions.</span></a></li><li><a href="statuts.html"><b>Statuts et automatisation</b><span>Grille des statuts, statut estimé et statut officiel, règles de passage automatique.</span></a></li><li><a href="roles-conseilleres.html"><b>Rôles des conseillères</b><span>Des profils de droits pour adapter ce que chaque conseillère peut faire.</span></a></li><li><a href="suivi-equipe.html"><b>Suivi d'équipe</b><span>Comparer l'activité de vos équipes d'une période à l'autre.</span></a></li><li><a href="plan-remuneration.html"><b>Le plan de rémunération</b><span>Règles, valeurs, lignées et conditions : construire un plan de bout en bout.</span></a></li><li><a href="cloture-commissions.html"><b>Clôture et versement des commissions</b><span>Clôture mensuelle, bulletins, fichier SEPA, exports et emails de clôture.</span></a></li><li><a href="cotisations-sociales.html"><b>Cotisations sociales et précompte</b><span>Calcul, régularisation et consultation des cotisations des conseillères.</span></a></li><li><a href="stock-conseilleres.html"><b>Stocks chez les conseillères</b> <span class="mm-opt">Module optionnel</span><span>Suivre le stock détenu par chaque conseillère.</span></a></li></ul>
+    </div>
+  </div><div class="mm-item c-yellow">
+    <a class="mm-link" href="recrutement.html">Recrutement</a>
+    <button class="mm-toggle" type="button" aria-expanded="false" aria-controls="mm-recrutement" aria-label="Pages de l'univers Recrutement"></button>
+    <div class="mm-panel" id="mm-recrutement">
+      <div class="mm-head"><a href="recrutement.html">Le <span class="script">recrutement</span></a><p>Du formulaire de candidature à la signature électronique du contrat, puis au kit de démarrage.</p></div>
+      <ul class="mm-list"><li><a href="recrutement-principe.html"><b>Le recrutement dématérialisé</b><span>Le parcours complet du candidat, du formulaire à la création de son compte.</span></a></li><li><a href="recrutement-parametrage.html"><b>Paramétrer le recrutement</b><span>Les 5 onglets de configuration : formulaire, contenus, demandes, kit de démarrage.</span></a></li><li><a href="candidatures.html"><b>Traiter une candidature</b><span>Documents, refus, signature, création du compte conseillère.</span></a></li><li><a href="kit-demarrage.html"><b>Le kit de démarrage</b><span>Le tunnel d'achat du kit, ses frais de livraison et ses relances.</span></a></li><li><a href="carte-conseilleres.html"><b>Carte des conseillères et formulaire de contact</b><span>Le widget à intégrer sur votre site et le traitement des demandes reçues.</span></a></li></ul>
+    </div>
+  </div><div class="mm-item c-accent">
+    <a class="mm-link" href="reunions.html">Réunions</a>
+    <button class="mm-toggle" type="button" aria-expanded="false" aria-controls="mm-reunions" aria-label="Pages de l'univers Réunions"></button>
+    <div class="mm-panel" id="mm-reunions">
+      <div class="mm-head"><a href="reunions.html">Les <span class="script">réunions</span></a><p>Le cœur de la vente à domicile : le cycle de vie d'une réunion, ses réglages, son mini-site et la visio.</p></div>
+      <ul class="mm-list"><li><a href="reunion-cycle-de-vie.html"><b>Le cycle de vie d'une réunion</b><span>Création, invitations, commandes, clôture et gains de l’hôtesse.</span></a></li><li><a href="mini-site-reunion.html"><b>Le mini-site de réunion</b><span>Modes d'activation, onboarding de l'hôtesse, gestion des invités.</span></a></li><li><a href="reunion-virtuelle.html"><b>Réunion virtuelle et live</b><span>Visio, mode broadcast et mise en avant des offres pendant le live.</span></a></li><li><a href="activites.html"><b>Activités et agenda</b><span>Les types d'activités proposés aux conseillères dans leur agenda.</span></a></li></ul>
+    </div>
+  </div><div class="mm-item c-pink">
+    <a class="mm-link" href="ventes.html">Ventes</a>
+    <button class="mm-toggle" type="button" aria-expanded="false" aria-controls="mm-ventes" aria-label="Pages de l'univers Ventes"></button>
+    <div class="mm-panel" id="mm-ventes">
+      <div class="mm-head"><a href="ventes.html">Commandes et <span class="script">boutiques</span></a><p>Comprendre, créer et suivre les commandes, gérer les regroupements et les retours, animer les boutiques en ligne.</p></div>
+      <ul class="mm-list"><li><a href="commandes-comprendre.html"><b>Comprendre les commandes</b><span>Types de commande, statut de gestion et statut logistique, cycle de vie.</span></a></li><li><a href="commandes-gerer.html"><b>Créer, modifier et finaliser une commande</b><span>Création par la marque, paiement, changement de conseillère, liaison à une réunion.</span></a></li><li><a href="commandes-annulation-documents.html"><b>Annulations, avoirs et documents</b><span>Annuler tout ou partie, rembourser, éditer factures et bons de commande.</span></a></li><li><a href="commandes-regroupement.html"><b>Les commandes de regroupement</b><span>Regrouper les commandes d’une conseillère : paiement, livraison, clôture.</span></a></li><li><a href="commandes-parametres.html"><b>Paramètres des commandes</b><span>Cadeaux automatiques, produits suggérés, questions, plafonds, blocs de contenu.</span></a></li><li><a href="retours-produits.html"><b>Les retours produits</b><span>Motifs de retour et traitement des demandes des conseillères.</span></a></li><li><a href="boutiques-panorama.html"><b>Les boutiques en ligne</b><span>Mini-site de réunion, mini-boutique, boutique de marque : lequel pour quoi ?</span></a></li><li><a href="mini-boutiques.html"><b>Les mini-boutiques des conseillères</b><span>Activation, personnalisation, produits disponibles, réglages de la conseillère.</span></a></li><li><a href="boutique-marque.html"><b>La boutique de marque</b> <span class="mm-opt">Module optionnel</span><span>Votre boutique en ligne et l’attribution des ventes aux conseillères.</span></a></li><li><a href="collections.html"><b>Collections et réservations</b> <span class="mm-opt">Module optionnel</span><span>Proposer des produits sur réservation, par périodes.</span></a></li></ul>
+    </div>
+  </div><div class="mm-item c-yellow">
+    <a class="mm-link" href="catalogue.html" aria-current="page">Catalogue</a>
+    <button class="mm-toggle" type="button" aria-expanded="false" aria-controls="mm-catalogue" aria-label="Pages de l'univers Catalogue"></button>
+    <div class="mm-panel" id="mm-catalogue">
+      <div class="mm-head"><a href="catalogue.html">Catalogue et <span class="script">logistique</span></a><p>Créer et tarifer vos produits, gérer les stocks, la livraison, la préparation et l’approvisionnement.</p></div>
+      <ul class="mm-list"><li><a href="produits.html"><b>Créer et éditer un produit</b><span>Produit simple, lot, kit variable, produit virtuel, et tous les onglets de la fiche.</span></a></li><li><a href="attributs-declinaisons.html"><b>Catégories, attributs et déclinaisons</b><span>Organiser le catalogue et décliner un produit en tailles, couleurs…</span></a></li><li><a href="prix-taxes.html"><b>Prix, prix par rôle et taxes</b><span>Tarifs, prix réservés à certains rôles, taxes et zones de pays.</span></a></li><li><a href="livraison.html" aria-current="page"><b>Livraison : modes et frais</b><span>Modes de livraison, frais, gratuité et conditions, avec exemples chiffrés.</span></a></li><li><a href="stocks.html"><b>Les stocks</b><span>Méthodes de suivi, rupture, stock faible, historique et import.</span></a></li><li><a href="preparation-livraison.html"><b>Bons de préparation et de livraison</b><span>Préparer les commandes par réunion, conseillère ou produit, éditer les BL.</span></a></li><li><a href="approvisionnement.html"><b>L'approvisionnement</b> <span class="mm-opt">Module optionnel</span><span>Fournisseurs, commandes fournisseurs et réception du stock.</span></a></li><li><a href="expeditions-transporteurs.html"><b>Expéditions et transporteurs</b> <span class="mm-opt">Module optionnel</span><span>Suivi des envois, étiquettes GLS, DPD, Colissimo, Mondial Relay.</span></a></li></ul>
+    </div>
+  </div><div class="mm-item c-pink">
+    <a class="mm-link" href="animation.html">Animation</a>
+    <button class="mm-toggle" type="button" aria-expanded="false" aria-controls="mm-animation" aria-label="Pages de l'univers Animation"></button>
+    <div class="mm-panel" id="mm-animation">
+      <div class="mm-head"><a href="animation.html">Animation et <span class="script">fidélisation</span></a><p>Motiver vos conseillères, récompenser vos hôtesses et fidéliser vos clientes.</p></div>
+      <ul class="mm-list"><li><a href="challenges-guide.html"><b>Les challenges</b><span>Fixer des objectifs aux conseillères et récompenser automatiquement celles qui les atteignent.</span></a></li><li><a href="fidelite-guide.html"><b>La fidélité</b><span>Récompenser hôtesses, clientes et conseillères selon les réunions et les ventes.</span></a></li><li><a href="bons-achat-guide.html"><b>Les bons d'achat</b><span>Offrir un montant nominatif, déduit d’une prochaine commande.</span></a></li><li><a href="reductions-guide.html"><b>Les réductions</b><span>Baisser le prix d’une commande, automatiquement ou par code promo.</span></a></li><li><a href="conditions-achat-guide.html"><b>Les conditions d'achat</b><span>Limiter qui peut acheter un produit, et en quelle quantité.</span></a></li><li><a href="parrainage-client.html"><b>Le parrainage client</b><span>Récompenser les clientes qui recommandent la marque.</span></a></li><li><a href="clients.html"><b>Les clientes</b><span>La fiche cliente, ses rôles, ses points et bons, l’anonymisation RGPD.</span></a></li><li><a href="segments.html"><b>Les segments de clientes</b><span>Regrouper des clientes selon leur profil et leurs achats.</span></a></li></ul>
+    </div>
+  </div><div class="mm-item c-accent">
+    <a class="mm-link" href="pilotage.html">Pilotage</a>
+    <button class="mm-toggle" type="button" aria-expanded="false" aria-controls="mm-pilotage" aria-label="Pages de l'univers Pilotage"></button>
+    <div class="mm-panel" id="mm-pilotage">
+      <div class="mm-head"><a href="pilotage.html">Communication et <span class="script">pilotage</span></a><p>Former et informer vos conseillères, piloter l’activité avec les rapports, paramétrer la marque.</p></div>
+      <ul class="mm-list"><li><a href="base-documentaire.html"><b>Documents, FAQ et formations</b><span>Mettre à disposition des conseillères documents, réponses et parcours de formation.</span></a></li><li><a href="notifications.html"><b>Les notifications</b><span>Envoyer des notifications aux conseillères, une à une ou en masse.</span></a></li><li><a href="emails.html"><b>Les emails</b><span>Modèles d’emails, suivi des envois et délivrabilité.</span></a></li><li><a href="assistant-ia.html"><b>L'assistant IA</b><span>Activation, quotas, crédits, documents indexés, conversations et retours.</span></a></li><li><a href="rapports-exports.html"><b>Rapports et exports</b><span>Meilleures ventes, stock faible, réponses aux questions, exports de données.</span></a></li><li><a href="configuration-generale.html"><b>La configuration de la marque</b><span>Tous les réglages généraux de la marque, un par un.</span></a></li><li><a href="champs-fichiers.html"><b>Champs personnalisés et fichiers</b><span>Ajouter vos propres champs et gérer les médias de la marque.</span></a></li><li><a href="comptabilite.html"><b>La comptabilité</b> <span class="mm-opt">Module optionnel</span><span>Comptes comptables et exports vers votre logiciel.</span></a></li><li><a href="integrations.html"><b>Les intégrations</b> <span class="mm-opt">Module optionnel</span><span>Boutiques externes, logisticiens, outils marketing : ce qui existe et comment l’activer.</span></a></li></ul>
+    </div>
+  </div><div class="mm-item mm-plain"><a class="mm-link" href="cas-usage.html">Cas d'usage</a></div><div class="mm-item mm-plain"><a class="mm-link" href="depannage.html">Dépannage</a></div></nav>
+  <div class="sitebar-right">
+    <div class="search-box"><input type="search" data-search placeholder="Rechercher…" aria-label="Rechercher dans la documentation" autocomplete="off"><div class="search-results" role="listbox"></div></div>
+    <button class="theme-btn" id="themeBtn" type="button" aria-label="Passer au thème sombre" title="Passer au thème sombre"></button>
+    <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="topnav" aria-label="Ouvrir le menu" title="Menu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="hero-in">
+    <div>
+      <span class="eyebrow">Catalogue et logistique</span>
+      <h1>Livraison&nbsp;: <span class="script">modes et frais</span></h1>
+      <p class="lede">Quels modes de livraison proposer, combien les facturer, quand les offrir ou les retirer&nbsp;: tout se règle sur un seul écran. Cette page explique chaque réglage, l'ordre dans lequel SellingAtHome les applique, avec des exemples chiffrés inspirés des paramétrages réels.</p>
+    </div>
+    <div class="voucher-art" aria-hidden="true">
+      <div class="v-top"><span>Livraison chez la cliente</span><span>Franco</span></div>
+      <div class="v-amount">0<span> €</span></div>
+      <div class="v-name">dès 60 € d'achat</div>
+      <div class="v-sep"></div>
+      <div class="v-meta"><span>Tarif de base <b>6,90 €</b></span><span>Condition <b>≥ 60 €</b></span></div>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="toc" aria-label="Sommaire">
+    <details id="tocDetails" open>
+      <summary>Menu et sommaire</summary>
+      <div class="unav"><a class="unav-title" href="catalogue.html">Catalogue et logistique</a><ul><li><a href="produits.html">Créer et éditer un produit</a></li><li><a href="attributs-declinaisons.html">Catégories, attributs et déclinaisons</a></li><li><a href="prix-taxes.html">Prix, prix par rôle et taxes</a></li><li class="here"><span>Livraison : modes et frais</span></li><li><a href="stocks.html">Les stocks</a></li><li><a href="preparation-livraison.html">Bons de préparation et de livraison</a></li><li><a href="approvisionnement.html">L'approvisionnement</a></li><li><a href="expeditions-transporteurs.html">Expéditions et transporteurs</a></li></ul></div>
+      <div class="toc-title">Sommaire</div>
+      <ol>
+        <li data-sec="definition"><a href="#definition"><span class="toc-n">1</span>À quoi ça sert&nbsp;?</a></li>
+        <li data-sec="ou"><a href="#ou"><span class="toc-n">2</span>Où le trouver</a></li>
+        <li data-sec="general"><a href="#general"><span class="toc-n">3</span>La configuration générale</a>
+          <ol class="toc-sub"><li><a href="#s3-1"><span class="toc-n">3.1</span>Le montant de référence</a></li><li><a href="#s3-2"><span class="toc-n">3.2</span>La TVA des frais de port</a></li></ol>
+        </li>
+        <li data-sec="modes"><a href="#modes"><span class="toc-n">4</span>Les modes de livraison</a>
+          <ol class="toc-sub"><li><a href="#s4-1"><span class="toc-n">4.1</span>Les modes disponibles</a></li><li><a href="#s4-2"><span class="toc-n">4.2</span>Les réglages d'un mode</a></li></ol>
+        </li>
+        <li data-sec="conditions"><a href="#conditions"><span class="toc-n">5</span>Les conditions particulières</a>
+          <ol class="toc-sub"><li><a href="#s5-1"><span class="toc-n">5.1</span>Créer une condition</a></li><li><a href="#s5-2"><span class="toc-n">5.2</span>Les critères</a></li><li><a href="#s5-3"><span class="toc-n">5.3</span>Les résultats possibles</a></li></ol>
+        </li>
+        <li data-sec="calcul"><a href="#calcul"><span class="toc-n">6</span>Comment le tarif est calculé</a></li>
+        <li data-sec="exemples"><a href="#exemples"><span class="toc-n">7</span>Exemples chiffrés</a></li>
+        <li data-sec="chiffres"><a href="#chiffres"><span class="toc-n">8</span>Les livraisons en chiffres</a></li>
+        <li data-sec="conseillere"><a href="#conseillere"><span class="toc-n">9</span>Ce que voit la conseillère</a></li>
+        <li data-sec="attention"><a href="#attention"><span class="toc-n">10</span>Points d'attention</a></li>
+        <li data-sec="faq"><a href="#faq"><span class="toc-n">11</span>Questions fréquentes</a></li>
+      </ol>
+    </details>
+  </nav>
+
+  <main>
+
+<!-- 1 -->
+<section id="definition">
+  <div class="sec-head"><span class="sec-num">01</span><h2>À quoi ça sert&nbsp;?</h2></div>
+  <p class="lede">Quand une commande est saisie, la conseillère choisit <strong>où les produits seront livrés</strong>&nbsp;: chez elle, chez la cliente, chez l'hôtesse, en point relais… Chaque <strong>mode de livraison</strong> a un <strong>tarif</strong>, que SellingAtHome ajoute automatiquement à la commande.</p>
+  <p>L'écran des paramètres des livraisons vous permet de&nbsp;:</p>
+  <ul class="prose">
+    <li>choisir les <strong>modes proposés</strong> et leur nom affiché&nbsp;;</li>
+    <li>fixer un <strong>tarif de base</strong> par mode, ou rendre un mode <strong>gratuit</strong>&nbsp;;</li>
+    <li>ajouter des <strong>conditions particulières</strong>&nbsp;: livraison offerte au-delà d'un montant, tarif différent selon le pays, mode réservé à certains types de commande…&nbsp;;</li>
+    <li>décider sur quel <strong>montant</strong> ces conditions s'appuient et quelle <strong>TVA</strong> s'applique aux frais de port.</li>
+  </ul>
+  <div class="tip"><span class="ex-label">Vocabulaire</span><p>Dans l'espace marque, la conseillère s'appelle «&nbsp;Vendeur&nbsp;», la cliente «&nbsp;Client&nbsp;» et l'hôtesse «&nbsp;Hôte&nbsp;». Les modes s'affichent donc «&nbsp;Livraison chez le vendeur&nbsp;», «&nbsp;Livraison chez le client&nbsp;», «&nbsp;Livraison chez l'hôte&nbsp;».</p></div>
+</section>
+
+<!-- 2 -->
+<section id="ou">
+  <div class="sec-head"><span class="sec-num">02</span><h2>Où le trouver</h2></div>
+  <div class="path" aria-label="Chemin d'accès"><span>Paramètres</span><span>Configuration générale</span><span><b>Paramètres des livraisons</b></span></div>
+  <p>L'onglet <strong>Paramètres des livraisons</strong> se trouve dans la barre d'onglets de la configuration, à côté de «&nbsp;Paramètres des commandes&nbsp;» et «&nbsp;Paramètres des Réunions&nbsp;».</p>
+  <figure><img src="Captures/Logistique/parametres-livraisons.png" alt="Écran Paramètres des livraisons : bloc Configuration générale avec les choix Appliquer les frais de port sur (montant non remisé, remisé, remisé bons d'achat exclus) et Taux de TVA des frais de port ; puis une carte par mode de livraison (Livraison chez le vendeur, chez le client, chez l'hôte…) avec interrupteur d'activation, case Livraison offerte, Tarif de base, liste Indisponible pour, tableau des Conditions particulières et bouton Enregistrer" loading="lazy"><figcaption>L'écran des paramètres des livraisons&nbsp;: la configuration générale, puis une carte par mode.</figcaption></figure>
+</section>
+
+<!-- 3 -->
+<section id="general">
+  <div class="sec-head"><span class="sec-num">03</span><h2>La configuration générale</h2></div>
+  <p class="lede">Deux réglages valables pour tous les modes, enregistrés avec le bouton <strong>Enregistrer</strong> du bloc «&nbsp;Configuration générale&nbsp;».</p>
+
+  <h3 id="s3-1"><span class="sub-num">3.1</span> Le montant de référence («&nbsp;Appliquer les frais de port sur&nbsp;»)</h3>
+  <p>Ce réglage dit <strong>quel montant de commande</strong> est comparé aux seuils de vos conditions («&nbsp;Montant de la commande ≥ 60&nbsp;€&nbsp;») et sert de base aux frais calculés en pourcentage.</p>
+  <div class="table-wrap"><table class="opts">
+    <thead><tr><th>Choix</th><th>Montant retenu</th></tr></thead>
+    <tbody>
+      <tr><td><b>le montant non remisé</b></td><td>Le prix des produits multiplié par les quantités, <strong>avant</strong> toute réduction. C'est le réglage par défaut.</td></tr>
+      <tr><td><b>le montant remisé</b></td><td>Le même montant, <strong>après</strong> les réductions et les avantages déduits de la commande (bons d'achat, points de fidélité…).</td></tr>
+      <tr><td><b>le montant remisé (bons d'achat exclus)</b></td><td>Le montant remisé, mais <strong>sans retirer les bons d'achat</strong>&nbsp;: une cliente qui paie avec un bon d'achat ne perd pas sa livraison offerte.</td></tr>
+    </tbody>
+  </table></div>
+  <p>Dans tous les cas, les produits annulés ne comptent plus, et sont exclus du montant&nbsp;:</p>
+  <ul class="prose">
+    <li>les produits cochés «&nbsp;Non inclus dans le calcul des frais de livraison&nbsp;» dans leur fiche&nbsp;;</li>
+    <li>les produits remisés par une réduction cochée «&nbsp;Ne pas prendre en compte les produits remisés dans le calcul des frais d'expédition&nbsp;» (voir <a href="reductions-guide.html">le guide des réductions</a>).</li>
+  </ul>
+  <div class="example"><span class="ex-label">Exemple</span><p>Camille commande 70&nbsp;€ de produits. Elle bénéficie d'une réduction de 10&nbsp;€ et paie 15&nbsp;€ avec un bon d'achat. Votre livraison est offerte dès 60&nbsp;€.</p>
+    <div class="table-wrap"><table class="calc">
+      <thead><tr><th>Réglage</th><th>Montant comparé à 60&nbsp;€</th><th>Livraison</th></tr></thead>
+      <tbody>
+        <tr><td>le montant non remisé</td><td>70&nbsp;€</td><td><span class="chip g">offerte</span></td></tr>
+        <tr><td>le montant remisé</td><td>70 − 10 − 15 = 45&nbsp;€</td><td><span class="chip p">payante</span></td></tr>
+        <tr><td>le montant remisé (bons d'achat exclus)</td><td>70 − 10 = 60&nbsp;€</td><td><span class="chip g">offerte</span></td></tr>
+      </tbody>
+    </table></div>
+  </div>
+
+  <h3 id="s3-2"><span class="sub-num">3.2</span> La TVA des frais de port</h3>
+  <p>Le tarif saisi est un montant <strong>TTC</strong> (sauf si votre marque affiche ses prix hors taxes&nbsp;: il est alors HT). SellingAtHome en déduit la part HT selon le taux choisi&nbsp;:</p>
+  <div class="table-wrap"><table class="opts">
+    <thead><tr><th>Choix</th><th>Taux appliqué</th></tr></thead>
+    <tbody>
+      <tr><td><b>Par rapport au taux le plus bas d'une commande</b></td><td>Le plus petit taux de TVA parmi les produits de la commande (réglage par défaut).</td></tr>
+      <tr><td><b>Par rapport au taux le plus haut d'une commande</b></td><td>Le plus grand taux de TVA parmi les produits de la commande.</td></tr>
+      <tr><td><b>Taux personnalisé</b></td><td>Le taux saisi dans le champ «&nbsp;%&nbsp;», quel que soit le contenu de la commande. Il ne peut pas être de 0&nbsp;%&nbsp;: l'écran affiche «&nbsp;Le taux de TVA pour les frais de port ne peut pas être 0&nbsp;%&nbsp;».</td></tr>
+    </tbody>
+  </table></div>
+  <div class="example"><span class="ex-label">Exemple</span><p>La commande d'Inès contient un livre (TVA 5,5&nbsp;%) et une bougie (TVA 20&nbsp;%). Les frais de port sont de 6,00&nbsp;€ TTC.</p>
+    <ul class="prose">
+      <li>taux le plus bas&nbsp;: 6,00 / 1,055 = <strong>5,69&nbsp;€ HT</strong>&nbsp;;</li>
+      <li>taux le plus haut&nbsp;: 6,00 / 1,20 = <strong>5,00&nbsp;€ HT</strong>&nbsp;;</li>
+      <li>taux personnalisé de 20&nbsp;%&nbsp;: <strong>5,00&nbsp;€ HT</strong>, même pour une commande ne contenant que des livres.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 4 -->
+<section id="modes">
+  <div class="sec-head"><span class="sec-num">04</span><h2>Les modes de livraison</h2></div>
+
+  <h3 id="s4-1"><span class="sub-num">4.1</span> Les modes disponibles</h3>
+  <p>L'écran affiche une carte par mode prévu pour votre marque. Les modes «&nbsp;transporteur&nbsp;» (points relais, livraison prédite) n'apparaissent que si l'intégration correspondante a été mise en place par SellingAtHome.</p>
+  <div class="table-wrap"><table class="opts">
+    <thead><tr><th>Mode (libellé par défaut)</th><th>Ce que ça veut dire</th></tr></thead>
+    <tbody>
+      <tr><td><b>Livraison chez le vendeur</b></td><td>Le colis part chez la conseillère, qui remet ensuite les produits. Le mode le plus utilisé en vente à domicile.</td></tr>
+      <tr><td><b>Livraison chez le client</b></td><td>Le colis part à l'adresse de la cliente.</td></tr>
+      <tr><td><b>Livraison chez l'hôte</b></td><td>Le colis part chez l'hôtesse de la réunion. Il n'est jamais proposé pour une vente directe (pas de réunion, donc pas d'hôtesse).</td></tr>
+      <tr><td><b>Adresse personnalisée</b></td><td>Une autre adresse, saisie pour la commande.</td></tr>
+      <tr><td><b>Enlèvement des produits sur place</b></td><td>La cliente repart avec ses produits&nbsp;: rien n'est expédié. La commande est considérée comme livrée (voir <a href="commandes-comprendre.html#s4-1">Comprendre les commandes</a>).</td></tr>
+      <tr><td><b>Mondial Relay, Point Relais DPD, Livraison en point relais GLS, point relais Colissimo, DPD Predict</b></td><td>Livraison par transporteur, en point relais ou à domicile, si l'intégration est active (voir <a href="catalogue.html">Catalogue et logistique</a>).</td></tr>
+    </tbody>
+  </table></div>
+  <div class="tip"><span class="ex-label">Bon à savoir</span><p>Pour une <strong>commande de regroupement</strong>, «&nbsp;Livraison chez le client&nbsp;» et «&nbsp;Livraison chez l'hôte&nbsp;» ne sont jamais proposés&nbsp;: le regroupement est livré à la conseillère ou à une adresse unique.</p></div>
+
+  <h3 id="s4-2"><span class="sub-num">4.2</span> Les réglages d'un mode</h3>
+  <div class="table-wrap"><table class="opts">
+    <thead><tr><th>Réglage</th><th>Effet</th></tr></thead>
+    <tbody>
+      <tr><td><b>Interrupteur</b> (en haut à droite de la carte)</td><td>Active ou désactive le mode. Un mode désactivé n'est plus proposé et ses réglages sont grisés. Le changement est enregistré immédiatement.</td></tr>
+      <tr><td><b>Icône de traduction</b></td><td>Ouvre la fenêtre «&nbsp;Traduction&nbsp;» pour renommer le mode dans chaque langue de votre marque (par exemple «&nbsp;Livraison à votre conseillère&nbsp;»).</td></tr>
+      <tr><td><b>Livraison offerte&nbsp;?</b></td><td>Rend le mode <strong>toujours gratuit</strong>. Le tarif de base et les conditions particulières sont alors masqués et ignorés. La case s'enregistre dès qu'on la clique.</td></tr>
+      <tr><td><b>Tarif de base</b></td><td>Le prix du mode quand aucune condition ne s'applique. 0 = gratuit sauf condition contraire.</td></tr>
+      <tr><td><b>Indisponible pour&nbsp;:</b></td><td>Les types de commande pour lesquels le mode n'est pas proposé&nbsp;: Vente directe, Vente en réunion, Kit de démarrage, mini-boutique, commande de regroupement… (seuls les types activés pour votre marque apparaissent).</td></tr>
+      <tr><td><b>Conditions particulières</b></td><td>Les exceptions au tarif de base (voir la section suivante).</td></tr>
+      <tr><td><b>Enregistrer</b> (bas de la carte)</td><td>Enregistre le tarif de base et la liste «&nbsp;Indisponible pour&nbsp;». Les conditions, elles, s'enregistrent dans leur propre fenêtre.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="example"><span class="ex-label">Exemple</span><p>Votre marque réserve la livraison chez l'hôtesse aux ventes en réunion et ne veut pas de retrait sur place pour les kits de démarrage&nbsp;: dans la carte «&nbsp;Enlèvement des produits sur place&nbsp;», sélectionnez «&nbsp;Kit de démarrage&nbsp;» dans «&nbsp;Indisponible pour&nbsp;» puis cliquez sur Enregistrer. La carte «&nbsp;Livraison chez l'hôte&nbsp;» n'a rien à faire&nbsp;: elle n'est déjà jamais proposée en vente directe.</p></div>
+</section>
+
+<!-- 5 -->
+<section id="conditions">
+  <div class="sec-head"><span class="sec-num">05</span><h2>Les conditions particulières</h2></div>
+  <p class="lede">Une condition, c'est une règle «&nbsp;<strong>si</strong> la commande remplit ces critères, <strong>alors</strong> ce mode coûte tant (ou est offert, ou n'est pas proposé)&nbsp;».</p>
+
+  <h3 id="s5-1"><span class="sub-num">5.1</span> Créer une condition</h3>
+  <div class="figrow">
+    <figure><img src="Captures/Logistique/condition-livraison.png" alt="Fenêtre Ajouter une condition : bloc Conditions avec le connecteur ET et une ligne Montant de la commande, supérieur ou égal, 70 ; champs Nouveau tarif, Ajouter nouveau tarif au tarif de base, Montant en pourcentage ?, Livraison offerte ? (cochée), Rendre indisponible ; bouton Enregistrer" loading="lazy"><figcaption>Une condition&nbsp;: livraison offerte dès 70&nbsp;€.</figcaption></figure>
+    <div class="prose" style="display:flex;flex-direction:column;gap:12px">
+      <ol class="prose">
+        <li>Dans la carte du mode, cliquez sur <strong>Ajouter une condition</strong>.</li>
+        <li>Dans «&nbsp;Conditions&nbsp;», choisissez un critère, un opérateur et une valeur. Le bouton d'ajout (étiquette «&nbsp;+&nbsp;») ajoute un critère&nbsp;: <strong>tous les critères doivent être remplis</strong> (connecteur «&nbsp;ET&nbsp;», il n'existe pas de «&nbsp;OU&nbsp;»).</li>
+        <li>Choisissez le résultat&nbsp;: un nouveau tarif, la livraison offerte ou l'indisponibilité.</li>
+        <li>Cliquez sur <strong>Enregistrer</strong>. La condition apparaît dans le tableau «&nbsp;Condition / Tarif&nbsp;» de la carte, avec un crayon pour la modifier et une croix pour la supprimer.</li>
+      </ol>
+      <div class="tip"><span class="ex-label">Bon à savoir</span><p>Pour exprimer un «&nbsp;OU&nbsp;», créez deux conditions. Pour une tranche («&nbsp;entre 100 et 150&nbsp;€&nbsp;»), utilisez l'opérateur «&nbsp;entre&nbsp;» ou deux critères de montant dans la même condition.</p></div>
+    </div>
+  </div>
+
+  <h3 id="s5-2"><span class="sub-num">5.2</span> Les critères</h3>
+  <p>Les critères les plus utilisés par les marques sont, dans l'ordre, le montant de la commande, le type de commande, le pays de livraison et le rôle de la cliente.</p>
+  <div class="table-wrap"><table class="opts">
+    <thead><tr><th>Critère (libellé à l'écran)</th><th>Ce qui est testé</th></tr></thead>
+    <tbody>
+      <tr><td><b>Montant de la commande</b></td><td>Le montant de référence choisi en <a href="#s3-1">3.1</a>. Opérateurs&nbsp;: égal, différent, inférieur, supérieur (ou égal), entre.</td></tr>
+      <tr><td><b>Montant de la commande HT</b></td><td>La même chose, hors taxes.</td></tr>
+      <tr><td><b>Montant TTC commissionnable</b></td><td>Le montant de la commande qui compte pour la commission de la conseillère.</td></tr>
+      <tr><td><b>Nombre de produits dans la commande</b></td><td>Le nombre d'articles.</td></tr>
+      <tr><td><b>Poids de la commande</b></td><td>Le poids total des produits (poids de la fiche produit × quantité).</td></tr>
+      <tr><td><b>Commande</b> (la commande contient le produit)</td><td>La présence d'un produit donné dans la commande.</td></tr>
+      <tr><td><b>Type de commande</b></td><td>Vente en réunion, Vente directe, Kit de démarrage, commande dans un regroupement…</td></tr>
+      <tr><td><b>Pays de livraison</b>, <b>Département de livraison</b></td><td>L'adresse de livraison (utile pour la Corse ou l'outre-mer).</td></tr>
+      <tr><td><b>Pays du vendeur</b>, <b>Département du vendeur</b></td><td>L'adresse de la conseillère.</td></tr>
+      <tr><td><b>Rôle</b></td><td>Le ou les rôles de la cliente (par exemple «&nbsp;Vendeur&nbsp;» pour les commandes personnelles des conseillères).</td></tr>
+      <tr><td><b>Nouveau</b></td><td>La cliente n'a encore jamais commandé (ou, au contraire, a déjà commandé).</td></tr>
+      <tr><td><b>Hôte de la réunion</b></td><td>La cliente est (ou n'est pas) l'hôtesse de la réunion.</td></tr>
+      <tr><td><b>La réunion est virtuelle</b></td><td>La commande vient d'une réunion à distance.</td></tr>
+      <tr><td><b>CA client / CA vendeur du mois en cours ou du mois dernier</b></td><td>Le chiffre d'affaires de la cliente ou de la conseillère sur la période.</td></tr>
+      <tr><td><b>La commande possède déjà une adresse de livraison personnalisée</b>, <b>Livré à une boîte postale</b></td><td>Des particularités de l'adresse.</td></tr>
+      <tr><td><b>Mode de livraison de la commande initiale</b></td><td>Pour une commande d'échange&nbsp;: le mode choisi sur la commande d'origine.</td></tr>
+      <tr><td><b>Poids des commandes vendeur dans les commandes de regroupement</b></td><td>Pour les commandes de regroupement.</td></tr>
+      <tr><td><b>Type du client</b></td><td>La cliente est «&nbsp;Exonérés de taxes&nbsp;». Critère visible seulement si l'exonération de TVA des clientes est activée pour votre marque.</td></tr>
+      <tr><td><b>Catalogue</b>, <b>Nouveau client pour le catalogue</b></td><td>Pour les marques à plusieurs catalogues.</td></tr>
+    </tbody>
+  </table></div>
+  <p class="muted">Des critères propres à certains pays (livraison en Alaska, à Hawaï) existent aussi.</p>
+
+  <h3 id="s5-3"><span class="sub-num">5.3</span> Les résultats possibles</h3>
+  <div class="table-wrap"><table class="opts">
+    <thead><tr><th>Réglage de la condition</th><th>Effet quand la condition est remplie</th><th>Affiché dans «&nbsp;Tarif&nbsp;»</th></tr></thead>
+    <tbody>
+      <tr><td><b>Nouveau tarif</b></td><td>Remplace le tarif de base par ce montant.</td><td>6,9&nbsp;€</td></tr>
+      <tr><td><b>Ajouter nouveau tarif au tarif de base</b></td><td>Le nouveau tarif s'ajoute au tarif de base au lieu de le remplacer (supplément).</td><td>+5&nbsp;€</td></tr>
+      <tr><td><b>Montant en pourcentage&nbsp;?</b></td><td>Le nouveau tarif devient un pourcentage du montant de la commande (montant de référence de la <a href="#s3-1">section 3.1</a>).</td><td>10%</td></tr>
+      <tr><td><b>Livraison offerte&nbsp;?</b></td><td>Le mode devient gratuit.</td><td>Livraison gratuite</td></tr>
+      <tr><td><b>Rendre indisponible</b></td><td>Le mode n'est plus proposé pour cette commande.</td><td>Indisponible</td></tr>
+    </tbody>
+  </table></div>
+  <div class="example"><span class="ex-label">Exemple de pourcentage</span><p>Condition «&nbsp;Montant de la commande ≥ 80&nbsp;», Montant en pourcentage coché, Nouveau tarif 12. Pour la commande de Zoé à 150&nbsp;€, les frais sont de 150 × 12&nbsp;% = <strong>18,00&nbsp;€</strong>. Avec «&nbsp;Ajouter nouveau tarif au tarif de base&nbsp;» et un tarif de base de 7,95&nbsp;€&nbsp;: 18,00 + 7,95 = <strong>25,95&nbsp;€</strong>.</p></div>
+</section>
+
+<!-- 6 -->
+<section id="calcul">
+  <div class="sec-head"><span class="sec-num">06</span><h2>Comment le tarif est calculé</h2></div>
+  <p class="lede">Pour chaque mode actif, SellingAtHome suit toujours le même ordre. Plusieurs conditions peuvent être remplies en même temps&nbsp;: c'est la plus favorable à la cliente qui l'emporte.</p>
+  <div class="steps-calc">
+    <div><b>La commande est un cadeau&nbsp;?</b> Les frais sont toujours de 0&nbsp;€.</div>
+    <div><b>Le mode est indisponible pour ce type de commande&nbsp;?</b> Il n'est pas proposé (liste «&nbsp;Indisponible pour&nbsp;»).</div>
+    <div><b>Le mode est coché «&nbsp;Livraison offerte&nbsp;»&nbsp;?</b> Il coûte 0&nbsp;€, les conditions ne sont pas regardées.</div>
+    <div><b>SellingAtHome teste toutes les conditions du mode</b> et garde celles dont tous les critères sont remplis.</div>
+    <div><b>Une condition remplie rend le mode indisponible&nbsp;?</b> Le mode n'est pas proposé, même si une autre condition l'offre.</div>
+    <div><b>Une condition remplie offre la livraison&nbsp;?</b> Le mode coûte 0&nbsp;€.</div>
+    <div><b>Sinon, le tarif le plus bas</b> parmi les conditions remplies s'applique.</div>
+    <div><b>Aucune condition remplie&nbsp;?</b> C'est le tarif de base.</div>
+  </div>
+  <div class="warn"><span class="ex-label">Attention</span><p>Une condition «&nbsp;Rendre indisponible&nbsp;» l'emporte sur tout le reste. Une condition avec un nouveau tarif <strong>plus cher</strong> que le tarif de base ne s'applique que si c'est la seule remplie&nbsp;: elle remplace bien le tarif de base (par exemple 50&nbsp;€ pour l'outre-mer).</p></div>
+</section>
+
+<!-- 7 -->
+<section id="exemples">
+  <div class="sec-head"><span class="sec-num">07</span><h2>Exemples chiffrés</h2></div>
+  <p class="lede">Ces exemples reprennent des paramétrages réellement utilisés par des marques (montants arrondis).</p>
+
+  <div class="example"><span class="ex-label">1. Franco de port à partir de 60 €</span>
+    <p>Mode «&nbsp;Livraison chez le client&nbsp;»&nbsp;: tarif de base <strong>6,90&nbsp;€</strong>. Condition «&nbsp;Montant de la commande ≥ 60&nbsp;» → Livraison offerte.</p>
+    <ul class="prose"><li>Camille commande 54&nbsp;€ → <strong>6,90&nbsp;€</strong> de frais.</li><li>Inès commande 72&nbsp;€ → <strong>livraison offerte</strong>.</li></ul>
+    <p class="muted">C'est le paramétrage le plus répandu&nbsp;: les seuils observés vont de 45 à 300&nbsp;€, le plus souvent entre 70 et 100&nbsp;€.</p>
+  </div>
+
+  <div class="example"><span class="ex-label">2. Tarif dégressif</span>
+    <p>Mode «&nbsp;Livraison chez le client&nbsp;»&nbsp;: tarif de base <strong>0&nbsp;€</strong>. Conditions&nbsp;: «&nbsp;Montant &lt; 100&nbsp;» → 7,50&nbsp;€&nbsp;; «&nbsp;Montant ≥ 100 ET Montant &lt; 150&nbsp;» → 3,00&nbsp;€.</p>
+    <div class="table-wrap"><table class="calc">
+      <thead><tr><th>Commande</th><th>Condition remplie</th><th>Frais</th></tr></thead>
+      <tbody>
+        <tr><td>Emma, 80&nbsp;€</td><td>&lt; 100</td><td>7,50&nbsp;€</td></tr>
+        <tr><td>Zoé, 120&nbsp;€</td><td>entre 100 et 150</td><td>3,00&nbsp;€</td></tr>
+        <tr><td>Camille, 180&nbsp;€</td><td>aucune → tarif de base</td><td>0,00&nbsp;€</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+
+  <div class="example"><span class="ex-label">3. Deux paliers qui se chevauchent</span>
+    <p>Mode «&nbsp;Livraison chez le client&nbsp;»&nbsp;: tarif de base <strong>7,50&nbsp;€</strong>. Conditions «&nbsp;Montant ≥ 50&nbsp;» → 4,50&nbsp;€ et «&nbsp;Montant ≥ 100&nbsp;» → Livraison offerte.</p>
+    <ul class="prose"><li>40&nbsp;€ → aucune condition → <strong>7,50&nbsp;€</strong>.</li><li>70&nbsp;€ → «&nbsp;≥ 50&nbsp;» → <strong>4,50&nbsp;€</strong>.</li><li>120&nbsp;€ → les deux conditions sont remplies, la livraison offerte l'emporte → <strong>0&nbsp;€</strong>.</li></ul>
+  </div>
+
+  <div class="example"><span class="ex-label">4. Livraison offerte en réunion au-delà de 50 €</span>
+    <p>Mode «&nbsp;Livraison chez le vendeur&nbsp;»&nbsp;: tarif de base <strong>3,90&nbsp;€</strong>. Condition «&nbsp;Type de commande = Vente en réunion ET Montant de la commande ≥ 50&nbsp;» → Livraison offerte.</p>
+    <ul class="prose"><li>Pendant la réunion de Jade, Emma commande 42&nbsp;€ → <strong>3,90&nbsp;€</strong>.</li><li>Zoé, à la même réunion, commande 65&nbsp;€ → <strong>offerte</strong>.</li><li>Une semaine plus tard, Zoé recommande 65&nbsp;€ en vente directe → <strong>3,90&nbsp;€</strong> (ce n'est plus une vente en réunion).</li></ul>
+  </div>
+
+  <div class="example"><span class="ex-label">5. Supplément pour l'outre-mer</span>
+    <p>Mode «&nbsp;Livraison chez le client&nbsp;»&nbsp;: tarif de base <strong>12&nbsp;€</strong>. Condition «&nbsp;Pays de livraison dans Guadeloupe, Martinique ET Département de livraison dans 971, 972&nbsp;» → nouveau tarif 50&nbsp;€. Une commande livrée en Martinique paie <strong>50&nbsp;€</strong>&nbsp;; en métropole, <strong>12&nbsp;€</strong>.</p>
+  </div>
+
+  <div class="example"><span class="ex-label">6. Mode réservé à un usage</span>
+    <p>Plusieurs marques réservent la livraison chez la conseillère aux commandes de regroupement d'au moins 400&nbsp;€&nbsp;: deux conditions «&nbsp;Type de commande différent de Commande de regroupement&nbsp;» → Rendre indisponible et «&nbsp;Type = Commande de regroupement ET Montant &lt; 400&nbsp;» → Rendre indisponible, plus «&nbsp;Type = Commande de regroupement ET Montant ≥ 400&nbsp;» → Livraison offerte. Le mode n'apparaît que lorsque la livraison est offerte.</p>
+  </div>
+</section>
+
+<!-- 8 -->
+<section id="chiffres">
+  <div class="sec-head"><span class="sec-num">08</span><h2>Les livraisons en chiffres</h2></div>
+  <p class="lede">Sur l'ensemble des 35 marques actives, commandes payées sur un an.</p>
+  <div class="stats">
+    <div class="stat"><b>80&nbsp;%</b><span>des ventes en réunion et ventes directes sont livrées sans frais</span></div>
+    <div class="stat"><b>2&nbsp;€</b><span>frais médians quand la livraison est payante</span></div>
+    <div class="stat"><b>31 / 35</b><span>marques utilisent au moins une condition particulière</span></div>
+  </div>
+  <h3 style="margin-top:22px">Modes choisis dans les commandes payées</h3>
+  <div class="share" aria-label="Répartition des commandes payées par mode de livraison">
+    <div class="share-row"><span><b>Chez la conseillère</b></span><div class="share-bar"><i style="width:56.7%"></i></div><span class="pct">57&nbsp;%</span></div>
+    <div class="share-row"><span><b>Chez l'hôtesse</b></span><div class="share-bar"><i style="width:14.1%"></i></div><span class="pct">14&nbsp;%</span></div>
+    <div class="share-row"><span><b>Chez la cliente</b></span><div class="share-bar"><i style="width:11.2%"></i></div><span class="pct">11&nbsp;%</span></div>
+    <div class="share-row"><span><b>Adresse personnalisée</b></span><div class="share-bar"><i style="width:9.9%"></i></div><span class="pct">10&nbsp;%</span></div>
+    <div class="share-row"><span><b>Retrait sur place</b></span><div class="share-bar"><i style="width:4.7%"></i></div><span class="pct">5&nbsp;%</span></div>
+    <div class="share-row"><span>Points relais et autres</span><div class="share-bar"><i style="width:3.4%"></i></div><span class="pct">3&nbsp;%</span></div>
+  </div>
+  <ul class="prose">
+    <li><strong>Modes activés</strong>&nbsp;: chez la conseillère (34 marques sur 35), chez la cliente (29), adresse personnalisée (23), retrait sur place (17), chez l'hôtesse (13), Mondial Relay (9).</li>
+    <li><strong>Tarifs de base médians</strong>&nbsp;: 1,50&nbsp;€ chez la conseillère, 6,50&nbsp;€ chez la cliente ou à une adresse personnalisée.</li>
+    <li><strong>Montant de référence</strong>&nbsp;: non remisé pour 17 marques, remisé pour 9, remisé hors bons d'achat pour 9.</li>
+    <li><strong>TVA des frais</strong>&nbsp;: taux le plus bas pour 24 marques, taux personnalisé pour 8, taux le plus haut pour 3.</li>
+  </ul>
+</section>
+
+<!-- 9 -->
+<section id="conseillere">
+  <div class="sec-head"><span class="sec-num">09</span><h2>Ce que voit la conseillère</h2></div>
+  <p>Au moment de la commande, la conseillère voit la liste des modes <strong>actifs et disponibles</strong> pour cette commande, chacun avec son tarif déjà calculé. Un mode rendu indisponible (par le type de commande ou par une condition) n'apparaît tout simplement pas. Le tarif est recalculé quand le panier change&nbsp;: si Camille ajoute un produit et dépasse votre seuil, la livraison devient offerte.</p>
+</section>
+
+<!-- 10 -->
+<section id="attention">
+  <div class="sec-head"><span class="sec-num">10</span><h2>Points d'attention</h2></div>
+  <ul class="prose">
+    <li><strong>Deux boutons Enregistrer</strong>&nbsp;: celui de la configuration générale et celui de chaque carte. Les conditions s'enregistrent dans leur fenêtre, l'interrupteur et la case «&nbsp;Livraison offerte&nbsp;» immédiatement.</li>
+    <li><strong>«&nbsp;Livraison offerte&nbsp;» sur le mode</strong> neutralise toutes ses conditions, y compris les «&nbsp;Rendre indisponible&nbsp;».</li>
+    <li><strong>Seuils décimaux</strong>&nbsp;: préférez des seuils ronds (60, et non 59,99) et l'opérateur «&nbsp;supérieur ou égal&nbsp;» plutôt que «&nbsp;supérieur&nbsp;» pour éviter les cas limites. Pour une tranche, l'opérateur «&nbsp;entre&nbsp;» inclut les deux bornes.</li>
+    <li><strong>Suppléments cumulés</strong>&nbsp;: évitez que plusieurs conditions «&nbsp;Ajouter nouveau tarif au tarif de base&nbsp;» puissent être remplies en même temps&nbsp;; testez le résultat sur une commande.</li>
+    <li><strong>Critère «&nbsp;Type du client&nbsp;»</strong>&nbsp;: vérifiez toujours son effet sur une commande de test d'une cliente exonérée avant de le mettre en service.</li>
+    <li><strong>Changer un tarif</strong> ne modifie pas les commandes déjà payées&nbsp;: seules les commandes saisies ou recalculées ensuite sont concernées.</li>
+    <li><strong>Supprimer une condition</strong> est immédiat (après confirmation «&nbsp;Voulez-vous vraiment supprimer cette condition&nbsp;?&nbsp;»).</li>
+  </ul>
+</section>
+
+<!-- 11 -->
+<section id="faq">
+  <div class="sec-head"><span class="sec-num">11</span><h2>Questions fréquentes</h2></div>
+  <div class="faq">
+    <details><summary>Une cliente a dépassé le seuil mais paie quand même la livraison&nbsp;: pourquoi&nbsp;?</summary><div><p>Vérifiez le montant de référence (<a href="#s3-1">3.1</a>)&nbsp;: avec «&nbsp;le montant remisé&nbsp;», réductions et bons d'achat font baisser le montant comparé au seuil. Vérifiez aussi qu'aucun produit de la commande n'est «&nbsp;Non inclus dans le calcul des frais de livraison&nbsp;».</p></div></details>
+    <details><summary>Un mode n'apparaît pas pour la conseillère&nbsp;: que vérifier&nbsp;?</summary><div><p>Qu'il est activé (interrupteur), que le type de commande n'est pas dans «&nbsp;Indisponible pour&nbsp;», qu'aucune condition «&nbsp;Rendre indisponible&nbsp;» n'est remplie. «&nbsp;Livraison chez l'hôte&nbsp;» n'existe qu'en réunion.</p></div></details>
+    <details><summary>Comment offrir la livraison uniquement aux conseillères pour leurs commandes personnelles&nbsp;?</summary><div><p>Ajoutez une condition avec le critère «&nbsp;Rôle&nbsp;» égal (ou dans) le rôle de vos conseillères, et cochez «&nbsp;Livraison offerte&nbsp;?&nbsp;».</p></div></details>
+    <details><summary>Puis-je renommer «&nbsp;Livraison chez le vendeur&nbsp;»&nbsp;?</summary><div><p>Oui, avec l'icône de traduction de la carte&nbsp;: un nom par langue de votre marque.</p></div></details>
+    <details><summary>Les frais de port sont-ils pris en compte dans le seuil de livraison offerte&nbsp;?</summary><div><p>Non. Le montant comparé est celui des produits (selon le réglage <a href="#s3-1">3.1</a>), hors frais de livraison.</p></div></details>
+  </div>
+</section>
+
+  </main>
+</div>
+<div class="pager-wrap"><nav class="pager" aria-label="Pages de l'univers"><a class="prev" href="prix-taxes.html"><small>← Précédent</small><span>Prix, prix par rôle et taxes</span></a><a class="next" href="stocks.html"><small>Suivant →</small><span>Les stocks</span></a></nav>
+</div>
+<footer><div class="ft"><a href="catalogue.html">← Catalogue</a><span>SellingAtHome · Livraison : modes et frais</span><span>Version 1.0.0 · octobre 2026</span></div></footer>
+
+<button class="to-top" id="toTop" type="button" aria-label="Remonter en haut de la page" title="Haut de page"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Capture agrandie"><img alt=""></div>
+
+<script src="assets/sah.js"></script>
+<script src="assets/search-index.js"></script>
+<script src="assets/search.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!--page {"title":"L'organigramme"} -->
+<style>
+.timeline { display:flex; flex-direction:column; border-left:3px solid var(--rule); margin-left:10px; }
+.tl { position:relative; padding:0 0 20px 28px; }
+.tl::before { content:""; position:absolute; left:-9px; top:4px; width:15px; height:15px; border-radius:50%; background:var(--card); border:3px solid var(--accent); }
+.tl.stop::before { border-color:var(--pink); }
+.tl b { color:var(--heading); display:block; }
+.tl p { color:var(--muted); font-size:.93rem; margin-top:4px; }
+.tree { font-family:inherit; background:var(--card); border:1px solid var(--rule); border-radius:14px; padding:14px 18px; line-height:1.9; }
+.tree .n { display:inline-block; padding:1px 10px; border-radius:100px; background:var(--accent-wash); color:var(--accent-ink); font-weight:700; font-size:.88rem; }
+.tree .n.p { background:var(--pink-wash); color:var(--pink-ink); }
+.tree .i1 { padding-left:26px; } .tree .i2 { padding-left:52px; }
+.opts td:first-child { width:30%; }
+</style>
+<header class="hero">
+  <div class="hero-in">
+    <div>
+      <span class="eyebrow">Réseau et rémunération</span>
+      <h1>L'organigramme <span class="script">de votre réseau</span></h1>
+      <p class="lede">Qui a recruté qui, qui anime qui&nbsp;: l'écran Graph, la différence entre recruteur et animatrice, comment changer un rattachement et ce que ce changement entraîne.</p>
+    </div>
+    <div class="voucher-art" aria-hidden="true">
+      <div class="v-top"><span>Équipe</span><span>Animation</span></div>
+      <div class="v-amount">Sophie</div>
+      <div class="v-name">Léa · Chloé · Manon</div>
+      <div class="v-sep"></div>
+      <div class="v-meta"><span>N-1 <b>3</b></span><span>Statut <b>Animatrice</b></span></div>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="toc" aria-label="Sommaire">
+    <details id="tocDetails" open>
+      <summary>Sommaire</summary>
+      <div class="toc-title">Sommaire</div>
+      <ol>
+        <li data-sec="liens"><a href="#liens"><span class="toc-n">1</span>Deux liens&nbsp;: recruteur et animatrice</a></li>
+        <li data-sec="ou"><a href="#ou"><span class="toc-n">2</span>Où voir l'organigramme</a></li>
+        <li data-sec="ecran"><a href="#ecran"><span class="toc-n">3</span>L'écran Graph</a>
+          <ol class="toc-sub"><li><a href="#s3-1"><span class="toc-n">3.1</span>Les trois affichages</a></li><li><a href="#s3-2"><span class="toc-n">3.2</span>Les cartes et leurs boutons</a></li></ol>
+        </li>
+        <li data-sec="changer"><a href="#changer"><span class="toc-n">4</span>Changer un rattachement</a></li>
+        <li data-sec="option"><a href="#option"><span class="toc-n">5</span>«&nbsp;Le recruteur est aussi l'animateur&nbsp;»</a></li>
+        <li data-sec="effets"><a href="#effets"><span class="toc-n">6</span>Les effets d'un changement</a></li>
+        <li data-sec="historique"><a href="#historique"><span class="toc-n">7</span>L'historique</a></li>
+        <li data-sec="conseillere"><a href="#conseillere"><span class="toc-n">8</span>Ce que voit la conseillère</a></li>
+        <li data-sec="attention"><a href="#attention"><span class="toc-n">9</span>Points d'attention</a></li>
+        <li data-sec="faq"><a href="#faq"><span class="toc-n">10</span>Questions fréquentes</a></li>
+      </ol>
+    </details>
+  </nav>
+
+  <main>
+
+<!-- 1 -->
+<section id="liens">
+  <div class="sec-head"><span class="sec-num">01</span><h2>Deux liens&nbsp;: recruteur et animatrice</h2></div>
+  <p class="lede">Chaque conseillère a deux liens vers le haut du réseau. Ils sont expliqués dans <a href="comprendre-sellingathome.html#s3-1">Comprendre SellingAtHome</a>&nbsp;; en résumé&nbsp;:</p>
+  <div class="grid-2">
+    <div class="card"><span class="tag">Recruteur du vendeur</span><p>Celle qui a <strong>fait entrer</strong> la conseillère. Un seul lien, sans historique&nbsp;: le changer remplace l'ancien.</p></div>
+    <div class="card"><span class="tag pink">Animateur du vendeur</span><p>Celle qui <strong>encadre</strong> la conseillère aujourd'hui. Chaque changement est <strong>daté et conservé</strong>. C'est ce lien qui forme les équipes de l'organigramme, du suivi d'équipe et des statuts automatiques.</p></div>
+  </div>
+  <div class="example"><span class="ex-label">Exemple</span><p>Léa a été recrutée par Chloé, mais c'est Sophie, plus expérimentée, qui l'anime. Léa a <strong>Chloé</strong> comme recruteuse et <strong>Sophie</strong> comme animatrice&nbsp;: elle apparaît dans l'équipe de Sophie.</p></div>
+  <div class="tree" aria-label="Exemple d'équipe par animation">
+    <div><span class="n p">Sophie</span> animatrice</div>
+    <div class="i1">├ <span class="n">Léa</span> recrutée par Chloé, animée par Sophie</div>
+    <div class="i1">├ <span class="n">Chloé</span></div>
+    <div class="i2">└ <span class="n">Manon</span> recrutée et animée par Chloé</div>
+  </div>
+  <p class="muted">Sur l'ensemble des marques, près de 3 conseillères actives sur 10 ont une animatrice différente de leur recruteuse.</p>
+  <div class="tip"><span class="ex-label">Vocabulaire</span><p>L'espace marque parle de <strong>vendeur</strong> pour la conseillère, de <strong>recruteur du vendeur</strong> et d'<strong>animateur du vendeur</strong>. Les listes affichent aussi «&nbsp;Seller parent n+1&nbsp;» (l'animatrice) et «&nbsp;Seller parent n+2&nbsp;» (l'animatrice de l'animatrice).</p></div>
+</section>
+
+<!-- 2 -->
+<section id="ou">
+  <div class="sec-head"><span class="sec-num">02</span><h2>Où voir l'organigramme</h2></div>
+  <div class="path" aria-label="Chemin d'accès"><span>Espace marque</span><span>Vendeurs</span><span>Vendeurs</span><span>Onglet <b>Graph</b></span></div>
+  <p>L'écran s'intitule <strong>Graph des vendeurs</strong>. Le rattachement d'une conseillère se modifie aussi depuis sa fiche, onglet <strong>Gestion du vendeur</strong> (voir <a href="conseilleres.html#s6-2">Gérer les conseillères</a>).</p>
+</section>
+
+<!-- 3 -->
+<section id="ecran">
+  <div class="sec-head"><span class="sec-num">03</span><h2>L'écran Graph</h2></div>
+  <figure><img src="Captures/Reseau/graph.png" alt="Graph des vendeurs : filtres Vendeurs actifs, Afficher par animation, recherche d'un vendeur et bouton plus ; cartes des conseillères avec photo, nom, badge de statut coloré, boutons i et crayon, et rôles" loading="lazy"><figcaption>Le Graph des vendeurs, affiché par animation (noms fictifs).</figcaption></figure>
+
+  <h3 id="s3-1"><span class="sub-num">3.1</span> Les trois affichages</h3>
+  <div class="table-wrap"><table class="opts">
+    <thead><tr><th>Choix</th><th>Ce que montre l'arbre</th></tr></thead>
+    <tbody>
+      <tr><td><b>Afficher par animation</b> (par défaut)</td><td>Chaque conseillère sous son animatrice actuelle. C'est la vue des équipes.</td></tr>
+      <tr><td><b>Afficher par recrutement</b></td><td>Chaque conseillère sous sa recruteuse.</td></tr>
+      <tr><td><b>Afficher par statut/niveau</b></td><td>Les conseillères rangées par niveau de statut (niveau N en haut, puis N-1…). Voir <a href="statuts.html">Statuts et automatisation</a>.</td></tr>
+    </tbody>
+  </table></div>
+  <p>Le premier filtre choisit <strong>Vendeurs actifs</strong> (accès déverrouillé) ou <strong>Tous les vendeurs</strong>. Le champ <strong>Taper le nom d'un vendeur</strong> centre l'arbre sur une conseillère.</p>
+
+  <h3 id="s3-2"><span class="sub-num">3.2</span> Les cartes et leurs boutons</h3>
+  <ul class="prose">
+    <li>Chaque carte montre la photo, le nom, le <strong>statut</strong> (badge à la couleur du statut) et les <strong>rôles</strong> de la conseillère.</li>
+    <li>Le bouton <strong>i</strong> ouvre un panneau d'informations&nbsp;: ses chiffres sur une période, avec les onglets <strong>Nouveaux clients</strong>, <strong>Réunions</strong> et <strong>Commandes</strong> (détaillés dans <a href="suivi-equipe.html#panneau">Suivi d'équipe</a>).</li>
+    <li>Le <strong>crayon</strong> ouvre le panneau <strong>Editer le vendeur</strong>&nbsp;: <strong>Statut</strong> et <strong>Vendeur animateur</strong>.</li>
+    <li>Le bouton <strong>+</strong> à côté de la recherche ouvre le panneau <strong>Ajouter un vendeur</strong>&nbsp;: il ne crée pas de compte, il <strong>place</strong> une conseillère existante dans l'arbre (statut et animatrice). Pour créer un compte, utilisez <strong>Ajouter un vendeur</strong> en haut à droite.</li>
+  </ul>
+</section>
+
+<!-- 4 -->
+<section id="changer">
+  <div class="sec-head"><span class="sec-num">04</span><h2>Changer un rattachement</h2></div>
+  <div class="timeline">
+    <div class="tl"><b>1. Ouvrir la fiche de la conseillère</b><p>Fiche d'édition, onglet <strong>Gestion du vendeur</strong>. (Ou, pour l'animatrice seulement, le crayon de sa carte dans le Graph.)</p></div>
+    <div class="tl"><b>2. Choisir la nouvelle personne</b><p>Tapez le nom dans <strong>Recruteur du vendeur</strong> et/ou <strong>Animateur du vendeur</strong>. La croix vide le champ&nbsp;: la conseillère n'a alors plus d'animatrice (elle remonte en tête d'équipe).</p></div>
+    <div class="tl"><b>3. Valider</b><p>Bouton <strong>Valider</strong>. Si l'animatrice change, une nouvelle ligne datée du jour s'ajoute à l'historique, et la nouvelle animatrice reçoit une notification «&nbsp;nouveau membre dans votre équipe&nbsp;».</p></div>
+    <div class="tl stop"><b>Contrôle</b><p>SellingAtHome refuse un rattachement en boucle direct&nbsp;: une conseillère ne peut pas devenir l'animatrice de sa propre animatrice. Une boucle sur plusieurs niveaux n'est pas détectée&nbsp;: vérifiez l'arbre après un changement important.</p></div>
+  </div>
+  <div class="example"><span class="ex-label">Exemple</span><p>Le 12 mars, Sophie confie Manon à Chloé. Vous ouvrez la fiche de Manon, choisissez Chloé comme <strong>Animateur du vendeur</strong> et validez. L'historique de Manon montre maintenant Sophie (ancienne ligne) puis Chloé (12 mars). Chloé est notifiée.</p></div>
+</section>
+
+<!-- 5 -->
+<section id="option">
+  <div class="sec-head"><span class="sec-num">05</span><h2>«&nbsp;Le recruteur est aussi l'animateur&nbsp;»</h2></div>
+  <p>Votre marque peut fusionner les deux liens avec la case <strong>Le recruteur est aussi l'animateur du vendeur</strong>. 16 marques sur 35 fonctionnent ainsi.</p>
+  <div class="path" aria-label="Chemin d'accès"><span>Espace marque</span><span>Paramètres</span><span>Configuration générale</span><span>Onglet <b>Paramètres généraux</b></span><span>Bloc <b>Vendeurs</b></span></div>
+  <div class="grid-2">
+    <div class="card"><span class="tag">Option active</span>
+      <ul class="prose">
+        <li>Le champ <strong>Animateur du vendeur</strong> est grisé, avec le message «&nbsp;Le choix de l'animateur est bloqué conformement à votre paramétrage (recruteur = animateur)&nbsp;».</li>
+        <li>Choisir un <strong>recruteur</strong> change aussi l'animatrice (et crée la ligne d'historique).</li>
+        <li>Changer l'animatrice depuis le Graph change aussi le recruteur.</li>
+      </ul>
+    </div>
+    <div class="card"><span class="tag pink">Option inactive</span>
+      <ul class="prose">
+        <li>Les deux champs sont indépendants.</li>
+        <li>Le recruteur reste celui de l'entrée dans le réseau&nbsp;; l'animatrice évolue au gré de l'organisation des équipes.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="warn"><span class="ex-label">Attention</span><p>Cocher l'option ne met pas en cohérence les fiches existantes&nbsp;: une conseillère dont l'animatrice diffère de la recruteuse le reste jusqu'au prochain changement de recruteur.</p></div>
+</section>
+
+<!-- 6 -->
+<section id="effets">
+  <div class="sec-head"><span class="sec-num">06</span><h2>Les effets d'un changement</h2></div>
+  <div class="table-wrap"><table class="opts">
+    <thead><tr><th>Ce qui utilise le lien</th><th>Effet d'un changement d'animatrice</th></tr></thead>
+    <tbody>
+      <tr><td><b>Graph</b>, colonnes <b>Seller parent n+1 / n+2</b></td><td>Immédiat.</td></tr>
+      <tr><td><b>Suivi d'équipe</b></td><td>L'équipe d'un mois est photographiée chaque nuit en tenant compte de la date du changement&nbsp;: un changement du 12 mars compte pour l'équipe de mars et des mois suivants, pas pour février.</td></tr>
+      <tr><td><b>Statuts automatiques</b></td><td>Le calcul utilise l'animatrice en vigueur au moment du calcul (sauf si votre marque a choisi le recrutement comme réseau de référence).</td></tr>
+      <tr><td><b>Commissions d'équipe</b></td><td>Les règles d'équipe de votre plan de rémunération s'appuient sur le lien d'animation&nbsp;: les calculs faits après le changement utilisent la nouvelle équipe. Les commissions déjà clôturées ne sont pas recalculées.</td></tr>
+      <tr><td><b>Recruteur</b></td><td>Sert aux règles qui comptent les recrues (par exemple «&nbsp;Nombre de nouvelles recrues&nbsp;») et à l'affichage par recrutement.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="warn"><span class="ex-label">Attention</span><p>Un changement d'animatrice en fin de mois peut déplacer le chiffre d'affaires d'une équipe à l'autre pour la clôture à venir. Faites vos réorganisations, autant que possible, en début de mois.</p></div>
+</section>
+
+<!-- 7 -->
+<section id="historique">
+  <div class="sec-head"><span class="sec-num">07</span><h2>L'historique</h2></div>
+  <p>L'onglet <strong>Historique des animateurs</strong> de la fiche d'édition liste toutes les animatrices successives de la conseillère, avec la date de chaque changement (une ligne vide signale une période sans animatrice). Les statuts ont leur propre historique, dans l'onglet <strong>Gestion du vendeur</strong>.</p>
+  <p>Sur un an, toutes marques confondues, on compte environ 17&nbsp;000 changements d'animatrice&nbsp;: la plupart viennent de l'arrivée de nouvelles conseillères et des verrouillages avec rattachement de l'équipe.</p>
+</section>
+
+<!-- 8 -->
+<section id="conseillere">
+  <div class="sec-head"><span class="sec-num">08</span><h2>Ce que voit la conseillère</h2></div>
+  <p>Dans son espace, une animatrice retrouve son équipe (par animation) dans le menu <strong>Suivi d'équipe</strong>, avec les chiffres de chacun, et, selon les options de votre marque, les commandes et les recrutements de son équipe. Elle est notifiée quand une conseillère rejoint son équipe.</p>
+</section>
+
+<!-- 9 -->
+<section id="attention">
+  <div class="sec-head"><span class="sec-num">09</span><h2>Points d'attention</h2></div>
+  <ul class="prose">
+    <li><strong>Animatrice et recruteuse sont deux choses différentes</strong>, sauf si votre marque a fusionné les deux.</li>
+    <li><strong>Verrouiller une animatrice</strong> peut, si vous le confirmez, rattacher toute son équipe à sa propre animatrice (voir <a href="conseilleres.html#s6-3">Sécurité</a>).</li>
+    <li><strong>Vider le champ Recruteur</strong> quand l'option «&nbsp;recruteur = animateur&nbsp;» est active retire bien le recruteur, mais l'écran affiche une erreur et l'animatrice n'est pas retirée.</li>
+    <li><strong>Pas de détection des boucles longues</strong>&nbsp;: A anime B qui anime C qui anime A est possible et fausse les équipes.</li>
+  </ul>
+</section>
+
+<!-- 10 -->
+<section id="faq">
+  <div class="sec-head"><span class="sec-num">10</span><h2>Questions fréquentes</h2></div>
+  <div class="faq">
+    <details><summary>Une conseillère n'apparaît pas dans l'arbre.</summary><div><p>Son accès est sans doute verrouillé&nbsp;: choisissez <strong>Tous les vendeurs</strong>. Vérifiez aussi l'affichage choisi (animation ou recrutement).</p></div></details>
+    <details><summary>Je ne peux pas modifier l'animatrice.</summary><div><p>Votre marque utilise l'option «&nbsp;recruteur = animateur&nbsp;»&nbsp;: changez le recruteur, l'animatrice suivra.</p></div></details>
+    <details><summary>Le rattachement est refusé («&nbsp;Une erreur est survenue&nbsp;»).</summary><div><p>Vous essayez sans doute de rattacher une conseillère à quelqu'un qu'elle anime directement. Changez d'abord le rattachement de cette personne.</p></div></details>
+    <details><summary>Le suivi d'équipe du mois dernier n'a pas changé après ma modification.</summary><div><p>C'est normal&nbsp;: l'équipe de chaque mois tient compte de la date du changement. Votre modification s'applique à partir du mois en cours.</p></div></details>
+  </div>
+</section>
+
+  </main>
+</div>

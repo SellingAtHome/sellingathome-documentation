@@ -1,0 +1,215 @@
+<!--page {"title":"La comptabilité"} -->
+<style>
+.opts td:first-child { width:34%; }
+.flow { display:grid; grid-template-columns:repeat(auto-fit, minmax(190px,1fr)); gap:12px; counter-reset:f; }
+.flow .card { position:relative; padding-top:34px; }
+.flow .card::before { counter-increment:f; content:counter(f); position:absolute; top:12px; left:16px; width:24px; height:24px; border-radius:50%; background:var(--accent); color:#fff; font-weight:800; font-size:.8rem; display:flex; align-items:center; justify-content:center; }
+.flow .card h4 { margin-top:4px; }
+.entry { font-variant-numeric:tabular-nums; }
+.entry td:nth-child(3), .entry td:nth-child(4), .entry th:nth-child(3), .entry th:nth-child(4) { text-align:right; white-space:nowrap; }
+.entry tfoot td { font-weight:800; color:var(--heading); border-top:2px solid var(--heading); }
+.mock { background:var(--card); border:1px solid var(--rule); border-radius:16px; padding:18px 20px; }
+.mock .mrow { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.1fr); gap:12px; align-items:center; padding:8px 0; border-bottom:1px dashed var(--rule); font-size:.93rem; }
+.mock .mrow:last-child { border-bottom:0; }
+.mock .sel { border:1px solid var(--rule); border-radius:8px; padding:5px 10px; background:var(--surface); color:var(--heading); overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+@media (max-width:560px) { .mock .mrow { grid-template-columns:1fr; gap:4px; } }
+</style>
+<header class="hero">
+  <div class="hero-in">
+    <div>
+      <span class="eyebrow">Communication et pilotage</span>
+      <h1>La <span class="script">comptabilité</span></h1>
+      <p class="lede">Déclarer vos comptes comptables dans SellingAtHome, puis exporter clients, fournisseurs, ventes, achats et avoirs dans un fichier prêt à importer dans votre logiciel de comptabilité.</p>
+      <p><span class="tag yellow" style="display:inline-block">Module optionnel</span></p>
+    </div>
+    <div class="voucher-art" aria-hidden="true">
+      <div class="v-top"><span>Export des ventes</span><span>Mars</span></div>
+      <div class="v-amount">52,90<span> €</span></div>
+      <div class="v-name">Facture de Camille</div>
+      <div class="v-sep"></div>
+      <div class="v-meta"><span>Débit <b>Clients</b></span><span>Crédit <b>Ventes, TVA</b></span></div>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="toc" aria-label="Sommaire">
+    <details id="tocDetails" open>
+      <summary>Sommaire</summary>
+      <div class="toc-title">Sommaire</div>
+      <ol>
+        <li data-sec="definition"><a href="#definition"><span class="toc-n">1</span>À quoi sert ce module</a></li>
+        <li data-sec="activation"><a href="#activation"><span class="toc-n">2</span>Activation et prérequis</a></li>
+        <li data-sec="comptes"><a href="#comptes"><span class="toc-n">3</span>Paramétrer les comptes</a>
+          <ol class="toc-sub"><li><a href="#s3-1"><span class="toc-n">3.1</span>Le plan de comptes</a></li><li><a href="#s3-2"><span class="toc-n">3.2</span>Les comptes par défaut</a></li><li><a href="#s3-3"><span class="toc-n">3.3</span>Comptes de TVA et comptes par produit</a></li></ol>
+        </li>
+        <li data-sec="exports"><a href="#exports"><span class="toc-n">4</span>Les exports comptables</a>
+          <ol class="toc-sub"><li><a href="#s4-1"><span class="toc-n">4.1</span>Format Expert M Plus</a></li><li><a href="#s4-2"><span class="toc-n">4.2</span>Format Auriège</a></li></ol>
+        </li>
+        <li data-sec="exemple"><a href="#exemple"><span class="toc-n">5</span>Exemple d'écriture de vente</a></li>
+        <li data-sec="attention"><a href="#attention"><span class="toc-n">6</span>Points d'attention</a></li>
+        <li data-sec="faq"><a href="#faq"><span class="toc-n">7</span>Questions fréquentes</a></li>
+      </ol>
+    </details>
+  </nav>
+
+  <main>
+
+<!-- 1 -->
+<section id="definition">
+  <div class="sec-head"><span class="sec-num">01</span><h2>À quoi sert ce module</h2></div>
+  <p class="lede">Le module de comptabilité évite de ressaisir dans votre logiciel comptable les ventes faites dans SellingAtHome. Vous associez une fois pour toutes vos <strong>comptes comptables</strong> (ventes, clients, TVA…) aux montants de SellingAtHome&nbsp;; chaque mois, vous téléchargez un <strong>fichier d'écritures</strong> à importer chez votre expert-comptable ou dans votre logiciel.</p>
+  <div class="flow">
+    <div class="card"><h4>Activer</h4><p>SellingAtHome choisit, pour votre marque, le format de votre logiciel comptable.</p></div>
+    <div class="card"><h4>Paramétrer</h4><p>Vous créez vos comptes et les associez aux ventes, clients, frais de livraison, TVA…</p></div>
+    <div class="card"><h4>Exporter</h4><p>Vous choisissez une période et téléchargez le fichier.</p></div>
+    <div class="card"><h4>Importer</h4><p>Le fichier est importé dans votre logiciel comptable, hors de SellingAtHome.</p></div>
+  </div>
+  <div class="warn"><span class="ex-label">Un module peu répandu</span><p>Deux formats seulement existent&nbsp;: <strong>Expert M Plus</strong> et <strong>Auriège</strong>. Aucune des 35 marques actives n'utilise aujourd'hui ce module. Si votre logiciel n'est pas l'un de ces deux-là, parlez-en à SellingAtHome avant d'envisager ce module.</p></div>
+</section>
+
+<!-- 2 -->
+<section id="activation">
+  <div class="sec-head"><span class="sec-num">02</span><h2>Activation et prérequis</h2></div>
+  <p class="lede">Le module s'active <strong>sur demande à SellingAtHome</strong>&nbsp;: votre interlocuteur indique dans la fiche de votre marque quel logiciel comptable vous utilisez. Il n'y a rien à cocher de votre côté.</p>
+  <div class="decide">
+    <div class="row"><span class="q">Aucun logiciel comptable n'est choisi pour votre marque</span><span class="arrow">→</span><span class="pill pink">Pas de menu Comptabilité</span></div>
+    <div class="row"><span class="q">«&nbsp;Expert M Plus&nbsp;» est choisi</span><span class="arrow">→</span><span class="pill">5 exports XML</span></div>
+    <div class="row"><span class="q">«&nbsp;Auriège&nbsp;» est choisi</span><span class="arrow">→</span><span class="pill yellow">1 export des commissions</span></div>
+  </div>
+  <p>Une fois le module actif, trois choses apparaissent dans l'espace marque&nbsp;:</p>
+  <ul class="prose">
+    <li>le menu <strong>Paramètres › Comptabilité</strong>, pour vos comptes&nbsp;;</li>
+    <li>le menu <strong>Rapports › Exports comptables</strong>, pour télécharger les fichiers&nbsp;;</li>
+    <li>des champs «&nbsp;compte comptable&nbsp;» supplémentaires dans les <strong>taxes</strong> et dans la <strong>fiche produit</strong>.</li>
+  </ul>
+  <div class="tip"><span class="ex-label">Avant d'activer</span><p>Préparez avec votre expert-comptable la liste des comptes à utiliser (numéros et libellés) et vérifiez avec lui le format attendu par son logiciel. SellingAtHome ne fait que produire le fichier&nbsp;: l'import et le contrôle des écritures restent chez vous.</p></div>
+</section>
+
+<!-- 3 -->
+<section id="comptes">
+  <div class="sec-head"><span class="sec-num">03</span><h2>Paramétrer les comptes</h2></div>
+  <div class="path" aria-label="Chemin d'accès"><span>Espace marque</span><span>Paramètres</span><span><b>Comptabilité</b></span></div>
+  <p class="lede">L'écran a deux blocs&nbsp;: en haut, la liste de vos comptes (votre plan de comptes)&nbsp;; en bas, le choix du compte à utiliser pour chaque type de montant.</p>
+
+  <h3 id="s3-1"><span class="sub-num">3.1</span> Le plan de comptes</h3>
+  <p>Cliquez sur <strong>Ajouter un compte comptable</strong>. La fenêtre «&nbsp;Créer un nouveau compte comptable&nbsp;» demande deux informations, puis <strong>Enregistrer</strong>&nbsp;:</p>
+  <div class="table-wrap"><table class="opts">
+    <thead><tr><th>Champ</th><th>Ce qu'il faut saisir</th></tr></thead>
+    <tbody>
+      <tr><td><b>Nom</b></td><td>Le libellé du compte, pour le reconnaître dans les listes (par exemple «&nbsp;Ventes de marchandises&nbsp;»).</td></tr>
+      <tr><td><b>Code</b></td><td>Le numéro du compte tel qu'il existe dans votre logiciel comptable (par exemple «&nbsp;707000&nbsp;»). C'est <strong>ce code</strong> qui est écrit dans les fichiers exportés.</td></tr>
+    </tbody>
+  </table></div>
+  <p>Chaque compte de la liste a un bouton <strong>Supprimer</strong>. Les comptes créés ici sont ceux proposés dans tous les menus déroulants du module.</p>
+  <div class="warn"><span class="ex-label">Attention</span><p>Supprimer un compte ne vérifie pas s'il est encore utilisé (comptes par défaut, taxes, produits). Remplacez-le d'abord partout où il est choisi.</p></div>
+
+  <h3 id="s3-2"><span class="sub-num">3.2</span> Les comptes par défaut</h3>
+  <p>Le second bloc associe un compte à chaque type de montant. Choisissez un compte dans chaque liste, puis <strong>Enregistrer</strong>.</p>
+  <div class="mock" aria-label="Schéma du bloc des comptes par défaut, avec des exemples de comptes">
+    <div class="mrow"><span>Compte comptable d’achats</span><span class="sel">Commissions conseillères (622200)</span></div>
+    <div class="mrow"><span>Compte comptable de ventes</span><span class="sel">Ventes de marchandises (707000)</span></div>
+    <div class="mrow"><span>Compte comptable clients</span><span class="sel">Clients (411000)</span></div>
+    <div class="mrow"><span>Compte comptable fournisseurs</span><span class="sel">Conseillères (401000)</span></div>
+    <div class="mrow"><span>Compte comptable points de fidélités</span><span class="sel">Remises fidélité (709700)</span></div>
+    <div class="mrow"><span>Compte comptable frais de livraisons</span><span class="sel">Ports facturés (708500)</span></div>
+  </div>
+  <p class="muted">Schéma de l'écran avec des comptes d'exemple&nbsp;: les numéros sont à définir avec votre expert-comptable.</p>
+  <div class="table-wrap"><table class="opts">
+    <thead><tr><th>Liste</th><th>Utilisée dans l'export…</th></tr></thead>
+    <tbody>
+      <tr><td><b>Compte comptable d’achats</b></td><td><strong>Achats</strong>&nbsp;: la charge correspondant aux commissions des conseillères. Il figure aussi dans la fiche de chaque conseillère de l'export <strong>Fournisseurs</strong>.</td></tr>
+      <tr><td><b>Compte comptable de ventes</b></td><td><strong>Ventes</strong> et <strong>Avoirs</strong>&nbsp;: le montant hors taxes des produits, sauf pour les produits qui ont leur propre compte (voir 3.3). Il figure aussi dans la fiche de chaque cliente de l'export <strong>Clients</strong>.</td></tr>
+      <tr><td><b>Compte comptable clients</b></td><td><strong>Ventes</strong> et <strong>Avoirs</strong>&nbsp;: le montant TTC dû par la cliente.</td></tr>
+      <tr><td><b>Compte comptable fournisseurs</b></td><td><strong>Achats</strong>&nbsp;: le montant dû à la conseillère pour ses commissions.</td></tr>
+      <tr><td><b>Compte comptable points de fidélités</b></td><td><strong>Ventes</strong> et <strong>Avoirs</strong>&nbsp;: la part de la commande réglée avec des points de fidélité.</td></tr>
+      <tr><td><b>Compte comptable frais de livraisons</b></td><td><strong>Ventes</strong>&nbsp;: les frais de livraison hors taxes, après remise sur la livraison.</td></tr>
+    </tbody>
+  </table></div>
+  <p class="muted">Choisir la ligne vide retire le compte&nbsp;: la ligne correspondante sera alors exportée sans numéro de compte.</p>
+
+  <h3 id="s3-3"><span class="sub-num">3.3</span> Comptes de TVA et comptes par produit</h3>
+  <div class="grid-2">
+    <div class="card"><span class="tag">Taxes</span><h4>Paramètres › Taxes</h4><p>Chaque taxe affiche deux listes supplémentaires&nbsp;: <strong>Compte comptable taxe collectée</strong> (utilisé pour la TVA des ventes) et <strong>Compte comptable taxe déduite</strong> (utilisé pour la TVA des avoirs).</p></div>
+    <div class="card"><span class="tag pink">Produits</span><h4>Fiche produit</h4><p>Un champ <strong>Compte comptable</strong> permet d'imputer les ventes d'un produit sur un compte particulier (par exemple les formations ou les kits). Sans choix, le compte de ventes par défaut s'applique.</p></div>
+  </div>
+  <div class="example"><span class="ex-label">Exemple</span><p>Votre marque veut suivre à part le chiffre d'affaires des kits de démarrage. Vous créez le compte «&nbsp;Ventes de kits (707100)&nbsp;» et le choisissez dans la fiche du produit Kit. Dans l'export des ventes, la commande de kit de Léa sera imputée sur 707100, et la commande de bijoux de Camille sur le compte de ventes par défaut.</p></div>
+</section>
+
+<!-- 4 -->
+<section id="exports">
+  <div class="sec-head"><span class="sec-num">04</span><h2>Les exports comptables</h2></div>
+  <div class="path" aria-label="Chemin d'accès"><span>Espace marque</span><span>Rapports</span><span><b>Exports comptables</b></span></div>
+  <p class="lede">L'écran liste les exports disponibles pour le format de votre marque. Le bouton d'export de chaque ligne ouvre, si besoin, un formulaire de période, puis télécharge immédiatement le fichier.</p>
+
+  <h3 id="s4-1"><span class="sub-num">4.1</span> Format Expert M Plus</h3>
+  <p>Cinq exports, chacun au format XML.</p>
+  <div class="table-wrap"><table class="opts">
+    <thead><tr><th>Export</th><th>Période</th><th>Contenu</th></tr></thead>
+    <tbody>
+      <tr><td><b>Clients</b><br><span class="muted">Export de la liste des clients</span></td><td>Aucune (tout l'historique)</td><td>Une fiche par cliente ayant au moins une commande payée&nbsp;: numéro client, nom, adresse, langue, statut TVA (particulier ou société, numéro de TVA), compte de ventes.</td></tr>
+      <tr><td><b>Fournisseurs</b><br><span class="muted">Export de la liste des fournisseurs</span></td><td>Aucune</td><td>Une fiche par conseillère active&nbsp;: mêmes informations, plus son numéro d'identification, et le compte d'achats. Les conseillères sont traitées comme des fournisseurs, puisque la marque leur achète leurs prestations (commissions).</td></tr>
+      <tr><td><b>Ventes</b><br><span class="muted">Export de la liste des ventes</span></td><td>Date de début et de fin (par défaut&nbsp;: le mois précédent)</td><td>Une écriture par commande dont le paiement a été validé dans la période, avec le numéro de facture, la date de paiement et la référence de commande.</td></tr>
+      <tr><td><b>Achats</b><br><span class="muted">Export de la liste des achats</span></td><td>Mois et année</td><td>Une écriture par conseillère active ayant une commission sur le mois (autofacturation)&nbsp;: compte fournisseurs contre compte d'achats, avec la TVA si la conseillère a un numéro de TVA.</td></tr>
+      <tr><td><b>Avoirs</b><br><span class="muted">Export de la liste des avoirs</span></td><td>Date de début et de fin</td><td>Une écriture par avoir créé dans la période, à l'inverse de la vente&nbsp;: produits annulés, TVA sur le compte de taxe déduite, points de fidélité, cliente.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="tip"><span class="ex-label">Commandes réglées par les commissions</span><p>Si votre marque permet de payer une commande avec les commissions, ces commandes sont exportées dans les ventes à la date où ce mode de paiement a été choisi, sans remise.</p></div>
+
+  <h3 id="s4-2"><span class="sub-num">4.2</span> Format Auriège</h3>
+  <p>Un seul export, <strong>Commissions</strong> («&nbsp;Export de la liste des commissions&nbsp;»), qui produit un fichier texte à positions fixes (<code>AUTOF220.PRN</code>)&nbsp;: une ligne par conseillère active dont les commissions du mois sont positives. Le formulaire demande le mois, l'année et trois informations&nbsp;:</p>
+  <div class="table-wrap"><table class="opts">
+    <thead><tr><th>Champ</th><th>Rôle</th></tr></thead>
+    <tbody>
+      <tr><td><b>Racine numéro facture</b></td><td>Préfixe des numéros de facture, suivi d'un compteur.</td></tr>
+      <tr><td><b>Date échéance paiement</b></td><td>Obligatoire dans le formulaire.</td></tr>
+      <tr><td><b>Libellé commissions</b></td><td>Obligatoire dans le formulaire.</td></tr>
+    </tbody>
+  </table></div>
+  <p class="muted">Ce format reprend des références propres à un paramétrage particulier (champs personnalisés des conseillères). Sa mise en place se fait avec SellingAtHome.</p>
+</section>
+
+<!-- 5 -->
+<section id="exemple">
+  <div class="sec-head"><span class="sec-num">05</span><h2>Exemple d'écriture de vente</h2></div>
+  <p class="lede">Camille commande un collier à 47&nbsp;€ TTC chez Léa, avec 5,90&nbsp;€ TTC de frais de livraison. TVA à 20&nbsp;%. Elle paie par carte le 12&nbsp;mars. Dans l'export des ventes de mars, la commande donne cette écriture&nbsp;:</p>
+  <div class="table-wrap"><table class="entry">
+    <thead><tr><th>Compte</th><th>Ce que représente la ligne</th><th>Débit</th><th>Crédit</th></tr></thead>
+    <tbody>
+      <tr><td>411000 Clients</td><td>Ce que Camille a payé, TTC</td><td>52,90&nbsp;€</td><td></td></tr>
+      <tr><td>707000 Ventes</td><td>Le collier, hors taxes</td><td></td><td>39,17&nbsp;€</td></tr>
+      <tr><td>708500 Ports facturés</td><td>La livraison, hors taxes</td><td></td><td>4,92&nbsp;€</td></tr>
+      <tr><td>445710 TVA collectée</td><td>TVA du collier (7,83&nbsp;€) et de la livraison (0,98&nbsp;€)</td><td></td><td>8,81&nbsp;€</td></tr>
+    </tbody>
+    <tfoot><tr><td colspan="2">Total</td><td>52,90&nbsp;€</td><td>52,90&nbsp;€</td></tr></tfoot>
+  </table></div>
+  <p>Si Camille avait réglé 5&nbsp;€ avec ses points de fidélité, une ligne de 5&nbsp;€ serait passée au débit du compte de points de fidélité, et le compte client ne porterait plus que 47,90&nbsp;€.</p>
+  <p class="muted">Les numéros de comptes sont des exemples. Le fichier contient les codes que vous avez saisis.</p>
+</section>
+
+<!-- 6 -->
+<section id="attention">
+  <div class="sec-head"><span class="sec-num">06</span><h2>Points d'attention</h2></div>
+  <ul class="prose">
+    <li><strong>Contrôlez le premier import</strong> avec votre expert-comptable&nbsp;: vérifiez l'équilibre des écritures, en particulier pour les commandes à plusieurs taux de TVA, avec des frais fixes ou avec des remises.</li>
+    <li><strong>Un compte non choisi</strong> donne des lignes sans numéro de compte, que votre logiciel refusera ou mettra en attente.</li>
+    <li><strong>Les ventes sont datées du paiement</strong>, pas de la commande&nbsp;: une commande créée fin février et payée le 2&nbsp;mars est dans l'export de mars.</li>
+    <li><strong>Les achats ne concernent que les conseillères actives</strong>&nbsp;: les commissions d'une conseillère désactivée depuis n'apparaissent pas.</li>
+    <li><strong>Les exports Clients et Fournisseurs</strong> reprennent tout l'historique à chaque fois&nbsp;: c'est votre logiciel qui met à jour les fiches existantes.</li>
+    <li><strong>Les fichiers sont générés à la demande</strong>&nbsp;: sur une très longue période, le téléchargement peut prendre du temps. Préférez un export par mois.</li>
+  </ul>
+</section>
+
+<!-- 7 -->
+<section id="faq">
+  <div class="sec-head"><span class="sec-num">07</span><h2>Questions fréquentes</h2></div>
+  <div class="faq">
+    <details><summary>Je ne vois pas le menu Comptabilité&nbsp;: est-ce normal&nbsp;?</summary><div><p>Oui, si votre marque n'a pas de logiciel comptable choisi par SellingAtHome. Le module est activé sur demande&nbsp;; voir <a href="modules-options.html">Modules et options</a>.</p></div></details>
+    <details><summary>Mon logiciel est Sage, Cegid, EBP ou Quadra&nbsp;: puis-je utiliser ce module&nbsp;?</summary><div><p>Pas directement&nbsp;: seuls les formats Expert M Plus et Auriège existent. Les exports de données de la rubrique Rapports peuvent servir de point de départ, à retraiter avec votre expert-comptable. Voir <a href="pilotage.html">Communication et pilotage</a>.</p></div></details>
+    <details><summary>Les factures sont-elles exportées en PDF&nbsp;?</summary><div><p>Non. L'export contient les écritures (montants, comptes, numéro de facture), pas les documents. Les factures PDF restent disponibles depuis les commandes&nbsp;; voir <a href="ventes.html">Commandes et boutiques</a>.</p></div></details>
+    <details><summary>Puis-je avoir un journal différent pour les ventes et les avoirs&nbsp;?</summary><div><p>Non&nbsp;: les codes de journal sont fixés par le format (ventes et avoirs dans le même journal, achats dans un autre). Ils ne se paramètrent pas dans l'espace marque.</p></div></details>
+  </div>
+</section>
+
+  </main>
+</div>

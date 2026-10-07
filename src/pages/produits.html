@@ -1,0 +1,363 @@
+<!--page {"title":"Créer et éditer un produit"} -->
+<style>
+.types4 { display:grid; grid-template-columns:repeat(auto-fit, minmax(210px,1fr)); gap:14px; }
+.types4 .card { border-top:5px solid var(--accent); }
+.types4 .card:nth-child(2) { border-top-color:var(--pink); }
+.types4 .card:nth-child(3) { border-top-color:var(--yellow); }
+.types4 .card:nth-child(4) { border-top-color:var(--heading); }
+.types4 .card p { font-size:.92rem; }
+.tabs td:first-child { width:28%; }
+.tabs td:nth-child(3) { width:24%; font-size:.88rem; color:var(--muted); }
+.opts td:first-child { width:34%; }
+</style>
+<header class="hero">
+  <div class="hero-in">
+    <div>
+      <span class="eyebrow">Catalogue et logistique</span>
+      <h1>Créer et éditer <span class="script">un produit</span></h1>
+      <p class="lede">La liste des produits, les quatre façons de construire un produit (simple, lot, kit variable, virtuel), la création pas à pas, chaque onglet de la fiche produit, la duplication et la liste de souhaits.</p>
+    </div>
+    <div class="voucher-art" aria-hidden="true">
+      <div class="v-top"><span>Produit simple</span><span>Réf. AL218</span></div>
+      <div class="v-amount">35<span> € TTC</span></div>
+      <div class="v-name">Bague jonc deux rangs</div>
+      <div class="v-sep"></div>
+      <div class="v-meta"><span>Stock <b>par combinaison</b></span><span>Publié <b>Oui</b></span></div>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="toc" aria-label="Sommaire">
+    <details id="tocDetails" open>
+      <summary>Sommaire</summary>
+      <div class="toc-title">Sommaire</div>
+      <ol>
+        <li data-sec="definition"><a href="#definition"><span class="toc-n">1</span>Qu'est-ce qu'un produit&nbsp;?</a></li>
+        <li data-sec="liste"><a href="#liste"><span class="toc-n">2</span>La liste des produits</a>
+          <ol class="toc-sub"><li><a href="#s2-1"><span class="toc-n">2.1</span>Les colonnes</a></li><li><a href="#s2-2"><span class="toc-n">2.2</span>Rechercher et filtrer</a></li></ol>
+        </li>
+        <li data-sec="types"><a href="#types"><span class="toc-n">3</span>Les types de produit</a>
+          <ol class="toc-sub"><li><a href="#s3-1"><span class="toc-n">3.1</span>Le produit groupé (lot)</a></li><li><a href="#s3-2"><span class="toc-n">3.2</span>Le kit variable</a></li><li><a href="#s3-3"><span class="toc-n">3.3</span>Le produit virtuel</a></li><li><a href="#s3-4"><span class="toc-n">3.4</span>Quel type choisir&nbsp;?</a></li></ol>
+        </li>
+        <li data-sec="creer"><a href="#creer"><span class="toc-n">4</span>Créer un produit</a></li>
+        <li data-sec="onglets"><a href="#onglets"><span class="toc-n">5</span>Les onglets de la fiche</a></li>
+        <li data-sec="infos"><a href="#infos"><span class="toc-n">6</span>L'onglet Infos produit</a>
+          <ol class="toc-sub"><li><a href="#s6-1"><span class="toc-n">6.1</span>Informations générales</a></li><li><a href="#s6-2"><span class="toc-n">6.2</span>Publication et visibilités</a></li><li><a href="#s6-3"><span class="toc-n">6.3</span>Livraison</a></li><li><a href="#s6-4"><span class="toc-n">6.4</span>Inventaire</a></li><li><a href="#s6-5"><span class="toc-n">6.5</span>Produits associés (lot)</a></li><li><a href="#s6-6"><span class="toc-n">6.6</span>Catégories et contrôle d'accès</a></li><li><a href="#s6-7"><span class="toc-n">6.7</span>Photos et produits complémentaires</a></li><li><a href="#s6-8"><span class="toc-n">6.8</span>Informations complémentaires et SKU</a></li></ol>
+        </li>
+        <li data-sec="autres"><a href="#autres"><span class="toc-n">7</span>Les autres onglets</a>
+          <ol class="toc-sub"><li><a href="#s7-1"><span class="toc-n">7.1</span>Composants (kit variable)</a></li><li><a href="#s7-2"><span class="toc-n">7.2</span>Conditions d'achat</a></li><li><a href="#s7-3"><span class="toc-n">7.3</span>Paramètres d'approvisionnement</a></li><li><a href="#s7-4"><span class="toc-n">7.4</span>Stock vendeurs, champs personnalisés, compteurs</a></li></ol>
+        </li>
+        <li data-sec="dupliquer"><a href="#dupliquer"><span class="toc-n">8</span>Dupliquer un produit</a></li>
+        <li data-sec="souhaits"><a href="#souhaits"><span class="toc-n">9</span>La liste de souhaits</a></li>
+        <li data-sec="attention"><a href="#attention"><span class="toc-n">10</span>Points d'attention</a></li>
+        <li data-sec="faq"><a href="#faq"><span class="toc-n">11</span>Questions fréquentes</a></li>
+      </ol>
+    </details>
+  </nav>
+
+  <main>
+
+<!-- 1 -->
+<section id="definition">
+  <div class="sec-head"><span class="sec-num">01</span><h2>Qu'est-ce qu'un produit&nbsp;?</h2></div>
+  <p class="lede">Un produit, c'est ce que vos conseillères ajoutent au panier de leurs clientes&nbsp;: une <strong>référence</strong>, un <strong>nom</strong> et une description dans chaque langue de votre marque, un ou plusieurs <strong>prix</strong> (un par pays), des <strong>catégories</strong>, des <strong>photos</strong> et, si vous le souhaitez, un <strong>stock</strong>.</p>
+  <p>Tout se règle dans la <strong>fiche produit</strong>, organisée en onglets. Les prix, les déclinaisons (tailles, couleurs…) et les stocks ont leur propre page dans ce guide&nbsp;: <a href="prix-taxes.html">Prix, prix par rôle et taxes</a>, <a href="attributs-declinaisons.html">Catégories, attributs et déclinaisons</a> et <a href="stocks.html">Les stocks</a>.</p>
+  <div class="stats">
+    <div class="stat"><b>11&nbsp;470</b><span>produits publiés sur l'ensemble des marques actives</span></div>
+    <div class="stat"><b>91&nbsp;%</b><span>sont des produits simples</span></div>
+    <div class="stat"><b>15 / 35</b><span>marques vendent des lots (produits groupés)</span></div>
+    <div class="stat"><b>9 / 35</b><span>marques vendent des kits variables</span></div>
+  </div>
+  <div class="tip"><span class="ex-label">Vocabulaire</span><p>L'espace marque parle de «&nbsp;Vendeur&nbsp;» là où ce guide dit <strong>conseillère</strong>, et de «&nbsp;Client&nbsp;» pour la <strong>cliente</strong>. Les libellés d'écran sont cités tels quels, entre guillemets ou en gras.</p></div>
+</section>
+
+<!-- 2 -->
+<section id="liste">
+  <div class="sec-head"><span class="sec-num">02</span><h2>La liste des produits</h2></div>
+  <div class="path" aria-label="Chemin d'accès"><span>Espace marque</span><span>Catalogue</span><span><b>Produits</b></span></div>
+  <figure><img src="Captures/Catalogue/liste-produits.png" alt="Liste des produits : boutons Ajouter un produit et Importer stocks, bouton Filtrer, recherche ; colonnes Référence, Photo produit, Nom produit, Prix, Quantité en stock, Stock vendeurs, Type de produit, Publié, Dispo en pts de fid, Ordre d'affichage, Actions" loading="lazy"><figcaption>La liste des produits de la marque de démonstration.</figcaption></figure>
+  <p>En haut à droite, deux boutons&nbsp;: <strong>Ajouter un produit</strong> (voir <a href="#creer">Créer un produit</a>) et <strong>Importer stocks</strong> (mise à jour des stocks par fichier CSV, détaillée dans <a href="stocks.html#s7-1">Les stocks</a>).</p>
+
+  <h3 id="s2-1"><span class="sub-num">2.1</span> Les colonnes</h3>
+  <div class="table-wrap"><table class="opts">
+    <thead><tr><th>Colonne</th><th>Ce qu'elle montre</th></tr></thead>
+    <tbody>
+      <tr><td><b>Prix</b></td><td>Le prix du pays par défaut de votre marque, en TTC avec le HT entre parenthèses.</td></tr>
+      <tr><td><b>Quantité en stock</b></td><td>Un badge&nbsp;: «&nbsp;12 En stock&nbsp;» (orange si le seuil de stock faible de votre marque est atteint), «&nbsp;En rupture de stock&nbsp;», «&nbsp;En réappro&nbsp;» si une date de réapprovisionnement future est saisie. Un lot dont aucun composant n'est suivi affiche «&nbsp;∞ En stock&nbsp;». Rien n'est affiché si le stock n'est pas suivi.</td></tr>
+      <tr><td><b>Stock vendeurs</b></td><td>Le stock détenu par les conseillères (option «&nbsp;stock chez les vendeurs&nbsp;»).</td></tr>
+      <tr><td><b>Type de produit</b>, <b>Publié</b>, <b>Dispo en pts de fid</b></td><td>Le type, la disponibilité à la vente et la présence dans le catalogue en points de fidélité.</td></tr>
+      <tr><td><b>Ordre d'affichage</b></td><td>Le rang du produit dans ses catégories (voir <a href="#s6-6">6.6</a>).</td></tr>
+      <tr><td><b>Actions</b></td><td>Voir la fiche (œil), la modifier (crayon), la supprimer (croix).</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 id="s2-2"><span class="sub-num">2.2</span> Rechercher et filtrer</h3>
+  <div class="figrow">
+    <figure><img src="Captures/Catalogue/filtres-produits.png" alt="Fenêtre Filtrer : Catégories, Statut, Type de produit, case Produit indiqué en réduction, boutons Effacer tous les filtres et Appliquer" loading="lazy"><figcaption>Les filtres de la liste.</figcaption></figure>
+    <div class="prose" style="display:flex;flex-direction:column;gap:12px">
+      <p>La <strong>recherche</strong> porte sur les colonnes de la liste, mais aussi sur le <strong>code-barres</strong> et le <strong>SKU des combinaisons</strong>&nbsp;: scanner ou taper le SKU d'une taille retrouve le produit.</p>
+      <p>Le bouton <strong>Filtrer</strong> combine catégorie, statut (publié ou non), type de produit et la case «&nbsp;Produit indiqué en réduction&nbsp;».</p>
+    </div>
+  </div>
+</section>
+
+<!-- 3 -->
+<section id="types">
+  <div class="sec-head"><span class="sec-num">03</span><h2>Les types de produit</h2></div>
+  <p class="lede">Le champ <strong>Type de produit</strong> propose trois valeurs&nbsp;: «&nbsp;Produit simple&nbsp;», «&nbsp;Produit groupé&nbsp;» et «&nbsp;Kit variables&nbsp;». Le produit virtuel n'est pas un type mais une case à cocher, possible sur un produit simple.</p>
+  <div class="types4">
+    <div class="card"><span class="tag">Produit simple</span><h4>Un article</h4><p>Une bague, un pot de crème, un livre. Il peut être décliné en tailles ou couleurs grâce aux attributs.</p></div>
+    <div class="card"><span class="tag pink">Produit groupé</span><h4>Un lot fixe</h4><p>Plusieurs produits vendus ensemble, en quantités fixes&nbsp;: un coffret duo collier + boucles.</p></div>
+    <div class="card"><span class="tag yellow">Kit variables</span><h4>Un kit à composer</h4><p>Un kit dont la conseillère choisit le contenu, composant par composant&nbsp;: «&nbsp;1 bague au choix&nbsp;».</p></div>
+    <div class="card"><span class="tag">Produit virtuel</span><h4>Rien à expédier</h4><p>Une formation, un service, une carte cadeau. La commande qui n'en contient que ça est terminée dès son paiement.</p></div>
+  </div>
+
+  <h3 id="s3-1"><span class="sub-num">3.1</span> Le produit groupé (lot)</h3>
+  <p>Le lot n'a pas d'attributs ni de combinaisons. On compose son contenu dans le bloc <strong>Produits associés</strong> de l'onglet Infos produit (voir <a href="#s6-5">6.5</a>), avec une quantité par produit. Une combinaison précise peut être choisie (la bague en taille 52, coloris or).</p>
+  <p>Par défaut, le lot n'a <strong>pas de stock propre</strong>&nbsp;: sa disponibilité se calcule à partir du stock de ses composants, et sa vente déstocke chacun d'eux. La case <strong>Stock au produit groupé</strong> lui donne au contraire un stock à lui. Le détail et un exemple chiffré sont dans <a href="stocks.html#s5-1">Les stocks</a>.</p>
+
+  <h3 id="s3-2"><span class="sub-num">3.2</span> Le kit variable</h3>
+  <p>Proposé si l'option est active pour votre marque (c'est le cas de 29 marques actives sur 35). Le kit est découpé en <strong>composants</strong>&nbsp;: chacun a un nom, une <strong>quantité maximale</strong> et une liste de produits parmi lesquels la conseillère choisit au moment de la vente (voir <a href="#s7-1">7.1</a>). Le kit n'a pas de stock à lui&nbsp;: ce sont les produits choisis qui sont déstockés.</p>
+  <div class="example"><span class="ex-label">Exemple</span><p>Votre «&nbsp;Kit nouvelle conseillère&nbsp;» à 149&nbsp;€ contient trois composants&nbsp;: «&nbsp;100 catalogues&nbsp;» (un seul produit possible), «&nbsp;Présentoir au choix&nbsp;» et «&nbsp;1 bague au choix&nbsp;». Léa choisit le présentoir à colliers et la bague en taille 54&nbsp;: ces deux produits-là sortent du stock.</p></div>
+
+  <h3 id="s3-3"><span class="sub-num">3.3</span> Le produit virtuel</h3>
+  <p>Cochez <strong>Produit virtuel</strong> dans l'onglet Infos produit. Une commande qui ne contient que des produits virtuels passe à «&nbsp;Terminée&nbsp;» dès son paiement (voir <a href="commandes-comprendre.html#s4-1">Comprendre les commandes</a>). Pensez aussi à décocher <strong>Livraison activée</strong> si ce bloc est affiché, et à cocher <strong>Non inclus dans le calcul des frais de livraison</strong>. 13 marques actives sur 35 vendent au moins un produit virtuel.</p>
+
+  <h3 id="s3-4"><span class="sub-num">3.4</span> Quel type choisir&nbsp;?</h3>
+  <div class="decide">
+    <div class="row"><span class="q">Un seul article, éventuellement en plusieurs tailles ou couleurs</span><span class="arrow">→</span><span class="pill">Produit simple</span></div>
+    <div class="row"><span class="q">Un ensemble au contenu toujours identique</span><span class="arrow">→</span><span class="pill pink">Produit groupé</span></div>
+    <div class="row"><span class="q">Un ensemble dont le contenu se choisit à la vente</span><span class="arrow">→</span><span class="pill yellow">Kit variables</span></div>
+    <div class="row"><span class="q">Une prestation sans colis</span><span class="arrow">→</span><span class="pill">Produit simple + Produit virtuel</span></div>
+  </div>
+</section>
+
+<!-- 4 -->
+<section id="creer">
+  <div class="sec-head"><span class="sec-num">04</span><h2>Créer un produit</h2></div>
+  <div class="path" aria-label="Chemin d'accès"><span>Catalogue</span><span>Produits</span><span><b>Ajouter un produit</b></span></div>
+  <figure><img src="Captures/Catalogue/creation-produit.png" alt="Écran Ajouter un produit : bloc Informations générales (Type de produit, Référence produit, onglets de langue avec Nom, Description courte, Description), bloc Prix (Prix TTC, Catégorie de la taxe, prix HT calculé, Éco-participation), bloc Association des catégories, bouton Créer le produit" loading="lazy"><figcaption>Le formulaire de création.</figcaption></figure>
+  <ol class="prose">
+    <li>Choisissez le <strong>Type de produit</strong> et saisissez la <strong>Référence produit</strong> (obligatoire, unique dans votre marque).</li>
+    <li>Pour chaque langue de votre marque (un onglet par drapeau), saisissez le <strong>Nom</strong>, la <strong>Description courte</strong> et la <strong>Description</strong>.</li>
+    <li>Cochez <strong>Disponible à la vente&nbsp;?</strong> si le produit doit être commandable tout de suite, ou programmez des dates (voir <a href="#s6-2">6.2</a>).</li>
+    <li>Saisissez le <strong>Prix TTC</strong> et la <strong>Catégorie de la taxe</strong>&nbsp;: le prix HT se calcule sous le champ. La taxe est obligatoire&nbsp;: sans elle, la création est refusée.</li>
+    <li>Choisissez une ou plusieurs <strong>catégories</strong>. Sans catégorie, le produit est rangé dans la catégorie racine de votre marque.</li>
+    <li>Si le bloc <strong>Livraison</strong> est affiché, renseignez poids et dimensions.</li>
+    <li>Cliquez sur <strong>Créer le produit</strong>&nbsp;: la fiche complète s'ouvre, avec tous ses onglets.</li>
+  </ol>
+  <div class="tip"><span class="ex-label">Bon à savoir</span><p>Le prix saisi à la création devient le tarif du pays de la taxe choisie, marqué «&nbsp;Par défaut&nbsp;». Les autres pays s'ajoutent ensuite dans l'onglet <strong>Tarifs</strong>. Un lot ou un kit est toujours créé avec la méthode d'inventaire «&nbsp;stock non suivi&nbsp;».</p></div>
+</section>
+
+<!-- 5 -->
+<section id="onglets">
+  <div class="sec-head"><span class="sec-num">05</span><h2>Les onglets de la fiche</h2></div>
+  <div class="path" aria-label="Chemin d'accès"><span>Catalogue</span><span>Produits</span><span><b>crayon d'une ligne</b></span></div>
+  <figure><img src="Captures/Catalogue/fiche-onglets.png" alt="En-tête de la fiche produit : titre Modifier, onglets Infos produit, Attributs, Combinaisons d'attributs, Tarifs, Historique du stock, Conditions d'achat, Paramètres d'approvisionnement, Stock vendeurs ; boutons Dupliquer le produit et Enregistrer les modifications" loading="lazy"><figcaption>Les onglets d'un produit simple.</figcaption></figure>
+  <p>Les onglets affichés dépendent du <strong>type de produit</strong> et des <strong>options de votre marque</strong>&nbsp;:</p>
+  <div class="table-wrap"><table class="tabs">
+    <thead><tr><th>Onglet</th><th>Contenu</th><th>Affiché…</th></tr></thead>
+    <tbody>
+      <tr><td><b>Infos produit</b></td><td>Tout le descriptif, la publication, la livraison, l'inventaire, les catégories, les photos (<a href="#infos">section 6</a>).</td><td>Toujours</td></tr>
+      <tr><td><b>Champs personnalisés</b></td><td>Les champs propres à votre marque (<a href="#s7-4">7.4</a>).</td><td>Module champs personnalisés</td></tr>
+      <tr><td><b>Attributs</b></td><td>Les axes de déclinaison&nbsp;: taille, couleur… (<a href="attributs-declinaisons.html#s4">détail</a>)</td><td>Produit simple</td></tr>
+      <tr><td><b>Combinaisons d'attributs</b></td><td>Chaque déclinaison, avec son stock et son SKU (<a href="attributs-declinaisons.html#s5">détail</a>).</td><td>Produit simple</td></tr>
+      <tr><td><b>Tarifs</b></td><td>Prix par pays, prix par rôle (<a href="prix-taxes.html#s2">détail</a>).</td><td>Toujours</td></tr>
+      <tr><td><b>Historique du stock</b></td><td>Chaque mouvement de stock (<a href="stocks.html#s6">détail</a>).</td><td>Produit simple, ou lot avec stock propre</td></tr>
+      <tr><td><b>Conditions d'achat</b></td><td>Qui peut acheter, et combien (<a href="#s7-2">7.2</a>).</td><td>Produits de votre marque</td></tr>
+      <tr><td><b>Paramètres d'approvisionnement</b></td><td>Fournisseurs du produit (<a href="#s7-3">7.3</a>).</td><td>Module approvisionnement, produit simple</td></tr>
+      <tr><td><b>Composants</b></td><td>Le contenu d'un kit variable (<a href="#s7-1">7.1</a>).</td><td>Kit variables</td></tr>
+      <tr><td><b>Stock vendeurs</b></td><td>Les quantités détenues par chaque conseillère (<a href="#s7-4">7.4</a>).</td><td>Option stock chez les vendeurs</td></tr>
+      <tr><td><b>Compteurs</b></td><td>Gains et utilisations de compteurs (<a href="#s7-4">7.4</a>).</td><td>Option compteurs</td></tr>
+    </tbody>
+  </table></div>
+  <div class="warn"><span class="ex-label">Attention</span><p>Le bouton <strong>Enregistrer les modifications</strong> n'enregistre que l'onglet <strong>Infos produit</strong>. Les autres onglets (attributs, combinaisons, tarifs, composants…) s'enregistrent chacun par leur propre bouton, au fil de la saisie.</p></div>
+</section>
+
+<!-- 6 -->
+<section id="infos">
+  <div class="sec-head"><span class="sec-num">06</span><h2>L'onglet Infos produit</h2></div>
+
+  <h3 id="s6-1"><span class="sub-num">6.1</span> Informations générales</h3>
+  <div class="figrow">
+    <figure><img src="Captures/Catalogue/fiche-general.png" alt="Bloc Informations générales : Type de produit, Référence produit, Code-barres, onglets de langue avec Nom, Description courte et Description mise en forme, interrupteur Publication Manuelle, cases Disponible à la vente, Disponible sur la mini-boutique vendeur, Disponible sur les réunions virtuelles, Disponible sur le mini-site hôte, Disponible dans le catalogue en points de fidélité, Produit non commissionné, Produit virtuel, Non inclus dans le calcul des frais de livraison, Afficher le badge réduction" loading="lazy"><figcaption>Le bloc Informations générales.</figcaption></figure>
+    <div class="prose" style="display:flex;flex-direction:column;gap:12px">
+      <p><strong>Type de produit</strong>, <strong>Référence produit</strong> et <strong>Code-barres</strong> identifient le produit. Le code-barres sert aussi à la recherche dans la liste.</p>
+      <p>Le <strong>Nom</strong>, la <strong>Description courte</strong> et la <strong>Description</strong> (avec mise en forme&nbsp;: gras, listes, liens) se saisissent langue par langue. Une langue laissée vide n'aura pas de nom traduit.</p>
+      <p>Selon vos options apparaissent aussi&nbsp;: <strong>Points VJ</strong> et <strong>Points BC</strong>, le <strong>Compte comptable</strong> (si votre comptabilité est paramétrée), le <strong>Montant fixe de commission</strong>, la référence et l'identifiant externes (marques synchronisées avec un site e-commerce).</p>
+    </div>
+  </div>
+
+  <h3 id="s6-2"><span class="sub-num">6.2</span> Publication et visibilités</h3>
+  <p>L'interrupteur <strong>Publication</strong> a deux positions&nbsp;:</p>
+  <ul class="prose">
+    <li><strong>Manuelle</strong>&nbsp;: la case <strong>Disponible à la vente&nbsp;?</strong> décide seule. Décochée, le produit n'est plus commandable par les conseillères.</li>
+    <li><strong>Programmée</strong>&nbsp;: vous saisissez <strong>Disponible à partir du</strong> et/ou <strong>Indisponible à partir du</strong>. Le produit se publie et se dépublie tout seul à ces dates&nbsp;; l'écran indique «&nbsp;Actuellement publié&nbsp;» ou «&nbsp;Actuellement non publié&nbsp;».</li>
+  </ul>
+  <div class="example"><span class="ex-label">Exemple</span><p>Votre collection de Noël doit sortir le 1<sup>er</sup>&nbsp;novembre à 8&nbsp;h et disparaître le 31&nbsp;décembre au soir. Passez la publication en <strong>Programmée</strong>, saisissez les deux dates, enregistrez&nbsp;: plus besoin d'y penser.</p></div>
+  <p>Les autres cases règlent <strong>où</strong> et <strong>comment</strong> le produit est vendu. Certaines n'apparaissent que si le canal correspondant est actif pour votre marque.</p>
+  <div class="table-wrap"><table class="opts">
+    <thead><tr><th>Case</th><th>Effet</th></tr></thead>
+    <tbody>
+      <tr><td><b>Disponible sur la mini-boutique vendeur</b></td><td>Le produit est proposé dans la boutique en ligne de chaque conseillère. Voir <a href="ventes.html">Commandes et boutiques</a>.</td></tr>
+      <tr><td><b>Disponible sur les réunions virtuelles</b></td><td>Le produit est proposé pendant les réunions en visio.</td></tr>
+      <tr><td><b>Disponible sur le mini-site hôte</b></td><td>Le produit est proposé sur le mini-site de réunion de l'hôtesse.</td></tr>
+      <tr><td><b>Disponible pour le e-commerce&nbsp;?</b></td><td>Pour les marques reliées à un site e-commerce&nbsp;: le produit est envoyé vers ce site.</td></tr>
+      <tr><td><b>Disponible dans le catalogue en points de fidélité&nbsp;?</b></td><td>Le produit peut être obtenu avec des points de fidélité&nbsp;; sa valeur en points se saisit dans l'onglet Tarifs. Voir <a href="fidelite-guide.html">La fidélité</a>.</td></tr>
+      <tr><td><b>Produit non commissionné</b></td><td>Le produit ne génère pas de commission pour la conseillère.</td></tr>
+      <tr><td><b>Produit virtuel</b></td><td>Rien à expédier (voir <a href="#s3-3">3.3</a>).</td></tr>
+      <tr><td><b>Non inclus dans le calcul des frais de livraison</b></td><td>Le produit n'entre pas dans le calcul des frais de port.</td></tr>
+      <tr><td><b>Afficher le badge réduction</b></td><td>Affiche un badge de réduction sur le produit, entre une <strong>Date de début de réduction</strong> et une <strong>Date de fin de réduction</strong>. C'est un affichage&nbsp;: le prix réduit lui-même se règle dans l'onglet Tarifs (prix «&nbsp;Pour tous les clients&nbsp;» daté, voir <a href="prix-taxes.html#s3">prix par rôle</a>).</td></tr>
+      <tr><td><b>Réservable</b>, <b>Uniquement achetable par compteur</b>, <b>Eligible au crédit d'impôt</b>, <b>Achetable par commission</b>, <b>Autoriser la livraison personnalisée&nbsp;?</b></td><td>Cases liées à des options particulières (collections, compteurs, crédit d'impôt, paiement par commission, adresses multiples). Elles n'apparaissent que si l'option est active.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 id="s6-3"><span class="sub-num">6.3</span> Livraison</h3>
+  <div class="figrow">
+    <figure><img src="Captures/Catalogue/fiche-livraison.png" alt="Bloc Livraison : case Livraison activée, champs Poids (kg), Longueur, Largeur, Hauteur (mètres), Poids brut (kg), Unité de capacité" loading="lazy"><figcaption>Le bloc Livraison.</figcaption></figure>
+    <div class="prose" style="display:flex;flex-direction:column;gap:12px">
+      <p>Ce bloc n'apparaît que si votre marque l'a activé. <strong>Livraison activée</strong> indique que le produit s'expédie&nbsp;; le <strong>Poids</strong>, les dimensions et le <strong>Poids brut</strong> servent aux transporteurs et aux frais de port calculés au poids. Les unités (kg, mètres…) sont celles de votre marque.</p>
+      <p>Les modes et frais de livraison sont décrits dans l'univers <a href="catalogue.html">Catalogue et logistique</a>.</p>
+    </div>
+  </div>
+
+  <h3 id="s6-4"><span class="sub-num">6.4</span> Inventaire</h3>
+  <div class="figrow">
+    <figure><img src="Captures/Catalogue/fiche-inventaire.png" alt="Bloc Inventaire : Méthode d'inventaire Suivre les stocks par attributs de produit, date de réapprovisionnement optionnelle, Stock vendeur, Emplacement, Stock mobilisé 80 avec bouton de détail" loading="lazy"><figcaption>Le bloc Inventaire.</figcaption></figure>
+    <div class="prose" style="display:flex;flex-direction:column;gap:12px">
+      <p>La <strong>Méthode d'inventaire</strong> dit si le stock est suivi, et à quel niveau. Selon la méthode apparaissent la <strong>Quantité en stock</strong>, la case <strong>Autoriser la rupture de stock</strong>, une date de réapprovisionnement, l'<strong>Emplacement</strong> en entrepôt et le <strong>Stock mobilisé</strong>.</p>
+      <p>Tout est expliqué dans <a href="stocks.html">Les stocks</a>.</p>
+    </div>
+  </div>
+
+  <h3 id="s6-5"><span class="sub-num">6.5</span> Produits associés (lot)</h3>
+  <div class="figrow">
+    <figure><img src="Captures/Catalogue/fiche-groupe.png" alt="Bloc Produits associés d'un produit groupé : colonnes Produit, SKU, Code-barres, Quantité (modifiable), Ordre d'affichage ; quatre produits dont certains avec leur combinaison ; bouton Ajouter un nouveau produit associé" loading="lazy"><figcaption>Le contenu d'un lot.</figcaption></figure>
+    <div class="prose" style="display:flex;flex-direction:column;gap:12px">
+      <p>Ce bloc n'apparaît que pour un <strong>Produit groupé</strong>. <strong>Ajouter un nouveau produit associé</strong> ouvre un sélecteur de produits&nbsp;; choisissez la combinaison si le produit est décliné.</p>
+      <p>La <strong>Quantité</strong> se modifie directement dans le tableau, et l'ordre d'affichage par glisser-déposer. Ces changements sont enregistrés immédiatement.</p>
+      <p>Juste sous le type de produit, la case <strong>Stock au produit groupé</strong> donne au lot un stock propre (voir <a href="stocks.html#s5-1">Les stocks</a>).</p>
+    </div>
+  </div>
+
+  <h3 id="s6-6"><span class="sub-num">6.6</span> Catégories et contrôle d'accès</h3>
+  <div class="figrow">
+    <figure><img src="Captures/Catalogue/fiche-categories.png" alt="Bloc Association des catégories : champ Categories avec SellingAtHome >> Bagues, champ Ordre d'affichage dans les catégories" loading="lazy"><figcaption>Les catégories du produit.</figcaption></figure>
+    <figure><img src="Captures/Catalogue/fiche-acces.png" alt="Bloc Liste de contrôle d'accès : champs Rôles client et Rôles vendeur, vides" loading="lazy"><figcaption>Le contrôle d'accès.</figcaption></figure>
+  </div>
+  <ul class="prose">
+    <li><strong>Categories</strong>&nbsp;: un produit peut être rangé dans plusieurs catégories. L'<strong>Ordre d'affichage dans les catégories</strong> fixe son rang. Les catégories elles-mêmes se gèrent dans <a href="attributs-declinaisons.html#s2">Catalogue › Catégories</a>.</li>
+    <li><strong>Rôles vendeur</strong>&nbsp;: vide, le produit est visible par toutes les conseillères. Rempli, seules les conseillères ayant l'un de ces rôles le voient dans leur catalogue.</li>
+    <li><strong>Rôles client</strong>&nbsp;: réserve le produit aux clientes ayant l'un des rôles choisis.</li>
+  </ul>
+  <div class="example"><span class="ex-label">Exemple</span><p>Votre présentoir de démonstration ne doit être commandé que par les conseillères&nbsp;: mettez-lui le rôle vendeur adéquat. Chloé, qui a ce rôle, le voit&nbsp;; une conseillère sans ce rôle ne le voit pas.</p></div>
+
+  <h3 id="s6-7"><span class="sub-num">6.7</span> Photos et produits complémentaires</h3>
+  <div class="figrow">
+    <figure><img src="Captures/Catalogue/fiche-complementaires.png" alt="Bloc Produits complémentaires : colonnes Référence, Produit, Ordre d'affichage ; trois produits ; bouton Ajouter un nouveau produit associé" loading="lazy"><figcaption>Les produits complémentaires.</figcaption></figure>
+    <div class="prose" style="display:flex;flex-direction:column;gap:12px">
+      <p><strong>Photos</strong>&nbsp;: cliquez ou déposez vos fichiers (jpeg ou png). L'une d'elles est la <strong>Photo principale</strong>, encadrée en vert. Un nombre maximal de photos s'applique&nbsp;; au-delà, un message vous l'indique.</p>
+      <p><strong>Produits complémentaires</strong>&nbsp;: les produits à suggérer avec celui-ci (les boucles assorties à la bague). Ils s'ajoutent par le bouton du bloc et s'ordonnent par glisser-déposer.</p>
+    </div>
+  </div>
+
+  <h3 id="s6-8"><span class="sub-num">6.8</span> Informations complémentaires et SKU</h3>
+  <ul class="prose">
+    <li>Le bloc <strong>Informations complémentaires</strong> (et les blocs de groupes de champs) affiche les champs propres à votre marque, quand ils existent.</li>
+    <li>Le champ <strong>SKU</strong> du produit n'est affiché que si l'option correspondante est activée pour votre marque. Les SKU des déclinaisons, eux, se saisissent toujours dans l'onglet Combinaisons d'attributs.</li>
+    <li>Pour un kit variable, si votre marque utilise les collections, un bloc «&nbsp;Gestion du module&nbsp;» apparaît. Voir <a href="ventes.html">Commandes et boutiques</a>.</li>
+  </ul>
+</section>
+
+<!-- 7 -->
+<section id="autres">
+  <div class="sec-head"><span class="sec-num">07</span><h2>Les autres onglets</h2></div>
+  <p>Les onglets Attributs, Combinaisons d'attributs, Tarifs et Historique du stock ont leur page dédiée (liens dans le <a href="#onglets">tableau des onglets</a>). Voici les autres.</p>
+
+  <h3 id="s7-1"><span class="sub-num">7.1</span> Composants (kit variable)</h3>
+  <figure><img src="Captures/Catalogue/fiche-composant-edition.png" alt="Onglet Composants d'un kit : tableau Composant / Produits (100 catalogues, Présentoir au choix, 2 paires au choix, 1 bague au choix) ; panneau Editer le composant avec Nom, Quantité maximale, Nom d'affichage par langue, liste de produits, bouton Ajouter un produit et Enregistrer" loading="lazy"><figcaption>Un kit et l'édition d'un de ses composants.</figcaption></figure>
+  <ol class="prose">
+    <li>Cliquez sur <strong>Ajouter un composant</strong>.</li>
+    <li>Donnez un <strong>Nom</strong> (usage interne) et un <strong>Nom d'affichage</strong> par langue (ce que voit la conseillère, par exemple «&nbsp;2 paires au choix&nbsp;»).</li>
+    <li>Fixez la <strong>Quantité maximale</strong>&nbsp;: le nombre d'articles que la conseillère peut prendre dans ce composant.</li>
+    <li><strong>Ajouter un produit</strong>&nbsp;: choisissez les produits possibles, et pour un produit décliné, ses combinaisons autorisées.</li>
+    <li><strong>Enregistrer</strong>.</li>
+  </ol>
+  <p>Au moment de la vente, si un produit choisi suit son stock et n'en a plus (sans rupture autorisée), l'ajout du kit est refusé.</p>
+
+  <h3 id="s7-2"><span class="sub-num">7.2</span> Conditions d'achat</h3>
+  <div class="figrow">
+    <figure><img src="Captures/Catalogue/fiche-conditions.png" alt="Onglet Conditions d'achat : bloc ET / OU, liste Sélectionner un filtre, boutons d'ajout de règle et de groupe, bouton Enregistrer" loading="lazy"><figcaption>L'onglet Conditions d'achat.</figcaption></figure>
+    <div class="prose" style="display:flex;flex-direction:column;gap:12px">
+      <p>Cet onglet limite qui peut acheter le produit et en quelle quantité&nbsp;: réservé au kit de démarrage, 2 par cliente, un plafond par conseillère et par mois…</p>
+      <p>Tout est détaillé dans le <a href="conditions-achat-guide.html">guide des conditions d'achat</a>.</p>
+    </div>
+  </div>
+
+  <h3 id="s7-3"><span class="sub-num">7.3</span> Paramètres d'approvisionnement</h3>
+  <figure><img src="Captures/Catalogue/fiche-fournisseurs.png" alt="Onglet Paramètres d'approvisionnement : liste Fournisseur par défaut, bouton Ajouter un fournisseur, colonnes Nom du fournisseur, Référence du fournisseur, Référence du produit chez le fournisseur, Combinaison, Délai de réapprovisionnement, Prix d'achat, PCB, Stock idéal, Actions" loading="lazy"><figcaption>Les fournisseurs du produit.</figcaption></figure>
+  <p>Avec le module d'approvisionnement, vous rattachez ici un ou plusieurs <strong>fournisseurs</strong> au produit (ou à certaines combinaisons), avec la référence chez le fournisseur, le délai, le prix d'achat et le stock idéal, et choisissez le <strong>Fournisseur par défaut</strong>. Le fonctionnement complet est décrit dans l'univers <a href="catalogue.html">Catalogue et logistique</a>.</p>
+
+  <h3 id="s7-4"><span class="sub-num">7.4</span> Stock vendeurs, champs personnalisés, compteurs</h3>
+  <ul class="prose">
+    <li><strong>Stock vendeurs</strong> (option stock chez les vendeurs)&nbsp;: un tableau Produit, Référence produit, Vendeur, Quantité, qui montre les pièces détenues par chaque conseillère.</li>
+    <li><strong>Champs personnalisés</strong> (module correspondant)&nbsp;: les champs propres à votre marque, avec leur bouton <strong>Enregistrer</strong>.</li>
+    <li><strong>Compteurs</strong> (option compteurs)&nbsp;: deux tableaux, «&nbsp;Gains compteurs&nbsp;» par rôle et «&nbsp;Utilisation compteurs&nbsp;» (code transaction, rôle, prix TTC, utilisation).</li>
+  </ul>
+  <p class="muted">Ces trois onglets ne sont pas actifs sur la marque de démonstration (ou vides)&nbsp;: ils sont décrits d'après l'écran, sans capture.</p>
+</section>
+
+<!-- 8 -->
+<section id="dupliquer">
+  <div class="sec-head"><span class="sec-num">08</span><h2>Dupliquer un produit</h2></div>
+  <div class="figrow">
+    <figure><img src="Captures/Catalogue/fiche-duplication.png" alt="Panneau Dupliquer le produit : champs Nom et Référence produit, bouton Dupliquer" loading="lazy"><figcaption>Le panneau de duplication.</figcaption></figure>
+    <div class="prose" style="display:flex;flex-direction:column;gap:12px">
+      <p>Le bouton <strong>Dupliquer le produit</strong>, en haut de la fiche, ouvre un panneau&nbsp;: saisissez le <strong>Nom</strong> et la <strong>Référence produit</strong> de la copie, puis <strong>Dupliquer</strong>. Une fois la copie créée, SellingAtHome propose d'ouvrir sa fiche.</p>
+      <p>La copie reprend le descriptif, les réglages de publication et de visibilité, les photos, les attributs et leurs valeurs, les catégories, le contrôle d'accès, les prix (avec les prix par rôle), les produits complémentaires et les champs personnalisés.</p>
+    </div>
+  </div>
+  <div class="warn"><span class="ex-label">Attention</span><ul class="prose">
+    <li>Les <strong>combinaisons</strong> ne sont pas copiées&nbsp;: le message de confirmation l'annonce, il faut les recréer (ou les générer) sur la copie.</li>
+    <li>Le stock n'est pas copié&nbsp;: la copie démarre sans stock.</li>
+    <li>La référence de la copie reçoit le suffixe <strong>«&nbsp;-2&nbsp;»</strong>&nbsp;: en saisissant «&nbsp;AL219&nbsp;», vous obtenez «&nbsp;AL219-2&nbsp;». Corrigez-la ensuite dans la fiche si besoin.</li>
+  </ul></div>
+</section>
+
+<!-- 9 -->
+<section id="souhaits">
+  <div class="sec-head"><span class="sec-num">09</span><h2>La liste de souhaits</h2></div>
+  <div class="path" aria-label="Chemin d'accès"><span>Espace marque</span><span>Catalogue</span><span><b>Liste de souhaits</b></span></div>
+  <figure><img src="Captures/Catalogue/liste-souhaits.png" alt="Écran Articles, Catalogue › Liste de souhaits : colonnes Référence, Photo produit, Nom produit, Prix (HT), Nombre d'apparences, Actions ; produits triés du plus souhaité au moins souhaité" loading="lazy"><figcaption>Les produits les plus souhaités.</figcaption></figure>
+  <p>Les clientes peuvent mettre des produits dans leur <strong>liste de souhaits</strong> (par exemple pendant une réunion, avec la conseillère). Cet écran agrège toutes les listes&nbsp;: pour chaque produit, le <strong>Nombre d'apparences</strong> est le nombre de listes qui le contiennent. C'est un indicateur d'envie, utile pour choisir une nouveauté à mettre en avant ou un produit à réassortir.</p>
+  <div class="example"><span class="ex-label">Exemple</span><p>Les «&nbsp;Clous martelés&nbsp;» apparaissent dans 19 listes, loin devant les autres produits&nbsp;: c'est un bon candidat pour une offre «&nbsp;prix réunion&nbsp;» le mois prochain.</p></div>
+  <p class="muted">La colonne «&nbsp;Prix (HT)&nbsp;» est souvent vide&nbsp;: elle ne reflète pas les tarifs de l'onglet Tarifs.</p>
+</section>
+
+<!-- 10 -->
+<section id="attention">
+  <div class="sec-head"><span class="sec-num">10</span><h2>Points d'attention</h2></div>
+  <ul class="prose">
+    <li><strong>Un produit sans prix pour le pays de la commande n'est pas vendable</strong>&nbsp;: la conseillère obtient «&nbsp;Produit non disponible&nbsp;». Vérifiez l'onglet Tarifs pour chaque pays où vous vendez.</li>
+    <li><strong>Changer le type d'un produit</strong> n'est pas anodin&nbsp;: un lot ou un kit repasse en «&nbsp;stock non suivi&nbsp;», et l'ajout d'attributs supprime les combinaisons existantes.</li>
+    <li><strong>Supprimer une catégorie</strong> peut dépublier des produits&nbsp;: un produit qui n'a plus aucune catégorie est rangé dans la catégorie racine et passe en non disponible à la vente (voir <a href="attributs-declinaisons.html#s2-3">Catégories</a>).</li>
+    <li><strong>Enregistrer les modifications</strong> ne concerne que l'onglet Infos produit.</li>
+    <li><strong>La duplication</strong> ajoute «&nbsp;-2&nbsp;» à la référence saisie et ne copie ni combinaisons ni stock.</li>
+  </ul>
+</section>
+
+<!-- 11 -->
+<section id="faq">
+  <div class="sec-head"><span class="sec-num">11</span><h2>Questions fréquentes</h2></div>
+  <div class="faq">
+    <details><summary>Une conseillère ne trouve pas mon produit dans son catalogue&nbsp;: pourquoi&nbsp;?</summary><div><p>Vérifiez, dans l'ordre&nbsp;: la case Disponible à la vente (ou les dates de publication programmée), un prix pour son pays dans l'onglet Tarifs, les rôles vendeur du contrôle d'accès, les rôles vendeur de la catégorie, et la publication de la catégorie.</p></div></details>
+    <details><summary>Je ne vois pas l'option «&nbsp;Kit variables&nbsp;» dans le type de produit.</summary><div><p>Le type kit variable est une option de votre marque. Demandez son activation à SellingAtHome.</p></div></details>
+    <details><summary>Comment retirer un produit de la vente sans le supprimer&nbsp;?</summary><div><p>Décochez <strong>Disponible à la vente&nbsp;?</strong> et enregistrez. Le produit reste dans la liste, avec son historique, et peut être republié à tout moment.</p></div></details>
+    <details><summary>Le produit apparaît en réunion mais pas en visio.</summary><div><p>Cochez <strong>Disponible sur les réunions virtuelles</strong>, et vérifiez que sa catégorie est publiée sur les réunions virtuelles.</p></div></details>
+    <details><summary>Puis-je importer des produits en masse&nbsp;?</summary><div><p>Le bouton <strong>Importer stocks</strong> de la liste ne met à jour que les stocks. Les produits se créent un par un dans l'espace marque, ou par une synchronisation avec votre site e-commerce si votre marque en a une.</p></div></details>
+  </div>
+</section>
+
+  </main>
+</div>

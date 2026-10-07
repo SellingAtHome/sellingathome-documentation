@@ -1,0 +1,351 @@
+<!--page {"title":"Les clientes"} -->
+<style>
+.opts td:first-child { width:30%; }
+.opts td:nth-child(3) { width:18%; font-size:.88rem; color:var(--muted); }
+.chip { display:inline-block; border-radius:100px; padding:3px 11px; font-size:.78rem; font-weight:700; background:var(--surface); color:var(--heading); border:1px solid var(--rule); }
+.chip.g { background:var(--accent-wash); color:var(--accent-ink); border-color:transparent; }
+.chip.p { background:var(--pink-wash); color:var(--pink-ink); border-color:transparent; }
+.chip.y { background:var(--yellow-wash); color:var(--yellow-ink); border-color:transparent; }
+.erase td:first-child { width:38%; }
+</style>
+<header class="hero">
+  <div class="hero-in">
+    <div>
+      <span class="eyebrow">Animation et fidélisation</span>
+      <h1>Les <span class="script">clientes</span></h1>
+      <p class="lede">La liste et la fiche cliente, son rattachement aux conseillères, les rôles clients, le consentement et l'anonymisation RGPD&nbsp;: tout ce que la marque voit et peut faire sur ses clientes.</p>
+    </div>
+    <div class="voucher-art" aria-hidden="true">
+      <div class="v-top"><span>Fiche cliente</span><span>#144</span></div>
+      <div class="v-amount">205<span> pts</span></div>
+      <div class="v-name">Camille Martin</div>
+      <div class="v-sep"></div>
+      <div class="v-meta"><span>Rôles <b>Hôte · Sponsor</b></span><span>Conseillère <b>Léa</b></span></div>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="toc" aria-label="Sommaire">
+    <details id="tocDetails" open>
+      <summary>Sommaire</summary>
+      <div class="toc-title">Sommaire</div>
+      <ol>
+        <li data-sec="definition"><a href="#definition"><span class="toc-n">1</span>Qu'est-ce qu'une cliente&nbsp;?</a></li>
+        <li data-sec="ou"><a href="#ou"><span class="toc-n">2</span>Où trouver les clientes</a></li>
+        <li data-sec="liste"><a href="#liste"><span class="toc-n">3</span>La liste des clientes</a>
+          <ol class="toc-sub"><li><a href="#s3-1"><span class="toc-n">3.1</span>Les colonnes et la recherche</a></li><li><a href="#s3-2"><span class="toc-n">3.2</span>Les filtres</a></li><li><a href="#s3-3"><span class="toc-n">3.3</span>La carte</a></li></ol>
+        </li>
+        <li data-sec="fiche"><a href="#fiche"><span class="toc-n">4</span>La fiche cliente</a></li>
+        <li data-sec="modifier"><a href="#modifier"><span class="toc-n">5</span>Modifier une cliente</a>
+          <ol class="toc-sub"><li><a href="#s5-1"><span class="toc-n">5.1</span>Informations générales</a></li><li><a href="#s5-2"><span class="toc-n">5.2</span>Champs personnalisés</a></li><li><a href="#s5-3"><span class="toc-n">5.3</span>Créditer des points</a></li><li><a href="#s5-4"><span class="toc-n">5.4</span>Fidélité et réductions</a></li></ol>
+        </li>
+        <li data-sec="conseilleres"><a href="#conseilleres"><span class="toc-n">6</span>Cliente et conseillères</a></li>
+        <li data-sec="roles"><a href="#roles"><span class="toc-n">7</span>Les rôles clients</a>
+          <ol class="toc-sub"><li><a href="#s7-1"><span class="toc-n">7.1</span>Les rôles système</a></li><li><a href="#s7-2"><span class="toc-n">7.2</span>Créer un rôle</a></li><li><a href="#s7-3"><span class="toc-n">7.3</span>À quoi sert un rôle&nbsp;?</a></li></ol>
+        </li>
+        <li data-sec="rgpd"><a href="#rgpd"><span class="toc-n">8</span>Consentement et RGPD</a></li>
+        <li data-sec="anonymisation"><a href="#anonymisation"><span class="toc-n">9</span>Anonymiser une cliente</a></li>
+        <li data-sec="attention"><a href="#attention"><span class="toc-n">10</span>Points d'attention</a></li>
+        <li data-sec="faq"><a href="#faq"><span class="toc-n">11</span>Questions fréquentes</a></li>
+      </ol>
+    </details>
+  </nav>
+
+  <main>
+
+<!-- 1 -->
+<section id="definition">
+  <div class="sec-head"><span class="sec-num">01</span><h2>Qu'est-ce qu'une cliente&nbsp;?</h2></div>
+  <p class="lede">Une cliente est une personne qui achète vos produits, participe à des réunions ou les accueille. Elle a une fiche unique dans votre marque, qui rassemble ses coordonnées, ses achats, ses points de fidélité, ses bons d'achat et ses rôles.</p>
+  <div class="example"><span class="ex-label">Exemple</span><p>Camille participe à une réunion chez Jade. Léa, la conseillère, saisit sa commande&nbsp;: Camille devient cliente de votre marque, rattachée à Léa. Trois mois plus tard, Camille accueille à son tour une réunion&nbsp;: elle reçoit le rôle <strong>Hôte</strong>, et ses points de fidélité apparaissent sur sa fiche.</p></div>
+  <ul class="prose">
+    <li><strong>Qui crée les clientes&nbsp;?</strong> Les conseillères (dans leur carnet d'adresses, en réunion, depuis l'application), les invitées des mini-sites de réunion, les achats en ligne, et les synchronisations avec vos outils. L'espace marque ne propose pas de bouton de création de cliente&nbsp;: la marque consulte et modifie.</li>
+    <li><strong>Une adresse email = une cliente.</strong> Deux clientes de votre marque ne peuvent pas avoir le même email.</li>
+    <li><strong>Chaque conseillère est aussi cliente</strong>&nbsp;: son compte client lui permet de commander pour elle-même. Il porte le rôle système «&nbsp;Seller&nbsp;».</li>
+  </ul>
+  <div class="stats">
+    <div class="stat"><b>3&nbsp;560</b><span>clientes par marque (médiane des marques actives)</span></div>
+    <div class="stat"><b>7&nbsp;%</b><span>des clientes sont dans le carnet de plusieurs conseillères</span></div>
+    <div class="stat"><b>35 / 35</b><span>marques actives ont le menu Clients</span></div>
+  </div>
+  <div class="tip"><span class="ex-label">Vocabulaire</span><p>Dans l'espace marque, la conseillère est appelée <strong>vendeur</strong>, la cliente <strong>client</strong>, l'hôtesse <strong>hôte</strong>, et la marraine <strong>parrain</strong>. Cette page cite les écrans tels qu'ils sont, entre guillemets.</p></div>
+</section>
+
+<!-- 2 -->
+<section id="ou">
+  <div class="sec-head"><span class="sec-num">02</span><h2>Où trouver les clientes</h2></div>
+  <div class="figrow">
+    <figure><img src="Captures/Clientes/menu-clients.png" alt="Menu de gauche de l'espace marque, rubrique Clients ouverte : Clients, Gérer les rôles, Gérer les segments" loading="lazy"><figcaption>Le menu Clients.</figcaption></figure>
+    <div class="prose" style="display:flex;flex-direction:column;gap:12px">
+      <div class="path" aria-label="Chemin d'accès"><span>Espace marque</span><span>Clients</span><span><b>Clients</b></span></div>
+      <p>La liste des clientes, avec un onglet <strong>Carte</strong>.</p>
+      <div class="path" aria-label="Chemin d'accès"><span>Espace marque</span><span>Clients</span><span><b>Gérer les rôles</b></span></div>
+      <p>Les rôles clients que vous créez (<a href="#roles">section 7</a>).</p>
+      <div class="path" aria-label="Chemin d'accès"><span>Espace marque</span><span>Clients</span><span><b>Gérer les segments</b></span></div>
+      <p>Les groupes de clientes définis par des filtres&nbsp;: voir <a href="segments.html"><em>Les segments de clientes</em></a>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 3 -->
+<section id="liste">
+  <div class="sec-head"><span class="sec-num">03</span><h2>La liste des clientes</h2></div>
+  <figure><img src="Captures/Clientes/liste-clientes.png" alt="Liste des clients : onglets Liste et Carte, bouton Filtrer, champ Rechercher un contact, colonnes #, Nom, Prénom, Email, Téléphone, points, Crée le, boutons Voir la fiche et Editer le client ; deux emails en rouge avec un triangle d'alerte" loading="lazy"><figcaption>La liste des clientes (noms fictifs).</figcaption></figure>
+
+  <h3 id="s3-1"><span class="sub-num">3.1</span> Les colonnes et la recherche</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Colonne</th><th>Contenu</th></tr></thead>
+    <tbody>
+      <tr><td><b>#</b></td><td>Le numéro de la cliente dans votre marque (ou son identifiant technique, selon un réglage de votre marque).</td></tr>
+      <tr><td><b>Nom, Prénom, Email, Téléphone</b></td><td>Ses coordonnées. Un email en <span style="color:#D2455A">rouge avec un triangle</span> signifie «&nbsp;Cette adresse email ne semble pas fiable&nbsp;»&nbsp;: un email qui lui était envoyé a été rejeté définitivement. Le signal disparaît dès qu'on corrige l'adresse.</td></tr>
+      <tr><td><b>points</b></td><td>Son solde de points de fidélité encore valides.</td></tr>
+      <tr><td><b>Crée le</b></td><td>Sa date de création sur SellingAtHome. Une étiquette <span class="chip g">Nouveau&nbsp;!</span> marque les clientes créées dans les 7 derniers jours.</td></tr>
+      <tr><td>Boutons</td><td><strong>Voir la fiche</strong> (consultation) et <strong>Editer le client</strong> (modification).</td></tr>
+    </tbody>
+  </table></div>
+  <p>La recherche «&nbsp;Rechercher un contact…&nbsp;» porte sur le numéro, le nom, le prénom et l'email.</p>
+  <div class="tip"><span class="ex-label">Bon à savoir</span><p>La liste n'a pas de bouton d'export. Pour exporter des clientes, créez un <a href="segments.html">segment</a>&nbsp;: chaque segment s'exporte en CSV ou en Excel. L'export des filleules d'une marraine se fait depuis sa fiche (<a href="#fiche">section 4</a>).</p></div>
+
+  <h3 id="s3-2"><span class="sub-num">3.2</span> Les filtres</h3>
+  <div class="figrow">
+    <figure><img src="Captures/Clientes/filtres-clientes.png" alt="Fenêtre Filtrer : Intervalle (deux dates), Segments, Vendeur rattaché, case Afficher uniquement les emails invalides, boutons Effacer tous les filtres et Appliquer" loading="lazy"><figcaption>La fenêtre des filtres.</figcaption></figure>
+    <div class="prose">
+      <ul>
+        <li><strong>Intervalle</strong>&nbsp;: date de création de la cliente.</li>
+        <li><strong>Segments</strong>&nbsp;: ne garde que les clientes d'un segment. Seuls les segments <strong>actifs</strong> sont proposés.</li>
+        <li><strong>Vendeur rattaché</strong>&nbsp;: une ou plusieurs conseillères. Une cliente apparaît si elle est dans le carnet d'adresses de l'une d'elles, qu'elle soit sa cliente principale ou secondaire.</li>
+        <li><strong>Afficher uniquement les emails invalides</strong>&nbsp;: les adresses signalées comme non fiables, pour les faire corriger.</li>
+      </ul>
+      <p class="muted">Les filtres sont mémorisés par votre navigateur.</p>
+    </div>
+  </div>
+
+  <h3 id="s3-3"><span class="sub-num">3.3</span> La carte</h3>
+  <p>L'onglet <strong>Carte</strong> place sur une carte les clientes dont l'adresse a pu être géolocalisée. Pratique pour repérer les zones sans conseillère.</p>
+</section>
+
+<!-- 4 -->
+<section id="fiche">
+  <div class="sec-head"><span class="sec-num">04</span><h2>La fiche cliente</h2></div>
+  <p class="lede">Le bouton <strong>Voir la fiche</strong> ouvre une page de consultation, sans modification possible. Le bouton <strong>Editer le client</strong>, en haut à droite, mène à la modification.</p>
+  <figure><img src="Captures/Clientes/fiche-cliente.png" alt="Fiche d'une cliente : identité, rôles Hôte et Sponsor, vendeur principal et vendeurs secondaires ; compteurs Réunions, Commandes, Produits achetés, Points de fidélité, Codes promo disponibles, Bons d'achat disponibles, cagnottes de bons d'achat, Nombre de clients parrainés avec icônes d'export ; Montant Total des achats ; blocs articles déjà achetés, liste de souhaits, historique de points" loading="lazy"><figcaption>La fiche d'une marraine (données fictives).</figcaption></figure>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Bloc</th><th>Ce qu'il montre</th></tr></thead>
+    <tbody>
+      <tr><td><b>Identité</b></td><td>Nom, email, adresse, téléphones, ses <strong>rôles</strong> (étiquettes grises), sa <strong>conseillère principale</strong> («&nbsp;Vendeur principal&nbsp;») et ses <strong>conseillères secondaires</strong> («&nbsp;Vendeurs secondaires&nbsp;»).</td></tr>
+      <tr><td><b>Compteurs</b></td><td>Réunions, Commandes, Produits achetés, Points de fidélité, Codes promo disponibles, Bons d'achat disponibles. Les deux derniers ouvrent directement l'onglet <a href="#s5-4">Fidélité et réductions</a>.</td></tr>
+      <tr><td><b>Cagnotte pour le prochain gain de bon d'achat</b></td><td>Une ligne par bon d'achat automatique&nbsp;: montant déjà cumulé / seuil à atteindre. Voir le <a href="bons-achat-guide.html">guide des bons d'achat</a>.</td></tr>
+      <tr><td><b>Nombre de clients parrainés</b></td><td>Visible si la cliente a des filleules. Deux icônes exportent la liste des filleules en CSV ou en Excel (prénom, nom, email, adresse, téléphone). Voir <a href="parrainage-client.html"><em>Le parrainage client</em></a>.</td></tr>
+      <tr><td><b>Montant Total des achats (remises déduites)</b></td><td>En HT et en TTC, sur toute la vie de la cliente.</td></tr>
+      <tr><td><b>Articles déjà achetés, liste de souhaits</b></td><td>Les produits achetés (avec prix et date) et ceux qu'elle a mis en favoris.</td></tr>
+      <tr><td><b>Historique de points de fidélité</b></td><td>Chaque gain ou utilisation, avec la commande ou la réunion d'origine et la date de fin de validité.</td></tr>
+      <tr><td><b>Cadeaux hôtesses reçus</b></td><td>Si votre marque utilise les compteurs de cadeaux.</td></tr>
+      <tr><td><b>Adresse, Informations complémentaires</b></td><td>La carte de l'adresse et vos champs personnalisés.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- 5 -->
+<section id="modifier">
+  <div class="sec-head"><span class="sec-num">05</span><h2>Modifier une cliente</h2></div>
+  <p class="lede">L'écran de modification est organisé en onglets. Chaque onglet a son propre bouton d'enregistrement.</p>
+  <div class="table-wrap"><table class="opts">
+    <thead><tr><th>Onglet</th><th>Contenu</th><th>Visible</th></tr></thead>
+    <tbody>
+      <tr><td><b>Informations générales</b></td><td>Identité, rôles, langue, consentement, adresse, parrainage, société, notifications email.</td><td>Toujours</td></tr>
+      <tr><td><b>Champs personnalisés</b></td><td>Vos champs propres à la cliente.</td><td>Option (7 marques sur 35)</td></tr>
+      <tr><td><b>Créditer le client avec des points</b></td><td>Ajouter des points à la main.</td><td>Si la cliente a un email</td></tr>
+      <tr><td><b>Fidélité et réductions</b></td><td>Bons d'achat et codes promo, disponibles et utilisés.</td><td>Toujours</td></tr>
+      <tr><td><b>Anonymiser le client</b></td><td>Effacement RGPD (<a href="#anonymisation">section 9</a>).</td><td>Toujours</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 id="s5-1"><span class="sub-num">5.1</span> Informations générales</h3>
+  <figure><img src="Captures/Clientes/edit-infos.png" alt="Onglet Informations générales : civilité, prénom, nom, email, téléphones, date de naissance, rôles Sponsored et Hôte, langue, case Exonéré de taxes, consentement ; bloc Adresse du client avec carte floutée ; bloc Parrainage avec le champ Parrain/Marraine ; bloc Société ; bloc Notifications Email avec huit cases ; bloc Consentement marketing" loading="lazy"><figcaption>L'onglet Informations générales (données fictives, carte floutée).</figcaption></figure>
+  <div class="table-wrap"><table class="opts">
+    <thead><tr><th>Champ ou bloc</th><th>Rôle</th><th>Condition</th></tr></thead>
+    <tbody>
+      <tr><td><b>Prénom, Nom</b></td><td>Obligatoires.</td><td></td></tr>
+      <tr><td><b>Email</b></td><td>Unique dans votre marque. Le modifier efface le signal «&nbsp;email non fiable&nbsp;». Les adresses jetables peuvent être refusées selon votre réglage.</td><td></td></tr>
+      <tr><td><b>Téléphone portable</b></td><td>Peut être rendu obligatoire.</td><td>Réglage de marque (1 marque)</td></tr>
+      <tr><td><b>Rôles</b></td><td>Tous les rôles de votre marque, rôles système compris. Ajoutez ou retirez un rôle à la main (<a href="#roles">section 7</a>). Un rôle «&nbsp;avec justificatif&nbsp;» ouvre une fenêtre pour déposer le document.</td><td></td></tr>
+      <tr><td><b>Langue</b></td><td>La langue des emails envoyés à la cliente.</td><td></td></tr>
+      <tr><td><b>Exonéré de taxes</b></td><td>Exonère la cliente de taxes sur ses commandes. Ne peut être changé que si elle n'a <strong>aucune commande non payée</strong> («&nbsp;Les commandes du client doivent être clôturées.&nbsp;»).</td><td>Réglage de marque (12 marques)</td></tr>
+      <tr><td><b>Consentement</b></td><td>Case de consentement accompagnée de votre texte (<a href="#rgpd">section 8</a>).</td><td>Option (1 marque)</td></tr>
+      <tr><td><b>Consentement marketing</b></td><td>Deux cases&nbsp;: communications par email, par SMS.</td><td>Réglage de marque</td></tr>
+      <tr><td><b>Adresse du client</b></td><td>Son adresse principale, avec recherche d'adresse et carte.</td><td></td></tr>
+      <tr><td><b>Parrainage</b></td><td>Le champ <strong>Parrain/Marraine</strong>&nbsp;: la marraine de la cliente. Voir <a href="parrainage-client.html"><em>Le parrainage client</em></a>.</td><td>Option parrainage (7 marques)</td></tr>
+      <tr><td><b>Société</b></td><td>Nom de la société, Siret, numéro de TVA.</td><td></td></tr>
+      <tr><td><b>Notifications Email</b></td><td>Une case par email automatique (gain de bon d'achat, présence à une réunion, suivi de livraison, bon de commande et facture…). Décocher une case coupe cet email pour cette cliente.</td><td></td></tr>
+    </tbody>
+  </table></div>
+  <div class="warn"><span class="ex-label">Attention</span><p>Si l'email saisi appartient déjà à une autre cliente de votre marque, la modification n'est <strong>pas enregistrée</strong>, sans message explicite. Vérifiez l'email dans la liste avant de le changer.</p></div>
+
+  <h3 id="s5-2"><span class="sub-num">5.2</span> Champs personnalisés</h3>
+  <p>Si l'option est activée, cet onglet affiche les champs que vous avez créés pour les clientes (taille, préférences, nombre d'enfants…). Ils se paramètrent dans les réglages de la marque&nbsp;: voir l'univers <a href="pilotage.html">Communication et pilotage</a>.</p>
+
+  <h3 id="s5-3"><span class="sub-num">5.3</span> Créditer des points</h3>
+  <div class="figrow">
+    <figure><img src="Captures/Clientes/edit-points.png" alt="Onglet Créditer le client avec des points : Nombre de points acquis 205 points, champs Nombre de points et Message, bouton Enregistrer" loading="lazy"><figcaption>Créditer des points à la main.</figcaption></figure>
+    <div class="prose">
+      <p>Le haut de l'onglet rappelle le solde de points valides. Saisissez un <strong>Nombre de points</strong> et un <strong>Message</strong> (il apparaît dans l'historique de la cliente), puis <strong>Enregistrer</strong>.</p>
+      <div class="example"><span class="ex-label">Exemple</span><p>Un colis d'Emma est arrivé abîmé. Pour s'excuser, vous lui créditez 20 points avec le message «&nbsp;Geste commercial colis abîmé&nbsp;». Elle les voit dans son historique et peut les utiliser sur sa prochaine commande, au taux de change de votre marque.</p></div>
+    </div>
+  </div>
+  <p class="muted">Les règles de calcul, le taux de change et la validité des points sont expliqués dans le <a href="fidelite-guide.html">guide de la fidélité</a>.</p>
+
+  <h3 id="s5-4"><span class="sub-num">5.4</span> Fidélité et réductions</h3>
+  <figure><img src="Captures/Clientes/edit-fidelite.png" alt="Onglet Fidélité et réductions : tableaux Bons d'achat disponibles (nom, cumulable, valable sur, cumulable avec d'autres bons, à utiliser avant le / entre, commande du gain), Bons d'achats utilisés, Codes promo disponibles et Codes promo utilisés" loading="lazy"><figcaption>Bons d'achat et codes promo de la cliente.</figcaption></figure>
+  <p>L'onglet est en lecture&nbsp;: il liste les <strong>bons d'achat</strong> disponibles et utilisés (avec la «&nbsp;Commande du gain&nbsp;», celle qui les a fait gagner) et les <strong>codes promo</strong> réservés à la cliente, disponibles et utilisés. Pour en attribuer, voir les guides des <a href="bons-achat-guide.html">bons d'achat</a> et des <a href="reductions-guide.html">réductions</a>.</p>
+</section>
+
+<!-- 6 -->
+<section id="conseilleres">
+  <div class="sec-head"><span class="sec-num">06</span><h2>Une cliente et ses conseillères</h2></div>
+  <p class="lede">Une cliente peut être dans le carnet d'adresses de <strong>plusieurs conseillères</strong>. L'une d'elles est sa <strong>conseillère principale</strong>.</p>
+  <div class="grid-2">
+    <div class="card"><span class="tag">Vendeur principal</span><p>C'est la conseillère de sa <strong>dernière commande payée</strong>&nbsp;: à chaque paiement, si la commande est attribuée à une autre conseillère, celle-ci devient la conseillère principale. Le changement est historisé.</p></div>
+    <div class="card"><span class="tag pink">Vendeurs secondaires</span><p>Les autres conseillères qui ont la cliente dans leur carnet&nbsp;: elles l'ont ajoutée, l'ont invitée à une réunion ou lui ont vendu quelque chose.</p></div>
+  </div>
+  <div class="example"><span class="ex-label">Exemple</span><p>Zoé est cliente de Léa depuis 2024. En mars, elle participe à une réunion de Chloé et paie une commande de 62&nbsp;€. Chloé devient sa conseillère principale&nbsp;; Léa reste dans la liste des conseillères secondaires et garde Zoé dans son carnet.</p></div>
+  <ul class="prose">
+    <li><strong>Depuis l'espace marque</strong>, la fiche cliente ne permet pas de choisir la conseillère principale&nbsp;: elle suit les commandes. Pour réattribuer une vente, changez la conseillère de la <em>commande</em> (voir l'univers <a href="ventes.html">Commandes et boutiques</a>).</li>
+    <li><strong>Côté cliente</strong>, une cliente connectée à la boutique en ligne peut changer elle-même de conseillère («&nbsp;Changer mon vendeur&nbsp;»)&nbsp;: la conseillère choisie devient sa conseillère principale et l'ajoute à son carnet.</li>
+  </ul>
+  <div class="tip"><span class="ex-label">Ce que voit la conseillère</span><p>Une conseillère ne voit que les clientes de <strong>son</strong> carnet d'adresses, jamais celles des autres. Elle peut les filtrer par segment actif et les exporter. Selon vos réglages, elle peut aussi renseigner la marraine d'une cliente.</p></div>
+</section>
+
+<!-- 7 -->
+<section id="roles">
+  <div class="sec-head"><span class="sec-num">07</span><h2>Les rôles clients</h2></div>
+  <p class="lede">Un rôle est une <strong>étiquette</strong> posée sur une cliente&nbsp;: «&nbsp;Hôte&nbsp;», «&nbsp;VIP&nbsp;», «&nbsp;Association&nbsp;»… Il sert ensuite de condition ailleurs dans la plateforme&nbsp;: prix, réductions, fidélité, conditions d'achat, segments.</p>
+  <div class="path" aria-label="Chemin d'accès"><span>Espace marque</span><span>Clients</span><span><b>Gérer les rôles</b></span></div>
+  <figure><img src="Captures/Clientes/roles-clients.png" alt="Écran Rôles clients : bouton Ajouter un rôle, colonnes Nom, Actif, Est-ce un rôle système, Présence à une réunion, Acheté avec le produit ; trois rôles libres dont Client VIP et VIP, le nom du troisième étant flouté" loading="lazy"><figcaption>Les rôles libres de la marque (un nom flouté).</figcaption></figure>
+  <div class="warn"><span class="ex-label">Attention</span><p>Cet écran ne montre que les rôles <strong>que vous avez créés</strong>. Les rôles système n'y figurent pas&nbsp;: ils apparaissent seulement sur les fiches clientes.</p></div>
+
+  <h3 id="s7-1"><span class="sub-num">7.1</span> Les rôles système</h3>
+  <p>SellingAtHome les crée et les attribue automatiquement. Ils ne se modifient pas et ne se suppriment pas. Leur nom s'affiche tel qu'il est enregistré, parfois en anglais.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Rôle (nom affiché)</th><th>Qui le porte</th><th>Quand il est attribué</th><th>Marques</th></tr></thead>
+    <tbody>
+      <tr><td><span class="chip">Hôte</span> (ou Host)</td><td>Une cliente qui a accueilli une réunion</td><td>Quand une commande de sa réunion est payée, ou à la clôture de la réunion</td><td>35 / 35</td></tr>
+      <tr><td><span class="chip">Seller</span></td><td>Le compte client d'une conseillère</td><td>À l'activation de la conseillère&nbsp;; retiré à sa désactivation</td><td>35 / 35</td></tr>
+      <tr><td><span class="chip p">Sponsor</span></td><td>Une marraine</td><td>Quand une filleule lui est rattachée&nbsp;; retiré quand elle n'en a plus</td><td>7 / 35</td></tr>
+      <tr><td><span class="chip p">Sponsored</span></td><td>Une filleule</td><td>Quand une marraine lui est rattachée&nbsp;; retiré avec le lien</td><td>7 / 35</td></tr>
+      <tr><td><span class="chip">Association</span></td><td>Une association cliente</td><td>Rôle propre à certaines marques</td><td>3 / 35</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 id="s7-2"><span class="sub-num">7.2</span> Créer un rôle</h3>
+  <div class="figrow">
+    <figure><img src="Captures/Clientes/role-creation.png" alt="Formulaire Création d'un rôle : Nom, case Actif cochée, case Demander un justificatif, Acheté avec le produit avec bouton Choisissez un produit, case Attribué à la présence à une réunion, bouton Ajouter le rôle" loading="lazy"><figcaption>Le formulaire de création.</figcaption></figure>
+    <div class="prose">
+      <p>Cliquez sur <strong>Ajouter un rôle</strong>, puis renseignez&nbsp;:</p>
+      <ul>
+        <li><strong>Nom</strong>&nbsp;: ce que verront la marque et les conseillères.</li>
+        <li><strong>Actif</strong>&nbsp;: un rôle inactif n'est plus donné à la présence en réunion.</li>
+        <li><strong>Demander un justificatif&nbsp;?</strong>&nbsp;: à l'attribution, la fiche demande un document (carte d'étudiante, statuts d'association…).</li>
+        <li><strong>Acheté avec le produit</strong>&nbsp;: le rôle est donné à la cliente quand la conseillère enregistre le paiement d'une commande contenant ce produit (une carte de fidélité, une adhésion…).</li>
+        <li><strong>Attribué à la présence à une réunion</strong>&nbsp;: le rôle est donné à chaque participante marquée présente. Option visible seulement si le pointage des présences est activé pour votre marque.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="example"><span class="ex-label">Exemple</span><p>Vous vendez une «&nbsp;Carte Privilège&nbsp;» à 15&nbsp;€. Vous créez le rôle <strong>Privilège</strong>, acheté avec ce produit, puis une réduction de 10&nbsp;% réservée au rôle Privilège. Inès achète la carte en réunion&nbsp;: elle reçoit le rôle, et la réduction s'applique à ses commandes suivantes.</p></div>
+  <p>Un rôle libre se modifie avec le crayon et se supprime avec la croix rouge. Sur les marques actives, 10 ont créé des rôles libres (55 au total).</p>
+  <div class="warn"><span class="ex-label">Supprimer un rôle</span><p>La suppression retire le rôle de toutes les clientes qui le portent, et efface aussi les <strong>prix réservés à ce rôle</strong> et ses réservations de produits. Vérifiez avant de supprimer qu'aucun prix ne lui est réservé.</p></div>
+  <div class="tip"><span class="ex-label">Bon à savoir</span><p>Les options «&nbsp;Livraison gratuite&nbsp;» et «&nbsp;Exonérés de taxes&nbsp;» d'un rôle ne sont plus proposées et n'ont pas d'effet. Pour la livraison offerte, utilisez une <a href="reductions-guide.html">réduction</a> conditionnée au rôle&nbsp;; pour l'exonération, la case <a href="#s5-1">Exonéré de taxes</a> de la fiche.</p></div>
+
+  <h3 id="s7-3"><span class="sub-num">7.3</span> À quoi sert un rôle&nbsp;?</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Où</th><th>Utilisation</th><th>Voir</th></tr></thead>
+    <tbody>
+      <tr><td><b>Prix</b></td><td>Un prix réservé à un rôle (21 marques sur 35 en ont)&nbsp;: le prix conseillère, par exemple.</td><td><a href="catalogue.html">Catalogue</a></td></tr>
+      <tr><td><b>Réductions</b></td><td>Condition «&nbsp;rôle du client&nbsp;».</td><td><a href="reductions-guide.html">Réductions</a></td></tr>
+      <tr><td><b>Fidélité</b></td><td>Condition sur le rôle de la personne.</td><td><a href="fidelite-guide.html">Fidélité</a></td></tr>
+      <tr><td><b>Conditions d'achat</b></td><td>Réserver un produit à un rôle.</td><td><a href="conditions-achat-guide.html">Conditions d'achat</a></td></tr>
+      <tr><td><b>Segments</b></td><td>Filtre «&nbsp;Rôles&nbsp;».</td><td><a href="segments.html">Segments</a></td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- 8 -->
+<section id="rgpd">
+  <div class="sec-head"><span class="sec-num">08</span><h2>Consentement et RGPD</h2></div>
+  <div class="grid-2">
+    <div class="card"><span class="tag yellow">Consentement client</span><p>Option activée par SellingAtHome (1 marque sur 35). La fiche affiche une case de consentement avec <strong>votre texte</strong>, et la conseillère ne peut pas créer une cliente sans la cocher. La date du consentement est enregistrée.</p><p class="muted">Le texte et son libellé se rédigent par langue dans Paramètres › Configuration générale, onglet Paramètres généraux, bloc «&nbsp;Clients&nbsp;» (champs «&nbsp;Libellé consentement&nbsp;» et «&nbsp;Texte consentement&nbsp;»), visible seulement si l'option est active.</p></div>
+    <div class="card"><span class="tag pink">Consentement marketing</span><p>Deux cases&nbsp;: «&nbsp;J'accepte de recevoir des communications par email&nbsp;» et «&nbsp;… par SMS&nbsp;». Elles sont transmises à vos outils marketing quand une synchronisation est en place.</p></div>
+  </div>
+  <div class="warn"><span class="ex-label">Ne pas confondre</span><p>Le bouton «&nbsp;Modification des RGPD&nbsp;» de la Configuration générale (bloc Vendeurs) concerne le texte RGPD que vos <strong>conseillères</strong> acceptent chaque année à la connexion, pas les clientes.</p></div>
+  <div class="tip"><span class="ex-label">Bon à savoir</span><p>Si l'option de consentement est désactivée, enregistrer une fiche depuis l'espace marque remet le consentement de la cliente à «&nbsp;non&nbsp;». Évitez d'activer puis de désactiver l'option.</p></div>
+</section>
+
+<!-- 9 -->
+<section id="anonymisation">
+  <div class="sec-head"><span class="sec-num">09</span><h2>Anonymiser une cliente</h2></div>
+  <p class="lede">Quand une cliente demande l'effacement de ses données, la marque l'<strong>anonymise</strong>&nbsp;: ses données personnelles sont remplacées par des valeurs neutres, et sa fiche disparaît des listes. Ses commandes restent, pour la comptabilité et les commissions.</p>
+  <div class="figrow">
+    <figure><img src="Captures/Clientes/edit-anonymiser.png" alt="Onglet Anonymiser le client : titre ATTENTION anonymisation irréversible, texte Vous êtes sur le point d'anonymiser votre client, bouton orange Anonymiser le client" loading="lazy"><figcaption>L'onglet Anonymiser le client.</figcaption></figure>
+    <ol class="prose">
+      <li>Ouvrez la fiche en modification, onglet <strong>Anonymiser le client</strong>.</li>
+      <li>Cliquez sur <strong>Anonymiser le client</strong>.</li>
+      <li>Confirmez avec <strong>Oui anonymiser</strong>.</li>
+      <li>Le message «&nbsp;L'anonymisation a été réalisée avec succès.&nbsp;» s'affiche et vous revenez à la liste.</li>
+    </ol>
+  </div>
+  <div class="warn"><span class="ex-label">Irréversible</span><p>Il n'y a pas de retour arrière. Une fois anonymisée, la cliente ne peut plus se connecter, ne reçoit plus d'emails, et ne peut pas être retrouvée.</p></div>
+
+  <h3>Quand est-ce impossible&nbsp;?</h3>
+  <p>L'onglet affiche «&nbsp;Anonymisation impossible&nbsp;!&nbsp;» si la cliente a&nbsp;:</p>
+  <ul class="prose">
+    <li>une commande <strong>non payée modifiée dans les 90 derniers jours</strong>, ou une commande <strong>payée modifiée dans les 30 derniers jours</strong> («&nbsp;Une ou plusieurs commandes sont en cours pour ce client.&nbsp;»)&nbsp;;</li>
+    <li>une <strong>réunion</strong> à laquelle elle participe, qui a commencé il y a moins de 7 jours ou est à venir («&nbsp;Une ou plusieurs réunions sont prévues pour ce client.&nbsp;»).</li>
+  </ul>
+  <div class="example"><span class="ex-label">Exemple</span><p>Zoé demande l'effacement de ses données le 2 octobre. Sa dernière commande, payée, a été expédiée le 20 septembre&nbsp;: l'anonymisation est bloquée jusqu'au 20 octobre environ (30 jours après la dernière mise à jour de la commande). Notez sa demande et revenez après cette date.</p></div>
+
+  <h3>Ce qui est effacé, ce qui reste</h3>
+  <div class="table-wrap"><table class="erase">
+    <thead><tr><th>Donnée</th><th>Après anonymisation</th></tr></thead>
+    <tbody>
+      <tr><td>Prénom, nom, société, Siret, TVA, coordonnées bancaires, identifiants externes</td><td>Remplacés par «&nbsp;XXX_ANONIMIZED_ON_&lt;date&gt;_XXX&nbsp;»</td></tr>
+      <tr><td>Email</td><td>Remplacé par une adresse fictive, signalée comme non fiable</td></tr>
+      <tr><td>Téléphones</td><td>Remplacés par des valeurs neutres</td></tr>
+      <tr><td>Adresses de la cliente</td><td>Remplacées par une adresse neutre</td></tr>
+      <tr><td>Date de naissance, dates de création et de consentement</td><td>Remises au 1<sup>er</sup> janvier 1970</td></tr>
+      <tr><td>Mot de passe, jetons de connexion</td><td>Invalidés&nbsp;: plus de connexion possible</td></tr>
+      <tr><td>Lien de parrainage</td><td>Supprimé (elle n'a plus de marraine)</td></tr>
+      <tr><td>Fiche</td><td>Supprimée des listes et des recherches</td></tr>
+      <tr><td><b>Commandes, factures, avoirs</b></td><td><b>Conservés</b>, rattachés à la fiche anonyme</td></tr>
+      <tr><td>Numéro de cliente (#)</td><td>Conservé, pour pouvoir échanger avec le support</td></tr>
+    </tbody>
+  </table></div>
+  <p class="muted">Seule l'équipe SellingAtHome peut autoriser les conseillères à anonymiser elles-mêmes leurs clientes&nbsp;; aucune marque active ne l'a demandé.</p>
+</section>
+
+<!-- 10 -->
+<section id="attention">
+  <div class="sec-head"><span class="sec-num">10</span><h2>Points d'attention</h2></div>
+  <ul class="prose">
+    <li><strong>La conseillère principale bouge toute seule</strong>&nbsp;: elle suit la dernière commande payée. Ne la considérez pas comme une affectation figée.</li>
+    <li><strong>Les rôles système sont invisibles dans «&nbsp;Gérer les rôles&nbsp;»</strong>&nbsp;: retrouvez-les sur les fiches ou avec un segment filtré par rôle.</li>
+    <li><strong>Retirer un rôle à la main</strong> (rôle Sponsor ou Sponsored compris) ne supprime pas le lien de parrainage&nbsp;: c'est le champ Parrain/Marraine qui fait foi.</li>
+    <li><strong>Email non fiable</strong>&nbsp;: tant qu'il n'est pas corrigé, la cliente risque de ne recevoir ni facture ni bon d'achat.</li>
+    <li><strong>Anonymisation</strong>&nbsp;: irréversible, et seulement après le délai lié aux commandes et réunions récentes.</li>
+    <li><strong>Champs personnalisés et documents justificatifs</strong>&nbsp;: ils ne sont pas cités dans la liste des données effacées à l'anonymisation&nbsp;; ne stockez pas de données sensibles dans ces champs sans en avoir l'usage.</li>
+  </ul>
+</section>
+
+<!-- 11 -->
+<section id="faq">
+  <div class="sec-head"><span class="sec-num">11</span><h2>Questions fréquentes</h2></div>
+  <div class="faq">
+    <details><summary>Comment créer une cliente depuis l'espace marque&nbsp;?</summary><div><p>Ce n'est pas possible depuis la liste des clientes&nbsp;: les clientes sont créées par les conseillères, les mini-sites, les achats en ligne ou les synchronisations. La marque peut en revanche les consulter et les modifier.</p></div></details>
+    <details><summary>Comment exporter mes clientes&nbsp;?</summary><div><p>Créez un segment (par exemple «&nbsp;toutes les clientes ayant le rôle Hôte&nbsp;»), puis utilisez les boutons CSV ou XLS de la liste des segments. Voir <a href="segments.html"><em>Les segments de clientes</em></a>.</p></div></details>
+    <details><summary>Je ne trouve pas le rôle «&nbsp;Hôte&nbsp;» dans Gérer les rôles.</summary><div><p>C'est normal&nbsp;: les rôles système ne sont pas listés sur cet écran. Ils apparaissent sur les fiches et dans les listes de choix des réductions, de la fidélité et des segments.</p></div></details>
+    <details><summary>Pourquoi ma modification d'email n'a-t-elle pas été enregistrée&nbsp;?</summary><div><p>L'adresse est probablement déjà utilisée par une autre cliente de votre marque. Recherchez-la dans la liste.</p></div></details>
+    <details><summary>Une cliente a été anonymisée par erreur&nbsp;: peut-on la restaurer&nbsp;?</summary><div><p>Non, l'anonymisation est irréversible. La cliente devra être recréée par sa conseillère&nbsp;; ses anciennes commandes resteront sur la fiche anonyme.</p></div></details>
+  </div>
+</section>
+
+  </main>
+</div>

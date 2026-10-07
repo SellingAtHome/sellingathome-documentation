@@ -1,0 +1,907 @@
+<!--page {"title":"Guide de la fidélité"} -->
+<style>
+.mx-wrap table { font-size:.82rem; }
+.mx-wrap th, .mx-wrap td { padding:8px 8px; text-align:center; white-space:nowrap; }
+.mx-wrap th.mx-c, .mx-wrap td:first-child { text-align:left; white-space:normal; min-width:220px; position:sticky; left:0; background:var(--card); z-index:1; }
+.mx-wrap thead th.mx-c { background:var(--surface); }
+.mx-wrap thead tr.grp th:not(.mx-c) { border-left:1px solid var(--rule); }
+.mx-wrap thead tr.grp th { font-size:.7rem; }
+.mx-ok { color:var(--accent-ink); font-weight:800; }
+.mx-no { color:var(--muted); opacity:.55; }
+.mx-warn { color:var(--pink-ink); font-weight:800; }
+.mx-fam td { background:var(--surface) !important; font-weight:700; color:var(--heading); text-align:left !important; font-size:.74rem; letter-spacing:.08em; text-transform:uppercase; }
+.legend { display:flex; flex-wrap:wrap; gap:8px 22px; font-size:.88rem; color:var(--muted); }
+.legend b { font-size:1rem; margin-right:6px; }
+.cond td:first-child { width:27%; }
+.cond td:nth-child(2) { width:18%; color:var(--muted); font-size:.88rem; }
+.cond .know { display:block; margin-top:6px; font-size:.86rem; color:var(--pink-ink); }
+.cond .know::before { content:"À savoir : "; font-weight:700; }
+.rule-anatomy { display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:12px; }
+.rule-anatomy .ra { background:var(--card); border:1px solid var(--rule); border-radius:16px; padding:18px; display:flex; flex-direction:column; gap:8px; position:relative; }
+.rule-anatomy .ra .q { font-size:.72rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); }
+.rule-anatomy .ra b { font-size:1.05rem; color:var(--heading); }
+.rule-anatomy .ra:nth-child(1) { border-top:5px solid var(--accent); }
+.rule-anatomy .ra:nth-child(2) { border-top:5px solid var(--pink); }
+.rule-anatomy .ra:nth-child(3) { border-top:5px solid var(--yellow); }
+.rule-anatomy .ra:nth-child(4) { border-top:5px solid var(--heading); }
+.sentence { background:var(--hero); color:var(--on-hero); border-radius:16px; padding:18px 22px; font-size:1.05rem; line-height:1.7; }
+.sentence .a { color:var(--accent); font-weight:700; } .sentence .p { color:var(--pink); font-weight:700; } .sentence .y { color:var(--yellow); font-weight:700; } .sentence .w { color:#fff; font-weight:700; }
+.timeline { display:flex; flex-direction:column; gap:0; border-left:3px solid var(--rule); margin-left:10px; }
+.tl { position:relative; padding:0 0 18px 26px; }
+.tl::before { content:""; position:absolute; left:-9px; top:4px; width:15px; height:15px; border-radius:50%; background:var(--card); border:3px solid var(--accent); }
+.tl.stop::before { border-color:var(--pink); }
+.tl b { color:var(--heading); display:block; }
+.tl span { color:var(--muted); font-size:.92rem; }
+.sim .tiers { display:flex; flex-direction:column; gap:8px; }
+.sim .tier { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:12px; align-items:center; background:rgba(255,255,255,.06); border-radius:12px; padding:10px 14px; font-size:.92rem; }
+.sim .tier.on { background:rgba(121,198,192,.18); border:1px solid rgba(121,198,192,.5); }
+.sim .tier .res { font-weight:700; color:var(--on-hero-mut); }
+.sim .tier.on .res { color:var(--yellow); }
+.sim .switch { display:flex; gap:8px; flex-wrap:wrap; }
+.sim .switch button { font:inherit; font-size:.88rem; font-weight:700; border-radius:100px; padding:8px 16px; cursor:pointer; background:transparent; color:var(--on-hero); border:1px solid rgba(241,236,248,.3); }
+.sim .switch button[aria-pressed="true"] { background:var(--accent); color:#16101F; border-color:var(--accent); }
+.sim input[type=range] { width:100%; accent-color:var(--accent); }
+.sim .ca-val { font-size:1.6rem; font-weight:800; color:#fff; font-variant-numeric:tabular-nums; }
+@media (max-width: 760px) { .rule-anatomy { grid-template-columns:1fr 1fr; } }
+@media (max-width: 460px) { .rule-anatomy { grid-template-columns:1fr; } }
+</style>
+<header class="hero">
+  <div class="hero-in">
+    <div>
+      <span class="eyebrow">Guide fonctionnel</span>
+      <h1>Tout comprendre de la <span class="script">fidélité</span></h1>
+      <p class="lede">Les règles, les 26 conditions, les 7 types de récompense, la vie des points et toutes les options de paramétrage. Avec des exemples chiffrés à chaque étape.</p>
+    </div>
+    <div class="voucher-art" aria-hidden="true">
+      <div class="v-top"><span>Points de fidélité</span><span>Réunion du 12/09</span></div>
+      <div class="v-amount">+49<span> pts</span></div>
+      <div class="v-name">Bravo Sophie&nbsp;!</div>
+      <div class="v-sep"></div>
+      <div class="v-meta"><span>10&nbsp;% du CA de <b>487,50&nbsp;€</b></span><span>Solde <b>132&nbsp;pts</b></span></div>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="toc" aria-label="Sommaire">
+    <details id="tocDetails" open>
+      <summary>Sommaire</summary>
+      <div class="toc-title">Sommaire</div>
+      <ol>
+        <li data-sec="definition"><a href="#definition"><span class="toc-n">1</span>Qu'est-ce que la fidélité&nbsp;?</a>
+          <ol class="toc-sub"><li><a href="#s1-1"><span class="toc-n">1.1</span>À quoi sert le module&nbsp;?</a></li><li><a href="#s1-2"><span class="toc-n">1.2</span>Points, bons d'achat, codes promo&nbsp;: quelles différences&nbsp;?</a></li></ol>
+        </li>
+        <li data-sec="principe"><a href="#principe"><span class="toc-n">2</span>Le principe des règles</a>
+          <ol class="toc-sub"><li><a href="#s2-1"><span class="toc-n">2.1</span>Trois règles d'or</a></li></ol>
+        </li>
+        <li data-sec="ecran"><a href="#ecran"><span class="toc-n">3</span>Où paramétrer</a>
+          <ol class="toc-sub"><li><a href="#s3-1"><span class="toc-n">3.1</span>Créer une règle</a></li></ol>
+        </li>
+        <li data-sec="beneficiaires"><a href="#beneficiaires"><span class="toc-n">4</span>Les bénéficiaires</a></li>
+        <li data-sec="actions"><a href="#actions"><span class="toc-n">5</span>Les six actions</a>
+          <ol class="toc-sub"><li><a href="#s5-1"><span class="toc-n">5.1</span>La vie d'une récompense de réunion</a></li></ol>
+        </li>
+        <li data-sec="conditions"><a href="#conditions"><span class="toc-n">6</span>Les 26 conditions</a>
+          <ol class="toc-sub"><li><a href="#s6-1"><span class="toc-n">6.1</span>Les opérateurs</a></li><li><a href="#s6-2"><span class="toc-n">6.2</span>Comment est calculé le «&nbsp;CA de la réunion&nbsp;»&nbsp;?</a></li><li><a href="#s6-3"><span class="toc-n">6.3</span>Conditions sur la réunion</a></li><li><a href="#s6-4"><span class="toc-n">6.4</span>Conditions sur l'historique de l'hôte</a></li><li><a href="#s6-5"><span class="toc-n">6.5</span>Conditions sur la commande</a></li><li><a href="#s6-6"><span class="toc-n">6.6</span>Conditions sur la personne et la date</a></li><li><a href="#s6-7"><span class="toc-n">6.7</span>Conditions de parrainage</a></li></ol>
+        </li>
+        <li data-sec="matrice"><a href="#matrice"><span class="toc-n">7</span>Condition × action</a></li>
+        <li data-sec="recompenses"><a href="#recompenses"><span class="toc-n">8</span>Les 7 récompenses</a>
+          <ol class="toc-sub"><li><a href="#s8-1"><span class="toc-n">8.1</span>Montant en points</a></li><li><a href="#s8-2"><span class="toc-n">8.2</span>Pourcentage du CA de la réunion en points</a></li><li><a href="#s8-3"><span class="toc-n">8.3</span>Produit</a></li><li><a href="#s8-4"><span class="toc-n">8.4</span>Produit au choix dans une liste</a></li><li><a href="#s8-5"><span class="toc-n">8.5</span>Code promo</a></li><li><a href="#s8-6"><span class="toc-n">8.6</span>Bon d'achat</a></li><li><a href="#s8-7"><span class="toc-n">8.7</span>Pourcentage du CA de la commande</a></li></ol>
+        </li>
+        <li data-sec="paliers"><a href="#paliers"><span class="toc-n">9</span>Cumul et paliers</a></li>
+        <li data-sec="points"><a href="#points"><span class="toc-n">10</span>Valeur, validité, solde</a>
+          <ol class="toc-sub"><li><a href="#s10-1"><span class="toc-n">10.1</span>Le taux de change</a></li><li><a href="#s10-2"><span class="toc-n">10.2</span>La durée de validité</a></li><li><a href="#s10-3"><span class="toc-n">10.3</span>Le solde de points</a></li></ol>
+        </li>
+        <li data-sec="utiliser"><a href="#utiliser"><span class="toc-n">11</span>Utiliser ses points</a>
+          <ol class="toc-sub"><li><a href="#s11-1"><span class="toc-n">11.1</span>Payer une partie d'une commande</a></li><li><a href="#s11-2"><span class="toc-n">11.2</span>Le montant futur de l'hôte</a></li><li><a href="#s11-3"><span class="toc-n">11.3</span>Le catalogue en points</a></li><li><a href="#s11-4"><span class="toc-n">11.4</span>Si la commande est annulée ou supprimée</a></li></ol>
+        </li>
+        <li data-sec="don"><a href="#don"><span class="toc-n">12</span>Le don de points</a>
+          <ol class="toc-sub"><li><a href="#s12-1"><span class="toc-n">12.1</span>Paramétrage</a></li><li><a href="#s12-2"><span class="toc-n">12.2</span>Utilisation</a></li></ol>
+        </li>
+        <li data-sec="reglages"><a href="#reglages"><span class="toc-n">13</span>Configuration générale</a>
+          <ol class="toc-sub"><li><a href="#s13-1"><span class="toc-n">13.1</span>Réglages gérés par l'équipe SellingAtHome</a></li></ol>
+        </li>
+        <li data-sec="vie"><a href="#vie"><span class="toc-n">14</span>Recalculs et annulations</a></li>
+        <li data-sec="usages"><a href="#usages"><span class="toc-n">15</span>Paramétrages fréquents</a>
+          <ol class="toc-sub"><li><a href="#s15-1"><span class="toc-n">15.1</span>Les conditions les plus utilisées</a></li><li><a href="#s15-2"><span class="toc-n">15.2</span>Les configurations les plus courantes</a></li><li><a href="#s15-3"><span class="toc-n">15.3</span>Les réglages les plus courants</a></li></ol>
+        </li>
+        <li data-sec="attention"><a href="#attention"><span class="toc-n">16</span>Points d'attention</a></li>
+        <li data-sec="faq"><a href="#faq"><span class="toc-n">17</span>Questions fréquentes</a></li>
+        <li data-sec="glossaire"><a href="#glossaire"><span class="toc-n">18</span>Glossaire</a></li>
+      </ol>
+    </details>
+  </nav>
+
+  <main>
+<style>
+.mx-wrap table { font-size:.82rem; }
+.mx-wrap th, .mx-wrap td { padding:8px 8px; text-align:center; white-space:nowrap; }
+.mx-wrap th.mx-c, .mx-wrap td:first-child { text-align:left; white-space:normal; min-width:220px; position:sticky; left:0; background:var(--card); z-index:1; }
+.mx-wrap thead th.mx-c { background:var(--surface); }
+.mx-wrap thead tr.grp th:not(.mx-c) { border-left:1px solid var(--rule); }
+.mx-wrap thead tr.grp th { font-size:.7rem; }
+.mx-ok { color:var(--accent-ink); font-weight:800; }
+.mx-no { color:var(--muted); opacity:.55; }
+.mx-warn { color:var(--pink-ink); font-weight:800; }
+.mx-fam td { background:var(--surface) !important; font-weight:700; color:var(--heading); text-align:left !important; font-size:.74rem; letter-spacing:.08em; text-transform:uppercase; }
+.legend { display:flex; flex-wrap:wrap; gap:8px 22px; font-size:.88rem; color:var(--muted); }
+.legend b { font-size:1rem; margin-right:6px; }
+.cond td:first-child { width:27%; }
+.cond td:nth-child(2) { width:18%; color:var(--muted); font-size:.88rem; }
+.cond .know { display:block; margin-top:6px; font-size:.86rem; color:var(--pink-ink); }
+.cond .know::before { content:"À savoir : "; font-weight:700; }
+.rule-anatomy { display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:12px; }
+.rule-anatomy .ra { background:var(--card); border:1px solid var(--rule); border-radius:16px; padding:18px; display:flex; flex-direction:column; gap:8px; position:relative; }
+.rule-anatomy .ra .q { font-size:.72rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); }
+.rule-anatomy .ra b { font-size:1.05rem; color:var(--heading); }
+.rule-anatomy .ra:nth-child(1) { border-top:5px solid var(--accent); }
+.rule-anatomy .ra:nth-child(2) { border-top:5px solid var(--pink); }
+.rule-anatomy .ra:nth-child(3) { border-top:5px solid var(--yellow); }
+.rule-anatomy .ra:nth-child(4) { border-top:5px solid var(--heading); }
+.sentence { background:var(--hero); color:var(--on-hero); border-radius:16px; padding:18px 22px; font-size:1.05rem; line-height:1.7; }
+.sentence .a { color:var(--accent); font-weight:700; } .sentence .p { color:var(--pink); font-weight:700; } .sentence .y { color:var(--yellow); font-weight:700; } .sentence .w { color:#fff; font-weight:700; }
+.timeline { display:flex; flex-direction:column; gap:0; border-left:3px solid var(--rule); margin-left:10px; }
+.tl { position:relative; padding:0 0 18px 26px; }
+.tl::before { content:""; position:absolute; left:-9px; top:4px; width:15px; height:15px; border-radius:50%; background:var(--card); border:3px solid var(--accent); }
+.tl.stop::before { border-color:var(--pink); }
+.tl b { color:var(--heading); display:block; }
+.tl span { color:var(--muted); font-size:.92rem; }
+.sim .tiers { display:flex; flex-direction:column; gap:8px; }
+.sim .tier { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:12px; align-items:center; background:rgba(255,255,255,.06); border-radius:12px; padding:10px 14px; font-size:.92rem; }
+.sim .tier.on { background:rgba(121,198,192,.18); border:1px solid rgba(121,198,192,.5); }
+.sim .tier .res { font-weight:700; color:var(--on-hero-mut); }
+.sim .tier.on .res { color:var(--yellow); }
+.sim .switch { display:flex; gap:8px; flex-wrap:wrap; }
+.sim .switch button { font:inherit; font-size:.88rem; font-weight:700; border-radius:100px; padding:8px 16px; cursor:pointer; background:transparent; color:var(--on-hero); border:1px solid rgba(241,236,248,.3); }
+.sim .switch button[aria-pressed="true"] { background:var(--accent); color:#16101F; border-color:var(--accent); }
+.sim input[type=range] { width:100%; accent-color:var(--accent); }
+.sim .ca-val { font-size:1.6rem; font-weight:800; color:#fff; font-variant-numeric:tabular-nums; }
+@media (max-width: 760px) { .rule-anatomy { grid-template-columns:1fr 1fr; } }
+@media (max-width: 460px) { .rule-anatomy { grid-template-columns:1fr; } }
+</style>
+
+<!-- 1 -->
+<section id="definition">
+  <div class="sec-head"><span class="sec-num">01</span><h2>Qu'est-ce que la fidélité dans SellingAtHome&nbsp;?</h2></div>
+  <p class="lede">Le module <strong>Fidélité</strong> récompense automatiquement les hôtesses, les clients et les conseillères selon des <strong>règles</strong> que la marque définit. La récompense peut être des <strong>points</strong>, mais aussi un <strong>produit offert</strong>, un <strong>code promo</strong> ou un <strong>bon d'achat</strong>.</p>
+  <div class="example"><span class="ex-label">Exemple</span>
+    <p>La marque crée la règle&nbsp;: «&nbsp;Pendant une réunion, si le chiffre d'affaires atteint 300&nbsp;€, l'hôtesse gagne 10&nbsp;% du CA en points&nbsp;». Une réunion fait 450&nbsp;€&nbsp;: l'hôtesse gagne <strong>45&nbsp;points</strong>. Avec un taux de change de 1 point = 1&nbsp;€, elle pourra déduire 45&nbsp;€ d'une prochaine commande.</p>
+  </div>
+  <div class="tip"><span class="ex-label">Vocabulaire</span><p>L'interface de l'espace marque dit «&nbsp;vendeur&nbsp;» là où cette documentation dit «&nbsp;conseillère&nbsp;». Les libellés de l'écran (onglet «&nbsp;Vendeur&nbsp;», condition «&nbsp;Vendeur est hôte&nbsp;», option «&nbsp;Autoriser les gains hôtes pour les vendeurs&nbsp;»…) sont cités tels quels.</p></div>
+
+  <h3 id="s1-1"><span class="sub-num">1.1</span> À quoi sert le module&nbsp;?</h3>
+  <div class="grid-3">
+    <div class="card"><span class="tag">Récompenser l'hôtesse</span><p>Des points, un cadeau ou un bon d'achat selon le CA et le nombre de commandes de sa réunion.</p></div>
+    <div class="card"><span class="tag pink">Fidéliser le client</span><p>Des points sur chaque commande, en vente directe ou en réunion.</p></div>
+    <div class="card"><span class="tag yellow">Motiver la conseillère</span><p>Des points sur son activité, utilisables sur ses commandes personnelles.</p></div>
+    <div class="card"><span class="tag">Faire naître des réunions</span><p>Une récompense quand un invité réserve à son tour une réunion.</p></div>
+    <div class="card"><span class="tag pink">Parrainer</span><p>Une récompense au parrain quand son filleul passe sa première commande.</p></div>
+    <div class="card"><span class="tag yellow">Offrir un catalogue</span><p>Des produits «&nbsp;achetables&nbsp;» uniquement en points.</p></div>
+  </div>
+
+  <h3 id="s1-2"><span class="sub-num">1.2</span> Points, bons d'achat, codes promo&nbsp;: quelles différences&nbsp;?</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Récompense</th><th>Ce que reçoit la personne</th><th>Comment elle s'en sert</th></tr></thead>
+    <tbody>
+      <tr><td><b>Points</b></td><td>Un solde de points, qui s'accumule</td><td>Converti en euros (selon le taux de change) et déduit d'une commande, ou échangé contre un produit du catalogue en points</td></tr>
+      <tr><td><b>Produit</b></td><td>Un cadeau</td><td>La conseillère crée une commande cadeau gratuite</td></tr>
+      <tr><td><b>Code promo</b></td><td>Un code promo réservé, existant</td><td>Comme n'importe quel code promo</td></tr>
+      <tr><td><b>Bon d'achat</b></td><td>Un bon d'achat nominatif</td><td>Voir le <a href="bons-achat-guide.html"><em>Guide des bons d'achat</em></a></td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- 2 -->
+<section id="principe">
+  <div class="sec-head"><span class="sec-num">02</span><h2>Le principe&nbsp;: des règles en quatre parties</h2></div>
+  <p class="lede">Tout le module repose sur des <strong>règles</strong>. Une règle se lit comme une phrase&nbsp;: «&nbsp;Quand <em>il se passe ceci</em>, si <em>ces conditions sont remplies</em>, alors <em>cette personne</em> reçoit <em>cette récompense</em>&nbsp;».</p>
+  <div class="rule-anatomy">
+    <div class="ra"><span class="q">Pour qui&nbsp;?</span><b>Bénéficiaire</b><span class="muted">Hôte, Client ou Vendeur&nbsp;: c'est l'onglet dans lequel la règle est créée.</span></div>
+    <div class="ra"><span class="q">Quand&nbsp;?</span><b>Action</b><span class="muted">L'événement qui déclenche la règle&nbsp;: une réunion, une vente…</span></div>
+    <div class="ra"><span class="q">À quelles conditions&nbsp;?</span><b>Conditions</b><span class="muted">Ce qui doit être vrai&nbsp;: un CA minimum, un nombre de commandes…</span></div>
+    <div class="ra"><span class="q">Pour gagner quoi&nbsp;?</span><b>Récompense</b><span class="muted">Des points, un pourcentage, un produit, un code promo, un bon d'achat.</span></div>
+  </div>
+  <div class="sentence">
+    Pour l'<span class="a">hôte</span>, <span class="p">durant la réunion</span>, si <span class="y">le nombre de présents ≥ 2 ET le CA de la réunion ≥ 20&nbsp;€ ET le nombre de réunions redatées ≥ 2</span>, alors gagner <span class="w">65&nbsp;points</span>.
+  </div>
+  <figure>
+    <img src="Captures/Points%20fid%C3%A9lit%C3%A9s/Edition-condition.png" alt="Écran Modifier une condition : action Durant la réunion, type de récompense Montant en points, récompense 65 points, conditions nombre de présents supérieur ou égal à 2, CA de la réunion supérieur ou égal à 20, nombre de réunions redatées supérieur ou égal à 2" loading="lazy">
+    <figcaption>La règle ci-dessus, telle qu'elle apparaît dans l'écran d'édition.</figcaption>
+  </figure>
+  <h3 id="s2-1"><span class="sub-num">2.1</span> Trois règles d'or</h3>
+  <div class="grid-3">
+    <div class="card"><h4>Les conditions se combinent en ET</h4><p>Toutes les conditions d'une règle doivent être vraies. Il n'y a pas de «&nbsp;OU&nbsp;»&nbsp;: pour deux cas différents, créez deux règles.</p></div>
+    <div class="card"><h4>Les règles se cumulent</h4><p>Chaque règle est évaluée seule. Si trois règles sont remplies, la personne reçoit les trois récompenses. Voir <a href="#paliers">les paliers</a>.</p></div>
+    <div class="card"><h4>Une fois par réunion ou par commande</h4><p>Une même règle ne récompense une personne qu'une fois par réunion (ou par commande). Seule exception&nbsp;: la prise de réunion par un invité.</p></div>
+  </div>
+</section>
+
+<!-- 3 -->
+<section id="ecran">
+  <div class="sec-head"><span class="sec-num">03</span><h2>Où se paramètre la fidélité&nbsp;?</h2></div>
+  <div class="path" aria-label="Chemin d'accès dans l'espace marque"><span>Espace marque</span><span>Paramètres</span><span>Configuration générale</span><span>Onglet <b>Paramètres fidélité</b></span></div>
+  <p>L'onglet regroupe plusieurs blocs&nbsp;:</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Bloc</th><th>Contenu</th><th>Voir</th></tr></thead>
+    <tbody>
+      <tr><td><b>Configuration générale</b></td><td>8 options qui changent le calcul du CA de réunion et les droits de l'hôte et de la conseillère.</td><td><a href="#reglages">Section 13</a></td></tr>
+      <tr><td><b>Paramétrage par type</b> (onglets Hôte, Client, Vendeur)</td><td>Taux de change, validité des points, catalogue en points, et la liste des <strong>règles</strong> («&nbsp;Conditions d'obtention des points&nbsp;»).</td><td><a href="#points">Sections 10</a> et <a href="#actions">5</a> à <a href="#recompenses">8</a></td></tr>
+      <tr><td><b>Paramétrage des bons d'achat</b></td><td>Réglages des bons d'achat.</td><td><a href="bons-achat-guide.html"><em>Guide des bons d'achat</em></a></td></tr>
+      <tr><td><b>Paramétrage du don de points</b></td><td>Qui peut donner des points, et à qui (si le module est activé).</td><td><a href="#don">Section 12</a></td></tr>
+    </tbody>
+  </table></div>
+  <div class="grid-2" style="align-items:start">
+    <figure>
+      <img src="Captures/Points%20fid%C3%A9lit%C3%A9s/config-fid%C3%A9lit%C3%A9-generale.png" alt="Haut de l'onglet Paramètres fidélité : blocs Configuration générale, Paramétrage des bons d'achat et Paramétrage du don de points" loading="lazy">
+      <figcaption>Haut de l'onglet&nbsp;: configuration générale, bons d'achat, don de points.</figcaption>
+    </figure>
+    <figure>
+      <img src="Captures/Points%20fid%C3%A9lit%C3%A9s/config-fid%C3%A9lit%C3%A9-1.png" alt="Bloc Paramétrage par type, onglet Hôte : taux de change, validité des points, catalogue en points et liste des conditions d'obtention des points" loading="lazy">
+      <figcaption>Paramétrage par type (onglet Hôte) et liste des règles.</figcaption>
+    </figure>
+  </div>
+  <h3 id="s3-1"><span class="sub-num">3.1</span> Créer une règle</h3>
+  <ol class="prose">
+    <li>Choisissez l'onglet du bénéficiaire&nbsp;: <strong>Hôte</strong>, <strong>Client</strong> ou <strong>Vendeur</strong>.</li>
+    <li>Cliquez sur <strong>«&nbsp;Ajouter une condition&nbsp;»</strong>.</li>
+    <li>Choisissez l'<strong>Action</strong>, puis le <strong>Type de récompense</strong> et sa valeur.</li>
+    <li>Ajoutez les <strong>Conditions</strong> avec le bouton en haut à droite du bloc. Les conditions et les récompenses incompatibles avec l'action sont grisées.</li>
+    <li>Cliquez sur <strong>Enregistrer</strong>.</li>
+  </ol>
+  <figure>
+    <img src="Captures/Points%20fid%C3%A9lit%C3%A9s/Ajout-condition.png" alt="Écran Ajouter une condition : liste Action, types de récompense, champ Récompense, bloc Conditions vide" loading="lazy">
+    <figcaption>L'écran d'ajout d'une règle.</figcaption>
+  </figure>
+  <div class="tip"><span class="ex-label">Bon à savoir</span><p>Une règle créée ou modifiée s'applique <strong>dès le prochain recalcul</strong>, y compris aux réunions encore ouvertes&nbsp;: les gains déjà calculés pour cette règle sont mis à jour. Les réunions terminées ne bougent plus. Une règle supprimée n'est plus évaluée, mais <strong>les gains déjà donnés restent</strong>.</p></div>
+</section>
+
+<!-- 4 -->
+<section id="beneficiaires">
+  <div class="sec-head"><span class="sec-num">04</span><h2>Les trois bénéficiaires</h2></div>
+  <p class="lede">L'onglet dans lequel la règle est créée détermine <strong>qui reçoit</strong> la récompense.</p>
+  <div class="grid-3">
+    <div class="card"><span class="tag">Hôte</span><p>La personne marquée <strong>hôte</strong> de la réunion.</p><p class="muted">Si la conseillère est elle-même l'hôte de sa réunion, elle ne gagne les récompenses hôte que si l'option «&nbsp;Autoriser les gains hôtes pour les vendeurs&nbsp;» est cochée.</p></div>
+    <div class="card"><span class="tag pink">Client</span><p>Selon l'action&nbsp;: le <strong>client de la commande</strong>, ou <strong>chaque invité</strong> de la réunion.</p><p class="muted">Ni l'hôte ni la conseillère ne sont concernés, sauf l'hôte pour l'action «&nbsp;Gains lors d'une vente en réunion&nbsp;». Avec une condition de parrainage, c'est le <strong>parrain</strong> qui gagne.</p></div>
+    <div class="card"><span class="tag yellow">Vendeur</span><p>Le <strong>compte client</strong> de la conseillère de la réunion ou de la commande.</p><p class="muted">Une conseillère sans compte client ne gagne rien. Les gains sont utilisables sur ses commandes personnelles.</p></div>
+  </div>
+  <div class="tip"><span class="ex-label">Bon à savoir</span><p>Chaque onglet a son propre <strong>taux de change</strong>, sa propre <strong>validité des points</strong> et son propre accès au <strong>catalogue en points</strong>. Voir <a href="#points">section 10</a>.</p></div>
+</section>
+
+<!-- 5 -->
+<section id="actions">
+  <div class="sec-head"><span class="sec-num">05</span><h2>Les six actions (quand la règle se déclenche)</h2></div>
+  <p class="lede">L'action définit <strong>l'événement</strong> qui déclenche l'évaluation de la règle. Elle détermine aussi quelles conditions et quelles récompenses sont utilisables.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Action</th><th>Ce qui est récompensé</th><th>Quand c'est calculé</th><th>Onglets</th></tr></thead>
+    <tbody>
+      <tr><td><b>Être hôte de la réunion</b></td><td>Le fait d'accueillir une réunion</td><td>À la création de la réunion, puis recalculé à chaque commande payée de la réunion</td><td><span class="pill">Hôte</span> <span class="pill yellow">Vendeur</span></td></tr>
+      <tr><td><b>Durant la réunion</b></td><td>Les résultats de la réunion (CA, commandes, présents…)</td><td>À chaque commande payée de la réunion</td><td><span class="pill">Hôte</span> <span class="pill pink">Client</span> <span class="pill yellow">Vendeur</span></td></tr>
+      <tr><td><b>Prise de réunion des invités dans la réunion</b></td><td>Un invité qui réserve à son tour une réunion</td><td>À la création de la nouvelle réunion. <strong>Chaque</strong> réunion prise donne une récompense</td><td><span class="pill">Hôte</span> <span class="pill pink">Client</span> <span class="pill yellow">Vendeur</span></td></tr>
+      <tr><td><b>Être hôte d'une réunion redatée</b></td><td>Accueillir une réunion créée depuis une autre réunion</td><td>Comme «&nbsp;Être hôte de la réunion&nbsp;», pour la nouvelle réunion</td><td><span class="pill">Hôte</span> <span class="pill yellow">Vendeur</span></td></tr>
+      <tr><td><b>Gains lors d'une vente directe</b></td><td>Une commande passée hors réunion</td><td>Au paiement de la commande</td><td><span class="pill pink">Client</span> <span class="pill yellow">Vendeur</span></td></tr>
+      <tr><td><b>Gains lors d'une vente en réunion</b></td><td>Une commande passée dans une réunion</td><td>Au paiement de la commande. L'hôte qui commande gagne aussi la récompense client</td><td><span class="pill pink">Client</span> <span class="pill yellow">Vendeur</span></td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 id="s5-1"><span class="sub-num">5.1</span> La vie d'une récompense de réunion</h3>
+  <div class="timeline">
+    <div class="tl"><b>Création de la réunion</b><span>Les règles «&nbsp;Être hôte de la réunion&nbsp;» sont calculées une première fois.</span></div>
+    <div class="tl"><b>Chaque commande payée</b><span>Toutes les règles de la réunion sont recalculées&nbsp;: le CA augmente, les gains sont mis à jour. Une règle qui n'est plus remplie retire son gain.</span></div>
+    <div class="tl"><b>Un invité prend une réunion</b><span>Les règles «&nbsp;Prise de réunion des invités&nbsp;» donnent une récompense à chaque nouvelle réunion.</span></div>
+    <div class="tl stop"><b>Clôture de la réunion</b><span>Automatique après le délai de clôture de la marque (48 h après le début par défaut). Les points, codes promo et bons d'achat sont <strong>figés</strong>. Seuls les cadeaux produits peuvent encore être recalculés.</span></div>
+  </div>
+  <div class="warn"><span class="ex-label">Attention</span><p>Une commande payée <strong>après la clôture</strong> de la réunion ne rapporte plus aucun point, code promo ni bon d'achat de réunion, même avec l'action «&nbsp;Gains lors d'une vente en réunion&nbsp;».</p></div>
+</section>
+
+<!-- 6 -->
+<section id="conditions">
+  <div class="sec-head"><span class="sec-num">06</span><h2>Les 26 conditions</h2></div>
+  <p class="lede">Les conditions sont regroupées ici par famille. Les libellés sont ceux de l'écran.</p>
+  <h3 id="s6-1"><span class="sub-num">6.1</span> Les opérateurs</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Type de condition</th><th>Opérateurs proposés</th></tr></thead>
+    <tbody>
+      <tr><td><b>Nombre, montant, date</b></td><td>égal, différent, inférieur, inférieur ou égal, supérieur, supérieur ou égal, et souvent «&nbsp;entre&nbsp;»</td></tr>
+      <tr><td><b>Liste</b> (rôles, pays, catalogues)</td><td>«&nbsp;est dans&nbsp;» / «&nbsp;n'est pas dans&nbsp;» (et égal / différent pour les rôles)</td></tr>
+      <tr><td><b>Oui / non</b></td><td>égal</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 id="s6-2"><span class="sub-num">6.2</span> Comment est calculé le «&nbsp;CA de la réunion&nbsp;»&nbsp;?</h3>
+  <p>Plusieurs conditions et la récompense «&nbsp;Pourcentage du CA de la réunion&nbsp;» reposent sur ce montant&nbsp;:</p>
+  <div class="receipt" style="max-width:560px">
+    <div class="line"><span>Commandes <strong>payées</strong> de la réunion <small>(non annulées, non supprimées, hors frais de participation)</small></span><span>prix produits</span></div>
+    <div class="line"><span>− remises, codes promo et bons d'achat</span><span></span></div>
+    <div class="line"><span>− e-wallet utilisé</span><span></span></div>
+    <div class="line"><span>− points de fidélité utilisés <small>(sauf option «&nbsp;Inclure le montant payé en points&nbsp;»)</small></span><span></span></div>
+    <div class="line"><span>− commandes de l'hôte <small>(si option)</small></span><span></span></div>
+    <div class="line"><span>− commandes des conseillères <small>(si option)</small></span><span></span></div>
+    <div class="line"><span>− produits en recherche de stock <small>(si option)</small></span><span></span></div>
+    <div class="line total"><span>CA de la réunion</span><span>TTC</span></div>
+  </div>
+  <p class="muted">Les frais de port ne comptent jamais. Le calcul se fait en TTC, sauf si l'équipe SellingAtHome a passé la marque en HT pour la fidélité. Les options sont décrites en <a href="#reglages">section 13</a>.</p>
+
+  <h3 id="s6-3"><span class="sub-num">6.3</span> Conditions sur la réunion</h3>
+  <div class="table-wrap"><table class="cond">
+    <thead><tr><th>Condition</th><th>Saisie</th><th>Ce qu'elle vérifie</th></tr></thead>
+    <tbody>
+      <tr><td><b>Chiffre d'affaire de la réunion</b></td><td>Montant</td><td>Le CA de la réunion, calculé comme ci-dessus. C'est de loin la condition la plus utilisée.</td></tr>
+      <tr><td><b>Chiffre d'affaire de la réunion sans certains produits</b></td><td>Produits + montant</td><td>Le CA de la réunion sans les produits sélectionnés (produit entier ou déclinaison précise). Utile pour ne pas compter un produit d'appel ou un produit hôtesse.<span class="know">le seuil est celui saisi sur la première ligne produit. Ce calcul ne tient pas compte des options d'exclusion de l'hôte, des conseillères et du stock en recherche. Si la récompense est un pourcentage du CA, il porte sur ce CA «&nbsp;sans produits&nbsp;».</span></td></tr>
+      <tr><td><b>Nombre de commandes dans la réunion</b></td><td>Nombre</td><td>Le nombre de commandes payées de la réunion, hôte et conseillère compris, hors commandes d'expédition hôtesse.<span class="know">une commande payée puis annulée est quand même comptée.</span></td></tr>
+      <tr><td><b>Nombre de commandes dans la réunion (hors commandes de l'hôte)</b></td><td>Nombre</td><td>Le même décompte, sans les commandes de l'hôte. Récompense l'animation plutôt que les achats de l'hôtesse.<span class="know">les commandes payées puis annulées sont comptées.</span></td></tr>
+      <tr><td><b>Nombre de commande d'un montant</b></td><td>Montant par commande + nombre</td><td>Le nombre de commandes de la réunion dont le montant net atteint le seuil. Exemple&nbsp;: «&nbsp;au moins 3 commandes de 50&nbsp;€ ou plus chacune&nbsp;».<span class="know">saisissez un montant entier (49,90 provoque une erreur). Le montant est toujours comparé en TTC.</span></td></tr>
+      <tr><td><b>Nombre de présent à la réunion</b></td><td>Nombre</td><td>Le nombre d'invités marqués <strong>présents</strong>.<span class="know">l'hôte est compté.</span></td></tr>
+      <tr><td><b>Nombre de participant à la réunion</b></td><td>Nombre</td><td>Le nombre d'invités <strong>inscrits</strong>, présents ou non.<span class="know">l'hôte est compté.</span></td></tr>
+      <tr><td><b>La réunion doit…</b> (produits commandés)</td><td>Produits</td><td>Si les produits sélectionnés ont été commandés dans la réunion (commandes payées, non annulées). «&nbsp;est dans&nbsp;»&nbsp;: <strong>tous</strong> les produits listés. «&nbsp;contient&nbsp;»&nbsp;: <strong>au moins un</strong>.<span class="know">la quantité minimale saisie n'est pas prise en compte.</span></td></tr>
+      <tr><td><b>Date de la réunion</b></td><td>Date</td><td>Le jour où la réunion a lieu. «&nbsp;entre&nbsp;» permet de cibler une période.</td></tr>
+      <tr><td><b>Date de création de la réunion</b></td><td>Date</td><td>Le jour où la réunion a été créée dans l'outil. Permet de récompenser une réunion prise tôt.</td></tr>
+      <tr><td><b>La réunion est virtuelle</b></td><td>Oui / Non</td><td>Si la réunion se tient en visioconférence.</td></tr>
+      <tr><td><b>Vendeur est hôte</b></td><td>Oui / Non</td><td>Si la conseillère est elle-même l'hôte de sa réunion. Sert surtout à exclure ce cas.</td></tr>
+      <tr><td><b>Nombre de réunions redatées dans la réunion</b></td><td>Nombre</td><td>Le nombre de réunions prises <strong>depuis</strong> cette réunion par ses invités.<span class="know">une réunion prise compte dès sa réservation, même si elle n'a pas encore eu lieu ou a été annulée.</span></td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 id="s6-4"><span class="sub-num">6.4</span> Conditions sur l'historique de l'hôte</h3>
+  <div class="table-wrap"><table class="cond">
+    <thead><tr><th>Condition</th><th>Saisie</th><th>Ce qu'elle vérifie</th></tr></thead>
+    <tbody>
+      <tr><td><b>Nombre de réunions passées</b></td><td>Nombre</td><td>Le nombre d'autres réunions où cette personne est hôte (hors réunion en cours, hors réunions annulées). «&nbsp;= 0&nbsp;» cible une première réunion.<span class="know">les réunions déjà planifiées dans le futur sont comptées.</span></td></tr>
+      <tr><td><b>Nb de réunions accueilli par l'hôte pour ce vendeur</b></td><td>Nombre</td><td>Le même décompte, limité aux réunions avec la conseillère de la réunion en cours.<span class="know">la réunion en cours et les réunions futures sont comptées.</span></td></tr>
+      <tr><td><b>Nb de réunions terminées accueillies par l'hôte</b></td><td>Nombre + période (du… au…)</td><td>Le nombre de réunions <strong>terminées</strong> de l'hôte entre deux dates, toutes deux facultatives.<span class="know">la date de fin est exclue.</span></td></tr>
+      <tr><td><b>Date de dernière réunion de l'hôte (en étant hôte)</b></td><td>Date</td><td>La date de la précédente réunion de cette hôtesse. Sans réunion précédente, la condition est fausse.<span class="know">une réunion annulée peut être prise comme «&nbsp;dernière réunion&nbsp;».</span></td></tr>
+      <tr><td><b>Date de dernière réunion de l'hôte – Intervalle</b></td><td>Quantité + unité</td><td>Le temps écoulé depuis la précédente réunion. Unités&nbsp;: jours, semaines, semaines complètes, mois, mois complets, années. Les variantes «&nbsp;complètes&nbsp;» partent de la fin de la semaine ou du mois. Exemple&nbsp;: «&nbsp;≥ 6 mois&nbsp;» = au moins 6 mois depuis la dernière réunion.<span class="know">le délai est mesuré jusqu'à la date du jour du calcul, pas jusqu'à la date de la réunion. Sans réunion précédente, la condition est fausse.</span></td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 id="s6-5"><span class="sub-num">6.5</span> Conditions sur la commande</h3>
+  <div class="table-wrap"><table class="cond">
+    <thead><tr><th>Condition</th><th>Saisie</th><th>Ce qu'elle vérifie</th></tr></thead>
+    <tbody>
+      <tr><td><b>Chiffre d'affaire de la commande</b></td><td>Montant</td><td>Le montant net de la commande&nbsp;: remises, points et e-wallet déduits, frais de port exclus.<span class="know">les points utilisés sont toujours déduits, quelle que soit l'option «&nbsp;Inclure le montant payé en points&nbsp;».</span></td></tr>
+      <tr><td><b>Type de commande</b></td><td>Liste</td><td>Le canal de la commande. Seuls deux choix sont proposés&nbsp;: <strong>Mini-site vendeur</strong> et <strong>Boutique de la marque</strong>.</td></tr>
+      <tr><td><b>Catalogue</b></td><td>Liste de catalogues</td><td>Le catalogue de la commande, ou de la réunion pour les actions de réunion.<span class="know">sans catalogue, la condition est fausse, même avec «&nbsp;n'est pas dans&nbsp;».</span></td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 id="s6-6"><span class="sub-num">6.6</span> Conditions sur la personne et la date</h3>
+  <div class="table-wrap"><table class="cond">
+    <thead><tr><th>Condition</th><th>Saisie</th><th>Ce qu'elle vérifie</th></tr></thead>
+    <tbody>
+      <tr><td><b>Rôle client</b></td><td>Liste de rôles</td><td>Les rôles de la personne. «&nbsp;égal&nbsp;»&nbsp;: exactement ces rôles. «&nbsp;est dans&nbsp;»&nbsp;: au moins un de ses rôles est dans la liste. «&nbsp;n'est pas dans&nbsp;»&nbsp;: aucun.<span class="know">sur l'onglet Vendeur, ce sont les rôles du client ou de l'invité qui sont testés, pas ceux de la conseillère.</span></td></tr>
+      <tr><td><b>Pays du client/hôte</b></td><td>Liste de pays</td><td>Le pays de l'adresse principale de la personne (à défaut, sa première adresse).<span class="know">sans adresse, la condition est fausse, même avec «&nbsp;n'est pas dans&nbsp;». Non disponible sur l'onglet Vendeur.</span></td></tr>
+      <tr><td><b>Date</b></td><td>Date</td><td>La date du jour du calcul. «&nbsp;entre&nbsp;» ouvre une opération sur une période.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 id="s6-7"><span class="sub-num">6.7</span> Conditions de parrainage</h3>
+  <div class="warn"><span class="ex-label">Le gain va au parrain</span><p>Sur les actions de vente, une condition de parrainage change le bénéficiaire&nbsp;: c'est le <strong>parrain</strong> du client qui gagne, pas le client. L'écran le signale par un message de confirmation, et le parrain reçoit un e-mail.</p></div>
+  <div class="table-wrap"><table class="cond">
+    <thead><tr><th>Condition</th><th>Saisie</th><th>Ce qu'elle vérifie</th></tr></thead>
+    <tbody>
+      <tr><td><b>Nouveau parrainage avec première commande</b></td><td>Date</td><td>La date de première commande du filleul qui vient d'acheter.</td></tr>
+      <tr><td><b>Nombre de nouveau parrainage avec première commande</b></td><td>Nombre</td><td>Le nombre de filleuls du parrain ayant déjà passé une première commande. Permet des paliers de parrainage.</td></tr>
+    </tbody>
+  </table></div>
+  <p>Sur les actions de vente, trois garde-fous s'appliquent&nbsp;: la commande doit être la <strong>toute première commande payée</strong> du filleul, le parrain doit avoir le <strong>rôle parrain</strong>, et, si l'équipe SellingAtHome l'a configuré pour la marque, la commande doit être passée <strong>en réunion</strong>.</p>
+</section>
+
+<!-- 7 -->
+<section id="matrice">
+  <div class="sec-head"><span class="sec-num">07</span><h2>Quelle condition pour quelle action&nbsp;?</h2></div>
+  <p class="lede">L'écran grise les conditions incompatibles avec l'action et l'onglet. Mais <strong>certaines conditions restent sélectionnables alors qu'elles ne peuvent jamais être vraies</strong>&nbsp;: une règle qui les contient ne se déclenche jamais.</p>
+  <div class="legend"><span><b class="mx-ok">✓</b>utilisable</span><span><b class="mx-no">—</b>grisée</span><span><b class="mx-warn">✕</b>sélectionnable mais toujours fausse&nbsp;: à ne pas utiliser</span></div>
+  <div class="table-wrap mx-wrap"><table>
+    <thead>
+      <tr class="grp"><th rowspan="2" class="mx-c">Condition</th><th colspan="4">Hôte</th><th colspan="4">Client</th><th colspan="6">Vendeur</th></tr>
+      <tr><th title="Être hôte de la réunion">Hôte réu.</th><th title="Durant la réunion">Durant</th><th title="Prise de réunion des invités">Prise</th><th title="Être hôte d'une réunion redatée">Redatée</th>
+          <th title="Vente directe">V. dir.</th><th title="Durant la réunion">Durant</th><th title="Prise de réunion des invités">Prise</th><th title="Vente en réunion">V. réu.</th>
+          <th title="Être hôte de la réunion">Hôte réu.</th><th title="Vente directe">V. dir.</th><th title="Durant la réunion">Durant</th><th title="Prise de réunion des invités">Prise</th><th title="Être hôte d'une réunion redatée">Redatée</th><th title="Vente en réunion">V. réu.</th></tr>
+    </thead>
+    <tbody id="mxBody"></tbody>
+  </table></div>
+  <p class="muted">Faites défiler le tableau horizontalement sur petit écran. Survolez un en-tête pour voir le nom complet de l'action.</p>
+</section>
+
+<!-- 8 -->
+<section id="recompenses">
+  <div class="sec-head"><span class="sec-num">08</span><h2>Les 7 types de récompense</h2></div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Type</th><th>Ce que reçoit le bénéficiaire</th><th>Actions possibles</th></tr></thead>
+    <tbody>
+      <tr><td><b>Montant en points</b></td><td>Un nombre fixe de points</td><td>Toutes</td></tr>
+      <tr><td><b>Pourcentage du CA de la réunion en points</b></td><td>Des points proportionnels au CA de la réunion</td><td>Hôte de la réunion, Durant la réunion, Réunion redatée</td></tr>
+      <tr><td><b>Produit</b></td><td>Un produit offert</td><td>Toutes sauf les deux actions de vente</td></tr>
+      <tr><td><b>Produit au choix dans une liste</b></td><td>Un produit offert, choisi dans une liste</td><td>Toutes sauf les deux actions de vente</td></tr>
+      <tr><td><b>Code promo</b></td><td>Un code promo réservé</td><td>Toutes</td></tr>
+      <tr><td><b>Bon d'achat</b></td><td>Un bon d'achat nominatif</td><td>Toutes</td></tr>
+      <tr><td><b>Pourcentage du CA de la commande</b></td><td>Des points proportionnels au montant de la commande</td><td>Vente directe, Vente en réunion (jamais pour l'hôte)</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 id="s8-1"><span class="sub-num">8.1</span> Montant en points</h3>
+  <p>Le bénéficiaire reçoit le nombre de points saisi. C'est la récompense la plus simple.</p>
+  <div class="example"><span class="ex-label">Exemple</span><p>«&nbsp;Être hôte de la réunion&nbsp;» → <strong>30&nbsp;points</strong> pour chaque hôtesse.</p></div>
+
+  <h3 id="s8-2"><span class="sub-num">8.2</span> Pourcentage du CA de la réunion en points</h3>
+  <p>Points = CA de la réunion × pourcentage, arrondi à l'entier le plus proche. Le CA est celui décrit en <a href="#conditions">section 6</a>. Avec la condition «&nbsp;Chiffre d'affaire de la réunion sans certains produits&nbsp;», le pourcentage porte sur ce CA réduit.</p>
+  <div class="example"><span class="ex-label">Exemple</span><p>Règle hôtesse «&nbsp;Durant la réunion, 10&nbsp;% du CA&nbsp;». Réunion de 487,50&nbsp;€ → 48,75 → <strong>49&nbsp;points</strong>. Les points sont recalculés à chaque nouvelle commande payée, jusqu'à la clôture.</p></div>
+  <p class="muted">1&nbsp;€ de CA donne la base de 1 point&nbsp;: le taux de change n'intervient pas au gain, seulement à l'utilisation.</p>
+
+  <h3 id="s8-3"><span class="sub-num">8.3</span> Produit</h3>
+  <p>Le bénéficiaire gagne un <strong>cadeau</strong>. Rien n'est envoyé automatiquement&nbsp;: dans l'écran de la réunion, la conseillère voit les cadeaux mérités et crée la <strong>commande cadeau</strong>.</p>
+  <ul class="prose">
+    <li>La commande cadeau est gratuite, payée d'office, avec livraison offerte.</li>
+    <li>Elle est livrée à l'adresse d'une commande du client dans la réunion, sinon à son adresse, sinon chez la conseillère.</li>
+    <li>Selon la configuration de la marque, le cadeau peut aussi être ajouté à une commande existante (ligne à 0&nbsp;€) ou rattaché à la commande groupée.</li>
+    <li>Le stock du produit est décrémenté. Seuls les produits en stock (ou sans suivi de stock) sont proposés.</li>
+    <li><strong>Un seul cadeau par règle, par personne et par réunion.</strong></li>
+  </ul>
+
+  <h3 id="s8-4"><span class="sub-num">8.4</span> Produit au choix dans une liste</h3>
+  <p>Comme «&nbsp;Produit&nbsp;», mais la marque propose une <strong>liste</strong> de produits. La conseillère choisit le cadeau parmi cette liste (écran de la réunion, application mobile), puis crée la commande cadeau. Dès qu'un produit de la liste a été offert, la liste est épuisée pour cette règle et cette réunion.</p>
+
+  <h3 id="s8-5"><span class="sub-num">8.5</span> Code promo</h3>
+  <p>Aucun code n'est généré. La règle <strong>attribue au bénéficiaire un code promo existant</strong>, de type réservé. Ses dates et son nombre d'utilisations sont ceux du code promo. Le code promo doit donc être créé au préalable dans le module Réductions.</p>
+  <div class="warn"><span class="ex-label">Attention</span><p>Ne sélectionnez <strong>qu'un seul</strong> code promo par règle. Avec plusieurs codes, la règle ne fonctionne pas.</p></div>
+
+  <h3 id="s8-6"><span class="sub-num">8.6</span> Bon d'achat</h3>
+  <p>La règle attribue au bénéficiaire un exemplaire d'un <strong>bon d'achat</strong> existant (en général un bon simple). La validité, les produits concernés et les options de cumul sont ceux du bon. C'est l'usage principal des bons simples&nbsp;: le <strong>bon cadeau hôtesse</strong>.</p>
+  <p class="muted">Une option permet de ne pas compter les achats de l'hôte dans le CA de la réunion pour ces règles (<a href="#reglages">section 13</a>).</p>
+
+  <h3 id="s8-7"><span class="sub-num">8.7</span> Pourcentage du CA de la commande</h3>
+  <p>Points = montant net de la commande × pourcentage, arrondi. Le montant net exclut les remises, les points, l'e-wallet et les frais de port. Réservé aux actions de vente.</p>
+  <div class="example"><span class="ex-label">Exemple</span><p>«&nbsp;Gains lors d'une vente directe, 10&nbsp;% de la commande&nbsp;». Commande de 80&nbsp;€ avec 10&nbsp;€ de remise → 70&nbsp;€ → <strong>7&nbsp;points</strong>.</p></div>
+  <p class="muted">Ce calcul se fait toujours en TTC.</p>
+</section>
+
+<!-- 9 -->
+<section id="paliers">
+  <div class="sec-head"><span class="sec-num">09</span><h2>Cumul des règles et paliers</h2></div>
+  <p class="lede">Les règles <strong>se cumulent</strong>. C'est le point le plus important à comprendre pour créer des paliers.</p>
+  <div class="warn"><span class="ex-label">Piège classique</span>
+    <p>La marque crée trois règles hôtesse&nbsp;: CA ≥ 300&nbsp;€ → 30&nbsp;points&nbsp;; CA ≥ 600&nbsp;€ → 60&nbsp;points&nbsp;; CA ≥ 900&nbsp;€ → 90&nbsp;points. Une réunion à 950&nbsp;€ remplit <strong>les trois</strong>&nbsp;: l'hôtesse gagne 30 + 60 + 90 = <strong>180&nbsp;points</strong>, et non 90.</p>
+  </div>
+  <div class="grid-2">
+    <div class="card"><span class="tag">Paliers cumulatifs</span><p>Chaque palier <strong>s'ajoute</strong> aux précédents. Utilisez «&nbsp;supérieur ou égal&nbsp;»&nbsp;: 300&nbsp;€, 600&nbsp;€, 900&nbsp;€. Pensez les récompenses comme des <strong>bonus successifs</strong> (30 + 30 + 30).</p></div>
+    <div class="card"><span class="tag pink">Paliers exclusifs</span><p>Un seul palier doit être gagné. Utilisez <strong>«&nbsp;entre&nbsp;»</strong> pour chaque palier&nbsp;: 300–599,99&nbsp;€, 600–899,99&nbsp;€, puis ≥ 900&nbsp;€.</p></div>
+  </div>
+
+  <div class="sim" id="simPaliers">
+    <div><h3 style="color:#fff">Simulateur de paliers</h3><p class="sub">Trois règles hôtesse «&nbsp;Durant la réunion&nbsp;». Déplacez le curseur de CA et comparez les deux façons de les paramétrer.</p></div>
+    <div class="switch" role="group" aria-label="Mode de paliers">
+      <button type="button" data-mode="cumul" aria-pressed="true">Paliers «&nbsp;supérieur ou égal&nbsp;»</button>
+      <button type="button" data-mode="excl" aria-pressed="false">Paliers «&nbsp;entre&nbsp;»</button>
+    </div>
+    <label>CA de la réunion<input type="range" id="simCa" min="0" max="1500" step="10" value="950" aria-label="CA de la réunion"></label>
+    <div class="ca-val" id="simCaVal">950&nbsp;€</div>
+    <div class="tiers" id="simTiers"></div>
+    <div class="sim-total"><div><b id="simPts">0</b><span>points gagnés par l'hôtesse</span></div></div>
+  </div>
+</section>
+
+<!-- 10 -->
+<section id="points">
+  <div class="sec-head"><span class="sec-num">10</span><h2>Les points&nbsp;: valeur, validité et solde</h2></div>
+  <p>Ces réglages se trouvent dans le bloc <strong>Paramétrage par type</strong>, pour chaque onglet (Hôte, Client, Vendeur). Un seul bouton Enregistrer sauve les trois onglets.</p>
+
+  <h3 id="s10-1"><span class="sub-num">10.1</span> Le taux de change</h3>
+  <p>«&nbsp;<strong>1 point = X €</strong>&nbsp;» fixe la valeur d'un point <strong>au moment où il est dépensé</strong>. Il ne change pas le nombre de points gagnés.</p>
+  <div class="example"><span class="ex-label">Exemple</span><p>Taux hôte 1 point = 0,50&nbsp;€. Une hôtesse a 120&nbsp;points&nbsp;: elle peut déduire jusqu'à <strong>60&nbsp;€</strong> de sa commande.</p></div>
+  <p>Le taux appliqué dépend du <strong>rôle de la personne au moment où elle dépense</strong>, pas de la façon dont elle a gagné ses points&nbsp;:</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>La personne qui dépense est…</th><th>Taux appliqué</th></tr></thead>
+    <tbody>
+      <tr><td>L'hôte de la réunion de la commande</td><td>Taux <strong>Hôte</strong> (taux Vendeur si l'hôte est une conseillère et que l'option «&nbsp;Autoriser les gains hôtes pour les vendeurs&nbsp;» est décochée)</td></tr>
+      <tr><td>Le compte client de la conseillère</td><td>Taux <strong>Vendeur</strong></td></tr>
+      <tr><td>Un client qui a le rôle vendeur, hors réunion</td><td>Taux <strong>Vendeur</strong></td></tr>
+      <tr><td>Tout autre client</td><td>Taux <strong>Client</strong></td></tr>
+    </tbody>
+  </table></div>
+  <div class="tip"><span class="ex-label">Taux à 0</span><p>Un taux de 0 rend les points inutilisables en euros pour ce profil. Ils peuvent servir uniquement au <a href="#s11-3">catalogue en points</a>.</p></div>
+
+  <h3 id="s10-2"><span class="sub-num">10.2</span> La durée de validité</h3>
+  <p>Cochez <strong>«&nbsp;Activer la durée de validité des points&nbsp;»</strong> et saisissez un nombre de jours. Chaque gain expire N jours après son attribution.</p>
+  <ul class="prose">
+    <li>La validité utilisée est celle de l'<strong>onglet de la règle</strong> qui a donné les points.</li>
+    <li>Tant que la réunion est ouverte, chaque recalcul <strong>repousse</strong> la date d'expiration.</li>
+    <li>Les points dépensés sont pris sur les gains <strong>les plus anciens d'abord</strong>.</li>
+    <li>L'expiration est constatée à l'affichage du solde&nbsp;: aucun traitement ni e-mail ne prévient le client.</li>
+  </ul>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Origine des points</th><th>Validité</th></tr></thead>
+    <tbody>
+      <tr><td>Règle de fidélité</td><td>Celle de l'onglet de la règle</td></tr>
+      <tr><td>Don de points (reçu)</td><td>Celle de l'onglet Client</td></tr>
+      <tr><td>Challenge vendeur</td><td>Celle de l'onglet Vendeur</td></tr>
+      <tr><td>Ajout manuel (fiche client), commissions en points</td><td>Sans expiration</td></tr>
+      <tr><td>Import</td><td>Date fournie dans le fichier</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 id="s10-3"><span class="sub-num">10.3</span> Le solde de points</h3>
+  <p>Le solde = gains non expirés − points dépensés ou donnés. Il est visible dans la <strong>fiche client</strong> du BrandAdmin (avec l'historique), dans la fiche client et l'écran de réunion de l'espace conseillère, et dans l'application mobile.</p>
+  <p>Depuis la fiche client du BrandAdmin, un administrateur peut <strong>ajouter ou retirer des points manuellement</strong>, avec un libellé. Ces points n'expirent pas.</p>
+  <p class="muted">Un plafond de solde peut être fixé par l'équipe SellingAtHome&nbsp;: au-delà, les règles ne donnent plus de points.</p>
+</section>
+
+<!-- 11 -->
+<section id="utiliser">
+  <div class="sec-head"><span class="sec-num">11</span><h2>Utiliser ses points</h2></div>
+  <h3 id="s11-1"><span class="sub-num">11.1</span> Payer une partie d'une commande</h3>
+  <p>La conseillère (ou l'administrateur) applique les points sur la commande, depuis l'espace conseillère, l'application mobile ou le BrandAdmin.</p>
+  <ul class="prose">
+    <li>Montant déduit = points utilisés × taux de change.</li>
+    <li>L'utilisation peut être <strong>partielle</strong>&nbsp;: on choisit le nombre de points.</li>
+    <li>Les points ne paient <strong>jamais les frais de port</strong>. Le montant est plafonné au total des produits après remises.</li>
+    <li>Les points sont déduits <strong>après</strong> les remises et les bons d'achat, et <strong>avant</strong> l'e-wallet.</li>
+  </ul>
+  <div class="receipt">
+    <div class="line"><span>Produits</span><span>120,00&nbsp;€</span></div>
+    <div class="line"><span>Remise −10&nbsp;%</span><span>− 12,00&nbsp;€</span></div>
+    <div class="line"><span>Bon d'achat</span><span>− 10,00&nbsp;€</span></div>
+    <div class="line v"><span>40&nbsp;points <small>(1 point = 1&nbsp;€)</small></span><span>− 40,00&nbsp;€</span></div>
+    <div class="line"><span>Frais de port</span><span>+ 5,90&nbsp;€</span></div>
+    <div class="line total"><span>À payer</span><span>63,90&nbsp;€</span></div>
+  </div>
+  <p class="muted">Une option du BrandAdmin peut désactiver les points dès qu'un bon d'achat est utilisé (voir le <a href="bons-achat-guide.html"><em>Guide des bons d'achat</em></a>). Les règles de commissionnement peuvent exclure de la commission le montant payé en points.</p>
+
+  <h3 id="s11-2"><span class="sub-num">11.2</span> Le montant futur de l'hôte</h3>
+  <p>Avec l'option <strong>«&nbsp;Autoriser l'hôte à utiliser ses points en incluant son montant futur&nbsp;»</strong>, l'hôtesse peut dépenser, dans sa propre commande, les points qu'elle <strong>va</strong> gagner grâce à la réunion. Le calcul prévoit le CA de la réunion en ajoutant sa commande en cours.</p>
+  <div class="warn"><span class="ex-label">Attention</span><p>Si le CA final est plus bas que prévu, le solde de l'hôtesse peut devenir négatif. À la clôture, une ligne «&nbsp;Rééquilibrage des points de fidélité&nbsp;» remet son solde à zéro&nbsp;: <strong>l'écart est absorbé par la marque</strong>. Seules les récompenses en points (montant ou pourcentage) sont anticipées.</p></div>
+
+  <h3 id="s11-3"><span class="sub-num">11.3</span> Le catalogue en points</h3>
+  <p>Le catalogue en points permet d'«&nbsp;acheter&nbsp;» des produits uniquement avec des points. Le module doit être activé par l'équipe SellingAtHome, puis la marque coche <strong>«&nbsp;Activer le catalogue en points de fidélité&nbsp;»</strong> pour chaque profil.</p>
+  <ul class="prose">
+    <li>Le produit doit être disponible pour le catalogue fidélité et avoir un <strong>prix en points</strong> (par pays). Ce prix ne dépend pas du taux de change.</li>
+    <li>Il est ajouté à la commande à 0&nbsp;€. Les points sont <strong>réservés</strong> tant que la commande n'est pas payée, puis débités au paiement.</li>
+    <li>Le profil Hôte s'applique aux clients qui ont déjà eu une réunion clôturée en tant qu'hôte. Lors de sa première réunion, une hôtesse relève du profil Client.</li>
+  </ul>
+
+  <h3 id="s11-4"><span class="sub-num">11.4</span> Si la commande est annulée ou supprimée</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Situation</th><th>Points utilisés</th><th>Points gagnés sur la commande</th></tr></thead>
+    <tbody>
+      <tr><td><b>Commande non payée supprimée</b></td><td>Rendus</td><td>Retirés</td></tr>
+      <tr><td><b>Points retirés de la commande</b></td><td>Rendus</td><td>—</td></tr>
+      <tr><td><b>Commande payée puis annulée</b></td><td>Rendus <strong>seulement</strong> si l'équipe SellingAtHome a activé le recrédit pour la marque</td><td>Retirés au client dans ce cas. Les gains de l'hôte, de la conseillère ou du parrain ne sont pas recalculés si la réunion est close</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- 12 -->
+<section id="don">
+  <div class="sec-head"><span class="sec-num">12</span><h2>Le don de points</h2></div>
+  <p class="lede">Le don permet à une personne de <strong>donner une partie de ses points</strong> à une autre, par exemple une invitée qui offre ses points à l'hôtesse. Le module doit être activé par l'équipe SellingAtHome.</p>
+  <h3 id="s12-1"><span class="sub-num">12.1</span> Paramétrage</h3>
+  <p>Bloc <strong>Paramétrage du don de points</strong>&nbsp;: deux listes définissent qui peut donner et qui peut recevoir.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Choix</th><th>Donateurs</th><th>Bénéficiaires</th></tr></thead>
+    <tbody>
+      <tr><td><b>Tous les clients</b></td><td>✓</td><td>✓</td></tr>
+      <tr><td><b>Sélection de rôles</b> (puis choisir les rôles)</td><td>✓</td><td>✓</td></tr>
+      <tr><td><b>Participants de la réunion</b></td><td>✓</td><td>✓</td></tr>
+      <tr><td><b>Hôte de la réunion</b></td><td>✓</td><td>—</td></tr>
+    </tbody>
+  </table></div>
+  <h3 id="s12-2"><span class="sub-num">12.2</span> Utilisation</h3>
+  <ul class="prose">
+    <li>Le don se fait depuis l'écran de réunion de l'espace conseillère, ou dans l'application mobile.</li>
+    <li>Le donateur ne peut pas donner plus que son solde. Il n'y a ni minimum ni maximum.</li>
+    <li>Deux lignes apparaissent dans l'historique&nbsp;: «&nbsp;Don à …&nbsp;» chez le donateur, «&nbsp;Don de …&nbsp;» chez le bénéficiaire.</li>
+    <li>Les points reçus prennent la validité de l'onglet Client.</li>
+  </ul>
+</section>
+
+<!-- 13 -->
+<section id="reglages">
+  <div class="sec-head"><span class="sec-num">13</span><h2>Les options de la configuration générale</h2></div>
+  <p>Bloc <strong>Configuration générale</strong> de l'onglet Paramètres fidélité. Ces options valent pour toutes les règles de la marque.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Option</th><th>Effet quand elle est cochée</th></tr></thead>
+    <tbody>
+      <tr><td><b>Autoriser les gains hôtes pour les vendeurs</b></td><td>Une conseillère qui est l'hôte de sa propre réunion gagne les récompenses de l'onglet Hôte. Décochée&nbsp;: elle ne les gagne pas, et elle dépense ses points au taux Vendeur.</td></tr>
+      <tr><td><b>Ne pas prendre en compte les achats hôte dans le calcul du chiffre d'affaires de la réunion</b></td><td>Les commandes de l'hôtesse sont retirées du CA de la réunion (conditions et pourcentage du CA).</td></tr>
+      <tr><td><b>Autoriser le gain de points vendeurs sur les commandes qui ont pour client le compte client du vendeur</b></td><td>Les commandes personnelles de la conseillère déclenchent aussi les règles de l'onglet Vendeur. Décochée&nbsp;: elles sont ignorées pour ces règles.</td></tr>
+      <tr><td><b>Autoriser l'hôte à utiliser ses points en incluant son montant futur</b></td><td>L'hôtesse peut dépenser les points qu'elle va gagner dans la réunion (voir <a href="#utiliser">section 11</a>).</td></tr>
+      <tr><td><b>Exclure les achats des comptes clients des vendeurs dans le calcul des points</b></td><td>Les commandes de <strong>tous</strong> les clients qui ont le rôle vendeur sont retirées du CA de la réunion.</td></tr>
+      <tr><td><b>Inclure le montant payé en points dans le CA de la réunion</b></td><td>La part d'une commande payée en points compte dans le CA de la réunion. Décochée&nbsp;: elle en est déduite.</td></tr>
+      <tr><td><b>Exclure le montant des produits dont le stock est en recherche</b></td><td>Les produits en recherche de stock sont retirés du CA de la réunion.</td></tr>
+      <tr><td><b>Ne pas prendre en compte les achats hôte dans le calcul du chiffre d'affaire de la réunion pour le gain de bon d'achat</b></td><td>Pour les règles dont la récompense est un bon d'achat uniquement, les commandes de l'hôtesse sont retirées du CA de la réunion.</td></tr>
+    </tbody>
+  </table></div>
+  <h3 id="s13-1"><span class="sub-num">13.1</span> Réglages gérés par l'équipe SellingAtHome</h3>
+  <p>Ces réglages ne sont pas modifiables depuis le BrandAdmin. Pour les changer, contactez votre interlocuteur SellingAtHome.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Réglage</th><th>Effet</th></tr></thead>
+    <tbody>
+      <tr><td><b>Fidélité en HT</b></td><td>Les CA de réunion et de commande sont calculés hors taxes (sauf le pourcentage du CA de la commande et le nombre de commandes d'un montant, toujours en TTC).</td></tr>
+      <tr><td><b>Plafond de solde</b></td><td>Les règles cessent de donner des points au-delà d'un solde maximum. Le libellé du gain indique «&nbsp;Max&nbsp;».</td></tr>
+      <tr><td><b>Recrédit à l'annulation</b></td><td>Une commande payée puis annulée rend les points utilisés et retire les points gagnés.</td></tr>
+      <tr><td><b>Parrainage en réunion uniquement</b></td><td>Les conditions de parrainage ne fonctionnent que pour les commandes passées en réunion.</td></tr>
+      <tr><td><b>Délai de clôture des réunions</b></td><td>Moment où les gains de réunion sont figés (48 h après le début par défaut).</td></tr>
+      <tr><td><b>Forme de la commande cadeau</b></td><td>Commande cadeau séparée, ajout à une commande existante ou rattachement à la commande groupée.</td></tr>
+      <tr><td><b>Modules Catalogue en points et Don de points</b></td><td>Activation de ces fonctionnalités.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- 14 -->
+<section id="vie">
+  <div class="sec-head"><span class="sec-num">14</span><h2>Recalculs, annulations et suppressions</h2></div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Événement</th><th>Effet sur les gains</th></tr></thead>
+    <tbody>
+      <tr><td><b>Nouvelle commande payée dans la réunion</b></td><td>Toutes les règles de la réunion sont recalculées. Un gain qui n'est plus mérité est retiré.</td></tr>
+      <tr><td><b>Clôture de la réunion</b></td><td>Points, codes promo et bons d'achat figés. Les cadeaux peuvent encore évoluer.</td></tr>
+      <tr><td><b>Réunion annulée</b></td><td>Plus aucun calcul. <strong>Les gains déjà donnés ne sont pas retirés.</strong></td></tr>
+      <tr><td><b>Réunion supprimée</b></td><td>Tous les gains de la réunion sont supprimés.</td></tr>
+      <tr><td><b>Invité retiré de la réunion</b></td><td>Ses gains de réunion sont supprimés.</td></tr>
+      <tr><td><b>Changement d'hôte</b></td><td>Les gains «&nbsp;Être hôte de la réunion&nbsp;» passent au nouvel hôte. Les autres gains ne sont pas transférés.</td></tr>
+      <tr><td><b>Gain retiré</b></td><td>Points supprimés. Code promo et bon d'achat supprimés s'ils n'ont pas été utilisés.</td></tr>
+      <tr><td><b>Règle modifiée</b></td><td>Les réunions ouvertes sont recalculées avec la nouvelle règle.</td></tr>
+      <tr><td><b>Règle supprimée</b></td><td>Plus évaluée. Les gains déjà donnés restent.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- 15 -->
+<section id="usages">
+  <div class="sec-head"><span class="sec-num">15</span><h2>Les paramétrages les plus fréquents</h2></div>
+  <p class="lede">Les configurations que l'on retrouve le plus souvent chez les marques.</p>
+  <h3 id="s15-1"><span class="sub-num">15.1</span> Les conditions les plus utilisées</h3>
+  <ol class="prose">
+    <li><b>Chiffre d'affaire de la réunion</b>, de très loin la plus courante, souvent seule ou pour créer des paliers.</li>
+    <li><b>Date de la réunion</b> et <b>Date</b>, pour limiter une règle à une période promotionnelle.</li>
+    <li><b>Nombre de présent à la réunion</b> et <b>Vendeur est hôte</b> (le plus souvent pour exclure les réunions dont la conseillère est l'hôte).</li>
+    <li>Puis&nbsp;: nombre de commandes (hors hôte), nombre de participants, rôle client, chiffre d'affaire de la commande, nombre de réunions redatées.</li>
+  </ol>
+  <p class="muted">Beaucoup de règles n'ont aucune condition&nbsp;: elles récompensent l'action à chaque fois (par exemple un cadeau pour toute hôtesse).</p>
+  <h3 id="s15-2"><span class="sub-num">15.2</span> Les configurations les plus courantes</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Usage</th><th>Paramétrage typique</th></tr></thead>
+    <tbody>
+      <tr><td><b>Points hôtesse au pourcentage</b></td><td>Onglet Hôte, «&nbsp;Durant la réunion&nbsp;», <em>Pourcentage du CA de la réunion</em> à 5, 7, 8 ou 10&nbsp;%, avec un CA minimum</td></tr>
+      <tr><td><b>Bon cadeau hôtesse par palier</b></td><td>Onglet Hôte, «&nbsp;Durant la réunion&nbsp;», <em>Bon d'achat</em> 15&nbsp;€, 30&nbsp;€, 45&nbsp;€… avec des conditions de CA</td></tr>
+      <tr><td><b>Cadeau hôtesse</b></td><td>Onglet Hôte, «&nbsp;Être hôte de la réunion&nbsp;» ou «&nbsp;Durant la réunion&nbsp;», <em>Produit</em> ou <em>Produit au choix dans une liste</em></td></tr>
+      <tr><td><b>Code promo hôtesse par palier</b></td><td>Onglet Hôte, «&nbsp;Durant la réunion&nbsp;», <em>Code promo</em>, CA ≥ 300 / 600 / 900&nbsp;€</td></tr>
+      <tr><td><b>Points client sur chaque achat</b></td><td>Onglet Client, «&nbsp;Gains lors d'une vente directe&nbsp;» ou «&nbsp;en réunion&nbsp;», <em>Pourcentage du CA de la commande</em> à 10&nbsp;%</td></tr>
+      <tr><td><b>Récompense de la prise de réunion</b></td><td>Onglets Hôte ou Client, «&nbsp;Prise de réunion des invités dans la réunion&nbsp;», montant en points ou cadeau</td></tr>
+      <tr><td><b>Points conseillère</b></td><td>Onglet Vendeur, «&nbsp;Durant la réunion&nbsp;», pourcentage du CA (5 à 10&nbsp;%)</td></tr>
+    </tbody>
+  </table></div>
+  <h3 id="s15-3"><span class="sub-num">15.3</span> Les réglages les plus courants</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Réglage</th><th>Valeurs les plus courantes</th></tr></thead>
+    <tbody>
+      <tr><td>Taux de change</td><td>1 point = 1&nbsp;€. Un taux de 0&nbsp;€ est aussi fréquent, surtout pour le profil Client (points réservés au catalogue en points, ou non convertibles).</td></tr>
+      <tr><td>Validité des points</td><td>Souvent désactivée. Quand elle est activée&nbsp;: 365 ou 180 jours.</td></tr>
+      <tr><td>Catalogue en points</td><td>Activé par une minorité de marques.</td></tr>
+      <tr><td>Montant futur de l'hôte, gains hôtes pour les vendeurs</td><td>Les deux choix sont répandus&nbsp;: à décider selon la politique de la marque.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- 16 -->
+<section id="attention">
+  <div class="sec-head"><span class="sec-num">16</span><h2>Points d'attention</h2></div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Sujet</th><th>Comportement</th><th>Conseil</th></tr></thead>
+    <tbody>
+      <tr><td><b>Paliers</b></td><td>Les règles se cumulent&nbsp;: plusieurs paliers «&nbsp;≥&nbsp;» remplis donnent toutes les récompenses.</td><td>Utiliser «&nbsp;entre&nbsp;» pour des paliers exclusifs.</td></tr>
+      <tr><td><b>Commande après la clôture</b></td><td>Elle ne rapporte plus de points, code promo ni bon d'achat de réunion.</td><td>Vérifier le délai de clôture avec SellingAtHome.</td></tr>
+      <tr><td><b>Conditions toujours fausses</b></td><td>Certaines conditions de réunion restent sélectionnables sur les actions de vente mais ne sont jamais vraies.</td><td>Se référer à la <a href="#matrice">matrice</a>.</td></tr>
+      <tr><td><b>Onglet Hôte + «&nbsp;Prise de réunion des invités&nbsp;»</b></td><td>Les récompenses en points, code promo et bon d'achat ne sont pas attribuées. Seuls les cadeaux produits fonctionnent.</td><td>Utiliser un cadeau, ou l'onglet Client.</td></tr>
+      <tr><td><b>Code promo</b></td><td>Avec plusieurs codes sélectionnés, la règle ne fonctionne pas.</td><td>Un seul code par règle.</td></tr>
+      <tr><td><b>Produits commandés</b></td><td>La quantité minimale n'est pas prise en compte.</td><td>—</td></tr>
+      <tr><td><b>Nombre de commandes</b></td><td>Une commande payée puis annulée est comptée.</td><td>—</td></tr>
+      <tr><td><b>Nombre de commande d'un montant</b></td><td>Montant entier uniquement, toujours en TTC.</td><td>Saisir 50 et non 49,90.</td></tr>
+      <tr><td><b>«&nbsp;n'est pas dans&nbsp;» sur pays ou catalogue</b></td><td>Fausse si la personne n'a pas d'adresse ou la commande pas de catalogue.</td><td>—</td></tr>
+      <tr><td><b>Intervalle depuis la dernière réunion</b></td><td>Mesuré jusqu'à la date du calcul, pas jusqu'à la réunion.</td><td>—</td></tr>
+      <tr><td><b>Réunion annulée</b></td><td>Les gains déjà donnés restent.</td><td>Retirer manuellement les points si nécessaire.</td></tr>
+      <tr><td><b>Validité</b></td><td>Repoussée à chaque recalcul tant que la réunion est ouverte. Aucune alerte avant expiration.</td><td>Utiliser un segment marketing pour relancer.</td></tr>
+      <tr><td><b>Montant futur de l'hôte</b></td><td>Un écart entre prévision et CA final est absorbé par la marque.</td><td>—</td></tr>
+      <tr><td><b>Taux de change à 0</b></td><td>Les points ne valent rien en euros pour ce profil.</td><td>Vérifier que c'est voulu (catalogue en points uniquement).</td></tr>
+      <tr><td><b>Règle supprimée</b></td><td>Les gains déjà donnés restent.</td><td>—</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- 17 -->
+<section id="faq">
+  <div class="sec-head"><span class="sec-num">17</span><h2>Questions fréquentes</h2></div>
+  <div class="faq">
+    <details><summary>Une hôtesse n'a pas gagné ses points alors que la réunion remplit les critères.</summary><div><ol>
+      <li>Les commandes sont-elles <strong>payées</strong>&nbsp;? Seules les commandes payées comptent.</li>
+      <li>La réunion était-elle déjà <strong>clôturée</strong> au moment du paiement&nbsp;?</li>
+      <li>L'hôtesse est-elle la conseillère&nbsp;? Vérifiez l'option «&nbsp;Autoriser les gains hôtes pour les vendeurs&nbsp;».</li>
+      <li>Le CA est-il réduit par une option (achats hôte, conseillères, points, stock en recherche)&nbsp;?</li>
+      <li>Une des conditions est-elle toujours fausse pour cette action (voir la matrice)&nbsp;?</li>
+    </ol></div></details>
+    <details><summary>L'hôtesse a gagné beaucoup plus de points que prévu.</summary><div><p>Plusieurs règles sont probablement remplies en même temps&nbsp;: elles se cumulent. Voir <a href="#paliers">les paliers</a>.</p></div></details>
+    <details><summary>Les points d'un client ont disparu.</summary><div><p>Ils ont peut-être expiré (validité activée), été dépensés, donnés, ou retirés suite à une commande supprimée ou annulée. L'historique de la fiche client détaille chaque mouvement.</p></div></details>
+    <details><summary>Où l'hôtesse voit-elle son cadeau&nbsp;?</summary><div><p>Le cadeau n'est pas automatique&nbsp;: la conseillère le voit dans l'écran de la réunion et crée la commande cadeau.</p></div></details>
+    <details><summary>Le client peut-il payer les frais de port avec ses points&nbsp;?</summary><div><p>Non, les points ne s'appliquent qu'aux produits.</p></div></details>
+    <details><summary>Je modifie une règle&nbsp;: qu'arrive-t-il aux réunions en cours&nbsp;?</summary><div><p>Elles sont recalculées avec la nouvelle règle à la prochaine commande payée. Les réunions clôturées ne changent pas.</p></div></details>
+    <details><summary>Comment récompenser une première réunion&nbsp;?</summary><div><p>Condition «&nbsp;Nombre de réunions passées&nbsp;» égal à 0, sur l'onglet Hôte.</p></div></details>
+    <details><summary>Ma règle de parrainage ne fonctionne pas en vente directe.</summary><div><p>La marque est peut-être configurée pour limiter le parrainage aux réunions. Vérifiez aussi que la commande est bien la première commande payée du filleul et que le parrain a le rôle parrain.</p></div></details>
+  </div>
+</section>
+
+<!-- 18 -->
+<section id="glossaire">
+  <div class="sec-head"><span class="sec-num">18</span><h2>Glossaire</h2></div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Terme</th><th>Définition</th></tr></thead>
+    <tbody>
+      <tr><td><b>Règle</b></td><td>Association d'une action, de conditions et d'une récompense, pour un type de bénéficiaire.</td></tr>
+      <tr><td><b>Action</b></td><td>Événement qui déclenche l'évaluation d'une règle.</td></tr>
+      <tr><td><b>Condition</b></td><td>Critère qui doit être vrai pour gagner la récompense.</td></tr>
+      <tr><td><b>Récompense</b></td><td>Ce qui est gagné&nbsp;: points, produit, code promo, bon d'achat.</td></tr>
+      <tr><td><b>CA de la réunion</b></td><td>Total des commandes payées de la réunion, net des remises et des moyens de paiement non monétaires.</td></tr>
+      <tr><td><b>Clôture</b></td><td>Passage de la réunion au statut terminé. Les gains sont alors figés.</td></tr>
+      <tr><td><b>Réunion redatée</b></td><td>Réunion prise par un invité depuis une autre réunion.</td></tr>
+      <tr><td><b>Taux de change</b></td><td>Valeur en euros d'un point, au moment de la dépense.</td></tr>
+      <tr><td><b>Commande cadeau</b></td><td>Commande gratuite qui matérialise un cadeau gagné.</td></tr>
+      <tr><td><b>Catalogue en points</b></td><td>Produits payables uniquement en points.</td></tr>
+      <tr><td><b>Montant futur</b></td><td>Points qu'une hôtesse va gagner et qu'elle peut dépenser par anticipation.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<script>
+(function () {
+  // Matrice de disponibilité : H1 H3 H7 H8 | C2 C3 C7 C9 | S1 S2 S3 S7 S8 S9
+  var Y='y', G='g', W='w';
+  var fam = [
+    ['Réunion', [
+      ["Chiffre d'affaire de la réunion",                [Y,Y,G,Y, G,Y,G,G, Y,G,Y,G,Y,G]],
+      ["CA de la réunion sans certains produits",         [Y,Y,G,Y, G,Y,G,G, Y,G,Y,G,Y,G]],
+      ["Nombre de commandes dans la réunion",            [Y,Y,G,Y, G,Y,G,G, Y,G,Y,G,Y,G]],
+      ["Nombre de commandes (hors commandes de l'hôte)", [Y,Y,Y,Y, W,Y,Y,W, Y,W,Y,Y,Y,W]],
+      ["Nombre de commande d'un montant",                [Y,Y,G,Y, G,Y,G,G, Y,G,Y,G,Y,G]],
+      ["Nombre de présent à la réunion",                 [Y,Y,G,Y, G,Y,G,G, Y,G,Y,G,Y,G]],
+      ["Nombre de participant à la réunion",             [Y,Y,G,Y, G,Y,G,G, Y,G,Y,G,Y,G]],
+      ["La réunion doit… (produits commandés)",          [Y,Y,G,Y, G,Y,G,G, Y,G,Y,G,Y,G]],
+      ["Date de la réunion",                             [Y,Y,Y,Y, W,Y,Y,Y, Y,W,Y,Y,Y,Y]],
+      ["Date de création de la réunion",                 [Y,Y,Y,Y, W,Y,Y,Y, Y,W,Y,Y,Y,Y]],
+      ["La réunion est virtuelle",                       [Y,Y,Y,Y, W,Y,Y,W, Y,W,Y,Y,Y,W]],
+      ["Vendeur est hôte",                               [Y,Y,G,Y, G,Y,G,G, Y,G,Y,G,Y,G]],
+      ["Nombre de réunions redatées dans la réunion",    [Y,Y,G,Y, G,Y,G,G, Y,G,Y,G,Y,G]]
+    ]],
+    ["Historique de l'hôte", [
+      ["Nombre de réunions passées",                     [G,Y,G,Y, G,G,G,G, G,G,G,G,G,G]],
+      ["Nb de réunions accueilli pour ce vendeur",       [Y,Y,G,Y, G,G,G,G, G,G,G,G,G,G]],
+      ["Nb de réunions terminées accueillies",           [Y,Y,G,Y, G,G,G,G, G,G,G,G,G,G]],
+      ["Date de dernière réunion de l'hôte",             [Y,Y,G,Y, G,Y,G,G, Y,G,Y,G,Y,G]],
+      ["Date de dernière réunion de l'hôte – Intervalle",[Y,Y,Y,Y, W,Y,Y,W, Y,W,Y,Y,Y,W]]
+    ]],
+    ['Commande', [
+      ["Chiffre d'affaire de la commande",               [G,G,G,G, Y,G,G,Y, G,Y,G,G,G,Y]],
+      ["Type de commande",                               [G,G,G,G, Y,G,G,Y, G,Y,G,G,G,Y]],
+      ["Catalogue",                                      [Y,Y,Y,Y, Y,Y,Y,Y, Y,Y,Y,Y,Y,Y]]
+    ]],
+    ['Personne et date', [
+      ["Rôle client",                                    [Y,Y,Y,Y, Y,Y,Y,Y, Y,Y,Y,Y,Y,Y]],
+      ["Pays du client/hôte",                            [Y,Y,Y,Y, Y,Y,Y,Y, G,G,G,G,G,G]],
+      ["Date",                                           [Y,Y,Y,Y, Y,Y,Y,Y, Y,Y,Y,Y,Y,Y]]
+    ]],
+    ['Parrainage', [
+      ["Nouveau parrainage avec première commande",      [Y,Y,Y,Y, Y,Y,Y,Y, G,G,G,G,G,G]],
+      ["Nombre de nouveau parrainage avec 1re commande", [Y,Y,Y,Y, Y,Y,Y,Y, G,G,G,G,G,G]]
+    ]]
+  ];
+  var sym = { y:'<span class="mx-ok" aria-label="utilisable">✓</span>', g:'<span class="mx-no" aria-label="grisée">—</span>', w:'<span class="mx-warn" aria-label="toujours fausse">✕</span>' };
+  var html = '';
+  fam.forEach(function (f) {
+    html += '<tr class="mx-fam"><td colspan="15">' + f[0] + '</td></tr>';
+    f[1].forEach(function (r) { html += '<tr><td>' + r[0] + '</td>' + r[1].map(function (v) { return '<td>' + sym[v] + '</td>'; }).join('') + '</tr>'; });
+  });
+  document.getElementById('mxBody').innerHTML = html;
+
+  // Simulateur de paliers
+  var mode = 'cumul';
+  var tiers = [ { min:300, max:600, pts:30 }, { min:600, max:900, pts:60 }, { min:900, max:Infinity, pts:90 } ];
+  var ca = document.getElementById('simCa');
+  function render() {
+    var v = +ca.value, total = 0, out = '';
+    document.getElementById('simCaVal').textContent = v.toLocaleString('fr-FR') + ' €';
+    tiers.forEach(function (t) {
+      var on = mode === 'cumul' ? v >= t.min : (v >= t.min && v < t.max);
+      if (on) total += t.pts;
+      var cond = mode === 'cumul' || t.max === Infinity ? 'CA ≥ ' + t.min + ' €' : 'CA entre ' + t.min + ' € et ' + (t.max - 0.01).toLocaleString('fr-FR') + ' €';
+      out += '<div class="tier' + (on ? ' on' : '') + '"><span>Règle : ' + cond + ' → ' + t.pts + ' points</span><span class="res">' + (on ? '+' + t.pts + ' pts' : 'non remplie') + '</span></div>';
+    });
+    document.getElementById('simTiers').innerHTML = out;
+    document.getElementById('simPts').textContent = total;
+  }
+  ca.addEventListener('input', render);
+  Array.prototype.forEach.call(document.querySelectorAll('#simPaliers .switch button'), function (b) {
+    b.addEventListener('click', function () {
+      mode = b.dataset.mode;
+      Array.prototype.forEach.call(document.querySelectorAll('#simPaliers .switch button'), function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+      render();
+    });
+  });
+  render();
+})();
+</script>
+
+  </main>
+</div>
+<script>
+(function () {
+  // Matrice de disponibilité : H1 H3 H7 H8 | C2 C3 C7 C9 | S1 S2 S3 S7 S8 S9
+  var Y='y', G='g', W='w';
+  var fam = [
+    ['Réunion', [
+      ["Chiffre d'affaire de la réunion",                [Y,Y,G,Y, G,Y,G,G, Y,G,Y,G,Y,G]],
+      ["CA de la réunion sans certains produits",         [Y,Y,G,Y, G,Y,G,G, Y,G,Y,G,Y,G]],
+      ["Nombre de commandes dans la réunion",            [Y,Y,G,Y, G,Y,G,G, Y,G,Y,G,Y,G]],
+      ["Nombre de commandes (hors commandes de l'hôte)", [Y,Y,Y,Y, W,Y,Y,W, Y,W,Y,Y,Y,W]],
+      ["Nombre de commande d'un montant",                [Y,Y,G,Y, G,Y,G,G, Y,G,Y,G,Y,G]],
+      ["Nombre de présent à la réunion",                 [Y,Y,G,Y, G,Y,G,G, Y,G,Y,G,Y,G]],
+      ["Nombre de participant à la réunion",             [Y,Y,G,Y, G,Y,G,G, Y,G,Y,G,Y,G]],
+      ["La réunion doit… (produits commandés)",          [Y,Y,G,Y, G,Y,G,G, Y,G,Y,G,Y,G]],
+      ["Date de la réunion",                             [Y,Y,Y,Y, W,Y,Y,Y, Y,W,Y,Y,Y,Y]],
+      ["Date de création de la réunion",                 [Y,Y,Y,Y, W,Y,Y,Y, Y,W,Y,Y,Y,Y]],
+      ["La réunion est virtuelle",                       [Y,Y,Y,Y, W,Y,Y,W, Y,W,Y,Y,Y,W]],
+      ["Vendeur est hôte",                               [Y,Y,G,Y, G,Y,G,G, Y,G,Y,G,Y,G]],
+      ["Nombre de réunions redatées dans la réunion",    [Y,Y,G,Y, G,Y,G,G, Y,G,Y,G,Y,G]]
+    ]],
+    ["Historique de l'hôte", [
+      ["Nombre de réunions passées",                     [G,Y,G,Y, G,G,G,G, G,G,G,G,G,G]],
+      ["Nb de réunions accueilli pour ce vendeur",       [Y,Y,G,Y, G,G,G,G, G,G,G,G,G,G]],
+      ["Nb de réunions terminées accueillies",           [Y,Y,G,Y, G,G,G,G, G,G,G,G,G,G]],
+      ["Date de dernière réunion de l'hôte",             [Y,Y,G,Y, G,Y,G,G, Y,G,Y,G,Y,G]],
+      ["Date de dernière réunion de l'hôte – Intervalle",[Y,Y,Y,Y, W,Y,Y,W, Y,W,Y,Y,Y,W]]
+    ]],
+    ['Commande', [
+      ["Chiffre d'affaire de la commande",               [G,G,G,G, Y,G,G,Y, G,Y,G,G,G,Y]],
+      ["Type de commande",                               [G,G,G,G, Y,G,G,Y, G,Y,G,G,G,Y]],
+      ["Catalogue",                                      [Y,Y,Y,Y, Y,Y,Y,Y, Y,Y,Y,Y,Y,Y]]
+    ]],
+    ['Personne et date', [
+      ["Rôle client",                                    [Y,Y,Y,Y, Y,Y,Y,Y, Y,Y,Y,Y,Y,Y]],
+      ["Pays du client/hôte",                            [Y,Y,Y,Y, Y,Y,Y,Y, G,G,G,G,G,G]],
+      ["Date",                                           [Y,Y,Y,Y, Y,Y,Y,Y, Y,Y,Y,Y,Y,Y]]
+    ]],
+    ['Parrainage', [
+      ["Nouveau parrainage avec première commande",      [Y,Y,Y,Y, Y,Y,Y,Y, G,G,G,G,G,G]],
+      ["Nombre de nouveau parrainage avec 1re commande", [Y,Y,Y,Y, Y,Y,Y,Y, G,G,G,G,G,G]]
+    ]]
+  ];
+  var sym = { y:'<span class="mx-ok" aria-label="utilisable">✓</span>', g:'<span class="mx-no" aria-label="grisée">—</span>', w:'<span class="mx-warn" aria-label="toujours fausse">✕</span>' };
+  var html = '';
+  fam.forEach(function (f) {
+    html += '<tr class="mx-fam"><td colspan="15">' + f[0] + '</td></tr>';
+    f[1].forEach(function (r) { html += '<tr><td>' + r[0] + '</td>' + r[1].map(function (v) { return '<td>' + sym[v] + '</td>'; }).join('') + '</tr>'; });
+  });
+  document.getElementById('mxBody').innerHTML = html;
+
+  // Simulateur de paliers
+  var mode = 'cumul';
+  var tiers = [ { min:300, max:600, pts:30 }, { min:600, max:900, pts:60 }, { min:900, max:Infinity, pts:90 } ];
+  var ca = document.getElementById('simCa');
+  function render() {
+    var v = +ca.value, total = 0, out = '';
+    document.getElementById('simCaVal').textContent = v.toLocaleString('fr-FR') + ' €';
+    tiers.forEach(function (t) {
+      var on = mode === 'cumul' ? v >= t.min : (v >= t.min && v < t.max);
+      if (on) total += t.pts;
+      var cond = mode === 'cumul' || t.max === Infinity ? 'CA ≥ ' + t.min + ' €' : 'CA entre ' + t.min + ' € et ' + (t.max - 0.01).toLocaleString('fr-FR') + ' €';
+      out += '<div class="tier' + (on ? ' on' : '') + '"><span>Règle : ' + cond + ' → ' + t.pts + ' points</span><span class="res">' + (on ? '+' + t.pts + ' pts' : 'non remplie') + '</span></div>';
+    });
+    document.getElementById('simTiers').innerHTML = out;
+    document.getElementById('simPts').textContent = total;
+  }
+  ca.addEventListener('input', render);
+  Array.prototype.forEach.call(document.querySelectorAll('#simPaliers .switch button'), function (b) {
+    b.addEventListener('click', function () {
+      mode = b.dataset.mode;
+      Array.prototype.forEach.call(document.querySelectorAll('#simPaliers .switch button'), function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+      render();
+    });
+  });
+  render();
+})();
+</script>

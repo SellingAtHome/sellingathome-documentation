@@ -1,0 +1,146 @@
+<!--page {"title":"La boutique de marque"} -->
+<style>
+.timeline { display:flex; flex-direction:column; border-left:3px solid var(--rule); margin-left:10px; }
+.tl { position:relative; padding:0 0 20px 28px; }
+.tl::before { content:""; position:absolute; left:-9px; top:4px; width:15px; height:15px; border-radius:50%; background:var(--card); border:3px solid var(--accent); }
+.tl.stop::before { border-color:var(--pink); }
+.tl b { color:var(--heading); display:block; }
+.tl p { color:var(--muted); font-size:.93rem; margin-top:4px; }
+.opts td:first-child { width:32%; }
+</style>
+<header class="hero">
+  <div class="hero-in">
+    <div>
+      <span class="eyebrow">Commandes et boutiques</span>
+      <h1>La boutique <span class="script">de marque</span></h1>
+      <p class="lede">Une boutique en ligne au nom de votre marque, hébergée par SellingAtHome, qui garde le lien avec vos conseillères&nbsp;: la cliente peut en choisir une, à qui la vente est attribuée. Paramétrage, choix de la conseillère, attribution et commandes.</p>
+      <p><span class="tag yellow" style="display:inline-block">Module optionnel</span></p>
+    </div>
+    <div class="voucher-art" aria-hidden="true">
+      <div class="v-top"><span>Boutique de la marque</span><span>BS</span></div>
+      <div class="v-amount">73<span> €</span></div>
+      <div class="v-name">panier médian</div>
+      <div class="v-sep"></div>
+      <div class="v-meta"><span>Conseillère <b>au choix</b></span><span>Paiement <b>en ligne</b></span></div>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="toc" aria-label="Sommaire">
+    <details id="tocDetails" open>
+      <summary>Sommaire</summary>
+      <div class="toc-title">Sommaire</div>
+      <ol>
+        <li data-sec="definition"><a href="#definition"><span class="toc-n">1</span>Qu'est-ce que la boutique de marque&nbsp;?</a></li>
+        <li data-sec="parametrage"><a href="#parametrage"><span class="toc-n">2</span>Le paramétrage</a></li>
+        <li data-sec="vendeur"><a href="#vendeur"><span class="toc-n">3</span>Le choix de la conseillère</a>
+          <ol class="toc-sub"><li><a href="#s3-1"><span class="toc-n">3.1</span>Obligatoire ou facultatif</a></li><li><a href="#s3-2"><span class="toc-n">3.2</span>À qui la vente est-elle attribuée&nbsp;?</a></li></ol>
+        </li>
+        <li data-sec="parcours"><a href="#parcours"><span class="toc-n">4</span>Le parcours de la cliente</a></li>
+        <li data-sec="commandes"><a href="#commandes"><span class="toc-n">5</span>Les commandes de boutique</a></li>
+        <li data-sec="attention"><a href="#attention"><span class="toc-n">6</span>Points d'attention</a></li>
+        <li data-sec="faq"><a href="#faq"><span class="toc-n">7</span>Questions fréquentes</a></li>
+      </ol>
+    </details>
+  </nav>
+
+  <main>
+
+<!-- 1 -->
+<section id="definition">
+  <div class="sec-head"><span class="sec-num">01</span><h2>Qu'est-ce que la boutique de marque&nbsp;?</h2></div>
+  <p class="lede">C'est un site de vente en ligne <strong>unique</strong>, à l'adresse de votre marque, avec les fonctions d'un site e-commerce (catalogue, panier, compte client) et un ajout propre à la vente à domicile&nbsp;: <strong>le choix d'une conseillère</strong> dans le tunnel d'achat.</p>
+  <p>Elle utilise le même catalogue en ligne et le même moteur que les <a href="mini-boutiques.html">mini-boutiques</a>&nbsp;; la différence est qu'elle n'appartient à aucune conseillère.</p>
+  <div class="tip"><span class="ex-label">Vocabulaire</span><p>L'interface dit «&nbsp;Boutique de la marque&nbsp;» et «&nbsp;vendeur&nbsp;» pour la conseillère.</p></div>
+  <div class="stats">
+    <div class="stat"><b>4</b><span>marques sur 35 ont une boutique de marque</span></div>
+    <div class="stat"><b>≈ 570</b><span>commandes payées sur un an</span></div>
+    <div class="stat"><b>40&nbsp;%</b><span>de ces commandes ne sont attribuées à aucune conseillère</span></div>
+  </div>
+</section>
+
+<!-- 2 -->
+<section id="parametrage">
+  <div class="sec-head"><span class="sec-num">02</span><h2>Le paramétrage</h2></div>
+  <div class="path" aria-label="Chemin d'accès"><span>Paramètres</span><span>Modèles des minisites</span><span><b>Boutique de la marque</b></span></div>
+  <p>L'adresse de la boutique est définie par l'équipe SellingAtHome à l'activation du module. Elle s'affiche en tête de l'onglet (champ <strong>Lien</strong>).</p>
+  <figure><img src="Captures/Boutiques/boutique-marque-parametres.png" alt="Onglet Boutique de la marque : bloc Général avec le lien de la boutique, le logo de la marque, le bandeau, les couleurs principale et secondaire et le thème ; bloc Options avec Autoriser l'inscription de nouveaux clients, Afficher le filtre réduction et Rendre obligatoire le choix d'un vendeur ; bouton Enregistrer les modifications" loading="lazy"><figcaption>L'onglet Boutique de la marque&nbsp;: Général et Options.</figcaption></figure>
+  <p>L'écran reprend les blocs du modèle des mini-boutiques (voir <a href="mini-boutiques.html#personnaliser">la personnalisation des mini-boutiques</a>)&nbsp;: <strong>Général</strong> (logo, bandeau, couleurs, thème), <strong>Contenu</strong> (présentation, mentions légales, CGV, cookies, confidentialité, par langue), <strong>Carrousel</strong>, <strong>Visuels marques</strong>, <strong>Produits mis en avant</strong> (3 maximum), visuels d'opérations commerciales et <strong>Réseaux sociaux</strong>. Il n'y a pas de titre de bannière, ni de choix des produits par les conseillères, ni de tri par défaut.</p>
+  <div class="table-wrap"><table class="opts">
+    <thead><tr><th>Option</th><th>Effet</th></tr></thead>
+    <tbody>
+      <tr><td><b>Autoriser l'inscription de nouveaux clients</b></td><td>Une visiteuse peut créer son compte seule. Décochée, seules les clientes déjà connues peuvent se connecter.</td></tr>
+      <tr><td><b>Afficher le filtre réduction</b></td><td>Ajoute un filtre des produits en promotion dans le catalogue.</td></tr>
+      <tr><td><b>Rendre obligatoire le choix d'un vendeur</b></td><td>La cliente doit choisir une conseillère pour finaliser sa commande (voir <a href="#vendeur">ci-dessous</a>). Décochée par défaut.</td></tr>
+    </tbody>
+  </table></div>
+  <p>Enregistrez avec <strong>Enregistrer les modifications</strong>. Les produits en vente sont ceux cochés «&nbsp;Disponible sur la mini-boutique vendeur&nbsp;» dans le catalogue. Les modes de livraison et moyens de paiement se règlent pour le type de commande «&nbsp;Boutique de la marque&nbsp;» (Paramètres › Configuration générale › Paramètres des livraisons, et paramétrage des paiements avec l'équipe SellingAtHome).</p>
+</section>
+
+<!-- 3 -->
+<section id="vendeur">
+  <div class="sec-head"><span class="sec-num">03</span><h2>Le choix de la conseillère</h2></div>
+
+  <h3 id="s3-1"><span class="sub-num">3.1</span> Obligatoire ou facultatif</h3>
+  <p>Pendant le tunnel d'achat, une étape propose à la cliente de choisir une conseillère&nbsp;: elle la recherche par nom, référence ou code postal. Ce choix rattache la cliente à cette conseillère.</p>
+  <div class="decide">
+    <div class="row"><span class="q">«&nbsp;Rendre obligatoire le choix d'un vendeur&nbsp;» cochée</span><span class="arrow">→</span><span class="pill">La cliente doit choisir</span></div>
+    <div class="row"><span class="q">Option décochée (34 marques sur 35)</span><span class="arrow">→</span><span class="pill yellow">Le choix est facultatif</span></div>
+  </div>
+
+  <h3 id="s3-2"><span class="sub-num">3.2</span> À qui la vente est-elle attribuée&nbsp;?</h3>
+  <p>La commande est attribuée à la <strong>conseillère de la cliente</strong> au moment où la commande est créée&nbsp;:</p>
+  <ul class="prose">
+    <li>la conseillère choisie dans le tunnel&nbsp;;</li>
+    <li>ou, si la cliente n'en choisit pas, sa conseillère habituelle (une cliente déjà connue de votre base), si celle-ci est active&nbsp;;</li>
+    <li>sinon, <strong>aucune</strong>&nbsp;: il n'y a pas d'attribution automatique (par code postal, au hasard ou à un compte de la marque).</li>
+  </ul>
+  <p>La vente compte alors dans le chiffre d'affaires de cette conseillère, comme ses autres commandes. La commande figure dans la liste des commandes de la conseillère, dans son espace.</p>
+  <div class="example"><span class="ex-label">Exemple</span><p>Zoé découvre votre marque sur la boutique, s'inscrit, et choisit Chloé en tapant son code postal. Sa commande de 73&nbsp;€ est attribuée à Chloé, et Zoé devient cliente de Chloé. Emma, elle, ne choisit personne et n'a jamais acheté&nbsp;: sa commande n'est attribuée à aucune conseillère.</p></div>
+</section>
+
+<!-- 4 -->
+<section id="parcours">
+  <div class="sec-head"><span class="sec-num">04</span><h2>Le parcours de la cliente</h2></div>
+  <div class="timeline">
+    <div class="tl"><b>1. Elle navigue et remplit son panier</b><p>Catalogue, filtres par catégorie et, si l'option est cochée, par promotion.</p></div>
+    <div class="tl"><b>2. Elle se connecte ou s'inscrit</b><p>Une adresse déjà connue reçoit un e-mail pour créer son mot de passe.</p></div>
+    <div class="tl"><b>3. Elle finalise</b><p>Adresses, choix de la conseillère (obligatoire ou non), mode de livraison, questions éventuelles (voir <a href="commandes-parametres.html#questions">paramètres des commandes</a>).</p></div>
+    <div class="tl stop"><b>4. Elle paie en ligne</b><p>Selon les moyens prévus pour le type «&nbsp;Boutique de la marque&nbsp;». Elle reçoit ses documents par e-mail.</p></div>
+  </div>
+</section>
+
+<!-- 5 -->
+<section id="commandes">
+  <div class="sec-head"><span class="sec-num">05</span><h2>Les commandes de boutique</h2></div>
+  <ul class="prose">
+    <li><strong>Type</strong>&nbsp;: «&nbsp;Boutique de la marque&nbsp;». Leur référence commence par <code>BS</code>.</li>
+    <li>Elles se gèrent comme les commandes de mini-boutique&nbsp;: pas de modification du panier par la marque ou la conseillère, stock décompté au paiement, puis expédition et annulation comme toute commande payée (voir <a href="commandes-comprendre.html">Comprendre les commandes</a>).</li>
+    <li>Une commande créée sans conseillère reste sans conseillère, même si la cliente en choisit une ensuite pour ses commandes suivantes.</li>
+  </ul>
+</section>
+
+<!-- 6 -->
+<section id="attention">
+  <div class="sec-head"><span class="sec-num">06</span><h2>Points d'attention</h2></div>
+  <ul class="prose">
+    <li><strong>Choix facultatif = ventes sans conseillère</strong>&nbsp;: si vos conseillères doivent toucher chaque vente, rendez le choix obligatoire.</li>
+    <li><strong>La conseillère est fixée à la création de la commande</strong>&nbsp;: si la cliente change de conseillère après avoir commencé son panier, vérifiez l'attribution de la commande.</li>
+    <li><strong>Notification de la conseillère</strong>&nbsp;: la commande apparaît dans la liste de ses commandes, dans son espace. Prévenez vos conseillères de vérifier ce canal.</li>
+    <li><strong>Produits</strong>&nbsp;: seuls les produits disponibles sur les mini-boutiques sont vendus.</li>
+  </ul>
+</section>
+
+<!-- 7 -->
+<section id="faq">
+  <div class="sec-head"><span class="sec-num">07</span><h2>Questions fréquentes</h2></div>
+  <div class="faq">
+    <details><summary>Je ne vois pas l'onglet Boutique de la marque.</summary><div><p>Le module n'est pas actif pour votre marque. Contactez l'équipe SellingAtHome.</p></div></details>
+    <details><summary>Comment changer l'adresse de la boutique&nbsp;?</summary><div><p>Elle est définie par l'équipe SellingAtHome&nbsp;: faites-en la demande.</p></div></details>
+    <details><summary>Une commande de boutique n'a pas de conseillère&nbsp;: est-ce normal&nbsp;?</summary><div><p>Oui, si la cliente n'a pas choisi de conseillère et n'en avait pas déjà une. Rendez le choix obligatoire pour l'éviter.</p></div></details>
+  </div>
+</section>
+
+  </main>
+</div>

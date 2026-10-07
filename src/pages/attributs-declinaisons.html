@@ -1,0 +1,251 @@
+<!--page {"title":"Catégories, attributs et déclinaisons"} -->
+<style>
+.chain { display:grid; grid-template-columns:repeat(auto-fit, minmax(170px,1fr)); gap:12px; }
+.chain .card { border-top:5px solid var(--accent); }
+.chain .card:nth-child(2) { border-top-color:var(--pink); }
+.chain .card:nth-child(3) { border-top-color:var(--yellow); }
+.chain .card:nth-child(4) { border-top-color:var(--heading); }
+.chain .card p { font-size:.9rem; }
+.opts td:first-child { width:34%; }
+.combos td, .combos th { text-align:center; }
+.combos td:first-child, .combos th:first-child { text-align:left; }
+</style>
+<header class="hero">
+  <div class="hero-in">
+    <div>
+      <span class="eyebrow">Catalogue et logistique</span>
+      <h1>Catégories, attributs <span class="script">et déclinaisons</span></h1>
+      <p class="lede">Ranger vos produits dans une arborescence de catégories, puis décliner un produit en tailles, couleurs ou parfums&nbsp;: attributs, valeurs et combinaisons, avec leur SKU, leur stock et leur prix.</p>
+    </div>
+    <div class="voucher-art" aria-hidden="true">
+      <div class="v-top"><span>Bague AL218</span><span>2 attributs</span></div>
+      <div class="v-amount">6<span> combinaisons</span></div>
+      <div class="v-name">Or, Argent × 52, 54, 56</div>
+      <div class="v-sep"></div>
+      <div class="v-meta"><span>Stock <b>par combinaison</b></span><span>SKU <b>AL218-OR-54</b></span></div>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="toc" aria-label="Sommaire">
+    <details id="tocDetails" open>
+      <summary>Sommaire</summary>
+      <div class="toc-title">Sommaire</div>
+      <ol>
+        <li data-sec="s1"><a href="#s1"><span class="toc-n">1</span>Les quatre notions</a></li>
+        <li data-sec="s2"><a href="#s2"><span class="toc-n">2</span>Les catégories</a>
+          <ol class="toc-sub"><li><a href="#s2-1"><span class="toc-n">2.1</span>L'arborescence</a></li><li><a href="#s2-2"><span class="toc-n">2.2</span>Les options d'une catégorie</a></li><li><a href="#s2-3"><span class="toc-n">2.3</span>Supprimer une catégorie</a></li></ol>
+        </li>
+        <li data-sec="s3"><a href="#s3"><span class="toc-n">3</span>Les attributs de la marque</a></li>
+        <li data-sec="s4"><a href="#s4"><span class="toc-n">4</span>Les attributs d'un produit</a>
+          <ol class="toc-sub"><li><a href="#s4-1"><span class="toc-n">4.1</span>Ajouter un attribut</a></li><li><a href="#s4-2"><span class="toc-n">4.2</span>Les valeurs</a></li></ol>
+        </li>
+        <li data-sec="s5"><a href="#s5"><span class="toc-n">5</span>Les combinaisons</a>
+          <ol class="toc-sub"><li><a href="#s5-1"><span class="toc-n">5.1</span>Une par une</a></li><li><a href="#s5-2"><span class="toc-n">5.2</span>Toutes d'un coup</a></li><li><a href="#s5-3"><span class="toc-n">5.3</span>SKU et code-barres</a></li><li><a href="#s5-4"><span class="toc-n">5.4</span>Prix et stock par combinaison</a></li></ol>
+        </li>
+        <li data-sec="s6"><a href="#s6"><span class="toc-n">6</span>Exemple complet</a></li>
+        <li data-sec="s7"><a href="#s7"><span class="toc-n">7</span>Ce que voit la conseillère</a></li>
+        <li data-sec="s8"><a href="#s8"><span class="toc-n">8</span>Points d'attention</a></li>
+        <li data-sec="s9"><a href="#s9"><span class="toc-n">9</span>Questions fréquentes</a></li>
+      </ol>
+    </details>
+  </nav>
+
+  <main>
+
+<!-- 1 -->
+<section id="s1">
+  <div class="sec-head"><span class="sec-num">01</span><h2>Les quatre notions</h2></div>
+  <p class="lede">Les catégories <strong>rangent</strong> les produits. Les attributs, leurs valeurs et les combinaisons <strong>déclinent</strong> un produit en variantes que la conseillère choisit à la vente.</p>
+  <div class="chain">
+    <div class="card"><span class="tag">Catégorie</span><h4>Un rayon</h4><p>«&nbsp;Bagues&nbsp;», «&nbsp;Boucles d'oreilles &gt;&gt; Créoles&nbsp;». Un produit peut être dans plusieurs.</p></div>
+    <div class="card"><span class="tag pink">Attribut</span><h4>Un axe de choix</h4><p>«&nbsp;Couleur&nbsp;», «&nbsp;Taille&nbsp;». Défini une fois pour la marque, ajouté aux produits concernés.</p></div>
+    <div class="card"><span class="tag yellow">Valeur</span><h4>Un choix possible</h4><p>«&nbsp;Or&nbsp;», «&nbsp;Argent&nbsp;»&nbsp;; «&nbsp;52&nbsp;», «&nbsp;54&nbsp;». Peut ajuster le prix ou le poids.</p></div>
+    <div class="card"><span class="tag">Combinaison</span><h4>Une variante vendable</h4><p>«&nbsp;Or + 54&nbsp;». Elle porte son SKU, son code-barres et son stock.</p></div>
+  </div>
+  <div class="stats">
+    <div class="stat"><b>8 / 35</b><span>marques actives déclinent des produits en combinaisons</span></div>
+    <div class="stat"><b>2&nbsp;111</b><span>produits publiés ont des combinaisons</span></div>
+    <div class="stat"><b>3</b><span>combinaisons par produit décliné (médiane)</span></div>
+  </div>
+  <div class="tip"><span class="ex-label">Vocabulaire</span><p>L'espace marque parle de «&nbsp;Vendeur&nbsp;» pour la <strong>conseillère</strong> et de «&nbsp;Client&nbsp;» pour la <strong>cliente</strong>.</p></div>
+</section>
+
+<!-- 2 -->
+<section id="s2">
+  <div class="sec-head"><span class="sec-num">02</span><h2>Les catégories</h2></div>
+  <div class="path" aria-label="Chemin d'accès"><span>Espace marque</span><span>Catalogue</span><span><b>Catégories</b></span></div>
+  <figure><img src="Captures/Catalogue/categories.png" alt="Liste des catégories : bouton Ajouter une catégorie ; colonnes Nom (avec le chemin parent >> enfant), Photo, Publiée, Ordre d'affichage, Action" loading="lazy"><figcaption>La liste des catégories.</figcaption></figure>
+
+  <h3 id="s2-1"><span class="sub-num">2.1</span> L'arborescence</h3>
+  <p>Chaque catégorie peut avoir une <strong>Catégorie parente</strong>&nbsp;: la liste affiche alors le chemin complet, «&nbsp;Boucles d'oreilles &gt;&gt; Créoles&nbsp;». Sans parente, la catégorie est au premier niveau. L'<strong>Ordre d'affichage</strong> range les catégories sœurs entre elles&nbsp;; dans une catégorie, les produits sont rangés selon leur propre «&nbsp;Ordre d'affichage dans les catégories&nbsp;» (fiche produit).</p>
+  <p>Votre marque possède aussi une <strong>catégorie racine</strong>, qui porte son nom et n'apparaît pas dans la liste&nbsp;: c'est là que va un produit créé sans catégorie.</p>
+
+  <h3 id="s2-2"><span class="sub-num">2.2</span> Les options d'une catégorie</h3>
+  <div class="figrow">
+    <figure><img src="Captures/Catalogue/categorie-edition.png" alt="Édition de la catégorie Boucles d'oreilles : onglets de langue avec Nom et Description, Catégorie parente, Ordre d'affichage, Rôles vendeur, cases Publiée et Kit de démarrage, cases Publier la catégorie sur les mini-boutiques, sur les réunions virtuelles, Publié sur les minisites hôtes, zone Photos" loading="lazy"><figcaption>Le formulaire d'une catégorie.</figcaption></figure>
+    <div class="table-wrap"><table class="opts">
+      <thead><tr><th>Champ</th><th>Effet</th></tr></thead>
+      <tbody>
+        <tr><td><b>Nom</b>, <b>Description</b></td><td>Par langue.</td></tr>
+        <tr><td><b>Catégorie parente</b>, <b>Ordre d'affichage</b></td><td>La place dans l'arborescence.</td></tr>
+        <tr><td><b>Rôles vendeur</b></td><td>Vide&nbsp;: catégorie visible par toutes les conseillères. Rempli&nbsp;: la catégorie n'apparaît que dans le catalogue des conseillères ayant l'un de ces rôles.</td></tr>
+        <tr><td><b>Publiée</b></td><td>Décochée, la catégorie n'est plus proposée.</td></tr>
+        <tr><td><b>Kit de démarrage</b></td><td>Les produits de cette catégorie sont ceux proposés aux candidates à l'étape du kit de démarrage. Voir <a href="recrutement.html">Recrutement</a>.</td></tr>
+        <tr><td><b>Publier la catégorie sur les mini-boutiques</b>, <b>… sur les réunions virtuelles</b>, <b>Publié sur les minisites hôtes</b></td><td>La catégorie apparaît (ou non) sur chacun de ces canaux. Le produit doit aussi y être autorisé dans sa fiche.</td></tr>
+        <tr><td><b>Pourcentage de commission spécifique</b></td><td>Un taux propre à la catégorie, utilisé par les règles de commission «&nbsp;au pourcentage par catégorie&nbsp;». Selon votre paramétrage.</td></tr>
+        <tr><td><b>Photos</b></td><td>L'image de la catégorie.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+
+  <h3 id="s2-3"><span class="sub-num">2.3</span> Supprimer une catégorie</h3>
+  <p>La croix de la liste supprime la catégorie. Ses produits restent dans leurs autres catégories. Mais un produit qui n'a <strong>plus aucune catégorie</strong> est rangé dans la catégorie racine <strong>et dépublié</strong>&nbsp;: «&nbsp;Disponible à la vente&nbsp;» est décoché.</p>
+  <div class="warn"><span class="ex-label">Attention</span><p>Avant de supprimer «&nbsp;Bagues&nbsp;», déplacez ses bagues vers une autre catégorie. Sinon elles disparaissent de la vente, sans autre message.</p></div>
+</section>
+
+<!-- 3 -->
+<section id="s3">
+  <div class="sec-head"><span class="sec-num">03</span><h2>Les attributs de la marque</h2></div>
+  <div class="path" aria-label="Chemin d'accès"><span>Espace marque</span><span>Catalogue</span><span><b>Attributs</b></span></div>
+  <figure><img src="Captures/Catalogue/attribut-edition.png" alt="Édition de l'attribut Couleur : bloc Informations générales (Nom, Description par langue), bloc Mettre en filtre sur les boutiques avec la case Activer en tant que filtre sur les boutiques, bloc Valeurs prédéfinies (Nom, Ajustement de prix, Ajustement de poids, Est présélectionné, Ordre d'affichage, Actions) et bouton Ajouter une valeur" loading="lazy"><figcaption>Un attribut de la marque et ses valeurs prédéfinies.</figcaption></figure>
+  <p>Un attribut se crée <strong>une fois</strong> pour la marque (<strong>Ajouter un attribut</strong>), puis s'ajoute aux produits qui en ont besoin. Il porte&nbsp;:</p>
+  <ul class="prose">
+    <li>un <strong>Nom</strong> et une <strong>Description</strong> par langue&nbsp;;</li>
+    <li>la case <strong>Activer en tant que filtre sur les boutiques</strong>&nbsp;: l'attribut sert de filtre sur les boutiques en ligne (filtrer par couleur, par exemple)&nbsp;;</li>
+    <li>des <strong>Valeurs prédéfinies</strong>&nbsp;: Nom, Ajustement de prix, Ajustement de poids, Est présélectionné, Ordre d'affichage.</li>
+  </ul>
+  <div class="tip"><span class="ex-label">Bon à savoir</span><p>Les valeurs prédéfinies sont <strong>recopiées</strong> dans le produit au moment où vous lui ajoutez l'attribut. Une valeur prédéfinie ajoutée plus tard (une nouvelle couleur) n'arrive pas toute seule dans les produits existants&nbsp;: ajoutez-la dans l'onglet Attributs de chacun.</p></div>
+</section>
+
+<!-- 4 -->
+<section id="s4">
+  <div class="sec-head"><span class="sec-num">04</span><h2>Les attributs d'un produit</h2></div>
+  <div class="path" aria-label="Chemin d'accès"><span>Catalogue</span><span>Produits</span><span>fiche produit</span><span><b>Attributs</b></span></div>
+  <figure><img src="Captures/Catalogue/fiche-attributs.png" alt="Onglet Attributs : bouton Ajouter un attribut ; tableau Attribut, Texte, Type de contrôle, Valeurs, Ordre d'affichage, Actions ; lignes Couleur (Choisissez le coloris) et taille (Choisissez votre taille), type Liste déroulante, lien Voir / Modifier" loading="lazy"><figcaption>Les attributs d'une bague.</figcaption></figure>
+
+  <h3 id="s4-1"><span class="sub-num">4.1</span> Ajouter un attribut</h3>
+  <ol class="prose">
+    <li>Cliquez sur <strong>Ajouter un attribut</strong>.</li>
+    <li>Choisissez l'<strong>Attribut</strong> dans la liste des attributs de la marque.</li>
+    <li>Saisissez le <strong>Texte</strong> par langue&nbsp;: c'est l'invitation que voit la conseillère, «&nbsp;Choisissez votre taille&nbsp;».</li>
+    <li>Le <strong>Type de contrôle</strong> est «&nbsp;Liste déroulante&nbsp;» (seule valeur proposée). Fixez l'<strong>Ordre d'affichage</strong>.</li>
+    <li>Enregistrez&nbsp;: les valeurs prédéfinies de l'attribut sont copiées dans le produit.</li>
+  </ol>
+  <div class="warn"><span class="ex-label">Attention</span><p>Ajouter un attribut à un produit qui a déjà des combinaisons <strong>supprime toutes ses combinaisons</strong>, avec leur SKU et leur stock. Un message vous prévient. Supprimer un attribut, ou une valeur, supprime aussi les combinaisons qui le contiennent.</p></div>
+
+  <h3 id="s4-2"><span class="sub-num">4.2</span> Les valeurs</h3>
+  <div class="figrow">
+    <figure><img src="Captures/Catalogue/fiche-valeurs.png" alt="Panneau Valeurs de l'attribut Couleur : bouton Supprimer les valeurs sélectionnées, tableau Nom, Ordre d'affichage, Action (Argent, Or, Or Blanc), onglet Créer une nouvelle valeur" loading="lazy"><figcaption>Les valeurs de l'attribut, par «&nbsp;Voir / Modifier&nbsp;».</figcaption></figure>
+    <div class="table-wrap"><table class="opts">
+      <thead><tr><th>Champ d'une valeur</th><th>Effet</th></tr></thead>
+      <tbody>
+        <tr><td><b>Nom</b></td><td>Par langue&nbsp;: «&nbsp;Or&nbsp;», «&nbsp;Gold&nbsp;».</td></tr>
+        <tr><td><b>Ajustement de prix</b></td><td>Montant <strong>TTC</strong> ajouté au prix du produit quand cette valeur est choisie.</td></tr>
+        <tr><td><b>Ajustement de poids</b></td><td>Poids ajouté.</td></tr>
+        <tr><td><b>Coût</b></td><td>Coût d'achat de la valeur, pour information.</td></tr>
+        <tr><td><b>Est présélectionné</b></td><td>La valeur proposée par défaut.</td></tr>
+        <tr><td><b>Ordre d'affichage</b></td><td>Le rang dans la liste déroulante.</td></tr>
+        <tr><td><b>Id de l'article</b></td><td>Un identifiant externe (logisticien, ERP), si vous en utilisez un.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+  <div class="example"><span class="ex-label">Exemple</span><p>La bague est à 35&nbsp;€ TTC. La valeur «&nbsp;Or&nbsp;» a un ajustement de prix de 10&nbsp;€. Camille, qui choisit la bague en or, paie 45&nbsp;€&nbsp;; Inès, qui la prend en argent, paie 35&nbsp;€.</p></div>
+</section>
+
+<!-- 5 -->
+<section id="s5">
+  <div class="sec-head"><span class="sec-num">05</span><h2>Les combinaisons</h2></div>
+  <div class="path" aria-label="Chemin d'accès"><span>Catalogue</span><span>Produits</span><span>fiche produit</span><span><b>Combinaisons d'attributs</b></span></div>
+  <figure><img src="Captures/Catalogue/fiche-combinaisons.png" alt="Onglet Combinaisons d'attributs : boutons Ajouter une combinaison et Générer toutes les combinaisons possibles ; tableau Attributs (Couleur : Argent, taille : 48…), Quantité en stock, Stock à venir, SKU, Action" loading="lazy"><figcaption>Les combinaisons de la bague.</figcaption></figure>
+  <p>Une combinaison associe <strong>une valeur de chaque attribut</strong>. C'est elle que la conseillère ajoute au panier. Il faut d'abord au moins un attribut&nbsp;: sinon l'écran demande «&nbsp;Veuillez ajouter un attribut au produit avant d'ajouter des combinaisons d'attribut.&nbsp;»</p>
+
+  <h3 id="s5-1"><span class="sub-num">5.1</span> Une par une</h3>
+  <div class="figrow">
+    <figure><img src="Captures/Catalogue/fiche-combinaison-edition.png" alt="Panneau Éditer une combinaison : listes Choisissez le coloris (Argent) et Choisissez votre taille (48), Quantité en stock 233, case Autoriser la rupture de stock, Stock à venir, Prochain réapprovisionnement, SKU, Code-barres, bouton Enregistrer" loading="lazy"><figcaption>Le panneau d'une combinaison.</figcaption></figure>
+    <div class="prose" style="display:flex;flex-direction:column;gap:12px">
+      <p><strong>Ajouter une combinaison</strong>&nbsp;: choisissez une valeur pour chaque attribut, puis renseignez la <strong>Quantité en stock</strong>, la case <strong>Autoriser la rupture de stock</strong>, le <strong>Stock à venir</strong> et sa date de <strong>Prochain réapprovisionnement</strong>, le <strong>SKU</strong> et le <strong>Code-barres</strong>.</p>
+      <p>Une combinaison qui existe déjà est refusée («&nbsp;Cette combinaison existe déjà.&nbsp;»).</p>
+      <p>La quantité en stock n'est modifiable que si le produit suit ses stocks «&nbsp;par attributs de produit&nbsp;» (voir <a href="stocks.html#s2">Les stocks</a>).</p>
+    </div>
+  </div>
+
+  <h3 id="s5-2"><span class="sub-num">5.2</span> Toutes d'un coup</h3>
+  <p><strong>Générer toutes les combinaisons possibles</strong> crée toutes les associations de valeurs&nbsp;: 2 couleurs × 3 tailles = 6 combinaisons.</p>
+  <div class="warn"><span class="ex-label">Attention</span><p>La génération <strong>supprime d'abord toutes les combinaisons existantes</strong>. Les nouvelles partent avec un stock à 0, sans SKU, sans code-barres et sans rupture autorisée. Utilisez-la à la création du produit, pas sur un produit déjà en vente&nbsp;: pour ajouter une taille, ajoutez la valeur puis la combinaison une par une.</p></div>
+
+  <h3 id="s5-3"><span class="sub-num">5.3</span> SKU et code-barres</h3>
+  <ul class="prose">
+    <li>Le <strong>SKU</strong> identifie la combinaison auprès de votre logisticien ou de votre site e-commerce, et sert à l'<a href="stocks.html#s7-1">import des stocks</a>&nbsp;: une combinaison sans SKU ne peut pas être mise à jour par import.</li>
+    <li>Selon une option de votre marque, le SKU est <strong>obligatoire</strong> à la saisie («&nbsp;Le SKU est obligatoire pour les combinaisons.&nbsp;»). 3 marques actives sur 35 ont cette option.</li>
+    <li>La recherche de la liste des produits trouve un produit par le SKU de ses combinaisons.</li>
+  </ul>
+
+  <h3 id="s5-4"><span class="sub-num">5.4</span> Prix et stock par combinaison</h3>
+  <p>Le panneau d'une combinaison n'a pas de champ prix. Deux moyens existent pour faire varier le prix&nbsp;:</p>
+  <div class="grid-2">
+    <div class="card"><span class="tag">Par valeur</span><p>L'<strong>Ajustement de prix</strong> d'une valeur (<a href="#s4-2">4.2</a>) s'ajoute à toutes les combinaisons qui la contiennent. Idéal quand une seule dimension fait varier le prix&nbsp;: «&nbsp;Or&nbsp;: +10&nbsp;€&nbsp;».</p></div>
+    <div class="card"><span class="tag pink">Par combinaison</span><p>Dans l'onglet <strong>Tarifs</strong>, un prix «&nbsp;Pour tous les clients&nbsp;» rattaché à une <strong>Combinaison</strong> remplace le prix de base pour cette seule combinaison. Voir <a href="prix-taxes.html#s3">Prix par rôle</a>.</p></div>
+  </div>
+  <div class="warn"><span class="ex-label">Attention</span><p>Les deux s'additionnent&nbsp;: un prix par combinaison de 40&nbsp;€ sur «&nbsp;Or + 54&nbsp;», plus l'ajustement de 10&nbsp;€ de la valeur «&nbsp;Or&nbsp;», donne 50&nbsp;€. Choisissez une méthode et laissez l'autre à zéro.</p></div>
+  <p>Le <strong>stock</strong>, lui, se tient combinaison par combinaison dès que la méthode d'inventaire est «&nbsp;Suivre les stocks par attributs de produit&nbsp;».</p>
+</section>
+
+<!-- 6 -->
+<section id="s6">
+  <div class="sec-head"><span class="sec-num">06</span><h2>Exemple complet</h2></div>
+  <p>Votre marque lance une bague en <strong>or</strong> et en <strong>argent</strong>, en tailles <strong>52, 54 et 56</strong>, à 35&nbsp;€ TTC en argent et 45&nbsp;€ en or.</p>
+  <ol class="prose">
+    <li>Catalogue › Attributs&nbsp;: vérifiez que «&nbsp;Couleur&nbsp;» (Or, Argent) et «&nbsp;Taille&nbsp;» (52, 54, 56) existent. Donnez à «&nbsp;Or&nbsp;» un ajustement de prix de 10&nbsp;€.</li>
+    <li>Créez le produit à 35&nbsp;€ TTC, catégorie «&nbsp;Bagues&nbsp;».</li>
+    <li>Onglet Infos produit&nbsp;: méthode d'inventaire «&nbsp;Suivre les stocks par attributs de produit&nbsp;», enregistrez.</li>
+    <li>Onglet Attributs&nbsp;: ajoutez Couleur («&nbsp;Choisissez le coloris&nbsp;») puis Taille («&nbsp;Choisissez votre taille&nbsp;»).</li>
+    <li>Onglet Combinaisons d'attributs&nbsp;: <strong>Générer toutes les combinaisons possibles</strong>, puis éditez chacune pour saisir SKU et stock.</li>
+  </ol>
+  <div class="table-wrap"><table class="combos">
+    <thead><tr><th>Combinaison</th><th>SKU</th><th>Stock</th><th>Prix TTC</th></tr></thead>
+    <tbody>
+      <tr><td>Argent + 52</td><td>AL218-AR-52</td><td>12</td><td>35&nbsp;€</td></tr>
+      <tr><td>Argent + 54</td><td>AL218-AR-54</td><td>20</td><td>35&nbsp;€</td></tr>
+      <tr><td>Argent + 56</td><td>AL218-AR-56</td><td>8</td><td>35&nbsp;€</td></tr>
+      <tr><td>Or + 52</td><td>AL218-OR-52</td><td>5</td><td>45&nbsp;€</td></tr>
+      <tr><td>Or + 54</td><td>AL218-OR-54</td><td>10</td><td>45&nbsp;€</td></tr>
+      <tr><td>Or + 56</td><td>AL218-OR-56</td><td>0</td><td>45&nbsp;€</td></tr>
+    </tbody>
+  </table></div>
+  <p>Léa vend à Camille la bague or taille 54&nbsp;: le stock d'«&nbsp;Or + 54&nbsp;» passe de 10 à 9. «&nbsp;Or + 56&nbsp;», à 0 et sans rupture autorisée, ne peut pas être ajoutée au panier.</p>
+</section>
+
+<!-- 7 -->
+<section id="s7">
+  <div class="sec-head"><span class="sec-num">07</span><h2>Ce que voit la conseillère</h2></div>
+  <p>Sur la fiche du produit, la conseillère trouve une liste déroulante par attribut, intitulée par son <strong>Texte</strong> («&nbsp;Choisissez votre taille&nbsp;»), dans l'ordre d'affichage. Le prix affiché tient compte des ajustements de la valeur choisie. Selon votre réglage d'affichage des stocks, elle voit aussi la disponibilité de la combinaison (voir <a href="stocks.html#s8">Les stocks</a>).</p>
+</section>
+
+<!-- 8 -->
+<section id="s8">
+  <div class="sec-head"><span class="sec-num">08</span><h2>Points d'attention</h2></div>
+  <ul class="prose">
+    <li><strong>Générer toutes les combinaisons</strong> efface les combinaisons existantes, leur SKU et leur stock.</li>
+    <li><strong>Ajouter un attribut</strong> à un produit déjà décliné supprime aussi toutes ses combinaisons.</li>
+    <li><strong>Supprimer une valeur</strong> supprime les combinaisons qui la contiennent.</li>
+    <li><strong>Ajustement de prix et prix par combinaison s'additionnent.</strong></li>
+    <li><strong>Supprimer une catégorie</strong> dépublie les produits qui n'ont plus aucune catégorie.</li>
+    <li><strong>Les valeurs prédéfinies</strong> sont copiées dans le produit&nbsp;: leurs changements ultérieurs ne s'y répercutent pas.</li>
+  </ul>
+</section>
+
+<!-- 9 -->
+<section id="s9">
+  <div class="sec-head"><span class="sec-num">09</span><h2>Questions fréquentes</h2></div>
+  <div class="faq">
+    <details><summary>Comment ajouter une nouvelle taille à un produit déjà en vente&nbsp;?</summary><div><p>Dans l'onglet Attributs, «&nbsp;Voir / Modifier&nbsp;» sur la taille, onglet «&nbsp;Créer une nouvelle valeur&nbsp;». Puis, dans Combinaisons d'attributs, <strong>Ajouter une combinaison</strong> pour chaque nouvelle association. N'utilisez pas la génération automatique, qui effacerait les combinaisons existantes.</p></div></details>
+    <details><summary>Pourquoi je ne peux pas modifier la quantité en stock d'une combinaison&nbsp;?</summary><div><p>Le produit ne suit pas ses stocks par attributs. Changez la méthode d'inventaire dans l'onglet Infos produit («&nbsp;Suivre les stocks par attributs de produit&nbsp;»), enregistrez, puis revenez à la combinaison.</p></div></details>
+    <details><summary>Une catégorie n'apparaît pas sur les mini-boutiques.</summary><div><p>Cochez <strong>Publier la catégorie sur les mini-boutiques</strong> dans la catégorie, et <strong>Disponible sur la mini-boutique vendeur</strong> dans les produits concernés.</p></div></details>
+    <details><summary>Un lot peut-il avoir des tailles&nbsp;?</summary><div><p>Non&nbsp;: un produit groupé n'a ni attributs ni combinaisons. Mais chaque produit du lot peut être une combinaison précise (la bague en taille 52).</p></div></details>
+  </div>
+</section>
+
+  </main>
+</div>

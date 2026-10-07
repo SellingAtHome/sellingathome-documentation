@@ -1,0 +1,305 @@
+<!--page {"title":"Les stocks"} -->
+<style>
+.timeline { display:flex; flex-direction:column; border-left:3px solid var(--rule); margin-left:10px; }
+.tl { position:relative; padding:0 0 20px 28px; }
+.tl::before { content:""; position:absolute; left:-9px; top:4px; width:15px; height:15px; border-radius:50%; background:var(--card); border:3px solid var(--accent); }
+.tl.stop::before { border-color:var(--pink); }
+.tl b { color:var(--heading); display:block; }
+.tl .st { display:flex; flex-wrap:wrap; gap:6px; margin-top:6px; }
+.tl p { color:var(--muted); font-size:.93rem; margin-top:4px; }
+.chip { display:inline-block; border-radius:100px; padding:3px 11px; font-size:.78rem; font-weight:700; background:var(--surface); color:var(--heading); border:1px solid var(--rule); }
+.chip.g { background:var(--accent-wash); color:var(--accent-ink); border-color:transparent; }
+.chip.p { background:var(--pink-wash); color:var(--pink-ink); border-color:transparent; }
+.chip.y { background:var(--yellow-wash); color:var(--yellow-ink); border-color:transparent; }
+.opts td:first-child { width:32%; }
+.msgs td:first-child { width:52%; font-family:ui-monospace, monospace; font-size:.84rem; }
+.calc td, .calc th { text-align:center; }
+.calc td:first-child, .calc th:first-child { text-align:left; }
+</style>
+<header class="hero">
+  <div class="hero-in">
+    <div>
+      <span class="eyebrow">Catalogue et logistique</span>
+      <h1>Les <span class="script">stocks</span></h1>
+      <p class="lede">Suivre ou non le stock d'un produit, par produit ou par déclinaison&nbsp;; savoir à quel moment il bouge, ce que deviennent les lots et les kits, comment lire l'historique, importer un fichier, surveiller le stock faible et choisir ce que voient vos conseillères.</p>
+    </div>
+    <div class="voucher-art" aria-hidden="true">
+      <div class="v-top"><span>Bague AL218</span><span>Or · 54</span></div>
+      <div class="v-amount">9<span> en stock</span></div>
+      <div class="v-name">−1 · commande C202</div>
+      <div class="v-sep"></div>
+      <div class="v-meta"><span>Mobilisé <b>80</b></span><span>Seuil <b>15</b></span></div>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="toc" aria-label="Sommaire">
+    <details id="tocDetails" open>
+      <summary>Sommaire</summary>
+      <div class="toc-title">Sommaire</div>
+      <ol>
+        <li data-sec="s1"><a href="#s1"><span class="toc-n">1</span>L'essentiel</a></li>
+        <li data-sec="s2"><a href="#s2"><span class="toc-n">2</span>La méthode d'inventaire</a></li>
+        <li data-sec="s3"><a href="#s3"><span class="toc-n">3</span>Quand le stock bouge</a>
+          <ol class="toc-sub"><li><a href="#s3-1"><span class="toc-n">3.1</span>Le stock mobilisé</a></li><li><a href="#s3-2"><span class="toc-n">3.2</span>Exemple</a></li></ol>
+        </li>
+        <li data-sec="s4"><a href="#s4"><span class="toc-n">4</span>Rupture et stock à venir</a></li>
+        <li data-sec="s5"><a href="#s5"><span class="toc-n">5</span>Lots et kits</a>
+          <ol class="toc-sub"><li><a href="#s5-1"><span class="toc-n">5.1</span>Le produit groupé</a></li><li><a href="#s5-2"><span class="toc-n">5.2</span>Le kit variable</a></li></ol>
+        </li>
+        <li data-sec="s6"><a href="#s6"><span class="toc-n">6</span>L'historique du stock</a></li>
+        <li data-sec="s7"><a href="#s7"><span class="toc-n">7</span>Mettre à jour le stock</a>
+          <ol class="toc-sub"><li><a href="#s7-1"><span class="toc-n">7.1</span>L'import CSV</a></li><li><a href="#s7-2"><span class="toc-n">7.2</span>La saisie dans la fiche</a></li></ol>
+        </li>
+        <li data-sec="s8"><a href="#s8"><span class="toc-n">8</span>Ce que voient les conseillères</a></li>
+        <li data-sec="s9"><a href="#s9"><span class="toc-n">9</span>Le stock faible</a></li>
+        <li data-sec="s10"><a href="#s10"><span class="toc-n">10</span>Remise en stock</a></li>
+        <li data-sec="s11"><a href="#s11"><span class="toc-n">11</span>Points d'attention</a></li>
+        <li data-sec="s12"><a href="#s12"><span class="toc-n">12</span>Questions fréquentes</a></li>
+      </ol>
+    </details>
+  </nav>
+
+  <main>
+
+<!-- 1 -->
+<section id="s1">
+  <div class="sec-head"><span class="sec-num">01</span><h2>L'essentiel</h2></div>
+  <p class="lede">Le stock est <strong>facultatif</strong>, produit par produit. Un produit dont le stock est suivi ne peut plus être ajouté au panier quand il n'en reste plus, sauf si vous autorisez la rupture. Le stock baisse <strong>dès l'ajout au panier</strong> par la conseillère, pas au paiement.</p>
+  <div class="stats">
+    <div class="stat"><b>23 / 35</b><span>marques actives suivent le stock d'au moins un produit</span></div>
+    <div class="stat"><b>7 / 35</b><span>le suivent par déclinaison (taille, couleur…)</span></div>
+    <div class="stat"><b>14 / 35</b><span>autorisent la rupture sur certains produits</span></div>
+  </div>
+  <div class="tip"><span class="ex-label">Vocabulaire</span><p>L'espace marque parle de «&nbsp;Vendeur&nbsp;» pour la <strong>conseillère</strong>&nbsp;: «&nbsp;Stock vendeurs&nbsp;», «&nbsp;Comment les vendeurs voient les stocks&nbsp;?&nbsp;».</p></div>
+</section>
+
+<!-- 2 -->
+<section id="s2">
+  <div class="sec-head"><span class="sec-num">02</span><h2>La méthode d'inventaire</h2></div>
+  <div class="path" aria-label="Chemin d'accès"><span>Catalogue</span><span>Produits</span><span>fiche produit</span><span>Infos produit</span><span><b>Inventaire</b></span></div>
+  <div class="figrow">
+    <figure><img src="Captures/Catalogue/fiche-inventaire.png" alt="Bloc Inventaire : Méthode d'inventaire Suivre les stocks par attributs de produit, date de réapprovisionnement optionnelle, Stock vendeur, Emplacement, Stock mobilisé 80" loading="lazy"><figcaption>Le bloc Inventaire d'une bague déclinée.</figcaption></figure>
+    <div class="table-wrap"><table class="opts">
+      <thead><tr><th>Méthode</th><th>Ce qu'elle fait</th></tr></thead>
+      <tbody>
+        <tr><td><b>stock non suivi</b></td><td>Aucun stock&nbsp;: le produit est toujours commandable.</td></tr>
+        <tr><td><b>Suivre les stocks</b></td><td>Un stock unique pour le produit, saisi dans <strong>Quantité en stock</strong>.</td></tr>
+        <tr><td><b>Suivre les stocks par attributs de produit</b></td><td>Un stock par combinaison, saisi dans l'onglet Combinaisons d'attributs.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+  <p>SellingAtHome corrige la méthode si elle ne colle pas au produit&nbsp;:</p>
+  <ul class="prose">
+    <li>un produit qui a des attributs passe de «&nbsp;Suivre les stocks&nbsp;» à «&nbsp;par attributs&nbsp;», et inversement un produit sans attribut ne peut pas être suivi «&nbsp;par attributs&nbsp;»&nbsp;;</li>
+    <li>un <strong>produit groupé</strong> ou un <strong>kit variable</strong> est toujours «&nbsp;non suivi&nbsp;» lui-même (sauf lot avec <strong>Stock au produit groupé</strong>, <a href="#s5-1">5.1</a>).</li>
+  </ul>
+  <p>Selon la méthode, le bloc affiche aussi la case <strong>Autoriser la rupture de stock</strong>, une <strong>date de réapprovisionnement</strong> (optionnelle), l'<strong>Emplacement</strong> en entrepôt (texte libre) et le <strong>Stock mobilisé</strong>.</p>
+</section>
+
+<!-- 3 -->
+<section id="s3">
+  <div class="sec-head"><span class="sec-num">03</span><h2>Quand le stock bouge</h2></div>
+  <p class="lede">La règle surprend souvent&nbsp;: pour une commande saisie par une conseillère (réunion, vente directe…), le stock baisse <strong>à l'ajout au panier</strong>, alors que la commande n'est pas encore payée.</p>
+  <div class="timeline">
+    <div class="tl"><b>La conseillère ajoute le produit au panier</b><div class="st"><span class="chip p">− quantité</span></div><p>Commandes de réunion, ventes directes, kits de démarrage, commandes saisies par la marque… Le produit est retiré du stock immédiatement.</p></div>
+    <div class="tl"><b>Elle retire l'article du panier</b><div class="st"><span class="chip g">+ quantité</span></div><p>La quantité revient en stock.</p></div>
+    <div class="tl"><b>Une cliente paie en ligne sa commande de mini-boutique, de réunion virtuelle ou de boutique de la marque</b><div class="st"><span class="chip p">− quantité</span></div><p>Pour ces commandes passées par la cliente elle-même, le stock baisse <strong>au paiement</strong>, pas au panier.</p></div>
+    <div class="tl"><b>Une commande non payée est supprimée</b><div class="st"><span class="chip g">+ quantité</span><span class="chip">si l'option est active</span></div><p>Par la conseillère, par la marque ou automatiquement (paniers abandonnés, clôture de réunion). Voir <a href="#s10">Remise en stock</a>.</p></div>
+    <div class="tl stop"><b>Une commande payée est annulée</b><div class="st"><span class="chip g">+ quantité</span><span class="chip">si vous le choisissez</span></div><p>Totale ou partielle, avec l'option de remise en stock. Voir <a href="#s10">Remise en stock</a>.</p></div>
+  </div>
+  <p>S'y ajoutent les mouvements faits par la marque&nbsp;: saisie dans la fiche, import CSV, réception d'une commande fournisseur, et ceux envoyés par un logisticien ou un site e-commerce synchronisé. Chacun laisse une ligne dans l'<a href="#s6">historique</a>.</p>
+
+  <h3 id="s3-1"><span class="sub-num">3.1</span> Le stock mobilisé</h3>
+  <div class="figrow">
+    <figure><img src="Captures/Catalogue/fiche-stock-mobilise.png" alt="Fenêtre Stock mobilisé : explication, tableau Commande, Marque, Quantité, Date d'ajout, Statut (En cours, Signée), 67 éléments" loading="lazy"><figcaption>Le détail du stock mobilisé.</figcaption></figure>
+    <div class="prose" style="display:flex;flex-direction:column;gap:12px">
+      <p>Puisque le stock baisse au panier, une partie de vos pièces est «&nbsp;réservée&nbsp;» dans des commandes pas encore payées. Le <strong>Stock mobilisé</strong> en donne le total&nbsp;: les quantités présentes dans les commandes en cours (non payées, non annulées, non supprimées).</p>
+      <p>Le bouton à droite du champ ouvre le détail, commande par commande, avec son statut («&nbsp;En cours&nbsp;», «&nbsp;Signée&nbsp;»).</p>
+      <p>Un stock mobilisé élevé signale souvent des paniers oubliés&nbsp;: la suppression automatique des paniers abandonnés (voir <a href="commandes-comprendre.html#s5-2">Comprendre les commandes</a>) les libère.</p>
+    </div>
+  </div>
+
+  <h3 id="s3-2"><span class="sub-num">3.2</span> Exemple</h3>
+  <div class="example"><span class="ex-label">Exemple</span><p>Le collier torsadé a <strong>10</strong> pièces. Mardi, pendant la réunion de Jade, Léa ajoute 1 collier au panier de Camille et 1 à celui d'Inès&nbsp;: stock <strong>8</strong>, stock mobilisé <strong>2</strong>. Camille paie&nbsp;: le stock reste à 8, le mobilisé passe à 1. Inès ne paie jamais&nbsp;; trois jours plus tard, son panier est supprimé automatiquement&nbsp;: le collier revient, stock <strong>9</strong>, mobilisé <strong>0</strong> (si la remise en stock à la suppression est active).</p></div>
+</section>
+
+<!-- 4 -->
+<section id="s4">
+  <div class="sec-head"><span class="sec-num">04</span><h2>Rupture et stock à venir</h2></div>
+  <p>Pour un produit (ou une combinaison) dont le stock est suivi&nbsp;:</p>
+  <div class="decide">
+    <div class="row"><span class="q">Il reste au moins une pièce</span><span class="arrow">→</span><span class="pill">Ajout accepté</span></div>
+    <div class="row"><span class="q">Stock à 0 ou négatif, rupture non autorisée</span><span class="arrow">→</span><span class="pill pink">Ajout refusé</span></div>
+    <div class="row"><span class="q">Stock à 0 ou négatif, <strong>Autoriser la rupture de stock</strong> cochée</span><span class="arrow">→</span><span class="pill yellow">Ajout accepté, le stock devient négatif</span></div>
+  </div>
+  <ul class="prose">
+    <li><strong>Autoriser la rupture de stock</strong> permet de continuer à vendre un produit épuisé&nbsp;: le stock passe en négatif (−3 = trois pièces vendues à livrer quand le stock reviendra).</li>
+    <li>Le <strong>Stock à venir</strong> (une quantité et sa date de <strong>Prochain réapprovisionnement</strong>) plafonne cette vente à découvert&nbsp;: tant que la date n'est pas passée, on ne peut pas vendre plus que le stock à venir. Le stock à venir n'a d'effet que si la rupture est autorisée.</li>
+    <li>La <strong>date de réapprovisionnement</strong> du bloc Inventaire fait afficher «&nbsp;En réappro&nbsp;» au lieu de «&nbsp;En rupture de stock&nbsp;» dans la liste des produits, tant qu'elle est future.</li>
+  </ul>
+  <div class="warn"><span class="ex-label">Attention</span><p>Le contrôle porte sur la présence d'<strong>au moins une pièce</strong>, pas sur la quantité demandée&nbsp;: avec 2 pièces en stock, une conseillère peut ajouter 5 exemplaires d'un coup, et le stock passe à −3, même sans rupture autorisée. Surveillez le <a href="#s9">rapport de stock faible</a>, qui affiche aussi les stocks négatifs.</p></div>
+</section>
+
+<!-- 5 -->
+<section id="s5">
+  <div class="sec-head"><span class="sec-num">05</span><h2>Lots et kits</h2></div>
+
+  <h3 id="s5-1"><span class="sub-num">5.1</span> Le produit groupé</h3>
+  <p>Par défaut, un lot <strong>n'a pas de stock propre</strong>&nbsp;:</p>
+  <ul class="prose">
+    <li>sa disponibilité est le <strong>nombre de lots complets</strong> qu'on peut constituer avec le stock de ses produits suivis&nbsp;;</li>
+    <li>sa vente déstocke <strong>chacun de ses produits</strong>, quantité du lot comprise&nbsp;;</li>
+    <li>si aucun de ses produits n'est suivi, la liste affiche «&nbsp;∞ En stock&nbsp;».</li>
+  </ul>
+  <div class="table-wrap"><table class="calc">
+    <caption class="muted" style="caption-side:top;text-align:left;padding-bottom:6px">«&nbsp;Coffret duo&nbsp;» = 1 collier + 2 paires de boucles</caption>
+    <thead><tr><th>Produit du lot</th><th>Quantité dans le lot</th><th>Stock</th><th>Lots possibles</th></tr></thead>
+    <tbody>
+      <tr><td>Collier torsadé</td><td>1</td><td>10</td><td>10</td></tr>
+      <tr><td>Boucles créoles</td><td>2</td><td>7</td><td>3</td></tr>
+      <tr><td><b>Coffret duo</b></td><td></td><td></td><td><b>3</b> (le plus petit)</td></tr>
+    </tbody>
+  </table></div>
+  <p>Chloé vend un coffret&nbsp;: collier 10 → 9, boucles 7 → 5. Il reste 2 coffrets possibles.</p>
+  <p>Si vous cochez <strong>Stock au produit groupé</strong> (sous le type de produit), le lot devient un article à part entière&nbsp;: sa méthode passe à «&nbsp;Suivre les stocks&nbsp;», vous saisissez sa quantité, et c'est elle qui baisse à la vente. Utile pour un coffret préparé à l'avance en entrepôt. 2 marques actives l'utilisent.</p>
+
+  <h3 id="s5-2"><span class="sub-num">5.2</span> Le kit variable</h3>
+  <p>Le kit n'a jamais de stock à lui. À la vente, ce sont <strong>les produits choisis</strong> par la conseillère dans chaque composant qui sont déstockés, et l'ajout est refusé si l'un d'eux est épuisé (sans rupture autorisée). L'annulation du kit remet ces produits en stock.</p>
+</section>
+
+<!-- 6 -->
+<section id="s6">
+  <div class="sec-head"><span class="sec-num">06</span><h2>L'historique du stock</h2></div>
+  <div class="path" aria-label="Chemin d'accès"><span>Catalogue</span><span>Produits</span><span>fiche produit</span><span><b>Historique du stock</b></span></div>
+  <figure><img src="Captures/Catalogue/fiche-historique.png" alt="Onglet Historique du stock : bouton Recharger ; tableau Combinaison, Ajustement de la quantité, Quantité en stock, Message, Date ; lignes −1 avec le message The stock quantity has been reduced by placing the order suivi de la référence de commande" loading="lazy"><figcaption>L'historique d'une bague déclinée.</figcaption></figure>
+  <p>Chaque mouvement laisse une ligne&nbsp;: la <strong>Combinaison</strong> concernée, l'<strong>Ajustement de la quantité</strong> (+ ou −), la <strong>Quantité en stock</strong> après le mouvement, un <strong>Message</strong> et la <strong>Date</strong>. Les messages sont rédigés en anglais&nbsp;; voici les principaux&nbsp;:</p>
+  <div class="table-wrap"><table class="msgs">
+    <thead><tr><th>Message</th><th>Signification</th></tr></thead>
+    <tbody>
+      <tr><td>The stock quantity has been reduced by placing the order C…</td><td>Ajout au panier (ou paiement d'une commande en ligne).</td></tr>
+      <tr><td>The stock quantity has been increased by deleting an order item from the order C…</td><td>Article retiré du panier.</td></tr>
+      <tr><td>The stock quantity has been increased by deleting the order C…</td><td>Commande non payée supprimée.</td></tr>
+      <tr><td>The stock quantity has been increased by cancelling (partially) the order C…</td><td>Commande payée annulée, totalement ou partiellement.</td></tr>
+      <tr><td>The stock quantity has been edited</td><td>Quantité modifiée dans la fiche produit.</td></tr>
+      <tr><td>The stock quantity of combination has been initialized</td><td>Stock saisi à la création d'une combinaison.</td></tr>
+      <tr><td>Stock updated via CSV import / Stock created via CSV import</td><td>Import de stocks.</td></tr>
+      <tr><td>… in product REF</td><td>Le mouvement vient de la vente du lot ou du kit REF.</td></tr>
+      <tr><td>… from API, by reception of this item in supply order…</td><td>Logisticien ou site synchronisé, réception d'une commande fournisseur.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- 7 -->
+<section id="s7">
+  <div class="sec-head"><span class="sec-num">07</span><h2>Mettre à jour le stock</h2></div>
+
+  <h3 id="s7-1"><span class="sub-num">7.1</span> L'import CSV</h3>
+  <div class="path" aria-label="Chemin d'accès"><span>Catalogue</span><span>Produits</span><span><b>Importer stocks</b></span></div>
+  <div class="figrow">
+    <figure><img src="Captures/Catalogue/import-stocks.png" alt="Fenêtre Import de stocks : consigne sur le fichier CSV à 4 colonnes séparées par des points-virgules (product_id, reference, combination_sku, stock), bouton Télécharger le modèle CSV, sélection du fichier, boutons Annuler et Importer" loading="lazy"><figcaption>La fenêtre d'import.</figcaption></figure>
+    <div class="prose" style="display:flex;flex-direction:column;gap:12px">
+      <p>Le fichier a quatre colonnes séparées par des points-virgules&nbsp;: <code>product_id;reference;combination_sku;stock</code>. Téléchargez le modèle pour partir d'un fichier correct.</p>
+      <ul class="prose">
+        <li>Le produit est reconnu par son <strong>product_id</strong> (l'identifiant SellingAtHome)&nbsp;; la référence sert à vous repérer.</li>
+        <li>Pour un produit suivi par attributs, la combinaison est reconnue par son <strong>SKU</strong>. Laissez <code>combination_sku</code> vide pour un produit simple.</li>
+        <li>La valeur <strong>remplace</strong> le stock (ce n'est pas un ajout).</li>
+        <li>Seules les lignes du fichier sont traitées&nbsp;; les produits absents ne changent pas. Les produits non suivis sont ignorés.</li>
+        <li>Une ligne invalide (identifiant non numérique, stock vide) bloque tout l'import, avec le numéro de ligne en erreur.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="example"><span class="ex-label">Exemple</span><p><code>product_id;reference;combination_sku;stock</code><br><code>383130;ACA53447;;25</code><br><code>383126;AL218;AL218-OR-54;12</code><br>Le collier passe à 25 pièces, la bague or taille 54 à 12, quelles que soient leurs valeurs précédentes.</p></div>
+
+  <h3 id="s7-2"><span class="sub-num">7.2</span> La saisie dans la fiche</h3>
+  <p>Pour un produit suivi «&nbsp;Suivre les stocks&nbsp;», modifiez la <strong>Quantité en stock</strong> dans le bloc Inventaire et enregistrez&nbsp;: SellingAtHome enregistre l'écart dans l'historique («&nbsp;The stock quantity has been edited&nbsp;»). Pour une combinaison, éditez-la dans l'onglet Combinaisons d'attributs.</p>
+</section>
+
+<!-- 8 -->
+<section id="s8">
+  <div class="sec-head"><span class="sec-num">08</span><h2>Ce que voient les conseillères</h2></div>
+  <div class="path" aria-label="Chemin d'accès"><span>Paramètres</span><span>Configuration générale</span><span>Paramètres généraux</span><span><b>Vendeurs</b></span></div>
+  <div class="figrow">
+    <figure><img src="Captures/Catalogue/reglages-stock.png" alt="Bloc Vendeurs de la configuration générale, dont la liste Comment les vendeurs voient les stocks ? réglée sur Avec un symbole coloré" loading="lazy"><figcaption>Le réglage d'affichage du stock.</figcaption></figure>
+    <div class="prose" style="display:flex;flex-direction:column;gap:12px">
+      <p>Le réglage <strong>Comment les vendeurs voient les stocks&nbsp;?</strong> décide de ce que le catalogue de l'espace conseillère montre&nbsp;:</p>
+      <div class="table-wrap"><table class="opts">
+        <thead><tr><th>Valeur</th><th>Affichage</th><th>Marques actives</th></tr></thead>
+        <tbody>
+          <tr><td><b>Aucun</b> (par défaut)</td><td>Aucune information de stock.</td><td>9</td></tr>
+          <tr><td><b>Avec un symbole coloré</b></td><td>Un badge de couleur&nbsp;: en stock, stock faible, en rupture, sans quantité.</td><td>7</td></tr>
+          <tr><td><b>Avec le chiffre exact</b></td><td>Le même badge, avec la quantité.</td><td>17</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+  </div>
+  <p>Quel que soit ce réglage, un produit épuisé (sans rupture autorisée) ne peut pas être ajouté au panier.</p>
+</section>
+
+<!-- 9 -->
+<section id="s9">
+  <div class="sec-head"><span class="sec-num">09</span><h2>Le stock faible</h2></div>
+  <div class="path" aria-label="Chemin d'accès"><span>Espace marque</span><span>Rapports</span><span><b>Rapport stock faible</b></span></div>
+  <figure><img src="Captures/Catalogue/stock-faible.png" alt="Rapport stock faible : phrase Les produits ayant atteint un seuil de 15 articles en stocks sont affichés dans ce tableau, bouton Filtrer, colonnes Nom, Méthode d'inventaire, Quantité en stock, Publié, Action ; un produit suivi par attributs détaille ses combinaisons sous sa ligne" loading="lazy"><figcaption>Le rapport, avec un seuil à 15.</figcaption></figure>
+  <p>Le rapport liste les produits dont le stock est <strong>inférieur ou égal au seuil</strong> de votre marque, stocks à zéro et négatifs compris&nbsp;:</p>
+  <ul class="prose">
+    <li>produits suivis «&nbsp;Suivre les stocks&nbsp;»&nbsp;;</li>
+    <li>produits suivis par attributs dont au moins une combinaison est sous le seuil&nbsp;: les combinaisons concernées s'affichent sous la ligne&nbsp;;</li>
+    <li>lots dont le nombre de lots possibles est sous le seuil.</li>
+  </ul>
+  <p>Les produits non publiés y figurent aussi (colonne Publié)&nbsp;; le filtre permet de les écarter, ou de cibler une catégorie ou un type.</p>
+  <div class="figrow">
+    <figure><img src="Captures/Catalogue/reglages-seuil.png" alt="Bloc Rapports : champ Stock minimal de produit pour apparaître dans le rapport de stock faible, valeur 15" loading="lazy"><figcaption>Le seuil, dans Paramètres › Configuration générale.</figcaption></figure>
+    <div class="prose" style="display:flex;flex-direction:column;gap:12px">
+      <p>Le seuil se règle dans <strong>Paramètres › Configuration générale › Paramètres généraux</strong>, bloc <strong>Rapports</strong>&nbsp;: «&nbsp;Stock minimal de produit pour apparaître dans le rapport de stock faible&nbsp;». Il vaut 5 par défaut (21 marques actives sur 35 l'ont gardé).</p>
+      <p>Le même seuil colore en orange le badge «&nbsp;En stock&nbsp;» de la liste des produits.</p>
+      <p class="muted">Le rapport ne déclenche pas d'alerte&nbsp;: consultez-le régulièrement.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 10 -->
+<section id="s10">
+  <div class="sec-head"><span class="sec-num">10</span><h2>Remise en stock</h2></div>
+  <div class="path" aria-label="Chemin d'accès"><span>Paramètres</span><span>Configuration générale</span><span><b>Paramètres des commandes</b></span></div>
+  <div class="figrow">
+    <figure><img src="Captures/Catalogue/reglages-restock.png" alt="Bloc Paramètres des commandes : cases dont Permettre le réapprovisionnement des produits en cas d'annulation d'une commande et Permettre le réapprovisionnement des produits en cas de suppression d'une commande, cochées" loading="lazy"><figcaption>Les deux options de remise en stock.</figcaption></figure>
+    <div class="prose" style="display:flex;flex-direction:column;gap:12px">
+      <p><strong>Permettre le réapprovisionnement des produits en cas de suppression d'une commande</strong>&nbsp;: quand une commande non payée est supprimée (à la main ou automatiquement), ses produits reviennent en stock. Activée par défaut&nbsp;; 24 marques actives sur 35 la gardent.</p>
+      <p><strong>Permettre le réapprovisionnement des produits en cas d'annulation d'une commande</strong>&nbsp;: à chaque annulation d'une commande payée, l'espace marque vous demande «&nbsp;Re-stocker les produits&nbsp;?&nbsp;» (ou «&nbsp;Voulez-vous restocker tous les produits annulés&nbsp;?&nbsp;» en action groupée). Activée par défaut&nbsp;; 30 marques actives sur 35.</p>
+    </div>
+  </div>
+  <div class="warn"><span class="ex-label">Attention</span><p>Lors d'une annulation, un message affirme que «&nbsp;si votre commande n'est pas expédiée le restockage se fera automatiquement peu importe l'option choisie&nbsp;». Ce n'est pas le cas&nbsp;: la remise en stock n'a lieu que si vous la demandez (et si l'option de la marque est active), que la commande soit expédiée ou non.</p></div>
+  <p>Les commandes de mini-boutique, de réunion virtuelle et de boutique de la marque ne sont jamais remises en stock à leur suppression&nbsp;: non payées, elles n'avaient rien déstocké.</p>
+  <h3 id="s10-1"><span class="sub-num">10.1</span> Le stock chez les conseillères</h3>
+  <p>Avec l'option «&nbsp;stock chez les vendeurs&nbsp;», chaque conseillère dispose de son propre stock&nbsp;: l'onglet <strong>Stock vendeurs</strong> de la fiche et la colonne du même nom dans la liste montrent les quantités qu'elles détiennent. Pour les commandes passées sur le stock d'une conseillère (type VCE), c'est son stock qui baisse, pas le vôtre. Ce fonctionnement est décrit dans l'univers <a href="reseau.html">Réseau</a>.</p>
+</section>
+
+<!-- 11 -->
+<section id="s11">
+  <div class="sec-head"><span class="sec-num">11</span><h2>Points d'attention</h2></div>
+  <ul class="prose">
+    <li><strong>Le stock baisse au panier</strong>, pas au paiement&nbsp;: les paniers non payés immobilisent du stock (voir le stock mobilisé).</li>
+    <li><strong>Le contrôle vérifie qu'il reste au moins une pièce</strong>, pas la quantité demandée&nbsp;: des stocks négatifs peuvent apparaître même sans rupture autorisée.</li>
+    <li><strong>Générer toutes les combinaisons</strong> remet les stocks des combinaisons à 0.</li>
+    <li><strong>L'import remplace</strong> les quantités&nbsp;; une combinaison sans SKU ne peut pas être importée.</li>
+    <li><strong>Un lot sans stock propre</strong> dépend de ses composants&nbsp;: un composant non suivi n'entre pas dans le calcul.</li>
+    <li><strong>Désactiver la remise en stock à la suppression</strong> fait «&nbsp;perdre&nbsp;» les pièces des paniers abandonnés&nbsp;: corrigez alors le stock à la main ou par import.</li>
+  </ul>
+</section>
+
+<!-- 12 -->
+<section id="s12">
+  <div class="sec-head"><span class="sec-num">12</span><h2>Questions fréquentes</h2></div>
+  <div class="faq">
+    <details><summary>Mon stock a baissé alors qu'aucune commande n'est payée.</summary><div><p>C'est normal&nbsp;: le stock baisse dès l'ajout au panier par la conseillère. Ouvrez le détail du <strong>Stock mobilisé</strong> pour voir les commandes en cours qui réservent le produit.</p></div></details>
+    <details><summary>Pourquoi un stock négatif&nbsp;?</summary><div><p>Soit la rupture est autorisée, soit une conseillère a ajouté plusieurs exemplaires alors qu'il en restait moins. L'historique du stock montre la commande en cause.</p></div></details>
+    <details><summary>Je ne vois pas le champ Quantité en stock.</summary><div><p>La méthode d'inventaire est «&nbsp;stock non suivi&nbsp;» ou «&nbsp;par attributs&nbsp;» (le stock se saisit alors par combinaison). Pour un lot, cochez <strong>Stock au produit groupé</strong>.</p></div></details>
+    <details><summary>Mes conseillères ne voient pas les stocks.</summary><div><p>Le réglage «&nbsp;Comment les vendeurs voient les stocks&nbsp;?&nbsp;» est sur «&nbsp;Aucun&nbsp;». Choisissez «&nbsp;Avec un symbole coloré&nbsp;» ou «&nbsp;Avec le chiffre exact&nbsp;».</p></div></details>
+    <details><summary>L'import ne met pas à jour certaines lignes.</summary><div><p>Vérifiez que le produit suit son stock, que <code>product_id</code> est bien l'identifiant SellingAtHome et, pour une déclinaison, que le SKU du fichier est exactement celui de la combinaison.</p></div></details>
+  </div>
+</section>
+
+  </main>
+</div>

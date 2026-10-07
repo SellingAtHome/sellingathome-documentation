@@ -1,0 +1,165 @@
+<!--page {"title":"Activités et agenda"} -->
+<style>
+.opts td:first-child { width:30%; }
+.legend { display:flex; flex-wrap:wrap; gap:10px; margin:10px 0 4px; }
+.legend span { display:inline-flex; align-items:center; gap:8px; font-size:.9rem; background:var(--card); border:1px solid var(--rule); border-radius:100px; padding:4px 12px; }
+.legend i { width:12px; height:12px; border-radius:50%; display:inline-block; }
+.timeline { display:flex; flex-direction:column; border-left:3px solid var(--rule); margin-left:10px; }
+.tl { position:relative; padding:0 0 20px 28px; }
+.tl::before { content:""; position:absolute; left:-9px; top:4px; width:15px; height:15px; border-radius:50%; background:var(--card); border:3px solid var(--accent); }
+.tl.stop::before { border-color:var(--pink); }
+.tl b { color:var(--heading); display:block; }
+.tl p { color:var(--muted); font-size:.93rem; margin-top:4px; }
+</style>
+<header class="hero">
+  <div class="hero-in">
+    <div>
+      <span class="eyebrow">Réunions</span>
+      <h1>Activités <span class="script">et agenda</span></h1>
+      <p class="lede">Les types d'activités que vous proposez à vos conseillères pour organiser leur agenda&nbsp;: appels de suivi, livraisons, formations… Comment les créer, à qui les attribuer, et ce que la conseillère en fait.</p>
+    </div>
+    <div class="voucher-art" aria-hidden="true">
+      <div class="v-top"><span>Agenda</span><span>Mardi 13 oct.</span></div>
+      <div class="v-amount">10 h<span> 30 min</span></div>
+      <div class="v-name">Appel de suivi</div>
+      <div class="v-sep"></div>
+      <div class="v-meta"><span>Cliente <b>Camille</b></span><span>Rappel <b>1 jour</b></span></div>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="toc" aria-label="Sommaire">
+    <details id="tocDetails" open>
+      <summary>Sommaire</summary>
+      <div class="toc-title">Sommaire</div>
+      <ol>
+        <li data-sec="definition"><a href="#definition"><span class="toc-n">1</span>Qu'est-ce qu'une activité&nbsp;?</a></li>
+        <li data-sec="ou"><a href="#ou"><span class="toc-n">2</span>Où les paramétrer</a></li>
+        <li data-sec="creer"><a href="#creer"><span class="toc-n">3</span>Créer un type d'activité</a>
+          <ol class="toc-sub"><li><a href="#s3-1"><span class="toc-n">3.1</span>Nom et description</a></li><li><a href="#s3-2"><span class="toc-n">3.2</span>Documents</a></li><li><a href="#s3-3"><span class="toc-n">3.3</span>Attribuer l'activité</a></li></ol>
+        </li>
+        <li data-sec="conseillere"><a href="#conseillere"><span class="toc-n">4</span>Ce que voit la conseillère</a></li>
+        <li data-sec="exemple"><a href="#exemple"><span class="toc-n">5</span>Un exemple complet</a></li>
+        <li data-sec="chiffres"><a href="#chiffres"><span class="toc-n">6</span>Les activités en chiffres</a></li>
+        <li data-sec="attention"><a href="#attention"><span class="toc-n">7</span>Points d'attention</a></li>
+        <li data-sec="faq"><a href="#faq"><span class="toc-n">8</span>Questions fréquentes</a></li>
+      </ol>
+    </details>
+  </nav>
+
+  <main>
+
+<!-- 1 -->
+<section id="definition">
+  <div class="sec-head"><span class="sec-num">01</span><h2>Qu'est-ce qu'une activité&nbsp;?</h2></div>
+  <p class="lede">Une <strong>activité</strong> est un rendez-vous ou une tâche que la conseillère inscrit dans son <strong>agenda</strong>, à côté de ses réunions&nbsp;: rappeler une cliente, livrer une commande, suivre une formation. Chaque activité appartient à un <strong>type d'activité</strong>.</p>
+  <div class="grid-2">
+    <div class="card"><span class="tag">Types de la marque</span><p>Vous les créez dans l'espace marque, avec un nom, une description et des documents. Vous choisissez à qui ils sont proposés.</p></div>
+    <div class="card"><span class="tag pink">Types de la conseillère</span><p>La conseillère peut aussi créer ses propres types depuis son agenda. Ils ne sont visibles que par elle et n'apparaissent pas dans votre espace marque.</p></div>
+  </div>
+  <div class="tip"><span class="ex-label">Vocabulaire</span><p>Dans l'espace marque, la conseillère est appelée <strong>vendeur</strong> et l'hôtesse <strong>hôte</strong>. Ces libellés sont repris tels quels quand cette page cite un écran.</p></div>
+</section>
+
+<!-- 2 -->
+<section id="ou">
+  <div class="sec-head"><span class="sec-num">02</span><h2>Où les paramétrer</h2></div>
+  <div class="path" aria-label="Chemin d'accès"><span>Espace marque</span><span>Paramètres</span><span>Configuration générale</span><span>Onglet <b>Paramètres des activités</b></span></div>
+  <p>L'onglet affiche la <strong>Liste des activités</strong> de votre marque, avec pour chacune un bouton de modification (crayon) et un bouton de suppression (croix). Le bouton <strong>Nouveau type</strong> ouvre la création.</p>
+  <p>Si la liste est vide, un bandeau rouge l'indique&nbsp;: «&nbsp;Aucun type d'activité n'est paramétré, vous devez en créer au moins un pour pouvoir gérer vos activités.&nbsp;» Les conseillères peuvent malgré tout créer leurs propres types depuis leur agenda.</p>
+</section>
+
+<!-- 3 -->
+<section id="creer">
+  <div class="sec-head"><span class="sec-num">03</span><h2>Créer un type d'activité</h2></div>
+  <p class="lede">La création se fait en deux temps&nbsp;: d'abord le nom, puis, une fois le type enregistré, les documents et l'attribution.</p>
+  <figure><img src="Captures/R%C3%A9unions/activites-creation.png" alt="Écran Nouveau type de l'onglet Paramètres des activités : bloc Informations générales avec un onglet par langue (French, English, Dutch, Polish, German, Czech, Italian, Hungarian), champs Nom et Description, bouton Création d'un type d'activité" loading="lazy"><figcaption>La création d'un type d'activité.</figcaption></figure>
+
+  <h3 id="s3-1"><span class="sub-num">3.1</span> Nom et description</h3>
+  <p>Le bloc <strong>Informations générales</strong> propose un onglet par langue de votre marque. Pour chaque langue, saisissez un <strong>Nom</strong> (c'est lui que la conseillère voit dans son agenda) et une <strong>Description</strong> facultative. Cliquez ensuite sur <strong>Création d'un type d'activité</strong>&nbsp;: la fiche du type s'ouvre, avec deux blocs supplémentaires.</p>
+  <div class="tip"><span class="ex-label">Conseil</span><p>Remplissez au moins la langue de vos conseillères&nbsp;: une conseillère dont la langue n'a pas de nom voit un type sans titre.</p></div>
+
+  <h3 id="s3-2"><span class="sub-num">3.2</span> Documents</h3>
+  <p>Le bloc <strong>Documents</strong> (bouton <strong>Nouveau fichier</strong>) permet de joindre des fichiers au type&nbsp;: script d'appel, fiche produit, support de formation… La conseillère les retrouve en ouvrant une activité de ce type dans son agenda. L'œil affiche un fichier, la croix le retire.</p>
+
+  <h3 id="s3-3"><span class="sub-num">3.3</span> Attribuer l'activité</h3>
+  <p>Un type de la marque n'est proposé qu'aux conseillères concernées par son attribution. Le bloc <strong>Attribuer l'activité</strong> offre trois cibles, chacune avec un bouton <strong>+</strong>&nbsp;:</p>
+  <div class="table-wrap"><table class="opts">
+    <thead><tr><th>Cible</th><th>Qui voit le type dans son agenda</th></tr></thead>
+    <tbody>
+      <tr><td><b>Sélectionner des vendeurs</b></td><td>Les conseillères cochées.</td></tr>
+      <tr><td><b>Sélectionner des clients</b></td><td>Les conseillères dont au moins une cliente est cochée. Utile pour une action ciblée sur certaines clientes&nbsp;: leurs conseillères voient le type.</td></tr>
+      <tr><td><b>Sélectionner des hôtes</b></td><td>Les conseillères dont au moins une hôtesse est cochée (la liste ne contient que des clientes ayant déjà reçu une réunion).</td></tr>
+    </tbody>
+  </table></div>
+  <p>Dans chaque fenêtre, cochez les personnes puis cliquez sur <strong>Sauvegarder la selection</strong>, ou cliquez sur <strong>Attribuer à tous</strong> pour cocher d'un coup toute la liste.</p>
+  <div class="warn"><span class="ex-label">Attention</span><p><strong>Attribuer à tous</strong> attribue le type aux personnes qui existent <strong>au moment du clic</strong>. Une conseillère recrutée ensuite ne le reçoit pas automatiquement&nbsp;: refaites l'opération de temps en temps si le type doit être proposé à tout le réseau.</p></div>
+</section>
+
+<!-- 4 -->
+<section id="conseillere">
+  <div class="sec-head"><span class="sec-num">04</span><h2>Ce que voit la conseillère</h2></div>
+  <p>Dans son espace, la conseillère ouvre son <strong>Agenda</strong> depuis le menu de son profil (en haut à droite). L'agenda réunit ses réunions et ses activités.</p>
+  <div class="timeline">
+    <div class="tl"><b>1. Elle ajoute une activité</b><p>En cliquant sur un jour, puis «&nbsp;Ajouter une activité&nbsp;», ou avec le bouton du même nom. Onglet <strong>Activités par défaut</strong>&nbsp;: les types de votre marque qui lui sont attribués. Onglet <strong>Créer une activité</strong>&nbsp;: son propre type.</p></div>
+    <div class="tl"><b>2. Elle complète l'activité</b><p>Dates de début et de fin, contenu libre, rappel («&nbsp;Rappel … jours avant&nbsp;», 1 jour par défaut), et éventuellement les clientes ou hôtesses concernées.</p></div>
+    <div class="tl"><b>3. Le jour du rappel</b><p>Une pastille rouge s'affiche sur son menu et sur l'entrée Agenda. Il s'agit d'un repère visuel dans son espace&nbsp;: aucun email ni notification n'est envoyé.</p></div>
+    <div class="tl stop"><b>4. Elle marque l'activité «&nbsp;Effectué&nbsp;»</b><p>Avec le bouton <strong>Marquer comme effectué</strong> de la fenêtre de l'activité.</p></div>
+  </div>
+  <p>Les couleurs de l'agenda résument l'état de chaque activité&nbsp;:</p>
+  <div class="legend">
+    <span><i style="background:#f8ac59"></i>À venir</span>
+    <span><i style="background:#c50015"></i>Date de rappel dépassée, pas encore effectuée</span>
+    <span><i style="background:#5cb85c"></i>Effectuée</span>
+  </div>
+  <p>Une conseillère qui encadre une équipe peut afficher le <strong>Calendrier de l'équipe</strong> en recherchant une conseillère de son équipe. Si elle crée une activité dans l'agenda d'une autre conseillère, celle-ci reçoit une notification. Enfin, un <strong>Rapport d'Activités</strong> permet d'exporter ses activités sur une période.</p>
+</section>
+
+<!-- 5 -->
+<section id="exemple">
+  <div class="sec-head"><span class="sec-num">05</span><h2>Un exemple complet</h2></div>
+  <div class="example"><span class="ex-label">Exemple</span>
+    <p>Votre marque veut que chaque cliente soit rappelée une semaine après sa commande. Vous créez le type <strong>«&nbsp;Appel de suivi&nbsp;»</strong>, avec en description «&nbsp;Vérifier la satisfaction et proposer une réunion&nbsp;», et vous joignez un script d'appel en PDF. Vous cliquez sur <strong>Sélectionner des vendeurs</strong>, puis <strong>Attribuer à tous</strong>.</p>
+    <p>Le mardi suivant, Léa ouvre son agenda, ajoute une activité «&nbsp;Appel de suivi&nbsp;» le mardi 13 octobre de 10&nbsp;h à 10&nbsp;h&nbsp;30, choisit sa cliente Camille et garde le rappel à 1 jour. Le lundi 12, une pastille rouge lui rappelle l'appel. Après l'appel, elle marque l'activité «&nbsp;Effectué&nbsp;»&nbsp;: elle passe au vert.</p>
+    <p>En novembre, Chloé rejoint votre réseau&nbsp;: elle ne voit pas encore «&nbsp;Appel de suivi&nbsp;». Vous retournez sur le type et cliquez de nouveau sur <strong>Attribuer à tous</strong>.</p>
+  </div>
+</section>
+
+<!-- 6 -->
+<section id="chiffres">
+  <div class="sec-head"><span class="sec-num">06</span><h2>Les activités en chiffres</h2></div>
+  <p class="lede">Une fonction encore peu utilisée&nbsp;: repères observés sur un an, sur l'ensemble des marques.</p>
+  <div class="stats">
+    <div class="stat"><b>16 sur 35</b><span>marques ont créé au moins un type d'activité</span></div>
+    <div class="stat"><b>35</b><span>types de marque au total, soit 2 en moyenne par marque qui en a</span></div>
+    <div class="stat"><b>18</b><span>marques dont des conseillères ont planifié des activités</span></div>
+    <div class="stat"><b>1 sur 10</b><span>activité utilise un type de la marque&nbsp;; les autres, un type créé par la conseillère</span></div>
+    <div class="stat"><b>14 %</b><span>des activités sont marquées «&nbsp;Effectué&nbsp;»</span></div>
+  </div>
+</section>
+
+<!-- 7 -->
+<section id="attention">
+  <div class="sec-head"><span class="sec-num">07</span><h2>Points d'attention</h2></div>
+  <ul class="prose">
+    <li><strong>Un type non attribué est invisible</strong>&nbsp;: créer le type ne suffit pas, il faut l'attribuer à des conseillères, des clientes ou des hôtesses.</li>
+    <li><strong>«&nbsp;Attribuer à tous&nbsp;» est une photo à l'instant T</strong>&nbsp;: les nouvelles conseillères ne sont pas ajoutées automatiquement.</li>
+    <li><strong>La suppression est immédiate</strong>&nbsp;: dans la liste, la croix supprime le type sans demander de confirmation. Les activités déjà planifiées avec ce type restent dans les agendas.</li>
+    <li><strong>Le rappel est visuel</strong>&nbsp;: pas d'email ni de notification sur téléphone. La conseillère le voit en se connectant à son espace.</li>
+    <li><strong>Les documents et l'attribution</strong> n'apparaissent qu'après le premier enregistrement du type.</li>
+  </ul>
+</section>
+
+<!-- 8 -->
+<section id="faq">
+  <div class="sec-head"><span class="sec-num">08</span><h2>Questions fréquentes</h2></div>
+  <div class="faq">
+    <details><summary>Une conseillère ne voit pas le type que j'ai créé.</summary><div><p>Vérifiez qu'elle fait partie de l'attribution&nbsp;: cochée dans <strong>Sélectionner des vendeurs</strong>, ou qu'une de ses clientes ou hôtesses est cochée. Si vous aviez utilisé «&nbsp;Attribuer à tous&nbsp;» avant son arrivée, refaites-le.</p></div></details>
+    <details><summary>Puis-je voir les activités planifiées par mes conseillères&nbsp;?</summary><div><p>Pas depuis cet écran&nbsp;: l'onglet ne gère que les types. Le suivi se fait côté conseillère (agenda, calendrier de l'équipe, rapport d'activités).</p></div></details>
+    <details><summary>Pourquoi ne vois-je pas les types créés par mes conseillères&nbsp;?</summary><div><p>Ils leur sont personnels&nbsp;: la liste de l'espace marque n'affiche que les types de la marque.</p></div></details>
+    <details><summary>Les clientes voient-elles les activités&nbsp;?</summary><div><p>Non. Choisir une cliente ou une hôtesse dans une activité, ou dans l'attribution d'un type, sert à l'organisation de la conseillère&nbsp;: rien n'est affiché ni envoyé à la cliente.</p></div></details>
+  </div>
+</section>
+
+  </main>
+</div>

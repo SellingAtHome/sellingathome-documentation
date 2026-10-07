@@ -1,0 +1,219 @@
+<!--page {"title":"Les notifications"} -->
+<style>
+.chip { display:inline-block; border-radius:100px; padding:3px 11px; font-size:.78rem; font-weight:700; background:var(--surface); color:var(--heading); border:1px solid var(--rule); }
+.chip.g { background:var(--accent-wash); color:var(--accent-ink); border-color:transparent; }
+.chip.p { background:var(--pink-wash); color:var(--pink-ink); border-color:transparent; }
+.two { display:grid; grid-template-columns:repeat(auto-fit, minmax(240px,1fr)); gap:14px; }
+.two .card { border-top:5px solid var(--accent); }
+.two .card:nth-child(2) { border-top-color:var(--pink); }
+.types td:first-child { width:24%; }
+.types td:nth-child(2) { width:30%; }
+</style>
+<header class="hero">
+  <div class="hero-in">
+    <div>
+      <span class="eyebrow">Communication et pilotage</span>
+      <h1>Les <span class="script">notifications</span></h1>
+      <p class="lede">Les notifications préviennent vos conseillères sur leur téléphone et dans leur espace&nbsp;: une commande payée, un colis expédié, un nouveau challenge… Certaines partent toutes seules, d'autres sont des messages que vous écrivez. Voici lesquelles, comment les régler et ce qu'elles coûtent.</p>
+    </div>
+    <div class="voucher-art" aria-hidden="true">
+      <div class="v-top"><span>Notification</span><span>Paiement</span></div>
+      <div class="v-amount">47<span> €</span></div>
+      <div class="v-name">Commande payée par Camille</div>
+      <div class="v-sep"></div>
+      <div class="v-meta"><span>Statut <b>Envoyé</b></span><span>Coût <b>gratuit</b></span></div>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="toc" aria-label="Sommaire">
+    <details id="tocDetails" open>
+      <summary>Sommaire</summary>
+      <div class="toc-title">Sommaire</div>
+      <ol>
+        <li data-sec="definition"><a href="#definition"><span class="toc-n">1</span>Deux familles de notifications</a></li>
+        <li data-sec="ou"><a href="#ou"><span class="toc-n">2</span>Où les trouver</a></li>
+        <li data-sec="types"><a href="#types"><span class="toc-n">3</span>Les notifications automatiques</a>
+          <ol class="toc-sub"><li><a href="#s3-1"><span class="toc-n">3.1</span>La liste</a></li><li><a href="#s3-2"><span class="toc-n">3.2</span>Les activer ou les couper</a></li></ol>
+        </li>
+        <li data-sec="messages"><a href="#messages"><span class="toc-n">4</span>Écrire à vos conseillères</a>
+          <ol class="toc-sub"><li><a href="#s4-1"><span class="toc-n">4.1</span>À tout le réseau</a></li><li><a href="#s4-2"><span class="toc-n">4.2</span>À une conseillère</a></li></ol>
+        </li>
+        <li data-sec="credits"><a href="#credits"><span class="toc-n">5</span>Les crédits</a></li>
+        <li data-sec="conseillere"><a href="#conseillere"><span class="toc-n">6</span>Ce que voit la conseillère</a></li>
+        <li data-sec="chiffres"><a href="#chiffres"><span class="toc-n">7</span>En chiffres</a></li>
+        <li data-sec="attention"><a href="#attention"><span class="toc-n">8</span>Points d'attention</a></li>
+        <li data-sec="faq"><a href="#faq"><span class="toc-n">9</span>Questions fréquentes</a></li>
+      </ol>
+    </details>
+  </nav>
+
+  <main>
+
+<!-- 1 -->
+<section id="definition">
+  <div class="sec-head"><span class="sec-num">01</span><h2>Deux familles de notifications</h2></div>
+  <p class="lede">Une notification est un court message adressé à une conseillère. Elle s'affiche dans son espace (cloche des notifications) et, si elle a autorisé les notifications sur son téléphone ou son navigateur, en <strong>notification push</strong>.</p>
+  <div class="two">
+    <div class="card"><span class="tag">Automatiques</span><h4>Déclenchées par un événement</h4><p>Commande payée, expédiée, livrée, nouveau challenge, changement de statut… Le texte est fixé par SellingAtHome. Elles sont <strong>gratuites</strong>.</p></div>
+    <div class="card"><span class="tag pink">Messages</span><h4>Écrits par la marque</h4><p>Un texte libre de 300 caractères maximum, envoyé à tout le réseau ou à une conseillère. Chaque message reçu consomme <strong>1 crédit</strong>.</p></div>
+  </div>
+  <div class="example"><span class="ex-label">Exemple</span><p>Camille paie sa commande de 47&nbsp;€. Léa, sa conseillère, reçoit aussitôt&nbsp;: «&nbsp;Votre commande C116 pour Camille a été payée par le client le 10/10/2026.&nbsp;» Le lendemain, la marque écrit à tout le réseau «&nbsp;Le nouveau catalogue est en ligne&nbsp;!&nbsp;»&nbsp;: 200 conseillères actives, 200 crédits consommés.</p></div>
+  <div class="tip"><span class="ex-label">Vocabulaire</span><p>Dans l'espace marque, les conseillères sont appelées <strong>vendeurs</strong>.</p></div>
+</section>
+
+<!-- 2 -->
+<section id="ou">
+  <div class="sec-head"><span class="sec-num">02</span><h2>Où les trouver</h2></div>
+  <div class="path" aria-label="Chemin d'accès"><span>Espace marque</span><span>Paramètres</span><span><b>Notifications</b></span></div>
+  <p>Deux onglets&nbsp;: <strong>Crédit</strong> (solde et achats) et <strong>Paramètres</strong> (les notifications automatiques envoyées). Les messages s'écrivent ailleurs&nbsp;: dans <strong>Vendeurs › Notifications</strong> pour tout le réseau, et dans l'onglet <strong>Notifications</strong> de la fiche d'une conseillère.</p>
+  <p class="muted">Le système de notifications est un module activé par SellingAtHome&nbsp;; il l'est pour toutes les marques actives.</p>
+</section>
+
+<!-- 3 -->
+<section id="types">
+  <div class="sec-head"><span class="sec-num">03</span><h2>Les notifications automatiques</h2></div>
+
+  <h3 id="s3-1"><span class="sub-num">3.1</span> La liste</h3>
+  <div class="table-wrap"><table class="types">
+    <thead><tr><th>Notification</th><th>Quand&nbsp;?</th><th>Texte envoyé à la conseillère</th></tr></thead>
+    <tbody>
+      <tr><td colspan="3"><b>Réunion</b></td></tr>
+      <tr><td>Demande de réunion</td><td>Une cliente demande à organiser une réunion.</td><td>«&nbsp;Vous avez reçu une demande de réunion&nbsp;!&nbsp;»</td></tr>
+      <tr><td colspan="3"><b>Challenge</b></td></tr>
+      <tr><td>Nouveau Challenge</td><td>Un challenge est créé.</td><td>«&nbsp;Le challenge (nom) vient d'être créé.&nbsp;»</td></tr>
+      <tr><td>Récompense de challenge gagné&nbsp;!</td><td>La conseillère gagne une récompense.</td><td>Félicitations, avec le challenge, qui l'a réussi et le gain.</td></tr>
+      <tr><td colspan="3"><b>Communication Vendeur</b></td></tr>
+      <tr><td>Clôture des commissions</td><td>Les commissions du mois sont clôturées.</td><td>Invite à consulter son bulletin de commission.</td></tr>
+      <tr><td>Nouveau vendeur dans l'équipe</td><td>Une nouvelle conseillère rejoint son équipe.</td><td>«&nbsp;(nom) a été ajouté à votre équipe.&nbsp;»</td></tr>
+      <tr><td>Changement de statut</td><td>Son statut change.</td><td>«&nbsp;Votre statut a été modifié ce jour. Vous êtes maintenant (statut)&nbsp;»</td></tr>
+      <tr><td>Message de la carte VDI</td><td>Un visiteur lui écrit depuis la carte des conseillères.</td><td>«&nbsp;Vous avez reçu un nouveau message de (nom).&nbsp;»</td></tr>
+      <tr><td colspan="3"><b>Logistique</b></td></tr>
+      <tr><td>Commande expédiée / expédiée partiellement</td><td>Le statut d'expédition change.</td><td>Référence, cliente et date d'expédition.</td></tr>
+      <tr><td>Commande livrée / livrée partiellement</td><td>Idem, à la livraison.</td><td>Référence, cliente et date de livraison.</td></tr>
+      <tr><td>Livraison annulée</td><td>La livraison est annulée.</td><td>Référence et cliente.</td></tr>
+      <tr><td colspan="3"><b>Paiement</b></td></tr>
+      <tr><td>Encaissement de commande</td><td>Une commande passe à «&nbsp;Payée&nbsp;».</td><td>Référence, cliente et date de paiement.</td></tr>
+      <tr><td colspan="3"><b>Communication</b></td></tr>
+      <tr><td>Produit ajouté à la wishlist</td><td>Une cliente ajoute un produit à sa liste de souhaits.</td><td>«&nbsp;Votre client (nom) a ajouté (produit) à sa liste de souhaits.&nbsp;»</td></tr>
+      <tr><td>Communication</td><td>Les messages écrits par la marque (voir <a href="#messages">section 4</a>).</td><td>Votre texte.</td></tr>
+    </tbody>
+  </table></div>
+  <p class="muted">Les textes sont traduits dans la langue de chaque conseillère. Ils ne sont pas modifiables depuis l'espace marque.</p>
+
+  <h3 id="s3-2"><span class="sub-num">3.2</span> Les activer ou les couper</h3>
+  <div class="path" aria-label="Chemin d'accès"><span>Paramètres</span><span>Notifications</span><span><b>Paramètres</b></span></div>
+  <div class="figrow">
+    <figure><img src="Captures/Pilotage/notifications-parametres.png" alt="Onglet Paramètres des notifications : texte Choisissez les notifications que vous voulez envoyer, cases à cocher regroupées par catégorie Réunion, Challenge, Communication Vendeur, Logistique" loading="lazy"><figcaption>Une case par type de notification.</figcaption></figure>
+    <div class="prose" style="display:flex;flex-direction:column;gap:12px">
+      <p>Cochez les notifications que votre marque envoie, puis <strong>Enregistrer les paramètres</strong>. Une notification décochée n'est plus envoyée à personne.</p>
+      <p>Chaque conseillère peut ensuite, dans son profil, rubrique «&nbsp;Notifications&nbsp;», décocher celles qu'elle ne veut pas recevoir parmi celles que vous avez activées.</p>
+      <div class="example"><span class="ex-label">Exemple</span><p>Votre logisticien envoie déjà un email à chaque expédition&nbsp;: vous décochez «&nbsp;Commande expédiée&nbsp;» pour éviter le doublon, et gardez «&nbsp;Encaissement de commande&nbsp;».</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 -->
+<section id="messages">
+  <div class="sec-head"><span class="sec-num">04</span><h2>Écrire à vos conseillères</h2></div>
+
+  <h3 id="s4-1"><span class="sub-num">4.1</span> À tout le réseau</h3>
+  <div class="path" aria-label="Chemin d'accès"><span>Vendeurs</span><span><b>Notifications</b></span></div>
+  <figure><img src="Captures/Pilotage/notifications-envoi-masse.png" alt="Écran Vendeurs, onglet Notifications : encadré Envoyer un message à tous les vendeurs avec une zone de texte limitée à 300 caractères et un bouton Envoyer" loading="lazy"><figcaption>Le message à tout le réseau.</figcaption></figure>
+  <ol class="prose">
+    <li>Écrivez le message (300 caractères maximum, le compteur s'affiche sous la zone).</li>
+    <li>Cliquez sur <strong>Envoyer</strong>&nbsp;: une confirmation rappelle le message et le nombre de conseillères destinataires.</li>
+    <li>Confirmez&nbsp;: l'envoi part en arrière-plan («&nbsp;Vos notifications sont en cours d'envoi&nbsp;») et peut prendre un peu de temps.</li>
+  </ol>
+  <p>Le message part à toutes les conseillères <strong>actives</strong>. Il faut avoir au moins autant de crédits que de destinataires&nbsp;: sinon, un message d'erreur vous invite à recharger et <strong>rien n'est envoyé</strong>.</p>
+
+  <h3 id="s4-2"><span class="sub-num">4.2</span> À une conseillère</h3>
+  <figure><img src="Captures/Pilotage/fiche-notifications.png" alt="Fiche d'une conseillère, onglet Notifications : tableau Date, Catégorie, Statut (Envoyé, Erreur d'envoi) et Notification, avec un bouton plus pour en ajouter une ; textes des notifications floutés" loading="lazy"><figcaption>L'historique des notifications d'une conseillère (contenus floutés).</figcaption></figure>
+  <p>Sur la fiche d'une conseillère (Vendeurs › modifier), l'onglet <strong>Notifications</strong> liste tout ce qu'elle a reçu, avec la <strong>Catégorie</strong> et le <strong>Statut</strong> d'envoi&nbsp;:</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Statut</th><th>Signification</th></tr></thead>
+    <tbody>
+      <tr><td><span class="chip">Envoi en cours</span></td><td>Le message est en file d'envoi.</td></tr>
+      <tr><td><span class="chip g">Envoyé</span></td><td>Le message est enregistré dans son espace et la notification push est partie.</td></tr>
+      <tr><td><span class="chip p">Erreur d'envoi</span></td><td>Le service d'envoi des notifications push a refusé l'envoi. Le message reste visible dans son espace.</td></tr>
+      <tr><td><span class="chip p">Erreur interne</span></td><td>Problème technique&nbsp;: contactez le support s'il se répète.</td></tr>
+    </tbody>
+  </table></div>
+  <p>Le bouton <strong>+</strong> ouvre «&nbsp;Ajouter une notification&nbsp;»&nbsp;: un message personnel, qui consomme 1 crédit. La même liste existe en version courte dans l'encadré <strong>Notifications</strong> de la fiche de synthèse de la conseillère.</p>
+</section>
+
+<!-- 5 -->
+<section id="credits">
+  <div class="sec-head"><span class="sec-num">05</span><h2>Les crédits</h2></div>
+  <div class="path" aria-label="Chemin d'accès"><span>Paramètres</span><span>Notifications</span><span><b>Crédit</b></span></div>
+  <figure><img src="Captures/Pilotage/notifications-credit.png" alt="Onglet Crédit : Historique de vos achats (Date d'achat, Quantité, Montant), encadré Crédit restant avec le nombre de notifications, Recharger votre crédit avec un champ Quantité, le Montant total et un bouton Recharger, puis la Grille tarifaire" loading="lazy"><figcaption>Le solde, la recharge et l'historique des achats.</figcaption></figure>
+  <p>Un crédit = un message reçu par une conseillère. Les notifications automatiques ne consomment rien. Pour recharger, saisissez une <strong>Quantité</strong>&nbsp;: le <strong>Montant total</strong> se calcule, puis <strong>Recharger</strong>. Les crédits sont ajoutés immédiatement et facturés en fin de mois avec vos licences.</p>
+  <p>Le prix est dégressif <strong>par tranches</strong>, comme un barème&nbsp;:</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Tranche</th><th>Prix par notification</th></tr></thead>
+    <tbody>
+      <tr><td>Les 100 premières</td><td>0,01&nbsp;€</td></tr>
+      <tr><td>De la 101<sup>e</sup> à la 500<sup>e</sup></td><td>0,007&nbsp;€</td></tr>
+      <tr><td>De la 501<sup>e</sup> à la 1&nbsp;500<sup>e</sup></td><td>0,006&nbsp;€</td></tr>
+      <tr><td>Au-delà</td><td>0,0045&nbsp;€</td></tr>
+    </tbody>
+  </table></div>
+  <div class="receipt" aria-label="Exemple de calcul">
+    <div class="line"><span>100 × 0,01&nbsp;€</span><span>1,00&nbsp;€</span></div>
+    <div class="line"><span>400 × 0,007&nbsp;€</span><span>2,80&nbsp;€</span></div>
+    <div class="line"><span>1&nbsp;000 × 0,006&nbsp;€</span><span>6,00&nbsp;€</span></div>
+    <div class="line"><span>500 × 0,0045&nbsp;€</span><span>2,25&nbsp;€</span></div>
+    <div class="line total"><span>Recharge de 2&nbsp;000 notifications</span><span>12,05&nbsp;€</span></div>
+  </div>
+  <div class="warn"><span class="ex-label">Attention</span><p>Le bouton <strong>Recharger</strong> enregistre l'achat <strong>sans demander de confirmation</strong>. Vérifiez la quantité avant de cliquer.</p></div>
+</section>
+
+<!-- 6 -->
+<section id="conseillere">
+  <div class="sec-head"><span class="sec-num">06</span><h2>Ce que voit la conseillère</h2></div>
+  <ul class="prose">
+    <li>Une cloche avec le nombre de notifications non lues, et la liste de ses notifications dans son espace.</li>
+    <li>Une notification push sur son téléphone (application) ou son navigateur, si elle l'a autorisée. Un clic ouvre la commande concernée, ou son tableau de bord.</li>
+    <li>Dans son profil, la rubrique «&nbsp;Notifications&nbsp;» («&nbsp;Recevoir une notification pour&nbsp;:&nbsp;») où elle coche ou décoche chaque notification activée par la marque.</li>
+  </ul>
+</section>
+
+<!-- 7 -->
+<section id="chiffres">
+  <div class="sec-head"><span class="sec-num">07</span><h2>En chiffres</h2></div>
+  <p>Sur les 35 marques actives, sur un an&nbsp;:</p>
+  <div class="share" aria-label="Notifications automatiques les plus envoyées">
+    <div class="share-row"><span><b>Encaissement de commande</b> (35 marques)</span><div class="share-bar"><i style="width:36%"></i></div><span class="pct">1,1&nbsp;M</span></div>
+    <div class="share-row"><span><b>Nouveau Challenge</b> (22 marques)</span><div class="share-bar"><i style="width:30%"></i></div><span class="pct">0,9&nbsp;M</span></div>
+    <div class="share-row"><span><b>Commande expédiée</b> (30 marques)</span><div class="share-bar"><i style="width:22%"></i></div><span class="pct">0,7&nbsp;M</span></div>
+    <div class="share-row"><span><b>Commande livrée</b> (28 marques)</span><div class="share-bar"><i style="width:9%"></i></div><span class="pct">0,3&nbsp;M</span></div>
+    <div class="share-row"><span>Toutes les autres</span><div class="share-bar"><i style="width:4%"></i></div><span class="pct">0,1&nbsp;M</span></div>
+  </div>
+  <p>Les messages écrits par la marque restent rares&nbsp;: 3 marques en ont envoyé, pour moins de 5&nbsp;000 messages au total.</p>
+</section>
+
+<!-- 8 -->
+<section id="attention">
+  <div class="sec-head"><span class="sec-num">08</span><h2>Points d'attention</h2></div>
+  <ul class="prose">
+    <li><strong>Gratuit ou payant</strong>&nbsp;: seuls vos messages consomment des crédits.</li>
+    <li><strong>Crédit insuffisant = aucun envoi</strong> pour un message au réseau&nbsp;: il n'y a pas d'envoi partiel.</li>
+    <li><strong>Un message n'est pas un email</strong>&nbsp;: 300 caractères, sans mise en forme ni pièce jointe. Pour un contenu riche, déposez un document dans la <a href="base-documentaire.html">base de connaissances</a> et annoncez-le par notification.</li>
+    <li><strong>Pas de push sans autorisation</strong>&nbsp;: une conseillère qui n'a pas accepté les notifications sur son appareil ne voit le message que dans son espace.</li>
+  </ul>
+</section>
+
+<!-- 9 -->
+<section id="faq">
+  <div class="sec-head"><span class="sec-num">09</span><h2>Questions fréquentes</h2></div>
+  <div class="faq">
+    <details><summary>Puis-je modifier le texte d'une notification automatique&nbsp;?</summary><div><p>Non. Vous pouvez seulement l'activer ou la couper dans Paramètres › Notifications › Paramètres.</p></div></details>
+    <details><summary>Puis-je cibler une partie du réseau (une équipe, un statut)&nbsp;?</summary><div><p>Pas depuis l'écran d'envoi au réseau, qui vise toutes les conseillères actives. Pour quelques personnes, passez par l'onglet Notifications de leur fiche.</p></div></details>
+    <details><summary>Une conseillère dit ne rien recevoir.</summary><div><p>Regardez l'onglet Notifications de sa fiche&nbsp;: si le statut est «&nbsp;Erreur d'envoi&nbsp;», le push n'est pas parti. Vérifiez aussi qu'elle a autorisé les notifications sur son appareil, et qu'elle n'a pas décoché ce type de notification dans son profil.</p></div></details>
+    <details><summary>Les crédits expirent-ils&nbsp;?</summary><div><p>Rien dans SellingAtHome ne fait expirer les crédits de notifications&nbsp;: le solde reste disponible.</p></div></details>
+  </div>
+</section>
+
+  </main>
+</div>

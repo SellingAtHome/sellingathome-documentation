@@ -1,0 +1,420 @@
+<!--page {"title":"Cas d’usage – Animation commerciale"} -->
+<style>
+.opts { display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:14px; }
+.opt { background:var(--card); border:1px solid var(--rule); border-radius:16px; padding:18px 18px 16px; display:flex; flex-direction:column; gap:8px; border-top:5px solid var(--rule); }
+.opt h4 { font-size:1rem; }
+.opt p { font-size:.93rem; }
+.opt .go { margin-top:auto; font-size:.86rem; font-weight:700; text-decoration:none; }
+.opt .go:hover { text-decoration:underline; }
+.tool { align-self:flex-start; font-size:.68rem; font-weight:800; letter-spacing:.12em; text-transform:uppercase; border-radius:100px; padding:4px 12px; }
+.t-ba { color:var(--accent-ink); background:var(--accent-wash); } .opt.o-ba { border-top-color:var(--accent); }
+.t-fid { color:var(--pink-ink); background:var(--pink-wash); } .opt.o-fid { border-top-color:var(--pink); }
+.t-red { color:var(--yellow-ink); background:var(--yellow-wash); } .opt.o-red { border-top-color:var(--yellow); }
+.t-cha { color:#fff; background:var(--hero); } .opt.o-cha { border-top-color:var(--heading); }
+.t-ach { color:var(--muted); background:var(--surface); border:1px solid var(--rule); } .opt.o-ach { border-top-color:var(--muted); }
+.goal { font-size:1.02rem; color:var(--heading); background:var(--surface); border-radius:14px; padding:12px 16px; }
+.goal b { color:var(--accent-ink); }
+.case { display:flex; flex-direction:column; gap:14px; padding-bottom:10px; }
+.case + .case { border-top:1px dashed var(--rule); padding-top:26px; }
+.chips { display:flex; flex-wrap:wrap; gap:8px; }
+.chip-f { font:inherit; font-size:.86rem; font-weight:700; border-radius:100px; padding:7px 14px; cursor:pointer; background:var(--card); color:var(--heading); border:1px solid var(--rule); }
+.chip-f[aria-pressed="true"] { background:var(--hero); color:#fff; border-color:var(--hero); }
+.case.hidden-by-filter { display:none; }
+.legend-tools { display:flex; flex-wrap:wrap; gap:8px; }
+</style>
+<header class="hero">
+  <div class="hero-in">
+    <div>
+      <span class="eyebrow">Cas d’usage</span>
+      <h1>Je veux… <span class="script">comment faire&nbsp;?</span></h1>
+      <p class="lede">Motiver les conseillères à recruter, récompenser les hôtesses, fidéliser les clientes, pousser une gamme… Pour chaque besoin, toutes les possibilités offertes par les outils d’animation commerciale, avec un lien vers le paramétrage.</p>
+    </div>
+    <div class="voucher-art" aria-hidden="true">
+      <div class="v-top"><span>Besoin</span><span>Solutions</span></div>
+      <div class="v-amount">23<span> cas</span></div>
+      <div class="v-name">5 outils combinés</div>
+      <div class="v-sep"></div>
+      <div class="v-meta"><span>Challenges · Fidélité · Bons</span><span>Réductions · Conditions</span></div>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="toc" aria-label="Sommaire">
+    <details id="tocDetails" open>
+      <summary>Sommaire</summary>
+      <div class="toc-title">Sommaire</div>
+      <ol>
+        <li data-sec="intro"><a href="#intro"><span class="toc-n">1</span>Comment utiliser cette page</a></li>
+        <li data-sec="recrutement"><a href="#recrutement"><span class="toc-n">2</span>Recrutement et réseau</a>
+          <ol class="toc-sub"><li><a href="#s2-1"><span class="toc-n">2.1</span>Je souhaite motiver mes conseillères à recruter</a></li><li><a href="#s2-2"><span class="toc-n">2.2</span>Je souhaite accompagner le démarrage des nouvelles recrues</a></li><li><a href="#s2-3"><span class="toc-n">2.3</span>Je souhaite récompenser mes animatrices sur la performance de leur équipe</a></li></ol>
+        </li>
+        <li data-sec="ventes"><a href="#ventes"><span class="toc-n">3</span>Ventes des conseillères</a>
+          <ol class="toc-sub"><li><a href="#s3-1"><span class="toc-n">3.1</span>Je souhaite booster le chiffre d'affaires sur un mois</a></li><li><a href="#s3-2"><span class="toc-n">3.2</span>Je souhaite pousser un produit ou une gamme</a></li><li><a href="#s3-3"><span class="toc-n">3.3</span>Je lance un produit en quantité limitée</a></li><li><a href="#s3-4"><span class="toc-n">3.4</span>Je souhaite développer les ventes en ligne (mini-site, boutique)</a></li><li><a href="#s3-5"><span class="toc-n">3.5</span>Je souhaite récompenser les achats personnels de mes conseillères</a></li></ol>
+        </li>
+        <li data-sec="reunions"><a href="#reunions"><span class="toc-n">4</span>Réunions et hôtesses</a>
+          <ol class="toc-sub"><li><a href="#s4-1"><span class="toc-n">4.1</span>Je souhaite récompenser les hôtesses selon le succès de leur réunion</a></li><li><a href="#s4-2"><span class="toc-n">4.2</span>Je souhaite que les invitées organisent à leur tour une réunion</a></li><li><a href="#s4-3"><span class="toc-n">4.3</span>Je souhaite augmenter le nombre de réunions par conseillère</a></li><li><a href="#s4-4"><span class="toc-n">4.4</span>Je souhaite augmenter le panier moyen en réunion</a></li><li><a href="#s4-5"><span class="toc-n">4.5</span>Je souhaite encourager les réunions en visio</a></li></ol>
+        </li>
+        <li data-sec="clientes"><a href="#clientes"><span class="toc-n">5</span>Clientes</a>
+          <ol class="toc-sub"><li><a href="#s5-1"><span class="toc-n">5.1</span>Je souhaite fidéliser mes clientes et les faire racheter</a></li><li><a href="#s5-2"><span class="toc-n">5.2</span>Je souhaite faire revenir des clientes inactives</a></li><li><a href="#s5-3"><span class="toc-n">5.3</span>Je souhaite conquérir de nouvelles clientes</a></li><li><a href="#s5-4"><span class="toc-n">5.4</span>Je souhaite récompenser le parrainage entre clientes</a></li><li><a href="#s5-5"><span class="toc-n">5.5</span>Je souhaite une offre anniversaire</a></li><li><a href="#s5-6"><span class="toc-n">5.6</span>Je souhaite offrir la livraison</a></li></ol>
+        </li>
+        <li data-sec="gestion"><a href="#gestion"><span class="toc-n">6</span>Gestion et contrôle</a>
+          <ol class="toc-sub"><li><a href="#s6-1"><span class="toc-n">6.1</span>Je souhaite faire un geste commercial après un incident</a></li><li><a href="#s6-2"><span class="toc-n">6.2</span>Je souhaite réserver un produit ou une offre à certaines personnes</a></li><li><a href="#s6-3"><span class="toc-n">6.3</span>Je souhaite éviter les abus sur une promotion</a></li><li><a href="#s6-4"><span class="toc-n">6.4</span>Je souhaite créer de l'émulation entre conseillères</a></li></ol>
+        </li>
+        <li data-sec="choisir"><a href="#choisir"><span class="toc-n">7</span>Quel outil pour quel besoin</a></li>
+      </ol>
+    </details>
+  </nav>
+
+  <main>
+<style>
+.opts { display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:14px; }
+.opt { background:var(--card); border:1px solid var(--rule); border-radius:16px; padding:18px 18px 16px; display:flex; flex-direction:column; gap:8px; border-top:5px solid var(--rule); }
+.opt h4 { font-size:1rem; }
+.opt p { font-size:.93rem; }
+.opt .go { margin-top:auto; font-size:.86rem; font-weight:700; text-decoration:none; }
+.opt .go:hover { text-decoration:underline; }
+.tool { align-self:flex-start; font-size:.68rem; font-weight:800; letter-spacing:.12em; text-transform:uppercase; border-radius:100px; padding:4px 12px; }
+.t-ba { color:var(--accent-ink); background:var(--accent-wash); } .opt.o-ba { border-top-color:var(--accent); }
+.t-fid { color:var(--pink-ink); background:var(--pink-wash); } .opt.o-fid { border-top-color:var(--pink); }
+.t-red { color:var(--yellow-ink); background:var(--yellow-wash); } .opt.o-red { border-top-color:var(--yellow); }
+.t-cha { color:#fff; background:var(--hero); } .opt.o-cha { border-top-color:var(--heading); }
+.t-ach { color:var(--muted); background:var(--surface); border:1px solid var(--rule); } .opt.o-ach { border-top-color:var(--muted); }
+.goal { font-size:1.02rem; color:var(--heading); background:var(--surface); border-radius:14px; padding:12px 16px; }
+.goal b { color:var(--accent-ink); }
+.case { display:flex; flex-direction:column; gap:14px; padding-bottom:10px; }
+.case + .case { border-top:1px dashed var(--rule); padding-top:26px; }
+.chips { display:flex; flex-wrap:wrap; gap:8px; }
+.chip-f { font:inherit; font-size:.86rem; font-weight:700; border-radius:100px; padding:7px 14px; cursor:pointer; background:var(--card); color:var(--heading); border:1px solid var(--rule); }
+.chip-f[aria-pressed="true"] { background:var(--hero); color:#fff; border-color:var(--hero); }
+.case.hidden-by-filter { display:none; }
+.legend-tools { display:flex; flex-wrap:wrap; gap:8px; }
+</style>
+
+<!-- 1 -->
+<section id="intro">
+  <div class="sec-head"><span class="sec-num">01</span><h2>Comment utiliser cette page</h2></div>
+  <p class="lede">Chaque cas part d'un <strong>besoin</strong> («&nbsp;je veux motiver mes conseillères à recruter&nbsp;») et présente <strong>toutes les possibilités</strong> offertes par les outils d'animation commerciale, avec un lien vers le paragraphe du guide qui explique le paramétrage.</p>
+  <div class="legend-tools">
+    <span class="tool t-cha">Challenges</span><span class="tool t-fid">Fidélité</span><span class="tool t-ba">Bons d'achat</span><span class="tool t-red">Réductions</span><span class="tool t-ach">Conditions d'achat</span>
+  </div>
+  <p>Filtrer les cas par outil&nbsp;:</p>
+  <div class="chips" id="caseFilter" role="group" aria-label="Filtrer par outil">
+    <button type="button" class="chip-f" data-f="all" aria-pressed="true">Tous</button>
+    <button type="button" class="chip-f" data-f="cha" aria-pressed="false">Challenges</button>
+    <button type="button" class="chip-f" data-f="fid" aria-pressed="false">Fidélité</button>
+    <button type="button" class="chip-f" data-f="ba" aria-pressed="false">Bons d'achat</button>
+    <button type="button" class="chip-f" data-f="red" aria-pressed="false">Réductions</button>
+    <button type="button" class="chip-f" data-f="ach" aria-pressed="false">Conditions d'achat</button>
+  </div>
+  <div class="tip"><span class="ex-label">Bon à savoir</span><p>Les outils se combinent&nbsp;: un challenge peut distribuer des bons d'achat, une règle de fidélité peut attribuer un code promo, une réduction peut être réservée aux clientes d'un programme. Les meilleures opérations associent souvent deux ou trois outils.</p></div>
+  <div class="tip"><span class="ex-label">Vocabulaire</span><p>L'interface de l'espace marque dit «&nbsp;vendeur&nbsp;» là où cette documentation dit «&nbsp;conseillère&nbsp;» (de même, «&nbsp;Animateur du vendeur&nbsp;» désigne l'animatrice et «&nbsp;Recruteur du vendeur&nbsp;» la recruteuse). Les libellés de l'écran (conditions, bénéficiaires, options) sont cités tels quels, entre guillemets.</p></div>
+</section>
+
+<!-- 2 -->
+<section id="recrutement">
+  <div class="sec-head"><span class="sec-num">02</span><h2>Recrutement et développement du réseau</h2></div>
+
+  <div class="case" data-tools="cha ba">
+    <h3 id="s2-1"><span class="sub-num">2.1</span> Je souhaite motiver mes conseillères à recruter</h3>
+    <p class="goal">Objectif&nbsp;: <b>plus de nouvelles recrues</b>, et des parrainages qui durent.</p>
+    <div class="opts">
+      <div class="opt o-cha"><span class="tool t-cha">Challenges</span><h4>Challenge «&nbsp;recrutement&nbsp;»</h4><p>Une récompense par palier de recrues sur le trimestre&nbsp;: condition «&nbsp;Nombre de nouveau vendeur filleul par recrutement ≥ 2&nbsp;», puis ≥ 4… Bénéficiaire&nbsp;: la conseillère.</p><a class="go" href="challenges-guide.html#s7-6">Voir&nbsp;: conditions de recrutement →</a></div>
+      <div class="opt o-cha"><span class="tool t-cha">Challenges</span><h4>Récompenser la réussite de la recrue</h4><p>Bénéficiaire «&nbsp;Recruteur du vendeur&nbsp;», condition de CA de la recrue sur ses 3 premiers mois (période prédéfinie). La recruteuse gagne une fois <strong>par recrue</strong> qui démarre bien&nbsp;: on récompense des recrutements de qualité.</p><a class="go" href="challenges-guide.html#s5-2">Voir&nbsp;: les bénéficiaires →</a></div>
+      <div class="opt o-cha"><span class="tool t-cha">Challenges</span><h4>Classement des meilleures recruteuses</h4><p>Challenge classement sur «&nbsp;Nombre de nouvelles recrues&nbsp;», récompenses par position (podium).</p><a class="go" href="challenges-guide.html#classement">Voir&nbsp;: challenges classement →</a></div>
+      <div class="opt o-ba"><span class="tool t-ba">Bons d'achat</span><h4>Récompense en bon d'achat</h4><p>Le challenge peut distribuer un bon d'achat (bon simple) plutôt qu'une prime&nbsp;: la récompense revient en commandes.</p><a class="go" href="bons-achat-guide.html#s6-2">Voir&nbsp;: le bon simple comme récompense →</a></div>
+    </div>
+    <div class="tip"><span class="ex-label">Notre conseil</span><p>Combinez une récompense immédiate pour la recrue (challenge de démarrage) et une récompense différée pour la recruteuse (CA de la recrue après 3 mois).</p></div>
+  </div>
+
+  <div class="case" data-tools="cha ach ba red">
+    <h3 id="s2-2"><span class="sub-num">2.2</span> Je souhaite accompagner le démarrage des nouvelles recrues</h3>
+    <p class="goal">Objectif&nbsp;: que chaque nouvelle conseillère <b>réalise ses premières ventes vite</b>.</p>
+    <div class="opts">
+      <div class="opt o-cha"><span class="tool t-cha">Challenges</span><h4>Challenge de démarrage individuel</h4><p>Période prédéfinie «&nbsp;date de début d'activité → + 3 mois&nbsp;»&nbsp;: chaque recrue a sa propre fenêtre. Paliers de CA récompensés par un kit, des produits ou une prime.</p><a class="go" href="challenges-guide.html#s4-1">Voir&nbsp;: dates prédéfinies →</a></div>
+      <div class="opt o-ach"><span class="tool t-ach">Conditions d'achat</span><h4>Kit de démarrage réservé</h4><p>Condition «&nbsp;Type de commande dans Kit de démarrage&nbsp;» sur les produits du kit&nbsp;: ils ne se commandent que dans ce cadre.</p><a class="go" href="conditions-achat-guide.html#s10-1">Voir&nbsp;: exemple kit de démarrage →</a></div>
+      <div class="opt o-ba"><span class="tool t-ba">Bons d'achat</span><h4>Bon de bienvenue</h4><p>Un bon simple «&nbsp;nouvelle recrue&nbsp;» attribué à l'inscription, à utiliser sur sa première commande personnelle.</p><a class="go" href="bons-achat-guide.html#simple">Voir&nbsp;: le bon simple →</a></div>
+      <div class="opt o-red"><span class="tool t-red">Réductions</span><h4>Remise de démarrage</h4><p>Réduction réservée au rôle vendeur, condition «&nbsp;Si nouveau&nbsp;» sur le compte client de la conseillère, limitée à une utilisation.</p><a class="go" href="reductions-guide.html#s9-1">Voir&nbsp;: conditions sur le client →</a></div>
+    </div>
+  </div>
+
+  <div class="case" data-tools="cha">
+    <h3 id="s2-3"><span class="sub-num">2.3</span> Je souhaite récompenser mes animatrices sur la performance de leur équipe</h3>
+    <p class="goal">Objectif&nbsp;: faire grandir les équipes et <b>valoriser le management</b>.</p>
+    <div class="opts">
+      <div class="opt o-cha"><span class="tool t-cha">Challenges</span><h4>CA de l'équipe</h4><p>Conditions «&nbsp;Chiffre d'affaires de l'équipe&nbsp;» (sans ou avec la conseillère) ou CA commissionnable de l'équipe, sur toute la descendance.</p><a class="go" href="challenges-guide.html#s7-2">Voir&nbsp;: CA de l'équipe →</a></div>
+      <div class="opt o-cha"><span class="tool t-cha">Challenges</span><h4>Bénéficiaire animatrice</h4><p>Bénéficiaire «&nbsp;Animateur du vendeur&nbsp;»&nbsp;: l'animatrice gagne une récompense pour chaque conseillère animée qui atteint l'objectif.</p><a class="go" href="challenges-guide.html#s5-2">Voir&nbsp;: les bénéficiaires →</a></div>
+      <div class="opt o-cha"><span class="tool t-cha">Challenges</span><h4>Filtre par statut</h4><p>Condition «&nbsp;Statut vendeur&nbsp;» ou «&nbsp;Statut de l'animateur&nbsp;» pour réserver le challenge aux managers.</p><a class="go" href="challenges-guide.html#s7-7">Voir&nbsp;: profil de la conseillère →</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- 3 -->
+<section id="ventes">
+  <div class="sec-head"><span class="sec-num">03</span><h2>Ventes et activité des conseillères</h2></div>
+
+  <div class="case" data-tools="cha red">
+    <h3 id="s3-1"><span class="sub-num">3.1</span> Je souhaite booster le chiffre d'affaires sur un mois</h3>
+    <p class="goal">Objectif&nbsp;: un <b>pic d'activité</b> sur une période donnée.</p>
+    <div class="opts">
+      <div class="opt o-cha"><span class="tool t-cha">Challenges</span><h4>Paliers de CA</h4><p>Un challenge sur le mois avec une récompense par palier (≥ 300&nbsp;€, ≥ 600&nbsp;€, ≥ 1&nbsp;000&nbsp;€). Les récompenses sont indépendantes et se cumulent.</p><a class="go" href="challenges-guide.html#s2-1">Voir&nbsp;: les récompenses sont indépendantes →</a></div>
+      <div class="opt o-cha"><span class="tool t-cha">Challenges</span><h4>Classement du mois</h4><p>Challenge classement sur le CA commissionnable, avec un podium récompensé.</p><a class="go" href="challenges-guide.html#classement">Voir&nbsp;: challenges classement →</a></div>
+      <div class="opt o-red"><span class="tool t-red">Réductions</span><h4>Promotion temporaire</h4><p>Une réduction automatique sur une gamme, avec dates de début et de fin, pour donner un argument de vente aux conseillères.</p><a class="go" href="reductions-guide.html#dates">Voir&nbsp;: dates et publication →</a></div>
+    </div>
+    <div class="warn"><span class="ex-label">Attention</span><p>Un gain de challenge n'est jamais retiré. Si des avoirs sont fréquents, cochez «&nbsp;Ne pas calculer les récompenses avant la fin du challenge&nbsp;».</p></div>
+  </div>
+
+  <div class="case" data-tools="cha red ba fid">
+    <h3 id="s3-2"><span class="sub-num">3.2</span> Je souhaite pousser un produit ou une gamme</h3>
+    <p class="goal">Objectif&nbsp;: <b>faire vendre</b> une référence précise ou une catégorie.</p>
+    <div class="opts">
+      <div class="opt o-cha"><span class="tool t-cha">Challenges</span><h4>Challenge produit</h4><p>Conditions «&nbsp;Nb de quantité vendue pour le produit&nbsp;» ou «&nbsp;Nb de produit vendus pour la catégorie&nbsp;»&nbsp;: la conseillère est récompensée sur les ventes de la gamme.</p><a class="go" href="challenges-guide.html#s7-4">Voir&nbsp;: produits et clients →</a></div>
+      <div class="opt o-red"><span class="tool t-red">Réductions</span><h4>Offre promotionnelle</h4><p>«&nbsp;3 achetés, le moins cher offert&nbsp;» ou «&nbsp;2 achetés = −20&nbsp;%&nbsp;» sur les produits de la gamme.</p><a class="go" href="reductions-guide.html#offre">Voir&nbsp;: l'offre promotionnelle →</a></div>
+      <div class="opt o-ba"><span class="tool t-ba">Bons d'achat</span><h4>Bon d'achat par conditions</h4><p>«&nbsp;Pour chaque coffret acheté, 10&nbsp;€ offerts sur la prochaine commande&nbsp;»&nbsp;: la cliente revient.</p><a class="go" href="bons-achat-guide.html#conditions">Voir&nbsp;: bon par conditions →</a></div>
+      <div class="opt o-fid"><span class="tool t-fid">Fidélité</span><h4>Récompense de l'hôtesse</h4><p>Condition «&nbsp;La réunion doit… contenir&nbsp;» le produit pour récompenser l'hôtesse dont la réunion vend la nouveauté.</p><a class="go" href="fidelite-guide.html#s6-3">Voir&nbsp;: conditions sur la réunion →</a></div>
+    </div>
+  </div>
+
+  <div class="case" data-tools="ach cha">
+    <h3 id="s3-3"><span class="sub-num">3.3</span> Je lance un produit en quantité limitée</h3>
+    <p class="goal">Objectif&nbsp;: <b>répartir équitablement</b> un stock rare entre les conseillères.</p>
+    <div class="opts">
+      <div class="opt o-ach"><span class="tool t-ach">Conditions d'achat</span><h4>Plafond dans les commandes ouvertes</h4><p>«&nbsp;Quantité maximum dans les commandes ouvertes par vendeur&nbsp;»&nbsp;: une conseillère ne peut pas immobiliser plus de N unités dans des commandes non payées.</p><a class="go" href="conditions-achat-guide.html#s10-5">Voir&nbsp;: stock limité →</a></div>
+      <div class="opt o-ach"><span class="tool t-ach">Conditions d'achat</span><h4>Plafond par conseillère ou par client</h4><p>«&nbsp;Quantité maximum par vendeur&nbsp;» ou «&nbsp;par client&nbsp;», depuis toujours, ou par mois avec la période dynamique.</p><a class="go" href="conditions-achat-guide.html#plafonds">Voir&nbsp;: les plafonds →</a></div>
+      <div class="opt o-ach"><span class="tool t-ach">Conditions d'achat</span><h4>Ouverture programmée</h4><p>«&nbsp;Date de disponibilité est entre …&nbsp;» pour ouvrir la vente à une date précise.</p><a class="go" href="conditions-achat-guide.html#s5-1">Voir&nbsp;: le client et la commande →</a></div>
+    </div>
+    <div class="warn"><span class="ex-label">Attention</span><p>Sur la plupart des écrans, l'ajout initial n'est contrôlé que pour une unité&nbsp;: surveillez les commandes des produits très demandés.</p></div>
+  </div>
+
+  <div class="case" data-tools="red fid cha">
+    <h3 id="s3-4"><span class="sub-num">3.4</span> Je souhaite développer les ventes en ligne (mini-site, boutique)</h3>
+    <p class="goal">Objectif&nbsp;: <b>faire passer les clientes</b> par le mini-site de la conseillère ou la boutique de la marque.</p>
+    <div class="opts">
+      <div class="opt o-red"><span class="tool t-red">Réductions</span><h4>Remise réservée au canal</h4><p>Condition «&nbsp;Type de commande est dans Mini-site vendeur&nbsp;» sur une réduction automatique.</p><a class="go" href="reductions-guide.html#s9-2">Voir&nbsp;: conditions sur la commande →</a></div>
+      <div class="opt o-fid"><span class="tool t-fid">Fidélité</span><h4>Points sur les commandes en ligne</h4><p>Règle client «&nbsp;Gains lors d'une vente directe&nbsp;», condition «&nbsp;Type de commande = Mini-site vendeur&nbsp;», récompense en pourcentage de la commande.</p><a class="go" href="fidelite-guide.html#s6-5">Voir&nbsp;: conditions sur la commande →</a></div>
+      <div class="opt o-cha"><span class="tool t-cha">Challenges</span><h4>Challenge par catalogue</h4><p>Si votre marque dispose des conditions par catalogue, un challenge sur le CA d'un catalogue en ligne.</p><a class="go" href="challenges-guide.html#s7-1">Voir&nbsp;: CA de la conseillère →</a></div>
+    </div>
+  </div>
+
+  <div class="case" data-tools="fid ba">
+    <h3 id="s3-5"><span class="sub-num">3.5</span> Je souhaite récompenser les achats personnels de mes conseillères</h3>
+    <p class="goal">Objectif&nbsp;: que les conseillères <b>consomment et connaissent les produits</b>.</p>
+    <div class="opts">
+      <div class="opt o-fid"><span class="tool t-fid">Fidélité</span><h4>Points conseillère</h4><p>Règles de l'onglet Vendeur, avec l'option «&nbsp;Autoriser le gain de points vendeurs sur les commandes qui ont pour client le compte client du vendeur&nbsp;».</p><a class="go" href="fidelite-guide.html#reglages">Voir&nbsp;: configuration générale →</a></div>
+      <div class="opt o-ba"><span class="tool t-ba">Bons d'achat</span><h4>Cagnotte conseillère</h4><p>Bon par tranche de type Vendeur&nbsp;; l'option «&nbsp;Les achats personnels du vendeur cagnotte pour&nbsp;» décide si ses achats perso alimentent la cagnotte.</p><a class="go" href="bons-achat-guide.html#s4-8">Voir&nbsp;: la conseillère qui achète pour elle-même →</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 -->
+<section id="reunions">
+  <div class="sec-head"><span class="sec-num">04</span><h2>Réunions et hôtesses</h2></div>
+
+  <div class="case" data-tools="fid ba red">
+    <h3 id="s4-1"><span class="sub-num">4.1</span> Je souhaite récompenser les hôtesses selon le succès de leur réunion</h3>
+    <p class="goal">Objectif&nbsp;: donner envie de <b>recevoir et de bien remplir</b> une réunion.</p>
+    <div class="opts">
+      <div class="opt o-fid"><span class="tool t-fid">Fidélité</span><h4>Points au pourcentage du CA</h4><p>Onglet Hôte, «&nbsp;Durant la réunion&nbsp;», «&nbsp;Pourcentage du CA de la réunion en points&nbsp;» (5 à 10&nbsp;% le plus souvent), avec un CA minimum.</p><a class="go" href="fidelite-guide.html#s8-2">Voir&nbsp;: pourcentage du CA →</a></div>
+      <div class="opt o-ba"><span class="tool t-ba">Bons d'achat</span><h4>Bon cadeau hôtesse par palier</h4><p>Règles de fidélité dont la récompense est un bon simple&nbsp;: 15&nbsp;€, 30&nbsp;€, 45&nbsp;€ selon le CA. Pensez à des paliers «&nbsp;entre&nbsp;» pour ne pas tout cumuler.</p><a class="go" href="fidelite-guide.html#paliers">Voir&nbsp;: cumul et paliers →</a></div>
+      <div class="opt o-fid"><span class="tool t-fid">Fidélité</span><h4>Cadeau produit</h4><p>Récompense «&nbsp;Produit&nbsp;» ou «&nbsp;Produit au choix dans une liste&nbsp;»&nbsp;: la conseillère crée la commande cadeau.</p><a class="go" href="fidelite-guide.html#s8-3">Voir&nbsp;: récompense produit →</a></div>
+      <div class="opt o-red"><span class="tool t-red">Réductions</span><h4>Code promo hôtesse</h4><p>Récompense «&nbsp;Code promo&nbsp;» qui attribue à l'hôtesse une réduction réservée existante.</p><a class="go" href="fidelite-guide.html#s8-5">Voir&nbsp;: récompense code promo →</a></div>
+    </div>
+    <div class="warn"><span class="ex-label">Attention</span><p>Les règles de fidélité se cumulent&nbsp;: trois paliers «&nbsp;≥&nbsp;» remplis donnent trois récompenses. Testez avec le simulateur de paliers.</p></div>
+  </div>
+
+  <div class="case" data-tools="fid cha">
+    <h3 id="s4-2"><span class="sub-num">4.2</span> Je souhaite que les invitées organisent à leur tour une réunion</h3>
+    <p class="goal">Objectif&nbsp;: <b>faire naître des réunions</b> à partir des réunions existantes.</p>
+    <div class="opts">
+      <div class="opt o-fid"><span class="tool t-fid">Fidélité</span><h4>Récompenser l'invitée qui prend date</h4><p>Onglet Client, action «&nbsp;Prise de réunion des invités dans la réunion&nbsp;»&nbsp;: chaque réunion prise donne une récompense à l'invitée.</p><a class="go" href="fidelite-guide.html#actions">Voir&nbsp;: les six actions →</a></div>
+      <div class="opt o-fid"><span class="tool t-fid">Fidélité</span><h4>Récompenser l'hôtesse qui fait des émules</h4><p>Condition «&nbsp;Nombre de réunions redatées dans la réunion ≥ 2&nbsp;» sur une règle hôtesse.</p><a class="go" href="fidelite-guide.html#s6-3">Voir&nbsp;: conditions sur la réunion →</a></div>
+      <div class="opt o-cha"><span class="tool t-cha">Challenges</span><h4>Challenge réunions redatées</h4><p>Condition «&nbsp;Nombre de réunions redatées&nbsp;» pour récompenser les conseillères qui font tourner leur agenda.</p><a class="go" href="challenges-guide.html#s7-5">Voir&nbsp;: réunions →</a></div>
+    </div>
+    <div class="warn"><span class="ex-label">Attention</span><p>Sur l'onglet Hôte, l'action «&nbsp;Prise de réunion&nbsp;» ne donne que des cadeaux produits. Pour des points, utilisez l'onglet Client.</p></div>
+  </div>
+
+  <div class="case" data-tools="cha">
+    <h3 id="s4-3"><span class="sub-num">4.3</span> Je souhaite augmenter le nombre de réunions par conseillère</h3>
+    <p class="goal">Objectif&nbsp;: une <b>activité régulière</b> en réunion.</p>
+    <div class="opts">
+      <div class="opt o-cha"><span class="tool t-cha">Challenges</span><h4>Nombre de réunions</h4><p>Condition «&nbsp;Nombre de réunions ≥ 4&nbsp;» sur le mois (réunions annulées exclues).</p><a class="go" href="challenges-guide.html#s7-5">Voir&nbsp;: réunions →</a></div>
+      <div class="opt o-cha"><span class="tool t-cha">Challenges</span><h4>Qualité des réunions</h4><p>Ajoutez «&nbsp;Nombre moyen de commande par réunion ≥ 5&nbsp;» en ET pour récompenser des réunions productives.</p><a class="go" href="challenges-guide.html#s6-1">Voir&nbsp;: ET, OU et groupes →</a></div>
+    </div>
+  </div>
+
+  <div class="case" data-tools="fid red">
+    <h3 id="s4-4"><span class="sub-num">4.4</span> Je souhaite augmenter le panier moyen en réunion</h3>
+    <p class="goal">Objectif&nbsp;: des <b>commandes plus importantes</b> par invitée.</p>
+    <div class="opts">
+      <div class="opt o-fid"><span class="tool t-fid">Fidélité</span><h4>Hôtesse récompensée sur les belles commandes</h4><p>Condition «&nbsp;Nombre de commande d'un montant&nbsp;»&nbsp;: «&nbsp;au moins 3 commandes de 50&nbsp;€ ou plus&nbsp;».</p><a class="go" href="fidelite-guide.html#s6-3">Voir&nbsp;: conditions sur la réunion →</a></div>
+      <div class="opt o-red"><span class="tool t-red">Réductions</span><h4>Remise dès un seuil</h4><p>«&nbsp;−10&nbsp;€ dès 60&nbsp;€ d'achat&nbsp;»&nbsp;: condition «&nbsp;Montant TTC dépensé par le client dans son panier actuel ≥ 60&nbsp;».</p><a class="go" href="reductions-guide.html#s9-1">Voir&nbsp;: conditions sur le client →</a></div>
+      <div class="opt o-red"><span class="tool t-red">Réductions</span><h4>Livraison offerte dès un seuil</h4><p>Case «&nbsp;Livraison offerte&nbsp;» sur une réduction conditionnée au montant du panier.</p><a class="go" href="reductions-guide.html#s3-7">Voir&nbsp;: frais de port →</a></div>
+    </div>
+  </div>
+
+  <div class="case" data-tools="fid ba ach">
+    <h3 id="s4-5"><span class="sub-num">4.5</span> Je souhaite encourager les réunions en visio</h3>
+    <p class="goal">Objectif&nbsp;: développer la <b>vente à distance</b>.</p>
+    <div class="opts">
+      <div class="opt o-fid"><span class="tool t-fid">Fidélité</span><h4>Hôtesse de réunion visio</h4><p>Condition «&nbsp;La réunion est virtuelle = Oui&nbsp;» sur une règle hôtesse ou client.</p><a class="go" href="fidelite-guide.html#s6-3">Voir&nbsp;: conditions sur la réunion →</a></div>
+      <div class="opt o-ba"><span class="tool t-ba">Bons d'achat</span><h4>Bon d'achat visio</h4><p>Bon par conditions avec «&nbsp;Réunion en visio = oui&nbsp;».</p><a class="go" href="bons-achat-guide.html#conditions">Voir&nbsp;: bon par conditions →</a></div>
+      <div class="opt o-ach"><span class="tool t-ach">Conditions d'achat</span><h4>Tous les produits en visio</h4><p>Une option (activée par SellingAtHome) lève toutes les conditions d'achat sur les commandes de réunions en visio.</p><a class="go" href="conditions-achat-guide.html#s4-1">Voir&nbsp;: réunions en visio →</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- 5 -->
+<section id="clientes">
+  <div class="sec-head"><span class="sec-num">05</span><h2>Clientes&nbsp;: conquête et fidélité</h2></div>
+
+  <div class="case" data-tools="fid ba">
+    <h3 id="s5-1"><span class="sub-num">5.1</span> Je souhaite fidéliser mes clientes et les faire racheter</h3>
+    <p class="goal">Objectif&nbsp;: <b>des commandes répétées</b>.</p>
+    <div class="opts">
+      <div class="opt o-fid"><span class="tool t-fid">Fidélité</span><h4>Points sur chaque commande</h4><p>Onglet Client, «&nbsp;Gains lors d'une vente directe / en réunion&nbsp;», «&nbsp;Pourcentage du CA de la commande&nbsp;» (10&nbsp;% par exemple). Taux de change et validité dans l'onglet Client.</p><a class="go" href="fidelite-guide.html#s8-7">Voir&nbsp;: pourcentage de la commande →</a></div>
+      <div class="opt o-ba"><span class="tool t-ba">Bons d'achat</span><h4>Cagnotte «&nbsp;5&nbsp;€ tous les 100&nbsp;€&nbsp;»</h4><p>Bon par tranche, type Client&nbsp;: la cliente accumule ses achats et reçoit un bon à chaque palier.</p><a class="go" href="bons-achat-guide.html#tranche">Voir&nbsp;: bon par tranche →</a></div>
+      <div class="opt o-fid"><span class="tool t-fid">Fidélité</span><h4>Catalogue en points</h4><p>Des produits «&nbsp;achetables&nbsp;» uniquement en points, pour donner une valeur concrète au programme.</p><a class="go" href="fidelite-guide.html#s11-3">Voir&nbsp;: le catalogue en points →</a></div>
+    </div>
+    <div class="tip"><span class="ex-label">Notre conseil</span><p>Choisissez un seul mécanisme principal (points ou cagnotte de bons) pour rester lisible pour les clientes.</p></div>
+  </div>
+
+  <div class="case" data-tools="red ba">
+    <h3 id="s5-2"><span class="sub-num">5.2</span> Je souhaite faire revenir des clientes inactives</h3>
+    <p class="goal">Objectif&nbsp;: <b>réactiver</b> des clientes qui ne commandent plus.</p>
+    <div class="opts">
+      <div class="opt o-red"><span class="tool t-red">Réductions</span><h4>Remise réservée à une liste</h4><p>«&nbsp;Restreindre à des clients&nbsp;» puis «&nbsp;Importer des clients&nbsp;» (un e-mail par ligne)&nbsp;: seules ces clientes en profitent, avec une limite «&nbsp;N fois par client&nbsp;».</p><a class="go" href="reductions-guide.html#clients">Voir&nbsp;: réserver à des clients →</a></div>
+      <div class="opt o-red"><span class="tool t-red">Réductions</span><h4>Code promo de relance</h4><p>Un code (ou des codes uniques générés) envoyé par e-mail, restreint à des codes promotionnels.</p><a class="go" href="reductions-guide.html#codes">Voir&nbsp;: les codes promo →</a></div>
+      <div class="opt o-ba"><span class="tool t-ba">Bons d'achat</span><h4>Bon d'achat nominatif</h4><p>Un bon simple attribué en masse aux clientes ciblées, avec une validité courte pour créer l'urgence.</p><a class="go" href="bons-achat-guide.html#s6-1">Voir&nbsp;: attribution manuelle →</a></div>
+    </div>
+  </div>
+
+  <div class="case" data-tools="red ba">
+    <h3 id="s5-3"><span class="sub-num">5.3</span> Je souhaite conquérir de nouvelles clientes</h3>
+    <p class="goal">Objectif&nbsp;: réussir la <b>première commande</b>.</p>
+    <div class="opts">
+      <div class="opt o-red"><span class="tool t-red">Réductions</span><h4>Offre de bienvenue</h4><p>Réduction avec la condition «&nbsp;Si nouveau&nbsp;» (aucune commande payée), limitée à une fois par client.</p><a class="go" href="reductions-guide.html#s9-1">Voir&nbsp;: conditions sur le client →</a></div>
+      <div class="opt o-ba"><span class="tool t-ba">Bons d'achat</span><h4>Bon pour la commande suivante</h4><p>Bon par conditions déclenché par l'achat d'un produit «&nbsp;découverte&nbsp;», utilisable sur la commande suivante&nbsp;: il installe le réachat.</p><a class="go" href="bons-achat-guide.html#conditions">Voir&nbsp;: bon par conditions →</a></div>
+    </div>
+  </div>
+
+  <div class="case" data-tools="fid red ba">
+    <h3 id="s5-4"><span class="sub-num">5.4</span> Je souhaite récompenser le parrainage entre clientes</h3>
+    <p class="goal">Objectif&nbsp;: que les clientes <b>recommandent</b> la marque.</p>
+    <div class="opts">
+      <div class="opt o-fid"><span class="tool t-fid">Fidélité</span><h4>Récompense au parrain</h4><p>Conditions de parrainage sur une règle de vente&nbsp;: c'est la marraine qui gagne quand sa filleule passe sa première commande.</p><a class="go" href="fidelite-guide.html#s6-7">Voir&nbsp;: conditions de parrainage →</a></div>
+      <div class="opt o-red"><span class="tool t-red">Réductions</span><h4>Remise selon les filleules</h4><p>Condition «&nbsp;Nouveau parrainage avec première commande&nbsp;»&nbsp;: une remise pour la marraine qui a fait commander N filleules sur une période.</p><a class="go" href="reductions-guide.html#s9-1">Voir&nbsp;: conditions sur le client →</a></div>
+      <div class="opt o-ba"><span class="tool t-ba">Bons d'achat</span><h4>Bon «&nbsp;parrainage&nbsp;»</h4><p>Un bon simple attribué à la marraine.</p><a class="go" href="bons-achat-guide.html#simple">Voir&nbsp;: le bon simple →</a></div>
+    </div>
+  </div>
+
+  <div class="case" data-tools="red ba">
+    <h3 id="s5-5"><span class="sub-num">5.5</span> Je souhaite une offre anniversaire</h3>
+    <p class="goal">Objectif&nbsp;: une <b>attention personnelle</b> qui déclenche une commande.</p>
+    <div class="opts">
+      <div class="opt o-red"><span class="tool t-red">Réductions</span><h4>Réduction anniversaire</h4><p>Condition «&nbsp;Date d'anniversaire&nbsp;» entre le 1er et le dernier jour d'un mois, avec les dates de validité de ce mois&nbsp;: une réduction par mois.</p><a class="go" href="reductions-guide.html#s9-1">Voir&nbsp;: conditions sur le client →</a></div>
+      <div class="opt o-ba"><span class="tool t-ba">Bons d'achat</span><h4>Bon d'achat anniversaire</h4><p>Un bon simple attribué chaque mois aux clientes concernées, valable quelques semaines.</p><a class="go" href="bons-achat-guide.html#s7-2">Voir&nbsp;: validité →</a></div>
+    </div>
+  </div>
+
+  <div class="case" data-tools="red">
+    <h3 id="s5-6"><span class="sub-num">5.6</span> Je souhaite offrir la livraison</h3>
+    <p class="goal">Objectif&nbsp;: lever le <b>frein des frais de port</b>.</p>
+    <div class="opts">
+      <div class="opt o-red"><span class="tool t-red">Réductions</span><h4>Livraison offerte</h4><p>Case «&nbsp;Livraison offerte&nbsp;» sur une réduction (par exemple dès 60&nbsp;€ d'achat), ou type «&nbsp;Réduction aux frais de ports&nbsp;» pour une remise partielle.</p><a class="go" href="reductions-guide.html#s3-7">Voir&nbsp;: frais de port →</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- 6 -->
+<section id="gestion">
+  <div class="sec-head"><span class="sec-num">06</span><h2>Gestion, service client et contrôle</h2></div>
+
+  <div class="case" data-tools="ba red fid">
+    <h3 id="s6-1"><span class="sub-num">6.1</span> Je souhaite faire un geste commercial après un incident</h3>
+    <p class="goal">Objectif&nbsp;: <b>dédommager</b> une cliente ou une conseillère (casse, rupture, retard).</p>
+    <div class="opts">
+      <div class="opt o-ba"><span class="tool t-ba">Bons d'achat</span><h4>Bon d'achat simple</h4><p>Un bon du montant du préjudice, attribué à la personne. Utilisé très souvent pour les ruptures et la casse.</p><a class="go" href="bons-achat-guide.html#s6-1">Voir&nbsp;: attribution manuelle →</a></div>
+      <div class="opt o-red"><span class="tool t-red">Réductions</span><h4>Remise manuelle</h4><p>Une réduction «&nbsp;Application manuelle&nbsp;» que la conseillère applique sur la prochaine commande.</p><a class="go" href="reductions-guide.html#acces">Voir&nbsp;: auto, manuelle, code →</a></div>
+      <div class="opt o-fid"><span class="tool t-fid">Fidélité</span><h4>Points offerts</h4><p>Ajout manuel de points depuis la fiche client du BrandAdmin, avec un libellé.</p><a class="go" href="fidelite-guide.html#s10-3">Voir&nbsp;: le solde de points →</a></div>
+    </div>
+  </div>
+
+  <div class="case" data-tools="ach red">
+    <h3 id="s6-2"><span class="sub-num">6.2</span> Je souhaite réserver un produit ou une offre à certaines personnes</h3>
+    <p class="goal">Objectif&nbsp;: une offre <b>exclusive</b> (conseillères, clientes VIP, un canal).</p>
+    <div class="opts">
+      <div class="opt o-ach"><span class="tool t-ach">Conditions d'achat</span><h4>Produit réservé</h4><p>Condition «&nbsp;Rôle client&nbsp;» ou «&nbsp;Type de commande&nbsp;» sur le produit&nbsp;: les autres ne peuvent pas le commander.</p><a class="go" href="conditions-achat-guide.html#s5-1">Voir&nbsp;: le client et la commande →</a></div>
+      <div class="opt o-red"><span class="tool t-red">Réductions</span><h4>Remise réservée</h4><p>Condition «&nbsp;Rôle client&nbsp;» sur une réduction, ou «&nbsp;Restreindre à des clients&nbsp;».</p><a class="go" href="reductions-guide.html#s9-1">Voir&nbsp;: conditions sur le client →</a></div>
+    </div>
+  </div>
+
+  <div class="case" data-tools="red ach ba">
+    <h3 id="s6-3"><span class="sub-num">6.3</span> Je souhaite éviter les abus sur une promotion</h3>
+    <p class="goal">Objectif&nbsp;: une opération <b>maîtrisée</b>.</p>
+    <div class="opts">
+      <div class="opt o-red"><span class="tool t-red">Réductions</span><h4>Limites d'utilisation</h4><p>«&nbsp;N fois par client&nbsp;», «&nbsp;N fois seulement&nbsp;» ou «&nbsp;N fois par vendeur&nbsp;»&nbsp;; codes uniques générés&nbsp;; non cumulable.</p><a class="go" href="reductions-guide.html#limites">Voir&nbsp;: limites d'utilisation →</a></div>
+      <div class="opt o-ach"><span class="tool t-ach">Conditions d'achat</span><h4>Plafonds de quantité</h4><p>Un produit en promotion limité par commande ou par client.</p><a class="go" href="conditions-achat-guide.html#plafonds">Voir&nbsp;: les plafonds →</a></div>
+      <div class="opt o-ba"><span class="tool t-ba">Bons d'achat</span><h4>Cumul des bons</h4><p>«&nbsp;Nombre de cumul sur lui-même&nbsp;» et «&nbsp;Cumulable avec d'autres bons d'achats&nbsp;» pour limiter les combinaisons.</p><a class="go" href="bons-achat-guide.html#s7-5">Voir&nbsp;: les deux notions de cumul →</a></div>
+    </div>
+  </div>
+
+  <div class="case" data-tools="cha">
+    <h3 id="s6-4"><span class="sub-num">6.4</span> Je souhaite créer de l'émulation entre conseillères</h3>
+    <p class="goal">Objectif&nbsp;: une <b>compétition</b> visible et motivante.</p>
+    <div class="opts">
+      <div class="opt o-cha"><span class="tool t-cha">Challenges</span><h4>Challenge classement</h4><p>Règle de classement chiffrée (CA, recrues, produits), éligibilité par statut, récompenses selon la position. Le classement est visible par les conseillères.</p><a class="go" href="challenges-guide.html#classement">Voir&nbsp;: challenges classement →</a></div>
+      <div class="opt o-cha"><span class="tool t-cha">Challenges</span><h4>Suivi de progression</h4><p>Dans un challenge vendeur, chaque conseillère voit sa progression en % et les jours restants.</p><a class="go" href="challenges-guide.html#vendeur">Voir&nbsp;: ce que voit la conseillère →</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- 7 -->
+<section id="choisir">
+  <div class="sec-head"><span class="sec-num">07</span><h2>Quel outil pour quel besoin&nbsp;?</h2></div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Je veux…</th><th>Outil principal</th><th>Pourquoi</th></tr></thead>
+    <tbody>
+      <tr><td>Fixer un objectif aux conseillères</td><td><span class="tool t-cha">Challenges</span></td><td>Objectifs sur une période, progression visible, récompenses variées</td></tr>
+      <tr><td>Récompenser hôtesses et clientes automatiquement</td><td><span class="tool t-fid">Fidélité</span></td><td>Règles déclenchées par les réunions et les ventes</td></tr>
+      <tr><td>Offrir un montant à une personne</td><td><span class="tool t-ba">Bons d'achat</span></td><td>Nominatif, avec validité&nbsp;; souvent utilisé comme récompense par les autres outils</td></tr>
+      <tr><td>Baisser un prix ou faire une promotion</td><td><span class="tool t-red">Réductions</span></td><td>Pourcentage, montant, offre «&nbsp;X achetés&nbsp;», code promo</td></tr>
+      <tr><td>Restreindre la vente d'un produit</td><td><span class="tool t-ach">Conditions d'achat</span></td><td>Qui, quand, combien</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<script>
+(function () {
+  var buttons = Array.prototype.slice.call(document.querySelectorAll('#caseFilter .chip-f'));
+  var cases = Array.prototype.slice.call(document.querySelectorAll('.case'));
+  buttons.forEach(function (b) {
+    b.addEventListener('click', function () {
+      var f = b.dataset.f;
+      buttons.forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+      cases.forEach(function (c) {
+        var show = f === 'all' || (' ' + c.dataset.tools + ' ').indexOf(' ' + f + ' ') >= 0;
+        c.classList.toggle('hidden-by-filter', !show);
+      });
+    });
+  });
+})();
+</script>
+
+  </main>
+</div>
+<script>
+(function () {
+  var buttons = Array.prototype.slice.call(document.querySelectorAll('#caseFilter .chip-f'));
+  var cases = Array.prototype.slice.call(document.querySelectorAll('.case'));
+  buttons.forEach(function (b) {
+    b.addEventListener('click', function () {
+      var f = b.dataset.f;
+      buttons.forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+      cases.forEach(function (c) {
+        var show = f === 'all' || (' ' + c.dataset.tools + ' ').indexOf(' ' + f + ' ') >= 0;
+        c.classList.toggle('hidden-by-filter', !show);
+      });
+    });
+  });
+})();
+</script>

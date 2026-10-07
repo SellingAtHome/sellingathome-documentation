@@ -1,0 +1,346 @@
+<!--page {"title":"Livraison : modes et frais"} -->
+<style>
+.steps-calc { counter-reset: st; display:flex; flex-direction:column; gap:10px; margin:14px 0; }
+.steps-calc div { counter-increment: st; position:relative; padding:12px 14px 12px 52px; background:var(--card); border:1px solid var(--rule); border-radius:14px; font-size:.95rem; }
+.steps-calc div::before { content: counter(st); position:absolute; left:14px; top:12px; width:26px; height:26px; border-radius:50%; background:var(--accent); color:#fff; font-weight:700; text-align:center; line-height:26px; font-size:.85rem; }
+.steps-calc b { color:var(--heading); }
+.chip { display:inline-block; border-radius:100px; padding:3px 11px; font-size:.78rem; font-weight:700; background:var(--surface); color:var(--heading); border:1px solid var(--rule); }
+.chip.g { background:var(--accent-wash); color:var(--accent-ink); border-color:transparent; }
+.chip.p { background:var(--pink-wash); color:var(--pink-ink); border-color:transparent; }
+.chip.y { background:var(--yellow-wash); color:var(--yellow-ink); border-color:transparent; }
+.opts td:first-child { width:30%; }
+.calc td:last-child, .calc th:last-child { text-align:right; white-space:nowrap; }
+</style>
+<header class="hero">
+  <div class="hero-in">
+    <div>
+      <span class="eyebrow">Catalogue et logistique</span>
+      <h1>Livraison&nbsp;: <span class="script">modes et frais</span></h1>
+      <p class="lede">Quels modes de livraison proposer, combien les facturer, quand les offrir ou les retirer&nbsp;: tout se règle sur un seul écran. Cette page explique chaque réglage, l'ordre dans lequel SellingAtHome les applique, avec des exemples chiffrés inspirés des paramétrages réels.</p>
+    </div>
+    <div class="voucher-art" aria-hidden="true">
+      <div class="v-top"><span>Livraison chez la cliente</span><span>Franco</span></div>
+      <div class="v-amount">0<span> €</span></div>
+      <div class="v-name">dès 60 € d'achat</div>
+      <div class="v-sep"></div>
+      <div class="v-meta"><span>Tarif de base <b>6,90 €</b></span><span>Condition <b>≥ 60 €</b></span></div>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="toc" aria-label="Sommaire">
+    <details id="tocDetails" open>
+      <summary>Sommaire</summary>
+      <div class="toc-title">Sommaire</div>
+      <ol>
+        <li data-sec="definition"><a href="#definition"><span class="toc-n">1</span>À quoi ça sert&nbsp;?</a></li>
+        <li data-sec="ou"><a href="#ou"><span class="toc-n">2</span>Où le trouver</a></li>
+        <li data-sec="general"><a href="#general"><span class="toc-n">3</span>La configuration générale</a>
+          <ol class="toc-sub"><li><a href="#s3-1"><span class="toc-n">3.1</span>Le montant de référence</a></li><li><a href="#s3-2"><span class="toc-n">3.2</span>La TVA des frais de port</a></li></ol>
+        </li>
+        <li data-sec="modes"><a href="#modes"><span class="toc-n">4</span>Les modes de livraison</a>
+          <ol class="toc-sub"><li><a href="#s4-1"><span class="toc-n">4.1</span>Les modes disponibles</a></li><li><a href="#s4-2"><span class="toc-n">4.2</span>Les réglages d'un mode</a></li></ol>
+        </li>
+        <li data-sec="conditions"><a href="#conditions"><span class="toc-n">5</span>Les conditions particulières</a>
+          <ol class="toc-sub"><li><a href="#s5-1"><span class="toc-n">5.1</span>Créer une condition</a></li><li><a href="#s5-2"><span class="toc-n">5.2</span>Les critères</a></li><li><a href="#s5-3"><span class="toc-n">5.3</span>Les résultats possibles</a></li></ol>
+        </li>
+        <li data-sec="calcul"><a href="#calcul"><span class="toc-n">6</span>Comment le tarif est calculé</a></li>
+        <li data-sec="exemples"><a href="#exemples"><span class="toc-n">7</span>Exemples chiffrés</a></li>
+        <li data-sec="chiffres"><a href="#chiffres"><span class="toc-n">8</span>Les livraisons en chiffres</a></li>
+        <li data-sec="conseillere"><a href="#conseillere"><span class="toc-n">9</span>Ce que voit la conseillère</a></li>
+        <li data-sec="attention"><a href="#attention"><span class="toc-n">10</span>Points d'attention</a></li>
+        <li data-sec="faq"><a href="#faq"><span class="toc-n">11</span>Questions fréquentes</a></li>
+      </ol>
+    </details>
+  </nav>
+
+  <main>
+
+<!-- 1 -->
+<section id="definition">
+  <div class="sec-head"><span class="sec-num">01</span><h2>À quoi ça sert&nbsp;?</h2></div>
+  <p class="lede">Quand une commande est saisie, la conseillère choisit <strong>où les produits seront livrés</strong>&nbsp;: chez elle, chez la cliente, chez l'hôtesse, en point relais… Chaque <strong>mode de livraison</strong> a un <strong>tarif</strong>, que SellingAtHome ajoute automatiquement à la commande.</p>
+  <p>L'écran des paramètres des livraisons vous permet de&nbsp;:</p>
+  <ul class="prose">
+    <li>choisir les <strong>modes proposés</strong> et leur nom affiché&nbsp;;</li>
+    <li>fixer un <strong>tarif de base</strong> par mode, ou rendre un mode <strong>gratuit</strong>&nbsp;;</li>
+    <li>ajouter des <strong>conditions particulières</strong>&nbsp;: livraison offerte au-delà d'un montant, tarif différent selon le pays, mode réservé à certains types de commande…&nbsp;;</li>
+    <li>décider sur quel <strong>montant</strong> ces conditions s'appuient et quelle <strong>TVA</strong> s'applique aux frais de port.</li>
+  </ul>
+  <div class="tip"><span class="ex-label">Vocabulaire</span><p>Dans l'espace marque, la conseillère s'appelle «&nbsp;Vendeur&nbsp;», la cliente «&nbsp;Client&nbsp;» et l'hôtesse «&nbsp;Hôte&nbsp;». Les modes s'affichent donc «&nbsp;Livraison chez le vendeur&nbsp;», «&nbsp;Livraison chez le client&nbsp;», «&nbsp;Livraison chez l'hôte&nbsp;».</p></div>
+</section>
+
+<!-- 2 -->
+<section id="ou">
+  <div class="sec-head"><span class="sec-num">02</span><h2>Où le trouver</h2></div>
+  <div class="path" aria-label="Chemin d'accès"><span>Paramètres</span><span>Configuration générale</span><span><b>Paramètres des livraisons</b></span></div>
+  <p>L'onglet <strong>Paramètres des livraisons</strong> se trouve dans la barre d'onglets de la configuration, à côté de «&nbsp;Paramètres des commandes&nbsp;» et «&nbsp;Paramètres des Réunions&nbsp;».</p>
+  <figure><img src="Captures/Logistique/parametres-livraisons.png" alt="Écran Paramètres des livraisons : bloc Configuration générale avec les choix Appliquer les frais de port sur (montant non remisé, remisé, remisé bons d'achat exclus) et Taux de TVA des frais de port ; puis une carte par mode de livraison (Livraison chez le vendeur, chez le client, chez l'hôte…) avec interrupteur d'activation, case Livraison offerte, Tarif de base, liste Indisponible pour, tableau des Conditions particulières et bouton Enregistrer" loading="lazy"><figcaption>L'écran des paramètres des livraisons&nbsp;: la configuration générale, puis une carte par mode.</figcaption></figure>
+</section>
+
+<!-- 3 -->
+<section id="general">
+  <div class="sec-head"><span class="sec-num">03</span><h2>La configuration générale</h2></div>
+  <p class="lede">Deux réglages valables pour tous les modes, enregistrés avec le bouton <strong>Enregistrer</strong> du bloc «&nbsp;Configuration générale&nbsp;».</p>
+
+  <h3 id="s3-1"><span class="sub-num">3.1</span> Le montant de référence («&nbsp;Appliquer les frais de port sur&nbsp;»)</h3>
+  <p>Ce réglage dit <strong>quel montant de commande</strong> est comparé aux seuils de vos conditions («&nbsp;Montant de la commande ≥ 60&nbsp;€&nbsp;») et sert de base aux frais calculés en pourcentage.</p>
+  <div class="table-wrap"><table class="opts">
+    <thead><tr><th>Choix</th><th>Montant retenu</th></tr></thead>
+    <tbody>
+      <tr><td><b>le montant non remisé</b></td><td>Le prix des produits multiplié par les quantités, <strong>avant</strong> toute réduction. C'est le réglage par défaut.</td></tr>
+      <tr><td><b>le montant remisé</b></td><td>Le même montant, <strong>après</strong> les réductions et les avantages déduits de la commande (bons d'achat, points de fidélité…).</td></tr>
+      <tr><td><b>le montant remisé (bons d'achat exclus)</b></td><td>Le montant remisé, mais <strong>sans retirer les bons d'achat</strong>&nbsp;: une cliente qui paie avec un bon d'achat ne perd pas sa livraison offerte.</td></tr>
+    </tbody>
+  </table></div>
+  <p>Dans tous les cas, les produits annulés ne comptent plus, et sont exclus du montant&nbsp;:</p>
+  <ul class="prose">
+    <li>les produits cochés «&nbsp;Non inclus dans le calcul des frais de livraison&nbsp;» dans leur fiche&nbsp;;</li>
+    <li>les produits remisés par une réduction cochée «&nbsp;Ne pas prendre en compte les produits remisés dans le calcul des frais d'expédition&nbsp;» (voir <a href="reductions-guide.html">le guide des réductions</a>).</li>
+  </ul>
+  <div class="example"><span class="ex-label">Exemple</span><p>Camille commande 70&nbsp;€ de produits. Elle bénéficie d'une réduction de 10&nbsp;€ et paie 15&nbsp;€ avec un bon d'achat. Votre livraison est offerte dès 60&nbsp;€.</p>
+    <div class="table-wrap"><table class="calc">
+      <thead><tr><th>Réglage</th><th>Montant comparé à 60&nbsp;€</th><th>Livraison</th></tr></thead>
+      <tbody>
+        <tr><td>le montant non remisé</td><td>70&nbsp;€</td><td><span class="chip g">offerte</span></td></tr>
+        <tr><td>le montant remisé</td><td>70 − 10 − 15 = 45&nbsp;€</td><td><span class="chip p">payante</span></td></tr>
+        <tr><td>le montant remisé (bons d'achat exclus)</td><td>70 − 10 = 60&nbsp;€</td><td><span class="chip g">offerte</span></td></tr>
+      </tbody>
+    </table></div>
+  </div>
+
+  <h3 id="s3-2"><span class="sub-num">3.2</span> La TVA des frais de port</h3>
+  <p>Le tarif saisi est un montant <strong>TTC</strong> (sauf si votre marque affiche ses prix hors taxes&nbsp;: il est alors HT). SellingAtHome en déduit la part HT selon le taux choisi&nbsp;:</p>
+  <div class="table-wrap"><table class="opts">
+    <thead><tr><th>Choix</th><th>Taux appliqué</th></tr></thead>
+    <tbody>
+      <tr><td><b>Par rapport au taux le plus bas d'une commande</b></td><td>Le plus petit taux de TVA parmi les produits de la commande (réglage par défaut).</td></tr>
+      <tr><td><b>Par rapport au taux le plus haut d'une commande</b></td><td>Le plus grand taux de TVA parmi les produits de la commande.</td></tr>
+      <tr><td><b>Taux personnalisé</b></td><td>Le taux saisi dans le champ «&nbsp;%&nbsp;», quel que soit le contenu de la commande. Il ne peut pas être de 0&nbsp;%&nbsp;: l'écran affiche «&nbsp;Le taux de TVA pour les frais de port ne peut pas être 0&nbsp;%&nbsp;».</td></tr>
+    </tbody>
+  </table></div>
+  <div class="example"><span class="ex-label">Exemple</span><p>La commande d'Inès contient un livre (TVA 5,5&nbsp;%) et une bougie (TVA 20&nbsp;%). Les frais de port sont de 6,00&nbsp;€ TTC.</p>
+    <ul class="prose">
+      <li>taux le plus bas&nbsp;: 6,00 / 1,055 = <strong>5,69&nbsp;€ HT</strong>&nbsp;;</li>
+      <li>taux le plus haut&nbsp;: 6,00 / 1,20 = <strong>5,00&nbsp;€ HT</strong>&nbsp;;</li>
+      <li>taux personnalisé de 20&nbsp;%&nbsp;: <strong>5,00&nbsp;€ HT</strong>, même pour une commande ne contenant que des livres.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 4 -->
+<section id="modes">
+  <div class="sec-head"><span class="sec-num">04</span><h2>Les modes de livraison</h2></div>
+
+  <h3 id="s4-1"><span class="sub-num">4.1</span> Les modes disponibles</h3>
+  <p>L'écran affiche une carte par mode prévu pour votre marque. Les modes «&nbsp;transporteur&nbsp;» (points relais, livraison prédite) n'apparaissent que si l'intégration correspondante a été mise en place par SellingAtHome.</p>
+  <div class="table-wrap"><table class="opts">
+    <thead><tr><th>Mode (libellé par défaut)</th><th>Ce que ça veut dire</th></tr></thead>
+    <tbody>
+      <tr><td><b>Livraison chez le vendeur</b></td><td>Le colis part chez la conseillère, qui remet ensuite les produits. Le mode le plus utilisé en vente à domicile.</td></tr>
+      <tr><td><b>Livraison chez le client</b></td><td>Le colis part à l'adresse de la cliente.</td></tr>
+      <tr><td><b>Livraison chez l'hôte</b></td><td>Le colis part chez l'hôtesse de la réunion. Il n'est jamais proposé pour une vente directe (pas de réunion, donc pas d'hôtesse).</td></tr>
+      <tr><td><b>Adresse personnalisée</b></td><td>Une autre adresse, saisie pour la commande.</td></tr>
+      <tr><td><b>Enlèvement des produits sur place</b></td><td>La cliente repart avec ses produits&nbsp;: rien n'est expédié. La commande est considérée comme livrée (voir <a href="commandes-comprendre.html#s4-1">Comprendre les commandes</a>).</td></tr>
+      <tr><td><b>Mondial Relay, Point Relais DPD, Livraison en point relais GLS, point relais Colissimo, DPD Predict</b></td><td>Livraison par transporteur, en point relais ou à domicile, si l'intégration est active (voir <a href="catalogue.html">Catalogue et logistique</a>).</td></tr>
+    </tbody>
+  </table></div>
+  <div class="tip"><span class="ex-label">Bon à savoir</span><p>Pour une <strong>commande de regroupement</strong>, «&nbsp;Livraison chez le client&nbsp;» et «&nbsp;Livraison chez l'hôte&nbsp;» ne sont jamais proposés&nbsp;: le regroupement est livré à la conseillère ou à une adresse unique.</p></div>
+
+  <h3 id="s4-2"><span class="sub-num">4.2</span> Les réglages d'un mode</h3>
+  <div class="table-wrap"><table class="opts">
+    <thead><tr><th>Réglage</th><th>Effet</th></tr></thead>
+    <tbody>
+      <tr><td><b>Interrupteur</b> (en haut à droite de la carte)</td><td>Active ou désactive le mode. Un mode désactivé n'est plus proposé et ses réglages sont grisés. Le changement est enregistré immédiatement.</td></tr>
+      <tr><td><b>Icône de traduction</b></td><td>Ouvre la fenêtre «&nbsp;Traduction&nbsp;» pour renommer le mode dans chaque langue de votre marque (par exemple «&nbsp;Livraison à votre conseillère&nbsp;»).</td></tr>
+      <tr><td><b>Livraison offerte&nbsp;?</b></td><td>Rend le mode <strong>toujours gratuit</strong>. Le tarif de base et les conditions particulières sont alors masqués et ignorés. La case s'enregistre dès qu'on la clique.</td></tr>
+      <tr><td><b>Tarif de base</b></td><td>Le prix du mode quand aucune condition ne s'applique. 0 = gratuit sauf condition contraire.</td></tr>
+      <tr><td><b>Indisponible pour&nbsp;:</b></td><td>Les types de commande pour lesquels le mode n'est pas proposé&nbsp;: Vente directe, Vente en réunion, Kit de démarrage, mini-boutique, commande de regroupement… (seuls les types activés pour votre marque apparaissent).</td></tr>
+      <tr><td><b>Conditions particulières</b></td><td>Les exceptions au tarif de base (voir la section suivante).</td></tr>
+      <tr><td><b>Enregistrer</b> (bas de la carte)</td><td>Enregistre le tarif de base et la liste «&nbsp;Indisponible pour&nbsp;». Les conditions, elles, s'enregistrent dans leur propre fenêtre.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="example"><span class="ex-label">Exemple</span><p>Votre marque réserve la livraison chez l'hôtesse aux ventes en réunion et ne veut pas de retrait sur place pour les kits de démarrage&nbsp;: dans la carte «&nbsp;Enlèvement des produits sur place&nbsp;», sélectionnez «&nbsp;Kit de démarrage&nbsp;» dans «&nbsp;Indisponible pour&nbsp;» puis cliquez sur Enregistrer. La carte «&nbsp;Livraison chez l'hôte&nbsp;» n'a rien à faire&nbsp;: elle n'est déjà jamais proposée en vente directe.</p></div>
+</section>
+
+<!-- 5 -->
+<section id="conditions">
+  <div class="sec-head"><span class="sec-num">05</span><h2>Les conditions particulières</h2></div>
+  <p class="lede">Une condition, c'est une règle «&nbsp;<strong>si</strong> la commande remplit ces critères, <strong>alors</strong> ce mode coûte tant (ou est offert, ou n'est pas proposé)&nbsp;».</p>
+
+  <h3 id="s5-1"><span class="sub-num">5.1</span> Créer une condition</h3>
+  <div class="figrow">
+    <figure><img src="Captures/Logistique/condition-livraison.png" alt="Fenêtre Ajouter une condition : bloc Conditions avec le connecteur ET et une ligne Montant de la commande, supérieur ou égal, 70 ; champs Nouveau tarif, Ajouter nouveau tarif au tarif de base, Montant en pourcentage ?, Livraison offerte ? (cochée), Rendre indisponible ; bouton Enregistrer" loading="lazy"><figcaption>Une condition&nbsp;: livraison offerte dès 70&nbsp;€.</figcaption></figure>
+    <div class="prose" style="display:flex;flex-direction:column;gap:12px">
+      <ol class="prose">
+        <li>Dans la carte du mode, cliquez sur <strong>Ajouter une condition</strong>.</li>
+        <li>Dans «&nbsp;Conditions&nbsp;», choisissez un critère, un opérateur et une valeur. Le bouton d'ajout (étiquette «&nbsp;+&nbsp;») ajoute un critère&nbsp;: <strong>tous les critères doivent être remplis</strong> (connecteur «&nbsp;ET&nbsp;», il n'existe pas de «&nbsp;OU&nbsp;»).</li>
+        <li>Choisissez le résultat&nbsp;: un nouveau tarif, la livraison offerte ou l'indisponibilité.</li>
+        <li>Cliquez sur <strong>Enregistrer</strong>. La condition apparaît dans le tableau «&nbsp;Condition / Tarif&nbsp;» de la carte, avec un crayon pour la modifier et une croix pour la supprimer.</li>
+      </ol>
+      <div class="tip"><span class="ex-label">Bon à savoir</span><p>Pour exprimer un «&nbsp;OU&nbsp;», créez deux conditions. Pour une tranche («&nbsp;entre 100 et 150&nbsp;€&nbsp;»), utilisez l'opérateur «&nbsp;entre&nbsp;» ou deux critères de montant dans la même condition.</p></div>
+    </div>
+  </div>
+
+  <h3 id="s5-2"><span class="sub-num">5.2</span> Les critères</h3>
+  <p>Les critères les plus utilisés par les marques sont, dans l'ordre, le montant de la commande, le type de commande, le pays de livraison et le rôle de la cliente.</p>
+  <div class="table-wrap"><table class="opts">
+    <thead><tr><th>Critère (libellé à l'écran)</th><th>Ce qui est testé</th></tr></thead>
+    <tbody>
+      <tr><td><b>Montant de la commande</b></td><td>Le montant de référence choisi en <a href="#s3-1">3.1</a>. Opérateurs&nbsp;: égal, différent, inférieur, supérieur (ou égal), entre.</td></tr>
+      <tr><td><b>Montant de la commande HT</b></td><td>La même chose, hors taxes.</td></tr>
+      <tr><td><b>Montant TTC commissionnable</b></td><td>Le montant de la commande qui compte pour la commission de la conseillère.</td></tr>
+      <tr><td><b>Nombre de produits dans la commande</b></td><td>Le nombre d'articles.</td></tr>
+      <tr><td><b>Poids de la commande</b></td><td>Le poids total des produits (poids de la fiche produit × quantité).</td></tr>
+      <tr><td><b>Commande</b> (la commande contient le produit)</td><td>La présence d'un produit donné dans la commande.</td></tr>
+      <tr><td><b>Type de commande</b></td><td>Vente en réunion, Vente directe, Kit de démarrage, commande dans un regroupement…</td></tr>
+      <tr><td><b>Pays de livraison</b>, <b>Département de livraison</b></td><td>L'adresse de livraison (utile pour la Corse ou l'outre-mer).</td></tr>
+      <tr><td><b>Pays du vendeur</b>, <b>Département du vendeur</b></td><td>L'adresse de la conseillère.</td></tr>
+      <tr><td><b>Rôle</b></td><td>Le ou les rôles de la cliente (par exemple «&nbsp;Vendeur&nbsp;» pour les commandes personnelles des conseillères).</td></tr>
+      <tr><td><b>Nouveau</b></td><td>La cliente n'a encore jamais commandé (ou, au contraire, a déjà commandé).</td></tr>
+      <tr><td><b>Hôte de la réunion</b></td><td>La cliente est (ou n'est pas) l'hôtesse de la réunion.</td></tr>
+      <tr><td><b>La réunion est virtuelle</b></td><td>La commande vient d'une réunion à distance.</td></tr>
+      <tr><td><b>CA client / CA vendeur du mois en cours ou du mois dernier</b></td><td>Le chiffre d'affaires de la cliente ou de la conseillère sur la période.</td></tr>
+      <tr><td><b>La commande possède déjà une adresse de livraison personnalisée</b>, <b>Livré à une boîte postale</b></td><td>Des particularités de l'adresse.</td></tr>
+      <tr><td><b>Mode de livraison de la commande initiale</b></td><td>Pour une commande d'échange&nbsp;: le mode choisi sur la commande d'origine.</td></tr>
+      <tr><td><b>Poids des commandes vendeur dans les commandes de regroupement</b></td><td>Pour les commandes de regroupement.</td></tr>
+      <tr><td><b>Type du client</b></td><td>La cliente est «&nbsp;Exonérés de taxes&nbsp;». Critère visible seulement si l'exonération de TVA des clientes est activée pour votre marque.</td></tr>
+      <tr><td><b>Catalogue</b>, <b>Nouveau client pour le catalogue</b></td><td>Pour les marques à plusieurs catalogues.</td></tr>
+    </tbody>
+  </table></div>
+  <p class="muted">Des critères propres à certains pays (livraison en Alaska, à Hawaï) existent aussi.</p>
+
+  <h3 id="s5-3"><span class="sub-num">5.3</span> Les résultats possibles</h3>
+  <div class="table-wrap"><table class="opts">
+    <thead><tr><th>Réglage de la condition</th><th>Effet quand la condition est remplie</th><th>Affiché dans «&nbsp;Tarif&nbsp;»</th></tr></thead>
+    <tbody>
+      <tr><td><b>Nouveau tarif</b></td><td>Remplace le tarif de base par ce montant.</td><td>6,9&nbsp;€</td></tr>
+      <tr><td><b>Ajouter nouveau tarif au tarif de base</b></td><td>Le nouveau tarif s'ajoute au tarif de base au lieu de le remplacer (supplément).</td><td>+5&nbsp;€</td></tr>
+      <tr><td><b>Montant en pourcentage&nbsp;?</b></td><td>Le nouveau tarif devient un pourcentage du montant de la commande (montant de référence de la <a href="#s3-1">section 3.1</a>).</td><td>10%</td></tr>
+      <tr><td><b>Livraison offerte&nbsp;?</b></td><td>Le mode devient gratuit.</td><td>Livraison gratuite</td></tr>
+      <tr><td><b>Rendre indisponible</b></td><td>Le mode n'est plus proposé pour cette commande.</td><td>Indisponible</td></tr>
+    </tbody>
+  </table></div>
+  <div class="example"><span class="ex-label">Exemple de pourcentage</span><p>Condition «&nbsp;Montant de la commande ≥ 80&nbsp;», Montant en pourcentage coché, Nouveau tarif 12. Pour la commande de Zoé à 150&nbsp;€, les frais sont de 150 × 12&nbsp;% = <strong>18,00&nbsp;€</strong>. Avec «&nbsp;Ajouter nouveau tarif au tarif de base&nbsp;» et un tarif de base de 7,95&nbsp;€&nbsp;: 18,00 + 7,95 = <strong>25,95&nbsp;€</strong>.</p></div>
+</section>
+
+<!-- 6 -->
+<section id="calcul">
+  <div class="sec-head"><span class="sec-num">06</span><h2>Comment le tarif est calculé</h2></div>
+  <p class="lede">Pour chaque mode actif, SellingAtHome suit toujours le même ordre. Plusieurs conditions peuvent être remplies en même temps&nbsp;: c'est la plus favorable à la cliente qui l'emporte.</p>
+  <div class="steps-calc">
+    <div><b>La commande est un cadeau&nbsp;?</b> Les frais sont toujours de 0&nbsp;€.</div>
+    <div><b>Le mode est indisponible pour ce type de commande&nbsp;?</b> Il n'est pas proposé (liste «&nbsp;Indisponible pour&nbsp;»).</div>
+    <div><b>Le mode est coché «&nbsp;Livraison offerte&nbsp;»&nbsp;?</b> Il coûte 0&nbsp;€, les conditions ne sont pas regardées.</div>
+    <div><b>SellingAtHome teste toutes les conditions du mode</b> et garde celles dont tous les critères sont remplis.</div>
+    <div><b>Une condition remplie rend le mode indisponible&nbsp;?</b> Le mode n'est pas proposé, même si une autre condition l'offre.</div>
+    <div><b>Une condition remplie offre la livraison&nbsp;?</b> Le mode coûte 0&nbsp;€.</div>
+    <div><b>Sinon, le tarif le plus bas</b> parmi les conditions remplies s'applique.</div>
+    <div><b>Aucune condition remplie&nbsp;?</b> C'est le tarif de base.</div>
+  </div>
+  <div class="warn"><span class="ex-label">Attention</span><p>Une condition «&nbsp;Rendre indisponible&nbsp;» l'emporte sur tout le reste. Une condition avec un nouveau tarif <strong>plus cher</strong> que le tarif de base ne s'applique que si c'est la seule remplie&nbsp;: elle remplace bien le tarif de base (par exemple 50&nbsp;€ pour l'outre-mer).</p></div>
+</section>
+
+<!-- 7 -->
+<section id="exemples">
+  <div class="sec-head"><span class="sec-num">07</span><h2>Exemples chiffrés</h2></div>
+  <p class="lede">Ces exemples reprennent des paramétrages réellement utilisés par des marques (montants arrondis).</p>
+
+  <div class="example"><span class="ex-label">1. Franco de port à partir de 60 €</span>
+    <p>Mode «&nbsp;Livraison chez le client&nbsp;»&nbsp;: tarif de base <strong>6,90&nbsp;€</strong>. Condition «&nbsp;Montant de la commande ≥ 60&nbsp;» → Livraison offerte.</p>
+    <ul class="prose"><li>Camille commande 54&nbsp;€ → <strong>6,90&nbsp;€</strong> de frais.</li><li>Inès commande 72&nbsp;€ → <strong>livraison offerte</strong>.</li></ul>
+    <p class="muted">C'est le paramétrage le plus répandu&nbsp;: les seuils observés vont de 45 à 300&nbsp;€, le plus souvent entre 70 et 100&nbsp;€.</p>
+  </div>
+
+  <div class="example"><span class="ex-label">2. Tarif dégressif</span>
+    <p>Mode «&nbsp;Livraison chez le client&nbsp;»&nbsp;: tarif de base <strong>0&nbsp;€</strong>. Conditions&nbsp;: «&nbsp;Montant &lt; 100&nbsp;» → 7,50&nbsp;€&nbsp;; «&nbsp;Montant ≥ 100 ET Montant &lt; 150&nbsp;» → 3,00&nbsp;€.</p>
+    <div class="table-wrap"><table class="calc">
+      <thead><tr><th>Commande</th><th>Condition remplie</th><th>Frais</th></tr></thead>
+      <tbody>
+        <tr><td>Emma, 80&nbsp;€</td><td>&lt; 100</td><td>7,50&nbsp;€</td></tr>
+        <tr><td>Zoé, 120&nbsp;€</td><td>entre 100 et 150</td><td>3,00&nbsp;€</td></tr>
+        <tr><td>Camille, 180&nbsp;€</td><td>aucune → tarif de base</td><td>0,00&nbsp;€</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+
+  <div class="example"><span class="ex-label">3. Deux paliers qui se chevauchent</span>
+    <p>Mode «&nbsp;Livraison chez le client&nbsp;»&nbsp;: tarif de base <strong>7,50&nbsp;€</strong>. Conditions «&nbsp;Montant ≥ 50&nbsp;» → 4,50&nbsp;€ et «&nbsp;Montant ≥ 100&nbsp;» → Livraison offerte.</p>
+    <ul class="prose"><li>40&nbsp;€ → aucune condition → <strong>7,50&nbsp;€</strong>.</li><li>70&nbsp;€ → «&nbsp;≥ 50&nbsp;» → <strong>4,50&nbsp;€</strong>.</li><li>120&nbsp;€ → les deux conditions sont remplies, la livraison offerte l'emporte → <strong>0&nbsp;€</strong>.</li></ul>
+  </div>
+
+  <div class="example"><span class="ex-label">4. Livraison offerte en réunion au-delà de 50 €</span>
+    <p>Mode «&nbsp;Livraison chez le vendeur&nbsp;»&nbsp;: tarif de base <strong>3,90&nbsp;€</strong>. Condition «&nbsp;Type de commande = Vente en réunion ET Montant de la commande ≥ 50&nbsp;» → Livraison offerte.</p>
+    <ul class="prose"><li>Pendant la réunion de Jade, Emma commande 42&nbsp;€ → <strong>3,90&nbsp;€</strong>.</li><li>Zoé, à la même réunion, commande 65&nbsp;€ → <strong>offerte</strong>.</li><li>Une semaine plus tard, Zoé recommande 65&nbsp;€ en vente directe → <strong>3,90&nbsp;€</strong> (ce n'est plus une vente en réunion).</li></ul>
+  </div>
+
+  <div class="example"><span class="ex-label">5. Supplément pour l'outre-mer</span>
+    <p>Mode «&nbsp;Livraison chez le client&nbsp;»&nbsp;: tarif de base <strong>12&nbsp;€</strong>. Condition «&nbsp;Pays de livraison dans Guadeloupe, Martinique ET Département de livraison dans 971, 972&nbsp;» → nouveau tarif 50&nbsp;€. Une commande livrée en Martinique paie <strong>50&nbsp;€</strong>&nbsp;; en métropole, <strong>12&nbsp;€</strong>.</p>
+  </div>
+
+  <div class="example"><span class="ex-label">6. Mode réservé à un usage</span>
+    <p>Plusieurs marques réservent la livraison chez la conseillère aux commandes de regroupement d'au moins 400&nbsp;€&nbsp;: deux conditions «&nbsp;Type de commande différent de Commande de regroupement&nbsp;» → Rendre indisponible et «&nbsp;Type = Commande de regroupement ET Montant &lt; 400&nbsp;» → Rendre indisponible, plus «&nbsp;Type = Commande de regroupement ET Montant ≥ 400&nbsp;» → Livraison offerte. Le mode n'apparaît que lorsque la livraison est offerte.</p>
+  </div>
+</section>
+
+<!-- 8 -->
+<section id="chiffres">
+  <div class="sec-head"><span class="sec-num">08</span><h2>Les livraisons en chiffres</h2></div>
+  <p class="lede">Sur l'ensemble des 35 marques actives, commandes payées sur un an.</p>
+  <div class="stats">
+    <div class="stat"><b>80&nbsp;%</b><span>des ventes en réunion et ventes directes sont livrées sans frais</span></div>
+    <div class="stat"><b>2&nbsp;€</b><span>frais médians quand la livraison est payante</span></div>
+    <div class="stat"><b>31 / 35</b><span>marques utilisent au moins une condition particulière</span></div>
+  </div>
+  <h3 style="margin-top:22px">Modes choisis dans les commandes payées</h3>
+  <div class="share" aria-label="Répartition des commandes payées par mode de livraison">
+    <div class="share-row"><span><b>Chez la conseillère</b></span><div class="share-bar"><i style="width:56.7%"></i></div><span class="pct">57&nbsp;%</span></div>
+    <div class="share-row"><span><b>Chez l'hôtesse</b></span><div class="share-bar"><i style="width:14.1%"></i></div><span class="pct">14&nbsp;%</span></div>
+    <div class="share-row"><span><b>Chez la cliente</b></span><div class="share-bar"><i style="width:11.2%"></i></div><span class="pct">11&nbsp;%</span></div>
+    <div class="share-row"><span><b>Adresse personnalisée</b></span><div class="share-bar"><i style="width:9.9%"></i></div><span class="pct">10&nbsp;%</span></div>
+    <div class="share-row"><span><b>Retrait sur place</b></span><div class="share-bar"><i style="width:4.7%"></i></div><span class="pct">5&nbsp;%</span></div>
+    <div class="share-row"><span>Points relais et autres</span><div class="share-bar"><i style="width:3.4%"></i></div><span class="pct">3&nbsp;%</span></div>
+  </div>
+  <ul class="prose">
+    <li><strong>Modes activés</strong>&nbsp;: chez la conseillère (34 marques sur 35), chez la cliente (29), adresse personnalisée (23), retrait sur place (17), chez l'hôtesse (13), Mondial Relay (9).</li>
+    <li><strong>Tarifs de base médians</strong>&nbsp;: 1,50&nbsp;€ chez la conseillère, 6,50&nbsp;€ chez la cliente ou à une adresse personnalisée.</li>
+    <li><strong>Montant de référence</strong>&nbsp;: non remisé pour 17 marques, remisé pour 9, remisé hors bons d'achat pour 9.</li>
+    <li><strong>TVA des frais</strong>&nbsp;: taux le plus bas pour 24 marques, taux personnalisé pour 8, taux le plus haut pour 3.</li>
+  </ul>
+</section>
+
+<!-- 9 -->
+<section id="conseillere">
+  <div class="sec-head"><span class="sec-num">09</span><h2>Ce que voit la conseillère</h2></div>
+  <p>Au moment de la commande, la conseillère voit la liste des modes <strong>actifs et disponibles</strong> pour cette commande, chacun avec son tarif déjà calculé. Un mode rendu indisponible (par le type de commande ou par une condition) n'apparaît tout simplement pas. Le tarif est recalculé quand le panier change&nbsp;: si Camille ajoute un produit et dépasse votre seuil, la livraison devient offerte.</p>
+</section>
+
+<!-- 10 -->
+<section id="attention">
+  <div class="sec-head"><span class="sec-num">10</span><h2>Points d'attention</h2></div>
+  <ul class="prose">
+    <li><strong>Deux boutons Enregistrer</strong>&nbsp;: celui de la configuration générale et celui de chaque carte. Les conditions s'enregistrent dans leur fenêtre, l'interrupteur et la case «&nbsp;Livraison offerte&nbsp;» immédiatement.</li>
+    <li><strong>«&nbsp;Livraison offerte&nbsp;» sur le mode</strong> neutralise toutes ses conditions, y compris les «&nbsp;Rendre indisponible&nbsp;».</li>
+    <li><strong>Seuils décimaux</strong>&nbsp;: préférez des seuils ronds (60, et non 59,99) et l'opérateur «&nbsp;supérieur ou égal&nbsp;» plutôt que «&nbsp;supérieur&nbsp;» pour éviter les cas limites. Pour une tranche, l'opérateur «&nbsp;entre&nbsp;» inclut les deux bornes.</li>
+    <li><strong>Suppléments cumulés</strong>&nbsp;: évitez que plusieurs conditions «&nbsp;Ajouter nouveau tarif au tarif de base&nbsp;» puissent être remplies en même temps&nbsp;; testez le résultat sur une commande.</li>
+    <li><strong>Critère «&nbsp;Type du client&nbsp;»</strong>&nbsp;: vérifiez toujours son effet sur une commande de test d'une cliente exonérée avant de le mettre en service.</li>
+    <li><strong>Changer un tarif</strong> ne modifie pas les commandes déjà payées&nbsp;: seules les commandes saisies ou recalculées ensuite sont concernées.</li>
+    <li><strong>Supprimer une condition</strong> est immédiat (après confirmation «&nbsp;Voulez-vous vraiment supprimer cette condition&nbsp;?&nbsp;»).</li>
+  </ul>
+</section>
+
+<!-- 11 -->
+<section id="faq">
+  <div class="sec-head"><span class="sec-num">11</span><h2>Questions fréquentes</h2></div>
+  <div class="faq">
+    <details><summary>Une cliente a dépassé le seuil mais paie quand même la livraison&nbsp;: pourquoi&nbsp;?</summary><div><p>Vérifiez le montant de référence (<a href="#s3-1">3.1</a>)&nbsp;: avec «&nbsp;le montant remisé&nbsp;», réductions et bons d'achat font baisser le montant comparé au seuil. Vérifiez aussi qu'aucun produit de la commande n'est «&nbsp;Non inclus dans le calcul des frais de livraison&nbsp;».</p></div></details>
+    <details><summary>Un mode n'apparaît pas pour la conseillère&nbsp;: que vérifier&nbsp;?</summary><div><p>Qu'il est activé (interrupteur), que le type de commande n'est pas dans «&nbsp;Indisponible pour&nbsp;», qu'aucune condition «&nbsp;Rendre indisponible&nbsp;» n'est remplie. «&nbsp;Livraison chez l'hôte&nbsp;» n'existe qu'en réunion.</p></div></details>
+    <details><summary>Comment offrir la livraison uniquement aux conseillères pour leurs commandes personnelles&nbsp;?</summary><div><p>Ajoutez une condition avec le critère «&nbsp;Rôle&nbsp;» égal (ou dans) le rôle de vos conseillères, et cochez «&nbsp;Livraison offerte&nbsp;?&nbsp;».</p></div></details>
+    <details><summary>Puis-je renommer «&nbsp;Livraison chez le vendeur&nbsp;»&nbsp;?</summary><div><p>Oui, avec l'icône de traduction de la carte&nbsp;: un nom par langue de votre marque.</p></div></details>
+    <details><summary>Les frais de port sont-ils pris en compte dans le seuil de livraison offerte&nbsp;?</summary><div><p>Non. Le montant comparé est celui des produits (selon le réglage <a href="#s3-1">3.1</a>), hors frais de livraison.</p></div></details>
+  </div>
+</section>
+
+  </main>
+</div>

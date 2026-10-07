@@ -1,0 +1,246 @@
+<!--page {"title":"Les retours produits"} -->
+<style>
+.timeline { display:flex; flex-direction:column; border-left:3px solid var(--rule); margin-left:10px; }
+.tl { position:relative; padding:0 0 20px 28px; }
+.tl::before { content:""; position:absolute; left:-9px; top:4px; width:15px; height:15px; border-radius:50%; background:var(--card); border:3px solid var(--accent); }
+.tl.stop::before { border-color:var(--pink); }
+.tl b { color:var(--heading); display:block; }
+.tl .st { display:flex; flex-wrap:wrap; gap:6px; margin-top:6px; }
+.tl p { color:var(--muted); font-size:.93rem; margin-top:4px; }
+.chip { display:inline-block; border-radius:100px; padding:3px 11px; font-size:.78rem; font-weight:700; background:var(--surface); color:var(--heading); border:1px solid var(--rule); }
+.chip.g { background:var(--accent-wash); color:var(--accent-ink); border-color:transparent; }
+.chip.p { background:var(--pink-wash); color:var(--pink-ink); border-color:transparent; }
+.chip.y { background:var(--yellow-wash); color:var(--yellow-ink); border-color:transparent; }
+.two-types { display:grid; grid-template-columns:repeat(auto-fit, minmax(240px,1fr)); gap:14px; }
+.two-types .card { border-top:5px solid var(--accent); }
+.two-types .card:nth-child(2) { border-top-color:var(--pink); }
+</style>
+<header class="hero">
+  <div class="hero-in">
+    <div>
+      <span class="eyebrow">Commandes et boutiques</span>
+      <h1>Les retours <span class="script">produits</span></h1>
+      <p class="lede">Les conseillères vous demandent de reprendre un article&nbsp;; vous acceptez, refusez ou demandez des précisions. Les motifs de retour, le parcours d'une demande, son traitement, et ce que le module fait… ou ne fait pas.</p>
+      <p><span class="tag yellow" style="display:inline-block">Module optionnel</span></p>
+    </div>
+    <div class="voucher-art" aria-hidden="true">
+      <div class="v-top"><span>Retour neuf</span><span>Léa</span></div>
+      <div class="v-amount">1<span> article</span></div>
+      <div class="v-name">Mauvaise taille</div>
+      <div class="v-sep"></div>
+      <div class="v-meta"><span>Statut <b>En attente</b></span><span>Cliente <b>Camille</b></span></div>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="toc" aria-label="Sommaire">
+    <details id="tocDetails" open>
+      <summary>Sommaire</summary>
+      <div class="toc-title">Sommaire</div>
+      <ol>
+        <li data-sec="definition"><a href="#definition"><span class="toc-n">1</span>À quoi sert le module&nbsp;?</a></li>
+        <li data-sec="ou"><a href="#ou"><span class="toc-n">2</span>Où le trouver</a></li>
+        <li data-sec="principe"><a href="#principe"><span class="toc-n">3</span>Le parcours d'une demande</a></li>
+        <li data-sec="motifs"><a href="#motifs"><span class="toc-n">4</span>Les motifs de retour</a>
+          <ol class="toc-sub"><li><a href="#s4-1"><span class="toc-n">4.1</span>Retour neuf, retour qualité</a></li><li><a href="#s4-2"><span class="toc-n">4.2</span>Créer un motif et ses sous-motifs</a></li><li><a href="#s4-3"><span class="toc-n">4.3</span>Modifier, supprimer</a></li></ol>
+        </li>
+        <li data-sec="demande"><a href="#demande"><span class="toc-n">5</span>La demande de la conseillère</a></li>
+        <li data-sec="traiter"><a href="#traiter"><span class="toc-n">6</span>Traiter les demandes</a>
+          <ol class="toc-sub"><li><a href="#s6-1"><span class="toc-n">6.1</span>La liste</a></li><li><a href="#s6-2"><span class="toc-n">6.2</span>Répondre à une demande</a></li><li><a href="#s6-3"><span class="toc-n">6.3</span>Les statuts</a></li></ol>
+        </li>
+        <li data-sec="effets"><a href="#effets"><span class="toc-n">7</span>Échange, avoir, stock&nbsp;: les suites</a></li>
+        <li data-sec="exemple"><a href="#exemple"><span class="toc-n">8</span>Exemple</a></li>
+        <li data-sec="v2"><a href="#v2"><span class="toc-n">9</span>La version 2</a></li>
+        <li data-sec="attention"><a href="#attention"><span class="toc-n">10</span>Points d'attention</a></li>
+        <li data-sec="faq"><a href="#faq"><span class="toc-n">11</span>Questions fréquentes</a></li>
+      </ol>
+    </details>
+  </nav>
+
+  <main>
+
+<!-- 1 -->
+<section id="definition">
+  <div class="sec-head"><span class="sec-num">01</span><h2>À quoi sert le module retours&nbsp;?</h2></div>
+  <p class="lede">Le module retours est un <strong>formulaire de demande</strong>&nbsp;: la conseillère signale qu'un article doit revenir (erreur de taille, produit défectueux…), avec un motif, et vous lui répondez depuis l'espace marque. Il centralise les demandes et les réponses&nbsp;; la reprise physique, le remboursement ou l'échange se gèrent ensuite.</p>
+  <div class="tip"><span class="ex-label">Vocabulaire</span><p>Les écrans disent «&nbsp;VDI&nbsp;» ou «&nbsp;Vendeur&nbsp;» pour la conseillère, et «&nbsp;Client&nbsp;» pour la cliente.</p></div>
+  <div class="stats">
+    <div class="stat"><b>12</b><span>marques sur 35 ont le module retours</span></div>
+    <div class="stat"><b>11</b><span>d'entre elles utilisent la version 1, décrite ici</span></div>
+    <div class="stat"><b>4</b><span>marques en version 1 ont reçu des demandes sur un an</span></div>
+  </div>
+  <p class="muted">Le module est activé par l'équipe SellingAtHome. Cette page décrit la <strong>version 1</strong>, celle de toutes les marques sauf une. La <a href="#v2">version 2</a> existe sur demande.</p>
+</section>
+
+<!-- 2 -->
+<section id="ou">
+  <div class="sec-head"><span class="sec-num">02</span><h2>Où le trouver</h2></div>
+  <div class="grid-2">
+    <div class="card"><span class="tag">Les motifs</span><div class="path" aria-label="Chemin d'accès"><span>Paramètres</span><span><b>Gérer les motifs de retour</b></span></div><p>La liste des motifs que la conseillère choisit dans sa demande.</p></div>
+    <div class="card"><span class="tag pink">Les demandes</span><div class="path" aria-label="Chemin d'accès"><span>Formulaires</span><span><b>Retours d'articles</b></span></div><p>Les demandes des conseillères, à traiter. Une pastille indique le nombre de demandes en attente.</p></div>
+  </div>
+</section>
+
+<!-- 3 -->
+<section id="principe">
+  <div class="sec-head"><span class="sec-num">03</span><h2>Le parcours d'une demande</h2></div>
+  <div class="timeline">
+    <div class="tl"><b>1. La conseillère fait sa demande</b><div class="st"><span class="chip">En attente</span></div><p>Depuis la commande livrée de sa cliente, ou depuis le catalogue. Elle choisit le type, le motif, la quantité, et ajoute un message et des photos.</p></div>
+    <div class="tl"><b>2. La pastille du menu Formulaires s'incrémente</b><p>La demande apparaît dans Formulaires › Retours d'articles. Pour un retour neuf, la cliente reçoit un e-mail de prise en compte (si le modèle d'e-mail est configuré).</p></div>
+    <div class="tl"><b>3. Vous répondez</b><div class="st"><span class="chip g">Acceptée</span><span class="chip p">Refusée</span><span class="chip y">Précisions requises</span></div><p>La conseillère reçoit un e-mail avec votre commentaire.</p></div>
+    <div class="tl"><b>4. Si vous demandez des précisions</b><div class="st"><span class="chip">En attente</span></div><p>La conseillère complète sa demande, qui revient en attente.</p></div>
+    <div class="tl stop"><b>5. La suite se gère hors du module</b><p>Reprise de l'article, avoir, nouvelle commande&nbsp;: voir <a href="#effets">les suites</a>.</p></div>
+  </div>
+</section>
+
+<!-- 4 -->
+<section id="motifs">
+  <div class="sec-head"><span class="sec-num">04</span><h2>Les motifs de retour</h2></div>
+  <div class="path" aria-label="Chemin d'accès"><span>Paramètres</span><span><b>Gérer les motifs de retour</b></span></div>
+  <figure><img src="Captures/Commandes/retours-motifs.png" alt="Écran Motif de retours d'article : tableau Tous les motifs avec les colonnes Type de motif et Libellé du motif ; un motif Retour qualité Produit défectueux et ses deux sous-motifs préfixés par une flèche, deux motifs Retour neuf ; boutons plus, crayon et corbeille ; bouton Nouveau motif" loading="lazy"><figcaption>Les motifs et leurs sous-motifs (précédés de «&nbsp;=&gt;&nbsp;»).</figcaption></figure>
+
+  <h3 id="s4-1"><span class="sub-num">4.1</span> Retour neuf, retour qualité</h3>
+  <div class="two-types">
+    <div class="card"><span class="tag">Retour neuf</span><p>L'article est intact mais ne convient pas&nbsp;: rétractation, erreur de taille ou de couleur, doublon.</p></div>
+    <div class="card"><span class="tag pink">Retour qualité</span><p>L'article pose problème&nbsp;: défaut, casse, emballage abîmé.</p></div>
+  </div>
+  <p>Chaque motif appartient à un de ces deux types. Dans sa demande, la conseillère choisit d'abord le type, puis un motif de ce type.</p>
+
+  <h3 id="s4-2"><span class="sub-num">4.2</span> Créer un motif et ses sous-motifs</h3>
+  <ol class="prose">
+    <li>Cliquez sur <strong>Nouveau motif</strong>.</li>
+    <li>Choisissez le <strong>type</strong> (Retour neuf ou Retour qualité).</li>
+    <li>Saisissez le <strong>libellé</strong> dans chaque langue de votre marque (un onglet par langue).</li>
+    <li>Validez avec <strong>Créer le motif</strong>.</li>
+  </ol>
+  <p>Pour détailler un motif, cliquez sur le bouton <strong>+</strong> de sa ligne&nbsp;: vous créez un <strong>sous-motif</strong>. La conseillère le choisit dans un second menu, «&nbsp;Précisez&nbsp;». Il n'y a qu'un niveau de sous-motifs&nbsp;: le bouton <strong>+</strong> n'apparaît que sur les motifs principaux.</p>
+  <div class="example"><span class="ex-label">Exemple</span><p>Motif «&nbsp;Produit défectueux&nbsp;» (retour qualité), avec deux sous-motifs&nbsp;: «&nbsp;Problème d'emballage&nbsp;» et «&nbsp;Mauvaise couleur&nbsp;». Léa choisit «&nbsp;Produit défectueux&nbsp;», puis précise «&nbsp;Problème d'emballage&nbsp;».</p></div>
+  <div class="warn"><span class="ex-label">Attention</span><p>Traduisez chaque motif dans toutes vos langues. Une conseillère dont la langue n'est pas renseignée voit le libellé anglais, ou un libellé vide.</p></div>
+
+  <h3 id="s4-3"><span class="sub-num">4.3</span> Modifier, supprimer</h3>
+  <ul class="prose">
+    <li>Le <strong>crayon</strong> modifie le type et les libellés.</li>
+    <li>La <strong>corbeille</strong> supprime définitivement le motif <strong>et ses sous-motifs</strong>. Les demandes déjà faites avec ce motif sont conservées, mais n'affichent plus de motif.</li>
+  </ul>
+  <p class="muted">Un motif n'a pas d'autre réglage&nbsp;: pas d'ordre d'affichage, pas d'état actif/inactif, pas de suite automatique (échange, avoir). Pour retirer temporairement un motif, il faut le supprimer.</p>
+</section>
+
+<!-- 5 -->
+<section id="demande">
+  <div class="sec-head"><span class="sec-num">05</span><h2>La demande de la conseillère</h2></div>
+  <p class="lede">La conseillère dispose de deux points d'entrée dans son espace.</p>
+  <div class="grid-2">
+    <div class="card"><span class="tag">Depuis la commande</span><p>Sur une commande au statut d'expédition <strong>Commande livrée</strong>, chaque ligne de produit porte un bouton «&nbsp;Retour&nbsp;». Une fois la demande faite, le bouton laisse place au statut de la demande.</p></div>
+    <div class="card"><span class="tag pink">Depuis le catalogue</span><p>Sur la fiche d'un produit, le bouton «&nbsp;Retour&nbsp;» ouvre le formulaire. La conseillère choisit la cliente, puis une de ses commandes <strong>payées</strong> contenant ce produit. Un délai maximum (en mois après le paiement) peut être fixé par l'équipe SellingAtHome.</p></div>
+  </div>
+  <p>Le formulaire contient&nbsp;:</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Champ</th><th>Détail</th></tr></thead>
+    <tbody>
+      <tr><td><b>Type</b> et <b>Motif</b> (obligatoires)</td><td>Le motif est filtré selon le type&nbsp;; «&nbsp;Précisez&nbsp;» propose les sous-motifs.</td></tr>
+      <tr><td><b>Quantité</b> (obligatoire)</td><td>Au moins 1.</td></tr>
+      <tr><td><b>Message</b> (obligatoire)</td><td>L'explication de la conseillère.</td></tr>
+      <tr><td><b>Numéro de commande</b>, <b>Numéro de colis</b></td><td>Pour retrouver l'envoi.</td></tr>
+      <tr><td><b>Photos</b></td><td>Jusqu'à 3 images JPEG ou PNG de 5&nbsp;Mo maximum.</td></tr>
+      <tr><td><b>Champs propres à votre marque</b></td><td>Si l'équipe SellingAtHome en a ajouté (code de production, nom de la cliente pour un retour qualité…).</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- 6 -->
+<section id="traiter">
+  <div class="sec-head"><span class="sec-num">06</span><h2>Traiter les demandes</h2></div>
+
+  <h3 id="s6-1"><span class="sub-num">6.1</span> La liste</h3>
+  <div class="path" aria-label="Chemin d'accès"><span>Formulaires</span><span><b>Retours d'articles</b></span></div>
+  <ul class="prose">
+    <li>En haut, deux indicateurs&nbsp;: <strong>Taux de demandes acceptées</strong> et <strong>Taux de demandes refusées</strong>, calculés sur toutes les demandes reçues depuis le début.</li>
+    <li>Le tableau <strong>Toutes les demandes</strong>&nbsp;: Numéro de retour, Référence produit, VDI, Client, Date, Statut, et un bouton d'édition. Les plus récentes d'abord.</li>
+    <li>La <strong>recherche</strong> porte sur la référence produit, le numéro de retour, la conseillère et la cliente. Le bouton <strong>Filtrer</strong> filtre par statut (et par catalogue, si votre marque en a plusieurs). Les filtres sont mémorisés par votre navigateur.</li>
+  </ul>
+
+  <h3 id="s6-2"><span class="sub-num">6.2</span> Répondre à une demande</h3>
+  <div class="figrow">
+    <figure><img src="Captures/Commandes/retours-fiche.png" alt="Fiche Demande de retour d'article : bandeau Demande en attente, puis Référence produit, VDI, Client, Date, Type Retour neuf, Motif Mauvaise taille, Quantité, Informations de suivi, Numéro de commande, Message" loading="lazy"><figcaption>Une demande en attente (noms fictifs). En bas de la fiche&nbsp;: le champ Commentaire et les boutons de réponse.</figcaption></figure>
+    <div class="prose" style="display:flex;flex-direction:column;gap:12px">
+      <p>Ouvrez la demande avec le bouton d'édition. La fiche reprend tout ce que la conseillère a saisi, photos comprises. Sous le champ <strong>Commentaire</strong>, trois boutons&nbsp;:</p>
+      <ul class="prose">
+        <li><strong>Accepter</strong>&nbsp;: la demande passe à «&nbsp;Acceptée&nbsp;»&nbsp;;</li>
+        <li><strong>Plus d'infos&nbsp;?</strong>&nbsp;: la demande est renvoyée à la conseillère (commentaire obligatoire)&nbsp;;</li>
+        <li><strong>Refuser</strong>&nbsp;: la demande passe à «&nbsp;Refusée&nbsp;» (commentaire obligatoire).</li>
+      </ul>
+      <p>La conseillère reçoit un e-mail avec la référence du produit et votre commentaire. Les modèles de ces e-mails (accepté, refusé, incomplet) se trouvent dans Paramètres › Templates email&nbsp;; si un modèle n'est pas configuré, rien n'est envoyé.</p>
+    </div>
+  </div>
+  <div class="warn"><span class="ex-label">Attention</span><p>Une réponse est définitive&nbsp;: une fois la demande acceptée ou refusée, la fiche passe en lecture seule. Seule une demande «&nbsp;En attente&nbsp;» peut recevoir une réponse.</p></div>
+
+  <h3 id="s6-3"><span class="sub-num">6.3</span> Les statuts</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Statut</th><th>Signification</th><th>Qui agit ensuite</th></tr></thead>
+    <tbody>
+      <tr><td><span class="chip">En attente</span></td><td>Nouvelle demande, ou demande complétée par la conseillère.</td><td>La marque</td></tr>
+      <tr><td><span class="chip g">Acceptée</span></td><td>Vous acceptez le retour.</td><td>Organisation de la reprise</td></tr>
+      <tr><td><span class="chip p">Refusée</span></td><td>Vous refusez, avec votre explication.</td><td>Personne</td></tr>
+      <tr><td><span class="chip y">Précisions requises</span></td><td>Vous attendez des informations ou une photo.</td><td>La conseillère</td></tr>
+    </tbody>
+  </table></div>
+  <p class="muted">Pour les marques reliées à un logiciel de gestion externe, d'autres statuts peuvent être posés par la synchronisation (reçu, en cours, avoir, échange…).</p>
+</section>
+
+<!-- 7 -->
+<section id="effets">
+  <div class="sec-head"><span class="sec-num">07</span><h2>Échange, avoir, stock&nbsp;: les suites</h2></div>
+  <p class="lede">Dans la version 1, <strong>accepter une demande n'a aucun effet automatique</strong>&nbsp;: pas d'avoir, pas de commande d'échange, pas de remise en stock, pas de bon d'achat. La réponse est enregistrée et la conseillère est prévenue. C'est tout.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Vous voulez…</th><th>Comment faire</th></tr></thead>
+    <tbody>
+      <tr><td><b>Rembourser ou créditer la cliente</b></td><td>Annulez la ligne concernée de la commande d'origine&nbsp;: un avoir est créé, et vous pouvez remettre le produit en stock au même moment (voir <a href="commandes-comprendre.html#s5-3">annuler une commande payée</a>). Le remboursement lui-même se fait hors SellingAtHome.</td></tr>
+      <tr><td><b>Échanger l'article</b></td><td>Créez une nouvelle commande pour la cliente avec l'article de remplacement (voir <a href="ventes.html">Commandes et boutiques</a>), ou laissez la conseillère la saisir.</td></tr>
+      <tr><td><b>Remettre l'article en stock</b></td><td>À l'annulation de la ligne (case de remise en stock), ou par une correction de stock dans le catalogue.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- 8 -->
+<section id="exemple">
+  <div class="sec-head"><span class="sec-num">08</span><h2>Exemple</h2></div>
+  <div class="timeline">
+    <div class="tl"><b>Le 3 octobre</b><p>Camille a reçu une bague (39&nbsp;€) trop petite. Sa commande est livrée&nbsp;: Léa clique sur «&nbsp;Retour&nbsp;» sur la ligne de la bague, choisit «&nbsp;Retour neuf&nbsp;» › «&nbsp;Mauvaise taille&nbsp;», quantité 1, et écrit «&nbsp;Taille 54 au lieu de 56&nbsp;».</p></div>
+    <div class="tl"><b>Le 4 octobre</b><p>Vous demandez une photo de l'emballage (<strong>Plus d'infos&nbsp;?</strong>). Léa reçoit l'e-mail, ajoute la photo&nbsp;: la demande revient «&nbsp;En attente&nbsp;».</p></div>
+    <div class="tl"><b>Le 5 octobre</b><p>Vous cliquez sur <strong>Accepter</strong> avec le commentaire «&nbsp;Renvoyez la bague, nous expédions la taille 56&nbsp;».</p></div>
+    <div class="tl stop"><b>À réception de la bague</b><p>Vous annulez la ligne de la commande de Camille, avec remise en stock&nbsp;: avoir de 39&nbsp;€. Puis vous créez une commande pour la bague en taille 56. Si vous ne faites pas ces deux opérations, rien ne change dans les commandes ni dans le stock.</p></div>
+  </div>
+</section>
+
+<!-- 9 -->
+<section id="v2">
+  <div class="sec-head"><span class="sec-num">09</span><h2>La version 2</h2></div>
+  <p>Une version 2 du module, plus complète, existe sur demande auprès de l'équipe SellingAtHome. Elle ajoute un menu <strong>Retours</strong> avec deux entrées, «&nbsp;Retours simples&nbsp;» et «&nbsp;Retours groupés&nbsp;» (un retour groupé rassemble plusieurs articles d'une conseillère), un traitement article par article, un fil de commentaires, des étiquettes de transport et la création d'une commande d'échange. Une seule marque l'utilise aujourd'hui.</p>
+</section>
+
+<!-- 10 -->
+<section id="attention">
+  <div class="sec-head"><span class="sec-num">10</span><h2>Points d'attention</h2></div>
+  <ul class="prose">
+    <li><strong>Pas de suite automatique</strong>&nbsp;: accepter ne crée ni avoir, ni échange, ni mouvement de stock.</li>
+    <li><strong>Réponse définitive</strong>&nbsp;: vérifiez avant de cliquer. L'écran ne propose aucun bouton pour revenir sur une réponse.</li>
+    <li><strong>E-mails</strong>&nbsp;: sans modèle d'e-mail configuré, la conseillère n'est pas prévenue de votre réponse. Vérifiez vos modèles.</li>
+    <li><strong>Traductions des motifs</strong>&nbsp;: un motif sans libellé dans une langue s'affiche mal pour les conseillères de cette langue.</li>
+    <li><strong>Sous-motifs</strong>&nbsp;: la conseillère les choisit, mais ils ne s'affichent pas dans la fiche de la demande côté marque. Si la précision compte, demandez-la aussi dans le message.</li>
+  </ul>
+</section>
+
+<!-- 11 -->
+<section id="faq">
+  <div class="sec-head"><span class="sec-num">11</span><h2>Questions fréquentes</h2></div>
+  <div class="faq">
+    <details><summary>Je ne vois pas le menu Retours d'articles.</summary><div><p>Le module n'est pas actif pour votre marque, ou votre marque utilise la version 2 (menu «&nbsp;Retours&nbsp;» au premier niveau). Contactez l'équipe SellingAtHome.</p></div></details>
+    <details><summary>La conseillère ne trouve pas le bouton «&nbsp;Retour&nbsp;» sur sa commande.</summary><div><p>Le bouton n'apparaît que sur une commande au statut d'expédition «&nbsp;Commande livrée&nbsp;», et une seule fois par ligne. Elle peut aussi passer par le catalogue, si la commande est payée.</p></div></details>
+    <details><summary>J'ai accepté un retour&nbsp;: la cliente est-elle remboursée&nbsp;?</summary><div><p>Non. Annulez la ligne de la commande pour créer un avoir, puis remboursez la cliente selon le moyen de paiement utilisé.</p></div></details>
+    <details><summary>Puis-je supprimer un motif déjà utilisé&nbsp;?</summary><div><p>Oui, mais les demandes concernées n'afficheront plus de motif, et ses sous-motifs disparaissent aussi.</p></div></details>
+  </div>
+</section>
+
+  </main>
+</div>

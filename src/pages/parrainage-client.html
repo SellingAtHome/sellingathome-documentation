@@ -1,0 +1,212 @@
+<!--page {"title":"Le parrainage client"} -->
+<style>
+.timeline { display:flex; flex-direction:column; border-left:3px solid var(--rule); margin-left:10px; }
+.tl { position:relative; padding:0 0 20px 28px; }
+.tl::before { content:""; position:absolute; left:-9px; top:4px; width:15px; height:15px; border-radius:50%; background:var(--card); border:3px solid var(--accent); }
+.tl.stop::before { border-color:var(--pink); }
+.tl b { color:var(--heading); display:block; }
+.tl p { color:var(--muted); font-size:.93rem; margin-top:4px; }
+.chip { display:inline-block; border-radius:100px; padding:3px 11px; font-size:.78rem; font-weight:700; background:var(--surface); color:var(--heading); border:1px solid var(--rule); }
+.chip.p { background:var(--pink-wash); color:var(--pink-ink); border-color:transparent; }
+.chip.g { background:var(--accent-wash); color:var(--accent-ink); border-color:transparent; }
+.opts td:first-child { width:32%; }
+.opts td:nth-child(3) { width:16%; font-size:.88rem; color:var(--muted); }
+</style>
+<header class="hero">
+  <div class="hero-in">
+    <div>
+      <span class="eyebrow">Animation et fidélisation</span>
+      <h1>Le parrainage <span class="script">client</span></h1>
+      <p class="lede">Une cliente recommande votre marque à une amie&nbsp;: la marraine est récompensée quand sa filleule passe sa première commande. Comment le lien est créé, comment récompenser, comment suivre.</p>
+    </div>
+    <div class="voucher-art" aria-hidden="true">
+      <div class="v-top"><span>Parrainage</span><span>1<sup>re</sup> commande</span></div>
+      <div class="v-amount">10<span> €</span></div>
+      <div class="v-name">Pour Camille, marraine d'Inès</div>
+      <div class="v-sep"></div>
+      <div class="v-meta"><span>Filleules <b>2</b></span><span>Condition <b>≥ 1</b></span></div>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="toc" aria-label="Sommaire">
+    <details id="tocDetails" open>
+      <summary>Sommaire</summary>
+      <div class="toc-title">Sommaire</div>
+      <ol>
+        <li data-sec="definition"><a href="#definition"><span class="toc-n">1</span>Qu'est-ce que le parrainage client&nbsp;?</a></li>
+        <li data-sec="activation"><a href="#activation"><span class="toc-n">2</span>Activation et réglages</a></li>
+        <li data-sec="lien"><a href="#lien"><span class="toc-n">3</span>Créer le lien marraine – filleule</a>
+          <ol class="toc-sub"><li><a href="#s3-1"><span class="toc-n">3.1</span>Par la conseillère</a></li><li><a href="#s3-2"><span class="toc-n">3.2</span>Par la marque</a></li><li><a href="#s3-3"><span class="toc-n">3.3</span>Les rôles attribués</a></li></ol>
+        </li>
+        <li data-sec="recompenser"><a href="#recompenser"><span class="toc-n">4</span>Récompenser la marraine</a>
+          <ol class="toc-sub"><li><a href="#s4-1"><span class="toc-n">4.1</span>La règle de fidélité type</a></li><li><a href="#s4-2"><span class="toc-n">4.2</span>Les garde-fous</a></li><li><a href="#s4-3"><span class="toc-n">4.3</span>Parrainage limité aux réunions</a></li><li><a href="#s4-4"><span class="toc-n">4.4</span>Avec une réduction</a></li></ol>
+        </li>
+        <li data-sec="exemple"><a href="#exemple"><span class="toc-n">5</span>Exemple complet</a></li>
+        <li data-sec="suivi"><a href="#suivi"><span class="toc-n">6</span>Suivre les parrainages</a></li>
+        <li data-sec="chiffres"><a href="#chiffres"><span class="toc-n">7</span>Le parrainage en chiffres</a></li>
+        <li data-sec="attention"><a href="#attention"><span class="toc-n">8</span>Points d'attention</a></li>
+        <li data-sec="faq"><a href="#faq"><span class="toc-n">9</span>Questions fréquentes</a></li>
+      </ol>
+    </details>
+  </nav>
+
+  <main>
+
+<!-- 1 -->
+<section id="definition">
+  <div class="sec-head"><span class="sec-num">01</span><h2>Qu'est-ce que le parrainage client&nbsp;?</h2></div>
+  <p class="lede">Une cliente, la <strong>marraine</strong>, fait connaître votre marque à une autre personne, la <strong>filleule</strong>. Sur la fiche de la filleule, on indique qui est sa marraine. Vous pouvez alors récompenser la marraine, automatiquement, quand la filleule passe sa première commande.</p>
+  <div class="example"><span class="ex-label">Exemple</span><p>Camille, cliente fidèle de Léa, parle de vos bijoux à son amie Inès. Léa crée la fiche d'Inès en indiquant Camille comme marraine. Inès paie sa première commande de 58&nbsp;€&nbsp;: Camille reçoit un bon d'achat de 10&nbsp;€.</p></div>
+  <span class="tag yellow" style="display:inline-block">Module optionnel</span>
+  <div class="tip"><span class="ex-label">Vocabulaire</span><p>Dans les écrans, la marraine est appelée <strong>parrain</strong> ou «&nbsp;Parrain/Marraine&nbsp;», la filleule <strong>filleul</strong> ou «&nbsp;client parrainé&nbsp;», la conseillère <strong>vendeur</strong>. Les rôles système correspondants s'affichent en anglais&nbsp;: «&nbsp;Sponsor&nbsp;» et «&nbsp;Sponsored&nbsp;».</p></div>
+  <div class="warn"><span class="ex-label">Ne pas confondre</span><p>Ce parrainage concerne les <strong>clientes</strong>. Le parrainage de nouvelles <strong>conseillères</strong> (le recruteur) relève de l'organigramme et des <a href="challenges-guide.html">challenges</a>&nbsp;: voir l'univers <a href="reseau.html">Réseau et rémunération</a>.</p></div>
+</section>
+
+<!-- 2 -->
+<section id="activation">
+  <div class="sec-head"><span class="sec-num">02</span><h2>Activation et réglages</h2></div>
+  <p>Le parrainage client est activé par l'équipe SellingAtHome, à votre demande. Les réglages suivants ne sont pas modifiables depuis l'espace marque.</p>
+  <div class="table-wrap"><table class="opts">
+    <thead><tr><th>Réglage</th><th>Effet</th><th>Marques actives</th></tr></thead>
+    <tbody>
+      <tr><td><b>Gestion du parrainage client</b></td><td>Fait apparaître le bloc «&nbsp;Parrainage&nbsp;» sur les fiches clientes (marque et conseillères) et la tuile «&nbsp;Nouveaux parrainages&nbsp;» du tableau de bord.</td><td>7 sur 35</td></tr>
+      <tr><td><b>Marraine modifiable après création</b></td><td>Activé par défaut. Désactivé, le champ «&nbsp;Parrain/Marraine&nbsp;» est grisé quand on <strong>modifie</strong> une cliente&nbsp;: la marraine ne se choisit qu'à la création.</td><td>Désactivé pour 1 des 7</td></tr>
+      <tr><td><b>Parrainage limité aux réunions</b></td><td>Les règles de fidélité de parrainage ne fonctionnent que pour les commandes passées en réunion (<a href="#s4-3">section 4.3</a>).</td><td>3 des 7</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- 3 -->
+<section id="lien">
+  <div class="sec-head"><span class="sec-num">03</span><h2>Créer le lien marraine – filleule</h2></div>
+  <p class="lede">Le lien est posé sur la fiche de la <strong>filleule</strong>&nbsp;: c'est elle qui «&nbsp;a une marraine&nbsp;». Une filleule a une seule marraine&nbsp;; une marraine peut avoir autant de filleules qu'elle veut.</p>
+
+  <h3 id="s3-1"><span class="sub-num">3.1</span> Par la conseillère</h3>
+  <p>C'est le cas le plus courant. Dans son espace, quand la conseillère crée ou modifie une cliente (carnet d'adresses, réunion, application), le bloc <strong>Parrainage</strong> propose le champ «&nbsp;Parrain/Marraine&nbsp;»&nbsp;: elle tape le nom de la marraine et la choisit dans la liste.</p>
+  <ul class="prose">
+    <li>Elle ne peut choisir qu'une cliente de <strong>son propre carnet d'adresses</strong>.</li>
+    <li>Seules les clientes qui ont une <strong>adresse principale</strong> sont proposées.</li>
+    <li>La marraine et la filleule doivent appartenir à votre marque.</li>
+  </ul>
+
+  <h3 id="s3-2"><span class="sub-num">3.2</span> Par la marque</h3>
+  <div class="path" aria-label="Chemin d'accès"><span>Clients</span><span>Clients</span><span>Editer le client</span><span>Informations générales</span><span><b>Parrainage</b></span></div>
+  <p>Le champ «&nbsp;Parrain/Marraine&nbsp;» (placeholder «&nbsp;Rechercher une marraine/un parrain&nbsp;») cherche parmi <strong>toutes</strong> les clientes de la marque ayant une adresse principale. La cliente elle-même n'est pas proposée. Pour retirer la marraine, videz le champ et enregistrez.</p>
+  <p>Voir la capture de l'onglet dans <a href="clients.html#s5-1"><em>Les clientes</em></a>.</p>
+  <div class="tip"><span class="ex-label">Bon à savoir</span><p>La recherche ignore les lettres accentuées&nbsp;: pour trouver «&nbsp;Inès&nbsp;», tapez plutôt son nom de famille.</p></div>
+
+  <h3 id="s3-3"><span class="sub-num">3.3</span> Les rôles attribués</h3>
+  <div class="grid-2">
+    <div class="card"><span class="tag pink">Marraine</span><p>Reçoit le rôle système <span class="chip p">Sponsor</span> dès qu'elle a une filleule. Elle le perd quand elle n'a plus aucune filleule.</p></div>
+    <div class="card"><span class="tag">Filleule</span><p>Reçoit le rôle système <span class="chip">Sponsored</span>. Il lui est retiré si on supprime ou change sa marraine.</p></div>
+  </div>
+  <p>Ces rôles sont utilisables comme condition dans les réductions, la fidélité ou les segments (par exemple, un segment des marraines). Les règles de parrainage, elles, exigent que la marraine porte le rôle Sponsor.</p>
+</section>
+
+<!-- 4 -->
+<section id="recompenser">
+  <div class="sec-head"><span class="sec-num">04</span><h2>Récompenser la marraine</h2></div>
+  <p class="lede">Le parrainage ne récompense rien tout seul&nbsp;: il faut une <strong>règle de fidélité</strong> (ou une réduction) qui utilise une condition de parrainage. Le détail des règles est dans le <a href="fidelite-guide.html#s6-7">guide de la fidélité</a>&nbsp;; voici le réglage type.</p>
+
+  <h3 id="s4-1"><span class="sub-num">4.1</span> La règle de fidélité type</h3>
+  <div class="path" aria-label="Chemin d'accès"><span>Paramètres</span><span>Configuration générale</span><span>Paramètres fidélité</span><span><b>Onglet Client</b></span></div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Élément</th><th>Valeur</th></tr></thead>
+    <tbody>
+      <tr><td><b>Onglet</b></td><td>Client</td></tr>
+      <tr><td><b>Action</b></td><td>«&nbsp;Gains lors d'une vente directe&nbsp;» (et une seconde règle identique sur «&nbsp;Gains lors d'une vente en réunion&nbsp;» si la première commande peut avoir lieu en réunion)</td></tr>
+      <tr><td><b>Condition</b></td><td>«&nbsp;Nombre de nouveau parrainage avec première commande&nbsp;» <strong>supérieur ou égal à 1</strong></td></tr>
+      <tr><td><b>Récompense</b></td><td>Un bon d'achat, un code promo, des points…</td></tr>
+    </tbody>
+  </table></div>
+  <p>Avec une condition de parrainage, le bénéficiaire n'est plus la cliente de la commande mais <strong>sa marraine</strong>. Le compteur «&nbsp;Nombre de nouveau parrainage avec première commande&nbsp;» compte les filleules de la marraine qui ont déjà passé une première commande, nouvelle filleule comprise.</p>
+  <div class="tip"><span class="ex-label">Comment lire «&nbsp;≥ 1&nbsp;»</span><p>La règle se déclenche à <strong>chaque première commande payée d'une filleule</strong>&nbsp;: la marraine a alors au moins une filleule qui a commandé. Avec «&nbsp;≥ 3&nbsp;», la règle se déclenche à la première commande de la 3<sup>e</sup> filleule, <strong>puis de chaque filleule suivante</strong>&nbsp;: le compteur ne redescend pas.</p></div>
+
+  <h3 id="s4-2"><span class="sub-num">4.2</span> Les garde-fous</h3>
+  <ul class="prose">
+    <li>La commande doit être la <strong>toute première commande payée</strong> de la filleule&nbsp;: ses commandes suivantes ne rapportent rien à la marraine.</li>
+    <li>La marraine doit porter le rôle <span class="chip p">Sponsor</span>.</li>
+    <li>Si le parrainage est limité aux réunions, la commande doit être rattachée à une réunion.</li>
+  </ul>
+
+  <h3 id="s4-3"><span class="sub-num">4.3</span> Parrainage limité aux réunions</h3>
+  <p>Ce réglage, posé par l'équipe SellingAtHome, réserve les <strong>règles de fidélité</strong> de parrainage aux commandes passées en réunion&nbsp;: une première commande en vente directe ne récompense pas la marraine. Il n'agit pas sur les <a href="#s4-4">réductions</a>.</p>
+
+  <h3 id="s4-4"><span class="sub-num">4.4</span> Avec une réduction</h3>
+  <p>Les réductions proposent la condition «&nbsp;Nouveau parrainage avec première commande&nbsp;» (un nombre de filleules et une période)&nbsp;: elle porte sur les filleules de la <strong>cliente qui commande</strong>. C'est donc la marraine qui profite de la réduction sur sa propre commande. Voir le <a href="reductions-guide.html">guide des réductions</a>.</p>
+  <div class="example"><span class="ex-label">Exemple</span><p>Réduction «&nbsp;Merci marraine&nbsp;»&nbsp;: 15&nbsp;% sur la commande si la cliente a au moins 2 filleules ayant passé leur première commande entre le 1<sup>er</sup> septembre et le 31 décembre. Camille, avec Inès et Emma, en profite sur sa commande de Noël.</p></div>
+</section>
+
+<!-- 5 -->
+<section id="exemple">
+  <div class="sec-head"><span class="sec-num">05</span><h2>Exemple complet</h2></div>
+  <p class="lede">Votre marque offre un bon d'achat de 10&nbsp;€ à la marraine pour chaque filleule qui commande, et un bonus de 30 points à partir de la 3<sup>e</sup> filleule.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Règle (onglet Client)</th><th>Action</th><th>Condition</th><th>Récompense</th></tr></thead>
+    <tbody>
+      <tr><td>R1</td><td>Gains lors d'une vente directe</td><td>Nombre de nouveau parrainage avec première commande ≥ 1</td><td>Bon d'achat 10&nbsp;€</td></tr>
+      <tr><td>R2</td><td>Gains lors d'une vente en réunion</td><td>Nombre de nouveau parrainage avec première commande ≥ 1</td><td>Bon d'achat 10&nbsp;€</td></tr>
+      <tr><td>R3</td><td>Gains lors d'une vente directe</td><td>Nombre de nouveau parrainage avec première commande ≥ 3</td><td>30 points</td></tr>
+    </tbody>
+  </table></div>
+  <div class="timeline">
+    <div class="tl"><b>Mars — Inès devient filleule de Camille</b><p>Léa crée la fiche d'Inès avec Camille comme marraine. Camille reçoit le rôle Sponsor, Inès le rôle Sponsored.</p></div>
+    <div class="tl"><b>Avril — Inès paie sa 1<sup>re</sup> commande (58&nbsp;€, vente directe)</b><p>Camille a 1 filleule ayant commandé&nbsp;: R1 lui donne un bon de 10&nbsp;€. R3 ne joue pas (1 &lt; 3).</p></div>
+    <div class="tl"><b>Mai — Inès recommande (35&nbsp;€)</b><p>Ce n'est plus sa première commande&nbsp;: rien pour Camille.</p></div>
+    <div class="tl"><b>Juin — Emma, 2<sup>e</sup> filleule, commande en réunion chez Jade</b><p>R2 donne un nouveau bon de 10&nbsp;€ à Camille.</p></div>
+    <div class="tl stop"><b>Septembre — Zoé, 3<sup>e</sup> filleule, commande en vente directe</b><p>R1 donne 10&nbsp;€ et R3 donne 30 points&nbsp;: le compteur atteint 3. Une 4<sup>e</sup> filleule déclencherait à nouveau R1 et R3.</p></div>
+  </div>
+  <p>Bilan&nbsp;: 3 bons de 10&nbsp;€ et 30 points pour Camille, qui voit ses 3 filleules dans «&nbsp;Nombre de clients parrainés&nbsp;» sur sa fiche.</p>
+</section>
+
+<!-- 6 -->
+<section id="suivi">
+  <div class="sec-head"><span class="sec-num">06</span><h2>Suivre les parrainages</h2></div>
+  <div class="grid-2">
+    <div class="card"><span class="tag">Tableau de bord</span><p>La tuile <strong>Nouveaux parrainages</strong> compte les clientes ayant une marraine, <strong>créées</strong> sur la période choisie. Voir <a href="espace-marque.html">Découvrir l'espace marque</a>.</p></div>
+    <div class="card"><span class="tag pink">Fiche de la marraine</span><p>La ligne <strong>Nombre de clients parrainés</strong> et ses deux icônes d'export (CSV, Excel)&nbsp;: prénom, nom, email, adresse et téléphone des filleules. Voir <a href="clients.html#fiche">la fiche cliente</a>.</p></div>
+    <div class="card"><span class="tag yellow">Segments</span><p>Un segment filtré sur le rôle Sponsor (ou Sponsored) liste et exporte toutes les marraines (ou filleules). Voir <a href="segments.html">Les segments</a>.</p></div>
+    <div class="card"><span class="tag">Récompenses</span><p>Les gains de la marraine apparaissent dans son historique de points et dans l'onglet Fidélité et réductions de sa fiche.</p></div>
+  </div>
+  <div class="tip"><span class="ex-label">Bon à savoir</span><p>La tuile se base sur la <strong>date de création de la filleule</strong>, pas sur la date où la marraine a été renseignée. Une cliente ancienne à qui l'on ajoute une marraine aujourd'hui n'est pas comptée dans les nouveaux parrainages du mois.</p></div>
+</section>
+
+<!-- 7 -->
+<section id="chiffres">
+  <div class="sec-head"><span class="sec-num">07</span><h2>Le parrainage en chiffres</h2></div>
+  <div class="stats">
+    <div class="stat"><b>7 / 35</b><span>marques actives utilisent le parrainage client</span></div>
+    <div class="stat"><b>11&nbsp;850</b><span>filleules créées en 12 mois, sur ces 7 marques</span></div>
+    <div class="stat"><b>91&nbsp;%</b><span>des filleules ont passé une première commande</span></div>
+    <div class="stat"><b>2,9</b><span>filleules par marraine en moyenne</span></div>
+  </div>
+  <p>Toutes les marques qui ont activé l'option l'utilisent réellement&nbsp;: chacune a créé des filleules dans l'année. Pour récompenser, 3 d'entre elles ont une règle de fidélité de parrainage (toujours «&nbsp;≥ 1&nbsp;», avec en récompense un code promo ou un bon d'achat), et 4 utilisent la condition de parrainage dans des réductions.</p>
+</section>
+
+<!-- 8 -->
+<section id="attention">
+  <div class="sec-head"><span class="sec-num">08</span><h2>Points d'attention</h2></div>
+  <ul class="prose">
+    <li><strong>Renseignez la marraine avant la première commande</strong>&nbsp;: une marraine ajoutée après la première commande payée ne déclenche plus de règle de parrainage.</li>
+    <li><strong>Une règle par action</strong>&nbsp;: si les premières commandes ont lieu aussi bien en réunion qu'en vente directe, créez les deux règles.</li>
+    <li><strong>«&nbsp;≥ N&nbsp;» n'est pas «&nbsp;= N&nbsp;»</strong>&nbsp;: au-delà du seuil, chaque nouvelle filleule redéclenche la règle. Pour un bonus unique au palier, utilisez «&nbsp;égal à N&nbsp;».</li>
+    <li><strong>Marraine non modifiable</strong>&nbsp;: si votre marque a grisé le champ en modification, une erreur de marraine ne peut plus être corrigée par la conseillère&nbsp;; contactez SellingAtHome.</li>
+    <li><strong>Retirer le rôle Sponsor à la main</strong> bloque les règles de parrainage pour cette marraine, même si ses filleules restent rattachées.</li>
+  </ul>
+</section>
+
+<!-- 9 -->
+<section id="faq">
+  <div class="sec-head"><span class="sec-num">09</span><h2>Questions fréquentes</h2></div>
+  <div class="faq">
+    <details><summary>Je ne vois pas le bloc Parrainage sur les fiches clientes.</summary><div><p>Le parrainage client n'est pas activé pour votre marque. Demandez-le à votre interlocuteur SellingAtHome.</p></div></details>
+    <details><summary>La marraine n'a rien reçu à la première commande de sa filleule.</summary><div><p>Vérifiez&nbsp;: la marraine était-elle renseignée avant le paiement&nbsp;? Était-ce bien la première commande payée&nbsp;? La règle existe-t-elle pour ce type de vente (directe ou réunion)&nbsp;? La marraine a-t-elle le rôle Sponsor&nbsp;? Le parrainage est-il limité aux réunions pour votre marque&nbsp;?</p></div></details>
+    <details><summary>La conseillère ne trouve pas la marraine dans la recherche.</summary><div><p>La marraine doit être dans le carnet d'adresses de la conseillère et avoir une adresse principale. Évitez aussi les accents dans la recherche.</p></div></details>
+    <details><summary>Une filleule peut-elle avoir deux marraines&nbsp;?</summary><div><p>Non. Choisir une nouvelle marraine remplace l'ancienne&nbsp;; l'ancienne perd le rôle Sponsor si elle n'a plus d'autre filleule.</p></div></details>
+  </div>
+</section>
+
+  </main>
+</div>

@@ -1,0 +1,222 @@
+<!--page {"title":"L'approvisionnement"} -->
+<style>
+.timeline { display:flex; flex-direction:column; border-left:3px solid var(--rule); margin-left:10px; }
+.tl { position:relative; padding:0 0 20px 28px; }
+.tl::before { content:""; position:absolute; left:-9px; top:4px; width:15px; height:15px; border-radius:50%; background:var(--card); border:3px solid var(--accent); }
+.tl.stop::before { border-color:var(--pink); }
+.tl b { color:var(--heading); display:block; }
+.tl .st { display:flex; flex-wrap:wrap; gap:6px; margin-top:6px; }
+.tl p { color:var(--muted); font-size:.93rem; margin-top:4px; }
+.chip { display:inline-block; border-radius:100px; padding:3px 11px; font-size:.78rem; font-weight:700; background:var(--surface); color:var(--heading); border:1px solid var(--rule); }
+.chip.g { background:var(--accent-wash); color:var(--accent-ink); border-color:transparent; }
+.chip.p { background:var(--pink-wash); color:var(--pink-ink); border-color:transparent; }
+.chip.y { background:var(--yellow-wash); color:var(--yellow-ink); border-color:transparent; }
+.opts td:first-child { width:30%; }
+.calc td:last-child, .calc th:last-child { text-align:right; white-space:nowrap; }
+</style>
+<header class="hero">
+  <div class="hero-in">
+    <div>
+      <span class="eyebrow">Catalogue et logistique</span>
+      <h1>L'<span class="script">approvisionnement</span></h1>
+      <p class="lede">Gérer vos fournisseurs, leur commander les produits qui manquent et enregistrer les réceptions pour remettre le stock à jour, sans quitter l'espace marque.</p>
+      <span class="tag yellow" style="display:inline-block">Module optionnel</span>
+    </div>
+    <div class="voucher-art" aria-hidden="true">
+      <div class="v-top"><span>Commande CF12-0004</span><span>Validée</span></div>
+      <div class="v-amount">288<span> €</span></div>
+      <div class="v-name">Atelier Nacre</div>
+      <div class="v-sep"></div>
+      <div class="v-meta"><span>Articles <b>60</b></span><span>Reçus <b>40</b></span></div>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="toc" aria-label="Sommaire">
+    <details id="tocDetails" open>
+      <summary>Sommaire</summary>
+      <div class="toc-title">Sommaire</div>
+      <ol>
+        <li data-sec="definition"><a href="#definition"><span class="toc-n">1</span>À quoi ça sert&nbsp;?</a></li>
+        <li data-sec="fournisseurs"><a href="#fournisseurs"><span class="toc-n">2</span>Les fournisseurs</a>
+          <ol class="toc-sub"><li><a href="#s2-1"><span class="toc-n">2.1</span>La liste</a></li><li><a href="#s2-2"><span class="toc-n">2.2</span>Créer un fournisseur</a></li><li><a href="#s2-3"><span class="toc-n">2.3</span>Associer des produits</a></li></ol>
+        </li>
+        <li data-sec="commandes"><a href="#commandes"><span class="toc-n">3</span>Les commandes d'approvisionnement</a>
+          <ol class="toc-sub"><li><a href="#s3-1"><span class="toc-n">3.1</span>Le cycle de vie</a></li><li><a href="#s3-2"><span class="toc-n">3.2</span>Passer une commande</a></li><li><a href="#s3-3"><span class="toc-n">3.3</span>Envoyer au fournisseur</a></li><li><a href="#s3-4"><span class="toc-n">3.4</span>Valider</a></li><li><a href="#s3-5"><span class="toc-n">3.5</span>Réceptionner</a></li></ol>
+        </li>
+        <li data-sec="parametres"><a href="#parametres"><span class="toc-n">4</span>Les paramètres</a></li>
+        <li data-sec="exemple"><a href="#exemple"><span class="toc-n">5</span>Exemple complet</a></li>
+        <li data-sec="attention"><a href="#attention"><span class="toc-n">6</span>Points d'attention</a></li>
+        <li data-sec="faq"><a href="#faq"><span class="toc-n">7</span>Questions fréquentes</a></li>
+      </ol>
+    </details>
+  </nav>
+
+  <main>
+
+<!-- 1 -->
+<section id="definition">
+  <div class="sec-head"><span class="sec-num">01</span><h2>À quoi ça sert&nbsp;?</h2></div>
+  <p class="lede">Le module d'approvisionnement couvre le chemin du stock <strong>en amont</strong>&nbsp;: de votre fournisseur jusqu'à votre entrepôt. Il complète la gestion des stocks (voir <a href="catalogue.html">Catalogue et logistique</a>).</p>
+  <div class="grid-3">
+    <div class="card"><span class="tag">Fournisseurs</span><p>Vos fabricants et grossistes, leurs conditions (délai, minimum de commande, franco) et les produits qu'ils vous livrent, à quel prix.</p></div>
+    <div class="card"><span class="tag pink">Commandes</span><p>Les ordres d'achat, envoyés au fournisseur par email ou par courrier, puis validés.</p></div>
+    <div class="card"><span class="tag yellow">Réceptions</span><p>Les bons de réception, qui peuvent ajouter automatiquement les quantités reçues à votre stock.</p></div>
+  </div>
+  <div class="tip"><span class="ex-label">Module optionnel</span><p>Le menu <strong>Approvisionnement</strong> n'apparaît que si SellingAtHome l'a activé pour votre marque. Il est utilisé aujourd'hui par 2 marques actives sur 35.</p></div>
+</section>
+
+<!-- 2 -->
+<section id="fournisseurs">
+  <div class="sec-head"><span class="sec-num">02</span><h2>Les fournisseurs</h2></div>
+  <div class="path" aria-label="Chemin d'accès"><span>Approvisionnement</span><span><b>Fournisseurs</b></span></div>
+
+  <h3 id="s2-1"><span class="sub-num">2.1</span> La liste</h3>
+  <figure><img src="Captures/Logistique/fournisseurs.png" alt="Liste Fournisseurs : bouton Ajouter un fournisseur, recherche, colonnes Référence, Nom, Délai de réapprovisionnement, Email, Activé, Date de création, et boutons voir, modifier, supprimer" loading="lazy"><figcaption>La liste des fournisseurs (noms fictifs).</figcaption></figure>
+  <p>Chaque ligne propose trois boutons&nbsp;: <strong>voir</strong> la fiche (informations, dernières commandes, produits associés), <strong>modifier</strong>, <strong>supprimer</strong>. Supprimer un fournisseur associé à des produits supprime aussi ces associations, après un message de confirmation.</p>
+
+  <h3 id="s2-2"><span class="sub-num">2.2</span> Créer un fournisseur</h3>
+  <p>Cliquez sur <strong>Ajouter un fournisseur</strong>. Le formulaire comporte quatre blocs&nbsp;:</p>
+  <div class="table-wrap"><table class="opts">
+    <thead><tr><th>Bloc</th><th>Champs et usage</th></tr></thead>
+    <tbody>
+      <tr><td><b>Informations générales</b></td><td>Nom, <strong>Référence</strong> (unique dans votre marque&nbsp;: elle sert à numéroter ses commandes), Numéro RCS, Numéro de Siret, Numéro de TVA, langue (langue des emails envoyés au fournisseur), case <strong>Activé</strong>. Un fournisseur désactivé n'est plus proposé pour une nouvelle commande.</td></tr>
+      <tr><td><b>Contact</b></td><td>Prénom, Nom, <strong>Email</strong> (indispensable pour envoyer les commandes par email), Téléphone.</td></tr>
+      <tr><td><b>Adresse</b></td><td>Rue, complément, code postal, ville, pays. <strong>Obligatoire pour passer une commande</strong>&nbsp;: elle figure sur l'ordre d'achat.</td></tr>
+      <tr><td><b>Approvisionnement</b></td><td><strong>Délai de réapprovisionnement</strong> (en jours, proposé par défaut pour chaque produit), <strong>Montant de commande minimum</strong> et <strong>Franco de port</strong> (montant à partir duquel le transport est offert). Ces deux montants sont rappelés lors de la commande.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="tip"><span class="ex-label">Bon à savoir</span><p>Modifier le délai par défaut d'un fournisseur met à jour le délai de <strong>tous</strong> les produits qui lui sont associés. Modifier son adresse met à jour l'adresse de ses commandes encore au statut «&nbsp;Créée&nbsp;».</p></div>
+
+  <h3 id="s2-3"><span class="sub-num">2.3</span> Associer des produits (fiche produit)</h3>
+  <div class="path" aria-label="Chemin d'accès"><span>Catalogue</span><span>Produits</span><span>fiche produit</span><span><b>Paramètres d'approvisionnement</b></span></div>
+  <p>Un fournisseur ne peut être commandé que pour les produits qui lui sont associés. L'association se fait dans l'onglet <strong>Paramètres d'approvisionnement</strong> de la fiche produit, bouton <strong>Ajouter un fournisseur</strong>&nbsp;:</p>
+  <div class="table-wrap"><table class="opts">
+    <thead><tr><th>Champ</th><th>Usage</th></tr></thead>
+    <tbody>
+      <tr><td><b>Fournisseur*</b></td><td>Le fournisseur (obligatoire).</td></tr>
+      <tr><td><b>Référence du produit chez le fournisseur</b></td><td>Imprimée sur l'ordre d'achat. Vide&nbsp;: la référence du produit est reprise.</td></tr>
+      <tr><td><b>Coût</b></td><td>Le prix d'achat HT unitaire, repris dans les commandes.</td></tr>
+      <tr><td><b>Délai d'approvisionnement</b></td><td>En jours. Vide&nbsp;: le délai par défaut du fournisseur.</td></tr>
+      <tr><td><b>PCB</b></td><td>Le «&nbsp;par combien&nbsp;»&nbsp;: le conditionnement du fournisseur (par 6, par 20…), affiché pour vous guider.</td></tr>
+      <tr><td><b>Stock idéal</b></td><td>Le niveau de stock visé, affiché à côté du stock actuel lors de la commande.</td></tr>
+      <tr><td><b>Combinaisons</b></td><td>Pour un produit décliné&nbsp;: toutes les combinaisons, ou une sélection («&nbsp;Sélectionner les combinaisons&nbsp;»), chacune pouvant avoir son coût.</td></tr>
+    </tbody>
+  </table></div>
+  <p>Le premier fournisseur associé devient le <strong>Fournisseur par défaut</strong>&nbsp;; la liste déroulante en haut de l'onglet permet d'en choisir un autre. Le coût du fournisseur par défaut est recopié comme coût d'achat dans les tarifs du produit. Le tableau propose aussi un bouton <strong>Passer une commande</strong> pour commander directement ce produit.</p>
+</section>
+
+<!-- 3 -->
+<section id="commandes">
+  <div class="sec-head"><span class="sec-num">03</span><h2>Les commandes d'approvisionnement</h2></div>
+  <div class="path" aria-label="Chemin d'accès"><span>Approvisionnement</span><span><b>Commandes</b></span></div>
+  <figure><img src="Captures/Logistique/commandes-fournisseurs.png" alt="Liste Commandes d'approvisionnement : bouton Nouvelle commande, bouton Filtrer, recherche ; colonnes Référence avec badge de statut (Créée, Validée), Date de la commande, Fournisseur, Nombre de produits, Total commande TTC, Détail commande avec boutons PDF, modifier et supprimer" loading="lazy"><figcaption>La liste des commandes d'approvisionnement, filtrable par date et par statut.</figcaption></figure>
+
+  <h3 id="s3-1"><span class="sub-num">3.1</span> Le cycle de vie</h3>
+  <div class="timeline">
+    <div class="tl"><b>Création</b><div class="st"><span class="chip">Créée</span></div><p>La commande existe, avec sa référence <strong>CF</strong> suivie du numéro du fournisseur et d'un compteur (CF12-0001, CF12-0002…). On peut encore ajouter, modifier ou supprimer des produits.</p></div>
+    <div class="tl"><b>Envoi au fournisseur</b><div class="st"><span class="chip">Envoyée</span></div><p>Par email depuis SellingAtHome, ou en imprimant l'ordre d'achat pour un envoi par courrier.</p></div>
+    <div class="tl"><b>Validation</b><div class="st"><span class="chip g">Validée</span></div><p>Le fournisseur a confirmé&nbsp;: vous validez ce qu'il livrera. Ce qu'il ne peut pas fournir part dans une nouvelle commande liée.</p></div>
+    <div class="tl stop"><b>Réception</b><div class="st"><span class="chip y">Partiellement reçue</span><span class="chip g">Reçue</span></div><p>Chaque arrivage crée un bon de réception. La commande est «&nbsp;Reçue&nbsp;» quand toutes les quantités sont arrivées.</p></div>
+  </div>
+
+  <h3 id="s3-2"><span class="sub-num">3.2</span> Passer une commande</h3>
+  <p>Cliquez sur <strong>Nouvelle commande</strong>. Un assistant en quatre étapes s'ouvre&nbsp;:</p>
+  <ol class="prose">
+    <li><strong>Choix du fournisseur</strong>&nbsp;: parmi les fournisseurs activés. Sans adresse, un message vous demande de la renseigner.</li>
+    <li><strong>Choix des produits</strong>&nbsp;: les produits associés au fournisseur, avec pour chacun les informations utiles pour décider de la quantité.</li>
+    <li><strong>Récapitulatif de la commande</strong>&nbsp;: lignes, total HT, TVA et total TTC, rappel du montant minimum et du franco de port du fournisseur (un triangle d'alerte s'affiche s'ils ne sont pas atteints). En passant à l'étape suivante, une confirmation «&nbsp;Voulez-vous confirmer cette commande&nbsp;?&nbsp;» crée la commande.</li>
+    <li><strong>Validation</strong>&nbsp;: l'ordre d'achat PDF s'affiche, avec le bouton <strong>Finaliser et envoyer par mail</strong>.</li>
+  </ol>
+  <figure><img src="Captures/Logistique/nouvelle-commande-fournisseur.png" alt="Assistant Nouvelle commande, étape 2 Choix des produits : case Cacher les produits non vendus durant le dernier mois ; colonnes Nom du produit, Combinaison, Référence produit fournisseur, PCB, Prix d'achat HT, Quantité actuelle en stock, Stock idéal, Quantité vendu les 30 derniers jours, Quantité, Total, Délai" loading="lazy"><figcaption>Étape 2&nbsp;: stock actuel, stock idéal et ventes des 30 derniers jours aident à choisir les quantités.</figcaption></figure>
+  <div class="tip"><span class="ex-label">Bon à savoir</span><p>La case <strong>Cacher les produits non vendus durant le dernier mois</strong> réduit la liste aux produits qui tournent.</p></div>
+
+  <h3 id="s3-3"><span class="sub-num">3.3</span> Envoyer au fournisseur</h3>
+  <p>Sur la fiche de la commande, le bloc <strong>Options d'envoi au fournisseur</strong> propose deux boutons&nbsp;:</p>
+  <ul class="prose">
+    <li><strong>Par email</strong>&nbsp;: une fenêtre «&nbsp;Envoyer l'ordre d'achat au fournisseur par mail&nbsp;» affiche le message type, que vous pouvez personnaliser, puis l'envoie avec l'ordre d'achat. Le fournisseur doit avoir une adresse email.</li>
+    <li><strong>Par courrier</strong>&nbsp;: imprime l'ordre d'achat.</li>
+  </ul>
+  <p>Dans les deux cas, une commande «&nbsp;Créée&nbsp;» passe en «&nbsp;Envoyée&nbsp;», et la fiche indique «&nbsp;Cet ordre d'achat a déjà été envoyé au fournisseur le…&nbsp;». L'ordre d'achat reste consultable depuis la liste (bouton PDF) et la fiche.</p>
+  <figure><img src="Captures/Logistique/commande-fournisseur.png" alt="Fiche d'une commande d'approvisionnement : onglets Infos commande et Historique statut ; bloc Informations sur la commande (référence, statut Validée, créée par, fournisseur, ordre d'achat et bons de réception avec boutons de consultation) ; bloc Commandes échanges liées ; bloc Options d'envoi au fournisseur (par email, par courrier avec adresse floutée) ; tableau Les articles de la commande avec PU HT, quantité, prix HT, état Non reçu, taxes et net à payer TTC ; bouton Réceptionner" loading="lazy"><figcaption>Une commande validée&nbsp;: ordre d'achat, bons de réception, commande liée et bouton Réceptionner (adresse floutée).</figcaption></figure>
+
+  <h3 id="s3-4"><span class="sub-num">3.4</span> Valider</h3>
+  <p>Une fois la commande envoyée, le tableau des articles affiche une colonne <strong>Non validé</strong> et un bouton <strong>Valider</strong>. Le fournisseur vous a répondu&nbsp;:</p>
+  <ul class="prose">
+    <li><strong>il livre tout</strong>&nbsp;: cliquez sur Valider et confirmez («&nbsp;Confirmez-vous la validation de cette commande&nbsp;?&nbsp;»). La commande passe en «&nbsp;Validée&nbsp;»&nbsp;;</li>
+    <li><strong>il ne peut pas tout livrer</strong>&nbsp;: cochez «&nbsp;Non validé&nbsp;» sur les produits concernés et saisissez la quantité manquante. À la validation, ces quantités sont retirées et placées dans une <strong>nouvelle commande</strong> au statut «&nbsp;Créée&nbsp;», visible dans le bloc «&nbsp;Commandes échanges liées&nbsp;»&nbsp;; le reste est validé.</li>
+  </ul>
+
+  <h3 id="s3-5"><span class="sub-num">3.5</span> Réceptionner</h3>
+  <p>Quand la marchandise arrive, cliquez sur <strong>Réceptionner</strong> (commande validée ou partiellement reçue). La fenêtre «&nbsp;Réception de la commande&nbsp;» montre, pour chaque produit, les quantités déjà réceptionnées, à réceptionner et restant à livrer, avec un commentaire possible. Saisissez ce qui est arrivé puis cliquez sur <strong>Valider</strong>&nbsp;:</p>
+  <ul class="prose">
+    <li>un <strong>bon de réception</strong> PDF est créé (référence BR-<em>référence de la commande</em>-0001, -0002…)&nbsp;;</li>
+    <li>la commande passe en <span class="chip y">Partiellement reçue</span> tant que tout n'est pas arrivé, puis en <span class="chip g">Reçue</span>&nbsp;;</li>
+    <li>si l'ajustement automatique est activé (section 4), les quantités reçues sont <strong>ajoutées au stock</strong> des produits dont le stock est suivi, avec une ligne dans l'historique de stock.</li>
+  </ul>
+  <div class="example"><span class="ex-label">Exemple</span><p>Commande de 40 bougies. Le 3, 30 arrivent&nbsp;: bon BR-…-0001, la commande est «&nbsp;Partiellement reçue&nbsp;», le stock gagne 30 bougies. Le 10, les 10 dernières arrivent&nbsp;: bon BR-…-0002, la commande est «&nbsp;Reçue&nbsp;», le stock gagne 10 bougies.</p></div>
+</section>
+
+<!-- 4 -->
+<section id="parametres">
+  <div class="sec-head"><span class="sec-num">04</span><h2>Les paramètres</h2></div>
+  <div class="path" aria-label="Chemin d'accès"><span>Paramètres</span><span>Configuration générale</span><span><b>Paramètres des commandes</b></span></div>
+  <div class="table-wrap"><table class="opts">
+    <thead><tr><th>Réglage</th><th>Effet</th></tr></thead>
+    <tbody>
+      <tr><td><b>Ajuster automatiquement les stocks quand un produit est reçu</b><br><span class="muted">bloc «&nbsp;Paramètres des commandes d'approvisionnement&nbsp;»</span></td><td>Coché (par défaut)&nbsp;: chaque réception ajoute les quantités reçues au stock. Décoché&nbsp;: le stock reste à mettre à jour vous-même.</td></tr>
+      <tr><td><b>Enlever la TVA sur les commandes d'approvisionnement</b><br><span class="muted">option activée par SellingAtHome</span></td><td>Les commandes sont sans TVA&nbsp;: le total TTC est égal au total HT. Sinon, chaque ligne prend le taux de TVA du produit dans votre pays.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="example"><span class="ex-label">Calcul d'une commande</span><p>30 verres à 8,00&nbsp;€ HT (TVA 20&nbsp;%) et 30 assiettes à 4,00&nbsp;€ HT (TVA 20&nbsp;%)&nbsp;:</p>
+    <div class="table-wrap"><table class="calc">
+      <tbody>
+        <tr><td>Total HT</td><td>240 + 120 = 360,00&nbsp;€</td></tr>
+        <tr><td>TVA</td><td>72,00&nbsp;€</td></tr>
+        <tr><td><b>Total TTC</b></td><td><b>432,00&nbsp;€</b></td></tr>
+        <tr><td>sans TVA (option ci-dessus)</td><td>360,00&nbsp;€</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<!-- 5 -->
+<section id="exemple">
+  <div class="sec-head"><span class="sec-num">05</span><h2>Exemple complet</h2></div>
+  <div class="example"><span class="ex-label">Réassort des bougies</span>
+    <ol class="prose">
+      <li>Le fournisseur «&nbsp;Atelier Nacre&nbsp;» (délai 15 jours, minimum de commande 200&nbsp;€, franco 300&nbsp;€) est associé à la bougie «&nbsp;Ambre&nbsp;» (coût 4,00&nbsp;€ HT, PCB 20, stock idéal 150).</li>
+      <li>Le stock est à 35, il s'en est vendu 90 en 30 jours&nbsp;: vous commandez 120 bougies (6 cartons de 20). Récapitulatif&nbsp;: 480&nbsp;€ HT, minimum et franco atteints. La commande CF12-0007 est «&nbsp;Créée&nbsp;».</li>
+      <li>«&nbsp;Finaliser et envoyer par mail&nbsp;»&nbsp;: elle est «&nbsp;Envoyée&nbsp;».</li>
+      <li>Le fournisseur ne peut livrer que 100 bougies&nbsp;: vous cochez «&nbsp;Non validé&nbsp;» pour 20 et validez. CF12-0007 est «&nbsp;Validée&nbsp;» pour 100&nbsp;; CF12-0008, liée, est créée pour 20.</li>
+      <li>Les 100 bougies arrivent&nbsp;: «&nbsp;Réceptionner&nbsp;», 100, Valider. CF12-0007 est «&nbsp;Reçue&nbsp;» et le stock passe de 35 à 135 (si aucune vente entre-temps).</li>
+    </ol>
+  </div>
+</section>
+
+<!-- 6 -->
+<section id="attention">
+  <div class="sec-head"><span class="sec-num">06</span><h2>Points d'attention</h2></div>
+  <ul class="prose">
+    <li><strong>Adresse et email du fournisseur</strong>&nbsp;: sans adresse, impossible de commander&nbsp;; sans email, impossible d'envoyer par email.</li>
+    <li><strong>Le prix vient de la fiche produit</strong>&nbsp;: mettez à jour le coût dans l'onglet «&nbsp;Paramètres d'approvisionnement&nbsp;» avant de commander. Une commande déjà créée garde ses prix.</li>
+    <li><strong>Réception</strong>&nbsp;: ne saisissez pas plus que la quantité commandée&nbsp;; la commande ne passerait alors pas en «&nbsp;Reçue&nbsp;».</li>
+    <li><strong>Stock</strong>&nbsp;: sans l'ajustement automatique, ou pour un produit dont le stock n'est pas suivi, la réception n'a aucun effet sur le stock.</li>
+    <li><strong>Pas d'annulation</strong>&nbsp;: une commande d'approvisionnement non validée peut être supprimée depuis la liste, mais il n'existe pas d'annulation d'une commande validée.</li>
+  </ul>
+</section>
+
+<!-- 7 -->
+<section id="faq">
+  <div class="sec-head"><span class="sec-num">07</span><h2>Questions fréquentes</h2></div>
+  <div class="faq">
+    <details><summary>Je ne vois pas le menu Approvisionnement</summary><div><p>C'est un module optionnel&nbsp;: demandez son activation à SellingAtHome.</p></div></details>
+    <details><summary>Mon produit n'apparaît pas à l'étape «&nbsp;Choix des produits&nbsp;»</summary><div><p>Il n'est pas associé à ce fournisseur&nbsp;: ajoutez l'association dans l'onglet «&nbsp;Paramètres d'approvisionnement&nbsp;» de la fiche produit. Vérifiez aussi la case «&nbsp;Cacher les produits non vendus durant le dernier mois&nbsp;».</p></div></details>
+    <details><summary>Le fournisseur livre en plusieurs fois</summary><div><p>Réceptionnez chaque arrivage séparément&nbsp;: un bon de réception par arrivage, et la commande reste «&nbsp;Partiellement reçue&nbsp;» jusqu'au dernier.</p></div></details>
+    <details><summary>Puis-je modifier une commande déjà envoyée&nbsp;?</summary><div><p>Non pour les produits et quantités&nbsp;; utilisez la validation partielle («&nbsp;Non validé&nbsp;») pour retirer ce que le fournisseur ne livre pas.</p></div></details>
+  </div>
+</section>
+
+  </main>
+</div>

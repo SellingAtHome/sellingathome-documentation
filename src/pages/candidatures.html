@@ -1,0 +1,186 @@
+<!--page {"title":"Traiter une candidature"} -->
+<style>
+.chip { display:inline-block; border-radius:100px; padding:3px 11px; font-size:.78rem; font-weight:700; background:var(--surface); color:var(--heading); border:1px solid var(--rule); }
+.chip.g { background:var(--accent-wash); color:var(--accent-ink); border-color:transparent; }
+.chip.p { background:var(--pink-wash); color:var(--pink-ink); border-color:transparent; }
+.chip.y { background:var(--yellow-wash); color:var(--yellow-ink); border-color:transparent; }
+.btns td:first-child { width:30%; }
+</style>
+<header class="hero">
+  <div class="hero-in">
+    <div>
+      <span class="eyebrow">Recrutement</span>
+      <h1>Traiter <span class="script">une candidature</span></h1>
+      <p class="lede">La liste des candidatures, la fiche d'une candidate, le contrôle des documents, la signature du contrat et la création du compte conseillère. Bouton par bouton.</p>
+    </div>
+    <div class="voucher-art" aria-hidden="true">
+      <div class="v-top"><span>Gérer les demandes</span><span>3</span></div>
+      <div class="v-amount">2<span> / 3 validées</span></div>
+      <div class="v-name">Candidature de Chloé</div>
+      <div class="v-sep"></div>
+      <div class="v-meta"><span>Statut <b>A valider</b></span><span>Contrat <b>à envoyer</b></span></div>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="toc" aria-label="Sommaire">
+    <details id="tocDetails" open>
+      <summary>Sommaire</summary>
+      <div class="toc-title">Sommaire</div>
+      <ol>
+        <li data-sec="liste"><a href="#liste"><span class="toc-n">1</span>La liste des candidatures</a>
+          <ol class="toc-sub"><li><a href="#s1-1"><span class="toc-n">1.1</span>Colonnes et badges</a></li><li><a href="#s1-2"><span class="toc-n">1.2</span>Filtrer, chercher, exporter</a></li><li><a href="#s1-3"><span class="toc-n">1.3</span>Les actions de la liste</a></li></ol>
+        </li>
+        <li data-sec="fiche"><a href="#fiche"><span class="toc-n">2</span>La fiche d'une candidate</a></li>
+        <li data-sec="documents"><a href="#documents"><span class="toc-n">3</span>Valider ou refuser un document</a></li>
+        <li data-sec="signature"><a href="#signature"><span class="toc-n">4</span>La signature du contrat</a></li>
+        <li data-sec="conversion"><a href="#conversion"><span class="toc-n">5</span>Créer le compte conseillère</a></li>
+        <li data-sec="edition"><a href="#edition"><span class="toc-n">6</span>Modifier les informations</a></li>
+        <li data-sec="refus"><a href="#refus"><span class="toc-n">7</span>Refuser, ne pas retenir, supprimer</a></li>
+        <li data-sec="attention"><a href="#attention"><span class="toc-n">8</span>Points d'attention</a></li>
+        <li data-sec="faq"><a href="#faq"><span class="toc-n">9</span>Questions fréquentes</a></li>
+      </ol>
+    </details>
+  </nav>
+
+  <main>
+
+<section id="liste">
+  <div class="sec-head"><span class="sec-num">01</span><h2>La liste des candidatures</h2></div>
+  <div class="path" aria-label="Chemin d'accès"><span>Espace marque</span><span>Formulaires</span><span><b>Recrutements</b></span></div>
+  <figure><img src="Captures/Recrutement/liste-candidatures.png" alt="Liste Recrutements : bouton Export recrutements (FR), filtre Statut, recherche ; colonnes Date, Nom du candidat, Email, Tél., Statut avec badges Terminée, Contrat 1/2, Contrat 2/2, Contrat signé, et boutons supprimer, éditer, détails" loading="lazy"><figcaption>La liste des candidatures (noms fictifs).</figcaption></figure>
+  <div class="tip"><span class="ex-label">Vocabulaire</span><p>L'écran parle de <strong>candidat</strong>, de <strong>vendeur</strong> ou <strong>VDI</strong> pour la conseillère, et de <strong>parrain</strong> pour la recruteuse.</p></div>
+  <p>Un badge sur le menu <strong>Formulaires</strong> compte les nouvelles candidatures. Une candidature est considérée comme lue dès que vous ouvrez sa fiche.</p>
+
+  <h3 id="s1-1"><span class="sub-num">1.1</span> Colonnes et badges</h3>
+  <ul class="prose">
+    <li><strong>Date</strong>&nbsp;: date d'envoi de la candidature.</li>
+    <li><strong>Nom du candidat</strong>, <strong>Email</strong>, <strong>Tél.</strong> (le mobile, sinon le fixe).</li>
+    <li><strong>Statut</strong>&nbsp;: voir <a href="recrutement-principe.html#statuts">les statuts</a>. Couleur bleue pour «&nbsp;Terminée&nbsp;», rouge pour un refus, orange pour une candidature en cours.</li>
+    <li>Si vous avez un kit de démarrage, un petit <strong>i</strong> suit le statut des candidatures terminées&nbsp;: <span class="chip p">rouge</span> kit non commandé, <span class="chip y">orange</span> commande de kit créée mais non finalisée, <span class="chip g">vert</span> kit commandé.</li>
+  </ul>
+
+  <h3 id="s1-2"><span class="sub-num">1.2</span> Filtrer, chercher, exporter</h3>
+  <ul class="prose">
+    <li><strong>Filtrer</strong>&nbsp;: une liste déroulante <strong>Statut</strong>. Votre choix est mémorisé sur votre ordinateur.</li>
+    <li><strong>Rechercher une candidature…</strong>&nbsp;: sur le prénom, le nom, l'email ou le téléphone.</li>
+    <li><strong>Export recrutements (FR)</strong>&nbsp;: télécharge un fichier des candidatures.</li>
+  </ul>
+  <p class="muted">Le filtre ne propose pas le statut «&nbsp;Non retenue&nbsp;»&nbsp;: retrouvez ces candidatures par la recherche.</p>
+
+  <h3 id="s1-3"><span class="sub-num">1.3</span> Les actions de la liste</h3>
+  <div class="table-wrap"><table class="btns">
+    <thead><tr><th>Bouton</th><th>Effet</th></tr></thead>
+    <tbody>
+      <tr><td>✓ <b>Recruter</b></td><td>Lance la demande de documents&nbsp;: la candidate reçoit le lien de dépôt et la fiche s'ouvre. Visible seulement sur une nouvelle candidature non lue, quand les documents ne sont pas regroupés dans le formulaire. Bloqué si une conseillère utilise déjà cet email («&nbsp;Action impossible&nbsp;»).</td></tr>
+      <tr><td>⊘ <b>Refuser</b></td><td>Refuse la candidature avec un message (voir <a href="#refus">plus bas</a>).</td></tr>
+      <tr><td>✕ <b>Supprimer</b></td><td>Retire la candidature de la liste, après confirmation.</td></tr>
+      <tr><td>✎ <b>Éditer</b></td><td>Ouvre la page de modification des informations.</td></tr>
+      <tr><td>🗎 <b>Détails</b></td><td>Ouvre la fiche. Visible une fois le recrutement lancé (ou d'emblée si les documents sont regroupés dans le formulaire).</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="fiche">
+  <div class="sec-head"><span class="sec-num">02</span><h2>La fiche d'une candidate</h2></div>
+  <figure><img src="Captures/Recrutement/fiche-candidat.png" alt="Fiche Recrutement : en-tête Candidat, Date, Statut Terminée, Kit de démarrage avec boutons renvoyer le lien et copier le lien ; section Gérer les demandes avec trois vignettes Carte identité, Attestation de sécurité sociale et Contrat VDI au statut Validée" loading="lazy"><figcaption>La fiche d'une candidature terminée (nom fictif, adresse floutée).</figcaption></figure>
+  <p>En haut, la candidate (nom et adresse), la date de candidature, le <strong>statut</strong>, puis les boutons d'action disponibles à ce stade. En dessous, <strong>Gérer les demandes</strong> affiche une vignette par pièce demandée, avec son caractère <em>Obligatoire</em> ou <em>Facultatif</em> et son état&nbsp;:</p>
+  <ul class="prose">
+    <li><span class="chip y">En attente</span>&nbsp;: la candidate n'a rien déposé.</li>
+    <li><span class="chip">Envoyée</span>&nbsp;: déposée, à contrôler. L'œil ouvre le fichier.</li>
+    <li><span class="chip g">Validée</span>&nbsp;: contrôlée et acceptée.</li>
+  </ul>
+  <div class="table-wrap"><table class="btns">
+    <thead><tr><th>Bouton de l'en-tête</th><th>Quand il apparaît / ce qu'il fait</th></tr></thead>
+    <tbody>
+      <tr><td><b>Editer les informations</b></td><td>Tant que le contrat n'est pas parti en signature.</td></tr>
+      <tr><td><b>Ne pas retenir la candidature</b></td><td>Jusqu'à la signature de la candidate. Voir <a href="#refus">plus bas</a>.</td></tr>
+      <tr><td><b>Envoyer au candidat</b></td><td>Avant tout envoi, s'il y a des documents à demander&nbsp;: envoie la demande, statut «&nbsp;Candidature validée&nbsp;».</td></tr>
+      <tr><td><b>Renvoyer la demande de documents au candidat</b></td><td>S'il reste des pièces non déposées&nbsp;: renvoie l'email avec le lien.</td></tr>
+      <tr><td><b>Signature du contrat</b></td><td>Quand tous les documents obligatoires sont validés&nbsp;: envoie le contrat en signature.</td></tr>
+      <tr><td><b>Recréer le contrat</b> / <b>Envoyer le contrat par mail</b></td><td>Pendant la signature («&nbsp;Contrat 1/2&nbsp;» ou «&nbsp;2/2&nbsp;»). Voir <a href="#signature">la signature</a>.</td></tr>
+      <tr><td><b>Créer un VDI</b></td><td>Quand le contrat est signé par les deux parties&nbsp;: crée le compte conseillère.</td></tr>
+      <tr><td><b>Kit de démarrage</b> ↻ et ⧉</td><td>Après la création du compte, tant que le kit n'est pas payé&nbsp;: renvoyer le lien d'achat par email, ou le copier. Une fois le kit payé, un bouton ouvre la commande.</td></tr>
+    </tbody>
+  </table></div>
+  <p><strong>Ajouter une demande</strong> (vignette «&nbsp;+&nbsp;», tant que le contrat n'est pas créé) ajoute une pièce à cette candidate seulement&nbsp;: une <em>Information complémentaire</em> (Document seul, Texte seul, Document + Texte, obligatoire ou non) ou un <em>Contrat</em> choisi dans votre explorateur de fichiers.</p>
+</section>
+
+<section id="documents">
+  <div class="sec-head"><span class="sec-num">03</span><h2>Valider ou refuser un document</h2></div>
+  <p>Sur une vignette <span class="chip">Envoyée</span>, deux boutons&nbsp;: <strong>✓</strong> pour valider, <strong>⊘ Refuser</strong> pour refuser. Pour traiter plusieurs pièces d'un coup, cochez-les puis utilisez <strong>Action pour la sélection</strong> › Valider ou Refuser.</p>
+  <ol class="prose">
+    <li>Au refus, saisissez le <strong>Motif du refus pour le document</strong>&nbsp;: il est envoyé à la candidate par email.</li>
+    <li>Le fichier refusé est retiré, la vignette repasse <span class="chip y">En attente</span> et la candidature passe <span class="chip p">En correction</span>.</li>
+    <li>La candidate dépose une nouvelle version avec son lien&nbsp;: la vignette repasse «&nbsp;Envoyée&nbsp;».</li>
+    <li>Quand toutes les pièces obligatoires sont validées, la candidate est prévenue que son contrat arrive.</li>
+  </ol>
+  <div class="example"><span class="ex-label">Exemple</span><p>Chloé a envoyé une photo floue de sa carte d'identité. Vous la refusez avec le motif «&nbsp;Photo illisible, merci d'envoyer un scan recto-verso&nbsp;». Chloé reçoit l'email, dépose un nouveau fichier le lendemain, vous le validez&nbsp;: le bouton «&nbsp;Signature du contrat&nbsp;» apparaît.</p></div>
+  <p>Une pièce de type texte (une réponse écrite) peut être corrigée par votre équipe avec le crayon de sa vignette.</p>
+</section>
+
+<section id="signature">
+  <div class="sec-head"><span class="sec-num">04</span><h2>La signature du contrat</h2></div>
+  <figure><img src="Captures/Recrutement/fiche-candidat-contrat.png" alt="Fiche au statut Contrat 2/2 : boutons Recréer le contrat et Envoyer le contrat par mail, bandeau orange indiquant qu'un vendeur existe déjà avec ce numéro de sécurité sociale, vignette Contrat VDI Signé avec lien de signature et mention Le candidat doit signer pour obtenir le lien de la marque" loading="lazy"><figcaption>Une candidature en cours de signature (nom fictif).</figcaption></figure>
+  <p>Avant l'envoi, la fiche vérifie que l'email, le mobile (au format international, par exemple +33&nbsp;6…), le nom, le prénom, l'adresse, le code postal, la ville et la date de naissance sont renseignés&nbsp;; sinon elle liste les informations manquantes.</p>
+  <ul class="prose">
+    <li>La vignette du contrat affiche un lien vers la page de signature de la candidate, puis celui de la marque (actif seulement après la signature de la candidate). Une fois signée par la candidate, elle indique <strong>Signé&nbsp;: …</strong>.</li>
+    <li><strong>Envoyer le contrat par mail</strong> renvoie les liens de signature.</li>
+    <li><strong>Recréer le contrat</strong> régénère le contrat et les liens, par exemple après avoir corrigé une information ou si un lien a expiré. Une icône rouge signale une erreur du service de signature (souvent un numéro de mobile invalide)&nbsp;; elle en affiche le détail.</li>
+  </ul>
+  <div class="warn"><span class="ex-label">Attention</span><p>Une fois le contrat envoyé, la page de modification affiche&nbsp;: «&nbsp;Toute modification sur cette page ne modifiera pas le contrat du candidat, le contrat ayant déjà été transmis pour signature.&nbsp;» Les informations corrigées seront reprises dans le compte conseillère, mais pas dans le contrat, sauf si vous le recréez.</p></div>
+</section>
+
+<section id="conversion">
+  <div class="sec-head"><span class="sec-num">05</span><h2>Créer le compte conseillère</h2></div>
+  <p>Quand le statut est <span class="chip g">Contrat signé</span>, cliquez sur <strong>Créer un VDI</strong> (ou laissez la création automatique le faire, si votre marque l'a activée). Vous arrivez sur la liste des vendeurs.</p>
+  <ul class="prose">
+    <li>Le compte reprend l'identité, les coordonnées, l'adresse, la date et le lieu de naissance, le numéro de sécurité sociale, le statut juridique et les coordonnées bancaires de la candidature.</li>
+    <li>La recruteuse devient sa marraine dans le réseau&nbsp;; l'animatrice est enregistrée selon vos réglages.</li>
+    <li>Le statut et les rôles prévus pour les nouvelles conseillères sont appliqués, et un compte client lui est associé (ou son compte client existant, s'il y en a un avec le même email).</li>
+    <li>Le compte est <strong>verrouillé</strong> jusqu'au déverrouillage (automatique au paiement du kit, ou manuel dans l'onglet <strong>Sécurité</strong> de sa fiche vendeur).</li>
+    <li>La candidature passe <span class="chip">Terminée</span> et les emails de fin de recrutement partent (voir <a href="recrutement-principe.html#emails">les emails</a>).</li>
+  </ul>
+  <div class="warn"><span class="ex-label">Attention</span><p>Le bouton n'apparaît pas si une conseillère de votre marque utilise déjà le même <strong>email</strong> ou le même <strong>numéro de sécurité sociale</strong>&nbsp;: un bandeau orange vous le signale dès l'ouverture de la fiche. Corrigez l'email de la candidature ou la fiche existante.</p></div>
+</section>
+
+<section id="edition">
+  <div class="sec-head"><span class="sec-num">06</span><h2>Modifier les informations</h2></div>
+  <figure><img src="Captures/Recrutement/edition-candidat.png" alt="Page Editer les informations : bandeau d'avertissement sur le contrat déjà transmis, blocs Informations personnelles, Manager avec Nom du parrain, Animateur, Coordonnées bancaires Versement et Prélèvement, Documents, Coordonnées ; toutes les valeurs floutées" loading="lazy"><figcaption>La page de modification (valeurs floutées).</figcaption></figure>
+  <p>Accessible par le crayon de la liste ou le bouton de la fiche. Les blocs&nbsp;: <strong>Informations personnelles</strong>, <strong>Manager</strong> (le parrain&nbsp;: la recruteuse), <strong>Animateur</strong> (si l'animatrice n'est pas toujours la recruteuse), <strong>Coordonnées bancaires</strong> (Versement et Prélèvement), <strong>Documents</strong> (consultation des fichiers), <strong>Coordonnées</strong>, et vos champs personnalisés. Terminez par <strong>Enregistrer les modifications</strong>.</p>
+  <p>C'est ici que vous attribuez une recruteuse à une candidate qui n'en a pas indiqué.</p>
+</section>
+
+<section id="refus">
+  <div class="sec-head"><span class="sec-num">07</span><h2>Refuser, ne pas retenir, supprimer</h2></div>
+  <div class="grid-3">
+    <div class="card"><span class="tag pink">Refuser</span><p>Depuis la liste. Vous saisissez un <strong>Motif de votre refus</strong> puis <strong>Envoyer l'email de refus</strong>. Statut «&nbsp;Candidature refusée&nbsp;».</p></div>
+    <div class="card"><span class="tag pink">Ne pas retenir</span><p>Depuis la fiche, même principe (message puis <strong>Continuer</strong>). Statut «&nbsp;Non retenue&nbsp;». Possible jusqu'à la signature de la candidate.</p></div>
+    <div class="card"><span class="tag">Supprimer</span><p>Depuis la liste. Aucun email. La candidature disparaît de la liste.</p></div>
+  </div>
+  <p>Dans les deux premiers cas, le texte saisi est envoyé à la candidate&nbsp;: rédigez-le pour elle.</p>
+</section>
+
+<section id="attention">
+  <div class="sec-head"><span class="sec-num">08</span><h2>Points d'attention</h2></div>
+  <ul class="prose">
+    <li><strong>Ouvrir la fiche la marque comme lue</strong>&nbsp;: le bouton «&nbsp;Recruter&nbsp;» de la liste disparaît alors. Utilisez «&nbsp;Envoyer au candidat&nbsp;» dans la fiche.</li>
+    <li><strong>Le contrat ne suit pas les corrections</strong> une fois envoyé&nbsp;: recréez-le si l'erreur figure dans le contrat.</li>
+    <li><strong>Doublon d'email ou de numéro de sécurité sociale</strong>&nbsp;: réglez-le avant la signature, sinon la création du compte sera bloquée.</li>
+    <li><strong>Un compte créé reste verrouillé</strong> tant que l'accès n'est pas débloqué.</li>
+  </ul>
+</section>
+
+<section id="faq">
+  <div class="sec-head"><span class="sec-num">09</span><h2>Questions fréquentes</h2></div>
+  <div class="faq">
+    <details><summary>Le bouton «&nbsp;Signature du contrat&nbsp;» n'apparaît pas.</summary><div><p>Une pièce obligatoire n'est pas encore validée, ou la liste des demandes ne contient pas de contrat. Vérifiez les vignettes.</p></div></details>
+    <details><summary>Le bouton «&nbsp;Créer un VDI&nbsp;» n'apparaît pas alors que le contrat est signé.</summary><div><p>Une conseillère utilise déjà le même email ou le même numéro de sécurité sociale (bandeau orange), ou le compte a déjà été créé.</p></div></details>
+    <details><summary>La candidate n'a pas reçu son lien de signature.</summary><div><p>Utilisez «&nbsp;Envoyer le contrat par mail&nbsp;». En cas d'erreur signalée, vérifiez son mobile (format +33…) puis «&nbsp;Recréer le contrat&nbsp;».</p></div></details>
+    <details><summary>Comment ajouter un document oublié pour une seule candidate&nbsp;?</summary><div><p>Avec la vignette «&nbsp;Ajouter une demande&nbsp;» de sa fiche, tant que le contrat n'est pas créé, puis «&nbsp;Renvoyer la demande de documents au candidat&nbsp;».</p></div></details>
+  </div>
+</section>
+
+  </main>
+</div>

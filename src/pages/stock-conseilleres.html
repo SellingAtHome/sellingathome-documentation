@@ -1,0 +1,136 @@
+<!--page {"title":"Stocks chez les conseillères"} -->
+<style>
+.timeline { display:flex; flex-direction:column; border-left:3px solid var(--rule); margin-left:10px; }
+.tl { position:relative; padding:0 0 20px 28px; }
+.tl::before { content:""; position:absolute; left:-9px; top:4px; width:15px; height:15px; border-radius:50%; background:var(--card); border:3px solid var(--accent); }
+.tl.stop::before { border-color:var(--pink); }
+.tl b { color:var(--heading); display:block; }
+.tl p { color:var(--muted); font-size:.93rem; margin-top:4px; }
+.opts td:first-child { width:30%; }
+</style>
+<header class="hero">
+  <div class="hero-in">
+    <div>
+      <span class="eyebrow">Réseau et rémunération</span>
+      <h1>Stocks <span class="script">chez les conseillères</span></h1>
+      <p class="lede">Quand vos conseillères détiennent de la marchandise&nbsp;: confier du stock à une conseillère, le corriger, le reprendre, et le suivre pour tout le réseau.</p>
+      <p><span class="tag yellow" style="display:inline-block">Module optionnel</span></p>
+    </div>
+    <div class="voucher-art" aria-hidden="true">
+      <div class="v-top"><span>Stock de Léa</span><span>Entreposage</span></div>
+      <div class="v-amount">12<span> unités</span></div>
+      <div class="v-name">Bougie Lavande</div>
+      <div class="v-sep"></div>
+      <div class="v-meta"><span>Marque <b>−12</b></span><span>Léa <b>+12</b></span></div>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="toc" aria-label="Sommaire">
+    <details id="tocDetails" open>
+      <summary>Sommaire</summary>
+      <div class="toc-title">Sommaire</div>
+      <ol>
+        <li data-sec="definition"><a href="#definition"><span class="toc-n">1</span>À quoi sert ce module</a></li>
+        <li data-sec="fiche"><a href="#fiche"><span class="toc-n">2</span>Le stock d'une conseillère</a>
+          <ol class="toc-sub"><li><a href="#s2-1"><span class="toc-n">2.1</span>Ajouter un produit</a></li><li><a href="#s2-2"><span class="toc-n">2.2</span>Modifier une quantité</a></li><li><a href="#s2-3"><span class="toc-n">2.3</span>Retirer des produits</a></li></ol>
+        </li>
+        <li data-sec="mouvements"><a href="#mouvements"><span class="toc-n">3</span>Stock de la marque et stock de la conseillère</a></li>
+        <li data-sec="entreposage"><a href="#entreposage"><span class="toc-n">4</span>Vue d'ensemble&nbsp;: Entreposage</a></li>
+        <li data-sec="commandes"><a href="#commandes"><span class="toc-n">5</span>Le lien avec les commandes</a></li>
+        <li data-sec="attention"><a href="#attention"><span class="toc-n">6</span>Points d'attention</a></li>
+        <li data-sec="faq"><a href="#faq"><span class="toc-n">7</span>Questions fréquentes</a></li>
+      </ol>
+    </details>
+  </nav>
+
+  <main>
+
+<!-- 1 -->
+<section id="definition">
+  <div class="sec-head"><span class="sec-num">01</span><h2>À quoi sert ce module</h2></div>
+  <p class="lede">Certaines marques confient de la marchandise à leurs conseillères (dépôt, échantillons, produits vendus sur place). Le module d'entreposage tient, pour chaque conseillère, la <strong>quantité de chaque produit qu'elle détient</strong>, et déplace les quantités entre le stock de la marque et le sien.</p>
+  <p>Le module est activé par SellingAtHome à la demande&nbsp;; 3 marques sur 35 l'utilisent. Sans lui, le menu <strong>Entreposage</strong> et l'onglet <strong>Stock</strong> de la fiche n'apparaissent pas.</p>
+  <div class="tip"><span class="ex-label">Vocabulaire</span><p>L'espace marque parle de <strong>vendeur</strong> pour la conseillère&nbsp;: «&nbsp;Gestion du stock vendeur&nbsp;», «&nbsp;Quantité en stock chez le vendeur&nbsp;».</p></div>
+</section>
+
+<!-- 2 -->
+<section id="fiche">
+  <div class="sec-head"><span class="sec-num">02</span><h2>Le stock d'une conseillère</h2></div>
+  <div class="path" aria-label="Chemin d'accès"><span>Espace marque</span><span>Vendeurs</span><span>Vendeurs</span><span>Éditer le vendeur</span><span>Onglet <b>Stock</b></span></div>
+  <figure><img src="Captures/Reseau/edit-stock.png" alt="Onglet Stock de la fiche : Gestion du stock vendeur, boutons Ajouter un produit et Supprimer tout, recherche, colonnes Produit, Référence produit, Photo produit, Quantité" loading="lazy"><figcaption>L'onglet Stock (vide sur la marque de démonstration).</figcaption></figure>
+  <p>Le tableau liste chaque produit (et chaque déclinaison) détenu par la conseillère, avec sa quantité. Chaque ligne a un <strong>crayon</strong> (modifier la quantité) et une <strong>croix</strong> (retirer le produit).</p>
+
+  <h3 id="s2-1"><span class="sub-num">2.1</span> Ajouter un produit</h3>
+  <div class="timeline">
+    <div class="tl"><b>1. Ajouter un produit</b><p>Un panneau s'ouvre&nbsp;: parcourez les catégories ou cherchez le produit.</p></div>
+    <div class="tl"><b>2. Choisir la déclinaison et la quantité</b><p>Pour un produit à déclinaisons, choisissez les attributs (taille, couleur…)&nbsp;: la quantité ne peut alors pas dépasser le stock disponible de la marque, et une déclinaison sans stock est signalée «&nbsp;Cette combinaison n'a pas de stock disponible&nbsp;».</p></div>
+    <div class="tl stop"><b>3. Valider</b><p>Le produit apparaît dans le stock de la conseillère&nbsp;; la même quantité sort du stock de la marque.</p></div>
+  </div>
+  <div class="warn"><span class="ex-label">Attention</span><p>La quantité saisie est la <strong>nouvelle quantité détenue</strong>, pas une quantité à ajouter. Si Léa a déjà 5 bougies et que vous «&nbsp;ajoutez&nbsp;» 3 bougies, son stock passe à <strong>3</strong>, et 2 bougies retournent au stock de la marque.</p></div>
+
+  <h3 id="s2-2"><span class="sub-num">2.2</span> Modifier une quantité</h3>
+  <p>Le crayon ouvre <strong>Quantité en stock chez le vendeur</strong>&nbsp;: saisissez la nouvelle quantité. La différence est prise au stock de la marque (hausse) ou lui est rendue (baisse).</p>
+  <div class="warn"><span class="ex-label">Attention</span><p>Valider sans changer la quantité <strong>ajoute une unité</strong>. Fermez la fenêtre avec <strong>Annuler</strong> si vous ne voulez rien changer.</p></div>
+
+  <h3 id="s2-3"><span class="sub-num">2.3</span> Retirer des produits</h3>
+  <ul class="prose">
+    <li>La <strong>croix</strong> d'une ligne retire tout le produit du stock de la conseillère et le rend au stock de la marque.</li>
+    <li><strong>Supprimer tout</strong> fait de même pour les produits <strong>affichés sur la page</strong> du tableau (10 par défaut). S'il y a plusieurs pages, recommencez sur chacune, ou affichez plus de lignes avant.</li>
+  </ul>
+  <div class="warn"><span class="ex-label">Attention</span><p>Retirer un produit efface aussi l'<strong>historique de ses mouvements</strong> chez cette conseillère.</p></div>
+</section>
+
+<!-- 3 -->
+<section id="mouvements">
+  <div class="sec-head"><span class="sec-num">03</span><h2>Stock de la marque et stock de la conseillère</h2></div>
+  <p>Chaque mouvement est symétrique&nbsp;: ce qui entre chez la conseillère sort du stock de votre marque, et inversement. Les deux mouvements sont tracés dans les historiques de stock, avec le nom de l'administrateur qui les a faits.</p>
+  <div class="example"><span class="ex-label">Exemple</span><p>Votre stock compte 100 bougies Lavande. Vous en confiez 12 à Léa&nbsp;: votre stock passe à 88, celui de Léa à 12. Fin du mois, Léa en a vendu 9&nbsp;; vous ramenez sa quantité à 3 avec le crayon&nbsp;: 9 bougies <strong>reviennent</strong> dans votre stock (88 + 9 = 97). Si ces 9 bougies ont été vendues et ne reviennent pas physiquement, corrigez votre stock en conséquence (voir l'univers <a href="catalogue.html">Catalogue et logistique</a>).</p></div>
+  <p class="muted">Pour un produit dont la marque ne suit pas le stock, seul le stock de la conseillère bouge.</p>
+</section>
+
+<!-- 4 -->
+<section id="entreposage">
+  <div class="sec-head"><span class="sec-num">04</span><h2>Vue d'ensemble&nbsp;: Entreposage</h2></div>
+  <div class="path" aria-label="Chemin d'accès"><span>Espace marque</span><span>Vendeurs</span><span><b>Entreposage</b></span></div>
+  <figure><img src="Captures/Reseau/entreposage.png" alt="Gestion des stocks vendeurs : recherche d'un produit, colonnes Vendeur, Produit, Référence produit, Photo produit, Quantité" loading="lazy"><figcaption>L'écran Entreposage (vide sur la marque de démonstration).</figcaption></figure>
+  <p>L'écran <strong>Gestion des stocks vendeurs</strong> liste, pour toutes vos conseillères, chaque produit détenu&nbsp;: <strong>Vendeur</strong>, <strong>Produit</strong>, <strong>Référence produit</strong>, <strong>Photo produit</strong>, <strong>Quantité</strong>. Il est en lecture seule&nbsp;: les corrections se font sur la fiche de la conseillère.</p>
+  <ul class="prose">
+    <li>Les lignes à quantité nulle ne sont pas affichées.</li>
+    <li>Les produits supprimés du catalogue ou rangés dans aucune catégorie de votre marque n'apparaissent pas, même s'il en reste chez une conseillère.</li>
+  </ul>
+</section>
+
+<!-- 5 -->
+<section id="commandes">
+  <div class="sec-head"><span class="sec-num">05</span><h2>Le lien avec les commandes</h2></div>
+  <ul class="prose">
+    <li><strong>Commandes VCE</strong>&nbsp;: pour ce type de commande, propre à certaines marques (voir <a href="commandes-comprendre.html#s2-2">Comprendre les commandes</a>), le stock de la marque n'est pas contrôlé&nbsp;: les produits viennent du stock de la conseillère. Si une ligne, ou la commande, est annulée ou supprimée, les quantités reviennent dans <strong>son</strong> stock, et non dans celui de la marque.</li>
+    <li><strong>Stock «&nbsp;en recherche&nbsp;»</strong>&nbsp;: sur option, quand votre stock est épuisé, une commande peut rester possible si une autre conseillère détient le produit.</li>
+  </ul>
+</section>
+
+<!-- 6 -->
+<section id="attention">
+  <div class="sec-head"><span class="sec-num">06</span><h2>Points d'attention</h2></div>
+  <ul class="prose">
+    <li><strong>Ajouter = fixer la quantité</strong>, pas l'augmenter.</li>
+    <li><strong>Valider le crayon sans changement ajoute 1</strong>.</li>
+    <li><strong>Supprimer tout ne concerne que la page affichée</strong>.</li>
+    <li><strong>Retirer un produit rend la marchandise à votre stock</strong>&nbsp;: c'est juste si elle revient physiquement, pas si elle a été vendue.</li>
+  </ul>
+</section>
+
+<!-- 7 -->
+<section id="faq">
+  <div class="sec-head"><span class="sec-num">07</span><h2>Questions fréquentes</h2></div>
+  <div class="faq">
+    <details><summary>Je ne vois ni le menu Entreposage ni l'onglet Stock.</summary><div><p>Le module n'est pas activé pour votre marque. Contactez SellingAtHome.</p></div></details>
+    <details><summary>Je ne peux pas confier une déclinaison à une conseillère.</summary><div><p>Votre stock de cette déclinaison est à zéro. Réapprovisionnez-la d'abord.</p></div></details>
+    <details><summary>Un produit détenu par une conseillère n'apparaît pas dans Entreposage.</summary><div><p>Il a été supprimé du catalogue, ou il n'est rangé dans aucune catégorie de votre marque.</p></div></details>
+  </div>
+</section>
+
+  </main>
+</div>

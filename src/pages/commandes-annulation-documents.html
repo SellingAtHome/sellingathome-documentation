@@ -1,0 +1,206 @@
+<!--page {"title":"Annulations, avoirs et documents"} -->
+<style>
+.opts td:first-child { width:24%; }
+.opts td:nth-child(3) { width:30%; font-size:.9rem; }
+.chip { display:inline-block; border-radius:100px; padding:3px 11px; font-size:.78rem; font-weight:700; background:var(--surface); color:var(--heading); border:1px solid var(--rule); }
+.chip.p { background:var(--pink-wash); color:var(--pink-ink); border-color:transparent; }
+.chip.g { background:var(--accent-wash); color:var(--accent-ink); border-color:transparent; }
+.ref { font-family:ui-monospace, Menlo, Consolas, monospace; font-weight:700; color:var(--heading); }
+</style>
+<header class="hero">
+  <div class="hero-in">
+    <div>
+      <span class="eyebrow">Commandes et boutiques</span>
+      <h1>Annulations, <span class="script">avoirs et documents</span></h1>
+      <p class="lede">Annuler tout ou partie d'une commande payée depuis sa fiche, comprendre l'avoir qui en résulte, et retrouver, envoyer ou imprimer les documents d'une commande&nbsp;: bon de commande, facture, avoir, bordereau, mandat SEPA.</p>
+    </div>
+    <div class="voucher-art" aria-hidden="true">
+      <div class="v-top"><span>Avoir</span><span>AV261000042</span></div>
+      <div class="v-amount">25<span> €</span></div>
+      <div class="v-name">Boucles d'oreilles annulées</div>
+      <div class="v-sep"></div>
+      <div class="v-meta"><span>Commande <b>Partiellement annulée</b></span><span>Stock <b>remis</b></span></div>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="toc" aria-label="Sommaire">
+    <details id="tocDetails" open>
+      <summary>Sommaire</summary>
+      <div class="toc-title">Sommaire</div>
+      <ol>
+        <li data-sec="principe"><a href="#principe"><span class="toc-n">1</span>Le principe</a></li>
+        <li data-sec="annuler"><a href="#annuler"><span class="toc-n">2</span>Annuler depuis la fiche</a>
+          <ol class="toc-sub"><li><a href="#s2-1"><span class="toc-n">2.1</span>Quand le bouton apparaît</a></li><li><a href="#s2-2"><span class="toc-n">2.2</span>La fenêtre d'annulation</a></li><li><a href="#s2-3"><span class="toc-n">2.3</span>Refuser l'encaissement</a></li></ol>
+        </li>
+        <li data-sec="effets"><a href="#effets"><span class="toc-n">3</span>Ce que fait l'annulation</a></li>
+        <li data-sec="exemples"><a href="#exemples"><span class="toc-n">4</span>Exemples</a></li>
+        <li data-sec="documents"><a href="#documents"><span class="toc-n">5</span>Les documents</a>
+          <ol class="toc-sub"><li><a href="#s5-1"><span class="toc-n">5.1</span>Où les trouver</a></li><li><a href="#s5-2"><span class="toc-n">5.2</span>Chaque document</a></li><li><a href="#s5-3"><span class="toc-n">5.3</span>Envoyer par email</a></li><li><a href="#s5-4"><span class="toc-n">5.4</span>Imprimer en masse</a></li><li><a href="#s5-5"><span class="toc-n">5.5</span>La numérotation</a></li></ol>
+        </li>
+        <li data-sec="chiffres"><a href="#chiffres"><span class="toc-n">6</span>En chiffres</a></li>
+        <li data-sec="attention"><a href="#attention"><span class="toc-n">7</span>Points d'attention</a></li>
+        <li data-sec="faq"><a href="#faq"><span class="toc-n">8</span>Questions fréquentes</a></li>
+      </ol>
+    </details>
+  </nav>
+
+  <main>
+
+<!-- 1 -->
+<section id="principe">
+  <div class="sec-head"><span class="sec-num">01</span><h2>Le principe</h2></div>
+  <p class="lede">Une commande payée ne se supprime pas&nbsp;: elle <strong>s'annule</strong>, en totalité ou en partie. Chaque annulation crée un <strong>avoir</strong>, le document comptable qui vient en déduction de la facture.</p>
+  <p>Les règles générales (supprimer avant paiement, annuler après) et l'action groupée «&nbsp;Annuler les commandes payées&nbsp;» sont présentées dans <a href="commandes-comprendre.html#regles">Comprendre les commandes</a>. Cette page détaille l'annulation depuis la <strong>fiche commande</strong>, la seule qui permet d'annuler une partie des produits.</p>
+  <div class="tip"><span class="ex-label">Vocabulaire</span><p>Dans l'espace marque, la conseillère est appelée <strong>vendeur</strong> et la cliente <strong>client</strong>.</p></div>
+</section>
+
+<!-- 2 -->
+<section id="annuler">
+  <div class="sec-head"><span class="sec-num">02</span><h2>Annuler depuis la fiche</h2></div>
+  <div class="path" aria-label="Chemin d'accès"><span>Espace marque</span><span>Commandes</span><span>Commandes</span><span>Fiche de la commande</span><span>Bouton <b>Annuler la commande</b></span></div>
+
+  <h3 id="s2-1"><span class="sub-num">2.1</span> Quand le bouton apparaît</h3>
+  <p>Le bouton <strong>Annuler la commande</strong> s'affiche en haut de la fiche si&nbsp;:</p>
+  <ul class="prose">
+    <li>l'annulation des commandes est ouverte pour votre marque (c'est le cas des 35 marques actives)&nbsp;;</li>
+    <li>la commande est <strong>payée</strong>, ni annulée ni supprimée, et il lui reste au moins un produit non annulé&nbsp;;</li>
+    <li>au moins un de ses paiements est <strong>validé</strong>, sauf si votre marque a levé cette exigence (aucune marque ne l'a fait).</li>
+  </ul>
+  <p>L'état d'expédition n'entre pas en compte&nbsp;: une commande déjà expédiée peut être annulée, par exemple après un retour.</p>
+
+  <h3 id="s2-2"><span class="sub-num">2.2</span> La fenêtre d'annulation</h3>
+  <div class="figrow">
+    <figure><img src="Captures/Commandes/annulation-commande.png" alt="Fenêtre Annulation de la commande : question Re-stocker les produits ? avec Non et Oui (Oui coché), avertissement en rouge sur le restockage automatique, bouton Enregistrer" loading="lazy"><figcaption>La fenêtre, ici pour une commande dont le paiement n'est pas encore validé.</figcaption></figure>
+    <div class="prose" style="display:flex;flex-direction:column;gap:12px">
+      <p>La fenêtre <strong>Annulation de la commande</strong> contient, selon le cas&nbsp;:</p>
+      <ul>
+        <li><strong>Sélectionner les articles et les quantités à annuler</strong>&nbsp;: une ligne par produit, avec la quantité à annuler et une case. <strong>Tout annuler</strong> coche toutes les lignes (vérifiez les quantités).</li>
+        <li><strong>Re-stocker les produits&nbsp;?</strong> (Oui par défaut), si votre marque autorise la remise en stock.</li>
+        <li><strong>Rembourser le paiement</strong>, si le remboursement automatique est activé pour le moyen de paiement de la commande.</li>
+        <li><strong>Motif d'annulation</strong>, pour un kit de démarrage seulement.</li>
+      </ul>
+      <p>Cliquez sur <strong>Enregistrer</strong>, puis confirmez. Le message dit si l'annulation est totale ou partielle.</p>
+    </div>
+  </div>
+  <div class="warn"><span class="ex-label">Attention</span><p>L'avertissement rouge de la fenêtre («&nbsp;si votre commande n'est pas expédiée le restockage se fera automatiquement peu importe l'option choisie&nbsp;») ne correspond pas au fonctionnement actuel&nbsp;: les produits ne sont remis en stock que si vous répondez <strong>Oui</strong>.</p></div>
+
+  <h3 id="s2-3"><span class="sub-num">2.3</span> Refuser l'encaissement</h3>
+  <p>Le bouton <strong>Refuser l'encaissement et annuler la commande</strong> apparaît quand la commande a des paiements dont <strong>aucun n'est validé</strong> (ou qu'elle est partiellement payée). Il sert au chèque sans provision ou au virement jamais reçu&nbsp;: la commande est annulée en totalité <strong>sans avoir</strong>, puisque l'argent n'a jamais été encaissé.</p>
+</section>
+
+<!-- 3 -->
+<section id="effets">
+  <div class="sec-head"><span class="sec-num">03</span><h2>Ce que fait l'annulation</h2></div>
+  <div class="table-wrap"><table class="opts">
+    <thead><tr><th>Effet</th><th>Annulation partielle</th><th>Annulation totale</th></tr></thead>
+    <tbody>
+      <tr><td><b>Avoir</b></td><td>Un avoir pour les produits et quantités choisis.</td><td>Un avoir pour le reste de la commande.</td></tr>
+      <tr><td><b>Statut</b></td><td><span class="chip p">Partiellement annulée</span>. Si tout ce qui reste est déjà expédié, l'expédition passe à «&nbsp;expédiée&nbsp;».</td><td><span class="chip p">Annulée</span></td></tr>
+      <tr><td><b>Stock</b></td><td colspan="2">Remis en stock si vous avez répondu Oui (et si votre marque l'autorise). Les kits sont remis composant par composant. Si votre catalogue est synchronisé avec une boutique en ligne, le stock y est mis à jour.</td></tr>
+      <tr><td><b>Bons d'achat utilisés</b></td><td>Inchangés.</td><td>Rendus à la cliente.</td></tr>
+      <tr><td><b>Points de fidélité</b></td><td>Inchangés.</td><td>Retirés si votre marque l'a choisi (option désactivée par défaut).</td></tr>
+      <tr><td><b>Frais de livraison</b></td><td>Non repris.</td><td>Repris dans le montant remboursé si la commande n'est pas livrée.</td></tr>
+      <tr><td><b>Remboursement</b></td><td colspan="2">Seulement si «&nbsp;Rembourser le paiement&nbsp;» est proposé et laissé sur Oui. Sinon, remboursez la cliente en dehors de SellingAtHome.</td></tr>
+      <tr><td><b>Chiffre d'affaires</b></td><td colspan="2">L'avoir vient en déduction du chiffre d'affaires et du chiffre commissionnable de la conseillère.</td></tr>
+      <tr><td><b>Historique</b></td><td colspan="2">Une ligne est ajoutée dans l'onglet <strong>Historique statut</strong>, avec le numéro de l'avoir.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="tip"><span class="ex-label">Bon à savoir</span><p>Aucun email n'est envoyé automatiquement à la cliente. Pour lui adresser l'avoir, utilisez <a href="#s5-3">l'envoi par email</a>. Seule exception&nbsp;: l'annulation d'un kit de démarrage prévient la conseillère, avec le motif saisi.</p></div>
+</section>
+
+<!-- 4 -->
+<section id="exemples">
+  <div class="sec-head"><span class="sec-num">04</span><h2>Exemples</h2></div>
+  <div class="example"><span class="ex-label">Annulation partielle</span><p>Emma a commandé deux bracelets à 30&nbsp;€ et un collier à 47&nbsp;€, total 107&nbsp;€. Un bracelet arrive abîmé et Emma le renvoie. Dans la fenêtre, vous cochez le bracelet, quantité 1, et répondez Oui au restockage. Un avoir de 30&nbsp;€ est créé, le bracelet revient en stock et la commande passe en «&nbsp;Partiellement annulée&nbsp;». Le bon d'achat de 10&nbsp;€ qu'Emma avait utilisé reste consommé.</p></div>
+  <div class="example"><span class="ex-label">Annulation totale</span><p>Zoé annule sa commande de 72&nbsp;€, payée par carte et pas encore expédiée. Vous cliquez sur <strong>Tout annuler</strong> et répondez Oui au restockage. Un avoir couvre toute la commande, frais de livraison compris dans le remboursement&nbsp;; le bon d'achat qu'elle avait utilisé lui est rendu. Si «&nbsp;Rembourser le paiement&nbsp;» n'est pas proposé, vous remboursez Zoé depuis l'outil de votre banque.</p></div>
+  <div class="example"><span class="ex-label">Encaissement refusé</span><p>Le chèque de 45&nbsp;€ de Camille est rejeté par la banque. Son paiement n'avait pas été validé&nbsp;: vous cliquez sur <strong>Refuser l'encaissement et annuler la commande</strong>. La commande est annulée sans avoir.</p></div>
+</section>
+
+<!-- 5 -->
+<section id="documents">
+  <div class="sec-head"><span class="sec-num">05</span><h2>Les documents</h2></div>
+
+  <h3 id="s5-1"><span class="sub-num">5.1</span> Où les trouver</h3>
+  <ul class="prose">
+    <li>Sur la <strong>fiche commande</strong>, en bas du bloc <strong>Informations sur la commande</strong>&nbsp;: une ligne par document (date, nom, montant) et un œil pour l'ouvrir.</li>
+    <li>Dans la <strong>liste des commandes</strong>, colonne <strong>Documents</strong>&nbsp;: le menu <strong>Voir les documents</strong> propose <strong>Télécharger le BDC</strong>, <strong>Télécharger la facture</strong> et <strong>Télécharger l'Avoir</strong>.</li>
+  </ul>
+  <p>Chaque document s'ouvre dans une page qui affiche le PDF, avec un bouton d'envoi par email.</p>
+
+  <h3 id="s5-2"><span class="sub-num">5.2</span> Chaque document</h3>
+  <div class="table-wrap"><table class="opts">
+    <thead><tr><th>Document</th><th>Ce que c'est</th><th>Quand il existe</th></tr></thead>
+    <tbody>
+      <tr><td><b>Bon de commande</b></td><td>Le récapitulatif de la commande signé ou accepté par la cliente.</td><td>Commande payée (et rattachée à une conseillère). Bouton <strong>Regénérer le bon de commande</strong> pour le recalculer.</td></tr>
+      <tr><td><b>Facture</b></td><td>La facture de la vente.</td><td>Créée automatiquement au paiement, si votre marque génère ses factures dans SellingAtHome (réglage par défaut). Les commandes web affichent «&nbsp;Facture web&nbsp;»&nbsp;: leur facture est émise par votre site.</td></tr>
+      <tr><td><b>Avoir</b></td><td>Le document d'annulation, totale ou partielle.</td><td>Un par annulation.</td></tr>
+      <tr><td><b>Bordereau de livraison</b></td><td>Le détail d'un envoi (quantités expédiées).</td><td>Un par expédition, si le bordereau est activé pour votre marque.</td></tr>
+      <tr><td><b>Mandat SEPA</b></td><td>Le mandat de prélèvement signé.</td><td>Commande payée par prélèvement, avec un mandat signé et une facture.</td></tr>
+      <tr><td><b>Etiquette d'expédition</b></td><td>L'étiquette du transporteur (GLS, DPD).</td><td>Si elle a été générée.</td></tr>
+    </tbody>
+  </table></div>
+  <p class="muted">Des factures complémentaires peuvent aussi apparaître, transmises par votre système de gestion via une intégration.</p>
+
+  <h3 id="s5-3"><span class="sub-num">5.3</span> Envoyer par email</h3>
+  <p>Chaque page de document a son bouton&nbsp;: <strong>Envoyer la facture par email</strong>, <strong>Envoyer le bon de commande par email</strong>, <strong>Envoyer l'avoir par email</strong>, <strong>Envoyer le mandat SEPA par email</strong>, <strong>Envoyer le bordereau de livraison par email</strong>. Saisissez l'adresse du destinataire&nbsp;: l'email part avec le document, selon votre modèle d'email correspondant.</p>
+  <ul class="prose">
+    <li>Pour la facture, votre marque peut demander une <strong>copie</strong> automatique à une adresse de votre choix, et une copie à la conseillère (options désactivées par défaut, activées par SellingAtHome).</li>
+    <li>Le bouton du bon de commande envoie, selon votre réglage, le bon de commande, la facture, ou les deux.</li>
+  </ul>
+
+  <h3 id="s5-4"><span class="sub-num">5.4</span> Imprimer en masse</h3>
+  <p>Dans la liste des commandes, cochez des commandes puis ouvrez <strong>Action pour la sélection</strong>&nbsp;: <strong>Imprimer les bons de commande</strong> ou <strong>Imprimer les factures</strong>. Un seul PDF rassemble les documents des commandes <strong>payées</strong> de la sélection&nbsp;; les autres sont ignorées.</p>
+  <div class="warn"><span class="ex-label">Attention</span><p>Évitez de sélectionner des commandes web dans une impression de factures&nbsp;: elles n'ont pas de facture SellingAtHome et peuvent bloquer la génération du fichier. Pour un très grand nombre de commandes, procédez par lots.</p></div>
+  <p>Pour préparer les colis (bons de préparation par réunion, par conseillère ou par produit), voir l'univers <a href="catalogue.html">Catalogue et logistique</a>.</p>
+
+  <h3 id="s5-5"><span class="sub-num">5.5</span> La numérotation</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Document</th><th>Format</th><th>Exemple</th></tr></thead>
+    <tbody>
+      <tr><td><b>Facture</b></td><td><span class="ref">FC</span> + année et mois du paiement (AAMM) + numéro d'ordre sur 5 chiffres, repartant à 1 chaque mois</td><td><span class="ref">FC261000013</span>&nbsp;: 13<sup>e</sup> facture d'octobre 2026</td></tr>
+      <tr><td><b>Avoir</b></td><td><span class="ref">AV</span> + AAMM + numéro d'ordre sur 5 chiffres, par mois</td><td><span class="ref">AV261000042</span></td></tr>
+    </tbody>
+  </table></div>
+  <p>La numérotation est propre à votre marque. Les préfixes ne sont pas modifiables.</p>
+</section>
+
+<!-- 6 -->
+<section id="chiffres">
+  <div class="sec-head"><span class="sec-num">06</span><h2>En chiffres</h2></div>
+  <p class="lede">Repères observés sur un an, sur l'ensemble des marques.</p>
+  <div class="stats">
+    <div class="stat"><b>3,2 %</b><span>des commandes payées sont partiellement annulées</span></div>
+    <div class="stat"><b>1,8 %</b><span>des commandes payées sont entièrement annulées</span></div>
+    <div class="stat"><b>29 sur 35</b><span>marques ont émis au moins un avoir</span></div>
+    <div class="stat"><b>30 sur 35</b><span>marques autorisent la remise en stock à l'annulation</span></div>
+  </div>
+</section>
+
+<!-- 7 -->
+<section id="attention">
+  <div class="sec-head"><span class="sec-num">07</span><h2>Points d'attention</h2></div>
+  <ul class="prose">
+    <li><strong>Vérifiez les quantités</strong> avant d'enregistrer&nbsp;: «&nbsp;Tout annuler&nbsp;» coche les lignes mais ne modifie pas les quantités saisies.</li>
+    <li><strong>Le restockage dépend de votre réponse</strong>, quoi qu'en dise l'avertissement de la fenêtre.</li>
+    <li><strong>Une annulation partielle ne rend ni bon d'achat ni points</strong>&nbsp;: seule l'annulation totale le fait.</li>
+    <li><strong>Le remboursement n'est pas toujours automatique</strong>&nbsp;: sans la question «&nbsp;Rembourser le paiement&nbsp;», il se fait hors de SellingAtHome.</li>
+    <li><strong>Une annulation est définitive</strong>&nbsp;: pas de retour arrière. Pour revendre, créez une nouvelle commande.</li>
+  </ul>
+</section>
+
+<!-- 8 -->
+<section id="faq">
+  <div class="sec-head"><span class="sec-num">08</span><h2>Questions fréquentes</h2></div>
+  <div class="faq">
+    <details><summary>Le bouton «&nbsp;Annuler la commande&nbsp;» n'apparaît pas.</summary><div><p>La commande n'est pas payée (elle se supprime), elle est déjà entièrement annulée, ou aucun de ses paiements n'est validé&nbsp;: validez d'abord le paiement dans le bloc Moyen de paiement, ou utilisez «&nbsp;Refuser l'encaissement et annuler la commande&nbsp;».</p></div></details>
+    <details><summary>Comment annuler seulement une partie d'une commande&nbsp;?</summary><div><p>Depuis la fiche commande, dans la fenêtre d'annulation&nbsp;: cochez les produits concernés et indiquez la quantité. L'action groupée de la liste annule toujours tout.</p></div></details>
+    <details><summary>La cliente a-t-elle été remboursée&nbsp;?</summary><div><p>Seulement si la fenêtre proposait «&nbsp;Rembourser le paiement&nbsp;» et que vous l'avez laissé sur Oui. Une icône de remboursement apparaît alors à côté du paiement. Sinon, remboursez-la par vos moyens habituels.</p></div></details>
+    <details><summary>Une commande n'a pas de facture.</summary><div><p>C'est une commande web (facture émise par votre site), ou votre marque ne génère pas ses factures dans SellingAtHome, ou la commande a été marquée payée sans passer par le parcours de paiement.</p></div></details>
+    <details><summary>Peut-on éditer un duplicata de facture&nbsp;?</summary><div><p>Il n'existe pas de mention «&nbsp;duplicata&nbsp;». Vous pouvez rouvrir et renvoyer la facture à tout moment&nbsp;: c'est le même document.</p></div></details>
+  </div>
+</section>
+
+  </main>
+</div>

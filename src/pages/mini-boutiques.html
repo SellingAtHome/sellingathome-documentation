@@ -1,0 +1,199 @@
+<!--page {"title":"Les mini-boutiques des conseillères"} -->
+<style>
+.timeline { display:flex; flex-direction:column; border-left:3px solid var(--rule); margin-left:10px; }
+.tl { position:relative; padding:0 0 20px 28px; }
+.tl::before { content:""; position:absolute; left:-9px; top:4px; width:15px; height:15px; border-radius:50%; background:var(--card); border:3px solid var(--accent); }
+.tl.stop::before { border-color:var(--pink); }
+.tl b { color:var(--heading); display:block; }
+.tl p { color:var(--muted); font-size:.93rem; margin-top:4px; }
+.opts td:first-child { width:32%; }
+.levels { display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:14px; }
+.levels .card { border-top:5px solid var(--accent); }
+.levels .card:nth-child(2) { border-top-color:var(--pink); }
+.levels .card:nth-child(3) { border-top-color:var(--yellow); }
+</style>
+<header class="hero">
+  <div class="hero-in">
+    <div>
+      <span class="eyebrow">Commandes et boutiques</span>
+      <h1>Les mini-boutiques <span class="script">des conseillères</span></h1>
+      <p class="lede">Chaque conseillère peut avoir sa boutique en ligne, à son nom&nbsp;: ses clientes y commandent seules, la vente lui revient. L'activation, la personnalisation par la marque, les réglages de la conseillère, le parcours de la cliente et les commandes produites.</p>
+      <p><span class="tag yellow" style="display:inline-block">Module optionnel</span></p>
+    </div>
+    <div class="voucher-art" aria-hidden="true">
+      <div class="v-top"><span>Mini-boutique</span><span>/lea-bijoux</span></div>
+      <div class="v-amount">104<span> €</span></div>
+      <div class="v-name">panier médian</div>
+      <div class="v-sep"></div>
+      <div class="v-meta"><span>Type <b>Mini-boutique vendeur</b></span><span>Vente <b>Léa</b></span></div>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="toc" aria-label="Sommaire">
+    <details id="tocDetails" open>
+      <summary>Sommaire</summary>
+      <div class="toc-title">Sommaire</div>
+      <ol>
+        <li data-sec="definition"><a href="#definition"><span class="toc-n">1</span>Qu'est-ce qu'une mini-boutique&nbsp;?</a></li>
+        <li data-sec="activation"><a href="#activation"><span class="toc-n">2</span>L'activation</a></li>
+        <li data-sec="personnaliser"><a href="#personnaliser"><span class="toc-n">3</span>La personnalisation par la marque</a>
+          <ol class="toc-sub"><li><a href="#s3-1"><span class="toc-n">3.1</span>Général et contenu</a></li><li><a href="#s3-2"><span class="toc-n">3.2</span>Carrousel et visuels</a></li><li><a href="#s3-3"><span class="toc-n">3.3</span>Produits mis en avant</a></li><li><a href="#s3-4"><span class="toc-n">3.4</span>Les options</a></li></ol>
+        </li>
+        <li data-sec="produits"><a href="#produits"><span class="toc-n">4</span>Les produits en vente</a></li>
+        <li data-sec="conseillere"><a href="#conseillere"><span class="toc-n">5</span>Les réglages de la conseillère</a></li>
+        <li data-sec="parcours"><a href="#parcours"><span class="toc-n">6</span>Le parcours de la cliente</a></li>
+        <li data-sec="commandes"><a href="#commandes"><span class="toc-n">7</span>Les commandes de mini-boutique</a></li>
+        <li data-sec="attention"><a href="#attention"><span class="toc-n">8</span>Points d'attention</a></li>
+        <li data-sec="faq"><a href="#faq"><span class="toc-n">9</span>Questions fréquentes</a></li>
+      </ol>
+    </details>
+  </nav>
+
+  <main>
+
+<!-- 1 -->
+<section id="definition">
+  <div class="sec-head"><span class="sec-num">01</span><h2>Qu'est-ce qu'une mini-boutique&nbsp;?</h2></div>
+  <p class="lede">Une mini-boutique est le <strong>site de vente en ligne d'une conseillère</strong>&nbsp;: son nom, sa photo, sa présentation, et le catalogue de votre marque. Elle a sa propre adresse, construite avec le pseudo de la conseillère. Les clientes y commandent et paient seules&nbsp;; la commande est attribuée à la conseillère.</p>
+  <div class="levels">
+    <div class="card"><span class="tag">La marque</span><p>Fixe le cadre commun&nbsp;: logo, bandeau, couleurs, textes légaux, carrousel, visuels, produits mis en avant, options.</p></div>
+    <div class="card"><span class="tag pink">La conseillère</span><p>Active sa boutique, choisit son pseudo, sa photo, sa présentation et, si vous l'autorisez, ses produits mis en avant.</p></div>
+    <div class="card"><span class="tag yellow">La cliente</span><p>Se connecte, compose son panier, choisit sa livraison et paie.</p></div>
+  </div>
+  <div class="tip"><span class="ex-label">Vocabulaire</span><p>L'espace marque dit «&nbsp;Mini-boutique vendeur&nbsp;» et «&nbsp;Vendeur&nbsp;» pour la conseillère.</p></div>
+  <div class="stats">
+    <div class="stat"><b>12</b><span>marques sur 35 ont le module</span></div>
+    <div class="stat"><b>1&nbsp;370</b><span>mini-boutiques actives</span></div>
+    <div class="stat"><b>≈ 4&nbsp;100</b><span>commandes payées sur un an, chez 10 marques</span></div>
+    <div class="stat"><b>800</b><span>conseillères ont vendu par leur mini-boutique (2 commandes chacune en médiane)</span></div>
+    <div class="stat"><b>104&nbsp;€</b><span>panier médian</span></div>
+  </div>
+  <p class="muted">Pour comparer avec la boutique de marque et les autres canaux, voir <a href="boutiques-panorama.html">les boutiques en ligne</a>.</p>
+</section>
+
+<!-- 2 -->
+<section id="activation">
+  <div class="sec-head"><span class="sec-num">02</span><h2>L'activation</h2></div>
+  <div class="timeline">
+    <div class="tl"><b>1. SellingAtHome active le module pour votre marque</b><p>Avec l'adresse (domaine) des mini-boutiques. Le module est facturé selon le nombre de boutiques actives.</p></div>
+    <div class="tl"><b>2. Vous paramétrez le modèle commun</b><p>Paramètres › Modèles des minisites › onglet <strong>Mini-boutiques vendeur</strong>. Ouvrir cet écran une première fois crée le modèle&nbsp;: tant qu'il n'existe pas, les conseillères ne peuvent pas ouvrir leur boutique.</p></div>
+    <div class="tl stop"><b>3. Chaque boutique est activée</b><p>Par la conseillère, dans son espace («&nbsp;Activer ma mini-boutique&nbsp;»), après avoir choisi son pseudo. Ou par vous, sur la fiche de la conseillère (Vendeurs, crayon), case <strong>Activer la mini-boutique</strong>&nbsp;: la case n'apparaît que si la conseillère a déjà un pseudo.</p></div>
+  </div>
+  <p>Une boutique n'est accessible que si elle est active <strong>et</strong> que la conseillère est active.</p>
+</section>
+
+<!-- 3 -->
+<section id="personnaliser">
+  <div class="sec-head"><span class="sec-num">03</span><h2>La personnalisation par la marque</h2></div>
+  <div class="path" aria-label="Chemin d'accès"><span>Paramètres</span><span>Modèles des minisites</span><span><b>Mini-boutiques vendeur</b></span></div>
+  <p class="lede">Ce modèle s'applique à <strong>toutes</strong> les mini-boutiques. Toutes vos modifications sont enregistrées en une fois par <strong>Enregistrer les modifications</strong>, en haut à droite.</p>
+  <figure><img src="Captures/Boutiques/mini-boutique-parametres.png" alt="Onglet Mini-boutiques vendeur de l'écran Modèles des minisites : onglets Mini-sites hôtes, Mini-boutiques vendeur, Boutique de la marque, Réunions virtuelles ; bloc Général (logo de la marque, bandeau de la mini-boutique, titre bannière, gras, italique, couleurs principale et secondaire, thème) ; bloc Options (inscription de nouveaux clients, mini boutique sur la cartographie, filtre réduction, tri par défaut) ; bloc Réseaux sociaux" loading="lazy"><figcaption>Le haut de l'onglet&nbsp;: Général, Options et Réseaux sociaux.</figcaption></figure>
+
+  <h3 id="s3-1"><span class="sub-num">3.1</span> Général et contenu</h3>
+  <div class="table-wrap"><table class="opts">
+    <thead><tr><th>Bloc / champ</th><th>Rôle</th></tr></thead>
+    <tbody>
+      <tr><td><b>Logo de la marque</b></td><td>Affiché dans l'en-tête de chaque boutique.</td></tr>
+      <tr><td><b>Bandeau de la mini-boutique</b> et <b>Titre bannière</b></td><td>L'image d'en-tête commune et son texte, avec un style (gras, italique).</td></tr>
+      <tr><td><b>Couleur principale</b>, <b>Couleur secondaire</b>, <b>Thème</b></td><td>Les couleurs des boutiques et le thème clair ou sombre.</td></tr>
+      <tr><td><b>Contenu</b> › onglets Contenu, Mentions légales, CGV, Cookies, Politique de confidentialité</td><td>Un titre et un texte mis en forme, dans chaque langue. «&nbsp;Contenu&nbsp;» alimente la page de présentation de la marque&nbsp;; les autres onglets, les pages légales du pied de page.</td></tr>
+      <tr><td><b>Réseaux sociaux</b></td><td>Les liens Facebook, Twitter, App Store, Google Play, Instagram, Pinterest, TikTok de la marque.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 id="s3-2"><span class="sub-num">3.2</span> Carrousel et visuels</h3>
+  <div class="figrow">
+    <figure><img src="Captures/Boutiques/mini-boutique-carrousel.png" alt="Blocs Carrousel (trois slides avec image, titre, sous-titre, langue, lien de redirection et libellé du bouton, bouton Ajouter une slide), Visuels marques (trois images avec lien) et Produits mis en avant (3 produits maximum) avec la case Autoriser le vendeur à choisir ses produits mis en avant" loading="lazy"><figcaption>Carrousel, visuels et produits mis en avant.</figcaption></figure>
+    <div class="prose" style="display:flex;flex-direction:column;gap:10px">
+      <p><strong>Carrousel</strong>&nbsp;: les grandes images défilantes. Chaque slide a une image, un titre, un sous-titre, une <strong>langue</strong>, un lien et un libellé de bouton. Une slide ne s'affiche qu'aux visiteuses de sa langue&nbsp;: créez-en une par langue. Bouton <strong>Ajouter une slide</strong>, corbeille pour en retirer une.</p>
+      <p><strong>Visuels marques</strong>&nbsp;: trois emplacements fixes d'images, chacune avec un lien.</p>
+      <p><strong>Visuels d'opérations commerciales</strong>&nbsp;: des visuels affichés sur les fiches produits (format paysage) ou dans la liste des produits (format portrait, 285×370). Pour un lien vers une page de la boutique, ne gardez que la fin de l'adresse (par exemple <code>/product/1</code>)&nbsp;: elle sera complétée avec la boutique de chaque conseillère.</p>
+    </div>
+  </div>
+
+  <h3 id="s3-3"><span class="sub-num">3.3</span> Produits mis en avant</h3>
+  <p>Jusqu'à <strong>3 produits</strong>, affichés sur la page d'accueil de chaque boutique. Bouton <strong>Ajouter un produit</strong>, <strong>Tout supprimer</strong>.</p>
+  <p>La case <strong>Autoriser le vendeur à choisir ses produits mis en avant (si pas de produits, renseigner ceux de la marque)</strong> laisse chaque conseillère choisir ses 3 produits&nbsp;; vos produits servent alors pour les conseillères qui n'ont rien choisi. Décochée, vos 3 produits s'imposent à toutes.</p>
+
+  <h3 id="s3-4"><span class="sub-num">3.4</span> Les options</h3>
+  <div class="table-wrap"><table class="opts">
+    <thead><tr><th>Option</th><th>Effet</th></tr></thead>
+    <tbody>
+      <tr><td><b>Autoriser l'inscription de nouveaux clients</b></td><td>Une visiteuse inconnue peut créer son compte seule et commander. Décochée, seules les clientes déjà connues (créées par la conseillère) peuvent se connecter.</td></tr>
+      <tr><td><b>Afficher la mini boutique vendeur sur la cartographie</b></td><td>Sur la carte des conseillères de votre site, la fiche d'une conseillère propose un lien vers sa boutique.</td></tr>
+      <tr><td><b>Afficher le filtre réduction</b></td><td>Ajoute un filtre des produits en promotion dans le catalogue de la boutique.</td></tr>
+      <tr><td><b>Tri par défaut des produits</b></td><td>Ordre alphabétique (par défaut), Prix croissant ou Prix décroissant.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- 4 -->
+<section id="produits">
+  <div class="sec-head"><span class="sec-num">04</span><h2>Les produits en vente</h2></div>
+  <p>Un produit est en vente sur les mini-boutiques s'il est <strong>publié</strong> et coché <strong>Disponible sur la mini-boutique vendeur</strong> dans sa fiche (Catalogue › Produits), et si sa catégorie est publiée sur les mini-sites. Si vous retirez la disponibilité d'un produit, il est retiré des paniers non payés. Voir <a href="catalogue.html">Catalogue</a>.</p>
+  <p>Le prix est celui de votre catalogue&nbsp;; les codes promo, bons d'achat et points de fidélité de la cliente sont utilisables et revérifiés au paiement.</p>
+</section>
+
+<!-- 5 -->
+<section id="conseillere">
+  <div class="sec-head"><span class="sec-num">05</span><h2>Les réglages de la conseillère</h2></div>
+  <p>Dans son espace, menu <strong>Ma mini-boutique</strong>, la conseillère&nbsp;:</p>
+  <ul class="prose">
+    <li>active ou désactive sa boutique&nbsp;;</li>
+    <li>choisit son <strong>pseudo</strong>, qui forme l'adresse de sa boutique (lettres, chiffres, tirets&nbsp;; unique). Une option de votre marque peut bloquer sa modification une fois choisi&nbsp;;</li>
+    <li>ajoute sa photo et sa présentation dans chaque langue&nbsp;;</li>
+    <li>choisit ses produits mis en avant, si vous l'autorisez&nbsp;;</li>
+    <li>récupère un QR code de sa boutique, à partager.</li>
+  </ul>
+</section>
+
+<!-- 6 -->
+<section id="parcours">
+  <div class="sec-head"><span class="sec-num">06</span><h2>Le parcours de la cliente</h2></div>
+  <div class="timeline">
+    <div class="tl"><b>1. Elle arrive sur la boutique de Léa</b><p>Par le lien ou le QR code partagé par Léa, ou depuis la carte des conseillères. Elle voit la présentation de Léa, le carrousel, les produits mis en avant, puis le catalogue.</p></div>
+    <div class="tl"><b>2. Elle se connecte</b><p>Si son adresse e-mail est déjà connue (cliente de Léa), elle reçoit un e-mail pour créer son mot de passe. Sinon, elle s'inscrit, si l'option est ouverte. Elle devient alors cliente de Léa.</p></div>
+    <div class="tl"><b>3. Elle compose son panier</b><p>Les cadeaux automatiques et réductions s'appliquent comme pour les autres commandes (voir <a href="commandes-parametres.html#cadeaux">paramètres des commandes</a>).</p></div>
+    <div class="tl stop"><b>4. Elle choisit la livraison et paie</b><p>Les modes de livraison et moyens de paiement proposés sont ceux que vous avez prévus pour le type «&nbsp;Mini-boutique vendeur&nbsp;». Le retrait sur place n'est proposé que si l'option «&nbsp;Autoriser l'enlèvement sur minisite et visio&nbsp;» est cochée.</p></div>
+  </div>
+</section>
+
+<!-- 7 -->
+<section id="commandes">
+  <div class="sec-head"><span class="sec-num">07</span><h2>Les commandes de mini-boutique</h2></div>
+  <ul class="prose">
+    <li><strong>Type</strong>&nbsp;: «&nbsp;Mini-boutique vendeur&nbsp;». Leur référence commence par <code>MS</code>.</li>
+    <li><strong>Attribution</strong>&nbsp;: à la conseillère propriétaire de la boutique, qui devient aussi la conseillère de la cliente.</li>
+    <li><strong>Modification</strong>&nbsp;: ni la conseillère ni la marque ne modifient le panier, et elles n'ont pas de bouton de suppression (voir <a href="commandes-comprendre.html#regles">modifier, supprimer, annuler</a>). Une fois payée, la commande suit le chemin habituel&nbsp;: expédition, annulation avec avoir si besoin.</li>
+    <li><strong>Stock</strong>&nbsp;: les produits sont décomptés au paiement.</li>
+    <li><strong>Regroupement</strong>&nbsp;: une commande de mini-boutique non payée ne peut pas être rangée dans une <a href="commandes-regroupement.html">commande de regroupement</a>.</li>
+  </ul>
+  <div class="example"><span class="ex-label">Exemple</span><p>Camille commande sur la boutique de Léa un collier à 89&nbsp;€ et un bracelet à 25&nbsp;€, avec un code promo de 10&nbsp;€, livraison à domicile 4,90&nbsp;€. Elle paie 108,90&nbsp;€ par carte. Dans l'espace marque, la commande apparaît dans le groupe «&nbsp;Mini-boutique vendeur&nbsp;» de la liste des commandes, au nom de Léa, prête à expédier.</p></div>
+</section>
+
+<!-- 8 -->
+<section id="attention">
+  <div class="sec-head"><span class="sec-num">08</span><h2>Points d'attention</h2></div>
+  <ul class="prose">
+    <li><strong>Produits</strong>&nbsp;: sans la case «&nbsp;Disponible sur la mini-boutique vendeur&nbsp;», un produit n'est pas en vente en ligne.</li>
+    <li><strong>Carrousel</strong>&nbsp;: une slide par langue. Après la suppression d'une slide ou d'un visuel, vérifiez le résultat une fois enregistré.</li>
+    <li><strong>Livraison et paiement</strong>&nbsp;: pensez à configurer le type «&nbsp;Mini-boutique vendeur&nbsp;» dans vos modes de livraison et moyens de paiement.</li>
+    <li><strong>Inscription</strong>&nbsp;: fermée, elle limite la boutique aux clientes déjà connues des conseillères.</li>
+  </ul>
+</section>
+
+<!-- 9 -->
+<section id="faq">
+  <div class="sec-head"><span class="sec-num">09</span><h2>Questions fréquentes</h2></div>
+  <div class="faq">
+    <details><summary>Je ne vois pas l'onglet Mini-boutiques vendeur.</summary><div><p>Le module n'est pas actif pour votre marque. Contactez l'équipe SellingAtHome.</p></div></details>
+    <details><summary>Je ne trouve pas la case «&nbsp;Activer la mini-boutique&nbsp;» sur la fiche d'une conseillère.</summary><div><p>Elle n'apparaît que lorsque la conseillère a choisi son pseudo dans son espace.</p></div></details>
+    <details><summary>Une cliente ne peut pas créer son compte.</summary><div><p>L'option «&nbsp;Autoriser l'inscription de nouveaux clients&nbsp;» est décochée&nbsp;: la conseillère doit d'abord créer la cliente dans son espace.</p></div></details>
+    <details><summary>Puis-je modifier une commande de mini-boutique&nbsp;?</summary><div><p>Non. Une fois payée, vous pouvez l'annuler (totalement ou en partie) avec un avoir.</p></div></details>
+  </div>
+</section>
+
+  </main>
+</div>

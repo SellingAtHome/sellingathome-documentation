@@ -1,0 +1,203 @@
+<!--page {"title":"Le recrutement dématérialisé"} -->
+<style>
+.timeline { display:flex; flex-direction:column; border-left:3px solid var(--rule); margin-left:10px; }
+.tl { position:relative; padding:0 0 22px 28px; }
+.tl::before { content:""; position:absolute; left:-9px; top:4px; width:15px; height:15px; border-radius:50%; background:var(--card); border:3px solid var(--accent); }
+.tl.stop::before { border-color:var(--pink); }
+.tl b { color:var(--heading); display:block; }
+.tl p { color:var(--muted); font-size:.93rem; margin-top:4px; }
+.tl .who { display:grid; grid-template-columns:repeat(auto-fit, minmax(190px,1fr)); gap:8px; margin-top:8px; }
+.tl .who div { background:var(--card); border:1px solid var(--rule); border-radius:12px; padding:8px 11px; font-size:.86rem; color:var(--text); }
+.tl .who div i { font-style:normal; font-weight:700; display:block; color:var(--heading); font-size:.78rem; text-transform:uppercase; letter-spacing:.04em; }
+.chip { display:inline-block; border-radius:100px; padding:3px 11px; font-size:.78rem; font-weight:700; background:var(--surface); color:var(--heading); border:1px solid var(--rule); }
+.chip.g { background:var(--accent-wash); color:var(--accent-ink); border-color:transparent; }
+.chip.p { background:var(--pink-wash); color:var(--pink-ink); border-color:transparent; }
+.chip.y { background:var(--yellow-wash); color:var(--yellow-ink); border-color:transparent; }
+.chip.b { background:#E3EEF9; color:#1B5C99; border-color:transparent; }
+.actors { display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:14px; }
+.actors .card { border-top:5px solid var(--accent); }
+.actors .card:nth-child(2) { border-top-color:var(--pink); }
+.actors .card:nth-child(3) { border-top-color:var(--yellow); }
+.actors .card:nth-child(4) { border-top-color:var(--heading); }
+.states td:first-child { white-space:nowrap; }
+</style>
+<header class="hero">
+  <div class="hero-in">
+    <div>
+      <span class="eyebrow">Recrutement</span>
+      <h1>Le recrutement <span class="script">dématérialisé</span></h1>
+      <p class="lede">Du formulaire de candidature à la première connexion de votre nouvelle conseillère&nbsp;: les étapes, les statuts, ce que voient la candidate, sa recruteuse et votre marque. Sans papier, avec un contrat signé électroniquement.</p>
+    </div>
+    <div class="voucher-art" aria-hidden="true">
+      <div class="v-top"><span>Candidature</span><span>Contrat 2/2</span></div>
+      <div class="v-amount">8<span> étapes</span></div>
+      <div class="v-name">Manon, future conseillère</div>
+      <div class="v-sep"></div>
+      <div class="v-meta"><span>Recruteuse <b>Léa</b></span><span>Kit <b>à commander</b></span></div>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="toc" aria-label="Sommaire">
+    <details id="tocDetails" open>
+      <summary>Sommaire</summary>
+      <div class="toc-title">Sommaire</div>
+      <ol>
+        <li data-sec="definition"><a href="#definition"><span class="toc-n">1</span>De quoi parle-t-on&nbsp;?</a></li>
+        <li data-sec="acteurs"><a href="#acteurs"><span class="toc-n">2</span>Les acteurs</a></li>
+        <li data-sec="parcours"><a href="#parcours"><span class="toc-n">3</span>Le parcours, étape par étape</a></li>
+        <li data-sec="statuts"><a href="#statuts"><span class="toc-n">4</span>Les statuts d'une candidature</a></li>
+        <li data-sec="variantes"><a href="#variantes"><span class="toc-n">5</span>Ce qui change selon vos réglages</a>
+          <ol class="toc-sub"><li><a href="#s5-1"><span class="toc-n">5.1</span>Documents dans le formulaire ou après</a></li><li><a href="#s5-2"><span class="toc-n">5.2</span>Validation et création automatiques</a></li><li><a href="#s5-3"><span class="toc-n">5.3</span>Avec ou sans kit de démarrage</a></li></ol>
+        </li>
+        <li data-sec="emails"><a href="#emails"><span class="toc-n">6</span>Les emails envoyés</a></li>
+        <li data-sec="recruteuse"><a href="#recruteuse"><span class="toc-n">7</span>Ce que voit la recruteuse</a></li>
+        <li data-sec="chiffres"><a href="#chiffres"><span class="toc-n">8</span>Le recrutement en chiffres</a></li>
+        <li data-sec="attention"><a href="#attention"><span class="toc-n">9</span>Points d'attention</a></li>
+        <li data-sec="faq"><a href="#faq"><span class="toc-n">10</span>Questions fréquentes</a></li>
+      </ol>
+    </details>
+  </nav>
+
+  <main>
+
+<section id="definition">
+  <div class="sec-head"><span class="sec-num">01</span><h2>De quoi parle-t-on&nbsp;?</h2></div>
+  <p class="lede">Le recrutement dématérialisé, c'est l'ensemble du parcours qui transforme une <strong>candidate</strong> en <strong>conseillère</strong>&nbsp;: elle remplit un formulaire en ligne, envoie ses justificatifs, signe son contrat électroniquement, puis reçoit son compte et, si votre marque le prévoit, commande son kit de démarrage.</p>
+  <div class="example"><span class="ex-label">Exemple</span><p>Manon a découvert votre marque lors d'une réunion animée par Léa. Le soir même, elle remplit le formulaire de candidature et choisit Léa comme recruteuse. Elle dépose sa carte d'identité et son attestation de sécurité sociale. Votre équipe les valide, Manon signe son contrat sur son téléphone, votre responsable signe à son tour&nbsp;: Manon devient conseillère, rattachée à Léa, et reçoit le lien pour commander son kit.</p></div>
+  <div class="path" aria-label="Chemin d'accès"><span>Espace marque</span><span>Formulaires</span><span><b>Recrutements</b></span></div>
+  <p>Le menu <strong>Recrutements</strong> apparaît si le module est activé pour votre marque <span class="tag yellow" style="display:inline-block">Module optionnel</span>. Il donne accès à la liste des candidatures (voir <a href="candidatures.html">Traiter une candidature</a>) et à l'onglet <strong>Configuration</strong> (voir <a href="recrutement-parametrage.html">Paramétrer le recrutement</a>).</p>
+  <div class="tip"><span class="ex-label">Vocabulaire</span><p>Dans l'espace marque, la conseillère est appelée <strong>vendeur</strong> ou <strong>VDI</strong> (le bouton de création du compte s'appelle «&nbsp;Créer un VDI&nbsp;»), et la recruteuse <strong>parrain</strong> («&nbsp;Nom du parrain&nbsp;»). La candidate est appelée <strong>candidat</strong>.</p></div>
+  <p class="muted">Cette page décrit la version actuelle des candidatures, utilisée par 32 marques sur 35. Les trois autres marques utilisent encore l'ancienne version, qui affiche un menu «&nbsp;Candidatures VDI&nbsp;» et n'est pas décrite ici.</p>
+</section>
+
+<section id="acteurs">
+  <div class="sec-head"><span class="sec-num">02</span><h2>Les acteurs</h2></div>
+  <div class="actors">
+    <div class="card"><span class="tag">La candidate</span><p>Elle remplit le formulaire, dépose ses documents, signe son contrat, puis commande son kit. Elle ne se connecte à rien avant d'être conseillère&nbsp;: tout passe par des liens reçus par email.</p></div>
+    <div class="card"><span class="tag pink">La recruteuse</span><p>Une conseillère active de votre marque, choisie par la candidate dans le formulaire. Elle devient sa «&nbsp;marraine&nbsp;» dans le réseau.</p></div>
+    <div class="card"><span class="tag yellow">Votre marque</span><p>Vos administrateurs contrôlent les documents, déclenchent la signature, et créent le compte. Une personne désignée signe les contrats au nom de la marque.</p></div>
+    <div class="card"><span class="tag">L'animatrice</span><p>Facultative&nbsp;: selon vos réglages, l'animatrice est la recruteuse elle-même, ou une autre conseillère choisie par la candidate.</p></div>
+  </div>
+  <p>Le <strong>signataire de la marque</strong> (une personne de votre équipe, éventuellement différente par pays) reçoit les notifications de nouvelles candidatures et signe les contrats. Il est déclaré par SellingAtHome lors de la mise en place du recrutement.</p>
+</section>
+
+<section id="parcours">
+  <div class="sec-head"><span class="sec-num">03</span><h2>Le parcours, étape par étape</h2></div>
+  <p class="lede">Voici le parcours le plus courant&nbsp;: signature électronique obligatoire, documents demandés, kit de démarrage. Les variantes sont décrites plus bas.</p>
+  <div class="timeline">
+    <div class="tl"><b>1. La candidature</b><p>La candidate remplit le formulaire de votre marque (identité, adresse, numéro de sécurité sociale, coordonnées bancaires…). Elle peut indiquer sa recruteuse en la cherchant par son nom ou son code. Statut <span class="chip y">En attente</span> (ou <span class="chip y">A valider</span> si les documents sont demandés dans le formulaire).</p>
+      <div class="who"><div><i>Candidate</i>Une page de confirmation et un email de confirmation.</div><div><i>Recruteuse</i>Rien pour l'instant.</div><div><i>Marque</i>Un email au signataire et un compteur sur le menu Formulaires.</div></div></div>
+    <div class="tl"><b>2. La demande de documents</b><p>Si les documents ne sont pas déjà dans le formulaire, votre équipe lance la demande&nbsp;: bouton <strong>Recruter</strong> dans la liste, ou <strong>Envoyer au candidat</strong> depuis la fiche (le statut passe alors à <span class="chip b">Candidature validée</span>). La candidate reçoit un email avec un lien vers la page de dépôt de ses documents.</p>
+      <div class="who"><div><i>Candidate</i>Un lien pour déposer ses justificatifs ou répondre à des questions.</div><div><i>Recruteuse</i>Rien.</div><div><i>Marque</i>La fiche s'ouvre sur la liste des demandes.</div></div></div>
+    <div class="tl"><b>3. Le contrôle des documents</b><p>Chaque document reçu est <strong>validé</strong> ou <strong>refusé</strong> avec un motif. Un refus renvoie un email à la candidate, qui dépose une nouvelle version. Statut <span class="chip p">En correction</span> tant qu'un document est à refaire.</p>
+      <div class="who"><div><i>Candidate</i>Un email par refus, avec le motif.</div><div><i>Recruteuse</i>Rien.</div><div><i>Marque</i>Les vignettes passent de «&nbsp;Envoyée&nbsp;» à «&nbsp;Validée&nbsp;».</div></div></div>
+    <div class="tl"><b>4. L'envoi du contrat</b><p>Quand tous les documents obligatoires sont validés, la candidate est prévenue que son contrat va arriver, et le bouton <strong>Signature du contrat</strong> apparaît. Votre équipe l'envoie&nbsp;: le contrat est préparé avec les informations de la candidature. Statut <span class="chip y">Contrat 1/2</span>.</p>
+      <div class="who"><div><i>Candidate</i>Un email avec son lien de signature électronique.</div><div><i>Recruteuse</i>Rien.</div><div><i>Marque</i>Les informations de la candidature ne modifient plus le contrat.</div></div></div>
+    <div class="tl"><b>5. La signature de la candidate</b><p>La candidate signe en ligne (un code de vérification lui est envoyé sur son mobile, d'où l'importance d'un numéro au format international). Statut <span class="chip y">Contrat 2/2</span>.</p>
+      <div class="who"><div><i>Candidate</i>La confirmation de sa signature.</div><div><i>Recruteuse</i>Rien.</div><div><i>Marque</i>Le signataire reçoit à son tour un email pour signer.</div></div></div>
+    <div class="tl"><b>6. La signature de la marque</b><p>Votre signataire signe le contrat. Statut <span class="chip g">Contrat signé</span>.</p>
+      <div class="who"><div><i>Candidate</i>Rien à ce stade.</div><div><i>Recruteuse</i>Rien.</div><div><i>Marque</i>Le bouton «&nbsp;Créer un VDI&nbsp;» apparaît, sauf création automatique.</div></div></div>
+    <div class="tl"><b>7. La création du compte conseillère</b><p>Automatiquement, ou par un clic sur <strong>Créer un VDI</strong>. Le compte reprend les informations de la candidature, la recruteuse et l'animatrice, le statut et les rôles prévus pour les nouvelles conseillères. Il est créé <strong>verrouillé</strong>. Statut <span class="chip b">Terminée</span>.</p>
+      <div class="who"><div><i>Candidate</i>Un email avec son contrat signé et, si vous avez un kit, le lien pour le commander.</div><div><i>Recruteuse</i>Un email lui annonce la fin du recrutement (dès maintenant s'il n'y a pas de kit).</div><div><i>Marque</i>Le signataire reçoit la confirmation&nbsp;; la conseillère apparaît dans la liste des vendeurs.</div></div></div>
+    <div class="tl stop"><b>8. Le kit de démarrage et l'accès</b><p>La nouvelle conseillère paie son kit en ligne. Selon vos réglages, son accès est alors <strong>déverrouillé automatiquement</strong>, ou c'est à votre équipe de le faire depuis sa fiche. Elle peut ensuite activer son compte et se connecter à son espace.</p>
+      <div class="who"><div><i>Conseillère</i>La confirmation de commande et, selon le réglage, un bouton pour accéder à son compte.</div><div><i>Recruteuse</i>L'email de fin de recrutement, à ce moment-là si vous avez un kit.</div><div><i>Marque</i>Une commande de type «&nbsp;Kit de démarrage&nbsp;» à préparer.</div></div></div>
+  </div>
+</section>
+
+<section id="statuts">
+  <div class="sec-head"><span class="sec-num">04</span><h2>Les statuts d'une candidature</h2></div>
+  <p>Le statut est affiché dans la liste des candidatures et en haut de chaque fiche. Il évolue tout seul au fil des actions.</p>
+  <div class="table-wrap"><table class="states">
+    <thead><tr><th>Statut affiché</th><th>Ce que cela veut dire</th></tr></thead>
+    <tbody>
+      <tr><td><span class="chip y">En attente</span></td><td>La candidature vient d'arriver, votre marque ne l'a pas encore traitée.</td></tr>
+      <tr><td><span class="chip y">A valider</span></td><td>Des documents sont arrivés et attendent votre contrôle (ou la candidature contient déjà ses documents).</td></tr>
+      <tr><td><span class="chip b">Candidature validée</span></td><td>Votre marque a lancé le recrutement&nbsp;: les demandes de documents ont été envoyées.</td></tr>
+      <tr><td><span class="chip p">En correction</span></td><td>Au moins un document a été refusé et attend une nouvelle version.</td></tr>
+      <tr><td><span class="chip y">En attente caution</span></td><td>Tout est validé sauf le chèque de caution, si votre marque en demande un.</td></tr>
+      <tr><td><span class="chip y">Contrat 1/2</span></td><td>Le contrat est parti en signature, la candidate n'a pas encore signé.</td></tr>
+      <tr><td><span class="chip y">Contrat 2/2</span></td><td>La candidate a signé, votre marque doit signer.</td></tr>
+      <tr><td><span class="chip g">Contrat signé</span></td><td>Les deux parties ont signé, le compte peut être créé.</td></tr>
+      <tr><td><span class="chip b">Terminée</span></td><td>Le compte conseillère est créé.</td></tr>
+      <tr><td><span class="chip p">Candidature refusée</span> / <span class="chip p">Non retenue</span></td><td>Votre marque a mis fin au recrutement&nbsp;; un email avec votre message a été envoyé à la candidate.</td></tr>
+    </tbody>
+  </table></div>
+  <p class="muted">D'autres statuts existent mais ne sont pas utilisés par le parcours décrit ici («&nbsp;Traitée&nbsp;», «&nbsp;En cours&nbsp;»).</p>
+</section>
+
+<section id="variantes">
+  <div class="sec-head"><span class="sec-num">05</span><h2>Ce qui change selon vos réglages</h2></div>
+  <h3 id="s5-1"><span class="sub-num">5.1</span> Documents dans le formulaire ou après</h3>
+  <p>Avec l'option <strong>Regrouper le formulaire et les demandes à télécharger</strong> (19 marques sur 32), la candidate dépose ses documents directement dans le formulaire de candidature. L'étape 2 disparaît&nbsp;: votre équipe passe directement au contrôle. Sans cette option, c'est vous qui décidez, candidature par candidature, de lancer la demande de documents&nbsp;: pratique pour faire un premier tri ou un entretien.</p>
+  <h3 id="s5-2"><span class="sub-num">5.2</span> Validation et création automatiques</h3>
+  <ul class="prose">
+    <li><strong>Validation automatique des demandes</strong> (6 marques sur 32)&nbsp;: les documents déposés sont validés sans contrôle, et le contrat part en signature dès que tout est déposé.</li>
+    <li><strong>Création automatique du vendeur</strong> (18 marques sur 32)&nbsp;: le compte conseillère est créé dès la signature de la marque, sans clic sur «&nbsp;Créer un VDI&nbsp;».</li>
+  </ul>
+  <h3 id="s5-3"><span class="sub-num">5.3</span> Avec ou sans kit de démarrage</h3>
+  <p>Avec le <a href="kit-demarrage.html">kit de démarrage</a> (11 marques sur 32), la nouvelle conseillère reçoit un lien pour le commander, et l'email de fin de recrutement de sa recruteuse attend le paiement du kit. Sans kit, la recruteuse est prévenue dès la création du compte.</p>
+</section>
+
+<section id="emails">
+  <div class="sec-head"><span class="sec-num">06</span><h2>Les emails envoyés</h2></div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Moment</th><th>Destinataire</th><th>Contenu</th></tr></thead>
+    <tbody>
+      <tr><td>Candidature envoyée</td><td>Candidate</td><td>Confirmation de sa candidature.</td></tr>
+      <tr><td>Candidature envoyée</td><td>Signataire de la marque</td><td>Notification d'une nouvelle candidature, avec un lien vers l'espace marque.</td></tr>
+      <tr><td>Clic sur «&nbsp;Recruter&nbsp;»</td><td>Candidate</td><td>Lien vers la page de dépôt des documents.</td></tr>
+      <tr><td>Document refusé</td><td>Candidate</td><td>Le document à refaire et votre motif.</td></tr>
+      <tr><td>Documents tous validés</td><td>Candidate</td><td>Son contrat va lui être envoyé.</td></tr>
+      <tr><td>Contrat envoyé</td><td>Candidate puis signataire</td><td>Les liens de signature électronique.</td></tr>
+      <tr><td>Compte créé</td><td>Candidate</td><td>Son contrat signé en pièce jointe (et les documents que vous avez choisi de lui renvoyer), puis le lien d'achat du kit.</td></tr>
+      <tr><td>Compte créé</td><td>Signataire de la marque</td><td>Confirmation de la fin du recrutement.</td></tr>
+      <tr><td>Compte créé (sans kit) ou kit payé</td><td>Recruteuse</td><td>Annonce du recrutement de sa nouvelle filleule.</td></tr>
+      <tr><td>Refus de la candidature</td><td>Candidate</td><td>Votre message de refus.</td></tr>
+    </tbody>
+  </table></div>
+  <p class="muted">Les textes de ces emails se modifient dans les modèles d'emails de votre marque (univers <a href="pilotage.html">Communication et pilotage</a>).</p>
+</section>
+
+<section id="recruteuse">
+  <div class="sec-head"><span class="sec-num">07</span><h2>Ce que voit la recruteuse</h2></div>
+  <p>Dans son espace conseillère, la recruteuse dispose d'une liste <strong>Recrutements</strong> qui reprend les candidatures qu'elle a parrainées, ainsi que celles de son équipe, avec leur statut. Elle peut ainsi relancer une filleule qui n'a pas encore signé.</p>
+  <div class="tip"><span class="ex-label">Bon à savoir</span><p>La candidate ne peut choisir qu'une recruteuse <strong>active</strong> de votre marque, en tapant son nom, son prénom ou son code. Si elle n'en connaît pas, elle le dit, et votre équipe peut en attribuer une depuis la fiche de la candidature.</p></div>
+</section>
+
+<section id="chiffres">
+  <div class="sec-head"><span class="sec-num">08</span><h2>Le recrutement en chiffres</h2></div>
+  <p class="lede">Repères observés sur un an, sur les marques qui utilisent cette version des candidatures.</p>
+  <div class="stats">
+    <div class="stat"><b>19</b><span>marques sur 32 ont reçu des candidatures sur l'année</span></div>
+    <div class="stat"><b>≈ 4 400</b><span>candidatures en cours ou abouties (hors candidatures supprimées)</span></div>
+    <div class="stat"><b>9 sur 10</b><span>de ces candidatures sont aujourd'hui «&nbsp;Terminée&nbsp;»</span></div>
+    <div class="stat"><b>6 %</b><span>attendent la signature de la candidate («&nbsp;Contrat 1/2&nbsp;»)</span></div>
+    <div class="stat"><b>&lt; 2 %</b><span>sont refusées ou non retenues</span></div>
+    <div class="stat"><b>30 sur 32</b><span>marques exigent la signature électronique du contrat</span></div>
+  </div>
+</section>
+
+<section id="attention">
+  <div class="sec-head"><span class="sec-num">09</span><h2>Points d'attention</h2></div>
+  <ul class="prose">
+    <li><strong>Le contrat est figé à l'envoi</strong>&nbsp;: corriger une information après l'envoi en signature ne modifie pas le contrat. Il faut le recréer (bouton «&nbsp;Recréer le contrat&nbsp;»).</li>
+    <li><strong>Mobile au format international</strong> (+33…)&nbsp;: sans lui, la signature électronique échoue.</li>
+    <li><strong>Une adresse email déjà utilisée par une conseillère</strong> (ou le même numéro de sécurité sociale) empêche la création du compte&nbsp;: un bandeau orange vous prévient sur la fiche.</li>
+    <li><strong>Le compte est créé verrouillé</strong>&nbsp;: si le déverrouillage automatique au paiement du kit n'est pas activé pour votre marque, pensez à déverrouiller l'accès depuis la fiche de la conseillère (onglet <strong>Sécurité</strong>).</li>
+  </ul>
+</section>
+
+<section id="faq">
+  <div class="sec-head"><span class="sec-num">10</span><h2>Questions fréquentes</h2></div>
+  <div class="faq">
+    <details><summary>Où trouver le lien du formulaire de candidature à diffuser&nbsp;?</summary><div><p>Dans Formulaires › Recrutements › Configuration, onglet <strong>Configuration générale</strong>, champ «&nbsp;URL du formulaire de candidature&nbsp;». Vos conseillères peuvent le partager, et vous pouvez le placer sur votre site.</p></div></details>
+    <details><summary>Une candidate est bloquée en «&nbsp;Contrat 1/2&nbsp;».</summary><div><p>Elle n'a pas signé. Depuis sa fiche, «&nbsp;Envoyer le contrat par mail&nbsp;» lui renvoie le lien. Si une erreur est signalée (icône rouge), corrigez ses informations puis utilisez «&nbsp;Recréer le contrat&nbsp;».</p></div></details>
+    <details><summary>La nouvelle conseillère n'arrive pas à se connecter.</summary><div><p>Son accès est probablement encore verrouillé&nbsp;: ouvrez sa fiche dans Vendeurs, onglet Sécurité, et cliquez pour déverrouiller l'accès.</p></div></details>
+    <details><summary>Peut-on recruter sans signature électronique&nbsp;?</summary><div><p>C'est un réglage activé par SellingAtHome sur demande (2 marques l'utilisent)&nbsp;: les étapes de signature disparaissent et le compte peut être créé sans contrat signé électroniquement. Contactez SellingAtHome pour en mesurer les conséquences sur votre parcours.</p></div></details>
+  </div>
+</section>
+
+  </main>
+</div>

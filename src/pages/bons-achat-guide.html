@@ -1,0 +1,768 @@
+<!--page {"title":"Guide des bons d'achat"} -->
+<header class="hero">
+  <div class="hero-in">
+    <div>
+      <span class="eyebrow">Guide fonctionnel</span>
+      <h1>Tout comprendre des <span class="script">bons d'achat</span></h1>
+      <p class="lede">Ce qu'ils sont, comment les gagner, comment les utiliser, et toutes les options pour les paramétrer. Avec des exemples chiffrés à chaque étape.</p>
+    </div>
+    <div class="voucher-art" aria-hidden="true">
+      <div class="v-top"><span>Bon d'achat</span><span>N° 2468</span></div>
+      <div class="v-amount">10<span>€</span></div>
+      <div class="v-name">Offre fidélité</div>
+      <div class="v-sep"></div>
+      <div class="v-meta"><span>Pour <b>Sophie M.</b></span><span>Valable jusqu'au <b>15/12</b></span></div>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="toc" aria-label="Sommaire">
+    <details id="tocDetails" open>
+      <summary>Sommaire</summary>
+      <div class="toc-title">Sommaire</div>
+      <ol>
+        <li data-sec="definition"><a href="#definition"><span class="toc-n">1</span>Qu'est-ce qu'un bon d'achat&nbsp;?</a>
+          <ol class="toc-sub"><li><a href="#s1-1"><span class="toc-n">1.1</span>À quoi sert un bon d'achat&nbsp;?</a></li><li><a href="#s1-2"><span class="toc-n">1.2</span>Ce qu'un bon d'achat n'est pas</a></li><li><a href="#s1-3"><span class="toc-n">1.3</span>Qui peut recevoir un bon&nbsp;?</a></li></ol>
+        </li>
+        <li data-sec="cycle"><a href="#cycle"><span class="toc-n">2</span>Gagner puis utiliser</a>
+          <ol class="toc-sub"><li><a href="#s2-1"><span class="toc-n">2.1</span>Les états d'un bon attribué</a></li></ol>
+        </li>
+        <li data-sec="types"><a href="#types"><span class="toc-n">3</span>Les 3 types de bons</a>
+          <ol class="toc-sub"><li><a href="#s3-1"><span class="toc-n">3.1</span>Lequel choisir&nbsp;?</a></li></ol>
+        </li>
+        <li data-sec="tranche"><a href="#tranche"><span class="toc-n">4</span>Bon par tranche d'achats</a>
+          <ol class="toc-sub"><li><a href="#s4-1"><span class="toc-n">4.1</span>Le principe&nbsp;: une cagnotte et des paliers</a></li><li><a href="#s4-2"><span class="toc-n">4.2</span>Simulateur de cagnotte</a></li><li><a href="#s4-3"><span class="toc-n">4.3</span>Les champs propres à la tranche</a></li><li><a href="#s4-4"><span class="toc-n">4.4</span>La base de calcul&nbsp;: qu'est-ce qui alimente la cagnotte&nbsp;?</a></li><li><a href="#s4-5"><span class="toc-n">4.5</span>La période</a></li><li><a href="#s4-6"><span class="toc-n">4.6</span>Conditions sur un bon par tranche</a></li><li><a href="#s4-7"><span class="toc-n">4.7</span>Limite d'attribution par client</a></li><li><a href="#s4-8"><span class="toc-n">4.8</span>Le cas de la conseillère qui achète pour elle-même</a></li></ol>
+        </li>
+        <li data-sec="conditions"><a href="#conditions"><span class="toc-n">5</span>Bon par conditions</a>
+          <ol class="toc-sub"><li><a href="#s5-1"><span class="toc-n">5.1</span>Gagner plusieurs bons sur une même commande</a></li><li><a href="#s5-2"><span class="toc-n">5.2</span>Ce qu'il faut savoir</a></li></ol>
+        </li>
+        <li data-sec="simple"><a href="#simple"><span class="toc-n">6</span>Bon d'achat simple</a>
+          <ol class="toc-sub"><li><a href="#s6-1"><span class="toc-n">6.1</span>Attribution manuelle</a></li><li><a href="#s6-2"><span class="toc-n">6.2</span>Le bon simple, «&nbsp;monnaie&nbsp;» des autres modules</a></li></ol>
+        </li>
+        <li data-sec="options"><a href="#options"><span class="toc-n">7</span>Les options communes</a>
+          <ol class="toc-sub"><li><a href="#s7-1"><span class="toc-n">7.1</span>Montant</a></li><li><a href="#s7-2"><span class="toc-n">7.2</span>Validité</a></li><li><a href="#s7-3"><span class="toc-n">7.3</span>Produits concernés par le bon d'achat</a></li><li><a href="#s7-4"><span class="toc-n">7.4</span>Les autorisations</a></li><li><a href="#s7-5"><span class="toc-n">7.5</span>Les deux notions de cumul</a></li><li><a href="#s7-6"><span class="toc-n">7.6</span>Les réglages généraux des bons d'achat</a></li></ol>
+        </li>
+        <li data-sec="utilisation"><a href="#utilisation"><span class="toc-n">8</span>Utiliser un bon</a>
+          <ol class="toc-sub"><li><a href="#s8-1"><span class="toc-n">8.1</span>Qui l'applique&nbsp;?</a></li><li><a href="#s8-2"><span class="toc-n">8.2</span>Les vérifications au moment de l'ajout</a></li><li><a href="#s8-3"><span class="toc-n">8.3</span>Comment le bon est déduit</a></li><li><a href="#s8-4"><span class="toc-n">8.4</span>Et si le bon vaut plus que la commande&nbsp;?</a></li><li><a href="#s8-5"><span class="toc-n">8.5</span>Réductions et points de fidélité</a></li><li><a href="#s8-6"><span class="toc-n">8.6</span>Si la commande est annulée ou abandonnée</a></li></ol>
+        </li>
+        <li data-sec="usages"><a href="#usages"><span class="toc-n">9</span>Paramétrages fréquents</a>
+          <ol class="toc-sub"><li><a href="#s9-1"><span class="toc-n">9.1</span>Les usages les plus courants</a></li><li><a href="#s9-2"><span class="toc-n">9.2</span>Exemple pas à pas&nbsp;: offre de printemps</a></li><li><a href="#s9-3"><span class="toc-n">9.3</span>Exemple pas à pas&nbsp;: un bon offert pour un produit acheté</a></li></ol>
+        </li>
+        <li data-sec="attention"><a href="#attention"><span class="toc-n">10</span>Points d'attention</a></li>
+        <li data-sec="faq"><a href="#faq"><span class="toc-n">11</span>Questions fréquentes</a></li>
+        <li data-sec="glossaire"><a href="#glossaire"><span class="toc-n">12</span>Glossaire</a></li>
+      </ol>
+    </details>
+  </nav>
+
+  <main>
+
+  <!-- 1 -->
+  <section id="definition">
+    <div class="sec-head"><span class="sec-num">01</span><h2>Qu'est-ce qu'un bon d'achat&nbsp;?</h2></div>
+    <p class="lede">Un bon d'achat (BA) est <strong>un montant fixe en euros</strong> offert à une personne. Elle le déduit ensuite du prix d'une de ses commandes.</p>
+    <div class="example">
+      <span class="ex-label">Exemple</span>
+      <p>Sophie a reçu un bon de <strong>10&nbsp;€</strong>. Sa prochaine commande s'élève à 45&nbsp;€. Avec le bon, elle ne paie que <strong>35&nbsp;€</strong>.</p>
+    </div>
+
+    <h3 id="s1-1"><span class="sub-num">1.1</span> À quoi sert un bon d'achat&nbsp;?</h3>
+    <div class="grid-3">
+      <div class="card"><span class="tag">Fidéliser</span><p>«&nbsp;5&nbsp;€ offerts tous les 100&nbsp;€ d'achat&nbsp;»</p></div>
+      <div class="card"><span class="tag pink">Récompenser</span><p>«&nbsp;Bon cadeau hôtesse de 30&nbsp;€&nbsp;» après une réunion</p></div>
+      <div class="card"><span class="tag yellow">Stimuler</span><p>«&nbsp;10&nbsp;€ offerts à la conseillère tous les 1&nbsp;000&nbsp;€ de CA&nbsp;»</p></div>
+      <div class="card"><span class="tag">Pousser un produit</span><p>«&nbsp;10&nbsp;€ offerts pour l'achat d'un coffret Printemps&nbsp;»</p></div>
+      <div class="card"><span class="tag pink">Dédommager</span><p>«&nbsp;Bon de 24,50&nbsp;€ suite à une rupture de stock&nbsp;»</p></div>
+      <div class="card"><span class="tag yellow">Accueillir</span><p>«&nbsp;Bon cadeau nouvelle recrue de 50&nbsp;€&nbsp;»</p></div>
+    </div>
+
+    <h3 id="s1-2"><span class="sub-num">1.2</span> Ce qu'un bon d'achat n'est pas</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Ce n'est pas…</th><th>Pourquoi</th></tr></thead>
+      <tbody>
+        <tr><td><b>Un code promo</b></td><td>Un code promo peut être saisi par n'importe qui. Un bon d'achat est <strong>nominatif</strong>&nbsp;: il appartient à une personne précise.</td></tr>
+        <tr><td><b>Un pourcentage</b></td><td>Un bon vaut toujours un <strong>montant fixe</strong> (10&nbsp;€, 30&nbsp;€…), jamais «&nbsp;-15&nbsp;%&nbsp;».</td></tr>
+        <tr><td><b>Un moyen de paiement</b></td><td>Le bon est comptabilisé comme une <strong>remise</strong> sur la commande, au même titre qu'une réduction.</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3 id="s1-3"><span class="sub-num">1.3</span> Qui peut recevoir un bon&nbsp;?</h3>
+    <p>Deux bénéficiaires sont possibles, choisis dans le champ <strong>Type</strong> («&nbsp;À qui profite ce bon&nbsp;?&nbsp;»)&nbsp;:</p>
+    <div class="grid-2">
+      <div class="card"><span class="tag">Client</span><p>Le <strong>client</strong> qui a passé la commande reçoit le bon. Il l'utilise sur une prochaine commande.</p></div>
+      <div class="card"><span class="tag pink">Vendeur</span><p>La <strong>conseillère</strong> de la commande reçoit le bon, sur son compte client personnel. Elle l'utilise sur une commande passée <strong>pour elle-même</strong>.</p></div>
+    </div>
+    <div class="tip"><span class="ex-label">Bon à savoir</span><p>Une conseillère ne peut recevoir un bon que si elle possède un <strong>compte client</strong> rattaché. Sans compte client, le bon ne lui est jamais attribué.</p></div>
+    <div class="tip"><span class="ex-label">Vocabulaire</span><p>L'interface de l'espace marque dit «&nbsp;vendeur&nbsp;» là où cette documentation dit «&nbsp;conseillère&nbsp;». Les libellés de l'écran (type «&nbsp;Vendeur&nbsp;», base «&nbsp;CA total du vendeur&nbsp;», option «&nbsp;Les achats personnels du vendeur cagnotte pour&nbsp;»…) sont cités tels quels.</p></div>
+  </section>
+
+  <!-- 2 -->
+  <section id="cycle">
+    <div class="sec-head"><span class="sec-num">02</span><h2>Les deux étapes de la vie d'un bon&nbsp;: gagner puis utiliser</h2></div>
+    <p>Il faut bien distinguer deux choses&nbsp;:</p>
+    <ol class="prose">
+      <li><strong>Le modèle de bon</strong>, que la marque crée dans le BrandAdmin (menu <em>Bons d'achat</em>). C'est une «&nbsp;recette&nbsp;»&nbsp;: montant, règles d'obtention, durée de validité, restrictions…</li>
+      <li><strong>Les bons attribués</strong>&nbsp;: les exemplaires réellement distribués à des clients ou à des conseillères à partir de ce modèle. Un même modèle peut donner des milliers de bons attribués.</li>
+    </ol>
+    <div class="panel">
+      <div class="model-flow">
+        <div class="model-box"><b>Modèle de bon</b><small>«&nbsp;Fidélité 5&nbsp;€ tous les 100&nbsp;€&nbsp;» · validité 2 mois</small></div>
+        <div class="flow-arrow" aria-hidden="true">→</div>
+        <div class="mini-vouchers">
+          <div class="mini-v"><span><b>Sophie</b> · 5&nbsp;€</span><span>jusqu'au 15/12</span></div>
+          <div class="mini-v"><span><b>Marc</b> · 5&nbsp;€</span><span>jusqu'au 02/01</span></div>
+          <div class="mini-v"><span><b>Sophie</b> · 5&nbsp;€ (2e bon)</span><span>jusqu'au 20/01</span></div>
+        </div>
+      </div>
+    </div>
+
+    <h3 id="s2-1"><span class="sub-num">2.1</span> Les états d'un bon attribué</h3>
+    <div class="lifecycle">
+      <div class="state">Obtention<small>gagné ou attribué</small></div>
+      <div class="lc-arrow" aria-hidden="true">→</div>
+      <div class="state s-dispo">Disponible<small>peut être ajouté à une commande</small></div>
+      <div class="lc-arrow" aria-hidden="true">→</div>
+      <div class="state s-used">Utilisé<small>ajouté à une commande</small></div>
+      <div class="lc-arrow"><span aria-hidden="true">ou</span></div>
+      <div class="state s-exp">Expiré<small>date de validité dépassée</small></div>
+    </div>
+    <div class="table-wrap"><table>
+      <thead><tr><th>État</th><th>Signification</th></tr></thead>
+      <tbody>
+        <tr><td><b>Disponible</b></td><td>Le bon peut être ajouté à une commande.</td></tr>
+        <tr><td><b>Utilisé</b></td><td>Le bon a été ajouté à une commande. Il passe en «&nbsp;utilisé&nbsp;» <strong>dès son ajout au panier</strong>, avant même le paiement.</td></tr>
+        <tr><td><b>Expiré</b></td><td>La date de validité est dépassée et le bon n'a pas été utilisé. Il ne peut plus servir.</td></tr>
+      </tbody>
+    </table></div>
+    <p>Les bons sont visibles dans la <strong>fiche client</strong> (BrandAdmin et espace conseillère), en trois listes&nbsp;: disponibles, utilisés, expirés. Dans la liste des bons du BrandAdmin, l'action «&nbsp;voir les détenteurs&nbsp;» montre qui a reçu un modèle et combien de bons ont été utilisés.</p>
+  </section>
+
+  <!-- 3 -->
+  <section id="types">
+    <div class="sec-head"><span class="sec-num">03</span><h2>Les 3 types de bons d'achat</h2></div>
+    <p class="lede">À la création, le BrandAdmin propose trois onglets. Chacun correspond à <strong>une façon différente d'obtenir le bon</strong>.</p>
+    <figure>
+      <img src="Captures/Bons%20d'achats/Creation-ba-tranches.png" alt="Formulaire de création d'un bon d'achat, avec les trois onglets : obtention par tranche d'achats, obtention par conditions, bon d'achat simple" loading="lazy">
+      <figcaption>Création d'un bon d'achat&nbsp;: les trois onglets en haut du formulaire.</figcaption>
+    </figure>
+    <div class="types">
+      <article class="type-card">
+        <div class="tc-head"><div class="ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 20V14M10 20V9M16 20V4M2 20h20"/></svg></div>
+        <h3>Par tranche d'achats</h3></div>
+        <p>Le bénéficiaire remplit une <strong>cagnotte</strong> avec ses achats. À chaque palier franchi, il gagne un bon.</p>
+        <p class="quote"><small>Exemple</small>«&nbsp;5&nbsp;€ offerts tous les 100&nbsp;€ d'achat&nbsp;»</p>
+      </article>
+      <article class="type-card t2">
+        <div class="tc-head"><div class="ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h9"/></svg></div>
+        <h3>Par conditions</h3></div>
+        <p>Une commande qui <strong>remplit des conditions</strong> fait gagner un bon. Le montant de la commande n'intervient pas.</p>
+        <p class="quote"><small>Exemple</small>«&nbsp;10&nbsp;€ offerts pour l'achat du coffret X&nbsp;»</p>
+      </article>
+      <article class="type-card t3">
+        <div class="tc-head"><div class="ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="13" rx="2"/><path d="M12 8v13M3 12h18M12 8S10 3 7.5 4.5 9 8 12 8zm0 0s2-5 4.5-3.5S15 8 12 8z"/></svg></div>
+        <h3>Bon d'achat simple</h3></div>
+        <p>La marque <strong>distribue le bon à la main</strong>, ou via un autre module (fidélité, challenges…).</p>
+        <p class="quote"><small>Exemple</small>«&nbsp;Geste commercial de 20&nbsp;€&nbsp;»</p>
+      </article>
+    </div>
+    <div class="table-wrap"><table class="cmp">
+      <thead><tr><th></th><th><span class="pill">Par tranche</span></th><th><span class="pill pink">Par conditions</span></th><th><span class="pill yellow">Simple</span></th></tr></thead>
+      <tbody>
+        <tr><td><b>Attribution</b></td><td>Automatique, au paiement</td><td>Automatique, au paiement</td><td>Manuelle, ou par un autre module</td></tr>
+        <tr><td><b>Dépend du montant dépensé</b></td><td><span class="yes">Oui</span>, c'est le principe</td><td><span class="no">Non</span></td><td><span class="no">Non</span></td></tr>
+        <tr><td><b>Cumul entre commandes</b></td><td><span class="yes">Oui</span>, le reliquat est conservé</td><td><span class="no">Non</span>, chaque commande est jugée seule</td><td>Sans objet</td></tr>
+        <tr><td><b>Bénéficiaire</b></td><td>Client ou conseillère</td><td>Client <span class="muted">(conseillère&nbsp;: cas particulier)</span></td><td>Toute personne choisie</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3 id="s3-1"><span class="sub-num">3.1</span> Lequel choisir&nbsp;?</h3>
+    <div class="decide">
+      <p class="q">Vous voulez récompenser…</p>
+      <div class="row"><span>…un <strong>volume d'achat</strong> («&nbsp;tous les X € dépensés&nbsp;»)</span><span class="arrow" aria-hidden="true">→</span><span class="pill">Bon par tranche</span></div>
+      <div class="row"><span>…une <strong>commande précise</strong> (un produit acheté, un rôle, un catalogue…)</span><span class="arrow" aria-hidden="true">→</span><span class="pill pink">Bon par conditions</span></div>
+      <div class="row"><span>…une <strong>personne précise</strong>, pour une raison que vous décidez (geste commercial, cadeau, récompense de fidélité ou de challenge)</span><span class="arrow" aria-hidden="true">→</span><span class="pill yellow">Bon simple</span></div>
+    </div>
+  </section>
+
+  <!-- 4 -->
+  <section id="tranche">
+    <div class="sec-head"><span class="sec-num">04</span><h2>Type 1&nbsp;: le bon par tranche d'achats</h2></div>
+    <figure>
+      <img src="Captures/Bons%20d'achats/BA-par-tranches.png" alt="Formulaire d'édition d'un bon par tranche : montant 10 €, gain par tranche de 100 €, type client, base de calcul montant HT dépensé par le client, condition rôle client pas dans Seller" loading="lazy">
+      <figcaption>Édition d'un bon par tranche&nbsp;: 10&nbsp;€ par tranche de 100&nbsp;€, réservé aux clients qui n'ont pas le rôle Vendeur.</figcaption>
+    </figure>
+
+    <h3 id="s4-1"><span class="sub-num">4.1</span> Le principe&nbsp;: une cagnotte et des paliers</h3>
+    <p>Chaque bénéficiaire possède, pour chaque bon par tranche, une <strong>cagnotte</strong>&nbsp;:</p>
+    <ol class="prose">
+      <li>À chaque commande <strong>payée</strong>, son montant est <strong>ajouté</strong> à la cagnotte.</li>
+      <li>Dès que la cagnotte atteint la <strong>tranche</strong> (le palier), un bon est créé et la tranche est <strong>retirée</strong> de la cagnotte.</li>
+      <li>Le <strong>reste est conservé</strong> pour les commandes suivantes.</li>
+    </ol>
+
+    <div class="panel">
+      <span class="tag">Exemple&nbsp;: «&nbsp;10&nbsp;€ offerts par tranche de 100&nbsp;€&nbsp;»</span>
+      <div class="pot-steps">
+        <div class="pot-step">
+          <div class="lbl"><b>Commande 1&nbsp;: 60&nbsp;€</b>cagnotte 0 → 60&nbsp;€</div>
+          <div class="bar"><div class="fill" style="width:60%"></div><div class="txt">60 / 100&nbsp;€</div></div>
+          <div class="gain none">Pas encore de bon</div>
+        </div>
+        <div class="pot-step">
+          <div class="lbl"><b>Commande 2&nbsp;: 70&nbsp;€</b>cagnotte 60 → 130&nbsp;€</div>
+          <div class="bar"><div class="fill" style="width:100%"></div><div class="txt">130&nbsp;€ → 1 palier franchi</div></div>
+          <div class="gain">+1 bon de 10&nbsp;€<br><span class="muted" style="font-weight:400">reste 30&nbsp;€</span></div>
+        </div>
+        <div class="pot-step">
+          <div class="lbl"><b>Commande 3&nbsp;: 250&nbsp;€</b>cagnotte 30 → 280&nbsp;€</div>
+          <div class="bar"><div class="fill" style="width:100%"></div><div class="txt">280&nbsp;€ → 2 paliers franchis</div></div>
+          <div class="gain">+2 bons de 10&nbsp;€<br><span class="muted" style="font-weight:400">reste 80&nbsp;€</span></div>
+        </div>
+      </div>
+      <p>Le client a dépensé 380&nbsp;€ et gagné <strong>3 bons</strong>. Les 80&nbsp;€ restants comptent pour la suite.</p>
+    </div>
+    <p>Le <strong>montant du bon</strong> et la <strong>tranche</strong> sont indépendants&nbsp;: un bon de 10&nbsp;€ tous les 100&nbsp;€, de 5&nbsp;€ tous les 300&nbsp;€, de 50&nbsp;€ tous les 2&nbsp;000&nbsp;€… tout est possible. La cagnotte d'un client est visible dans sa fiche, sous la forme «&nbsp;montant cagnotté / tranche&nbsp;».</p>
+
+    <div class="sim" id="simulateur">
+      <div>
+        <h3 id="s4-2"><span class="sub-num">4.2</span> Simulateur de cagnotte</h3>
+        <p class="sub">Saisissez une tranche, un montant de bon et une suite de commandes pour voir les bons gagnés.</p>
+      </div>
+      <div class="sim-form">
+        <label>Gain par tranche de (€)<input type="number" id="simSlice" min="1" step="1" value="100"></label>
+        <label>Montant du bon (€)<input type="number" id="simAmount" min="0" step="0.5" value="10"></label>
+        <label>Limite par client (0 = illimité)<input type="number" id="simLimit" min="0" step="1" value="0"></label>
+      </div>
+      <div class="sim-orders" id="simOrders" aria-live="polite"></div>
+      <div class="sim-add">
+        <input type="number" id="simNew" min="0" step="1" placeholder="Montant (€)" aria-label="Montant de la nouvelle commande">
+        <button class="btn" type="button" id="simAddBtn">Ajouter une commande</button>
+        <button class="btn ghost" type="button" id="simReset">Réinitialiser</button>
+      </div>
+      <div class="sim-table"><table>
+        <thead><tr><th>Commande</th><th class="num">Montant</th><th class="num">Cagnotte</th><th class="num">Bons gagnés</th><th class="num">Reste</th></tr></thead>
+        <tbody id="simBody"></tbody>
+      </table></div>
+      <div class="sim-total">
+        <div><b id="simTotSpent">0&nbsp;€</b><span>dépensés</span></div>
+        <div><b id="simTotV">0</b><span>bons gagnés</span></div>
+        <div><b id="simTotVal">0&nbsp;€</b><span>valeur des bons</span></div>
+        <div><b id="simTotPot">0&nbsp;€</b><span>dans la cagnotte</span></div>
+      </div>
+    </div>
+
+    <h3 id="s4-3"><span class="sub-num">4.3</span> Les champs propres à la tranche</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Champ</th><th>Rôle</th></tr></thead>
+      <tbody>
+        <tr><td><b>Montant</b></td><td>Valeur de chaque bon gagné.</td></tr>
+        <tr><td><b>Gain par tranche de</b></td><td>Le palier à atteindre pour gagner un bon.</td></tr>
+        <tr><td><b>Type</b></td><td>Qui reçoit le bon&nbsp;: <strong>Client</strong> ou <strong>Vendeur</strong>.</td></tr>
+        <tr><td><b>Base de calcul</b></td><td>Ce qui alimente la cagnotte (voir ci-dessous).</td></tr>
+        <tr><td><b>Période</b></td><td>Dates pendant lesquelles les commandes alimentent la cagnotte.</td></tr>
+        <tr><td><b>Limite d'attribution par client</b></td><td>Nombre maximum de bons qu'une même personne peut gagner sur la période (vide ou 0 = illimité).</td></tr>
+        <tr><td><b>Conditions</b></td><td>Filtre optionnel&nbsp;: seules les commandes qui remplissent les conditions alimentent la cagnotte.</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3 id="s4-4"><span class="sub-num">4.4</span> La base de calcul&nbsp;: qu'est-ce qui alimente la cagnotte&nbsp;?</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Base de calcul</th><th>Cagnotte alimentée par…</th><th>À associer au type</th></tr></thead>
+      <tbody>
+        <tr><td><b>Montant HT dépensé par le client</b></td><td>Les commandes du client, en HT</td><td><span class="pill">Client</span></td></tr>
+        <tr><td><b>Montant TTC dépensé par le client</b></td><td>Les commandes du client, en TTC</td><td><span class="pill">Client</span></td></tr>
+        <tr><td><b>CA total du vendeur (HT)</b></td><td><strong>Toutes</strong> les commandes payées de <strong>tous</strong> les clients de la conseillère, en HT</td><td><span class="pill pink">Vendeur</span></td></tr>
+        <tr><td><b>CA total du vendeur (TTC)</b></td><td>Idem, en TTC</td><td><span class="pill pink">Vendeur</span></td></tr>
+      </tbody>
+    </table></div>
+    <div class="warn"><span class="ex-label">Important</span><p>Associez toujours la base au bon type&nbsp;: <strong>Client ↔ montant dépensé par le client</strong>, <strong>Vendeur ↔ CA total du vendeur</strong>. Une combinaison croisée (par exemple <em>Type = Client</em> avec <em>Base = CA du vendeur</em>) <strong>ne produit jamais de bon</strong>&nbsp;: la cagnotte se remplit mais n'est jamais lue.</p></div>
+
+    <h4>Quel montant est ajouté à la cagnotte&nbsp;?</h4>
+    <p>Le montant <strong>réellement payé pour les produits</strong>&nbsp;:</p>
+    <ul class="prose">
+      <li>les réductions, codes promo <strong>et bons d'achat</strong> utilisés sur la commande sont déduits&nbsp;;</li>
+      <li>les points de fidélité utilisés sont déduits&nbsp;;</li>
+      <li>en TTC, le porte-monnaie électronique (e-wallet) utilisé est aussi déduit&nbsp;;</li>
+      <li>les <strong>frais de port</strong> ne sont pas comptés, sauf si l'option «&nbsp;Inclure les frais de port dans le montant de la commande&nbsp;» est activée.</li>
+    </ul>
+    <div class="example"><span class="ex-label">Exemple</span><p>Commande de 120&nbsp;€ TTC, avec un bon de 10&nbsp;€ et 5&nbsp;€ de frais de port. Avec une base TTC et l'option frais de port désactivée, la cagnotte reçoit <strong>110&nbsp;€</strong>.</p></div>
+
+    <h3 id="s4-5"><span class="sub-num">4.5</span> La période</h3>
+    <p>La <strong>Période</strong> délimite quand le bon «&nbsp;fonctionne&nbsp;»&nbsp;:</p>
+    <ul class="prose">
+      <li><strong>Avant le début ou après la fin</strong>&nbsp;: les commandes n'alimentent plus la cagnotte et aucun bon n'est distribué.</li>
+      <li><strong>Sans dates</strong>&nbsp;: le bon fonctionne en permanence.</li>
+      <li>Il faut renseigner <strong>les deux dates ou aucune</strong>. Avec une seule date, le bon ne fonctionne jamais.</li>
+    </ul>
+    <div class="grid-2">
+      <div class="warn"><span class="ex-label">La cagnotte n'est jamais remise à zéro</span><p>Si vous réactivez un bon plus tard (en changeant ses dates), les montants cagnottés auparavant sont toujours là. Pour repartir de zéro, créez un <strong>nouveau bon</strong>.</p></div>
+      <div class="warn"><span class="ex-label">La date de fin est exclue</span><p>La période s'arrête au <strong>début</strong> du jour indiqué. «&nbsp;01/03 → 31/03&nbsp;» n'inclut pas les commandes payées le 31 mars. Pour tout le mois de mars, saisissez <strong>01/03 → 01/04</strong>.</p></div>
+    </div>
+
+    <h3 id="s4-6"><span class="sub-num">4.6</span> Conditions sur un bon par tranche</h3>
+    <p>Le bloc <strong>Conditions</strong> est aussi disponible sur la tranche. Il sert de <strong>filtre</strong>&nbsp;: une commande qui ne remplit pas les conditions <strong>n'alimente pas</strong> la cagnotte.</p>
+    <div class="example"><span class="ex-label">Exemples observés</span>
+      <ul>
+        <li>«&nbsp;Rôle du client <strong>pas dans</strong> Vendeur&nbsp;»&nbsp;: seuls les vrais clients cagnottent, pas les conseillères.</li>
+        <li>«&nbsp;Catalogue de la commande <strong>est</strong> Papeterie&nbsp;»&nbsp;: seuls les achats de papeterie comptent.</li>
+      </ul>
+    </div>
+
+    <h3 id="s4-7"><span class="sub-num">4.7</span> Limite d'attribution par client</h3>
+    <p>Ce champ plafonne le nombre de bons <strong>qu'une même personne peut gagner pendant la période</strong>. Sans période, la limite s'applique sur toute la durée de vie du bon.</p>
+    <div class="example"><span class="ex-label">Exemple&nbsp;: «&nbsp;10&nbsp;€ dès 100&nbsp;€ d'achat en mars, limité à 1 bon&nbsp;»</span>
+      <p>Tranche = 100&nbsp;€, Montant = 10&nbsp;€, Période = 01/03 → 01/04, <strong>Limite = 1</strong>. Une cliente qui dépense 350&nbsp;€ en mars ne reçoit <strong>qu'un seul</strong> bon de 10&nbsp;€.</p>
+    </div>
+
+    <h3 id="s4-8"><span class="sub-num">4.8</span> Le cas de la conseillère qui achète pour elle-même</h3>
+    <p>Quand une conseillère passe une commande <strong>pour son propre compte</strong>, c'est l'option <strong>«&nbsp;Les achats personnels du vendeur cagnotte pour&nbsp;»</strong> qui décide si cette commande alimente des cagnottes (accès au réglage&nbsp;: voir <a href="#s7-6">7.6</a>)&nbsp;:</p>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Choix dans la liste</th><th>Effet</th></tr></thead>
+      <tbody>
+        <tr><td><b>---</b> (aucun choix)</td><td>Les achats personnels de la conseillère n'alimentent <strong>aucune</strong> cagnotte.</td></tr>
+        <tr><td><b>Les bons clients</b></td><td>Ils alimentent les cagnottes des bons de type <strong>Client</strong>.</td></tr>
+        <tr><td><b>Les bons vendeurs</b></td><td>Ils alimentent les cagnottes des bons de type <strong>Vendeur</strong>.</td></tr>
+        <tr><td><b>Les bons clients et vendeurs</b></td><td>Ils alimentent <strong>les deux</strong>.</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <!-- 5 -->
+  <section id="conditions">
+    <div class="sec-head"><span class="sec-num">05</span><h2>Type 2&nbsp;: le bon par conditions</h2></div>
+    <figure>
+      <img src="Captures/Bons%20d'achats/BA-par-conditions.png" alt="Formulaire d'édition d'un bon par conditions : montant 10 €, condition la commande contient Assiettes plates à motifs en quantité 1, nombre de gains maximum par commande 0, validité 6 heures" loading="lazy">
+      <figcaption>Édition d'un bon par conditions&nbsp;: 10&nbsp;€ si la commande contient un produit précis.</figcaption>
+    </figure>
+    <p class="lede">Le bon est gagné quand une commande <strong>payée</strong> remplit <strong>toutes</strong> les conditions définies. Le montant de la commande n'intervient pas.</p>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Condition</th><th>Exemple d'usage</th></tr></thead>
+      <tbody>
+        <tr><td><b>Produits dans la commande</b><br><span class="muted">contient / ne contient pas, avec quantité minimum</span></td><td>«&nbsp;10&nbsp;€ offerts pour l'achat d'un T-shirt&nbsp;»</td></tr>
+        <tr><td><b>Rôle du client</b></td><td>«&nbsp;Réservé aux clients qui ne sont pas conseillères&nbsp;»</td></tr>
+        <tr><td><b>Catalogue de la commande</b></td><td>«&nbsp;Réservé aux commandes du catalogue Été&nbsp;»</td></tr>
+        <tr><td><b>Réunion en visio</b></td><td>«&nbsp;Réservé aux commandes passées lors d'une réunion en visio&nbsp;»</td></tr>
+      </tbody>
+    </table></div>
+    <p>Toutes les conditions sont reliées par <strong>ET</strong>&nbsp;: elles doivent toutes être vraies. Pour un «&nbsp;OU&nbsp;», créez deux bons.</p>
+
+    <h3 id="s5-1"><span class="sub-num">5.1</span> Gagner plusieurs bons sur une même commande</h3>
+    <p>Avec la condition <strong>«&nbsp;Produits dans la commande&nbsp;»</strong>, une commande peut faire gagner <strong>plusieurs</strong> bons. Le champ <strong>«&nbsp;Nombre de gains maximum par commande&nbsp;»</strong> plafonne ce nombre.</p>
+    <div class="example"><span class="ex-label">Exemple&nbsp;: «&nbsp;10&nbsp;€ offerts par coffret Printemps acheté&nbsp;»</span>
+      <p>Condition&nbsp;: la commande contient le <em>Coffret Printemps</em>, quantité 1. Une cliente achète <strong>3 coffrets</strong>.</p>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Nombre de gains maximum par commande</th><th>Bons gagnés</th></tr></thead>
+        <tbody>
+          <tr><td><b>0</b> (illimité)</td><td class="hl">3 bons</td></tr>
+          <tr><td><b>1</b></td><td class="hl">1 bon</td></tr>
+          <tr><td><b>2</b></td><td class="hl">2 bons</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+    <p>Si plusieurs produits sont exigés, c'est le produit le <strong>moins</strong> présent qui détermine le nombre de bons.</p>
+    <div class="example"><span class="ex-label">Exemple</span>
+      <p>Condition «&nbsp;2 bougies ET 1 diffuseur&nbsp;». La commande contient 6 bougies et 2 diffuseurs. Bougies&nbsp;: 6 ÷ 2 = 3 fois. Diffuseurs&nbsp;: 2 ÷ 1 = 2 fois. La cliente gagne <strong>2 bons</strong>.</p>
+    </div>
+
+    <h3 id="s5-2"><span class="sub-num">5.2</span> Ce qu'il faut savoir</h3>
+    <div class="grid-2">
+      <div class="card"><h4>Chaque commande est jugée seule</h4><p>Pas de cagnotte, pas de cumul entre commandes.</p></div>
+      <div class="card"><h4>Pas de limite par client</h4><p>Une cliente qui passe 5 commandes éligibles gagne 5 bons, ou plus si la quantité le permet. La «&nbsp;Limite d'attribution par client&nbsp;» n'existe que sur la tranche.</p></div>
+      <div class="card"><h4>La période fonctionne comme pour la tranche</h4><p>En dehors des dates, aucune commande ne fait gagner le bon. La date de fin est exclue.</p></div>
+      <div class="card"><h4>Bénéficiaire Vendeur&nbsp;: cas particulier</h4><p>Un bon par conditions de type <em>Vendeur</em> n'est gagné que lorsque la conseillère commande <strong>pour elle-même</strong>, et seulement si l'option «&nbsp;Les achats personnels du vendeur cagnotte pour&nbsp;» est réglée sur <b>Les bons vendeurs</b> ou <b>Les bons clients et vendeurs</b> (voir <a href="#s7-6">7.6</a>). Les commandes de ses clients ne le lui font <strong>pas</strong> gagner.</p></div>
+    </div>
+  </section>
+
+  <!-- 6 -->
+  <section id="simple">
+    <div class="sec-head"><span class="sec-num">06</span><h2>Type 3&nbsp;: le bon d'achat simple</h2></div>
+    <figure>
+      <img src="Captures/Bons%20d'achats/BA-Simple.png" alt="Formulaire d'édition d'un bon simple Parrainage/marrainage : montant 20 €, validité 1 année, nombre de cumul sur lui-même 0, autorisations désactivées" loading="lazy">
+      <figcaption>Édition d'un bon simple&nbsp;: un formulaire plus court, sans période, type ni conditions.</figcaption>
+    </figure>
+    <p class="lede">Le bon simple n'a <strong>aucune règle d'obtention</strong>. Il est créé une fois, puis distribué à la main depuis le BrandAdmin ou par un autre module de la plateforme.</p>
+
+    <h3 id="s6-1"><span class="sub-num">6.1</span> Attribution manuelle</h3>
+    <div class="grid-2" style="align-items:start">
+      <figure>
+        <img src="Captures/Bons%20d'achats/Attribution-BA.png" alt="Fenêtre Attribuer le bon : recherche de client, liste de clients avec cases à cocher, boutons Attribuer et Sélectionner tout" loading="lazy">
+        <figcaption>La fenêtre «&nbsp;Attribuer le bon&nbsp;».</figcaption>
+      </figure>
+      <div class="card">
+        <ol>
+          <li>Recherchez un client. Les conseillères apparaissent aussi, via leur compte client.</li>
+          <li>Cochez une ou plusieurs personnes, ou utilisez <strong>«&nbsp;Sélectionner tout&nbsp;»</strong>.</li>
+          <li>Cliquez sur <strong>«&nbsp;Attribuer&nbsp;»</strong>.</li>
+        </ol>
+        <p>Chaque personne cochée reçoit <strong>un</strong> bon, et un e-mail l'en informe.</p>
+        <div class="warn"><span class="ex-label">Attention</span><p>Il n'y a <strong>aucun contrôle de doublon</strong>. Attribuer deux fois le bon à la même personne lui donne deux bons.</p></div>
+      </div>
+    </div>
+
+    <h3 id="s6-2"><span class="sub-num">6.2</span> Le bon simple, «&nbsp;monnaie&nbsp;» des autres modules</h3>
+    <p>C'est même son usage principal&nbsp;:</p>
+    <div class="grid-2">
+      <div class="card"><span class="tag">Programme de fidélité</span><p>Une récompense de fidélité peut être un bon d'achat. Exemple courant&nbsp;: le <strong>bon cadeau hôtesse</strong> (15&nbsp;€, 30&nbsp;€, 45&nbsp;€… selon le CA de la réunion). Une option permet d'exclure la commande de l'hôte de ce CA (voir <a href="#s7-6">7.6</a>).</p></div>
+      <div class="card"><span class="tag pink">Challenges vendeurs</span><p>La récompense d'un challenge peut être un bon d'achat.</p></div>
+      <div class="card"><span class="tag yellow">Import (SuperAdmin)</span><p>Import en masse de bons attribués, par exemple lors d'une reprise de données. Aucun e-mail n'est envoyé.</p></div>
+      <div class="card"><span class="tag">Intégrations externes</span><p>Une plateforme de fidélité externe peut créer des bons via l'API.</p></div>
+    </div>
+    <p>Pour ces usages, la marque crée un bon simple «&nbsp;modèle&nbsp;» (par exemple <em>Bon cadeau hôtesse 30&nbsp;€</em>), puis le sélectionne comme récompense dans le module de fidélité ou de challenge.</p>
+  </section>
+
+  <!-- 7 -->
+  <section id="options">
+    <div class="sec-head"><span class="sec-num">07</span><h2>Les options communes aux 3 types</h2></div>
+
+    <h3 id="s7-1"><span class="sub-num">7.1</span> Montant</h3>
+    <p>Valeur du bon. Il s'applique en <strong>TTC</strong> si la marque affiche ses prix en TTC, et en <strong>HT</strong> si elle les affiche en HT&nbsp;: un bon de 10&nbsp;€ vaut alors 10&nbsp;€ HT.</p>
+    <p class="muted">L'affichage des prix en HT ou en TTC est un réglage de la plateforme, activé par l'équipe SellingAtHome. Il n'est pas modifiable depuis le BrandAdmin.</p>
+
+    <h3 id="s7-2"><span class="sub-num">7.2</span> Validité</h3>
+    <p>La validité définit <strong>jusqu'à quand le bon attribué peut être utilisé</strong>. Deux modes, au choix, via les deux icônes à gauche du champ&nbsp;:</p>
+    <div class="grid-2">
+      <div class="card">
+        <span class="tag">Icône horloge · Durée</span>
+        <p>Un nombre + une unité&nbsp;: <strong>Heures</strong>, <strong>Jours</strong>, <strong>Mois</strong> ou <strong>Années</strong>. Le bon est valable N unités <strong>à partir de son attribution</strong>. Chaque bénéficiaire a donc sa propre date d'expiration.</p>
+        <div class="example"><span class="ex-label">Exemple&nbsp;: «&nbsp;6 mois&nbsp;»</span><p>Sophie gagne son bon le 10 janvier&nbsp;: il expire le 10 juillet. Marc gagne le sien le 3 mars&nbsp;: il expire le 3 septembre.</p></div>
+      </div>
+      <div class="card">
+        <span class="tag pink">Icône calendrier · Dates fixes</span>
+        <p>Une date de début et une date de fin. Tous les bons sont valables <strong>sur la même plage</strong>, quelle que soit leur date d'obtention.</p>
+        <div class="example"><span class="ex-label">Exemple&nbsp;: «&nbsp;01/04 → 16/05&nbsp;»</span><p>Les bons gagnés en mars ne sont utilisables qu'à partir du 1er avril, et jusqu'au 15 mai inclus. Ce mode permet de <strong>séparer la période où l'on gagne de celle où l'on dépense</strong>.</p></div>
+      </div>
+    </div>
+    <div class="tip"><span class="ex-label">Bon à savoir</span>
+      <ul>
+        <li>La date de fin du mode «&nbsp;Dates fixes&nbsp;» est <strong>exclue</strong>&nbsp;: saisissez le <strong>lendemain</strong> du dernier jour d'utilisation souhaité.</li>
+        <li>L'unité <strong>Heures</strong> permet des bons très courts («&nbsp;valable 6 heures, à utiliser pendant la réunion&nbsp;»).</li>
+        <li>La validité est <strong>figée au moment de l'attribution</strong>. La modifier sur le modèle ne change que les bons distribués ensuite.</li>
+      </ul>
+    </div>
+
+    <h3 id="s7-3"><span class="sub-num">7.3</span> Produits concernés par le bon d'achat</h3>
+    <p>Par défaut (champ vide), le bon s'applique sur <strong>l'ensemble de la commande</strong>. Si des produits sont sélectionnés, il devient un <strong>bon «&nbsp;produit&nbsp;»</strong>&nbsp;: il ne peut être utilisé que si la commande contient au moins un de ces produits, et il ne réduit <strong>que leur prix</strong>.</p>
+    <div class="example"><span class="ex-label">Exemple&nbsp;: bon de 20&nbsp;€ limité au Wok 38 cm</span>
+      <div class="receipt">
+        <div class="line"><span>Wok 38 cm</span><span>45,00&nbsp;€</span></div>
+        <div class="line v"><span>Bon d'achat «&nbsp;Wok&nbsp;» <small>(sur le wok uniquement)</small></span><span>− 20,00&nbsp;€</span></div>
+        <div class="line"><span>Poêle</span><span>30,00&nbsp;€</span></div>
+        <div class="line total"><span>Total</span><span>55,00&nbsp;€</span></div>
+      </div>
+    </div>
+    <p>Si plusieurs lignes sont éligibles, le bon est imputé en commençant par <strong>la plus chère</strong>, puis sur les suivantes, jusqu'à épuisement de son montant.</p>
+
+    <h3 id="s7-4"><span class="sub-num">7.4</span> Les autorisations</h3>
+    <p>Ces interrupteurs contrôlent <strong>sur quelles commandes le bon peut être utilisé</strong>.</p>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Option</th><th>Désactivée (par défaut)</th><th>Activée</th></tr></thead>
+      <tbody>
+        <tr><td><b>Produits virtuels</b></td><td>Bon refusé si la commande contient un produit virtuel (carte cadeau, service, abonnement…).</td><td>Bon accepté.</td></tr>
+        <tr><td><b>Kits variables</b></td><td>Bon refusé si la commande contient un kit variable.</td><td>Bon accepté.</td></tr>
+        <tr><td><b>Produits remisés</b></td><td>Bon refusé si <strong>une ligne</strong> bénéficie déjà d'une remise (promotion produit, code promo sur un produit…). Une remise globale sur le total ne bloque pas.</td><td>Bon accepté.</td></tr>
+        <tr><td><b>Inclure les frais de port</b></td><td>Les frais de port ne comptent pas dans la cagnotte.</td><td>Les frais de port <strong>comptent</strong> dans la cagnotte.</td></tr>
+        <tr><td><b>Cumulable avec d'autres bons</b></td><td>Bon refusé si la commande contient <strong>un autre</strong> bon.</td><td>Bon combinable avec d'autres bons.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="warn"><span class="ex-label">«&nbsp;Inclure les frais de port&nbsp;»&nbsp;: une option trompeuse</span><p>Malgré sa place dans les «&nbsp;Autorisations&nbsp;», cette option n'a d'effet que pour les <strong>bons par tranche</strong>, sur le montant cagnotté. Elle ne permet <strong>pas</strong> à un bon de réduire les frais de port&nbsp;: un bon d'achat ne s'applique jamais aux frais de port.</p></div>
+
+    <h3 id="s7-5"><span class="sub-num">7.5</span> Les deux notions de cumul</h3>
+    <div class="grid-2">
+      <div class="card">
+        <span class="tag">Nombre de cumul sur lui-même</span>
+        <p><strong>Combien de bons du même modèle</strong> dans une commande&nbsp;?</p>
+        <ul><li><b>0</b>&nbsp;: illimité</li><li><b>1</b>&nbsp;: un seul bon de ce modèle par commande</li><li><b>N</b>&nbsp;: jusqu'à N bons de ce modèle</li></ul>
+      </div>
+      <div class="card">
+        <span class="tag pink">Cumulable avec d'autres bons</span>
+        <p>Peut-on mélanger ce bon avec des bons <strong>d'autres modèles</strong>&nbsp;?</p>
+        <ul><li><b>Oui</b>&nbsp;: combinable</li><li><b>Non</b>&nbsp;: seul dans la commande</li></ul>
+      </div>
+    </div>
+    <div class="example"><span class="ex-label">Exemple&nbsp;: Sophie possède 3 bons «&nbsp;Fidélité 5&nbsp;€&nbsp;»</span>
+      <ul>
+        <li>Cumul sur lui-même = <b>0</b>&nbsp;: elle peut utiliser les 3 sur sa commande, soit <strong>15&nbsp;€</strong>.</li>
+        <li>Cumul sur lui-même = <b>1</b>&nbsp;: elle n'en utilise qu'un (<strong>5&nbsp;€</strong>). Les deux autres restent pour ses prochaines commandes.</li>
+      </ul>
+    </div>
+    <div class="example"><span class="ex-label">Exemple&nbsp;: mélanger des modèles</span>
+      <p>Sophie possède 2 bons «&nbsp;Fidélité 5&nbsp;€&nbsp;» (cumul sur lui-même = 0, cumulable = oui) et 1 bon «&nbsp;Cadeau hôtesse 30&nbsp;€&nbsp;» (cumulable = non).</p>
+      <ul>
+        <li>Elle peut utiliser ses 2 bons Fidélité ensemble&nbsp;: <strong>10&nbsp;€</strong>.</li>
+        <li>Elle ne peut pas les combiner avec le bon Cadeau hôtesse. Le dernier bon ajouté l'emporte&nbsp;: les autres sont retirés.</li>
+      </ul>
+    </div>
+
+    <h3 id="s7-6"><span class="sub-num">7.6</span> Les réglages généraux des bons d'achat</h3>
+    <p>Certains réglages ne se font pas sur un bon, mais <strong>une fois pour toute la marque</strong>. Ils s'appliquent à tous les bons d'achat.</p>
+    <div class="path" aria-label="Chemin d'accès dans l'espace marque">
+      <span>Espace marque</span><span>Paramètres</span><span>Configuration générale</span><span>Onglet <b>Paramètres fidélité</b></span><span>Bloc <b>Paramétrage des bons d'achat</b></span>
+    </div>
+    <p>Cliquez sur <strong>Enregistrer</strong> en bas du bloc après modification.</p>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Option</th><th>Effet</th><th>Voir</th></tr></thead>
+      <tbody>
+        <tr><td><b>Désactiver l'utilisation des points de fidélité en cas d'utilisation de bon d'achat</b></td><td>Quand un bon est ajouté à une commande, les points de fidélité utilisés sont remis à zéro.</td><td><a href="#s8-5">8.5</a></td></tr>
+        <tr><td><b>Désactiver l'utilisation des codes promo en cas d'utilisation de bon d'achat</b></td><td>Quand un bon est ajouté à une commande, les codes promo sont retirés.</td><td><a href="#s8-5">8.5</a></td></tr>
+        <tr><td><b>Les achats personnels du vendeur cagnotte pour</b> <span class="muted">(liste)</span></td><td>Décide si les commandes qu'une conseillère passe pour elle-même alimentent les cagnottes des bons clients, des bons vendeurs, des deux, ou d'aucun (choix «&nbsp;---&nbsp;»).</td><td><a href="#s4-8">4.8</a></td></tr>
+        <tr><td><b>Attribution des bons d'achat depuis le début de l'activité</b></td><td>Prévue pour que la cagnotte d'un bon par tranche tienne compte des commandes passées <strong>avant</strong> la création du bon. <span class="hl-pink">Cette option n'a actuellement aucun effet</span>&nbsp;: la cagnotte ne compte que les commandes payées après la création du bon.</td><td><a href="#attention">10</a></td></tr>
+      </tbody>
+    </table></div>
+    <p>Un autre réglage du même onglet concerne les bons d'achat, dans le bloc <strong>Configuration générale</strong>&nbsp;:</p>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Option</th><th>Effet</th></tr></thead>
+      <tbody>
+        <tr><td><b>Ne pas prendre en compte les achats hôte dans le calcul du chiffre d'affaire de la réunion pour le gain de bon d'achat</b></td><td>Pour les bons gagnés via le programme de fidélité (par exemple le bon cadeau hôtesse, attribué selon le CA de la réunion), la commande de l'hôte n'est pas comptée dans le CA de la réunion.</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <!-- 8 -->
+  <section id="utilisation">
+    <div class="sec-head"><span class="sec-num">08</span><h2>Utiliser un bon dans une commande</h2></div>
+
+    <h3 id="s8-1"><span class="sub-num">8.1</span> Qui l'applique&nbsp;?</h3>
+    <p>C'est la <strong>conseillère</strong> (ou l'administrateur de la marque) qui ajoute le bon à la commande du client, depuis l'écran de commande. Le bon est choisi parmi les <strong>bons disponibles du client</strong> de la commande. Pour utiliser <strong>ses propres</strong> bons, une conseillère passe une commande dont elle est elle-même la cliente.</p>
+
+    <h3 id="s8-2"><span class="sub-num">8.2</span> Les vérifications au moment de l'ajout</h3>
+    <p>Le bon est refusé si&nbsp;:</p>
+    <ol class="prose">
+      <li>la commande contient déjà le nombre maximum de bons de ce modèle («&nbsp;cumul sur lui-même&nbsp;»)&nbsp;;</li>
+      <li>la commande contient un produit virtuel, un kit variable ou un produit remisé, et l'autorisation correspondante est désactivée&nbsp;;</li>
+      <li>la commande contient un autre bon et l'un des deux n'est pas cumulable&nbsp;;</li>
+      <li>c'est un bon «&nbsp;produit&nbsp;» et aucun des produits concernés n'est dans la commande&nbsp;;</li>
+      <li>le bon est limité à certains catalogues et la commande n'en fait pas partie (marques multi-catalogues)&nbsp;;</li>
+      <li>il ne reste plus rien à payer sur la commande.</li>
+    </ol>
+
+    <h3 id="s8-3"><span class="sub-num">8.3</span> Comment le bon est déduit</h3>
+    <div class="grid-2" style="align-items:start">
+      <div class="card">
+        <h4>Ordre d'application</h4>
+        <ol class="order-steps">
+          <li>Prix des produits</li>
+          <li>− remises produit et codes promo</li>
+          <li>− remises sur le total</li>
+          <li class="v">− bons d'achat «&nbsp;produit&nbsp;»</li>
+          <li class="v">− bons d'achat sur toute la commande</li>
+          <li>− points de fidélité</li>
+          <li>− e-wallet</li>
+          <li>+ frais de port</li>
+        </ol>
+      </div>
+      <div class="receipt" aria-label="Exemple de calcul">
+        <div class="line"><span>Produits</span><span>80,00&nbsp;€</span></div>
+        <div class="line"><span>Code promo −10&nbsp;%</span><span>− 8,00&nbsp;€</span></div>
+        <div class="line v"><span>Bon d'achat Fidélité</span><span>− 10,00&nbsp;€</span></div>
+        <div class="line"><span>Frais de port</span><span>+ 4,90&nbsp;€</span></div>
+        <div class="line total"><span>À payer</span><span>66,90&nbsp;€</span></div>
+      </div>
+    </div>
+
+    <h3 id="s8-4"><span class="sub-num">8.4</span> Et si le bon vaut plus que la commande&nbsp;?</h3>
+    <div class="warn"><span class="ex-label">Le reliquat est perdu</span>
+      <p>Un bon ne s'utilise pas en plusieurs fois et ne génère pas d'avoir.</p>
+      <p><strong>Exemple</strong>&nbsp;: bon de 30&nbsp;€ sur une commande de 22&nbsp;€ de produits + 5&nbsp;€ de port. Le bon couvre les 22&nbsp;€ de produits, le client paie les 5&nbsp;€ de port. <strong>Les 8&nbsp;€ restants sont perdus</strong>, et le bon est marqué «&nbsp;utilisé&nbsp;».</p>
+      <p>Conseil&nbsp;: utiliser un bon sur une commande d'un montant au moins égal.</p>
+    </div>
+
+    <h3 id="s8-5"><span class="sub-num">8.5</span> Réductions et points de fidélité</h3>
+    <p>Par défaut, un bon se combine avec un code promo et des points de fidélité. Deux options permettent de l'empêcher (accès au réglage&nbsp;: voir <a href="#s7-6">7.6</a>)&nbsp;:</p>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Option à cocher</th><th>Effet quand un bon est ajouté à la commande</th></tr></thead>
+      <tbody>
+        <tr><td><b>Désactiver l'utilisation des codes promo en cas d'utilisation de bon d'achat</b></td><td>Les codes promo sont retirés de la commande.</td></tr>
+        <tr><td><b>Désactiver l'utilisation des points de fidélité en cas d'utilisation de bon d'achat</b></td><td>Les points de fidélité utilisés sont remis à zéro.</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3 id="s8-6"><span class="sub-num">8.6</span> Si la commande est annulée ou abandonnée</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Situation</th><th>Ce qui se passe</th></tr></thead>
+      <tbody>
+        <tr><td><b>Commande non payée supprimée</b></td><td>Le bon redevient <span class="hl">disponible</span>.</td></tr>
+        <tr><td><b>Commande abandonnée</b> (non payée, jamais supprimée)</td><td>Le bon reste «&nbsp;utilisé&nbsp;», bloqué sur cette commande. Il faut le retirer de la commande pour le libérer.</td></tr>
+        <tr><td><b>Commande payée puis annulée</b></td><td>Le bon utilisé <span class="hl-pink">n'est pas rendu</span>. Il faut en attribuer un nouveau à la main (bon simple).</td></tr>
+        <tr><td><b>Commande payée puis annulée</b>, qui avait fait gagner un bon par tranche</td><td>Les montants sont retirés de la cagnotte du client, et le bon gagné est supprimé s'il n'a pas encore été utilisé.</td></tr>
+        <tr><td><b>Commande payée puis annulée</b>, qui avait fait gagner un bon par conditions</td><td>Le bon gagné <span class="hl-pink">n'est pas retiré</span>.</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <!-- 9 -->
+  <section id="usages">
+    <div class="sec-head"><span class="sec-num">09</span><h2>Les paramétrages les plus fréquents</h2></div>
+    <p class="lede">Les configurations que l'on retrouve le plus souvent chez les marques.</p>
+    <div class="tip"><span class="ex-label">À retenir</span><p>Le bon simple est de loin le plus utilisé, principalement <strong>comme récompense des programmes de fidélité et des challenges</strong>. Les bons automatiques (tranche, conditions) restent minoritaires.</p></div>
+
+    <h3 id="s9-1"><span class="sub-num">9.1</span> Les usages les plus courants</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Usage</th><th>Type</th><th>Paramétrage typique</th></tr></thead>
+      <tbody>
+        <tr><td><b>Bon cadeau hôtesse</b></td><td><span class="pill yellow">Simple</span><br><span class="muted">via la fidélité</span></td><td>15&nbsp;€, 30&nbsp;€, 45&nbsp;€, 60&nbsp;€ selon le palier de CA de la réunion&nbsp;; validité 6 mois&nbsp;; cumulable</td></tr>
+        <tr><td><b>Récompense de challenge vendeur</b></td><td><span class="pill yellow">Simple</span><br><span class="muted">via les challenges</span></td><td>Montant fixe&nbsp;; validité 3 à 6 mois</td></tr>
+        <tr><td><b>Geste commercial / SAV</b> (casse, rupture, retour)</td><td><span class="pill yellow">Simple</span><br><span class="muted">manuel</span></td><td>Montant libre&nbsp;; validité 6 mois</td></tr>
+        <tr><td><b>Bon produit pour la conseillère</b> («&nbsp;activité du mois&nbsp;»)</td><td><span class="pill yellow">Simple</span></td><td>Produit concerné&nbsp;; montant = prix du produit&nbsp;; validité 3 mois</td></tr>
+        <tr><td><b>Club fidélité client</b></td><td><span class="pill yellow">Simple</span><br><span class="muted">plateforme externe</span></td><td>Paliers 5&nbsp;€, 12&nbsp;€, 24&nbsp;€, 40&nbsp;€, 60&nbsp;€</td></tr>
+        <tr><td><b>Fidélité client automatique</b></td><td><span class="pill">Tranche</span></td><td>Type Client, base TTC client&nbsp;; 5&nbsp;€ tous les 100&nbsp;€&nbsp;; validité 2 à 6 mois</td></tr>
+        <tr><td><b>Stimulation des conseillères</b></td><td><span class="pill">Tranche</span></td><td>Type Vendeur, base CA vendeur&nbsp;; 10&nbsp;€ tous les 1&nbsp;000&nbsp;€</td></tr>
+        <tr><td><b>Offre limitée dans le temps</b></td><td><span class="pill">Tranche</span></td><td>Période + validité en dates fixes + limite 1&nbsp;: «&nbsp;10&nbsp;€ dès 100&nbsp;€ d'achat en mars, à valoir en avril&nbsp;»</td></tr>
+        <tr><td><b>Achat d'un produit = bon offert</b></td><td><span class="pill pink">Conditions</span></td><td>«&nbsp;Produits dans la commande&nbsp;»&nbsp;; 10&nbsp;€ par coffret&nbsp;; 1 à 3 gains max par commande</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3 id="s9-2"><span class="sub-num">9.2</span> Exemple pas à pas&nbsp;: offre de printemps</h3>
+    <div class="panel">
+      <p><strong>Objectif</strong>&nbsp;: «&nbsp;Pour 100&nbsp;€ d'achat en mars, recevez un bon de 10&nbsp;€ à valoir du 1er avril au 15 mai. Un seul bon par client. Offre réservée aux clients, pas aux conseillères.&nbsp;»</p>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Champ</th><th>Valeur</th></tr></thead>
+        <tbody>
+          <tr><td>Onglet</td><td><b>Obtention par tranche d'achats</b></td></tr>
+          <tr><td>Période</td><td><b>01/03 → 01/04</b> <span class="muted">(pour inclure le 31 mars)</span></td></tr>
+          <tr><td>Montant</td><td><b>10&nbsp;€</b></td></tr>
+          <tr><td>Gain par tranche de</td><td><b>100&nbsp;€</b></td></tr>
+          <tr><td>Type</td><td><b>Client</b></td></tr>
+          <tr><td>Base de calcul</td><td><b>Montant TTC dépensé par le client</b></td></tr>
+          <tr><td>Limite d'attribution par client</td><td><b>1</b></td></tr>
+          <tr><td>Validité</td><td><b>Dates fixes&nbsp;: 01/04 → 16/05</b> <span class="muted">(pour inclure le 15 mai)</span></td></tr>
+          <tr><td>Conditions</td><td><b>Rôle client pas dans Vendeur</b></td></tr>
+          <tr><td>Nombre de cumul sur lui-même</td><td><b>1</b></td></tr>
+          <tr><td>Cumulable avec d'autres bons</td><td><b>Non</b></td></tr>
+        </tbody>
+      </table></div>
+      <p><strong>Ce qui se passe</strong>&nbsp;: une cliente commande 60&nbsp;€ le 5 mars, puis 70&nbsp;€ le 20 mars. Le 20 mars, sa cagnotte atteint 130&nbsp;€ et elle reçoit un e-mail l'informant de son bon de 10&nbsp;€. Elle ne peut l'utiliser qu'à partir du 1er avril. Une nouvelle commande de 200&nbsp;€ le 25 mars ne lui rapporte pas de deuxième bon, à cause de la limite de 1.</p>
+    </div>
+
+    <h3 id="s9-3"><span class="sub-num">9.3</span> Exemple pas à pas&nbsp;: un bon offert pour un produit acheté</h3>
+    <div class="panel">
+      <p><strong>Objectif</strong>&nbsp;: «&nbsp;Pour chaque T-shirt acheté en juin, 10&nbsp;€ offerts sur la prochaine commande, dans la limite de 2 bons par commande, valables 1 mois.&nbsp;»</p>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Champ</th><th>Valeur</th></tr></thead>
+        <tbody>
+          <tr><td>Onglet</td><td><b>Obtention par conditions</b></td></tr>
+          <tr><td>Période</td><td><b>01/06 → 01/07</b></td></tr>
+          <tr><td>Montant</td><td><b>10&nbsp;€</b></td></tr>
+          <tr><td>Type</td><td><b>Client</b></td></tr>
+          <tr><td>Condition</td><td><b>Commande contient T-shirt, quantité 1</b></td></tr>
+          <tr><td>Nombre de gains maximum par commande</td><td><b>2</b></td></tr>
+          <tr><td>Validité</td><td><b>Durée&nbsp;: 1 mois</b></td></tr>
+        </tbody>
+      </table></div>
+      <p><strong>Ce qui se passe</strong>&nbsp;: une cliente achète 3 T-shirts le 12 juin. Elle gagne <strong>2 bons</strong> de 10&nbsp;€ (plafond de 2), valables jusqu'au 12 juillet.</p>
+    </div>
+  </section>
+
+  <!-- 10 -->
+  <section id="attention">
+    <div class="sec-head"><span class="sec-num">10</span><h2>Points d'attention</h2></div>
+    <p class="lede">Ces comportements surprennent souvent. Ils sont à connaître avant de paramétrer un bon.</p>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Sujet</th><th>Comportement</th><th>Conseil</th></tr></thead>
+      <tbody>
+        <tr><td><b>Date de fin</b> (période et validité)</td><td>Elle est exclue&nbsp;: le bon s'arrête au début du jour indiqué.</td><td>Saisir le lendemain du dernier jour voulu.</td></tr>
+        <tr><td><b>Période à moitié remplie</b></td><td>Avec une seule des deux dates, le bon ne fonctionne jamais.</td><td>Remplir les deux dates ou aucune.</td></tr>
+        <tr><td><b>Type et base croisés</b> (tranche)</td><td><em>Client + CA vendeur</em> ou <em>Vendeur + dépense client</em>&nbsp;: aucun bon n'est attribué.</td><td>Client ↔ dépense client, Vendeur ↔ CA vendeur.</td></tr>
+        <tr><td><b>Cagnotte jamais remise à zéro</b></td><td>Réactiver un ancien bon par tranche reprend les montants déjà cagnottés.</td><td>Créer un nouveau bon par opération.</td></tr>
+        <tr><td><b>Reliquat</b></td><td>Si le bon vaut plus que la commande, la différence est perdue.</td><td>Prévenir clients et conseillères.</td></tr>
+        <tr><td><b>Frais de port</b></td><td>Un bon ne réduit jamais les frais de port.</td><td>—</td></tr>
+        <tr><td><b>Modifier le montant d'un modèle</b></td><td>Le nouveau montant s'applique <strong>aussi aux bons déjà distribués</strong> et non utilisés. La validité, elle, reste celle d'origine.</td><td>Créer un nouveau bon plutôt que modifier l'existant.</td></tr>
+        <tr><td><b>Supprimer un modèle</b></td><td>Les bons déjà distribués restent utilisables jusqu'à leur expiration.</td><td>—</td></tr>
+        <tr><td><b>Attribution manuelle en double</b></td><td>Aucun contrôle&nbsp;: attribuer deux fois donne deux bons.</td><td>Vérifier les détenteurs avant d'attribuer.</td></tr>
+        <tr><td><b>Bon ajouté au panier</b></td><td>Il est «&nbsp;utilisé&nbsp;» dès l'ajout, même si la commande n'est jamais payée.</td><td>Retirer le bon d'une commande abandonnée.</td></tr>
+        <tr><td><b>Annulation d'une commande payée</b></td><td>Le bon utilisé n'est pas rendu.</td><td>Réattribuer un bon simple de même montant.</td></tr>
+        <tr><td><b>Bon par conditions de type Vendeur</b></td><td>Gagné uniquement sur les achats personnels de la conseillère (avec la bonne clé de registre).</td><td>Pour récompenser l'activité d'une conseillère&nbsp;: tranche «&nbsp;CA vendeur&nbsp;» ou challenge.</td></tr>
+        <tr><td><b>Changer de type de bon</b></td><td>Le type (tranche / conditions / simple) n'est pas modifiable après création.</td><td>Recréer le bon dans le bon onglet.</td></tr>
+        <tr><td><b>Option «&nbsp;Attribution des bons d'achat depuis le début de l'activité&nbsp;»</b></td><td>Elle n'a actuellement aucun effet&nbsp;: la cagnotte d'un bon par tranche ne compte que les commandes payées après la création du bon.</td><td>Ne pas compter sur cette option pour reprendre l'historique.</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <!-- 11 -->
+  <section id="faq">
+    <div class="sec-head"><span class="sec-num">11</span><h2>Questions fréquentes</h2></div>
+    <div class="faq">
+      <details><summary>Un client a dépensé plus que la tranche, mais n'a pas reçu de bon.</summary><div>
+        <p>Vérifiez dans l'ordre&nbsp;:</p>
+        <ol>
+          <li>La commande est-elle <strong>payée</strong>&nbsp;? Les bons ne sont calculés qu'au paiement.</li>
+          <li>A-t-elle été payée <strong>pendant la période</strong>&nbsp;? Attention à la date de fin exclue.</li>
+          <li>Le <strong>type</strong> et la <strong>base de calcul</strong> sont-ils cohérents (Client ↔ dépense client)&nbsp;?</li>
+          <li>La commande remplit-elle les <strong>conditions</strong> du bon&nbsp;?</li>
+          <li>Le client a-t-il atteint la <strong>limite d'attribution</strong>&nbsp;?</li>
+          <li>Le montant cagnotté tient-il compte des <strong>remises</strong> et <strong>bons utilisés</strong>&nbsp;? Une commande de 105&nbsp;€ avec un bon de 10&nbsp;€ ne compte que pour 95&nbsp;€.</li>
+        </ol>
+      </div></details>
+      <details><summary>Le client ne voit pas son bon au moment de commander.</summary><div><p>Le bon est peut-être expiré, déjà utilisé (y compris sur une commande abandonnée), ou pas encore valable (validité en dates fixes qui n'a pas commencé).</p></div></details>
+      <details><summary>Le bon est refusé sur la commande.</summary><div><p>Regardez les autorisations&nbsp;: la commande contient-elle un produit remisé, un kit variable ou un produit virtuel&nbsp;? Un autre bon non cumulable est-il déjà présent&nbsp;? Est-ce un bon «&nbsp;produit&nbsp;» sans le produit concerné dans la commande&nbsp;?</p></div></details>
+      <details><summary>Le client a 3 bons mais ne peut en utiliser qu'un.</summary><div><p>Le «&nbsp;Nombre de cumul sur lui-même&nbsp;» vaut probablement 1.</p></div></details>
+      <details><summary>Peut-on offrir un bon en pourcentage&nbsp;?</summary><div><p>Non, un bon d'achat est toujours un montant fixe. Pour un pourcentage, utilisez une réduction ou un code promo.</p></div></details>
+      <details><summary>Peut-on utiliser un bon en plusieurs fois&nbsp;?</summary><div><p>Non. Le reliquat est perdu.</p></div></details>
+      <details><summary>Le client reçoit-il un e-mail&nbsp;?</summary><div><p>Oui, quand il gagne un bon (tranche, conditions) ou quand on le lui attribue manuellement (simple). L'e-mail (modèle <em>CustomerVoucherTemplate</em>) indique le montant, la validité et les produits concernés. Aucun e-mail n'est envoyé pour les bons importés.</p></div></details>
+      <details><summary>Comment cibler les clients dont le bon va expirer&nbsp;?</summary><div><p>Le module de segmentation propose un filtre «&nbsp;bon d'achat expirant&nbsp;», utilisable pour une relance.</p></div></details>
+    </div>
+  </section>
+
+  <!-- 12 -->
+  <section id="glossaire">
+    <div class="sec-head"><span class="sec-num">12</span><h2>Glossaire</h2></div>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Terme</th><th>Définition</th></tr></thead>
+      <tbody>
+        <tr><td><b>Modèle de bon</b></td><td>Le bon tel que paramétré dans le BrandAdmin. Il sert à générer les bons attribués.</td></tr>
+        <tr><td><b>Bon attribué</b></td><td>Un exemplaire du bon, appartenant à une personne, avec sa propre date de validité.</td></tr>
+        <tr><td><b>Cagnotte</b></td><td>Montant accumulé par un bénéficiaire pour un bon par tranche.</td></tr>
+        <tr><td><b>Tranche</b></td><td>Palier de cagnotte à atteindre pour gagner un bon.</td></tr>
+        <tr><td><b>Reliquat</b></td><td>Partie de la cagnotte qui reste après l'attribution des bons. Elle est conservée.</td></tr>
+        <tr><td><b>Période</b></td><td>Dates pendant lesquelles un bon automatique peut être <strong>gagné</strong>.</td></tr>
+        <tr><td><b>Validité</b></td><td>Dates pendant lesquelles un bon attribué peut être <strong>utilisé</strong>.</td></tr>
+        <tr><td><b>Bon «&nbsp;produit&nbsp;»</b></td><td>Bon limité à certains produits, qui ne réduit que leur prix.</td></tr>
+        <tr><td><b>Cumul sur lui-même</b></td><td>Nombre de bons du même modèle utilisables dans une commande.</td></tr>
+        <tr><td><b>Cumulable</b></td><td>Possibilité de combiner le bon avec des bons d'autres modèles.</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  </main>
+</div>
+<script>
+(function () {
+// Simulateur de cagnotte
+  var orders = [60, 70, 250];
+  var $ = function (id) { return document.getElementById(id); };
+  var eur = function (n) { return (Math.round(n * 100) / 100).toLocaleString('fr-FR') + ' €'; };
+  function render() {
+    var slice = Math.max(0, parseFloat($('simSlice').value) || 0);
+    var amount = Math.max(0, parseFloat($('simAmount').value) || 0);
+    var limit = Math.max(0, parseInt($('simLimit').value, 10) || 0);
+    var pot = 0, given = 0, spent = 0, rows = '';
+    orders.forEach(function (o, i) {
+      spent += o; pot += o;
+      var win = 0;
+      if (slice > 0 && pot >= slice) {
+        win = Math.floor(pot / slice);
+        if (limit > 0) win = Math.max(0, Math.min(win, limit - given));
+        pot -= win * slice;
+        given += win;
+      }
+      rows += '<tr><td>Commande ' + (i + 1) + '</td><td class="num">' + eur(o) + '</td><td class="num">' + eur(pot + win * slice) +
+        '</td><td class="num' + (win ? ' win' : '') + '">' + (win ? '+' + win + ' × ' + eur(amount) : '—') + '</td><td class="num">' + eur(pot) + '</td></tr>';
+    });
+    $('simBody').innerHTML = rows || '<tr><td colspan="5">Ajoutez une commande pour commencer.</td></tr>';
+    $('simOrders').innerHTML = orders.map(function (o, i) {
+      return '<span class="chipo">Commande ' + (i + 1) + ' : ' + eur(o) + '<button type="button" data-i="' + i + '" aria-label="Retirer la commande ' + (i + 1) + '">×</button></span>';
+    }).join('');
+    $('simTotSpent').textContent = eur(spent);
+    $('simTotV').textContent = given;
+    $('simTotVal').textContent = eur(given * amount);
+    $('simTotPot').textContent = eur(pot);
+  }
+  ['simSlice', 'simAmount', 'simLimit'].forEach(function (id) { $(id).addEventListener('input', render); });
+  function add() { var v = parseFloat($('simNew').value); if (v > 0) { orders.push(v); $('simNew').value = ''; render(); } $('simNew').focus(); }
+  $('simAddBtn').addEventListener('click', add);
+  $('simNew').addEventListener('keydown', function (e) { if (e.key === 'Enter') add(); });
+  $('simReset').addEventListener('click', function () { orders = []; render(); });
+  $('simOrders').addEventListener('click', function (e) { var b = e.target.closest('button[data-i]'); if (b) { orders.splice(+b.dataset.i, 1); render(); } });
+  render();
+})();
+</script>

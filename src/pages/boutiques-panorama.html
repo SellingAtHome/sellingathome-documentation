@@ -1,0 +1,120 @@
+<!--page {"title":"Les boutiques en ligne"} -->
+<style>
+.cmp td:first-child { width:18%; font-weight:700; color:var(--heading); }
+.cmp th { min-width:150px; }
+.four { display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:14px; }
+.four .card { border-top:5px solid var(--accent); }
+.four .card:nth-child(2) { border-top-color:var(--pink); }
+.four .card:nth-child(3) { border-top-color:var(--yellow); }
+.four .card:nth-child(4) { border-top-color:var(--heading); }
+.four .card p { font-size:.93rem; }
+</style>
+<header class="hero">
+  <div class="hero-in">
+    <div>
+      <span class="eyebrow">Commandes et boutiques</span>
+      <h1>Les boutiques <span class="script">en ligne</span></h1>
+      <p class="lede">Mini-site de réunion, mini-boutique de conseillère, boutique de marque, commande web importée&nbsp;: quatre façons pour une cliente d'acheter en ligne. Pour qui, qui les active, qui encaisse, à qui revient la vente.</p>
+    </div>
+    <div class="voucher-art" aria-hidden="true">
+      <div class="v-top"><span>En ligne</span><span>4 canaux</span></div>
+      <div class="v-amount">≈ 12<span> %</span></div>
+      <div class="v-name">des commandes payées</div>
+      <div class="v-sep"></div>
+      <div class="v-meta"><span>Web importé <b>11,5 %</b></span><span>Boutiques <b>0,4 %</b></span></div>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="toc" aria-label="Sommaire">
+    <details id="tocDetails" open>
+      <summary>Sommaire</summary>
+      <div class="toc-title">Sommaire</div>
+      <ol>
+        <li data-sec="definition"><a href="#definition"><span class="toc-n">1</span>Quatre canaux en ligne</a></li>
+        <li data-sec="comparatif"><a href="#comparatif"><span class="toc-n">2</span>Le tableau comparatif</a></li>
+        <li data-sec="choisir"><a href="#choisir"><span class="toc-n">3</span>Lequel pour quoi&nbsp;?</a></li>
+        <li data-sec="exemple"><a href="#exemple"><span class="toc-n">4</span>Exemple</a></li>
+        <li data-sec="ou"><a href="#ou"><span class="toc-n">5</span>Où se règlent-ils&nbsp;?</a></li>
+        <li data-sec="attention"><a href="#attention"><span class="toc-n">6</span>Points d'attention</a></li>
+      </ol>
+    </details>
+  </nav>
+
+  <main>
+
+<!-- 1 -->
+<section id="definition">
+  <div class="sec-head"><span class="sec-num">01</span><h2>Quatre canaux en ligne</h2></div>
+  <p class="lede">SellingAtHome reste centré sur la vente par les conseillères. Les canaux en ligne prolongent cette vente&nbsp;: chacun garde un lien avec une conseillère, mais pas de la même façon.</p>
+  <div class="four">
+    <div class="card"><span class="tag">Mini-site de réunion</span><p>Le site d'une réunion, pour l'hôtesse et ses invitées&nbsp;: invitations, confirmation de présence, présentation. Il accompagne la réunion.</p></div>
+    <div class="card"><span class="tag pink">Mini-boutique</span><p>La boutique en ligne personnelle d'une conseillère, à son nom, avec son adresse web. Ses clientes y commandent seules, à toute heure.</p></div>
+    <div class="card"><span class="tag yellow">Boutique de marque</span><p>Une boutique unique pour votre marque, hébergée par SellingAtHome. La cliente peut y choisir une conseillère.</p></div>
+    <div class="card"><span class="tag">Commande web importée</span><p>Une commande passée sur <strong>votre propre site</strong> (Shopify, WooCommerce…) et recopiée dans SellingAtHome par une intégration.</p></div>
+  </div>
+  <div class="tip"><span class="ex-label">Vocabulaire</span><p>Dans l'espace marque, la mini-boutique s'appelle «&nbsp;Mini-boutique vendeur&nbsp;» et la conseillère «&nbsp;Vendeur&nbsp;».</p></div>
+</section>
+
+<!-- 2 -->
+<section id="comparatif">
+  <div class="sec-head"><span class="sec-num">02</span><h2>Le tableau comparatif</h2></div>
+  <div class="table-wrap"><table class="cmp">
+    <thead><tr><th></th><th>Mini-site de réunion</th><th>Mini-boutique de conseillère</th><th>Boutique de marque</th><th>Commande web importée</th></tr></thead>
+    <tbody>
+      <tr><td>Pour qui&nbsp;?</td><td>L'hôtesse et ses invitées, le temps d'une réunion.</td><td>Les clientes d'une conseillère, toute l'année.</td><td>Toute cliente, qu'elle connaisse ou non une conseillère.</td><td>Les clientes de votre site e-commerce.</td></tr>
+      <tr><td>Qui l'active&nbsp;?</td><td>SellingAtHome ouvre la fonction&nbsp;; votre marque choisit s'il est imposé ou laissé au choix de la conseillère, réunion par réunion.</td><td>SellingAtHome active le module&nbsp;; puis chaque conseillère active sa boutique (ou la marque, depuis sa fiche).</td><td>SellingAtHome active le module et l'adresse de la boutique.</td><td>SellingAtHome met en place l'intégration avec votre site.</td></tr>
+      <tr><td>Qui paie, et à qui&nbsp;?</td><td>Pas de paiement sur le mini-site&nbsp;: les commandes de la réunion se règlent comme d'habitude.</td><td>La cliente, en ligne, selon les moyens de paiement prévus pour ce type de commande.</td><td>La cliente, en ligne, selon les moyens prévus pour ce type de commande.</td><td>La cliente, sur votre site&nbsp;; SellingAtHome reçoit la commande déjà payée.</td></tr>
+      <tr><td>À qui la vente est-elle attribuée&nbsp;?</td><td>À la conseillère de la réunion.</td><td>À la conseillère propriétaire de la boutique. La cliente lui est rattachée.</td><td>À la conseillère choisie par la cliente, ou à sa conseillère habituelle&nbsp;; sinon à aucune.</td><td>À la conseillère de la cliente, retrouvée par l'intégration.</td></tr>
+      <tr><td>Type de commande</td><td>Vente en réunion</td><td>Mini-boutique vendeur</td><td>Boutique de la marque</td><td>Commande WEB</td></tr>
+      <tr><td>Adoption (marques actives)</td><td>22 marques sur 35 l'ont ouvert (16 au choix de la conseillère, 6 imposé).</td><td>12 marques ont le module&nbsp;; 10 ont eu des commandes payées sur un an, ≈ 4&nbsp;100 commandes. 1&nbsp;370 boutiques actives.</td><td>4 marques&nbsp;; ≈ 570 commandes payées sur un an.</td><td>20 marques&nbsp;; ≈ 11,5&nbsp;% des commandes payées de toutes les marques.</td></tr>
+      <tr><td>En savoir plus</td><td><a href="reunions.html">Réunions</a></td><td><a href="mini-boutiques.html">Les mini-boutiques</a></td><td><a href="boutique-marque.html">La boutique de marque</a></td><td><a href="commandes-comprendre.html#s2-1">Comprendre les commandes</a></td></tr>
+    </tbody>
+  </table></div>
+  <p class="muted">Un cinquième canal, la <strong>réunion virtuelle</strong>, permet aux invitées de commander en ligne pendant une réunion en visio. Ses commandes sont des ventes en réunion (≈ 3&nbsp;650 commandes payées sur un an, 10 marques). Voir <a href="reunions.html">Réunions</a>.</p>
+</section>
+
+<!-- 3 -->
+<section id="choisir">
+  <div class="sec-head"><span class="sec-num">03</span><h2>Lequel pour quoi&nbsp;?</h2></div>
+  <div class="decide">
+    <div class="row"><span class="q">Vous voulez faciliter l'organisation des réunions</span><span class="arrow">→</span><span class="pill">Mini-site de réunion</span></div>
+    <div class="row"><span class="q">Vos conseillères veulent vendre en ligne à leurs clientes, entre deux réunions</span><span class="arrow">→</span><span class="pill pink">Mini-boutiques</span></div>
+    <div class="row"><span class="q">Vous voulez une vitrine en ligne de la marque, qui renvoie vers les conseillères</span><span class="arrow">→</span><span class="pill yellow">Boutique de marque</span></div>
+    <div class="row"><span class="q">Vous avez déjà votre site e-commerce</span><span class="arrow">→</span><span class="pill">Intégration (commandes web)</span></div>
+  </div>
+  <p>Les mini-boutiques et la boutique de marque partagent le <strong>même catalogue en ligne</strong>&nbsp;: les produits cochés «&nbsp;Disponible sur la mini-boutique vendeur&nbsp;» dans le catalogue, dans les catégories publiées sur les mini-sites. Elles se paramètrent au même endroit, dans deux onglets voisins.</p>
+</section>
+
+<!-- 4 -->
+<section id="exemple">
+  <div class="sec-head"><span class="sec-num">04</span><h2>Exemple</h2></div>
+  <div class="example"><span class="ex-label">Une cliente, quatre canaux</span>
+    <p>Camille est invitée à la réunion de Jade&nbsp;: elle reçoit l'invitation par le <strong>mini-site de la réunion</strong> et confirme sa venue. Pendant la réunion, Léa saisit sa commande&nbsp;: <strong>Vente en réunion</strong>, attribuée à Léa.</p>
+    <p>Un mois plus tard, Camille recommande seule sur la <strong>mini-boutique de Léa</strong> et paie par carte&nbsp;: <strong>Mini-boutique vendeur</strong>, attribuée à Léa.</p>
+    <p>Sa sœur Zoé découvre la marque sur la <strong>boutique de marque</strong>, choisit Léa dans la liste des conseillères et commande&nbsp;: <strong>Boutique de la marque</strong>, attribuée à Léa.</p>
+    <p>Si votre marque a son propre site, une commande d'Emma passée dessus arrive en <strong>Commande WEB</strong>, attribuée à la conseillère d'Emma.</p>
+  </div>
+</section>
+
+<!-- 5 -->
+<section id="ou">
+  <div class="sec-head"><span class="sec-num">05</span><h2>Où se règlent-ils&nbsp;?</h2></div>
+  <div class="path" aria-label="Chemin d'accès"><span>Paramètres</span><span><b>Modèles des minisites</b></span></div>
+  <p>Cet écran a jusqu'à quatre onglets, selon les modules de votre marque&nbsp;: <strong>Mini-sites hôtes</strong> (réunion), <strong>Mini-boutiques vendeur</strong>, <strong>Boutique de la marque</strong>, <strong>Réunions virtuelles</strong>. Le menu n'apparaît que si au moins un de ces modules est actif.</p>
+  <p>Les modes de livraison et les moyens de paiement se règlent par <strong>type de commande</strong>&nbsp;: vous pouvez par exemple proposer d'autres frais de port pour «&nbsp;Mini-boutique vendeur&nbsp;» que pour «&nbsp;Vente directe&nbsp;» (Paramètres › Configuration générale › Paramètres des livraisons).</p>
+</section>
+
+<!-- 6 -->
+<section id="attention">
+  <div class="sec-head"><span class="sec-num">06</span><h2>Points d'attention</h2></div>
+  <ul class="prose">
+    <li><strong>Les commandes en ligne ne se modifient pas</strong> depuis l'espace marque ni par la conseillère&nbsp;: c'est la cliente qui compose son panier (voir <a href="commandes-comprendre.html#regles">modifier, supprimer, annuler</a>).</li>
+    <li><strong>Boutique de marque sans conseillère</strong>&nbsp;: si le choix n'est pas obligatoire, une partie des commandes n'est attribuée à personne (40&nbsp;% des commandes payées de boutique de marque sur un an).</li>
+    <li><strong>Commandes web importées</strong>&nbsp;: leur attribution dépend des données transmises par votre site. Une cliente sans conseillère active peut donner une commande sans conseillère.</li>
+  </ul>
+</section>
+
+  </main>
+</div>
